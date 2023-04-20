@@ -467,7 +467,8 @@ inline std::string StrFindRegex(const std::string &str,
   return "";
 }
 
-template <typename In, typename Out> Out FindRegex(const In &str, const std::string& regex) {
+template <typename In, typename Out>
+Out FindRegex(const In &str, const std::string &regex) {
   return FromString<Out>(StrFindRegex(ToString(str), regex));
 }
 
@@ -485,9 +486,10 @@ inline std::vector<std::string> StrFindAllRegex(const std::string &str,
   return result;
 }
 
-template <typename In, typename Out> std::vector<Out> FindAllRegex(const In &str, const std::string& regex) {
+template <typename In, typename Out>
+std::vector<Out> FindAllRegex(const In &str, const std::string &regex) {
   std::vector<Out> result;
-  for (const auto& s : StrFindAllRegex(ToString(str), regex)) {
+  for (const auto &s : StrFindAllRegex(ToString(str), regex)) {
     result.push_back(FromString<Out>(s));
   }
   return result;
@@ -591,9 +593,310 @@ inline std::fstream OpenFile(const std::string &filename,
 // delete a file
 inline void DeleteFile(const std::string &filename) {
   if (std::remove(filename.c_str()) != 0) {
+    LOG_ERROR("Failed to delete file: " + filename);
     throw std::runtime_error("Failed to delete file: " + filename);
   }
 }
+
+inline bool FileExist(const std::string &filename) {
+  std::ifstream file(filename);
+  return file.good();
+}
+
+inline std::string GetFileExtension(const std::string &filename) {
+  std::string::size_type idx;
+  idx = filename.rfind('.');
+  if (idx != std::string::npos) {
+    return filename.substr(idx + 1);
+  }
+  return "";
+}
+
+inline std::string GetFileName(const std::string &filename) {
+  std::string::size_type idx;
+  idx = filename.rfind('/');
+  if (idx != std::string::npos) {
+    return filename.substr(idx + 1);
+  }
+  return filename;
+}
+
+inline std::string GetFileNameWithoutExtension(const std::string &filename) {
+  std::string::size_type idx;
+  idx = filename.rfind('.');
+  if (idx != std::string::npos) {
+    return filename.substr(0, idx);
+  }
+  return filename;
+}
+
+inline std::string GetFileDirectory(const std::string &filename) {
+  std::string::size_type idx;
+  idx = filename.rfind('/');
+  if (idx != std::string::npos) {
+    return filename.substr(0, idx);
+  }
+  return "";
+}
+
+inline std::string GetFileDirectoryWithSlash(const std::string &filename) {
+  std::string::size_type idx;
+  idx = filename.rfind('/');
+  if (idx != std::string::npos) {
+    return filename.substr(0, idx + 1);
+  }
+  return "";
+}
+
+inline std::size_t GetFileSize(const std::string &filename) {
+  return std::filesystem::file_size(filename);
+}
+
+inline bool GetContent(const std::string &filename, std::string &content) {
+  std::ifstream file(filename);
+  if (!file.good()) {
+    LOG_ERROR("Failed to open file: " + filename);
+    return false;
+  }
+  content.assign((std::istreambuf_iterator<char>(file)),
+                 std::istreambuf_iterator<char>());
+  return true;
+}
+
+inline bool PathExists(const std::string &path) {
+  return std::filesystem::exists(path);
+}
+
+inline bool IsDirectory(const std::string &path) {
+  return std::filesystem::is_directory(path);
+}
+
+inline bool IsRegularFile(const std::string &path) {
+  return std::filesystem::is_regular_file(path);
+}
+
+inline bool CreateDirectory(const std::string &path) {
+  return std::filesystem::create_directory(path);
+}
+
+inline bool CreateDirectories(const std::string &path) {
+  return std::filesystem::create_directories(path);
+}
+
+inline bool DeleteDirectory(const std::string &path) {
+  return std::filesystem::remove(path);
+}
+
+inline bool DeleteDirectories(const std::string &path) {
+  return std::filesystem::remove_all(path);
+}
+
+inline bool CopyFile(const std::string &from, const std::string &to) {
+  return std::filesystem::copy_file(from, to);
+}
+
+inline bool CopyDirectory(const std::string &from, const std::string &to) {
+  if (std::filesystem::exists(to)) {
+    LOG_ERROR("Failed to copy directory: " + from + " to " + to +
+              " because the destination directory already exists");
+    return false;
+  }
+  if (std::filesystem::exists(from)) {
+    LOG_ERROR("Failed to copy directory: " + from + " to " + to +
+              " because the source directory does not exist");
+    return false;
+  }
+  try {
+    std::filesystem::copy(from, to, std::filesystem::copy_options::recursive);
+  } catch (const std::filesystem::filesystem_error &e) {
+    LOG_ERROR("Failed to copy directory: " + from + " to " + to + " because " +
+              e.what());
+    return false;
+  }
+  return true;
+}
+
+inline bool MoveFile(const std::string &from, const std::string &to) {
+  if (std::filesystem::exists(to)) {
+    LOG_ERROR("Failed to move file: " + from + " to " + to +
+              " because the destination file already exists");
+    return false;
+  }
+  if (std::filesystem::exists(from)) {
+    LOG_ERROR("Failed to move file: " + from + " to " + to +
+              " because the source file does not exist");
+    return false;
+  }
+  try {
+    std::filesystem::rename(from, to);
+  } catch (const std::filesystem::filesystem_error &e) {
+    LOG_ERROR("Failed to move file: " + from + " to " + to + " because " +
+              e.what());
+    return false;
+  }
+  return true;
+}
+
+inline bool MoveDirectory(const std::string &from, const std::string &to) {
+  if (std::filesystem::exists(to)) {
+    LOG_ERROR("Failed to move directory: " + from + " to " + to +
+              " because the destination directory already exists");
+    return false;
+  }
+  if (std::filesystem::exists(from)) {
+    LOG_ERROR("Failed to move directory: " + from + " to " + to +
+              " because the source directory does not exist");
+    return false;
+  }
+
+  try {
+    std::filesystem::rename(from, to);
+  } catch (const std::filesystem::filesystem_error &e) {
+    LOG_ERROR("Failed to move directory: " + from + " to " + to + " because " +
+              e.what());
+    return false;
+  }
+  return true;
+}
+
+inline bool RenameFile(const std::string &from, const std::string &to) {
+  if (std::filesystem::exists(to)) {
+    LOG_ERROR("Failed to rename file: " + from + " to " + to +
+              " because the destination file already exists");
+    return false;
+  }
+  if (std::filesystem::exists(from)) {
+    LOG_ERROR("Failed to rename file: " + from + " to " + to +
+              " because the source file does not exist");
+    return false;
+  }
+  try {
+    std::filesystem::rename(from, to);
+  } catch (const std::filesystem::filesystem_error &e) {
+    LOG_ERROR("Failed to rename file: " + from + " to " + to + " because " +
+              e.what());
+    return false;
+  }
+  return true;
+}
+
+inline std::size_t GetSubDirectoryCount(const std::string &path) {
+  std::size_t count = 0;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (std::filesystem::is_directory(entry)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+inline std::size_t GetDirectoryFileCount(const std::string &path) {
+  std::size_t size = 0;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (std::filesystem::is_regular_file(entry)) {
+      size++;
+    }
+  }
+  return size;
+}
+
+inline std::size_t GetDirectoryCount(const std::string &path) {
+  if(!std::filesystem::exists(path)) {
+    LOG_ERROR("Failed to get directory count because the directory does not exist: " + path);
+    return 0;
+  }
+  std::size_t size = 0;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (std::filesystem::is_directory(entry)) {
+      size++;
+    }
+    else if (std::filesystem::is_regular_file(entry)) {
+      size++;
+    }
+  }
+  return size;
+}
+
+inline std::size_t GetDirectorySize(const std::string &path) {
+  std::size_t size = 0;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (std::filesystem::is_regular_file(entry)) {
+      size += std::filesystem::file_size(entry);
+    } else if (std::filesystem::is_directory(entry)) {
+      size += GetDirectorySize(entry.path());
+    }
+  }
+  return size;
+}
+
+inline bool IsEmptyFile(const std::string &path) {
+  return GetFileSize(path) == 0;
+}
+
+inline bool IsEmptyDirectory(const std::string &path) {
+  return GetDirectoryCount(path) == 0;
+}
+
+inline bool IsFileExist(const std::string &filename) {
+  return std::filesystem::exists(filename);
+}
+
+inline std::vector<std::string> GetFilesInDirectory(const std::string &path) {
+  std::vector<std::string> files;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    files.push_back(entry.path());
+  }
+  return files;
+}
+
+inline std::vector<std::string>
+GetFilesInDirectoryWithExtension(const std::string &path,
+                                 const std::string &extension) {
+  std::vector<std::string> files;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (entry.path().extension() == extension) {
+      files.push_back(entry.path());
+    }
+  }
+  return files;
+}
+
+inline std::vector<std::string>
+GetFilesInDirectoryWithExtensions(const std::string &path,
+                                  const std::vector<std::string> &extensions) {
+  std::vector<std::string> files;
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    for (const auto &extension : extensions) {
+      if (entry.path().extension() == extension) {
+        files.push_back(entry.path());
+      }
+    }
+  }
+  return files;
+}
+
+inline bool RemoveFilesInDirectoryWithExtension(const std::string &path,
+                                                const std::string &extension) {
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    if (entry.path().extension() == extension) {
+      DeleteFile(entry.path());
+    }
+  }
+  return true;
+}
+
+inline bool RemoveFilesInDirectoryWithExtensions(
+    const std::string &path, const std::vector<std::string> &extensions) {
+  for (const auto &entry : std::filesystem::directory_iterator(path)) {
+    for (const auto &extension : extensions) {
+      if (entry.path().extension() == extension) {
+        DeleteFile(entry.path());
+      }
+    }
+  }
+  return true;
+}
+
 
 } // namespace file
 
