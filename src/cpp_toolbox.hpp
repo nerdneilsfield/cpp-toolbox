@@ -897,8 +897,27 @@ inline bool RemoveFilesInDirectoryWithExtensions(
   return true;
 }
 
-
 } // namespace file
+
+namespace env {
+  inline std::string GetEnv(const std::string &name) {
+    const char *value = std::getenv(name.c_str());
+    if (value == nullptr) {
+      LOG_WARNING("environment variable " + name + " is not set");
+      return "";
+    }
+    return std::string(value);
+  }
+
+  inline bool SetEnv(const std::string &name, const std::string &value) {
+    if (setenv(name.c_str(), value.c_str(), 1) != 0) {
+      LOG_ERROR("Failed to set environment variable " + name + " to " + value);
+      return false;
+    }
+    return true;
+  }
+} // namespace env;
+
 
 namespace container {} // namespace container
 

@@ -8,3 +8,4 @@ endmacro()
 # add tests
 add_exe_and_test(logger_test)
 add_exe_and_test(str_test)
+add_exe_and_test(env_test)
