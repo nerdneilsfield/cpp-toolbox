@@ -94,6 +94,18 @@ using u32 = uint32_t;
 using u64 = uint64_t;
 using f32 = float;
 using f64 = double;
+
+static_assert(sizeof(i8) == 1, "size of i8 is 1 byte");
+static_assert(sizeof(i16) == 2, "size of i16 is 2 bytes");
+static_assert(sizeof(i32) == 4, "size of i32 is 4 bytes");
+static_assert(sizeof(i64) == 8, "size of i64 is 8 bytes");
+static_assert(sizeof(u8) == 1, "size of u8 is 1 byte");
+static_assert(sizeof(u16) == 2, "size of u16 is 2 bytes");
+static_assert(sizeof(u32) == 4, "size of u32 is 4 bytes");
+static_assert(sizeof(u64) == 8, "size of u64 is 8 bytes");
+static_assert(sizeof(f32) == 4, "size of f32 is 4 bytes");
+static_assert(sizeof(f64) == 8, "size of f64 is 8 bytes");
+
 using ai8 = std::atomic<i8>;
 using ai16 = std::atomic<i16>;
 using ai32 = std::atomic<i32>;
@@ -105,6 +117,78 @@ using au64 = std::atomic<u64>;
 using abool = std::atomic<bool>;
 
 namespace cpp_toolbox {
+
+namespace compile {
+template <typename T> struct is_const { static constexpr bool value = false; };
+
+template <typename T> struct is_const<const T> {
+  static constexpr bool value = true;
+};
+
+template <typename T> constexpr bool is_const_v = is_const<T>::value;
+template <typename T> struct is_volatile {
+  static constexpr bool value = false;
+};
+
+template <typename T> struct is_volatile<volatile T> {
+  static constexpr bool value = true;
+};
+template <typename T> constexpr bool is_volatile_v = is_volatile<T>::value;
+
+template <typename T> struct is_const_volatile {
+  static constexpr bool value = false;
+};
+template <typename T> struct is_const_volatile<const volatile T> {
+  static constexpr bool value = true;
+};
+template <typename T>
+constexpr bool is_const_volatile_v = is_const_volatile<T>::value;
+
+template <typename T> struct is_pointer {
+  static constexpr bool value = false;
+};
+
+template <typename T> struct is_pointer<T *> {
+  static constexpr bool value = true;
+};
+template <typename T> constexpr bool is_pointer_v = is_pointer<T>::value;
+
+template <typename T> struct is_reference {
+  static constexpr bool value = false;
+};
+
+template <typename T> struct is_reference<T &> {
+  static constexpr bool value = true;
+};
+template <typename T> constexpr bool is_reference_v = is_reference<T>::value;
+
+template <typename T> struct is_rvalue_reference {
+  static constexpr bool value = false;
+};
+template <typename T> struct is_rvalue_reference<T &&> {
+  static constexpr bool value = true;
+};
+template <typename T>
+constexpr bool is_rvalue_reference_v = is_rvalue_reference<T>::value;
+
+template <typename T> struct is_void {
+  static constexpr bool value = false;
+};
+
+template <> struct is_void<void> { static constexpr bool value = true; };
+template <typename T> constexpr bool is_void_v = is_void<T>::value;
+
+template <typename T> struct is_array {
+  static constexpr bool value = false;
+};
+
+template <typename T, size_t N> struct is_array<T[N]> {
+  static constexpr bool value = true;
+};
+template <typename T> constexpr bool is_array_v = is_array<T>::value;
+
+
+} // namespace compile
 
 namespace console {
 
@@ -557,6 +641,11 @@ inline std::string StrEraseAllRegex(const std::string &str,
   return StrReplaceAllRegex(str, regex, "");
 }
 
+inline bool StrMatchRegex(const std::string &str, const std::string &regex) {
+  std::regex re(regex);
+  return std::regex_match(str, re);
+}
+
 } // namespace str
 
 namespace type {
@@ -891,7 +980,7 @@ inline bool IsFileExist(const std::string &filename) {
   return std::filesystem::exists(filename);
 }
 
-inline std::vector<std::string> GetFilesInDirectory(const std::string &path) {
+inline std::vector<std::string> ListFilesInDirectory(const std::string &path) {
   std::vector<std::string> files;
   for (const auto &entry : std::filesystem::directory_iterator(path)) {
     files.push_back(entry.path());
@@ -900,8 +989,8 @@ inline std::vector<std::string> GetFilesInDirectory(const std::string &path) {
 }
 
 inline std::vector<std::string>
-GetFilesInDirectoryWithExtension(const std::string &path,
-                                 const std::string &extension) {
+ListFilesInDirectoryWithExtension(const std::string &path,
+                                  const std::string &extension) {
   std::vector<std::string> files;
   for (const auto &entry : std::filesystem::directory_iterator(path)) {
     if (entry.path().extension() == extension) {
@@ -912,8 +1001,8 @@ GetFilesInDirectoryWithExtension(const std::string &path,
 }
 
 inline std::vector<std::string>
-GetFilesInDirectoryWithExtensions(const std::string &path,
-                                  const std::vector<std::string> &extensions) {
+ListFilesInDirectoryWithExtensions(const std::string &path,
+                                   const std::vector<std::string> &extensions) {
   std::vector<std::string> files;
   for (const auto &entry : std::filesystem::directory_iterator(path)) {
     for (const auto &extension : extensions) {
