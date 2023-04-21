@@ -6,18 +6,24 @@
 #include <atomic>
 #include <cctype>
 #include <cmath>
+#include <condition_variable>
 #include <cstdint>
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>
 #include <fstream>
+#include <functional>
+#include <future>
 #include <iostream>
 #include <iterator>
 #include <locale>
 #include <memory>
+#include <mutex>
+#include <queue>
 #include <regex>
 #include <sstream>
 #include <string>
+#include <thread>
 #include <type_traits>
 #include <unordered_map>
 #include <vector>
@@ -27,6 +33,40 @@
 #else
 #define FUNCTION __PRETTY_FUNCTION__
 #endif
+
+#if __GNUC__ >= 3
+#define NORETURN __attribute__((noreturn))
+#define likely(x) __builtin_expect((x), 1)
+#define unlikely(x) __builtin_expect((x), 0)
+#else
+#define NORETURN /* nothing */
+#define likely(x) (x)
+#define unlikely(x) (x)
+#endif
+
+#define CACHELINE_SIZE 64
+
+#define UNUSED(x) (void)(x)
+#define UNUSED_RETURN(x) (void)(x)
+#define UNUSED_RETURN_VOID(x) (void)(x)
+#define UNUSED_VOID(x) (void)(x)
+#define UNUSED_VOID_RETURN(x) (void)(x)
+#define UNUSED_VOID_RETURN_VOID(x) (void)(x)
+
+#define ARRAY_SIZE(x) (sizeof(x) / sizeof(x[0]))
+
+#define DEFINE_TYPE_TRAIT(name, func)                                          \
+  template <typename T> struct name {                                          \
+    template <typename Class>                                                  \
+    static constexpr bool Test(decltype(&Class::func) *) {                     \
+      return true;                                                             \
+    }                                                                          \
+    template <typename> static constexpr bool Test(...) { return false; }      \
+                                                                               \
+    static constexpr bool value = Test<T>(nullptr);                            \
+  };                                                                           \
+                                                                               \
+  template <typename T> constexpr bool name<T>::value;
 
 // log macros
 #define LOG_ERROR(...)                                                         \
@@ -801,16 +841,17 @@ inline std::size_t GetDirectoryFileCount(const std::string &path) {
 }
 
 inline std::size_t GetDirectoryCount(const std::string &path) {
-  if(!std::filesystem::exists(path)) {
-    LOG_ERROR("Failed to get directory count because the directory does not exist: " + path);
+  if (!std::filesystem::exists(path)) {
+    LOG_ERROR(
+        "Failed to get directory count because the directory does not exist: " +
+        path);
     return 0;
   }
   std::size_t size = 0;
   for (const auto &entry : std::filesystem::directory_iterator(path)) {
     if (std::filesystem::is_directory(entry)) {
       size++;
-    }
-    else if (std::filesystem::is_regular_file(entry)) {
+    } else if (std::filesystem::is_regular_file(entry)) {
       size++;
     }
   }
@@ -900,26 +941,735 @@ inline bool RemoveFilesInDirectoryWithExtensions(
 } // namespace file
 
 namespace env {
-  inline std::string GetEnv(const std::string &name) {
-    const char *value = std::getenv(name.c_str());
-    if (value == nullptr) {
-      LOG_WARNING("environment variable " + name + " is not set");
-      return "";
-    }
-    return std::string(value);
+inline std::string GetEnv(const std::string &name) {
+  const char *value = std::getenv(name.c_str());
+  if (value == nullptr) {
+    LOG_WARNING("environment variable " + name + " is not set");
+    return "";
+  }
+  return std::string(value);
+}
+
+inline bool SetEnv(const std::string &name, const std::string &value) {
+  if (setenv(name.c_str(), value.c_str(), 1) != 0) {
+    LOG_ERROR("Failed to set environment variable " + name + " to " + value);
+    return false;
+  }
+  return true;
+}
+} // namespace env
+
+namespace memory {
+inline void *CheckedMalloc(std::size_t size) {
+  void *ptr = std::malloc(size);
+  if (ptr == nullptr) {
+    LOG_ERROR("Failed to allocate memory of size " + std::to_string(size));
+    throw std::bad_alloc();
+  }
+  return ptr;
+}
+inline void *CheckedCalloc(std::size_t size) {
+  void *ptr = std::calloc(size, 1);
+  if (ptr == nullptr) {
+    LOG_ERROR("Failed to allocate memory of size " + std::to_string(size));
+    throw std::bad_alloc();
+  }
+  return ptr;
+}
+
+inline void *CheckedRealloc(void *ptr, std::size_t size) {
+  void *new_ptr = std::realloc(ptr, size);
+  if (new_ptr == nullptr) {
+    LOG_ERROR("Failed to reallocate memory of size " + std::to_string(size));
+    throw std::bad_alloc();
+  }
+  return new_ptr;
+}
+
+inline void CheckedFree(void *ptr) {
+  if (ptr != nullptr) {
+    std::free(ptr);
+  }
+}
+
+inline void *AlignedMalloc(std::size_t size, std::size_t alignment) {
+  void *ptr = nullptr;
+  if (posix_memalign(&ptr, alignment, size) != 0) {
+    LOG_ERROR("Failed to allocate aligned memory of size " +
+              std::to_string(size) + " with alignment " +
+              std::to_string(alignment));
+    throw std::bad_alloc();
+  }
+  return ptr;
+}
+
+inline void AlignedFree(void *ptr) {
+  if (ptr != nullptr) {
+    free(ptr);
+  }
+}
+
+inline void *AlignedRealloc(void *ptr, std::size_t size,
+                            std::size_t alignment) {
+  void *new_ptr = nullptr;
+  if (posix_memalign(&new_ptr, alignment, size) != 0) {
+    LOG_ERROR("Failed to allocate aligned memory of size " +
+              std::to_string(size) + " with alignment " +
+              std::to_string(alignment));
+    throw std::bad_alloc();
+  }
+  if (ptr != nullptr) {
+    std::memcpy(new_ptr, ptr, size);
+    free(ptr);
+  }
+  return new_ptr;
+}
+
+inline void *AlignedZeroMalloc(std::size_t size, std::size_t alignment) {
+  void *ptr = nullptr;
+  if (posix_memalign(&ptr, alignment, size) != 0) {
+    LOG_ERROR("Failed to allocate aligned memory of size " +
+              std::to_string(size) + " with alignment " +
+              std::to_string(alignment));
+    throw std::bad_alloc();
+  }
+  std::memset(ptr, 0, size);
+  return ptr;
+}
+
+inline void AlignedZeroFree(void *ptr) {
+  if (ptr != nullptr) {
+    free(ptr);
+  }
+}
+} // namespace memory
+
+namespace lower {
+inline void CpuRelax() {
+#if defined(__aarch64__)
+  asm volatile("yield" ::: "memory");
+#else
+  asm volatile("rep; nop" ::: "memory");
+#endif
+}
+} // namespace lower
+
+namespace thread {
+template <typename RWLock> class ReadLockGuard {
+public:
+  explicit ReadLockGuard(RWLock &lock) : rw_lock_(lock) { rw_lock_.ReadLock(); }
+
+  ~ReadLockGuard() { rw_lock_.ReadUnlock(); }
+
+private:
+  ReadLockGuard(const ReadLockGuard &other) = delete;
+  ReadLockGuard &operator=(const ReadLockGuard &other) = delete;
+  RWLock &rw_lock_;
+};
+
+template <typename RWLock> class WriteLockGuard {
+public:
+  explicit WriteLockGuard(RWLock &lock) : rw_lock_(lock) {
+    rw_lock_.WriteLock();
   }
 
-  inline bool SetEnv(const std::string &name, const std::string &value) {
-    if (setenv(name.c_str(), value.c_str(), 1) != 0) {
-      LOG_ERROR("Failed to set environment variable " + name + " to " + value);
+  ~WriteLockGuard() { rw_lock_.WriteUnlock(); }
+
+private:
+  WriteLockGuard(const WriteLockGuard &other) = delete;
+  WriteLockGuard &operator=(const WriteLockGuard &other) = delete;
+  RWLock &rw_lock_;
+};
+
+class AtomicRWLock {
+  friend class ReadLockGuard<AtomicRWLock>;
+  friend class WriteLockGuard<AtomicRWLock>;
+
+public:
+  static const int32_t RW_LOCK_FREE = 0;
+  static const int32_t WRITE_EXCLUSIVE = -1;
+  static const uint32_t MAX_RETRY_TIMES = 5;
+  AtomicRWLock() {}
+  explicit AtomicRWLock(bool write_first) : write_first_(write_first) {}
+
+private:
+  // all these function only can used by ReadLockGuard/WriteLockGuard;
+  void ReadLock();
+  void WriteLock();
+
+  void ReadUnlock();
+  void WriteUnlock();
+
+  AtomicRWLock(const AtomicRWLock &) = delete;
+  AtomicRWLock &operator=(const AtomicRWLock &) = delete;
+  std::atomic<uint32_t> write_lock_wait_num_ = {0};
+  std::atomic<int32_t> lock_num_ = {0};
+  bool write_first_ = true;
+};
+
+inline void AtomicRWLock::ReadLock() {
+  uint32_t retry_times = 0;
+  int32_t lock_num = lock_num_.load();
+  if (write_first_) {
+    do {
+      while (lock_num < RW_LOCK_FREE || write_lock_wait_num_.load() > 0) {
+        if (++retry_times == MAX_RETRY_TIMES) {
+          // saving cpu
+          std::this_thread::yield();
+          retry_times = 0;
+        }
+        lock_num = lock_num_.load();
+      }
+    } while (!lock_num_.compare_exchange_weak(lock_num, lock_num + 1,
+                                              std::memory_order_acq_rel,
+                                              std::memory_order_relaxed));
+  } else {
+    do {
+      while (lock_num < RW_LOCK_FREE) {
+        if (++retry_times == MAX_RETRY_TIMES) {
+          // saving cpu
+          std::this_thread::yield();
+          retry_times = 0;
+        }
+        lock_num = lock_num_.load();
+      }
+    } while (!lock_num_.compare_exchange_weak(lock_num, lock_num + 1,
+                                              std::memory_order_acq_rel,
+                                              std::memory_order_relaxed));
+  }
+}
+
+inline void AtomicRWLock::WriteLock() {
+  int32_t rw_lock_free = RW_LOCK_FREE;
+  uint32_t retry_times = 0;
+  write_lock_wait_num_.fetch_add(1);
+  while (!lock_num_.compare_exchange_weak(rw_lock_free, WRITE_EXCLUSIVE,
+                                          std::memory_order_acq_rel,
+                                          std::memory_order_relaxed)) {
+    // rw_lock_free will change after CAS fail, so init agin
+    rw_lock_free = RW_LOCK_FREE;
+    if (++retry_times == MAX_RETRY_TIMES) {
+      // saving cpu
+      std::this_thread::yield();
+      retry_times = 0;
+    }
+  }
+  write_lock_wait_num_.fetch_sub(1);
+}
+
+inline void AtomicRWLock::ReadUnlock() { lock_num_.fetch_sub(1); }
+
+inline void AtomicRWLock::WriteUnlock() { lock_num_.fetch_add(1); }
+
+static const std::thread::id NULL_THREAD_ID = std::thread::id();
+class ReentrantRWLock {
+  friend class ReadLockGuard<ReentrantRWLock>;
+  friend class WriteLockGuard<ReentrantRWLock>;
+
+public:
+  static const int32_t RW_LOCK_FREE = 0;
+  static const int32_t WRITE_EXCLUSIVE = -1;
+  static const uint32_t MAX_RETRY_TIMES = 5;
+  static const std::thread::id null_thread;
+  ReentrantRWLock() {}
+  explicit ReentrantRWLock(bool write_first) : write_first_(write_first) {}
+
+private:
+  // all these function only can used by ReadLockGuard/WriteLockGuard;
+  void ReadLock();
+  void WriteLock();
+
+  void ReadUnlock();
+  void WriteUnlock();
+
+  ReentrantRWLock(const ReentrantRWLock &) = delete;
+  ReentrantRWLock &operator=(const ReentrantRWLock &) = delete;
+  std::thread::id write_thread_id_ = {NULL_THREAD_ID};
+  std::atomic<uint32_t> write_lock_wait_num_ = {0};
+  std::atomic<int32_t> lock_num_ = {0};
+  bool write_first_ = true;
+};
+
+inline void ReentrantRWLock::ReadLock() {
+  if (write_thread_id_ == std::this_thread::get_id()) {
+    return;
+  }
+
+  uint32_t retry_times = 0;
+  int32_t lock_num = lock_num_.load(std::memory_order_acquire);
+  if (write_first_) {
+    do {
+      while (lock_num < RW_LOCK_FREE ||
+             write_lock_wait_num_.load(std::memory_order_acquire) > 0) {
+        if (++retry_times == MAX_RETRY_TIMES) {
+          // saving cpu
+          std::this_thread::yield();
+          retry_times = 0;
+        }
+        lock_num = lock_num_.load(std::memory_order_acquire);
+      }
+    } while (!lock_num_.compare_exchange_weak(lock_num, lock_num + 1,
+                                              std::memory_order_acq_rel,
+                                              std::memory_order_relaxed));
+  } else {
+    do {
+      while (lock_num < RW_LOCK_FREE) {
+        if (++retry_times == MAX_RETRY_TIMES) {
+          // saving cpu
+          std::this_thread::yield();
+          retry_times = 0;
+        }
+        lock_num = lock_num_.load(std::memory_order_acquire);
+      }
+    } while (!lock_num_.compare_exchange_weak(lock_num, lock_num + 1,
+                                              std::memory_order_acq_rel,
+                                              std::memory_order_relaxed));
+  }
+}
+
+inline void ReentrantRWLock::WriteLock() {
+  auto this_thread_id = std::this_thread::get_id();
+  if (write_thread_id_ == this_thread_id) {
+    lock_num_.fetch_sub(1);
+    return;
+  }
+  int32_t rw_lock_free = RW_LOCK_FREE;
+  uint32_t retry_times = 0;
+  write_lock_wait_num_.fetch_add(1);
+  while (!lock_num_.compare_exchange_weak(rw_lock_free, WRITE_EXCLUSIVE,
+                                          std::memory_order_acq_rel,
+                                          std::memory_order_relaxed)) {
+    // rw_lock_free will change after CAS fail, so init agin
+    rw_lock_free = RW_LOCK_FREE;
+    if (++retry_times == MAX_RETRY_TIMES) {
+      // saving cpu
+      std::this_thread::yield();
+      retry_times = 0;
+    }
+  }
+  write_thread_id_ = this_thread_id;
+  write_lock_wait_num_.fetch_sub(1);
+}
+
+inline void ReentrantRWLock::ReadUnlock() {
+  if (write_thread_id_ == std::this_thread::get_id()) {
+    return;
+  }
+  lock_num_.fetch_sub(1);
+}
+
+inline void ReentrantRWLock::WriteUnlock() {
+  if (lock_num_.fetch_add(1) == WRITE_EXCLUSIVE) {
+    write_thread_id_ = NULL_THREAD_ID;
+  }
+}
+
+class WaitStrategy {
+public:
+  virtual void NotifyOne() {}
+  virtual void BreakAllWait() {}
+  virtual bool EmptyWait() = 0;
+  virtual ~WaitStrategy() {}
+};
+
+class BlockWaitStrategy : public WaitStrategy {
+public:
+  BlockWaitStrategy() {}
+  void NotifyOne() override { cv_.notify_one(); }
+
+  bool EmptyWait() override {
+    std::unique_lock<std::mutex> lock(mutex_);
+    cv_.wait(lock);
+    return true;
+  }
+
+  void BreakAllWait() override { cv_.notify_all(); }
+
+private:
+  std::mutex mutex_;
+  std::condition_variable cv_;
+};
+
+class SleepWaitStrategy : public WaitStrategy {
+public:
+  SleepWaitStrategy() {}
+  explicit SleepWaitStrategy(uint64_t sleep_time_us)
+      : sleep_time_us_(sleep_time_us) {}
+
+  bool EmptyWait() override {
+    std::this_thread::sleep_for(std::chrono::microseconds(sleep_time_us_));
+    return true;
+  }
+
+  void SetSleepTimeMicroSeconds(uint64_t sleep_time_us) {
+    sleep_time_us_ = sleep_time_us;
+  }
+
+private:
+  uint64_t sleep_time_us_ = 10000;
+};
+
+class YieldWaitStrategy : public WaitStrategy {
+public:
+  YieldWaitStrategy() {}
+  bool EmptyWait() override {
+    std::this_thread::yield();
+    return true;
+  }
+};
+
+class BusySpinWaitStrategy : public WaitStrategy {
+public:
+  BusySpinWaitStrategy() {}
+  bool EmptyWait() override { return true; }
+};
+
+class TimeoutBlockWaitStrategy : public WaitStrategy {
+public:
+  TimeoutBlockWaitStrategy() {}
+  explicit TimeoutBlockWaitStrategy(uint64_t timeout)
+      : time_out_(std::chrono::milliseconds(timeout)) {}
+
+  void NotifyOne() override { cv_.notify_one(); }
+
+  bool EmptyWait() override {
+    std::unique_lock<std::mutex> lock(mutex_);
+    if (cv_.wait_for(lock, time_out_) == std::cv_status::timeout) {
       return false;
     }
     return true;
   }
-} // namespace env;
 
+  void BreakAllWait() override { cv_.notify_all(); }
 
-namespace container {} // namespace container
+  void SetTimeout(uint64_t timeout) {
+    time_out_ = std::chrono::milliseconds(timeout);
+  }
+
+private:
+  std::mutex mutex_;
+  std::condition_variable cv_;
+  std::chrono::milliseconds time_out_;
+};
+
+template <typename T> class BoundedQueue {
+public:
+  using value_type = T;
+  using size_type = uint64_t;
+
+public:
+  BoundedQueue() {}
+  BoundedQueue &operator=(const BoundedQueue &other) = delete;
+  BoundedQueue(const BoundedQueue &other) = delete;
+  ~BoundedQueue();
+  bool Init(uint64_t size);
+  bool Init(uint64_t size, WaitStrategy *strategy);
+  bool Enqueue(const T &element);
+  bool Enqueue(T &&element);
+  bool WaitEnqueue(const T &element);
+  bool WaitEnqueue(T &&element);
+  bool Dequeue(T *element);
+  bool WaitDequeue(T *element);
+  uint64_t Size();
+  bool Empty();
+  void SetWaitStrategy(WaitStrategy *WaitStrategy);
+  void BreakAllWait();
+  uint64_t Head() { return head_.load(); }
+  uint64_t Tail() { return tail_.load(); }
+  uint64_t Commit() { return commit_.load(); }
+
+private:
+  uint64_t GetIndex(uint64_t num);
+
+  alignas(CACHELINE_SIZE) std::atomic<uint64_t> head_ = {0};
+  alignas(CACHELINE_SIZE) std::atomic<uint64_t> tail_ = {1};
+  alignas(CACHELINE_SIZE) std::atomic<uint64_t> commit_ = {1};
+  // alignas(CACHELINE_SIZE) std::atomic<uint64_t> size_ = {0};
+  uint64_t pool_size_ = 0;
+  T *pool_ = nullptr;
+  std::unique_ptr<WaitStrategy> wait_strategy_ = nullptr;
+  volatile bool break_all_wait_ = false;
+};
+
+template <typename T> BoundedQueue<T>::~BoundedQueue() {
+  if (wait_strategy_) {
+    BreakAllWait();
+  }
+  if (pool_) {
+    for (uint64_t i = 0; i < pool_size_; ++i) {
+      pool_[i].~T();
+    }
+    std::free(pool_);
+  }
+}
+
+template <typename T> inline bool BoundedQueue<T>::Init(uint64_t size) {
+  return Init(size, new SleepWaitStrategy());
+}
+
+template <typename T>
+bool BoundedQueue<T>::Init(uint64_t size, WaitStrategy *strategy) {
+  // Head and tail each occupy a space
+  pool_size_ = size + 2;
+  pool_ = reinterpret_cast<T *>(std::calloc(pool_size_, sizeof(T)));
+  if (pool_ == nullptr) {
+    return false;
+  }
+  for (uint64_t i = 0; i < pool_size_; ++i) {
+    new (&(pool_[i])) T();
+  }
+  wait_strategy_.reset(strategy);
+  return true;
+}
+
+template <typename T> bool BoundedQueue<T>::Enqueue(const T &element) {
+  uint64_t new_tail = 0;
+  uint64_t old_commit = 0;
+  uint64_t old_tail = tail_.load(std::memory_order_acquire);
+  do {
+    new_tail = old_tail + 1;
+    if (GetIndex(new_tail) == GetIndex(head_.load(std::memory_order_acquire))) {
+      return false;
+    }
+  } while (!tail_.compare_exchange_weak(old_tail, new_tail,
+                                        std::memory_order_acq_rel,
+                                        std::memory_order_relaxed));
+  pool_[GetIndex(old_tail)] = element;
+  do {
+    old_commit = old_tail;
+  } while (unlikely(!commit_.compare_exchange_weak(old_commit, new_tail,
+                                                   std::memory_order_acq_rel,
+                                                   std::memory_order_relaxed)));
+  wait_strategy_->NotifyOne();
+  return true;
+}
+
+template <typename T> bool BoundedQueue<T>::Enqueue(T &&element) {
+  uint64_t new_tail = 0;
+  uint64_t old_commit = 0;
+  uint64_t old_tail = tail_.load(std::memory_order_acquire);
+  do {
+    new_tail = old_tail + 1;
+    if (GetIndex(new_tail) == GetIndex(head_.load(std::memory_order_acquire))) {
+      return false;
+    }
+  } while (!tail_.compare_exchange_weak(old_tail, new_tail,
+                                        std::memory_order_acq_rel,
+                                        std::memory_order_relaxed));
+  pool_[GetIndex(old_tail)] = std::move(element);
+  do {
+    old_commit = old_tail;
+  } while (unlikely(!commit_.compare_exchange_weak(old_commit, new_tail,
+                                                   std::memory_order_acq_rel,
+                                                   std::memory_order_relaxed)));
+  wait_strategy_->NotifyOne();
+  return true;
+}
+
+template <typename T> bool BoundedQueue<T>::Dequeue(T *element) {
+  uint64_t new_head = 0;
+  uint64_t old_head = head_.load(std::memory_order_acquire);
+  do {
+    new_head = old_head + 1;
+    if (new_head == commit_.load(std::memory_order_acquire)) {
+      return false;
+    }
+    *element = pool_[GetIndex(new_head)];
+  } while (!head_.compare_exchange_weak(old_head, new_head,
+                                        std::memory_order_acq_rel,
+                                        std::memory_order_relaxed));
+  return true;
+}
+
+template <typename T> bool BoundedQueue<T>::WaitEnqueue(const T &element) {
+  while (!break_all_wait_) {
+    if (Enqueue(element)) {
+      return true;
+    }
+    if (wait_strategy_->EmptyWait()) {
+      continue;
+    }
+    // wait timeout
+    break;
+  }
+
+  return false;
+}
+
+template <typename T> bool BoundedQueue<T>::WaitEnqueue(T &&element) {
+  while (!break_all_wait_) {
+    if (Enqueue(std::move(element))) {
+      return true;
+    }
+    if (wait_strategy_->EmptyWait()) {
+      continue;
+    }
+    // wait timeout
+    break;
+  }
+
+  return false;
+}
+
+template <typename T> bool BoundedQueue<T>::WaitDequeue(T *element) {
+  while (!break_all_wait_) {
+    if (Dequeue(element)) {
+      return true;
+    }
+    if (wait_strategy_->EmptyWait()) {
+      continue;
+    }
+    // wait timeout
+    break;
+  }
+
+  return false;
+}
+
+template <typename T> inline uint64_t BoundedQueue<T>::Size() {
+  return tail_ - head_ - 1;
+}
+
+template <typename T> inline bool BoundedQueue<T>::Empty() {
+  return Size() == 0;
+}
+
+template <typename T> inline uint64_t BoundedQueue<T>::GetIndex(uint64_t num) {
+  return num - (num / pool_size_) * pool_size_; // faster than %
+}
+
+template <typename T>
+inline void BoundedQueue<T>::SetWaitStrategy(WaitStrategy *strategy) {
+  wait_strategy_.reset(strategy);
+}
+
+template <typename T> inline void BoundedQueue<T>::BreakAllWait() {
+  break_all_wait_ = true;
+  wait_strategy_->BreakAllWait();
+}
+
+class ThreadPool {
+public:
+  explicit ThreadPool(std::size_t thread_num, std::size_t max_task_num = 1000);
+
+  template <typename F, typename... Args>
+  auto Enqueue(F &&f, Args &&...args)
+      -> std::future<typename std::result_of<F(Args...)>::type>;
+
+  ~ThreadPool();
+
+private:
+  std::vector<std::thread> workers_;
+  BoundedQueue<std::function<void()>> task_queue_;
+  std::atomic_bool stop_;
+};
+
+inline ThreadPool::ThreadPool(std::size_t threads, std::size_t max_task_num)
+    : stop_(false) {
+  if (!task_queue_.Init(max_task_num, new BlockWaitStrategy())) {
+    throw std::runtime_error("Task queue init failed.");
+  }
+  workers_.reserve(threads);
+  for (size_t i = 0; i < threads; ++i) {
+    workers_.emplace_back([this] {
+      while (!stop_) {
+        std::function<void()> task;
+        if (task_queue_.WaitDequeue(&task)) {
+          task();
+        }
+      }
+    });
+  }
+}
+
+// before using the return value, you should check value.valid()
+template <typename F, typename... Args>
+auto ThreadPool::Enqueue(F &&f, Args &&...args)
+    -> std::future<typename std::result_of<F(Args...)>::type> {
+  using return_type = typename std::result_of<F(Args...)>::type;
+
+  auto task = std::make_shared<std::packaged_task<return_type()>>(
+      std::bind(std::forward<F>(f), std::forward<Args>(args)...));
+
+  std::future<return_type> res = task->get_future();
+
+  // don't allow enqueueing after stopping the pool
+  if (stop_) {
+    return std::future<return_type>();
+  }
+  task_queue_.Enqueue([task]() { (*task)(); });
+  return res;
+};
+
+// the destructor joins all threads
+inline ThreadPool::~ThreadPool() {
+  if (stop_.exchange(true)) {
+    return;
+  }
+  task_queue_.BreakAllWait();
+  for (std::thread &worker : workers_) {
+    worker.join();
+  }
+}
+
+template <typename T> class ThreadSafeQueue {
+public:
+  ThreadSafeQueue() {}
+  ThreadSafeQueue &operator=(const ThreadSafeQueue &other) = delete;
+  ThreadSafeQueue(const ThreadSafeQueue &other) = delete;
+
+  ~ThreadSafeQueue() { BreakAllWait(); }
+
+  void Enqueue(const T &element) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    queue_.emplace(element);
+    cv_.notify_one();
+  }
+
+  bool Dequeue(T *element) {
+    std::lock_guard<std::mutex> lock(mutex_);
+    if (queue_.empty()) {
+      return false;
+    }
+    *element = std::move(queue_.front());
+    queue_.pop();
+    return true;
+  }
+
+  bool WaitDequeue(T *element) {
+    std::unique_lock<std::mutex> lock(mutex_);
+    cv_.wait(lock, [this]() { return break_all_wait_ || !queue_.empty(); });
+    if (break_all_wait_) {
+      return false;
+    }
+    *element = std::move(queue_.front());
+    queue_.pop();
+    return true;
+  }
+
+  typename std::queue<T>::size_type Size() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    return queue_.size();
+  }
+
+  bool Empty() {
+    std::lock_guard<std::mutex> lock(mutex_);
+    return queue_.empty();
+  }
+
+  void BreakAllWait() {
+    break_all_wait_ = true;
+    cv_.notify_all();
+  }
+
+private:
+  volatile bool break_all_wait_ = false;
+  std::mutex mutex_;
+  std::queue<T> queue_;
+  std::condition_variable cv_;
+};
+
+} // namespace thread
 
 namespace io {
 
