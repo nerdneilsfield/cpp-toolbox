@@ -171,22 +171,17 @@ template <typename T> struct is_rvalue_reference<T &&> {
 template <typename T>
 constexpr bool is_rvalue_reference_v = is_rvalue_reference<T>::value;
 
-template <typename T> struct is_void {
-  static constexpr bool value = false;
-};
+template <typename T> struct is_void { static constexpr bool value = false; };
 
 template <> struct is_void<void> { static constexpr bool value = true; };
 template <typename T> constexpr bool is_void_v = is_void<T>::value;
 
-template <typename T> struct is_array {
-  static constexpr bool value = false;
-};
+template <typename T> struct is_array { static constexpr bool value = false; };
 
 template <typename T, size_t N> struct is_array<T[N]> {
   static constexpr bool value = true;
 };
 template <typename T> constexpr bool is_array_v = is_array<T>::value;
-
 
 } // namespace compile
 
@@ -516,6 +511,48 @@ inline std::string StrTrimRight(const std::string &str) {
     --end;
   }
   return std::string(str.begin(), end);
+}
+
+inline std::string StrStripLeft(const std::string &str,
+                                const std::string &chars) {
+  auto begin = str.begin();
+  while (begin != str.end() && chars.find(*begin) != std::string::npos) {
+    ++begin;
+  }
+  return std::string(begin, str.end());
+}
+
+inline std::string StrStripRight(const std::string &str,
+                                 const std::string &chars) {
+  auto end = str.end();
+  while (end != str.begin() && chars.find(*(end - 1)) != std::string::npos) {
+    --end;
+  }
+  return std::string(str.begin(), end);
+}
+
+inline std::string StrStrip(const std::string &str, const std::string &chars) {
+  return StrStripRight(StrStripLeft(str, chars), chars);
+}
+
+template <typename T> T StripLeft(const T &str, const std::string &chars) {
+  return FromString<T>(StrStripLeft(ToString(str), chars));
+}
+
+template <typename T> T StripRight(const T &str, const std::string &chars) {
+  return FromString<T>(StrStripRight(ToString(str), chars));
+}
+
+template <typename T> T Strip(const T &str, const std::string &chars) {
+  return FromString<T>(StrStrip(ToString(str), chars));
+}
+
+template <typename T> T TrimLeft(const T &str) {
+  return FromString<T>(StrTrimLeft(ToString(str)));
+}
+
+template <typename T> T TrimRight(const T &str) {
+  return FromString<T>(StrTrimRight(ToString(str)));
 }
 
 template <typename T> T Trim(const T &str) {
@@ -1852,6 +1889,8 @@ private:
 };
 
 } // namespace thread
+
+namespace timer {} // namespace timer
 
 namespace io {
 
