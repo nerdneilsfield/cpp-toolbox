@@ -1924,7 +1924,7 @@ public:
   // std::unordered_map<std::string, bool> attr_dtype;
 };
 
-static bool InitializePCDHeader(PCDHeader &header) { return false; }
+// static bool InitializePCDHeader(PCDHeader &header) { return false; }
 
 } // namespace io
 
