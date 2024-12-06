@@ -1,17 +1,17 @@
 # ---- Developer mode ----
 
 # Developer mode enables targets and code paths in the CMake scripts that are
-# only relevant for the developer(s) of cpp-toolbox-new
+# only relevant for the developer(s) of cpp-toolbox
 # Targets necessary to build the project must be provided unconditionally, so
 # consumers can trivially build and package the project
 if(PROJECT_IS_TOP_LEVEL)
-  option(cpp-toolbox-new_DEVELOPER_MODE "Enable developer mode" OFF)
+  option(cpp-toolbox_DEVELOPER_MODE "Enable developer mode" OFF)
   option(BUILD_SHARED_LIBS "Build shared libs." OFF)
 endif()
 
 # ---- Suppress C4251 on Windows ----
 
-# Please see include/cpp-toolbox-new/cpp-toolbox-new.hpp for more details
+# Please see include/cpp-toolbox/cpp-toolbox.hpp for more details
 set(pragma_suppress_c4251 "
 /* This needs to suppress only for MSVC */
 #if defined(_MSC_VER) && !defined(__ICL)
@@ -30,12 +30,12 @@ set(pragma_suppress_c4251 "
 set(warning_guard "")
 if(NOT PROJECT_IS_TOP_LEVEL)
   option(
-      cpp-toolbox-new_INCLUDES_WITH_SYSTEM
-      "Use SYSTEM modifier for cpp-toolbox-new's includes, disabling warnings"
+      cpp-toolbox_INCLUDES_WITH_SYSTEM
+      "Use SYSTEM modifier for cpp-toolbox's includes, disabling warnings"
       ON
   )
-  mark_as_advanced(cpp-toolbox-new_INCLUDES_WITH_SYSTEM)
-  if(cpp-toolbox-new_INCLUDES_WITH_SYSTEM)
+  mark_as_advanced(cpp-toolbox_INCLUDES_WITH_SYSTEM)
+  if(cpp-toolbox_INCLUDES_WITH_SYSTEM)
     set(warning_guard SYSTEM)
   endif()
 endif()

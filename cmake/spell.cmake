@@ -16,7 +16,7 @@ endif()
 
 execute_process(
     COMMAND "${SPELL_COMMAND}" ${flag}
-    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}"
+    WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/src"
     RESULT_VARIABLE result
 )
 

@@ -1,6 +1,6 @@
 set(
     FORMAT_PATTERNS
-    source/*.cpp source/*.hpp
+    src/*.cpp src/*.hpp
     include/*.hpp
     test/*.cpp test/*.hpp
     CACHE STRING
@@ -10,24 +10,57 @@ set(
 set(FORMAT_COMMAND clang-format CACHE STRING "Formatter to use")
 
 add_custom_target(
-    format-check
+    format-check-src
     COMMAND "${CMAKE_COMMAND}"
     -D "FORMAT_COMMAND=${FORMAT_COMMAND}"
     -D "PATTERNS=${FORMAT_PATTERNS}"
     -P "${PROJECT_SOURCE_DIR}/cmake/lint.cmake"
-    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
     COMMENT "Linting the code"
     VERBATIM
 )
 
 add_custom_target(
-    format-fix
+    format-check-test
+    COMMAND "${CMAKE_COMMAND}"
+    -D "FORMAT_COMMAND=${FORMAT_COMMAND}"
+    -D "PATTERNS=${FORMAT_PATTERNS}"
+    -P "${PROJECT_SOURCE_DIR}/cmake/lint.cmake"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
+    COMMENT "Linting the code"
+    VERBATIM
+)
+
+add_custom_target(
+    format-check
+    DEPENDS format-check-src format-check-test
+)
+
+add_custom_target(
+    format-fix-src
     COMMAND "${CMAKE_COMMAND}"
     -D "FORMAT_COMMAND=${FORMAT_COMMAND}"
     -D "PATTERNS=${FORMAT_PATTERNS}"
     -D FIX=YES
     -P "${PROJECT_SOURCE_DIR}/cmake/lint.cmake"
-    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
     COMMENT "Fixing the code"
     VERBATIM
+)
+
+add_custom_target(
+    format-fix-test
+    COMMAND "${CMAKE_COMMAND}"
+    -D "FORMAT_COMMAND=${FORMAT_COMMAND}"
+    -D "PATTERNS=${FORMAT_PATTERNS}"
+    -D FIX=YES
+    -P "${PROJECT_SOURCE_DIR}/cmake/lint.cmake"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}/src"
+    COMMENT "Fixing the code"
+    VERBATIM
+)
+
+add_custom_target(
+    format-fix
+    DEPENDS format-fix-src format-fix-test
 )
