@@ -1,6 +1,6 @@
-# cpp-toolbox-new
+# cpp-toolbox
 
-This is the cpp-toolbox-new project.
+This is the cpp-toolbox project.
 
 # Building and installing
 

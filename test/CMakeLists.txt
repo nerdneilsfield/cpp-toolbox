@@ -1,25 +1,28 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(cpp-toolbox-newTests LANGUAGES CXX)
+project(cpp-toolboxTests LANGUAGES CXX C)
 
 include(../cmake/project-is-top-level.cmake)
 include(../cmake/folders.cmake)
 
-# ---- Dependencies ----
+# # ---- Dependencies ----
 
 if(PROJECT_IS_TOP_LEVEL)
-  find_package(cpp-toolbox-new REQUIRED)
+  find_package(cpp-toolbox REQUIRED)
   enable_testing()
 endif()
 
-# ---- Tests ----
+# # ---- Tests ----
 
-add_executable(cpp-toolbox-new_test source/cpp-toolbox-new_test.cpp)
-target_link_libraries(cpp-toolbox-new_test PRIVATE cpp-toolbox-new::cpp-toolbox-new)
-target_compile_features(cpp-toolbox-new_test PRIVATE cxx_std_17)
+# add_executable(cpp-toolbox_test source/cpp-toolbox_test.cpp)
+# target_link_libraries(cpp-toolbox_test PRIVATE cpp-toolbox::cpp-toolbox)
+# target_compile_features(cpp-toolbox_test PRIVATE cxx_std_17)
 
-add_test(NAME cpp-toolbox-new_test COMMAND cpp-toolbox-new_test)
+# add_test(NAME cpp-toolbox_test COMMAND cpp-toolbox_test)
 
-# ---- End-of-file commands ----
+# # ---- End-of-file commands ----
 
+add_subdirectory(base)
+add_subdirectory(file)
+add_subdirectory(logger)
 add_folders(Test)

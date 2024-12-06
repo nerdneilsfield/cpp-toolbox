@@ -61,18 +61,18 @@ cmake --install build --config Release
 This project exports a CMake package to be used with the [`find_package`][3]
 command of CMake:
 
-* Package name: `cpp-toolbox-new`
-* Target name: `cpp-toolbox-new::cpp-toolbox-new`
+* Package name: `cpp-toolbox`
+* Target name: `cpp-toolbox::cpp-toolbox`
 
 Example usage:
 
 ```cmake
-find_package(cpp-toolbox-new REQUIRED)
+find_package(cpp-toolbox REQUIRED)
 # Declare the imported target as a build requirement using PRIVATE, where
 # project_target is a target created in the consuming project
 target_link_libraries(
     project_target PRIVATE
-    cpp-toolbox-new::cpp-toolbox-new
+    cpp-toolbox::cpp-toolbox
 )
 ```
 

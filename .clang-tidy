@@ -13,6 +13,7 @@ Checks: "*,\
   -modernize-use-nodiscard,\
   -misc-non-private-member-variables-in-classes"
 WarningsAsErrors: ''
+HeaderFilterRegex: '^(?!.*deps/).*'
 CheckOptions:
   - key: 'bugprone-argument-comment.StrictMode'
     value: 'true'

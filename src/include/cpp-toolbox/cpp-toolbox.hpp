@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "cpp-toolbox-new/cpp-toolbox-new_export.hpp"
+#include "cpp-toolbox/cpp-toolbox_export.hpp"
 
 /**
  * A note about the MSVC warning C4251:
@@ -51,7 +51,7 @@
  *
  * Please see the note above for considerations when creating shared libraries.
  */
-class CPP_TOOLBOX_NEW_EXPORT exported_class
+class CPP_TOOLBOX_EXPORT exported_class
 {
 public:
   /**

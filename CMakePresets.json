@@ -26,14 +26,14 @@
       "hidden": true,
       "inherits": "cmake-pedantic",
       "cacheVariables": {
-        "cpp-toolbox-new_DEVELOPER_MODE": "ON"
+        "cpp-toolbox_DEVELOPER_MODE": "ON"
       }
     },
     {
       "name": "cppcheck",
       "hidden": true,
       "cacheVariables": {
-        "CMAKE_CXX_CPPCHECK": "cppcheck;--inline-suppr"
+        "CMAKE_CXX_CPPCHECK": "cppcheck;--inline-suppr;--suppress=*:*/deps/*"
       }
     },
     {
