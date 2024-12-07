@@ -207,9 +207,8 @@ private: \
 #  define CPP_TOOLBOX_EXPORT __attribute__((visibility("default")))
 #endif
 
-
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
-    #define __CURRENT_FUNCTION__ __FUNCSIG__
+#  define __CURRENT_FUNCTION__ __FUNCSIG__
 #else
-    #define __CURRENT_FUNCTION__ __PRETTY_FUNCTION__
+#  define __CURRENT_FUNCTION__ __PRETTY_FUNCTION__
 #endif

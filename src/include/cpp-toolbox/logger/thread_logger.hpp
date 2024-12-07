@@ -15,9 +15,15 @@
 
 // #define PROJECT_SOURCE_DIR
 
+// !TODO: Why docxgen doesn't work?
 namespace toolbox::logger
 {
-
+/**
+ * @brief Check if a type is a container.
+ *
+ * @tparam T The type to check.
+ * @tparam _  A dummy type to enable SFINAE.
+ */
 template<typename T, typename = void>
 struct CPP_TOOLBOX_EXPORT is_container : std::false_type
 {
@@ -71,20 +77,26 @@ struct CPP_TOOLBOX_EXPORT has_ostream_method
 template<typename T>
 inline constexpr bool has_ostream_method_v = has_ostream_method<T>::value;
 
-// inline auto get_file_relative_path(const std::string& project_source_dir,
-//                                    const std::string& file_path_str)
-//     -> std::string
-// {
-//   static const auto base_path = std::filesystem::path(project_source_dir);
-//   static const auto file_path = std::filesystem::path(file_path_str);
-//   static const auto relative_path =
-//       std::filesystem::relative(file_path, base_path);
-//   std::cout << "project_source_dir: " << project_source_dir << "\n";
-//   std::cout << "file_path: " << file_path_str << "\n";
-//   std::cout << "relative_path: " << relative_path.string() << "\n";
-//   return relative_path.string();
-// }
 
+/**
+ * @brief ThreadLogger class
+ *
+ * @details ThreadLogger is a logging class that provides methods to log messages 
+ * in a thread-safe manner. It supports different logging levels and can be used 
+ * to log messages in different formats.
+ *
+ * @note This class is thread-safe and can be used across multiple threads.
+ *
+ * @see thread_stream_logger_t
+ * @see thread_format_logger_t
+ *
+ * Example usage:
+ * @code
+ * auto& logger = toolbox::logger::thread_logger_t::instance();
+ * logger.set_level(toolbox::logger::thread_logger_t::Level::DEBUG);
+ * LOG_DEBUG_S << "This is a debug message";
+ * @endcode
+ */
 class CPP_TOOLBOX_EXPORT thread_logger_t
 {
 public:
@@ -101,11 +113,33 @@ public:
   static auto instance() -> thread_logger_t&;
   ~thread_logger_t();
 
+  /**
+   * @brief Get the current logging level.
+   *
+   * @return The current logging level.
+   */
   auto level() -> Level { return level_; }
+
+  /**
+   * @brief Get the current logging level as a string.
+   *
+   * @return The current logging level as a string.
+   */
   auto level_str() -> std::string { return level_to_string(level_); }
+
+  /**
+   * @brief Set the logging level.
+   *
+   * @param level The new logging level.
+   */
   auto set_level(Level level) -> void { level_ = level; }
 
-  // 格式化日志类
+  /**
+   * @brief FormatLogger class
+   *
+   * FormatLogger is a class that provides methods to log formatted messages
+   * in a thread-safe manner.
+   */
   class CPP_TOOLBOX_EXPORT thread_format_logger_t
   {
   public:
@@ -184,13 +218,23 @@ public:
     Level level_;
   };
 
-  // 流式日志类
+  /**
+   * @brief StreamLogger class
+   *
+   * StreamLogger is a class that provides methods to log messages in a
+   * thread-safe manner.
+   */
   class CPP_TOOLBOX_EXPORT thread_stream_logger_t
   {
   public:
     thread_stream_logger_t(thread_logger_t& logger, Level level);
     ~thread_stream_logger_t();
 
+    /**
+     * @brief Get the logged message as a string.
+     *
+     * @return The logged message as a string.
+     */
     auto str() -> std::string { return ss_.str(); }
 
     // add support for basic type
@@ -544,5 +588,5 @@ private:
   LOG_ERROR_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
               << ") " << x
 #define LOG_CRITICAL_D(x) \
-  LOG_CRITICAL_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
-                 << ") " << x
+  LOG_CRITICAL_S << __FILE__ << ":" << __LINE__ << " (" \
+                 << __CURRENT_FUNCTION__ << ") " << x
