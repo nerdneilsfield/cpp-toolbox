@@ -20,29 +20,29 @@
 namespace toolbox::logger
 {
 
-auto ThreadLogger::instance() -> ThreadLogger&
+auto thread_logger_t::instance() -> thread_logger_t&
 {
-  static ThreadLogger logger;
+  static thread_logger_t logger;
   return logger;
 }
 
-ThreadLogger::ThreadLogger()
+thread_logger_t::thread_logger_t()
 {
   start();
 }
 
-ThreadLogger::~ThreadLogger()
+thread_logger_t::~thread_logger_t()
 {
   stop();
 }
 
-void ThreadLogger::start()
+void thread_logger_t::start()
 {
   running_ = true;
-  worker_ = std::thread(&ThreadLogger::processLogs, this);
+  worker_ = std::thread(&thread_logger_t::processLogs, this);
 }
 
-void ThreadLogger::stop()
+void thread_logger_t::stop()
 {
   if (running_) {
     running_ = false;
@@ -53,7 +53,7 @@ void ThreadLogger::stop()
   }
 }
 
-auto ThreadLogger::level_to_string(Level level) -> std::string
+auto thread_logger_t::level_to_string(Level level) -> std::string
 {
   switch (level) {
     case Level::TRACE:
@@ -71,7 +71,7 @@ auto ThreadLogger::level_to_string(Level level) -> std::string
   }
 }
 
-void ThreadLogger::enqueue(Level level, const std::string& message)
+void thread_logger_t::enqueue(Level level, const std::string& message)
 {
   {
     std::unique_lock<std::mutex> lock(mutex_);
@@ -80,7 +80,7 @@ void ThreadLogger::enqueue(Level level, const std::string& message)
   cv_.notify_one();
 }
 
-void ThreadLogger::processLogs()
+void thread_logger_t::processLogs()
 {
   constexpr size_t TIME_STR_BUFFER_SIZE = 20;
 
@@ -155,14 +155,14 @@ void ThreadLogger::processLogs()
   }
 }
 
-ThreadLogger::ThreadFormatLogger::ThreadFormatLogger(ThreadLogger& logger,
+thread_logger_t::thread_format_logger_t::thread_format_logger_t(thread_logger_t& logger,
                                                      Level level)
     : logger_(logger)
     , level_(level)
 {
 }
 
-[[nodiscard]] auto ThreadLogger::ThreadFormatLogger::format_message(
+[[nodiscard]] auto thread_logger_t::thread_format_logger_t::format_message(
     const char* format) -> std::string
 {
   char buffer[2048];
@@ -173,43 +173,43 @@ ThreadLogger::ThreadFormatLogger::ThreadFormatLogger(ThreadLogger& logger,
   return {buffer};
 }
 
-ThreadLogger::ThreadStreamLogger::ThreadStreamLogger(ThreadLogger& logger,
+thread_logger_t::thread_stream_logger_t::thread_stream_logger_t(thread_logger_t& logger,
                                                      Level level)
     : logger_(logger)
     , level_(level)
 {
 }
 
-ThreadLogger::ThreadStreamLogger::~ThreadStreamLogger()
+thread_logger_t::thread_stream_logger_t::~thread_stream_logger_t()
 {
   if (level_ < logger_.level())
     return;
   logger_.enqueue(level_, ss_.str());
 }
 
-auto ThreadLogger::ThreadStreamLogger::red(const std::string& text)
-    -> ThreadStreamLogger&
+auto thread_logger_t::thread_stream_logger_t::red(const std::string& text)
+    -> thread_stream_logger_t&
 {
   ss_ << "\033[31m" << text << "\033[0m";
   return *this;
 }
 
-auto ThreadLogger::ThreadStreamLogger::green(const std::string& text)
-    -> ThreadStreamLogger&
+auto thread_logger_t::thread_stream_logger_t::green(const std::string& text)
+    -> thread_stream_logger_t&
 {
   ss_ << "\033[32m" << text << "\033[0m";
   return *this;
 }
 
-auto ThreadLogger::ThreadStreamLogger::yellow(const std::string& text)
-    -> ThreadStreamLogger&
+auto thread_logger_t::thread_stream_logger_t::yellow(const std::string& text)
+    -> thread_stream_logger_t&
 {
   ss_ << "\033[33m" << text << "\033[0m";
   return *this;
 }
 
-auto ThreadLogger::ThreadStreamLogger::bold(const std::string& text)
-    -> ThreadStreamLogger&
+auto thread_logger_t::thread_stream_logger_t::bold(const std::string& text)
+    -> thread_stream_logger_t&
 {
   ss_ << "\033[1m" << text << "\033[0m";
   return *this;

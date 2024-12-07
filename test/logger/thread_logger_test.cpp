@@ -44,8 +44,8 @@ TEST_CASE("ThreadLogger singleton test", "[ThreadLogger]")
 {
   SECTION("get instance")
   {
-    auto& logger1 = ThreadLogger::instance();
-    auto& logger2 = ThreadLogger::instance();
+    auto& logger1 = thread_logger_t::instance();
+    auto& logger2 = thread_logger_t::instance();
 
     // check two times get the same instance
     REQUIRE(&logger1 == &logger2);
@@ -54,18 +54,18 @@ TEST_CASE("ThreadLogger singleton test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger log level test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
+  auto& logger = thread_logger_t::instance();
 
   SECTION("default log level")
   {
-    REQUIRE(logger.level() == ThreadLogger::Level::INFO);
+    REQUIRE(logger.level() == thread_logger_t::Level::INFO);
     REQUIRE(logger.level_str() == "[INFO]");
   }
 
   SECTION("set log level")
   {
-    logger.set_level(ThreadLogger::Level::DEBUG);
-    REQUIRE(logger.level() == ThreadLogger::Level::DEBUG);
+    logger.set_level(thread_logger_t::Level::DEBUG);
+    REQUIRE(logger.level() == thread_logger_t::Level::DEBUG);
     REQUIRE(logger.level_str() == "[DEBUG]");
   }
 
@@ -74,8 +74,8 @@ TEST_CASE("ThreadLogger log level test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger format log test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
-  logger.set_level(ThreadLogger::Level::TRACE);
+  auto& logger = thread_logger_t::instance();
+  logger.set_level(thread_logger_t::Level::TRACE);
 
   SECTION("basic format log")
   {
@@ -105,8 +105,8 @@ TEST_CASE("ThreadLogger format log test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger stream log test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
-  logger.set_level(ThreadLogger::Level::TRACE);
+  auto& logger = thread_logger_t::instance();
+  logger.set_level(thread_logger_t::Level::TRACE);
 
   SECTION("basic stream log")
   {
@@ -159,8 +159,8 @@ TEST_CASE("ThreadLogger stream log test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger color log test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
-  logger.set_level(ThreadLogger::Level::TRACE);
+  auto& logger = thread_logger_t::instance();
+  logger.set_level(thread_logger_t::Level::TRACE);
 
   SECTION("color log")
   {
@@ -176,8 +176,8 @@ TEST_CASE("ThreadLogger color log test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger debug log test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
-  logger.set_level(ThreadLogger::Level::TRACE);
+  auto& logger = thread_logger_t::instance();
+  logger.set_level(thread_logger_t::Level::TRACE);
 
   REQUIRE_NOTHROW(LOG_DEBUG_D("debug log"));
   REQUIRE_NOTHROW(LOG_INFO_D("info log"));
@@ -188,11 +188,11 @@ TEST_CASE("ThreadLogger debug log test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger log level filter test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
+  auto& logger = thread_logger_t::instance();
 
   SECTION("log level filter")
   {
-    logger.set_level(ThreadLogger::Level::ERROR);
+    logger.set_level(thread_logger_t::Level::ERROR);
 
     REQUIRE_NOTHROW(LOG_ERROR_S << "should be recorded");
 
@@ -206,8 +206,8 @@ TEST_CASE("ThreadLogger log level filter test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger concurrency log test", "[ThreadLogger]")
 {
-  auto& logger = ThreadLogger::instance();
-  logger.set_level(ThreadLogger::Level::TRACE);
+  auto& logger = thread_logger_t::instance();
+  logger.set_level(thread_logger_t::Level::TRACE);
 
   SECTION("multi-thread concurrency log")
   {

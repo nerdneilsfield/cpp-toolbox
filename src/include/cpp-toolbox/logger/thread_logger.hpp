@@ -11,22 +11,25 @@
 #include <type_traits>
 #include <unordered_map>
 
+#include "cpp-toolbox/macro.hpp"
+
 // #define PROJECT_SOURCE_DIR
 
 namespace toolbox::logger
 {
 
 template<typename T, typename = void>
-struct is_container : std::false_type
+struct CPP_TOOLBOX_EXPORT is_container : std::false_type
 {
 };
 
 template<typename T>
-struct is_container<T,
-                    std::void_t<typename T::value_type,
-                                typename T::iterator,
-                                decltype(std::declval<T>().begin()),
-                                decltype(std::declval<T>().end())>>
+struct CPP_TOOLBOX_EXPORT
+    is_container<T,
+                 std::void_t<typename T::value_type,
+                             typename T::iterator,
+                             decltype(std::declval<T>().begin()),
+                             decltype(std::declval<T>().end())>>
     : std::true_type
 {
 };
@@ -35,7 +38,7 @@ template<typename T>
 inline constexpr bool is_container_v = is_container<T>::value;
 
 template<typename T>
-struct has_stream_operator
+struct CPP_TOOLBOX_EXPORT has_stream_operator
 {
   template<typename U>
   static auto test(int) -> std::is_same<decltype(std::declval<std::ostream&>()
@@ -52,7 +55,7 @@ template<typename T>
 inline constexpr bool has_stream_operator_v = has_stream_operator<T>::value;
 
 template<typename T>
-class has_ostream_method
+struct CPP_TOOLBOX_EXPORT has_ostream_method
 {
   template<typename U>
   static auto test(int) -> std::is_same<
@@ -62,7 +65,6 @@ class has_ostream_method
   template<typename>
   static auto test(...) -> std::false_type;
 
-public:
   static constexpr bool value = decltype(test<T>(0))::value;
 };
 
@@ -83,7 +85,7 @@ inline constexpr bool has_ostream_method_v = has_ostream_method<T>::value;
 //   return relative_path.string();
 // }
 
-class ThreadLogger
+class CPP_TOOLBOX_EXPORT thread_logger_t
 {
 public:
   enum class Level : uint8_t
@@ -96,18 +98,18 @@ public:
     CRITICAL
   };
 
-  static auto instance() -> ThreadLogger&;
-  ~ThreadLogger();
+  static auto instance() -> thread_logger_t&;
+  ~thread_logger_t();
 
   auto level() -> Level { return level_; }
   auto level_str() -> std::string { return level_to_string(level_); }
   auto set_level(Level level) -> void { level_ = level; }
 
   // 格式化日志类
-  class ThreadFormatLogger
+  class CPP_TOOLBOX_EXPORT thread_format_logger_t
   {
   public:
-    ThreadFormatLogger(ThreadLogger& logger, Level level);
+    thread_format_logger_t(thread_logger_t& logger, Level level);
 
     /**
      * Formats a message using a printf-like format string, and logs
@@ -130,8 +132,9 @@ public:
     template<typename... Args>
     void operator()(const char* format, Args&&... args)
     {
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return;
+      }
       std::string message = format_message(format, std::forward<Args>(args)...);
       logger_.enqueue(level_, message);
     }
@@ -177,16 +180,16 @@ public:
       return result;
     }
 
-    ThreadLogger& logger_;
+    thread_logger_t& logger_;
     Level level_;
   };
 
   // 流式日志类
-  class ThreadStreamLogger
+  class CPP_TOOLBOX_EXPORT thread_stream_logger_t
   {
   public:
-    ThreadStreamLogger(ThreadLogger& logger, Level level);
-    ~ThreadStreamLogger();
+    thread_stream_logger_t(thread_logger_t& logger, Level level);
+    ~thread_stream_logger_t();
 
     auto str() -> std::string { return ss_.str(); }
 
@@ -220,15 +223,17 @@ public:
     template<typename T>
     auto operator<<(const T& container)
         -> std::enable_if_t<is_container_v<T> && !has_stream_operator_v<T>,
-                            ThreadStreamLogger&>
+                            thread_stream_logger_t&>
     {
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
       ss_ << "[";
       bool first = true;
       for (const auto& item : container) {
-        if (!first)
+        if (!first) {
           ss_ << ", ";
+        }
         ss_ << item;
         first = false;
       }
@@ -245,18 +250,19 @@ public:
      * @return A reference to this logger.
      */
     template<typename... Args>
-    auto operator<<(const std::tuple<Args...>& t) -> ThreadStreamLogger&
+    auto operator<<(const std::tuple<Args...>& t) -> thread_stream_logger_t&
     {
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
       print_tuple(t, std::index_sequence_for<Args...> {});
       return *this;
     }
 
-    auto red(const std::string& text) -> ThreadStreamLogger&;
-    auto green(const std::string& text) -> ThreadStreamLogger&;
-    auto yellow(const std::string& text) -> ThreadStreamLogger&;
-    auto bold(const std::string& text) -> ThreadStreamLogger&;
+    auto red(const std::string& text) -> thread_stream_logger_t&;
+    auto green(const std::string& text) -> thread_stream_logger_t&;
+    auto yellow(const std::string& text) -> thread_stream_logger_t&;
+    auto bold(const std::string& text) -> thread_stream_logger_t&;
 
     /**
      * @brief Overload operator<< for const char*. This will print the const
@@ -266,10 +272,11 @@ public:
      *
      * @return A reference to this logger.
      */
-    auto operator<<(const char* value) -> ThreadStreamLogger&
+    auto operator<<(const char* value) -> thread_stream_logger_t&
     {
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
       ss_ << value;
       return *this;
     }
@@ -292,11 +299,12 @@ public:
      */
     template<typename T>
     auto operator<<(const T& value)
-        -> std::enable_if_t<has_stream_operator_v<T>, ThreadStreamLogger&>
+        -> std::enable_if_t<has_stream_operator_v<T>, thread_stream_logger_t&>
     {
       // If the log level is less than the logger's level, then do nothing.
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
 
       // Print the value to the log stream.
       ss_ << value;
@@ -319,11 +327,12 @@ public:
     auto operator<<(T&& value)
         -> std::enable_if_t<!has_stream_operator_v<T>
                                 && has_ostream_method_v<T>,
-                            ThreadStreamLogger&>
+                            thread_stream_logger_t&>
     {
       // If the log level is less than the logger's level, then do nothing.
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
 
       // Call the value's operator<< member function with the log stream.
       value.operator<<(ss_);
@@ -341,7 +350,7 @@ public:
      *
      * @return A reference to this logger.
      */
-    auto operator<<(ThreadStreamLogger& logger) -> ThreadStreamLogger&
+    auto operator<<(thread_stream_logger_t& logger) -> thread_stream_logger_t&
     {
       // Print the contents of the other logger to this logger.
       ss_ << logger.str();
@@ -360,18 +369,20 @@ public:
      * @return A reference to this logger.
      */
     template<typename K, typename V>
-    auto operator<<(const std::map<K, V>& map) -> ThreadStreamLogger&
+    auto operator<<(const std::map<K, V>& map) -> thread_stream_logger_t&
     {
       // If the log level is less than the logger's level, then do nothing.
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return *this;
+      }
 
       // Print the contents of the map to the log stream.
       ss_ << "{";
       bool first = true;
       for (const auto& [key, value] : map) {
-        if (!first)
+        if (!first) {
           ss_ << ", ";
+        }
         ss_ << key << ": " << value;
         first = false;
       }
@@ -391,7 +402,8 @@ public:
      * @return A reference to this logger.
      */
     template<typename K, typename V>
-    auto operator<<(const std::unordered_map<K, V>& map) -> ThreadStreamLogger&
+    auto operator<<(const std::unordered_map<K, V>& map)
+        -> thread_stream_logger_t&
     {
       // If the log level is less than the logger's level, then do nothing.
       if (level_ < logger_.level())
@@ -423,8 +435,9 @@ public:
     template<typename Tuple, size_t... Is>
     auto print_tuple(const Tuple& t, std::index_sequence<Is...>) -> void
     {
-      if (level_ < logger_.level())
+      if (level_ < logger_.level()) {
         return;
+      }
 
       // Print an opening parenthesis.
       ss_ << "(";
@@ -436,29 +449,35 @@ public:
       ss_ << ")";
     }
 
-    ThreadLogger& logger_;
+    thread_logger_t& logger_;
     Level level_;
     std::stringstream ss_;
   };
 
-  auto trace_f() -> ThreadFormatLogger { return {*this, Level::TRACE}; }
-  auto debug_f() -> ThreadFormatLogger { return {*this, Level::DEBUG}; }
-  auto info_f() -> ThreadFormatLogger { return {*this, Level::INFO}; }
-  auto warn_f() -> ThreadFormatLogger { return {*this, Level::WARN}; }
-  auto error_f() -> ThreadFormatLogger { return {*this, Level::ERROR}; }
-  auto critical_f() -> ThreadFormatLogger { return {*this, Level::CRITICAL}; }
+  auto trace_f() -> thread_format_logger_t { return {*this, Level::TRACE}; }
+  auto debug_f() -> thread_format_logger_t { return {*this, Level::DEBUG}; }
+  auto info_f() -> thread_format_logger_t { return {*this, Level::INFO}; }
+  auto warn_f() -> thread_format_logger_t { return {*this, Level::WARN}; }
+  auto error_f() -> thread_format_logger_t { return {*this, Level::ERROR}; }
+  auto critical_f() -> thread_format_logger_t
+  {
+    return {*this, Level::CRITICAL};
+  }
 
-  auto trace_s() -> ThreadStreamLogger { return {*this, Level::TRACE}; }
-  auto debug_s() -> ThreadStreamLogger { return {*this, Level::DEBUG}; }
-  auto info_s() -> ThreadStreamLogger { return {*this, Level::INFO}; }
-  auto warn_s() -> ThreadStreamLogger { return {*this, Level::WARN}; }
-  auto error_s() -> ThreadStreamLogger { return {*this, Level::ERROR}; }
-  auto critical_s() -> ThreadStreamLogger { return {*this, Level::CRITICAL}; }
+  auto trace_s() -> thread_stream_logger_t { return {*this, Level::TRACE}; }
+  auto debug_s() -> thread_stream_logger_t { return {*this, Level::DEBUG}; }
+  auto info_s() -> thread_stream_logger_t { return {*this, Level::INFO}; }
+  auto warn_s() -> thread_stream_logger_t { return {*this, Level::WARN}; }
+  auto error_s() -> thread_stream_logger_t { return {*this, Level::ERROR}; }
+  auto critical_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::CRITICAL};
+  }
 
 private:
-  ThreadLogger();
-  ThreadLogger(const ThreadLogger&) = delete;
-  auto operator=(const ThreadLogger&) -> ThreadLogger& = delete;
+  thread_logger_t();
+  thread_logger_t(const thread_logger_t&) = delete;
+  auto operator=(const thread_logger_t&) -> thread_logger_t& = delete;
 
   void start();
   void stop();
@@ -497,24 +516,33 @@ private:
 }  // namespace toolbox::logger
 
 // 格式化日志宏
-#define LOG_TRACE_F toolbox::logger::ThreadLogger::instance().trace_f()
-#define LOG_DEBUG_F toolbox::logger::ThreadLogger::instance().debug_f()
-#define LOG_INFO_F toolbox::logger::ThreadLogger::instance().info_f()
-#define LOG_WARN_F toolbox::logger::ThreadLogger::instance().warn_f()
-#define LOG_ERROR_F toolbox::logger::ThreadLogger::instance().error_f()
-#define LOG_CRITICAL_F toolbox::logger::ThreadLogger::instance().critical_f()
+#define LOG_TRACE_F toolbox::logger::thread_logger_t::instance().trace_f()
+#define LOG_DEBUG_F toolbox::logger::thread_logger_t::instance().debug_f()
+#define LOG_INFO_F toolbox::logger::thread_logger_t::instance().info_f()
+#define LOG_WARN_F toolbox::logger::thread_logger_t::instance().warn_f()
+#define LOG_ERROR_F toolbox::logger::thread_logger_t::instance().error_f()
+#define LOG_CRITICAL_F toolbox::logger::thread_logger_t::instance().critical_f()
 
 // 流式日志宏
-#define LOG_TRACE_S toolbox::logger::ThreadLogger::instance().trace_s()
-#define LOG_DEBUG_S toolbox::logger::ThreadLogger::instance().debug_s()
-#define LOG_INFO_S toolbox::logger::ThreadLogger::instance().info_s()
-#define LOG_WARN_S toolbox::logger::ThreadLogger::instance().warn_s()
-#define LOG_ERROR_S toolbox::logger::ThreadLogger::instance().error_s()
-#define LOG_CRITICAL_S toolbox::logger::ThreadLogger::instance().critical_s()
+#define LOG_TRACE_S toolbox::logger::thread_logger_t::instance().trace_s()
+#define LOG_DEBUG_S toolbox::logger::thread_logger_t::instance().debug_s()
+#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()
+#define LOG_WARN_S toolbox::logger::thread_logger_t::instance().warn_s()
+#define LOG_ERROR_S toolbox::logger::thread_logger_t::instance().error_s()
+#define LOG_CRITICAL_S toolbox::logger::thread_logger_t::instance().critical_s()
 
-#define LOG_DEBUG_D(x) LOG_DEBUG_S << __FILE__ << ":" << __LINE__ << " " << x
-#define LOG_INFO_D(x) LOG_INFO_S << __FILE__ << ":" << __LINE__ << " " << x
-#define LOG_WARN_D(x) LOG_WARN_S << __FILE__ << ":" << __LINE__ << " " << x
-#define LOG_ERROR_D(x) LOG_ERROR_S << __FILE__ << ":" << __LINE__ << " " << x
-#define LOG_CRITICAL_D(x) LOG_CRITICAL_S << __FILE__ << ":" << __LINE__ << " " << x
-
+#define LOG_DEBUG_D(x) \
+  LOG_DEBUG_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
+              << ") " << x
+#define LOG_INFO_D(x) \
+  LOG_INFO_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
+             << ") " << x
+#define LOG_WARN_D(x) \
+  LOG_WARN_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
+             << ") " << x
+#define LOG_ERROR_D(x) \
+  LOG_ERROR_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
+              << ") " << x
+#define LOG_CRITICAL_D(x) \
+  LOG_CRITICAL_S << __FILE__ << ":" << __LINE__ << " (" << __CURRENT_FUNCTION__ \
+                 << ") " << x
