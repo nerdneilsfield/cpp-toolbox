@@ -16,8 +16,11 @@
 // #define PROJECT_SOURCE_DIR
 
 // !TODO: Why docxgen doesn't work?
+
+
 namespace toolbox::logger
 {
+
 /**
  * @brief Check if a type is a container.
  *
@@ -557,7 +560,9 @@ private:
   Level level_ = Level::INFO;
 };
 
-}  // namespace toolbox::logger
+} // namespace toolbox::logger
+
+
 
 // 格式化日志宏
 #define LOG_TRACE_F toolbox::logger::thread_logger_t::instance().trace_f()
