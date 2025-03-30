@@ -5,6 +5,7 @@
 #include "cpp-toolbox/file/file.hpp"
 
 #include <catch2/catch_test_macros.hpp>
+#include <catch2/matchers/catch_matchers_vector.hpp>
 
 TEST_CASE("get_current_working_directory")
 {
