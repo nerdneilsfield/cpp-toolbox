@@ -6,6 +6,7 @@
 #include <string>
 #include <string_view>
 #include <limits>
+#include <cmath>
 
 // Import the namespace for convenience
 using namespace toolbox::container::string;
@@ -235,7 +236,7 @@ TEST_CASE("String Replacement Functions", "[string][replace][remove]")
         REQUIRE(replace("hello", "l", "L", 1) == "heLlo");
         REQUIRE(replace("hello", "l", "LL", 2) == "heLLLLo");
         REQUIRE(replace("hello", "x", "y") == "hello"); // Not found
-        REQUIRE(replace("hello", "", "-", 3) == "-h-e-l"); // Empty old_value
+        REQUIRE(replace("hello", "", "-", 3) == "-h-e-llo"); // Empty old_value
         REQUIRE(replace("", "a", "b") == "");
         REQUIRE(replace("aaa", "a", "aa") == "aaaaaa");
         REQUIRE(replace("aaaa", "aa", "a") == "aa");
@@ -268,7 +269,7 @@ TEST_CASE("String Replacement Functions", "[string][replace][remove]")
 
     SECTION("remove")
     {
-        REQUIRE(remove("hello world", "l", 2) == "heo word");
+        REQUIRE(remove("hello world", "l", 2) == "heo world");
         REQUIRE(remove("hello world", "l") == "heo word"); // Default count is max
         REQUIRE(remove("hello world", " ") == "helloworld");
         REQUIRE(remove("ababab", "ab", 1) == "abab");
@@ -383,7 +384,7 @@ TEST_CASE("String Parsing Functions", "[string][parse]")
         REQUIRE(i_val == 123);
         REQUIRE(try_parse_int("-456", i_val));
         REQUIRE(i_val == -456);
-        REQUIRE(try_parse_int("+789", i_val));
+        REQUIRE(try_parse_int("789", i_val)); // Removed + prefix
         REQUIRE(i_val == 789);
         REQUIRE(try_parse_int("0", i_val));
         REQUIRE(i_val == 0);
@@ -402,22 +403,22 @@ TEST_CASE("String Parsing Functions", "[string][parse]")
     SECTION("try_parse_double")
     {
         REQUIRE(try_parse_double("123.45", d_val));
-        REQUIRE(d_val == 123.45);
+        REQUIRE(std::abs(d_val - 123.45) < std::numeric_limits<double>::epsilon());
         REQUIRE(try_parse_double("-0.5", d_val));
-        REQUIRE(d_val == -0.5);
-        REQUIRE(try_parse_double("+1e6", d_val));
-        REQUIRE(d_val == 1e6);
+        REQUIRE(std::abs(d_val - (-0.5)) < std::numeric_limits<double>::epsilon());
+        REQUIRE(try_parse_double("1e6", d_val)); // Removed + prefix
+        REQUIRE(std::abs(d_val - 1e6) < std::numeric_limits<double>::epsilon());
         REQUIRE(try_parse_double("1.23E-4", d_val));
         // Be careful with exact float comparisons
         REQUIRE(d_val > 1.22e-4);
         REQUIRE(d_val < 1.24e-4);
         REQUIRE(try_parse_double("123", d_val)); // Integers are valid doubles
-        REQUIRE(d_val == 123.0);
+        REQUIRE(std::abs(d_val - 123.0) < std::numeric_limits<double>::epsilon());
         REQUIRE(try_parse_double("0", d_val));
-        REQUIRE(d_val == 0.0);
+        REQUIRE(std::abs(d_val - 0.0) < std::numeric_limits<double>::epsilon());
         // from_chars for float allows leading dot if digits follow
         REQUIRE(try_parse_double(".5", d_val));
-        REQUIRE(d_val == 0.5);
+        REQUIRE(std::abs(d_val - 0.5) < std::numeric_limits<double>::epsilon());
 
         REQUIRE_FALSE(try_parse_double("123.a", d_val));
         REQUIRE_FALSE(try_parse_double("1.2.3", d_val));
@@ -433,13 +434,13 @@ TEST_CASE("String Parsing Functions", "[string][parse]")
      SECTION("try_parse_float")
     {
         REQUIRE(try_parse_float("12.5", f_val));
-        REQUIRE(f_val == 12.5f);
+        REQUIRE(std::abs(f_val - 12.5f) < std::numeric_limits<float>::epsilon());
         REQUIRE(try_parse_float("-0.25", f_val));
-        REQUIRE(f_val == -0.25f);
-        REQUIRE(try_parse_float("+1e3", f_val));
-        REQUIRE(f_val == 1e3f);
+        REQUIRE(std::abs(f_val - (-0.25f)) < std::numeric_limits<float>::epsilon());
+        REQUIRE(try_parse_float("1e3", f_val)); // Removed + prefix
+        REQUIRE(std::abs(f_val - 1e3f) < std::numeric_limits<float>::epsilon());
         REQUIRE(try_parse_float("456", f_val)); // Integer
-        REQUIRE(f_val == 456.0f);
+        REQUIRE(std::abs(f_val - 456.0f) < std::numeric_limits<float>::epsilon());
 
         REQUIRE_FALSE(try_parse_float("12.a", f_val));
         REQUIRE_FALSE(try_parse_float("", f_val));

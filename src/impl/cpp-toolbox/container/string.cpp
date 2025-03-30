@@ -385,19 +385,19 @@ auto replace(std::string_view s,
 {
     std::string result;
     if (old_value.empty()) {
-        // If old_value is empty, insert new_value between characters (up to count times)
+        // If old_value is empty, insert new_value between characters and at the start (up to count times)
         result.reserve(s.length() + std::min(count, s.length() + 1) * new_value.length());
         std::size_t insertions_done = 0;
         if (insertions_done < count) {
-             result.append(new_value);
-             insertions_done++;
+            result.append(new_value);
+            insertions_done++;
         }
         for (std::size_t i = 0; i < s.length(); ++i) {
             result += s[i];
             if (insertions_done < count) {
-                 result.append(new_value);
-                 insertions_done++;
-             }
+                result.append(new_value);
+                insertions_done++;
+            }
         }
         return result;
     }
@@ -407,27 +407,22 @@ auto replace(std::string_view s,
     std::size_t replacements_done = 0;
 
     // Estimate final size to reserve memory, avoids multiple reallocations
-    // This is an estimate, could be slightly off if new_value is shorter/longer
-    // Calculate potential size increase/decrease per replacement
     std::ptrdiff_t size_diff_per_replacement = static_cast<std::ptrdiff_t>(new_value.length()) - static_cast<std::ptrdiff_t>(old_value.length());
     std::size_t estimated_size = s.length();
-    // Only add estimated increase if size_diff is positive
     if (size_diff_per_replacement > 0) {
         estimated_size += count * size_diff_per_replacement;
     }
-    result.reserve(estimated_size); // Reserve estimated size
+    result.reserve(estimated_size);
 
     while (replacements_done < count && (pos = s.find(old_value, start_pos)) != std::string_view::npos)
     {
-        result.append(s.data() + start_pos, pos - start_pos); // Append the part before the match
-        result.append(new_value); // Append the replacement
-        start_pos = pos + old_value.length(); // Move start position past the replaced part
+        result.append(s.data() + start_pos, pos - start_pos);
+        result.append(new_value);
+        start_pos = pos + old_value.length();
         replacements_done++;
     }
 
-    // Append the rest of the original string from the last search position
     result.append(s.data() + start_pos, s.length() - start_pos);
-
     return result;
 }
 
@@ -494,8 +489,25 @@ auto remove(std::string_view s,
             std::string_view value,
             std::size_t count) -> std::string
 {
-    // Removing is replacing with an empty string
-    return replace(s, value, "", count);
+    if (value.empty()) {
+        return std::string(s);
+    }
+    std::string result;
+    std::string::size_type start_pos = 0;
+    std::string::size_type pos;
+    std::size_t removals_done = 0;
+
+    result.reserve(s.length()); // Reserve at most original length
+
+    while (removals_done < count && (pos = s.find(value, start_pos)) != std::string_view::npos)
+    {
+        result.append(s.data() + start_pos, pos - start_pos);
+        start_pos = pos + value.length();
+        removals_done++;
+    }
+
+    result.append(s.data() + start_pos, s.length() - start_pos);
+    return result;
 }
 
 // Implementation for removing all occurrences of a substring
@@ -597,35 +609,36 @@ auto reverse(std::string_view s) -> std::string
 // Implementation for trying to parse an integer
 auto try_parse_int(std::string_view s, int& out) -> bool
 {
+    if (s.empty()) {
+        return false;
+    }
     const char* first = s.data();
     const char* last = s.data() + s.size();
     auto result = std::from_chars(first, last, out);
-
-    // Check if the entire string was consumed and no error occurred
     return result.ec == std::errc() && result.ptr == last;
 }
 
 // Implementation for trying to parse a double
 auto try_parse_double(std::string_view s, double& out) -> bool
 {
+    if (s.empty()) {
+        return false;
+    }
     const char* first = s.data();
     const char* last = s.data() + s.size();
-    // Using default format (std::chars_format::general)
     auto result = std::from_chars(first, last, out);
-
-    // Check if the entire string was consumed and no error occurred
     return result.ec == std::errc() && result.ptr == last;
 }
 
 // Implementation for trying to parse a float
 auto try_parse_float(std::string_view s, float& out) -> bool
 {
+    if (s.empty()) {
+        return false;
+    }
     const char* first = s.data();
     const char* last = s.data() + s.size();
-    // Using default format (std::chars_format::general)
     auto result = std::from_chars(first, last, out);
-
-    // Check if the entire string was consumed and no error occurred
     return result.ec == std::errc() && result.ptr == last;
 }
 
