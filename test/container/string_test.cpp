@@ -448,3 +448,148 @@ TEST_CASE("String Parsing Functions", "[string][parse]")
         REQUIRE_FALSE(try_parse_float("123 suffix", f_val));
     }
 }
+
+TEST_CASE("Levenshtein Distance Calculation", "[string][levenshtein]")
+{
+    SECTION("Identical strings") {
+        REQUIRE(levenshtein_distance("hello", "hello") == 0);
+        REQUIRE(levenshtein_distance("", "") == 0);
+    }
+
+    SECTION("Empty string vs Non-empty string") {
+        REQUIRE(levenshtein_distance("", "abc") == 3);
+        REQUIRE(levenshtein_distance("abc", "") == 3);
+    }
+
+    SECTION("Simple edits") {
+        // Insertion
+        REQUIRE(levenshtein_distance("cat", "cats") == 1);
+        REQUIRE(levenshtein_distance("ca", "cat") == 1);
+        // Deletion
+        REQUIRE(levenshtein_distance("cats", "cat") == 1);
+        REQUIRE(levenshtein_distance("cat", "ca") == 1);
+        // Substitution
+        REQUIRE(levenshtein_distance("cat", "cut") == 1);
+        REQUIRE(levenshtein_distance("test", "best") == 1);
+    }
+
+    SECTION("More complex cases") {
+        REQUIRE(levenshtein_distance("kitten", "sitting") == 3); // k->s, e->i, +g
+        REQUIRE(levenshtein_distance("sunday", "saturday") == 3); // +a, +t, n->r
+        REQUIRE(levenshtein_distance("flaw", "lawn") == 2);
+        REQUIRE(levenshtein_distance("intention", "execution") == 5);
+    }
+
+    SECTION("Case sensitivity") {
+        // The current implementation is case-sensitive
+        REQUIRE(levenshtein_distance("Hello", "hello") == 1);
+    }
+}
+
+TEST_CASE("Longest Common Subsequence Length", "[string][lcs]") {
+    REQUIRE(longest_common_subsequence_length("ABCBDAB", "BDCAB") == 4); // BDCAB or BCAB or BCBA
+    REQUIRE(longest_common_subsequence_length("AGGTAB", "GXTXAYB") == 4); // GTAB
+    REQUIRE(longest_common_subsequence_length("banana", "atana") == 4); // aana
+    REQUIRE(longest_common_subsequence_length("abcdef", "xyz") == 0);
+    REQUIRE(longest_common_subsequence_length("abc", "abc") == 3);
+    REQUIRE(longest_common_subsequence_length("", "abc") == 0);
+    REQUIRE(longest_common_subsequence_length("abc", "") == 0);
+    REQUIRE(longest_common_subsequence_length("", "") == 0);
+    REQUIRE(longest_common_subsequence_length("abcdefgh", "axbyczdh") == 5); // abdh or acdh ...
+}
+
+TEST_CASE("Longest Common Substring Length", "[string][lcsubstring]") {
+    REQUIRE(longest_common_substring_length("ABCBDAB", "BDCAB") == 2); // BC or CA or AB
+    REQUIRE(longest_common_substring_length("banana", "atana") == 3); // ana
+    REQUIRE(longest_common_substring_length("abcdef", "xyzabc") == 3); // abc
+    REQUIRE(longest_common_substring_length("abcdef", "xyz") == 0);
+    REQUIRE(longest_common_substring_length("abc", "abc") == 3);
+    REQUIRE(longest_common_substring_length("", "abc") == 0);
+    REQUIRE(longest_common_substring_length("abc", "") == 0);
+    REQUIRE(longest_common_substring_length("", "") == 0);
+    REQUIRE(longest_common_substring_length("Mississippi", "Missouri") == 4); // issi
+    REQUIRE(longest_common_substring_length("abcdefgh", "xyzcdefghi") == 6); // cdefg
+}
+
+TEST_CASE("URL Encoding", "[string][url][encode]") {
+    REQUIRE(url_encode("Hello World!") == "Hello%20World%21");
+    REQUIRE(url_encode("a-b_c.d~e") == "a-b_c.d~e"); // Unreserved characters
+    REQUIRE(url_encode(" ") == "%20");
+    REQUIRE(url_encode("") == "");
+    REQUIRE(url_encode("key=value&key2=value 2") == "key%3Dvalue%26key2%3Dvalue%202");
+    REQUIRE(url_encode("/") == "%2F");
+    // Example with a non-ASCII char (UTF-8 bytes for '€' are E2 82 AC)
+    // Note: string_view deals with bytes, encoding handles bytes correctly.
+    REQUIRE(url_encode("€") == "%E2%82%AC");
+}
+
+TEST_CASE("URL Decoding", "[string][url][decode]") {
+    REQUIRE(url_decode("Hello%20World%21") == "Hello World!");
+    REQUIRE(url_decode("a-b_c.d~e") == "a-b_c.d~e");
+    REQUIRE(url_decode("%20") == " ");
+    REQUIRE(url_decode("+") == " "); // Handle '+' as space
+    REQUIRE(url_decode("Hello+World%21") == "Hello World!");
+    REQUIRE(url_decode("") == "");
+    REQUIRE(url_decode("key%3Dvalue%26key2%3Dvalue%202") == "key=value&key2=value 2");
+    REQUIRE(url_decode("%2F") == "/");
+    REQUIRE(url_decode("%E2%82%AC") == "€"); // Decode UTF-8 bytes for '€'
+
+    // Error handling cases (depending on implementation - assuming literal '%' on error)
+    REQUIRE(url_decode("%") == "%");    // Incomplete sequence
+    REQUIRE(url_decode("%A") == "%A");  // Incomplete sequence
+    REQUIRE(url_decode("%G0") == "%G0"); // Invalid hex digit
+    REQUIRE(url_decode("%0G") == "%0G"); // Invalid hex digit
+}
+
+TEST_CASE("Base64 Encoding", "[string][base64][encode]") {
+    REQUIRE(base64_encode("") == "");
+    REQUIRE(base64_encode("f") == "Zg==");
+    REQUIRE(base64_encode("fo") == "Zm8=");
+    REQUIRE(base64_encode("foo") == "Zm9v");
+    REQUIRE(base64_encode("foob") == "Zm9vYg==");
+    REQUIRE(base64_encode("fooba") == "Zm9vYmE=");
+    REQUIRE(base64_encode("foobar") == "Zm9vYmFy");
+    REQUIRE(base64_encode("Man") == "TWFu");
+    REQUIRE(base64_encode("sure.") == "c3VyZS4=");
+    REQUIRE(base64_encode("pleasure.") == "cGxlYXN1cmUu");
+    REQUIRE(base64_encode("leasure.") == "bGVhc3VyZS4=");
+}
+
+TEST_CASE("Base64 Decoding", "[string][base64][decode]") {
+    REQUIRE(base64_decode("") == "");
+    REQUIRE(base64_decode("Zg==") == "f");
+    REQUIRE(base64_decode("Zm8=") == "fo");
+    REQUIRE(base64_decode("Zm9v") == "foo");
+    REQUIRE(base64_decode("Zm9vYg==") == "foob");
+    REQUIRE(base64_decode("Zm9vYmE=") == "fooba");
+    REQUIRE(base64_decode("Zm9vYmFy") == "foobar");
+    REQUIRE(base64_decode("TWFu") == "Man");
+     REQUIRE(base64_decode("c3VyZS4=") == "sure.");
+    REQUIRE(base64_decode("cGxlYXN1cmUu") == "pleasure.");
+    REQUIRE(base64_decode("bGVhc3VyZS4=") == "leasure.");
+
+    // Decoding with whitespace (should be ignored)
+    REQUIRE(base64_decode(" Zm9 vYmFy ") == "foobar");
+    REQUIRE(base64_decode("Zm9v\nYmFy") == "foobar");
+
+    // Potential error cases (current impl returns empty string)
+    // REQUIRE(base64_decode("Zm9vYmFy===").empty()); // Too much padding
+    // REQUIRE(base64_decode("Zm9vYmFy=").empty());  // Incorrect padding
+    // REQUIRE(base64_decode("Zm9vYmE").empty());    // Missing padding
+    // REQUIRE(base64_decode("Zm9vYm?").empty());   // Invalid character
+}
+
+
+TEST_CASE("Slugify Function", "[string][slugify]") {
+    REQUIRE(slugify("Hello World") == "hello-world");
+    REQUIRE(slugify("  leading and trailing spaces  ") == "leading-and-trailing-spaces");
+    REQUIRE(slugify("Already-Clean") == "already-clean");
+    REQUIRE(slugify("Multiple --- Hyphens or spaces") == "multiple-hyphens-or-spaces");
+    REQUIRE(slugify(" Special!@#$%^&*()_+=-`~[]{}|\\:;\"'<>,.?/Chars ") == "special-chars");
+    REQUIRE(slugify("Numbers 123 and Letters AbC") == "numbers-123-and-letters-abc");
+    REQUIRE(slugify("") == "");
+    REQUIRE(slugify("-----") == ""); // Only hyphens -> empty
+    REQUIRE(slugify("---hello---world---") == "hello-world"); // Leading/trailing/multiple hyphens removed
+    REQUIRE(slugify("a") == "a");
+    REQUIRE(slugify("-a-") == "a");
+}
