@@ -199,14 +199,6 @@ private: \
                 << "Exception: " << e.what(); \
   }
 
-// export
-#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
-#  define CPP_TOOLBOX_EXPORT \
-    __declspec(dllexport) __attribute__((visibility("default")))
-#else
-#  define CPP_TOOLBOX_EXPORT __attribute__((visibility("default")))
-#endif
-
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
 #  define __CURRENT_FUNCTION__ __FUNCSIG__
 #else

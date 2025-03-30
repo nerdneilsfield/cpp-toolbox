@@ -19,6 +19,7 @@
 
 namespace toolbox::file
 {
+
 auto string_to_path(const std::string& str) -> std::filesystem::path
 {
   return {str};
@@ -78,7 +79,7 @@ auto copy_file(const std::filesystem::path& src,
   try {
     std::filesystem::copy_file(src, dst);
     return true;
-  } catch (const std::filesystem::filesystem_error& e) {
+  } catch (const std::filesystem::filesystem_error& /*e*/) {
     return false;
   }
 }
@@ -89,7 +90,7 @@ auto move_file(const std::filesystem::path& src,
   try {
     std::filesystem::rename(src, dst);
     return true;
-  } catch (const std::filesystem::filesystem_error& e) {
+  } catch (const std::filesystem::filesystem_error& /*e*/) {
     return false;
   }
 }
@@ -99,7 +100,7 @@ auto delete_file(const std::filesystem::path& path) -> bool
   try {
     std::filesystem::remove(path);
     return true;
-  } catch (const std::filesystem::filesystem_error& e) {
+  } catch (const std::filesystem::filesystem_error& /*e*/) {
     return false;
   }
 }
@@ -124,7 +125,7 @@ auto delete_directory(const std::filesystem::path& path) -> bool
   try {
     std::filesystem::remove_all(path);
     return true;
-  } catch (const std::filesystem::filesystem_error& e) {
+  } catch (const std::filesystem::filesystem_error& /*e*/) {
     return false;
   }
 }

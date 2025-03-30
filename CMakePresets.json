@@ -103,6 +103,12 @@
       "hidden": true
     },
     {
+      "name": "ci-ninja",
+      "inherits": ["ci-std"],
+      "generator": "Ninja",
+      "hidden": true
+    },
+    {
       "name": "coverage-linux",
       "binaryDir": "${sourceDir}/build/coverage",
       "inherits": "ci-linux",
@@ -155,6 +161,21 @@
     {
       "name": "ci-windows",
       "inherits": ["ci-build", "ci-win64", "dev-mode", "ci-multi-config"]
+    },
+    {
+      "name": "ci-ninja-windows",
+      "inherits": ["ci-build", "flags-msvc", "dev-mode", "ci-ninja"]
+    },
+    {
+      "name": "ci-ninja-linux",
+      "inherits": ["ci-build", "flags-gcc-clang", "dev-mode", "ci-ninja"]
+    },
+    {
+      "name": "debug-windows",
+      "inherits": ["ci-build", "ci-win64", "dev-mode"],
+      "cacheVariables": {
+        "CMAKE_CONFIGURATION_TYPES": "Debug"
+      }
     }
   ]
 }

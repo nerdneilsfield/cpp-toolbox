@@ -3,6 +3,8 @@
 #include <functional>
 #include <vector>
 
+#include <cpp-toolbox/cpp-toolbox_export.hpp>
+
 #include "cpp-toolbox/macro.hpp"
 
 namespace toolbox::file

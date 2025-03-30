@@ -1,6 +1,7 @@
 #include <string>
 
 #include "cpp-toolbox/macro.hpp"
+#include <cpp-toolbox/cpp-toolbox_export.hpp>
 
 namespace toolbox::base
 {
