@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>toolbox::container::string namespace | cpp-toolbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">cpp-toolbox</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1container.html">container</a>::<wbr/></span>string <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="string_8hpp.html">&lt;src/include/cpp-toolbox/container/string.hpp&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="aa78cfc3e9c8968b9494a687e31b0484a">
+              <span class="m-doc-wrap-bumper">auto <a href="#aa78cfc3e9c8968b9494a687e31b0484a" class="m-doc-self">split</a>(</span><span class="m-doc-wrap">std::string_view str,
+              std::string_view delimiter) -&gt; std::vector&lt; std::string &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4df8b3fed6f1414348272acca9884f3c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4df8b3fed6f1414348272acca9884f3c" class="m-doc-self">split</a>(</span><span class="m-doc-wrap">std::string_view str,
+              char delimiter) -&gt; std::vector&lt; std::string &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ade0369d79e2b2e82054f851b9198c2b4">
+              <span class="m-doc-wrap-bumper">auto <a href="#ade0369d79e2b2e82054f851b9198c2b4" class="m-doc-self">join</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string&gt;&amp; parts,
+              std::string_view glue) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4f457265ff3716c7be7782101b2a8c24">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4f457265ff3716c7be7782101b2a8c24" class="m-doc-self">join</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string_view&gt;&amp; parts,
+              std::string_view glue) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3d279eb61e3b616544f55127a6253157">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3d279eb61e3b616544f55127a6253157" class="m-doc-self">trim_left</a>(</span><span class="m-doc-wrap">std::string_view str) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afde8a34b13dae9538085d224846ae150">
+              <span class="m-doc-wrap-bumper">auto <a href="#afde8a34b13dae9538085d224846ae150" class="m-doc-self">trim_right</a>(</span><span class="m-doc-wrap">std::string_view str) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0c3328d557f247bf50e7d217860c773b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c3328d557f247bf50e7d217860c773b" class="m-doc-self">trim</a>(</span><span class="m-doc-wrap">std::string_view str) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af0c06fca35d12ef89f919b7adea4a603">
+              <span class="m-doc-wrap-bumper">auto <a href="#af0c06fca35d12ef89f919b7adea4a603" class="m-doc-self">starts_with</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view prefix) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a338bcf1ed2a6371f5e1f9b8fcb37a3bd">
+              <span class="m-doc-wrap-bumper">auto <a href="#a338bcf1ed2a6371f5e1f9b8fcb37a3bd" class="m-doc-self">ends_with</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view suffix) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7aeef0d623cbc0f3363f76254ad3dcbe">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7aeef0d623cbc0f3363f76254ad3dcbe" class="m-doc-self">contains</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view substring) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3c4e4f083067427959b909ef72c2572c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3c4e4f083067427959b909ef72c2572c" class="m-doc-self">is_empty_or_whitespace</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a298d9ca66bdcb1f33cfc7cf5a0a9408d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a298d9ca66bdcb1f33cfc7cf5a0a9408d" class="m-doc-self">is_numeric</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a598ab7a0c4cdb7dd64b5f7beca650874">
+              <span class="m-doc-wrap-bumper">auto <a href="#a598ab7a0c4cdb7dd64b5f7beca650874" class="m-doc-self">is_integer</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a02c094d493d2e3469b7dd1f908e1779a">
+              <span class="m-doc-wrap-bumper">auto <a href="#a02c094d493d2e3469b7dd1f908e1779a" class="m-doc-self">is_float</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a07665505e11dbafe025bfe8bdf6f54ee">
+              <span class="m-doc-wrap-bumper">auto <a href="#a07665505e11dbafe025bfe8bdf6f54ee" class="m-doc-self">replace</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view old_value,
+              std::string_view new_value,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> count = std::numeric_limits&lt;<a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a>&gt;::max()) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a59eb0df9fb535bd78ce425e5585a8b96">
+              <span class="m-doc-wrap-bumper">auto <a href="#a59eb0df9fb535bd78ce425e5585a8b96" class="m-doc-self">replace_all</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view old_value,
+              std::string_view new_value) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a6cd988a07b4fd7e8e5c9eb19b1b96dcf">
+              <span class="m-doc-wrap-bumper">auto <a href="#a6cd988a07b4fd7e8e5c9eb19b1b96dcf" class="m-doc-self">replace_by_nth</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view old_value,
+              std::string_view new_value,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> n) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af65f000fce00e0783423dd06feac6139">
+              <span class="m-doc-wrap-bumper">auto <a href="#af65f000fce00e0783423dd06feac6139" class="m-doc-self">remove_nth</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view from,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> n) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aac5b7ea533715149a2aa9ee3a6c9bb8b">
+              <span class="m-doc-wrap-bumper">auto <a href="#aac5b7ea533715149a2aa9ee3a6c9bb8b" class="m-doc-self">remove</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view value,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> count = std::numeric_limits&lt;<a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a>&gt;::max()) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b83e2e53fedfea757514e8867c94f38">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5b83e2e53fedfea757514e8867c94f38" class="m-doc-self">remove_all</a>(</span><span class="m-doc-wrap">std::string_view s,
+              std::string_view value) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3e4961d94fcd4a87a6956d6ff96bfe28">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3e4961d94fcd4a87a6956d6ff96bfe28" class="m-doc-self">remove_all</a>(</span><span class="m-doc-wrap">std::string_view s,
+              char value) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a11fa99f0b4bf9ce0e0ed35306a8d210b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a11fa99f0b4bf9ce0e0ed35306a8d210b" class="m-doc-self">to_lower</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a7590fc540fcff0df33cf1b3cfda6b03c">
+              <span class="m-doc-wrap-bumper">auto <a href="#a7590fc540fcff0df33cf1b3cfda6b03c" class="m-doc-self">to_upper</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a093a4692179779a03018bc34fb696b60">
+              <span class="m-doc-wrap-bumper">auto <a href="#a093a4692179779a03018bc34fb696b60" class="m-doc-self">to_string</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a048891f47e89fbd9e898ad8fb1f196c7">
+              <span class="m-doc-wrap-bumper">auto <a href="#a048891f47e89fbd9e898ad8fb1f196c7" class="m-doc-self">left_pad</a>(</span><span class="m-doc-wrap">std::string_view s,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> width,
+              char pad_char = &#x27; &#x27;) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a1db71b47681be86df5fea13f8999e2aa">
+              <span class="m-doc-wrap-bumper">auto <a href="#a1db71b47681be86df5fea13f8999e2aa" class="m-doc-self">right_pad</a>(</span><span class="m-doc-wrap">std::string_view s,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> width,
+              char pad_char = &#x27; &#x27;) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a8b3352651f569c5ed05d6ec2ce0a9412">
+              <span class="m-doc-wrap-bumper">auto <a href="#a8b3352651f569c5ed05d6ec2ce0a9412" class="m-doc-self">pad</a>(</span><span class="m-doc-wrap">std::string_view s,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> width,
+              char pad_char = &#x27; &#x27;,
+              <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">std::<wbr />size_t</a> position = 0) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a13e2b7a2101c8a7497a9b15ad307ab01">
+              <span class="m-doc-wrap-bumper">auto <a href="#a13e2b7a2101c8a7497a9b15ad307ab01" class="m-doc-self">reverse</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a177efbbd07806730f409280e993beb94">
+              <span class="m-doc-wrap-bumper">auto <a href="#a177efbbd07806730f409280e993beb94" class="m-doc-self">try_parse_int</a>(</span><span class="m-doc-wrap">std::string_view s,
+              int&amp; out) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="afd44eb3b69488f814fb5eb059784af56">
+              <span class="m-doc-wrap-bumper">auto <a href="#afd44eb3b69488f814fb5eb059784af56" class="m-doc-self">try_parse_double</a>(</span><span class="m-doc-wrap">std::string_view s,
+              double&amp; out) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a477149220be79a76aeab534853bf5721">
+              <span class="m-doc-wrap-bumper">auto <a href="#a477149220be79a76aeab534853bf5721" class="m-doc-self">try_parse_float</a>(</span><span class="m-doc-wrap">std::string_view s,
+              float&amp; out) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="adf00945757752e93f4592917811033c5">
+              <span class="m-doc-wrap-bumper">auto <a href="#adf00945757752e93f4592917811033c5" class="m-doc-self">levenshtein_distance</a>(</span><span class="m-doc-wrap">std::string_view s1,
+              std::string_view s2) -&gt; std::size_t -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a769608e53956a31c6920fdd30d30035b">
+              <span class="m-doc-wrap-bumper">auto <a href="#a769608e53956a31c6920fdd30d30035b" class="m-doc-self">longest_common_subsequence_length</a>(</span><span class="m-doc-wrap">std::string_view s1,
+              std::string_view s2) -&gt; std::size_t -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a0b7d1d7d53c01978d757929bb13b204f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a0b7d1d7d53c01978d757929bb13b204f" class="m-doc-self">longest_common_substring_length</a>(</span><span class="m-doc-wrap">std::string_view s1,
+              std::string_view s2) -&gt; std::size_t -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a19556e830ae2bfbbbbe0905a454844f4">
+              <span class="m-doc-wrap-bumper">auto <a href="#a19556e830ae2bfbbbbe0905a454844f4" class="m-doc-self">url_encode</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ace2f63ba20582b4e048fefeac749de3d">
+              <span class="m-doc-wrap-bumper">auto <a href="#ace2f63ba20582b4e048fefeac749de3d" class="m-doc-self">url_decode</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="af2e3a6aeac0c69c43250b792e035e593">
+              <span class="m-doc-wrap-bumper">auto <a href="#af2e3a6aeac0c69c43250b792e035e593" class="m-doc-self">base64_encode</a>(</span><span class="m-doc-wrap">std::string_view data) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a4267ad272a87495724c13bbb5b607ec5">
+              <span class="m-doc-wrap-bumper">auto <a href="#a4267ad272a87495724c13bbb5b607ec5" class="m-doc-self">base64_decode</a>(</span><span class="m-doc-wrap">std::string_view encoded_data) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5c4d6af2e41f817dca51139247152a02">
+              <span class="m-doc-wrap-bumper">auto <a href="#a5c4d6af2e41f817dca51139247152a02" class="m-doc-self">slugify</a>(</span><span class="m-doc-wrap">std::string_view s) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>cpp-toolbox. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
