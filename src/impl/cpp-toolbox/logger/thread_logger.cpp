@@ -14,7 +14,6 @@
 
 #include "cpp-toolbox/logger/thread_logger.hpp"
 
-
 #include "cpp-toolbox/macro.hpp"
 
 namespace toolbox::logger
@@ -155,8 +154,8 @@ void thread_logger_t::processLogs()
   }
 }
 
-thread_logger_t::thread_format_logger_t::thread_format_logger_t(thread_logger_t& logger,
-                                                     Level level)
+thread_logger_t::thread_format_logger_t::thread_format_logger_t(
+    thread_logger_t& logger, Level level)
     : logger_(logger)
     , level_(level)
 {
@@ -173,8 +172,8 @@ thread_logger_t::thread_format_logger_t::thread_format_logger_t(thread_logger_t&
   return {buffer};
 }
 
-thread_logger_t::thread_stream_logger_t::thread_stream_logger_t(thread_logger_t& logger,
-                                                     Level level)
+thread_logger_t::thread_stream_logger_t::thread_stream_logger_t(
+    thread_logger_t& logger, Level level)
     : logger_(logger)
     , level_(level)
 {

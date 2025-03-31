@@ -4,10 +4,10 @@
 
 #include "cpp-toolbox/macro.hpp"
 
-#if defined (CPP_TOOLBOX_PLATFORM_WINDOWS)
-    #include <stdlib.h>
+#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
+#  include <stdlib.h>
 #else
-    #include <unistd.h>
+#  include <unistd.h>
 #endif
 
 #include "cpp-toolbox/base/env.hpp"
@@ -52,10 +52,10 @@ auto get_environment_variable(const std::string& name) -> std::string
 auto set_environment_variable(const std::string& name, const std::string& value)
     -> bool
 {
-#if defined (CPP_TOOLBOX_PLATFORM_WINDOWS)
-    return _putenv_s(name.c_str(), value.c_str()) == 0;
+#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
+  return _putenv_s(name.c_str(), value.c_str()) == 0;
 #else
-    return setenv(name.c_str(), value.c_str(), 1) == 0;
+  return setenv(name.c_str(), value.c_str(), 1) == 0;
 #endif
 }
 
@@ -71,10 +71,10 @@ auto set_environment_variable(const std::string& name, const std::string& value)
  */
 auto remove_environment_variable(const std::string& name) -> bool
 {
-#if defined (CPP_TOOLBOX_PLATFORM_WINDOWS)
-    return _putenv_s(name.c_str(), "") == 0;
+#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
+  return _putenv_s(name.c_str(), "") == 0;
 #else
-    return unsetenv(name.c_str()) == 0;
+  return unsetenv(name.c_str()) == 0;
 #endif
 }
 

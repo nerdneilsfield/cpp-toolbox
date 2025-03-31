@@ -6,6 +6,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/thread_logger.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/file/file.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/string.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})
@@ -21,7 +22,11 @@ target_compile_definitions(cpp-toolbox PUBLIC
   NOMINMAX 
   $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS>
 )
-target_include_directories(cpp-toolbox PUBLIC  ${CPP_TOOLBOX_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR})
+target_include_directories(cpp-toolbox PUBLIC 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
+    ${CPP_TOOLBOX_INCLUDE_DIRS}
+)
 set_target_properties(cpp-toolbox PROPERTIES
     CXX_VISIBILITY_PRESET hidden
     VISIBILITY_INLINES_HIDDEN YES
