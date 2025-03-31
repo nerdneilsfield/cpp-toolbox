@@ -255,7 +255,7 @@ private:
 inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
 {
   *timer_interface = reinterpret_cast<SimpleTimerInterface*>(
-      new SimpleTimerArrayInterface(size));
+      new SimpleTimerArray(size));
   return (*timer_interface != nullptr) ? true : false;
 }
 
@@ -263,20 +263,18 @@ inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
  * @brief Create a timer collection with specified names
  * @param timer_interface Pointer to store the created interface
  * @param names Vector of names for each timer
- * @param size Number of timers to create
  * @return true if creation succeeded, false otherwise
  *
  * @example
  * SimpleTimerInterface* timers;
  * std::vector<std::string> names = {"timer1", "timer2", "timer3"};
- * createTimerWithName(&timers, names, 3);
+ * createTimerWithName(&timers, names);
  */
 inline bool createTimerWithName(SimpleTimerInterface** timer_interface,
-                                const std::vector<std::string>& name,
-                                int size)
+                                const std::vector<std::string>& name)
 {
   *timer_interface = reinterpret_cast<SimpleTimerInterface*>(
-      new SimpleTimerArrayInterface(name, size));
+      new SimpleTimerArray(name));
   return (*timer_interface != nullptr) ? true : false;
 }
 
