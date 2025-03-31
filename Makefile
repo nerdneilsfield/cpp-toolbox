@@ -104,3 +104,11 @@ build:  ## Build the project
 	@echo "Done building the project."
 
 
+.PHONY: docs
+docs:  ## Generate the documentation
+	@echo "Generating the documentation..."
+	@echo "Current space is $(PWD)"
+	@cmake "-DPROJECT_SOURCE_DIR=$(PWD)" "-DPROJECT_BINARY_DIR=$(PWD)/build" -P cmake/docs-ci.cmake
+	@echo "Done generating the documentation."
+
+
