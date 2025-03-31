@@ -25,10 +25,10 @@ jobs:
     # this comment and the last line in the conditional below.
     # If you do not wish to use GitHub Pages for deploying documentation, then
     # simply delete this job similarly to the coverage one.
-    if: github.ref == 'refs/heads/master'
-      && github.event_name == 'push'
-      && github.repository_owner == 'nerdneilsfield'
-      && false
+    # if: github.ref == 'refs/heads/master'
+    #   && github.event_name == 'push'
+    #   && github.repository_owner == 'nerdneilsfield'
+    #   && false
 
     permissions:
       contents: write
