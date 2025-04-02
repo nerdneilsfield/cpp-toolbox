@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>toolbox::base namespace | cpp-toolbox</title>
+  <title>toolbox::container::detail::HPRec struct | cpp-toolbox</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,7 +49,8 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span>base <span class="m-thin">namespace</span>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1container.html">container</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1container_1_1detail.html">detail</a>::<wbr/></span>HPRec <span class="m-thin">struct</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="lock__free__queue_8hpp.html">&lt;lock_free_queue.hpp&gt;</a></div>
         </h1>
         <p><span></span></p>
         <div class="m-block m-default">
@@ -58,67 +59,37 @@
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1memory__pool__t.html" class="m-doc">memory_pool_t</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1thread__pool__t.html" class="m-doc">thread_pool_t</a>
-            </dt>
-            <dd>一个使用 moodycamel::ConcurrentQueue (通过包装器) 的高性能 C++17 线程池实现。</dd>
-          </dl>
-        </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
-          <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaf4ba06e16ef767bd29d5b1c9fc760e6" class="m-doc">get_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af8f1b6b2951fa719590c6a8483eaa17e" class="m-doc">set_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
-              const std::string&amp; value) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad492fe465930e627f40feec79b17eb8e" class="m-doc">remove_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            <dt id="a39cabbc3b9990005373373103a416892">
+              <span class="m-doc-wrap-bumper"><a href="#a39cabbc3b9990005373373103a416892" class="m-doc-self">HPRec</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aaf4ba06e16ef767bd29d5b1c9fc760e6"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf4ba06e16ef767bd29d5b1c9fc760e6" class="m-doc-self">get_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; std::string</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="af8f1b6b2951fa719590c6a8483eaa17e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8f1b6b2951fa719590c6a8483eaa17e" class="m-doc-self">set_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
-              const std::string&amp; value) -&gt; bool</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="ad492fe465930e627f40feec79b17eb8e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad492fe465930e627f40feec79b17eb8e" class="m-doc-self">remove_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; bool</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="abe71391f27efb23a714a19aa1004c0c2">
+              std::atomic&lt;std::thread::id&gt; <a href="#abe71391f27efb23a714a19aa1004c0c2" class="m-doc-self">owner_thread_id</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab06cf32ff1a37a02a8a63ae97413ba67">
+              std::atomic&lt;void*&gt; <a href="#ab06cf32ff1a37a02a8a63ae97413ba67" class="m-doc-self">hazard_pointers</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a5b22c1279122a0099c553b583b3878d5">
+              <a href="structtoolbox_1_1container_1_1detail_1_1HPRec.html" class="m-doc">HPRec</a>* <a href="#a5b22c1279122a0099c553b583b3878d5" class="m-doc-self">next</a>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
         </section>
       </div>
     </div>

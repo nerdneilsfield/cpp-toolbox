@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>toolbox::container::lock_free_queue_t class | cpp-toolbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">cpp-toolbox</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="lock__free__queue_8hpp.html">&lt;lock_free_queue.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1container.html">container</a>::<wbr/></span>lock_free_queue_t <span class="m-thin">class</span>
+        </h1>
+        <p>An MPMC lock-free unbounded queue using Hazard Pointers for memory safety.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>The type of elements stored in the queue. Must be movable and default constructible.</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>Based on the Michael &amp; Scott algorithm. Uses raw pointers, atomic operations, and Hazard Pointers for safe memory reclamation.</p><aside class="m-note m-info"><h4>Note</h4><p>This implementation uses a simplified Hazard Pointer scheme. Production use might require a more robust and optimized HP library. The HP registration part might involve locks, slightly impacting the &quot;pure&quot; lock-free nature for thread joining/leaving, but core queue operations remain lock-free.</p></aside>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static void <a href="#abf1d4659e14a669d5f571c453e7a6d66" class="m-doc">cleanup_this_thread_retired_nodes</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Performs cleanup of retired nodes for the calling thread.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#afbab1bb4328e09dd97b5f28ae0c1ea39" class="m-doc">lock_free_queue_t</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Constructs the lock-free queue.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a88f67f01833759462e4145109491137b" class="m-doc">~lock_free_queue_t</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Destroys the lock-free queue.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">void <a href="#a04fe5aaa9bf0cead6b5541ddcbeff786" class="m-doc">enqueue</a>(</span><span class="m-doc-wrap">T value)</span>
+            </dt>
+            <dd>Enqueues an item into the queue.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1afe385f50759fd6bf94b47749440153" class="m-doc">try_dequeue</a>(</span><span class="m-doc-wrap">T&amp; result) -&gt; bool</span>
+            </dt>
+            <dd>Attempts to dequeue an item from the queue using Hazard Pointers.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa773c3783f00fdb4de841e7c62cfb588" class="m-doc">try_dequeue</a>(</span><span class="m-doc-wrap">) -&gt; std::optional&lt;T&gt;</span>
+            </dt>
+            <dd>Attempts to dequeue an item, returning it in an std::optional.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="abf1d4659e14a669d5f571c453e7a6d66"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static void toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abf1d4659e14a669d5f571c453e7a6d66" class="m-doc-self">cleanup_this_thread_retired_nodes</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Performs cleanup of retired nodes for the calling thread.</p>
+<p>This function should ideally be called by each thread that used the queue before the thread exits, to ensure timely reclamation of memory retired by that thread. It attempts to scan and delete any nodes in the calling thread&#x27;s retired list that are no longer protected by any hazard pointers.</p><aside class="m-note m-info"><h4>Note</h4><p>This only cleans the calling thread&#x27;s list. Memory retired by other threads that have exited without cleaning their lists might not be reclaimed until this thread (or another active thread) retires enough nodes to trigger a scan that happens to collect enough hazard pointers globally. A more robust global cleanup mechanism (e.g., dedicated cleanup thread, global retired list) is not implemented in this simplified version.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="afbab1bb4328e09dd97b5f28ae0c1ea39"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afbab1bb4328e09dd97b5f28ae0c1ea39" class="m-doc-self">lock_free_queue_t</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Constructs the lock-free queue.</p>
+<p>Initializes the queue with a dummy node.</p>
+          </div></section>
+          <section class="m-doc-details" id="a88f67f01833759462e4145109491137b"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88f67f01833759462e4145109491137b" class="m-doc-self">~lock_free_queue_t</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Destroys the lock-free queue.</p>
+<p>Deletes remaining nodes. Assumes no concurrent access during destruction. Attempts to clean up nodes retired by the calling thread.</p><aside class="m-note m-danger"><h4>Warning</h4><p>Proper distributed cleanup of retired nodes across all threads is complex and not fully handled here. May leak memory if other threads exit uncleanly or don&#x27;t call cleanup routines.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a04fe5aaa9bf0cead6b5541ddcbeff786"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04fe5aaa9bf0cead6b5541ddcbeff786" class="m-doc-self">enqueue</a>(</span><span class="m-doc-wrap">T value)</span></span>
+            </h3>
+            <p>Enqueues an item into the queue.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>The value to enqueue (will be moved).</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Thread-safe for multiple producers. Uses Hazard Pointers implicitly if needed for tail reads (though M&amp;S enqueue typically doesn&#x27;t require HPs).</p>
+          </div></section>
+          <section class="m-doc-details" id="a1afe385f50759fd6bf94b47749440153"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1afe385f50759fd6bf94b47749440153" class="m-doc-self">try_dequeue</a>(</span><span class="m-doc-wrap">T&amp; result)</span></span>
+            </h3>
+            <p>Attempts to dequeue an item from the queue using Hazard Pointers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">result&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Reference to store the dequeued value if successful.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if an item was successfully dequeued, false if the queue was empty.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Thread-safe for multiple consumers. Uses Hazard Pointers to protect access to head and head-&gt;next nodes before potential retirement. Non-blocking operation.</p>
+          </div></section>
+          <section class="m-doc-details" id="aa773c3783f00fdb4de841e7c62cfb588"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">std::optional&lt;T&gt; toolbox::<wbr />container::<wbr />lock_free_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa773c3783f00fdb4de841e7c62cfb588" class="m-doc-self">try_dequeue</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Attempts to dequeue an item, returning it in an std::optional.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>std::optional&lt;T&gt; containing the dequeued value if successful, or std::nullopt if the queue was empty.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>Uses the Hazard Pointer based try_dequeue implementation.</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>cpp-toolbox. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>
