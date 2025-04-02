@@ -52,7 +52,7 @@
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1base.html">base</a>::<wbr/></span>thread_pool_t <span class="m-thin">class</span>
           <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__pool_8hpp.html">&lt;thread_pool.hpp&gt;</a></div>
         </h1>
-        <p>一个使用 moodycamel::ConcurrentQueue (通过包装器) 的高性能 C++17 线程池实现。</p>
+        <p><span></span></p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -65,118 +65,38 @@
             </li>
           </ul>
         </div>
-<p>该线程池允许提交任务并异步获取结果。 它在构造时创建固定数量的工作线程，并在析构时优雅地停止它们。 使用 <code><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html" class="m-doc">toolbox::<wbr />container::<wbr />concurrent_queue_t</a></code> 作为底层任务队列。</p>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt id="ae08a2a6cdf82861586256335e54c5991">
+              <span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc-self">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>构造函数，初始化并启动线程池。</dd>
+            <dd><span></span></dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a95a99126dbc2f85da807b08e7ab5566d" class="m-doc">~thread_pool_t</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>析构函数，停止线程池并等待所有工作线程结束。</dd>
+            <dd>Destructor that stops the thread pool and waits for all worker threads to finish.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>
+            <dt id="a4d11cc8664186d7ddb3fd5cc8124aa53">
               <div class="m-doc-template">template&lt;class F, class... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc-self">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
               Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span>
             </dt>
-            <dd>提交一个任务到线程池执行。</dd>
+            <dd><span></span></dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="ae08a2a6cdf82861586256335e54c5991"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper"> toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc-self">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-info">explicit</span> </span></span>
-            </h3>
-            <p>构造函数，初始化并启动线程池。</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">threads</td>
-                  <td>要创建的工作线程数量。默认为硬件并发核心数。 如果硬件并发核心数无法确定或为0，则至少创建1个线程。</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::invalid_argument</td>
-                  <td>如果线程数参数为0。</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
           <section class="m-doc-details" id="a95a99126dbc2f85da807b08e7ab5566d"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95a99126dbc2f85da807b08e7ab5566d" class="m-doc-self">~thread_pool_t</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
-            <p>析构函数，停止线程池并等待所有工作线程结束。</p>
-<p>会等待队列中已被线程取出的任务执行完毕。 析构后，线程池将不再可用。</p>
-          </div></section>
-          <section class="m-doc-details" id="a4d11cc8664186d7ddb3fd5cc8124aa53"><div>
-            <h3>
-              <div class="m-doc-template">
-                template&lt;class F, class... Args&gt;
-              </div>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc-self">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
-              Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span></span>
-            </h3>
-            <p>提交一个任务到线程池执行。</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Template parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">F</td>
-                  <td>任务函数的类型。</td>
-                </tr>
-                <tr>
-                  <td>Args</td>
-                  <td>任务函数参数的类型。</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>f</td>
-                  <td>任务函数（可以是函数指针、lambda表达式、std::function等可调用对象）。</td>
-                </tr>
-                <tr>
-                  <td>args</td>
-                  <td>传递给任务函数的参数。</td>
-                </tr>
-              </tbody>
-              <thead>
-                <tr>
-                  <th>Returns</th>
-                  <td>一个 std::future 对象，可用于获取任务的返回值或捕获其抛出的异常。</td>
-                </tr>
-              </thead>
-              <thead>
-                <tr><th colspan="2">Exceptions</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>std::runtime_error</td>
-                  <td>如果线程池已经停止，无法提交新任务。</td>
-                </tr>
-              </tbody>
-            </table>
+            <p>Destructor that stops the thread pool and waits for all worker threads to finish.</p>
+<p>Waits for tasks already dequeued by threads to complete. After destruction, the thread pool becomes unusable.</p>
           </div></section>
         </section>
       </div>
