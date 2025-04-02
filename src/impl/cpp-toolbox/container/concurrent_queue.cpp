@@ -1,84 +1,88 @@
-#include "cpp-toolbox/container/concurrent_queue.hpp"
-#include <optional>
 #include <cstddef>
-#include <type_traits>
 #include <exception>
-#include <typeinfo>
 #include <functional>
+#include <optional>
+#include <type_traits>
+#include <typeinfo>
+
+#include "cpp-toolbox/container/concurrent_queue.hpp"
 
 // Include the third-party header ONLY in the .cpp file
-#include <concurrentqueue.h> // Path depends on how you integrated it
+#include <utility>  // For std::move
 
-#include <utility> // For std::move
+#include <concurrentqueue.h>  // Path depends on how you integrated it
 
 namespace toolbox::container
 {
 
 // Define the implementation struct within the .cpp file
-template <typename T>
+template<typename T>
 struct concurrent_queue_t<T>::Impl
 {
-    // The actual concurrent queue instance from the library
-    moodycamel::ConcurrentQueue<T> queue;
+  // The actual concurrent queue instance from the library
+  moodycamel::ConcurrentQueue<T> queue;
 
-    // Constructor (optional, default is likely fine)
-    Impl() = default;
+  // Constructor (optional, default is likely fine)
+  Impl() = default;
 };
 
 // --- Constructor ---
 // Must allocate the Impl object
-template <typename T>
+template<typename T>
 concurrent_queue_t<T>::concurrent_queue_t()
-    : impl_(std::make_unique<Impl>()) {}
+    : impl_(std::make_unique<Impl>())
+{
+}
 
 // --- Destructor ---
 // Must be defined here, even if empty, so unique_ptr can see Impl's definition
-template <typename T>
+template<typename T>
 concurrent_queue_t<T>::~concurrent_queue_t() = default;
 
 // --- Method Implementations ---
 // Forward calls to the underlying queue stored in impl_
 
-template <typename T>
+template<typename T>
 void concurrent_queue_t<T>::enqueue(T&& item)
 {
-    impl_->queue.enqueue(std::forward<T>(item));
+  impl_->queue.enqueue(std::forward<T>(item));
 }
 
-template <typename T>
+template<typename T>
 bool concurrent_queue_t<T>::try_dequeue(T& item)
 {
-    return impl_->queue.try_dequeue(item);
+  return impl_->queue.try_dequeue(item);
 }
 
-template <typename T>
+template<typename T>
 std::optional<T> concurrent_queue_t<T>::try_dequeue()
 {
-    T item;
-    if (impl_->queue.try_dequeue(item))
-    {
-        return std::optional<T>(std::move(item));
-    }
-    return std::nullopt;
+  T item;
+  if (impl_->queue.try_dequeue(item)) {
+    return std::optional<T>(std::move(item));
+  }
+  return std::nullopt;
 }
 
-template <typename T>
+template<typename T>
 size_t concurrent_queue_t<T>::size_approx() const
 {
-    return impl_->queue.size_approx();
+  return impl_->queue.size_approx();
 }
 
 // --- Explicit Template Instantiation ---
-// IMPORTANT: Because the implementation of the template methods is in this .cpp file,
-// you MUST explicitly instantiate the template for EACH type `T` that you intend
-// to use with `concurrent_queue_wrapper_t`. Otherwise, you will get linker errors.
-// Add instantiations for all types you need here.
+// IMPORTANT: Because the implementation of the template methods is in this .cpp
+// file, you MUST explicitly instantiate the template for EACH type `T` that you
+// intend to use with `concurrent_queue_wrapper_t`. Otherwise, you will get
+// linker errors. Add instantiations for all types you need here.
 
 // Example instantiation for the type needed by the thread pool:
-template class CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<std::function<void()>>;
+template class CPP_TOOLBOX_EXPORT
+    toolbox::container::concurrent_queue_t<std::function<void()>>;
 
 // Example instantiation for another type:
-// template class CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<int>;
-// template class CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<MyClass>;
+// template class CPP_TOOLBOX_EXPORT
+// toolbox::container::concurrent_queue_t<int>; template class
+// CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<MyClass>;
 
-} // namespace toolbox::container
+}  // namespace toolbox::container

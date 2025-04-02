@@ -1,8 +1,8 @@
 #pragma once
 
-#include <memory>   // For std::unique_ptr
-#include <optional> // For std::optional (C++17)
 #include <cstddef>  // For size_t
+#include <memory>  // For std::unique_ptr
+#include <optional>  // For std::optional (C++17)
 
 // Assuming export macros are defined elsewhere if needed
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
@@ -20,69 +20,70 @@ namespace toolbox::container
  *
  * @tparam T The type of elements stored in the queue. Must be movable.
  */
-template <typename T>
+template<typename T>
 class CPP_TOOLBOX_EXPORT concurrent_queue_t
 {
 public:
-    /**
-     * @brief Constructs the queue wrapper.
-     */
-    concurrent_queue_t();
+  /**
+   * @brief Constructs the queue wrapper.
+   */
+  concurrent_queue_t();
 
-    /**
-     * @brief Destroys the queue wrapper and cleans up resources.
-     * @note Must be defined in the .cpp file due to Pimpl idiom with unique_ptr.
-     */
-    ~concurrent_queue_t();
+  /**
+   * @brief Destroys the queue wrapper and cleans up resources.
+   * @note Must be defined in the .cpp file due to Pimpl idiom with unique_ptr.
+   */
+  ~concurrent_queue_t();
 
-    // --- Standard Queue Operations ---
+  // --- Standard Queue Operations ---
 
-    /**
-     * @brief Enqueues an item into the queue.
-     * Thread-safe for multiple producers.
-     * @param value The value to enqueue (will be moved).
-     */
-    void enqueue(T&& value);
+  /**
+   * @brief Enqueues an item into the queue.
+   * Thread-safe for multiple producers.
+   * @param value The value to enqueue (will be moved).
+   */
+  void enqueue(T&& value);
 
-    /**
-     * @brief Attempts to dequeue an item from the queue (non-blocking).
-     * Thread-safe for multiple consumers.
-     * @param[out] item Reference to store the dequeued value if successful.
-     * @return True if an item was successfully dequeued, false if the queue was empty.
-     */
-    bool try_dequeue(T &item);
+  /**
+   * @brief Attempts to dequeue an item from the queue (non-blocking).
+   * Thread-safe for multiple consumers.
+   * @param[out] item Reference to store the dequeued value if successful.
+   * @return True if an item was successfully dequeued, false if the queue was
+   * empty.
+   */
+  bool try_dequeue(T& item);
 
-    /**
-     * @brief Attempts to dequeue an item, returning it in an std::optional (non-blocking).
-     * Thread-safe for multiple consumers.
-     * @return std::optional<T> containing the dequeued value if successful,
-     * or std::nullopt if the queue was empty.
-     */
-    std::optional<T> try_dequeue();
+  /**
+   * @brief Attempts to dequeue an item, returning it in an std::optional
+   * (non-blocking). Thread-safe for multiple consumers.
+   * @return std::optional<T> containing the dequeued value if successful,
+   * or std::nullopt if the queue was empty.
+   */
+  std::optional<T> try_dequeue();
 
-    // --- Additional Utility Functions (Exposed from underlying queue) ---
+  // --- Additional Utility Functions (Exposed from underlying queue) ---
 
-    /**
-     * @brief Returns an approximate count of items in the queue.
-     * Useful for heuristics but may not be exact in a highly concurrent scenario.
-     * @return Approximate number of items in the queue.
-     */
-    size_t size_approx() const;
+  /**
+   * @brief Returns an approximate count of items in the queue.
+   * Useful for heuristics but may not be exact in a highly concurrent scenario.
+   * @return Approximate number of items in the queue.
+   */
+  size_t size_approx() const;
 
-    // --- Resource Management ---
+  // --- Resource Management ---
 
-    // Disable copying and moving for simplicity.
-    // If move semantics are desired, the move constructor/assignment
-    // must also be defined in the .cpp file.
-    CPP_TOOLBOX_DISABLE_COPY_AND_MOVE(concurrent_queue_t)
+  // Disable copying and moving for simplicity.
+  // If move semantics are desired, the move constructor/assignment
+  // must also be defined in the .cpp file.
+  CPP_TOOLBOX_DISABLE_COPY_AND_MOVE(concurrent_queue_t)
 
 private:
-    // Forward declaration of the implementation class (Pimpl)
-    class Impl;
+  // Forward declaration of the implementation class (Pimpl)
+  class Impl;
 
-    // Pointer to the implementation details.
-    // std::unique_ptr requires Impl to be defined where the destructor is called.
-    std::unique_ptr<Impl> impl_;
+  // Pointer to the implementation details.
+  // std::unique_ptr requires Impl to be defined where the destructor is called.
+  std::unique_ptr<Impl> impl_;
 };
 
-} // namespace toolbox::concurrent
+}  // namespace toolbox::container

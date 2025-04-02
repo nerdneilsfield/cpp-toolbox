@@ -254,8 +254,8 @@ private:
  */
 inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
 {
-  *timer_interface = reinterpret_cast<SimpleTimerInterface*>(
-      new SimpleTimerArray(size));
+  *timer_interface =
+      reinterpret_cast<SimpleTimerInterface*>(new SimpleTimerArray(size));
   return (*timer_interface != nullptr) ? true : false;
 }
 
@@ -273,8 +273,8 @@ inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
 inline bool createTimerWithName(SimpleTimerInterface** timer_interface,
                                 const std::vector<std::string>& name)
 {
-  *timer_interface = reinterpret_cast<SimpleTimerInterface*>(
-      new SimpleTimerArray(name));
+  *timer_interface =
+      reinterpret_cast<SimpleTimerInterface*>(new SimpleTimerArray(name));
   return (*timer_interface != nullptr) ? true : false;
 }
 

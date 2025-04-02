@@ -1,31 +1,34 @@
-#include "cpp-toolbox/base/thread_pool.hpp" // 包含头文件
-#include <stdexcept>                      // 用于 std::invalid_argument
-#include <iostream>                       // 可选，用于调试输出
-#include <chrono>                         // 用于 std::chrono::milliseconds
+#include <chrono>  // 用于 std::chrono::milliseconds
+#include <iostream>  // 可选，用于调试输出
+#include <stdexcept>  // 用于 std::invalid_argument
+
+#include "cpp-toolbox/base/thread_pool.hpp"  // 包含头文件
 
 namespace toolbox::base
 {
 
 // 构造函数实现
-thread_pool_t::thread_pool_t(size_t threads) : stop_(false) {
-    // 如果传入的线程数为0，则尝试获取硬件并发核心数
-    size_t num_threads = threads;
+thread_pool_t::thread_pool_t(size_t threads)
+    : stop_(false)
+{
+  // 如果传入的线程数为0，则尝试获取硬件并发核心数
+  size_t num_threads = threads;
+  if (num_threads == 0) {
+    num_threads = std::thread::hardware_concurrency();
+    // 如果硬件并发核心数也无法获取或为0，则至少保证1个线程
     if (num_threads == 0) {
-        num_threads = std::thread::hardware_concurrency();
-        // 如果硬件并发核心数也无法获取或为0，则至少保证1个线程
-        if (num_threads == 0) {
-            num_threads = 1;
-        }
+      num_threads = 1;
     }
+  }
 
-    if (num_threads == 0) { // 理论上不会执行到这里了，但作为防御
-         throw std::invalid_argument("线程池的线程数不能为0");
-    }
+  if (num_threads == 0) {  // 理论上不会执行到这里了，但作为防御
+    throw std::invalid_argument("线程池的线程数不能为0");
+  }
 
-    // 预留空间并创建工作线程
-    workers_.reserve(num_threads);
-    for(size_t i = 0; i < num_threads; ++i) {
-        workers_.emplace_back(
+  // 预留空间并创建工作线程
+  workers_.reserve(num_threads);
+  for (size_t i = 0; i < num_threads; ++i) {
+    workers_.emplace_back(
             [this, i] { // 工作线程执行的 lambda 函数 - Capture thread index 'i' for logging
                 std::function<void()> task; // 用于存储从队列取出的任务
                 std::cout << "Worker thread " << i << " started." << std::endl;
@@ -82,25 +85,26 @@ thread_pool_t::thread_pool_t(size_t threads) : stop_(false) {
                 }
             }
         );
-    }
+  }
 }
 
 // 析构函数实现
-thread_pool_t::~thread_pool_t() {
-    // 设置停止标志
-    // 使用 release 语义确保停止标志对所有线程可见
-    stop_.store(true, std::memory_order_release);
+thread_pool_t::~thread_pool_t()
+{
+  // 设置停止标志
+  // 使用 release 语义确保停止标志对所有线程可见
+  stop_.store(true, std::memory_order_release);
 
-    // 不再需要 notify_all
+  // 不再需要 notify_all
 
-    // 等待所有工作线程完成其当前任务并退出
-    for(std::thread &worker: workers_) {
-        if(worker.joinable()) { // 确保线程是可加入的
-            worker.join();
-        }
+  // 等待所有工作线程完成其当前任务并退出
+  for (std::thread& worker : workers_) {
+    if (worker.joinable()) {  // 确保线程是可加入的
+      worker.join();
     }
-    // 注意：这里不再显式清理队列，因为 lock_free_queue 的析构函数会处理
-    // 但最好确保所有线程都已退出且调用了 cleanup_this_thread_retired_nodes
+  }
+  // 注意：这里不再显式清理队列，因为 lock_free_queue 的析构函数会处理
+  // 但最好确保所有线程都已退出且调用了 cleanup_this_thread_retired_nodes
 }
 
-} // namespace toolbox::base
+}  // namespace toolbox::base
