@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef CPP_TOOLBOX_OLD_THREAD_POOL
+
 #include <vector>               // 用于存储工作线程
 // #include <queue>             // 不再需要标准队列
 #include <thread>               // C++ 线程库
@@ -14,8 +16,8 @@
 #include <memory>               // 用于 std::make_shared
 #include <iostream>             // 用于 std::cout, std::cerr
 
-// 包含 concurrent_queue
-#include "cpp-toolbox/container/concurrent_queue.hpp"
+// 包含 lock_free_queue
+#include "cpp-toolbox/container/lock_free_queue.hpp"
 // 假设你的导出宏定义在这里
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 // 假设你的宏定义文件在这里
@@ -25,11 +27,11 @@ namespace toolbox::base
 {
 
 /**
- * @brief 一个使用 moodycamel::ConcurrentQueue (通过包装器) 的高性能 C++17 线程池实现。
+ * @brief 一个使用无锁队列的高性能 C++17 线程池实现。
  *
  * 该线程池允许提交任务并异步获取结果。
  * 它在构造时创建固定数量的工作线程，并在析构时优雅地停止它们。
- * 使用 `toolbox::container::concurrent_queue_t` 作为底层任务队列。
+ * 使用 `toolbox::container::lock_free_queue_t` 作为底层任务队列。
  */
 class CPP_TOOLBOX_EXPORT thread_pool_t {
 public:
@@ -72,8 +74,8 @@ public:
 private:
     // 工作线程列表
     std::vector<std::thread> workers_;
-    // 使用 concurrent_queue 作为任务队列
-    toolbox::container::concurrent_queue_t<std::function<void()>> tasks_;
+    // 无锁任务队列，存储待执行的任务 (类型擦除为 void())
+    toolbox::container::lock_free_queue_t<std::function<void()>> tasks_;
 
     // 不再需要以下成员:
     // std::mutex queue_mutex_;
@@ -102,7 +104,7 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
 
     std::future<return_type> res = task->get_future();
 
-    // 直接将任务入队到 concurrent_queue
+    // 直接将任务入队到无锁队列
     // 无需锁或条件变量
     tasks_.enqueue([task /* Capture shared_ptr */ ]() {
         // Add logging inside the lambda executed by the worker
@@ -134,3 +136,5 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
 }
 
 } // namespace toolbox::base
+
+#endif // CPP_TOOLBOX_OLD_THREAD_POOL
