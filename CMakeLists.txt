@@ -12,7 +12,7 @@ project(
 
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
-
+include(cmake/cache.cmake)
 # ---- Dependencies ----
 
 add_subdirectory(deps)

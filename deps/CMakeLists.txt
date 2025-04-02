@@ -3,6 +3,8 @@ if(BUILD_TESTING)
   add_subdirectory(Catch2)
 endif()
 
+add_subdirectory(concurrentqueue)
+
 # set(FMT_HEADERS "")
 # set(FMT_MODULE OFF)
 # set(FMT_INSTALL OFF)

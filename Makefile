@@ -104,6 +104,13 @@ build:  ## Build the project
 	@echo "Done building the project."
 
 
+.PHONY: test
+test:  ## Run the tests
+	@echo "Running the tests..."
+	@cd build && ctest --rerun-failed --output-on-failure
+	@echo "Done running the tests."
+
+
 .PHONY: docs
 docs:  ## Generate the documentation
 	@echo "Generating the documentation..."
