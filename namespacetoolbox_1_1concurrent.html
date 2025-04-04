@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>toolbox::concurrent namespace | cpp-toolbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">cpp-toolbox</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span>concurrent <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="parallel_8hpp.html">&lt;src/include/cpp-toolbox/concurrent/parallel.hpp&gt;</a></div>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt id="ad83682a69d167e3b7f8712566033e180">
+              <span class="m-doc-wrap-bumper">auto <a href="#ad83682a69d167e3b7f8712566033e180" class="m-doc-self">default_pool</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">base::<wbr />thread_pool_singleton_t</a>&amp;</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Iterator, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#acae673a7f47c092841ef7aab1894a71f" class="m-doc">parallel_for_each</a>(</span><span class="m-doc-wrap">Iterator begin,
+              Iterator end,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd>并行地对范围 <code>[begin, end)</code> 中的每个元素应用函数 <code>func</code>。</dd>
+            <dt id="aa0a37c5ad71c53905b1c8db374cd4d43">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa0a37c5ad71c53905b1c8db374cd4d43" class="m-doc-self">parallel_for_each</a>(</span><span class="m-doc-wrap">std::vector&lt;T, Alloc&gt;&amp; vec,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ab9f7beaaac6b99bcd570652522778550">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab9f7beaaac6b99bcd570652522778550" class="m-doc-self">parallel_for_each</a>(</span><span class="m-doc-wrap">const std::vector&lt;T, Alloc&gt;&amp; vec,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa7bd6ddb7ab2da26b9705ca3ed2f9c94">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa7bd6ddb7ab2da26b9705ca3ed2f9c94" class="m-doc-self">parallel_for_each</a>(</span><span class="m-doc-wrap">std::array&lt;T, N&gt;&amp; arr,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a3445a42f0d7ae47387555bc5b4576648">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3445a42f0d7ae47387555bc5b4576648" class="m-doc-self">parallel_for_each</a>(</span><span class="m-doc-wrap">const std::array&lt;T, N&gt;&amp; arr,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename InputIt, typename OutputIt, typename UnaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#adc129cfed7d6ea2f9bd3cffde739ce9d" class="m-doc">parallel_transform</a>(</span><span class="m-doc-wrap">InputIt first1,
+              InputIt last1,
+              OutputIt d_first,
+              UnaryOperation unary_op) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd>并行地对输入范围 <code>[first1, last1)</code> 应用 <code>unary_op</code>，并将结果存储到 <code>[d_first, ...)</code>。</dd>
+            <dt id="aebf0bab748ed9ab65042ad8700411a9e">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aebf0bab748ed9ab65042ad8700411a9e" class="m-doc-self">parallel_transform</a>(</span><span class="m-doc-wrap">std::vector&lt;T, Alloc&gt;&amp; vec,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="a778ee00b731c893ba86f150deae148b4">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a778ee00b731c893ba86f150deae148b4" class="m-doc-self">parallel_transform</a>(</span><span class="m-doc-wrap">const std::vector&lt;T, Alloc&gt;&amp; vec,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aab4fda981d54019a30712394d7747cc4">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aab4fda981d54019a30712394d7747cc4" class="m-doc-self">parallel_transform</a>(</span><span class="m-doc-wrap">std::array&lt;T, N&gt;&amp; arr,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa1e6d8ab2286c5d96dd9e0de3fc13ad1">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename Function&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa1e6d8ab2286c5d96dd9e0de3fc13ad1" class="m-doc-self">parallel_transform</a>(</span><span class="m-doc-wrap">const std::array&lt;T, N&gt;&amp; arr,
+              Function func) -&gt; CPP_TOOLBOX_EXPORT void</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Iterator, typename T, typename BinaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6ea1b3789d0e60da0d852d4d2b1b0587" class="m-doc">parallel_reduce</a>(</span><span class="m-doc-wrap">Iterator begin,
+              Iterator end,
+              T identity,
+              BinaryOperation reduce_op) -&gt; CPP_TOOLBOX_EXPORT T</span>
+            </dt>
+            <dd>并行地对范围 <code>[begin, end)</code> 进行归约操作。</dd>
+            <dt id="a901bcfda7e90ddf49a34af8665b20564">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename BinaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a901bcfda7e90ddf49a34af8665b20564" class="m-doc-self">parallel_reduce</a>(</span><span class="m-doc-wrap">std::vector&lt;T, Alloc&gt;&amp; vec,
+              T identity,
+              BinaryOperation reduce_op) -&gt; CPP_TOOLBOX_EXPORT T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="ad88cfa90539431b271421f750576bc0f">
+              <div class="m-doc-template">template&lt;typename T, typename Alloc, typename BinaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad88cfa90539431b271421f750576bc0f" class="m-doc-self">parallel_reduce</a>(</span><span class="m-doc-wrap">const std::vector&lt;T, Alloc&gt;&amp; vec,
+              T identity,
+              BinaryOperation reduce_op) -&gt; CPP_TOOLBOX_EXPORT T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="aa11d099f6070651f3af1f243019118b8">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename BinaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa11d099f6070651f3af1f243019118b8" class="m-doc-self">parallel_reduce</a>(</span><span class="m-doc-wrap">std::array&lt;T, N&gt;&amp; arr,
+              T identity,
+              BinaryOperation reduce_op) -&gt; CPP_TOOLBOX_EXPORT T</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt id="abb403005ec151d5f1ce67d3986733d4d">
+              <div class="m-doc-template">template&lt;typename T, <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N, typename BinaryOperation&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#abb403005ec151d5f1ce67d3986733d4d" class="m-doc-self">parallel_reduce</a>(</span><span class="m-doc-wrap">const std::array&lt;T, N&gt;&amp; arr,
+              T identity,
+              BinaryOperation reduce_op) -&gt; CPP_TOOLBOX_EXPORT T</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="acae673a7f47c092841ef7aab1894a71f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iterator, typename Function&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT void toolbox::<wbr />concurrent::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acae673a7f47c092841ef7aab1894a71f" class="m-doc-self">parallel_for_each</a>(</span><span class="m-doc-wrap">Iterator begin,
+              Iterator end,
+              Function func)</span></span>
+            </h3>
+            <p>并行地对范围 <code>[begin, end)</code> 中的每个元素应用函数 <code>func</code>。</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Iterator</td>
+                  <td>输入迭代器类型（需要支持随机访问以进行高效划分）。</td>
+                </tr>
+                <tr>
+                  <td>Function</td>
+                  <td>一元函数对象类型。</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>begin</td>
+                  <td>范围的起始迭代器。</td>
+                </tr>
+                <tr>
+                  <td>end</td>
+                  <td>范围的结束迭代器。</td>
+                </tr>
+                <tr>
+                  <td>func</td>
+                  <td>应用于每个元素的函数对象。</td>
+                </tr>
+              </tbody>
+            </table>
+<p>使用默认的线程池进行手动任务划分和提交。</p>
+          </div></section>
+          <section class="m-doc-details" id="adc129cfed7d6ea2f9bd3cffde739ce9d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename InputIt, typename OutputIt, typename UnaryOperation&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT void toolbox::<wbr />concurrent::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adc129cfed7d6ea2f9bd3cffde739ce9d" class="m-doc-self">parallel_transform</a>(</span><span class="m-doc-wrap">InputIt first1,
+              InputIt last1,
+              OutputIt d_first,
+              UnaryOperation unary_op)</span></span>
+            </h3>
+            <p>并行地对输入范围 <code>[first1, last1)</code> 应用 <code>unary_op</code>，并将结果存储到 <code>[d_first, ...)</code>。</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">InputIt</td>
+                  <td>输入迭代器类型 (std::random_access_iterator)。</td>
+                </tr>
+                <tr>
+                  <td>OutputIt</td>
+                  <td>输出迭代器类型 (std::random_access_iterator)。</td>
+                </tr>
+                <tr>
+                  <td>UnaryOperation</td>
+                  <td>一元操作函数对象类型, 签名应类似 OutType(const InType&amp;)。</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>first1</td>
+                  <td>输入范围的起始。</td>
+                </tr>
+                <tr>
+                  <td>last1</td>
+                  <td>输入范围的结束。</td>
+                </tr>
+                <tr>
+                  <td>d_first</td>
+                  <td>输出范围的起始。</td>
+                </tr>
+                <tr>
+                  <td>unary_op</td>
+                  <td>应用于每个输入元素的操作。</td>
+                </tr>
+              </tbody>
+            </table>
+<aside class="m-note m-danger"><h4>Warning</h4><p>要求输入和输出迭代器都必须是【随机访问迭代器】。</p><p>输出范围 <code>[d_first, d_first + distance(first1, last1))</code> 必须具有足够的、已分配的容量，并且并行写入必须是安全的（例如，写入 <code>std::vector</code> 前需 <code>resize()</code>）。</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a6ea1b3789d0e60da0d852d4d2b1b0587"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename Iterator, typename T, typename BinaryOperation&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT T toolbox::<wbr />concurrent::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6ea1b3789d0e60da0d852d4d2b1b0587" class="m-doc-self">parallel_reduce</a>(</span><span class="m-doc-wrap">Iterator begin,
+              Iterator end,
+              T identity,
+              BinaryOperation reduce_op)</span></span>
+            </h3>
+            <p>并行地对范围 <code>[begin, end)</code> 进行归约操作。</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Iterator</td>
+                  <td>输入迭代器类型（需要支持随机访问以进行高效划分）。</td>
+                </tr>
+                <tr>
+                  <td>T</td>
+                  <td>归约结果和幺元的类型。</td>
+                </tr>
+                <tr>
+                  <td>BinaryOperation</td>
+                  <td>归约操作的二元函数对象类型，签名应类似 <code>T(const T&amp;, const ElementType&amp;)</code> 或 <code>T(T, T)</code>。</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>begin</td>
+                  <td>范围的起始迭代器。</td>
+                </tr>
+                <tr>
+                  <td>end</td>
+                  <td>范围的结束迭代器。</td>
+                </tr>
+                <tr>
+                  <td>identity</td>
+                  <td>归约操作的幺元。</td>
+                </tr>
+                <tr>
+                  <td>reduce_op</td>
+                  <td>用于合并两个 T 类型值或 T 类型值与元素类型值的二元操作。</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>并行归约的结果。</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>使用默认线程池进行手动任务划分，先进行局部归约，然后合并结果。 <code>reduce_op</code> 最好满足结合律 (associative)。<code>identity</code> 必须是 <code>reduce_op</code> 的幺元。</p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>cpp-toolbox. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

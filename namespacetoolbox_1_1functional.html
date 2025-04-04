@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>toolbox::functional namespace | cpp-toolbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">cpp-toolbox</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span>functional <span class="m-thin">namespace</span>
+        </h1>
+        <p><span></span></p>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#namespaces">Namespaces</a></li>
+                <li><a href="#nested-classes">Classes</a></li>
+                <li><a href="#func-members">Functions</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <section id="namespaces">
+          <h2><a href="#namespaces">Namespaces</a></h2>
+          <dl class="m-doc">
+            <dt>namespace <a href="namespacetoolbox_1_1functional_1_1detail.html" class="m-doc">detail</a></dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section id="nested-classes">
+          <h2><a href="#nested-classes">Classes</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename Signature&gt;</div>
+              class <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename R, typename... Args&gt;</div>
+              class <a href="classtoolbox_1_1functional_1_1MemoizedFunction_3_01R_07Args_8_8_8_08_4.html" class="m-doc">MemoizedFunction&lt;R(Args...)&gt;</a>
+            </dt>
+            <dd>Specialization of <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a> for specific function signature.</dd>
+          </dl>
+        </section>
+        <section id="func-members">
+          <h2><a href="#func-members">Functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <div class="m-doc-template">template&lt;typename G, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#af8b28e1bd761680b1a9dcc57201c19ee" class="m-doc">compose</a>(</span><span class="m-doc-wrap">G&amp;&amp; g,
+              F&amp;&amp; f) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename F1, typename... FRest&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad505ee192c5c9ebd8d6d8d8628d888d5" class="m-doc">compose</a>(</span><span class="m-doc-wrap">F1&amp;&amp; f1,
+              FRest &amp;&amp; ... rest) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aef7086d6c793887bf5ff5a3da8025bd4" class="m-doc">compose</a>(</span><span class="m-doc-wrap">) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd>Empty compose function that throws an error.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename F, typename Arg1&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aecc9e3b337e5a7e2d3d9eaac80939002" class="m-doc">bind_first</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              Arg1&amp;&amp; arg1) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a17a6accc8bba74382744d1e09aa210a7" class="m-doc">map</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; f) -&gt; std::optional&lt; std::invoke_result_t&lt; F, const T &amp; &gt;&gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad15ccddfc681b69126102b97ee79e3ac" class="m-doc">map</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              F&amp;&amp; f) -&gt; std::optional&lt; std::invoke_result_t&lt; F, T &amp;&amp; &gt;&gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd>Maps a function over an optional rvalue.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#abea94163fa9d90b3c3a81a6f82fd31cd" class="m-doc">flatMap</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; f) -&gt; std::invoke_result_t&lt; F, const T &amp; &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8866f4d6dc615d3c2b237adea3cf0810" class="m-doc">flatMap</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              F&amp;&amp; f) -&gt; std::invoke_result_t&lt; F, T &amp;&amp; &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd>Flat maps a function over an optional rvalue.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename U&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a50e389bf7d4e1f5788548cd2784de28f" class="m-doc">orElse</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              U&amp;&amp; default_value) -&gt; T -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4a7a4acdd8ba7485698f9ea3e64920e9" class="m-doc">orElseGet</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; default_func) -&gt; T -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename P&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4e0c6694011c494298113d01b2b3e9de" class="m-doc">filter</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              P&amp;&amp; p) -&gt; std::optional&lt; T &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename T, typename P&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a887c36248685aa88197aa703787c30a8" class="m-doc">filter</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              P&amp;&amp; p) -&gt; std::optional&lt; T &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd>Filters an optional rvalue based on a predicate.</dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Ts, typename... Fs&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a76f1f065e91d8b2571f14cc350983a02" class="m-doc">match</a>(</span><span class="m-doc-wrap">const std::variant&lt;Ts...&gt;&amp; var,
+              Fs &amp;&amp; ... visitors) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Ts, typename... Fs&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1893e027e95dd95cee03d2c216de4205" class="m-doc">match</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp; var,
+              Fs &amp;&amp; ... visitors) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Ts, typename... Fs&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a09ce89a295a09678c2d0aa2dd9903ceb" class="m-doc">match</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp;&amp; var,
+              Fs &amp;&amp; ... visitors) -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename ResultVariant, typename... Ts, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a470b06977505a96a3ee4ca05e6ca9907" class="m-doc">map</a>(</span><span class="m-doc-wrap">const std::variant&lt;Ts...&gt;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename ResultVariant, typename... Ts, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7e06cdbbc5ffdb751d6ec6b7b42dc2f3" class="m-doc">map</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename ResultVariant, typename... Ts, typename F&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad0df97865b75c205b0ae131de8b81688" class="m-doc">map</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename Func&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#aee9e6afdbc445efd38008f88863d64f1" class="m-doc">map</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              Func&amp;&amp; f) -&gt; std::vector&lt; std::invoke_result_t&lt; Func, typename Container::const_reference &gt;&gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename Predicate&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a04bfaacdb77bebe2eecb48d3ae6167da" class="m-doc">filter</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              Predicate&amp;&amp; p) -&gt; std::vector&lt; typename Container::value_type &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename T, typename BinaryOp&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a28234663d88d2ee0d2a8fc72044235e3" class="m-doc">reduce</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              T identity,
+              BinaryOp&amp;&amp; op) -&gt; T -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Container, typename BinaryOp&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a066d6a37ea371a922c192f5502bb1a26" class="m-doc">reduce</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              BinaryOp&amp;&amp; op) -&gt; typename Container::value_type -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename... Containers&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a14a774e92ad2ff34a0d6fb26e1929527" class="m-doc">zip</a>(</span><span class="m-doc-wrap">const Containers&amp;... containers) ... &gt;&gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename ContainerKeys, typename ContainerValues, typename Key = typename std::decay_t&lt;ContainerKeys&gt;::value_type, typename Value = typename std::decay_t&lt;ContainerValues&gt;::value_type, typename Hash = std::hash&lt;Key&gt;, typename KeyEqual = std::equal_to&lt;Key&gt;, typename Alloc = std::allocator&lt;std::pair&lt;const Key, Value&gt;&gt;&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4fb6acc3f4d90809e63e519440e55b7c" class="m-doc">zip_to_unordered_map</a>(</span><span class="m-doc-wrap">const ContainerKeys&amp; keys,
+              const ContainerValues&amp; values) -&gt; std::unordered_map&lt; Key, Value, Hash, KeyEqual, Alloc &gt; -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename Signature, typename Func&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#a67ae7d48b6cf42eb8a27dbf3a970167b" class="m-doc">memoize</a>(</span><span class="m-doc-wrap">Func&amp;&amp; f)</span>
+            </dt>
+            <dd><span></span></dd>
+            <dt>
+              <div class="m-doc-template">template&lt;typename R, typename... Args, typename Func&gt;</div>
+              <span class="m-doc-wrap-bumper">auto <a href="#af4ca279b16162dbbf7042fc2681bdba7" class="m-doc">memoize_explicit</a>(</span><span class="m-doc-wrap">Func&amp;&amp; f) &gt;</span>
+            </dt>
+            <dd><span></span></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="af8b28e1bd761680b1a9dcc57201c19ee"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename G, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8b28e1bd761680b1a9dcc57201c19ee" class="m-doc-self">compose</a>(</span><span class="m-doc-wrap">G&amp;&amp; g,
+              F&amp;&amp; f)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad505ee192c5c9ebd8d6d8d8628d888d5"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F1, typename... FRest&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad505ee192c5c9ebd8d6d8d8628d888d5" class="m-doc-self">compose</a>(</span><span class="m-doc-wrap">F1&amp;&amp; f1,
+              FRest &amp;&amp; ... rest)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aef7086d6c793887bf5ff5a3da8025bd4"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aef7086d6c793887bf5ff5a3da8025bd4" class="m-doc-self">compose</a>(</span><span class="m-doc-wrap">)</span></span>
+              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+            </h3>
+            <p>Empty compose function that throws an error.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">std::logic_error</td>
+                  <td>when called</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aecc9e3b337e5a7e2d3d9eaac80939002"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename F, typename Arg1&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aecc9e3b337e5a7e2d3d9eaac80939002" class="m-doc-self">bind_first</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              Arg1&amp;&amp; arg1)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a17a6accc8bba74382744d1e09aa210a7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a17a6accc8bba74382744d1e09aa210a7" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; f) -&gt; std::optional&lt; std::invoke_result_t&lt; F, const T &amp; &gt;&gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad15ccddfc681b69126102b97ee79e3ac"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad15ccddfc681b69126102b97ee79e3ac" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              F&amp;&amp; f) -&gt; std::optional&lt; std::invoke_result_t&lt; F, T &amp;&amp; &gt;&gt;</span></span>
+            </h3>
+            <p>Maps a function over an optional rvalue.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type contained in optional</td>
+                </tr>
+                <tr>
+                  <td>F</td>
+                  <td>Function type</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>opt</td>
+                  <td>Optional rvalue to map over</td>
+                </tr>
+                <tr>
+                  <td>f</td>
+                  <td>Function to apply</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Optional containing result of f if opt has value, empty optional otherwise</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abea94163fa9d90b3c3a81a6f82fd31cd"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abea94163fa9d90b3c3a81a6f82fd31cd" class="m-doc-self">flatMap</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; f) -&gt; std::invoke_result_t&lt; F, const T &amp; &gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a8866f4d6dc615d3c2b237adea3cf0810"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8866f4d6dc615d3c2b237adea3cf0810" class="m-doc-self">flatMap</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              F&amp;&amp; f) -&gt; std::invoke_result_t&lt; F, T &amp;&amp; &gt;</span></span>
+            </h3>
+            <p>Flat maps a function over an optional rvalue.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type contained in optional</td>
+                </tr>
+                <tr>
+                  <td>F</td>
+                  <td>Function type returning optional</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>opt</td>
+                  <td>Optional rvalue to flat map over</td>
+                </tr>
+                <tr>
+                  <td>f</td>
+                  <td>Function to apply</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Result of f if opt has value, empty optional otherwise</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a50e389bf7d4e1f5788548cd2784de28f"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename U&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a50e389bf7d4e1f5788548cd2784de28f" class="m-doc-self">orElse</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              U&amp;&amp; default_value) -&gt; T</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4a7a4acdd8ba7485698f9ea3e64920e9"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4a7a4acdd8ba7485698f9ea3e64920e9" class="m-doc-self">orElseGet</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              F&amp;&amp; default_func) -&gt; T</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4e0c6694011c494298113d01b2b3e9de"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename P&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4e0c6694011c494298113d01b2b3e9de" class="m-doc-self">filter</a>(</span><span class="m-doc-wrap">const std::optional&lt;T&gt;&amp; opt,
+              P&amp;&amp; p) -&gt; std::optional&lt; T &gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a887c36248685aa88197aa703787c30a8"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename T, typename P&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a887c36248685aa88197aa703787c30a8" class="m-doc-self">filter</a>(</span><span class="m-doc-wrap">std::optional&lt;T&gt;&amp;&amp; opt,
+              P&amp;&amp; p) -&gt; std::optional&lt; T &gt;</span></span>
+            </h3>
+            <p>Filters an optional rvalue based on a predicate.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Type contained in optional</td>
+                </tr>
+                <tr>
+                  <td>P</td>
+                  <td>Predicate type</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>opt</td>
+                  <td>Optional rvalue to filter</td>
+                </tr>
+                <tr>
+                  <td>p</td>
+                  <td>Predicate to apply</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Optional if predicate returns true, empty optional otherwise</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a76f1f065e91d8b2571f14cc350983a02"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Ts, typename... Fs&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a76f1f065e91d8b2571f14cc350983a02" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">const std::variant&lt;Ts...&gt;&amp; var,
+              Fs &amp;&amp; ... visitors)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a1893e027e95dd95cee03d2c216de4205"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Ts, typename... Fs&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1893e027e95dd95cee03d2c216de4205" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp; var,
+              Fs &amp;&amp; ... visitors)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a09ce89a295a09678c2d0aa2dd9903ceb"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Ts, typename... Fs&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a09ce89a295a09678c2d0aa2dd9903ceb" class="m-doc-self">match</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp;&amp; var,
+              Fs &amp;&amp; ... visitors)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a470b06977505a96a3ee4ca05e6ca9907"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename ResultVariant, typename... Ts, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a470b06977505a96a3ee4ca05e6ca9907" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">const std::variant&lt;Ts...&gt;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a7e06cdbbc5ffdb751d6ec6b7b42dc2f3"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename ResultVariant, typename... Ts, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7e06cdbbc5ffdb751d6ec6b7b42dc2f3" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="ad0df97865b75c205b0ae131de8b81688"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename ResultVariant, typename... Ts, typename F&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad0df97865b75c205b0ae131de8b81688" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">std::variant&lt;Ts...&gt;&amp;&amp; var,
+              F&amp;&amp; f) -&gt; ResultVariant</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="aee9e6afdbc445efd38008f88863d64f1"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Container, typename Func&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aee9e6afdbc445efd38008f88863d64f1" class="m-doc-self">map</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              Func&amp;&amp; f) -&gt; std::vector&lt; std::invoke_result_t&lt; Func, typename Container::const_reference &gt;&gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a04bfaacdb77bebe2eecb48d3ae6167da"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Container, typename Predicate&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a04bfaacdb77bebe2eecb48d3ae6167da" class="m-doc-self">filter</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              Predicate&amp;&amp; p) -&gt; std::vector&lt; typename Container::value_type &gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a28234663d88d2ee0d2a8fc72044235e3"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Container, typename T, typename BinaryOp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a28234663d88d2ee0d2a8fc72044235e3" class="m-doc-self">reduce</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              T identity,
+              BinaryOp&amp;&amp; op) -&gt; T</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a066d6a37ea371a922c192f5502bb1a26"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Container, typename BinaryOp&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a066d6a37ea371a922c192f5502bb1a26" class="m-doc-self">reduce</a>(</span><span class="m-doc-wrap">const Container&amp; input,
+              BinaryOp&amp;&amp; op) -&gt; typename Container::value_type</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a14a774e92ad2ff34a0d6fb26e1929527"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename... Containers&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a14a774e92ad2ff34a0d6fb26e1929527" class="m-doc-self">zip</a>(</span><span class="m-doc-wrap">const Containers&amp;... containers) ... &gt;&gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a4fb6acc3f4d90809e63e519440e55b7c"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename ContainerKeys, typename ContainerValues, typename Key = typename std::decay_t&lt;ContainerKeys&gt;::value_type, typename Value = typename std::decay_t&lt;ContainerValues&gt;::value_type, typename Hash = std::hash&lt;Key&gt;, typename KeyEqual = std::equal_to&lt;Key&gt;, typename Alloc = std::allocator&lt;std::pair&lt;const Key, Value&gt;&gt;&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4fb6acc3f4d90809e63e519440e55b7c" class="m-doc-self">zip_to_unordered_map</a>(</span><span class="m-doc-wrap">const ContainerKeys&amp; keys,
+              const ContainerValues&amp; values) -&gt; std::unordered_map&lt; Key, Value, Hash, KeyEqual, Alloc &gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="a67ae7d48b6cf42eb8a27dbf3a970167b"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename Signature, typename Func&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a67ae7d48b6cf42eb8a27dbf3a970167b" class="m-doc-self">memoize</a>(</span><span class="m-doc-wrap">Func&amp;&amp; f)</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+          <section class="m-doc-details" id="af4ca279b16162dbbf7042fc2681bdba7"><div>
+            <h3>
+              <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
+              <div class="m-doc-template">
+                template&lt;typename R, typename... Args, typename Func&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />functional::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af4ca279b16162dbbf7042fc2681bdba7" class="m-doc-self">memoize_explicit</a>(</span><span class="m-doc-wrap">Func&amp;&amp; f) &gt;</span></span>
+            </h3>
+            <p><span></span></p>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>cpp-toolbox. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

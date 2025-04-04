@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>toolbox::base namespace | cpp-toolbox</title>
+  <title>toolbox::functional::MemoizedFunction&lt;R(Args...)&gt; class | cpp-toolbox</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,80 +49,71 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span>base <span class="m-thin">namespace</span>
+          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;functional.hpp&gt;</a></div>
+          <div class="m-doc-template">template&lt;typename R, typename... Args&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1functional.html">functional</a>::<wbr/></span>MemoizedFunction&lt;R(Args...)&gt; <span class="m-thin">class</span>
         </h1>
-        <p><span></span></p>
+        <p>Specialization of <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a> for specific function signature.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">R</td>
+              <td>Return type</td>
+            </tr>
+            <tr>
+              <td>Args</td>
+              <td>Argument types</td>
+            </tr>
+          </tbody>
+        </table>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
             <li>
               Reference
               <ul>
-                <li><a href="#nested-classes">Classes</a></li>
-                <li><a href="#func-members">Functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
               </ul>
             </li>
           </ul>
         </div>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1memory__pool__t.html" class="m-doc">memory_pool_t</a>
+            <dt id="a0e2209ac8f5f89adb0a6038bf7604f10">
+              <span class="m-doc-wrap-bumper"><a href="#a0e2209ac8f5f89adb0a6038bf7604f10" class="m-doc-self">MemoizedFunction</a>(</span><span class="m-doc-wrap">FuncType f) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1thread__pool__t.html" class="m-doc">thread_pool_t</a>
+            <dt id="acae96bbec0e5ef9defe196a121767b61">
+              <span class="m-doc-wrap-bumper"><a href="#acae96bbec0e5ef9defe196a121767b61" class="m-doc-self">MemoizedFunction</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_pool_singleton_t</a>
+            <dt id="ab14501b378a9cfb297ed0c0d818f166b">
+              <span class="m-doc-wrap-bumper"><a href="#ab14501b378a9cfb297ed0c0d818f166b" class="m-doc-self">MemoizedFunction</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd><span></span></dd>
           </dl>
         </section>
-        <section id="func-members">
-          <h2><a href="#func-members">Functions</a></h2>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aaf4ba06e16ef767bd29d5b1c9fc760e6" class="m-doc">get_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; std::string -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            <dt id="a3f53e4f6027af288cb537a6a04ac025f">
+              <span class="m-doc-wrap-bumper">auto <a href="#a3f53e4f6027af288cb537a6a04ac025f" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp;) -&gt; <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#af8f1b6b2951fa719590c6a8483eaa17e" class="m-doc">set_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
-              const std::string&amp; value) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            <dt id="a633091dfd3c1e43afdb5853cd6ac8eeb">
+              <span class="m-doc-wrap-bumper">auto <a href="#a633091dfd3c1e43afdb5853cd6ac8eeb" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp;&amp;) -&gt; <a href="classtoolbox_1_1functional_1_1MemoizedFunction.html" class="m-doc">MemoizedFunction</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
             </dt>
             <dd><span></span></dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ad492fe465930e627f40feec79b17eb8e" class="m-doc">remove_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; bool -&gt; CPP_TOOLBOX_EXPORT auto</span>
+            <dt id="a27ef5ae7912753e200ffc53131f47c8d">
+              <span class="m-doc-wrap-bumper">auto <a href="#a27ef5ae7912753e200ffc53131f47c8d" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">Args... args) -&gt; ResultType</span>
             </dt>
             <dd><span></span></dd>
           </dl>
-        </section>
-        <section>
-          <h2>Function documentation</h2>
-          <section class="m-doc-details" id="aaf4ba06e16ef767bd29d5b1c9fc760e6"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aaf4ba06e16ef767bd29d5b1c9fc760e6" class="m-doc-self">get_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; std::string</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="af8f1b6b2951fa719590c6a8483eaa17e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af8f1b6b2951fa719590c6a8483eaa17e" class="m-doc-self">set_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name,
-              const std::string&amp; value) -&gt; bool</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
-          <section class="m-doc-details" id="ad492fe465930e627f40feec79b17eb8e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">CPP_TOOLBOX_EXPORT auto toolbox::<wbr />base::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad492fe465930e627f40feec79b17eb8e" class="m-doc-self">remove_environment_variable</a>(</span><span class="m-doc-wrap">const std::string&amp; name) -&gt; bool</span></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="env_8hpp.html">&lt;src/include/cpp-toolbox/base/env.hpp&gt;</a></div>
-            </h3>
-            <p><span></span></p>
-          </div></section>
         </section>
       </div>
     </div>
