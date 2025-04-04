@@ -1,0 +1,4 @@
+add_executable(parallel_test parallel_test.cpp)
+target_link_libraries(parallel_test PRIVATE cpp-toolbox::cpp-toolbox Catch2WithMain)
+target_compile_features(parallel_test PRIVATE cxx_std_17)
+add_test(NAME parallel_test COMMAND parallel_test)

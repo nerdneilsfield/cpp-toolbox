@@ -7,3 +7,8 @@ add_executable(thread_pool_test thread_pool_test.cpp)
 target_link_libraries(thread_pool_test PRIVATE cpp-toolbox::cpp-toolbox Catch2WithMain)
 target_compile_features(thread_pool_test PRIVATE cxx_std_17)
 add_test(NAME thread_pool_test COMMAND thread_pool_test)
+
+add_executable(thread_pool_singleton_test thread_pool_singleton_test.cpp)
+target_link_libraries(thread_pool_singleton_test PRIVATE cpp-toolbox::cpp-toolbox Catch2WithMain)
+target_compile_features(thread_pool_singleton_test PRIVATE cxx_std_17)
+add_test(NAME thread_pool_singleton_test COMMAND thread_pool_singleton_test)

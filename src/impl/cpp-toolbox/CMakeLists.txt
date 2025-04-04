@@ -4,6 +4,7 @@ cmake_minimum_required(VERSION 3.14)
 set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/base/env.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool_singleton.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/thread_logger.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/file/file.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/string.cpp
@@ -26,7 +27,6 @@ target_compile_definitions(cpp-toolbox PUBLIC
 )
 target_include_directories(cpp-toolbox PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
-    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>
     ${CPP_TOOLBOX_INCLUDE_DIRS}
 )
 set_target_properties(cpp-toolbox PROPERTIES
