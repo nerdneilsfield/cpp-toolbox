@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
 
+find_package(Threads REQUIRED)
+
+
 set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/base/env.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool.cpp
@@ -40,6 +43,7 @@ set_target_properties(cpp-toolbox PROPERTIES
 target_link_libraries(cpp-toolbox
     PRIVATE
     concurrentqueue::concurrentqueue
+    Threads::Threads
 )
 
 
@@ -50,7 +54,7 @@ target_compile_definitions(cpp-toolbox_static PUBLIC
     $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS>
     CPP_TOOLBOX_STATIC_DEFINE
 )
-target_link_libraries(cpp-toolbox_static PRIVATE concurrentqueue::concurrentqueue)
+target_link_libraries(cpp-toolbox_static PRIVATE concurrentqueue::concurrentqueue Threads::Threads)
 add_library(cpp-toolbox::cpp-toolbox_static ALIAS cpp-toolbox_static)
 
 
