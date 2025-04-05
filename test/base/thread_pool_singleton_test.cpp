@@ -12,7 +12,7 @@
 #include "cpp-toolbox/base/thread_pool_singleton.hpp"
 
 // Include Catch2 testing framework
-#define CATCH_CONFIG_MAIN  // 让 Catch2 提供 main 函数
+#define CATCH_CONFIG_MAIN  // Let Catch2 provide main()
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_string.hpp>  // For exception message matching
 
@@ -22,9 +22,13 @@ using Catch::Matchers::ContainsSubstring;  // For checking exception messages
 // --- Helper Functions ---
 
 /**
- * @brief 模拟一些计算工作
- * @param milliseconds 模拟工作时间（通过休眠）
- * @return 模拟处理结果（输入值+1）
+ * @brief Simulates some computational work by sleeping
+ * @param value Input value to process
+ * @param milliseconds Time to sleep simulating work
+ * @return Input value incremented by 1
+ *
+ * @example
+ * int result = simulate_work(100, 5); // Sleeps 5ms and returns 101
  */
 int simulate_work(int value, int milliseconds)
 {
@@ -33,7 +37,16 @@ int simulate_work(int value, int milliseconds)
 }
 
 /**
- * @brief 一个会抛出异常的任务函数
+ * @brief A task function that intentionally throws an exception
+ * @throws std::runtime_error Always throws with message "Task failed
+ * intentionally"
+ *
+ * @example
+ * try {
+ *   throwing_task();
+ * } catch(const std::runtime_error& e) {
+ *   // Handle exception
+ * }
  */
 void throwing_task()
 {
@@ -42,31 +55,43 @@ void throwing_task()
 
 // --- Test Cases ---
 
+/**
+ * @brief Test case for basic operations of ThreadPoolSingleton
+ *
+ * Tests the following functionality:
+ * - Singleton pattern correctness
+ * - Thread count validation
+ * - Task submission with return values
+ * - Void task submission
+ * - Lambda tasks with arguments
+ * - Function pointer tasks
+ * - Multiple task submission and results verification
+ */
 TEST_CASE("ThreadPoolSingleton Basic Operations",
           "[base][thread_pool_singleton]")
 {
-  // 获取单例实例
-  // 注意：单例在第一次调用 instance() 时初始化并启动。
-  // 如果之前的测试已经调用过，这里获取的是同一个实例。
-  // 为了隔离测试，理想情况下可能需要一种重置单例状态的方法，但这通常不适用于单例模式。
-  // 我们假设每次 TEST_CASE 开始时，可以认为获取到的是一个“可用”的单例。
+  // Get singleton instance
+  // Note: The singleton is initialized and started on first instance() call.
+  // If previous tests have called it, we get the same instance.
+  // Ideally we'd want a way to reset singleton state between tests,
+  // but this typically doesn't work with singleton pattern.
+  // We assume each TEST_CASE starts with a "usable" singleton.
   auto& pool = thread_pool_singleton_t::instance();
 
   SECTION("Singleton Instance")
   {
     auto& instance1 = thread_pool_singleton_t::instance();
     auto& instance2 = thread_pool_singleton_t::instance();
-    REQUIRE(&instance1 == &instance2);  // 确保每次获取的是同一个实例
+    REQUIRE(&instance1 == &instance2);  // Ensure we get same instance
   }
 
   SECTION("Get Thread Count")
   {
     size_t count = pool.get_thread_count();
-    REQUIRE(count > 0);  // 线程数应该大于 0
-    // 你可以根据需要添加更具体的检查，例如：
+    REQUIRE(count > 0);  // Thread count should be positive
+    // Could add more specific checks like:
     // unsigned int hardware_threads = std::thread::hardware_concurrency();
-    // REQUIRE(count == (hardware_threads > 0 ? hardware_threads : 1)); //
-    // 假设默认行为
+    // REQUIRE(count == (hardware_threads > 0 ? hardware_threads : 1));
   }
 
   SECTION("Submit simple task returning value")
@@ -83,7 +108,7 @@ TEST_CASE("ThreadPoolSingleton Basic Operations",
         pool.submit([&task_executed]()
                     { task_executed.store(true, std::memory_order_relaxed); });
     REQUIRE(future.valid());
-    future.get();  // 等待任务完成
+    future.get();  // Wait for task completion
     REQUIRE(task_executed.load());
   }
 
@@ -104,7 +129,7 @@ TEST_CASE("ThreadPoolSingleton Basic Operations",
   SECTION("Submit multiple tasks and check results")
   {
     const int num_tasks =
-        pool.get_thread_count() * 2;  // 提交比线程数稍多的任务
+        pool.get_thread_count() * 2;  // Submit more tasks than threads
     std::vector<std::future<int>> futures;
     futures.reserve(num_tasks);
 
@@ -115,12 +140,12 @@ TEST_CASE("ThreadPoolSingleton Basic Operations",
     int sum = 0;
     for (int i = 0; i < num_tasks; ++i) {
       REQUIRE(futures[i].valid());
-      int result = futures[i].get();  // 获取结果，会阻塞直到任务完成
+      int result = futures[i].get();  // Blocks until task completes
       REQUIRE(result == i * 2);
       sum += result;
     }
 
-    // 计算期望的总和: 2 * (0 + 1 + ... + num_tasks-1)
+    // Calculate expected sum: 2 * (0 + 1 + ... + num_tasks-1)
     int expected_sum = 0;
     if (num_tasks > 0) {
       expected_sum = 2 * (num_tasks * (num_tasks - 1) / 2);
@@ -129,6 +154,14 @@ TEST_CASE("ThreadPoolSingleton Basic Operations",
   }
 }
 
+/**
+ * @brief Test case for exception handling in ThreadPoolSingleton
+ *
+ * Tests the following functionality:
+ * - Tasks that throw exceptions
+ * - Multiple tasks with mixed success/failure
+ * - Exception propagation through futures
+ */
 TEST_CASE("ThreadPoolSingleton Exception Handling",
           "[base][thread_pool_singleton]")
 {
@@ -138,7 +171,7 @@ TEST_CASE("ThreadPoolSingleton Exception Handling",
   {
     auto future = pool.submit(throwing_task);
     REQUIRE(future.valid());
-    // 检查 future.get() 是否抛出预期的异常
+    // Check if future.get() throws expected exception
     try {
       future.get();
     } catch (const std::runtime_error& e) {
@@ -154,13 +187,22 @@ TEST_CASE("ThreadPoolSingleton Exception Handling",
         pool.submit([]() -> int { throw std::logic_error("Logic error"); }));
     futures.push_back(pool.submit([]() { return 3; }));
 
-    // 检查结果或异常
+    // Check results and exceptions
     REQUIRE(futures[0].get() == 1);
     REQUIRE_THROWS_AS(futures[1].get(), std::logic_error);
     REQUIRE(futures[2].get() == 3);
   }
 }
 
+/**
+ * @brief Test case for concurrent operations in ThreadPoolSingleton
+ *
+ * Tests the following functionality:
+ * - Multiple threads submitting tasks simultaneously
+ * - Task completion verification
+ * - Thread safety of submission process
+ * - Atomic counter updates from multiple tasks
+ */
 TEST_CASE("ThreadPoolSingleton Concurrency",
           "[base][thread_pool_singleton][multithreaded]")
 {
@@ -174,9 +216,9 @@ TEST_CASE("ThreadPoolSingleton Concurrency",
     std::atomic_int counter = 0;
     std::vector<std::thread> submitters;
     std::vector<std::future<void>> all_futures;
-    std::mutex future_mutex;  // 保护 all_futures 的并发访问
+    std::mutex future_mutex;  // Protects concurrent access to all_futures
 
-    // 提交任务的函数
+    // Task submission function
     auto submit_func = [&](int thread_id)
     {
       std::vector<std::future<void>> local_futures;
@@ -185,45 +227,46 @@ TEST_CASE("ThreadPoolSingleton Concurrency",
         local_futures.push_back(pool.submit(
             [&counter]()
             {
-              // 模拟少量工作并增加计数器
+              // Simulate small amount of work and increment counter
               std::this_thread::sleep_for(std::chrono::microseconds(10));
               counter.fetch_add(1, std::memory_order_relaxed);
             }));
       }
-      // 将局部 future 列表合并到全局列表（需要加锁）
+      // Merge local futures into global list (requires lock)
       std::lock_guard lock(future_mutex);
       all_futures.insert(all_futures.end(),
                          std::make_move_iterator(local_futures.begin()),
                          std::make_move_iterator(local_futures.end()));
     };
 
-    // 启动提交线程
+    // Launch submitter threads
     submitters.reserve(num_submit_threads);
     for (int i = 0; i < num_submit_threads; ++i) {
       submitters.emplace_back(submit_func, i);
     }
 
-    // 等待所有提交线程完成
+    // Wait for all submitter threads to complete
     for (auto& t : submitters) {
       t.join();
     }
 
-    // 确保收集到了所有 future
+    // Ensure we collected all futures
     REQUIRE(all_futures.size() == total_tasks);
 
-    // 等待所有提交到线程池的任务完成
+    // Wait for all submitted tasks to complete
     size_t completed_count = 0;
     for (auto& fut : all_futures) {
-      REQUIRE_NOTHROW(fut.get());  // 检查任务是否正常完成（不抛异常）
+      REQUIRE_NOTHROW(fut.get());  // Check task completed without exceptions
       completed_count++;
     }
 
-    REQUIRE(completed_count == total_tasks);  // 再次确认所有任务都已等待
+    REQUIRE(completed_count == total_tasks);  // Double check all tasks waited
 
-    // 验证最终计数器的值
+    // Verify final counter value
     REQUIRE(counter.load() == total_tasks);
   }
 }
 
-// 注意：测试线程池的优雅停止（析构函数行为）比较困难，因为它通常发生在程序退出时。
-// 这些测试主要验证其在运行期间的功能。
+// Note: Testing graceful shutdown (destructor behavior) is difficult
+// as it typically happens during program exit.
+// These tests mainly verify functionality during runtime.

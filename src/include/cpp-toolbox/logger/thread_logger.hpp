@@ -33,14 +33,14 @@ namespace toolbox::logger
  * @tparam T The type to check for container properties.
  * @tparam _ SFINAE helper parameter (default void).
  *
- * @example
+ * @code{.cpp}
  * // Check if std::vector is a container
  * static_assert(is_container<std::vector<int>>::value, "vector is a
  * container");
  *
- * @example
  * // Check if int is a container
  * static_assert(!is_container<int>::value, "int is not a container");
+ * @endcode
  */
 template<typename T, typename = void>
 struct CPP_TOOLBOX_EXPORT is_container : std::false_type
@@ -65,9 +65,10 @@ struct CPP_TOOLBOX_EXPORT
  *
  * @tparam T The type to check for container properties.
  *
- * @example
+ * @code{.cpp}
  * // Check if std::map is a container
  * constexpr bool is_map_container = is_container_v<std::map<int, int>>;
+ * @endcode
  */
 template<typename T>
 inline constexpr bool is_container_v = is_container<T>::value;
@@ -80,15 +81,15 @@ inline constexpr bool is_container_v = is_container<T>::value;
  *
  * @tparam T The type to check for stream insertion capability.
  *
- * @example
+ * @code{.cpp}
  * // Check if int has stream operator
  * static_assert(has_stream_operator<int>::value, "int has stream operator");
  *
- * @example
  * // Check if custom type has stream operator
  * struct MyType {};
  * static_assert(!has_stream_operator<MyType>::value, "MyType lacks stream
  * operator");
+ * @endcode
  */
 template<typename T>
 struct CPP_TOOLBOX_EXPORT has_stream_operator
@@ -112,9 +113,10 @@ struct CPP_TOOLBOX_EXPORT has_stream_operator
  *
  * @tparam T The type to check for stream insertion capability.
  *
- * @example
+ * @code{.cpp}
  * // Check if std::string has stream operator
  * constexpr bool can_stream_string = has_stream_operator_v<std::string>;
+ * @endcode
  */
 template<typename T>
 inline constexpr bool has_stream_operator_v = has_stream_operator<T>::value;
@@ -127,13 +129,13 @@ inline constexpr bool has_stream_operator_v = has_stream_operator<T>::value;
  *
  * @tparam T The type to check for ostream method.
  *
- * @example
- * // Check if custom type has ostream method
+ * @code{.cpp}
  * struct MyType {
  *   std::ostream& operator<<(std::ostream& os) const { return os; }
  * };
  * static_assert(has_ostream_method<MyType>::value, "MyType has ostream
  * method");
+ * @endcode
  */
 template<typename T>
 struct CPP_TOOLBOX_EXPORT has_ostream_method
@@ -157,10 +159,10 @@ struct CPP_TOOLBOX_EXPORT has_ostream_method
  *
  * @tparam T The type to check for ostream method.
  *
- * @example
- * // Check if custom type has ostream method
+ * @code{.cpp}
  * struct MyType {};
  * constexpr bool has_ostream = has_ostream_method_v<MyType>;
+ * @endcode
  */
 template<typename T>
 inline constexpr bool has_ostream_method_v = has_ostream_method<T>::value;
@@ -180,15 +182,13 @@ inline constexpr bool has_ostream_method_v = has_ostream_method<T>::value;
  * @see thread_stream_logger_t
  * @see thread_format_logger_t
  *
- * @example Basic usage with stream logger
- * @code
+ * @code{.cpp}
+ * // Basic usage with stream logger
  * auto& logger = toolbox::logger::thread_logger_t::instance();
  * logger.set_level(toolbox::logger::thread_logger_t::Level::INFO);
  * LOG_INFO_S << "Application started with version " << version;
- * @endcode
  *
- * @example Basic usage with format logger
- * @code
+ * // Basic usage with format logger
  * auto& logger = toolbox::logger::thread_logger_t::instance();
  * logger.set_level(toolbox::logger::thread_logger_t::Level::DEBUG);
  * LOG_DEBUG_F("Processing {} items in batch {}", item_count, batch_id);
@@ -219,8 +219,7 @@ public:
    *
    * @return Reference to the thread-safe logger instance.
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * auto& logger = thread_logger_t::instance();
    * @endcode
    */
@@ -238,8 +237,7 @@ public:
    *
    * @return The current logging level as a Level enum value.
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * if (logger.level() <= thread_logger_t::Level::DEBUG) {
    *     // Perform debug-specific operations
    * }
@@ -252,8 +250,7 @@ public:
    *
    * @return The current logging level as a human-readable string.
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * std::cout << "Current log level: " << logger.level_str() << std::endl;
    * @endcode
    */
@@ -264,8 +261,7 @@ public:
    *
    * @param level The new logging level to set.
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * logger.set_level(thread_logger_t::Level::WARN);
    * @endcode
    */
@@ -281,8 +277,7 @@ public:
    * @note Messages are only logged if their level is equal to or higher than
    * the current logging level.
    *
-   * @example Basic usage
-   * @code
+   * @code{.cpp}
    * thread_logger_t::thread_format_logger_t logger(
    *     thread_logger_t::instance(),
    *     thread_logger_t::Level::INFO);
@@ -307,8 +302,7 @@ public:
      * @param format The format string containing `{}` placeholders
      * @param args The values to insert into the format string
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * thread_format_logger_t logger(thread_logger_t::instance(),
      *     thread_logger_t::Level::DEBUG);
      * logger("Processing time: {} ms", elapsed_time);
@@ -343,8 +337,7 @@ public:
      * @param args Remaining arguments
      * @return The formatted message
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * std::string msg = format_message("{} + {} = {}", 2, 3, 5);
      * // msg will be "2 + 3 = 5"
      * @endcode
@@ -385,14 +378,12 @@ public:
    *
    * @see thread_logger_t
    *
-   * @example Basic usage with stream logger
-   * @code
+   * @code{.cpp}
+   * // Basic usage with stream logger
    * auto& logger = toolbox::logger::thread_logger_t::instance();
    * LOG_INFO_S << "Processing " << items.size() << " items";
-   * @endcode
    *
-   * @example Logging containers
-   * @code
+   * // Logging containers
    * std::vector<int> values = {1, 2, 3};
    * LOG_DEBUG_S << "Values: " << values;  // Output: Values: [1, 2, 3]
    * @endcode
@@ -425,8 +416,7 @@ public:
      *
      * @return The logged message as a string.
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * auto& logger = thread_logger_t::instance();
      * thread_stream_logger_t stream_logger(logger, Level::INFO);
      * stream_logger << "Test message";
@@ -446,8 +436,7 @@ public:
      * @param container The container to log
      * @return Reference to this logger for chaining
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * std::vector<int> vec = {1, 2, 3};
      * LOG_INFO_S << "Vector: " << vec;  // Output: Vector: [1, 2, 3]
      * @endcode
@@ -483,8 +472,7 @@ public:
      * @param t The tuple to log
      * @return Reference to this logger for chaining
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * auto t = std::make_tuple(1, "test", 3.14);
      * LOG_DEBUG_S << "Tuple: " << t;  // Output: Tuple: (1, test, 3.14)
      * @endcode
@@ -540,8 +528,7 @@ public:
      * @param value The C-style string to log
      * @return Reference to this logger for chaining
      *
-     * @example
-     * @code
+     * @code{.cpp}
      * LOG_INFO_S << "C-style string: " << "Hello World";
      * @endcode
      */
@@ -575,14 +562,12 @@ public:
      * @param value The value to print to the log stream
      * @return Reference to this logger for chaining
      *
-     * @example Logging basic types
-     * @code
+     * @code{.cpp}
+     * // Logging basic types
      * LOG_INFO_S << 42 << " " << 3.14 << " " << true;
      * // Output: 42 3.14 true
-     * @endcode
      *
-     * @example Logging custom types
-     * @code
+     * // Logging custom types
      * struct Point { int x, y; };
      * std::ostream& operator<<(std::ostream& os, const Point& p) {
      *     return os << "(" << p.x << "," << p.y << ")";
@@ -613,8 +598,7 @@ public:
      * @param value The value to print to the log stream
      * @return Reference to this logger for chaining
      *
-     * @example Logging with member operator<<
-     * @code
+     * @code{.cpp}
      * struct Logger {
      *     std::ostream& operator<<(std::ostream& os) const {
      *         return os << "Logger instance";
@@ -647,8 +631,7 @@ public:
      * @param logger The other logger whose contents to append
      * @return Reference to this logger for chaining
      *
-     * @example Combining loggers
-     * @code
+     * @code{.cpp}
      * auto& logger1 = LOG_INFO_S << "Part 1: ";
      * auto& logger2 = LOG_DEBUG_S << "Part 2";
      * logger1 << logger2;  // Only logs if INFO level is enabled
@@ -673,8 +656,7 @@ public:
      * @param map The map to print to the log stream
      * @return Reference to this logger for chaining
      *
-     * @example Logging a map
-     * @code
+     * @code{.cpp}
      * std::map<std::string, int> ages = {{"Alice", 30}, {"Bob", 25}};
      * LOG_DEBUG_S << ages;
      * // Output: {Alice: 30, Bob: 25}
@@ -711,8 +693,7 @@ public:
      * @param map The map to print to the log stream
      * @return Reference to this logger for chaining
      *
-     * @example Logging an unordered_map
-     * @code
+     * @code{.cpp}
      * std::unordered_map<int, std::string> ids = {{1, "Alice"}, {2, "Bob"}};
      * LOG_INFO_S << ids;
      * // Output: {1: Alice, 2: Bob} (order may vary)
@@ -748,10 +729,8 @@ public:
      * @tparam Tuple The tuple type to print
      * @tparam Is Parameter pack of indices for tuple elements
      * @param t The tuple to print
-     * @param Is Indices sequence for accessing tuple elements
      *
-     * @example Tuple printing
-     * @code
+     * @code{.cpp}
      * auto t = std::make_tuple(1, "two", 3.0);
      * LOG_DEBUG_S << t;
      * // Output: (1, two, 3.0)
@@ -778,8 +757,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for TRACE level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_TRACE_F("Processing item {}", item_id);
    * @endcode
    */
@@ -790,8 +768,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for DEBUG level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_DEBUG_F("Received {} bytes of data", data_size);
    * @endcode
    */
@@ -802,8 +779,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for INFO level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_INFO_F("Application started successfully");
    * @endcode
    */
@@ -814,8 +790,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for WARN level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_WARN_F("Disk space is low: {}MB remaining", free_space);
    * @endcode
    */
@@ -826,8 +801,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for ERROR level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_ERROR_F("Failed to process request: {}", error_message);
    * @endcode
    */
@@ -838,8 +812,7 @@ public:
    *
    * @return A thread_format_logger_t instance configured for CRITICAL level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_CRITICAL_F("System shutdown due to critical error: {}", error);
    * @endcode
    */
@@ -853,8 +826,7 @@ public:
    *
    * @return A thread_stream_logger_t instance configured for TRACE level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_TRACE_S << "Entering function " << __func__;
    * @endcode
    */
@@ -865,8 +837,7 @@ public:
    *
    * @return A thread_stream_logger_t instance configured for DEBUG level
    *
-   * @example
-   * @code
+   * @code{.cpp}
    * LOG_DEBUG_S << "Processing " << items.size() << " items";
    * @endcode
    */
@@ -882,6 +853,16 @@ public:
    * LOG_INFO_S << "Application started with version " << version;
    * @endcode
    */
+  /**
+   * @brief Get a stream logger for INFO level messages.
+   *
+   * @return A thread_stream_logger_t instance configured for INFO level
+   *
+   * @code{.cpp}
+   * // Log application version info
+   * LOG_INFO_S << "Application started with version " << version;
+   * @endcode
+   */
   auto info_s() -> thread_stream_logger_t { return {*this, Level::INFO}; }
 
   /**
@@ -889,8 +870,8 @@ public:
    *
    * @return A thread_stream_logger_t instance configured for WARN level
    *
-   * @example
-   * @code
+   * @code{.cpp}
+   * // Log unexpected value warning
    * LOG_WARN_S << "Unexpected value: " << value << " (expected " << expected <<
    * ")";
    * @endcode
@@ -902,8 +883,8 @@ public:
    *
    * @return A thread_stream_logger_t instance configured for ERROR level
    *
-   * @example
-   * @code
+   * @code{.cpp}
+   * // Log file open error
    * LOG_ERROR_S << "Failed to open file: " << filename;
    * @endcode
    */
@@ -914,8 +895,8 @@ public:
    *
    * @return A thread_stream_logger_t instance configured for CRITICAL level
    *
-   * @example
-   * @code
+   * @code{.cpp}
+   * // Log critical system error
    * LOG_CRITICAL_S << "System shutdown due to critical error in " << component;
    * @endcode
    */
@@ -974,96 +955,108 @@ private:
  * @def LOG_TRACE_F
  * @ingroup LoggingMacros
  * @brief Macro for TRACE level format logging
- * @example
+ * @code{.cpp}
  * LOG_TRACE_F("Processing item {}", item_id);
+ * @endcode
  */
 
 /**
  * @def LOG_DEBUG_F
  * @ingroup LoggingMacros
  * @brief Macro for DEBUG level format logging
- * @example
+ * @code{.cpp}
  * LOG_DEBUG_F("Received {} bytes of data", data_size);
+ * @endcode
  */
 
 /**
  * @def LOG_INFO_F
  * @ingroup LoggingMacros
  * @brief Macro for INFO level format logging
- * @example
+ * @code{.cpp}
  * LOG_INFO_F("Application started successfully");
+ * @endcode
  */
 
 /**
  * @def LOG_WARN_F
  * @ingroup LoggingMacros
  * @brief Macro for WARN level format logging
- * @example
+ * @code{.cpp}
  * LOG_WARN_F("Disk space is low: {}MB remaining", free_space);
+ * @endcode
  */
 
 /**
  * @def LOG_ERROR_F
  * @ingroup LoggingMacros
  * @brief Macro for ERROR level format logging
- * @example
+ * @code{.cpp}
  * LOG_ERROR_F("Failed to process request: {}", error_message);
+ * @endcode
  */
 
 /**
  * @def LOG_CRITICAL_F
  * @ingroup LoggingMacros
  * @brief Macro for CRITICAL level format logging
- * @example
+ * @code{.cpp}
  * LOG_CRITICAL_F("System failure in module {}", module_name);
+ * @endcode
  */
 
 /**
  * @def LOG_TRACE_S
  * @ingroup LoggingMacros
  * @brief Macro for TRACE level stream logging
- * @example
+ * @code{.cpp}
  * LOG_TRACE_S << "Entering function " << function_name;
+ * @endcode
  */
 
 /**
  * @def LOG_DEBUG_S
  * @ingroup LoggingMacros
  * @brief Macro for DEBUG level stream logging
- * @example
+ * @code{.cpp}
  * LOG_DEBUG_S << "Processing " << items.size() << " items";
+ * @endcode
  */
 
 /**
  * @def LOG_INFO_S
  * @ingroup LoggingMacros
  * @brief Macro for INFO level stream logging
- * @example
+ * @code{.cpp}
  * LOG_INFO_S << "Application version: " << version;
+ * @endcode
  */
 
 /**
  * @def LOG_WARN_S
  * @ingroup LoggingMacros
  * @brief Macro for WARN level stream logging
- * @example
+ * @code{.cpp}
  * LOG_WARN_S << "Low memory: " << free_memory << "MB available";
+ * @endcode
  */
 
 /**
  * @def LOG_ERROR_S
  * @ingroup LoggingMacros
  * @brief Macro for ERROR level stream logging
- * @example
+ * @code{.cpp}
  * LOG_ERROR_S << "Failed to open file: " << filename;
+ * @endcode
  */
 
 /**
  * @def LOG_CRITICAL_S
  * @ingroup LoggingMacros
  * @brief Macro for CRITICAL level stream logging
- * @example
+ * @code{.cpp}
  * LOG_CRITICAL_S << "System shutdown due to critical error in " << component;
+ * @endcode
  */
 
 /**
@@ -1071,8 +1064,9 @@ private:
  * @ingroup LoggingMacros
  * @brief Macro for DEBUG level logging with source location
  * @param x The message to log
- * @example
+ * @code{.cpp}
  * LOG_DEBUG_D("Unexpected value: " << value);
+ * @endcode
  */
 
 /**
@@ -1080,8 +1074,9 @@ private:
  * @ingroup LoggingMacros
  * @brief Macro for INFO level logging with source location
  * @param x The message to log
- * @example
+ * @code{.cpp}
  * LOG_INFO_D("Initialization complete");
+ * @endcode
  */
 
 /**
@@ -1089,8 +1084,9 @@ private:
  * @ingroup LoggingMacros
  * @brief Macro for WARN level logging with source location
  * @param x The message to log
- * @example
+ * @code{.cpp}
  * LOG_WARN_D("Potential memory leak detected");
+ * @endcode
  */
 
 /**
@@ -1098,8 +1094,9 @@ private:
  * @ingroup LoggingMacros
  * @brief Macro for ERROR level logging with source location
  * @param x The message to log
- * @example
+ * @code{.cpp}
  * LOG_ERROR_D("Failed to connect to database");
+ * @endcode
  */
 
 /**
@@ -1107,8 +1104,9 @@ private:
  * @ingroup LoggingMacros
  * @brief Macro for CRITICAL level logging with source location
  * @param x The message to log
- * @example
+ * @code{.cpp}
  * LOG_CRITICAL_D("System failure detected");
+ * @endcode
  */
 
 #define LOG_TRACE_F toolbox::logger::thread_logger_t::instance().trace_f()

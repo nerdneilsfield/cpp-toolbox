@@ -2,7 +2,7 @@
 
 #include <cstddef>  // For size_t
 #include <memory>  // For std::unique_ptr
-#include <optional>  // For std::optional (C++17)
+#include <optional>
 
 // Assuming export macros are defined elsewhere if needed
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
@@ -19,6 +19,26 @@ namespace toolbox::container
  * third-party library implementation details using the Pimpl idiom.
  *
  * @tparam T The type of elements stored in the queue. Must be movable.
+ *
+ * @code{.cpp}
+ * // Create a concurrent queue for integers
+ * concurrent_queue_t<int> queue;
+ *
+ * // Producer thread
+ * queue.enqueue(42);
+ *
+ * // Consumer thread
+ * int value;
+ * if(queue.try_dequeue(value)) {
+ *   // Process value
+ * }
+ *
+ * // Alternative consumer using optional
+ * if(auto opt = queue.try_dequeue()) {
+ *   int value = *opt;
+ *   // Process value
+ * }
+ * @endcode
  */
 template<typename T>
 class CPP_TOOLBOX_EXPORT concurrent_queue_t

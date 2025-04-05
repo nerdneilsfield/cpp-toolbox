@@ -25,15 +25,15 @@ namespace toolbox::container::string
  * @return std::vector<std::string> A vector of strings resulting from the
  * split.
  *
- * @example
+ * @code{.cpp}
  * // Split by string delimiter
  * auto result = split("apple,orange,,banana", ",");
  * // result will be {"apple", "orange", "", "banana"}
  *
- * @example
  * // Split with multi-character delimiter
  * auto result2 = split("one->two->three", "->");
  * // result2 will be {"one", "two", "three"}
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto split(std::string_view str, std::string_view delimiter)
     -> std::vector<std::string>;
@@ -51,15 +51,15 @@ CPP_TOOLBOX_EXPORT auto split(std::string_view str, std::string_view delimiter)
  * @return std::vector<std::string> A vector of strings resulting from the
  * split.
  *
- * @example
+ * @code{.cpp}
  * // Split by character delimiter
  * auto result = split("one|two||three", '|');
  * // result will be {"one", "two", "", "three"}
  *
- * @example
  * // Split with space delimiter
  * auto result2 = split("hello world  cpp", ' ');
  * // result2 will be {"hello", "world", "", "cpp"}
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto split(std::string_view str, char delimiter)
     -> std::vector<std::string>;
@@ -75,15 +75,15 @@ CPP_TOOLBOX_EXPORT auto split(std::string_view str, char delimiter)
  * @param glue The string view to insert between elements.
  * @return std::string The resulting joined string.
  *
- * @example
+ * @code{.cpp}
  * // Join with comma separator
  * auto result = join({"apple", "banana", "cherry"}, ", ");
  * // result will be "apple, banana, cherry"
  *
- * @example
  * // Join with empty glue
  * auto result2 = join({"a", "b", "c"}, "");
  * // result2 will be "abc"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto join(const std::vector<std::string>& parts,
                              std::string_view glue) -> std::string;
@@ -99,15 +99,14 @@ CPP_TOOLBOX_EXPORT auto join(const std::vector<std::string>& parts,
  * @param glue The string view to insert between elements.
  * @return std::string The resulting joined string.
  *
- * @example
- * // Join string views with hyphen
+ * @code{.cpp}
+ * // Join string views with hyphen and newline
  * auto result = join({"2023", "12", "31"}, "-");
  * // result will be "2023-12-31"
  *
- * @example
- * // Join with newline separator
  * auto result2 = join({"line1", "line2", "line3"}, "\n");
  * // result2 will be "line1\nline2\nline3"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto join(const std::vector<std::string_view>& parts,
                              std::string_view glue) -> std::string;
@@ -122,15 +121,14 @@ CPP_TOOLBOX_EXPORT auto join(const std::vector<std::string_view>& parts,
  * @param str The input string view.
  * @return std::string A new string with leading whitespace removed.
  *
- * @example
- * // Trim leading spaces
+ * @code{.cpp}
+ * // Trim leading whitespace examples
  * auto result = trim_left("   hello");
  * // result will be "hello"
  *
- * @example
- * // Trim mixed leading whitespace
  * auto result2 = trim_left("\t\n  world");
  * // result2 will be "world"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto trim_left(std::string_view str) -> std::string;
 
@@ -144,15 +142,14 @@ CPP_TOOLBOX_EXPORT auto trim_left(std::string_view str) -> std::string;
  * @param str The input string view.
  * @return std::string A new string with trailing whitespace removed.
  *
- * @example
- * // Trim trailing spaces
+ * @code{.cpp}
+ * // Trim trailing whitespace examples
  * auto result = trim_right("hello   ");
  * // result will be "hello"
  *
- * @example
- * // Trim mixed trailing whitespace
  * auto result2 = trim_right("world\t\n  ");
  * // result2 will be "world"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto trim_right(std::string_view str) -> std::string;
 
@@ -167,15 +164,14 @@ CPP_TOOLBOX_EXPORT auto trim_right(std::string_view str) -> std::string;
  * @return std::string A new string with leading and trailing whitespace
  * removed.
  *
- * @example
- * // Trim both ends
+ * @code{.cpp}
+ * // Trim both ends examples
  * auto result = trim("   hello world   ");
  * // result will be "hello world"
  *
- * @example
- * // Trim mixed whitespace
  * auto result2 = trim("\t\n  test string \n\t");
  * // result2 will be "test string"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto trim(std::string_view str) -> std::string;
 
@@ -189,15 +185,14 @@ CPP_TOOLBOX_EXPORT auto trim(std::string_view str) -> std::string;
  * @param prefix The prefix string view to look for.
  * @return bool True if the string starts with the prefix, false otherwise.
  *
- * @example
- * // Check prefix
+ * @code{.cpp}
+ * // Check prefix examples
  * bool result = starts_with("hello world", "hello");
  * // result will be true
  *
- * @example
- * // Check non-matching prefix
  * bool result2 = starts_with("hello world", "world");
  * // result2 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto starts_with(std::string_view s, std::string_view prefix)
     -> bool;
@@ -212,15 +207,14 @@ CPP_TOOLBOX_EXPORT auto starts_with(std::string_view s, std::string_view prefix)
  * @param suffix The suffix string view to look for.
  * @return bool True if the string ends with the suffix, false otherwise.
  *
- * @example
- * // Check suffix
+ * @code{.cpp}
+ * // Check suffix examples
  * bool result = ends_with("hello world", "world");
  * // result will be true
  *
- * @example
- * // Check non-matching suffix
  * bool result2 = ends_with("hello world", "hello");
  * // result2 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto ends_with(std::string_view s, std::string_view suffix)
     -> bool;
@@ -236,15 +230,14 @@ CPP_TOOLBOX_EXPORT auto ends_with(std::string_view s, std::string_view suffix)
  * @return bool True if the substring is found within the string, false
  * otherwise.
  *
- * @example
- * // Check for substring
+ * @code{.cpp}
+ * // Check substring examples
  * bool result = contains("hello world", "lo wo");
  * // result will be true
  *
- * @example
- * // Check for non-existent substring
  * bool result2 = contains("hello world", "goodbye");
  * // result2 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto contains(std::string_view s, std::string_view substring)
     -> bool;
@@ -260,20 +253,17 @@ CPP_TOOLBOX_EXPORT auto contains(std::string_view s, std::string_view substring)
  * @return bool True if the string is empty or contains only whitespace, false
  * otherwise.
  *
- * @example
- * // Check empty string
+ * @code{.cpp}
+ * // Check empty or whitespace examples
  * bool result = is_empty_or_whitespace("");
  * // result will be true
  *
- * @example
- * // Check whitespace string
  * bool result2 = is_empty_or_whitespace(" \t\n");
  * // result2 will be true
  *
- * @example
- * // Check non-whitespace string
  * bool result3 = is_empty_or_whitespace("hello");
  * // result3 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_empty_or_whitespace(std::string_view s) -> bool;
 
@@ -288,20 +278,17 @@ CPP_TOOLBOX_EXPORT auto is_empty_or_whitespace(std::string_view s) -> bool;
  * @param s The string view to check.
  * @return bool True if the string appears to be numeric, false otherwise.
  *
- * @example
- * // Check integer
+ * @code{.cpp}
+ * // Check numeric format examples
  * bool result = is_numeric("12345");
  * // result will be true
  *
- * @example
- * // Check floating-point
  * bool result2 = is_numeric("-123.45");
  * // result2 will be true
  *
- * @example
- * // Check non-numeric
  * bool result3 = is_numeric("123abc");
  * // result3 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_numeric(std::string_view s) -> bool;
 
@@ -315,20 +302,17 @@ CPP_TOOLBOX_EXPORT auto is_numeric(std::string_view s) -> bool;
  * @param s The string view to check.
  * @return True if the string is a valid integer, false otherwise.
  *
- * @example
- * // Check positive integer
+ * @code{.cpp}
+ * // Check integer format examples
  * bool result1 = is_integer("12345");
  * // result1 will be true
  *
- * @example
- * // Check negative integer
  * bool result2 = is_integer("-42");
  * // result2 will be true
  *
- * @example
- * // Check invalid integer
  * bool result3 = is_integer("12.34");
  * // result3 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_integer(std::string_view s) -> bool;
 
@@ -343,20 +327,17 @@ CPP_TOOLBOX_EXPORT auto is_integer(std::string_view s) -> bool;
  * @param s The string view to check.
  * @return True if the string is a valid floating-point number, false otherwise.
  *
- * @example
- * // Check positive float
+ * @code{.cpp}
+ * // Check float format examples
  * bool result1 = is_float("123.45");
  * // result1 will be true
  *
- * @example
- * // Check negative float
  * bool result2 = is_float("-0.123");
  * // result2 will be true
  *
- * @example
- * // Check invalid float
  * bool result3 = is_float("12.34.56");
  * // result3 will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_float(std::string_view s) -> bool;
 
@@ -375,23 +356,17 @@ CPP_TOOLBOX_EXPORT auto is_float(std::string_view s) -> bool;
  * replacing all occurrences.
  * @return A new string with the replacements made.
  *
- * @note When old_value is empty, the function inserts new_value between
- * characters. For example, replace("hello", "", "-", 3) returns "-h-e-llo".
- *
- * @example
- * // Basic replacement
+ * @code{.cpp}
+ * // Replace substring examples
  * auto result1 = replace("hello world", "world", "cpp");
  * // result1 will be "hello cpp"
  *
- * @example
- * // Limited replacements
  * auto result2 = replace("banana", "na", "no", 2);
  * // result2 will be "bonona"
  *
- * @example
- * // Empty old_value case
  * auto result3 = replace("abc", "", "-", 2);
  * // result3 will be "-a-bc"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto replace(
     std::string_view s,
@@ -411,15 +386,14 @@ CPP_TOOLBOX_EXPORT auto replace(
  * @param new_value The substring to replace with.
  * @return A new string with all occurrences replaced.
  *
- * @example
- * // Replace all occurrences
+ * @code{.cpp}
+ * // Replace all occurrences examples
  * auto result = replace_all("banana", "na", "no");
  * // result will be "bonono"
  *
- * @example
- * // No match case
  * auto result2 = replace_all("hello", "x", "y");
  * // result2 will be "hello"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto replace_all(std::string_view s,
                                     std::string_view old_value,
@@ -441,15 +415,14 @@ CPP_TOOLBOX_EXPORT auto replace_all(std::string_view s,
  * original string if n is invalid, 'from' is empty, or the Nth occurrence is
  * not found.
  *
- * @example
- * // Replace second occurrence
+ * @code{.cpp}
+ * // Replace nth occurrence examples
  * auto result1 = replace_by_nth("banana", "na", "no", 2);
  * // result1 will be "banona"
  *
- * @example
- * // Occurrence not found
  * auto result2 = replace_by_nth("hello", "l", "x", 3);
  * // result2 will be "hello"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto replace_by_nth(std::string_view s,
                                        std::string_view old_value,
@@ -471,15 +444,14 @@ CPP_TOOLBOX_EXPORT auto replace_by_nth(std::string_view s,
  * original string if n is invalid, 'from' is empty, or the Nth occurrence is
  * not found.
  *
- * @example
- * // Remove second occurrence
+ * @code{.cpp}
+ * // Remove nth occurrence examples
  * auto result1 = remove_nth("banana", "na", 2);
  * // result1 will be "bana"
  *
- * @example
- * // Occurrence not found
  * auto result2 = remove_nth("hello", "l", 3);
  * // result2 will be "hello"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto remove_nth(std::string_view s,
                                    std::string_view from,
@@ -498,15 +470,14 @@ CPP_TOOLBOX_EXPORT auto remove_nth(std::string_view s,
  * removing all occurrences.
  * @return A new string with the specified substring removed.
  *
- * @example
- * // Remove first two occurrences
+ * @code{.cpp}
+ * // Remove substring examples
  * auto result1 = remove("banana", "na", 2);
  * // result1 will be "ba"
  *
- * @example
- * // Remove all occurrences
  * auto result2 = remove("hello world", "l");
  * // result2 will be "heo word"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto remove(
     std::string_view s,
@@ -524,15 +495,14 @@ CPP_TOOLBOX_EXPORT auto remove(
  * @param value The substring to remove. Cannot be empty.
  * @return A new std::string with all occurrences of the substring removed.
  *
- * @example
- * // Remove all occurrences of a substring
+ * @code{.cpp}
+ * // Remove all occurrences examples
  * auto result = remove_all("banana", "na");
  * // result will be "ba"
  *
- * @example
- * // Remove all occurrences of a multi-character substring
  * auto result2 = remove_all("hello world hello", "hello");
  * // result2 will be " world "
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto remove_all(std::string_view s, std::string_view value)
     -> std::string;
@@ -547,15 +517,14 @@ CPP_TOOLBOX_EXPORT auto remove_all(std::string_view s, std::string_view value)
  * @param value The character to remove.
  * @return A new std::string with all occurrences of the character removed.
  *
- * @example
- * // Remove all occurrences of a character
+ * @code{.cpp}
+ * // Remove all character examples
  * auto result = remove_all("hello world", 'l');
  * // result will be "heo word"
  *
- * @example
- * // Remove all spaces
  * auto result2 = remove_all("text with spaces", ' ');
  * // result2 will be "textwithspaces"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto remove_all(std::string_view s, char value)
     -> std::string;
@@ -569,15 +538,14 @@ CPP_TOOLBOX_EXPORT auto remove_all(std::string_view s, char value)
  * @param s The input string view to convert.
  * @return A new std::string with all characters converted to lowercase.
  *
- * @example
- * // Convert to lowercase
+ * @code{.cpp}
+ * // Convert to lowercase examples
  * auto result = to_lower("Hello World");
  * // result will be "hello world"
  *
- * @example
- * // Convert mixed case string
  * auto result2 = to_lower("CamelCaseString");
  * // result2 will be "camelcasestring"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto to_lower(std::string_view s) -> std::string;
 
@@ -590,15 +558,14 @@ CPP_TOOLBOX_EXPORT auto to_lower(std::string_view s) -> std::string;
  * @param s The input string view to convert.
  * @return A new std::string with all characters converted to uppercase.
  *
- * @example
- * // Convert to uppercase
+ * @code{.cpp}
+ * // Convert to uppercase examples
  * auto result = to_upper("Hello World");
  * // result will be "HELLO WORLD"
  *
- * @example
- * // Convert mixed case string
  * auto result2 = to_upper("CamelCaseString");
  * // result2 will be "CAMELCASESTRING"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto to_upper(std::string_view s) -> std::string;
 
@@ -612,16 +579,15 @@ CPP_TOOLBOX_EXPORT auto to_upper(std::string_view s) -> std::string;
  * @param s The input string view to convert.
  * @return A std::string object containing the same character sequence.
  *
- * @example
- * // Convert string view to string
+ * @code{.cpp}
+ * // Convert string view to string examples
  * auto result = to_string("hello");
  * // result will be a std::string containing "hello"
  *
- * @example
- * // Convert substring view to string
  * std::string_view sv = "long string";
  * auto result2 = to_string(sv.substr(0, 4));
  * // result2 will be a std::string containing "long"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto to_string(std::string_view s) -> std::string;
 
@@ -638,15 +604,14 @@ CPP_TOOLBOX_EXPORT auto to_string(std::string_view s) -> std::string;
  * @param pad_char The character to use for padding. Defaults to space (' ').
  * @return A new std::string, padded on the left if necessary.
  *
- * @example
- * // Left pad with spaces
+ * @code{.cpp}
+ * // Left pad examples
  * auto result = left_pad("hello", 10);
  * // result will be "     hello"
  *
- * @example
- * // Left pad with zeros
  * auto result2 = left_pad("42", 5, '0');
  * // result2 will be "00042"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto left_pad(std::string_view s,
                                  std::size_t width,
@@ -665,15 +630,14 @@ CPP_TOOLBOX_EXPORT auto left_pad(std::string_view s,
  * @param pad_char The character to use for padding. Defaults to space (' ').
  * @return A new std::string, padded on the right if necessary.
  *
- * @example
- * // Right pad with spaces
+ * @code{.cpp}
+ * // Right pad examples
  * auto result = right_pad("hello", 10);
  * // result will be "hello     "
  *
- * @example
- * // Right pad with dashes
  * auto result2 = right_pad("text", 8, '-');
  * // result2 will be "text----"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto right_pad(std::string_view s,
                                   std::size_t width,
@@ -695,20 +659,19 @@ CPP_TOOLBOX_EXPORT auto right_pad(std::string_view s,
  * right, other for center). Defaults to 0.
  * @return A new std::string, padded according to the specified parameters.
  *
- * @example
+ * @code{.cpp}
  * // Left padding (default)
  * auto result = pad("hello", 10);
  * // result will be "     hello"
  *
- * @example
  * // Right padding
  * auto result2 = pad("world", 10, ' ', 1);
  * // result2 will be "world     "
  *
- * @example
  * // Center padding
  * auto result3 = pad("center", 10, '-', 2);
  * // result3 will be "--center--"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto pad(std::string_view s,
                             std::size_t width,
@@ -724,15 +687,15 @@ CPP_TOOLBOX_EXPORT auto pad(std::string_view s,
  * @param s The input string view to reverse.
  * @return A new std::string with the characters in reverse order.
  *
- * @example
+ * @code{.cpp}
  * // Reverse a string
  * auto result = reverse("hello");
  * // result will be "olleh"
  *
- * @example
  * // Reverse a palindrome
  * auto result2 = reverse("racecar");
  * // result2 will be "racecar"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto reverse(std::string_view s) -> std::string;
 
@@ -750,23 +713,22 @@ CPP_TOOLBOX_EXPORT auto reverse(std::string_view s) -> std::string;
  * @return True if parsing was successful, false otherwise. The output parameter
  * `out` is only modified when the function returns true.
  *
- * @example
+ * @code{.cpp}
  * // Successful parsing
  * int value;
  * bool success = try_parse_int("12345", value);
  * // success will be true, value will be 12345
  *
- * @example
  * // Failed parsing (invalid format)
  * int value;
  * bool success = try_parse_int("12abc", value);
  * // success will be false, value remains unchanged
  *
- * @example
  * // Failed parsing (overflow)
  * int value;
  * bool success = try_parse_int("99999999999999999999", value);
  * // success will be false, value remains unchanged
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto try_parse_int(std::string_view s, int& out) -> bool;
 
@@ -785,23 +747,22 @@ CPP_TOOLBOX_EXPORT auto try_parse_int(std::string_view s, int& out) -> bool;
  * @return True if parsing was successful, false otherwise. The output parameter
  * `out` is only modified when the function returns true.
  *
- * @example
+ * @code{.cpp}
  * // Successful parsing
  * double value;
  * bool success = try_parse_double("3.14159", value);
  * // success will be true, value will be 3.14159
  *
- * @example
  * // Failed parsing (invalid format)
  * double value;
  * bool success = try_parse_double("3.14.15", value);
  * // success will be false, value remains unchanged
  *
- * @example
  * // Failed parsing (overflow)
  * double value;
  * bool success = try_parse_double("1e999", value);
  * // success will be false, value remains unchanged
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto try_parse_double(std::string_view s, double& out)
     -> bool;
@@ -821,23 +782,22 @@ CPP_TOOLBOX_EXPORT auto try_parse_double(std::string_view s, double& out)
  * @return True if parsing was successful, false otherwise. The output parameter
  * `out` is only modified when the function returns true.
  *
- * @example
+ * @code{.cpp}
  * // Successful parsing
  * float value;
  * bool success = try_parse_float("2.71828", value);
  * // success will be true, value will be 2.71828f
  *
- * @example
  * // Failed parsing (invalid format)
  * float value;
  * bool success = try_parse_float("2.71.82", value);
  * // success will be false, value remains unchanged
  *
- * @example
  * // Failed parsing (overflow)
  * float value;
  * bool success = try_parse_float("1e99", value);
  * // success will be false, value remains unchanged
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto try_parse_float(std::string_view s, float& out) -> bool;
 
@@ -853,20 +813,19 @@ CPP_TOOLBOX_EXPORT auto try_parse_float(std::string_view s, float& out) -> bool;
  * @param s2 The second string view.
  * @return The Levenshtein distance between s1 and s2 (a non-negative integer).
  *
- * @example
+ * @code{.cpp}
  * // Distance between "kitten" and "sitting"
  * auto distance = levenshtein_distance("kitten", "sitting");
  * // distance will be 3 (k→s, e→i, +g)
  *
- * @example
  * // Distance between "book" and "back"
  * auto distance2 = levenshtein_distance("book", "back");
  * // distance2 will be 2 (o→a, o→c)
  *
- * @example
  * // Distance between identical strings
  * auto distance3 = levenshtein_distance("same", "same");
  * // distance3 will be 0
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto levenshtein_distance(std::string_view s1,
                                              std::string_view s2)
@@ -884,20 +843,19 @@ CPP_TOOLBOX_EXPORT auto levenshtein_distance(std::string_view s1,
  * @param s2 The second string view.
  * @return The length of the longest common subsequence.
  *
- * @example
+ * @code{.cpp}
  * // LCS of "ABCDEF" and "AUBCDF"
  * auto lcs_len = longest_common_subsequence_length("ABCDEF", "AUBCDF");
  * // lcs_len will be 4 (ABCD)
  *
- * @example
  * // LCS of "AGGTAB" and "GXTXAYB"
  * auto lcs_len2 = longest_common_subsequence_length("AGGTAB", "GXTXAYB");
  * // lcs_len2 will be 4 (GTAB)
  *
- * @example
  * // LCS of completely different strings
  * auto lcs_len3 = longest_common_subsequence_length("abc", "xyz");
  * // lcs_len3 will be 0
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto longest_common_subsequence_length(std::string_view s1,
                                                           std::string_view s2)
@@ -914,20 +872,19 @@ CPP_TOOLBOX_EXPORT auto longest_common_subsequence_length(std::string_view s1,
  * @param s2 The second string view.
  * @return The length of the longest common substring.
  *
- * @example
+ * @code{.cpp}
  * // Longest common substring of "ABABC" and "BABCA"
  * auto lcstr_len = longest_common_substring_length("ABABC", "BABCA");
  * // lcstr_len will be 4 (BABC)
  *
- * @example
  * // Longest common substring of "abcdef" and "zcdemf"
  * auto lcstr_len2 = longest_common_substring_length("abcdef", "zcdemf");
  * // lcstr_len2 will be 3 (cde)
  *
- * @example
  * // Longest common substring of completely different strings
  * auto lcstr_len3 = longest_common_substring_length("abc", "xyz");
  * // lcstr_len3 will be 0
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto longest_common_substring_length(std::string_view s1,
                                                         std::string_view s2)
@@ -946,20 +903,19 @@ CPP_TOOLBOX_EXPORT auto longest_common_substring_length(std::string_view s1,
  * @param s The string view to encode.
  * @return The URL-encoded string.
  *
- * @example
+ * @code{.cpp}
  * // Encoding a simple string
  * auto encoded = url_encode("Hello World!");
  * // encoded will be "Hello%20World%21"
  *
- * @example
  * // Encoding special characters
  * auto encoded2 = url_encode("100% true");
  * // encoded2 will be "100%25%20true"
  *
- * @example
  * // Encoding a URL with query parameters
  * auto encoded3 = url_encode("https://example.com/search?q=c++");
  * // encoded3 will be "https%3A%2F%2Fexample.com%2Fsearch%3Fq%3Dc%2B%2B"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto url_encode(std::string_view s) -> std::string;
 
@@ -975,21 +931,20 @@ CPP_TOOLBOX_EXPORT auto url_encode(std::string_view s) -> std::string;
  * @return The decoded string. Returns an empty string if decoding fails due to
  * invalid % sequences or other encoding errors.
  *
- * @example
+ * @code{.cpp}
  * // Decode a simple URL-encoded string
  * auto decoded = url_decode("Hello%20World%21");
  * // decoded will be "Hello World!"
  *
- * @example
  * // Decode with form encoding compatibility
  * auto decoded2 = url_decode("100%25+true");
  * // decoded2 will be "100% true"
  *
- * @example
  * // Decode a complex URL
  * auto decoded3 =
  * url_decode("https%3A%2F%2Fexample.com%2Fsearch%3Fq%3Dc%2B%2B");
  * // decoded3 will be "https://example.com/search?q=c++"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto url_decode(std::string_view s) -> std::string;
 
@@ -1004,16 +959,16 @@ CPP_TOOLBOX_EXPORT auto url_decode(std::string_view s) -> std::string;
  * @param data The raw binary data to encode, represented as a string_view.
  * @return The Base64 encoded string.
  *
- * @example
+ * @code{.cpp}
  * // Encode simple text
  * auto encoded = base64_encode("Hello World");
  * // encoded will be "SGVsbG8gV29ybGQ="
  *
- * @example
  * // Encode binary data
  * std::string binary_data = {0x00, 0x01, 0x02, 0x03};
  * auto encoded2 = base64_encode(binary_data);
  * // encoded2 will be "AAECAw=="
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto base64_encode(std::string_view data) -> std::string;
 
@@ -1028,20 +983,19 @@ CPP_TOOLBOX_EXPORT auto base64_encode(std::string_view data) -> std::string;
  * @return The decoded data as a string. Returns an empty string if decoding
  * fails due to invalid input (e.g., invalid characters, incorrect padding).
  *
- * @example
+ * @code{.cpp}
  * // Decode simple Base64 string
  * auto decoded = base64_decode("SGVsbG8gV29ybGQ=");
  * // decoded will be "Hello World"
  *
- * @example
  * // Decode with whitespace
  * auto decoded2 = base64_decode(" AA EC Aw == ");
  * // decoded2 will be "\x00\x01\x02\x03"
  *
- * @example
  * // Invalid input returns empty string
  * auto decoded3 = base64_decode("Invalid!");
  * // decoded3 will be ""
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto base64_decode(std::string_view encoded_data)
     -> std::string;
@@ -1060,20 +1014,19 @@ CPP_TOOLBOX_EXPORT auto base64_decode(std::string_view encoded_data)
  * @param s The input string view to convert.
  * @return The generated slug string.
  *
- * @example
+ * @code{.cpp}
  * // Basic slug generation
  * auto slug = slugify("Hello World!");
  * // slug will be "hello-world"
  *
- * @example
  * // Complex string conversion
  * auto slug2 = slugify("This is a Test -- 123!");
  * // slug2 will be "this-is-a-test-123"
  *
- * @example
  * // Handling special characters
  * auto slug3 = slugify("C++ Programming 101");
  * // slug3 will be "c-programming-101"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto slugify(std::string_view s) -> std::string;
 

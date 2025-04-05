@@ -18,13 +18,13 @@ using file_type = std::filesystem::file_type;
  * @param str The string to convert to a path
  * @return std::filesystem::path The converted path object
  *
- * @example
+ * @code{.cpp}
  * // Basic usage
  * auto path = string_to_path("/usr/local/bin");
  *
- * @example
  * // Windows path conversion
  * auto win_path = string_to_path("C:\\Program Files\\MyApp");
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto string_to_path(const std::string& str)
     -> std::filesystem::path;
@@ -34,15 +34,15 @@ CPP_TOOLBOX_EXPORT auto string_to_path(const std::string& str)
  * @param path The path to convert to a string
  * @return std::string The string representation of the path
  *
- * @example
+ * @code{.cpp}
  * // Basic usage
  * std::filesystem::path p = "/usr/local/bin";
  * auto str = path_to_string(p);  // Returns "/usr/local/bin"
  *
- * @example
  * // Windows path conversion
  * std::filesystem::path win_p = "C:\\Program Files\\MyApp";
  * auto win_str = path_to_string(win_p);  // Returns "C:\\Program Files\\MyApp"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto path_to_string(const std::filesystem::path& path)
     -> std::string;
@@ -54,7 +54,7 @@ CPP_TOOLBOX_EXPORT auto path_to_string(const std::filesystem::path& path)
  * @throws std::filesystem::filesystem_error if the file doesn't exist or can't
  * be accessed
  *
- * @example
+ * @code{.cpp}
  * // Get size of existing file
  * try {
  *     auto size = get_file_size("/path/to/file.txt");
@@ -62,6 +62,7 @@ CPP_TOOLBOX_EXPORT auto path_to_string(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_file_size(const std::filesystem::path& path)
     -> std::size_t;
@@ -71,13 +72,13 @@ CPP_TOOLBOX_EXPORT auto get_file_size(const std::filesystem::path& path)
  * @param path The path to convert to absolute
  * @return std::filesystem::path The absolute path
  *
- * @example
+ * @code{.cpp}
  * // Get absolute path of relative path
  * auto abs_path = get_absolute_path("relative/path");
  *
- * @example
  * // Get absolute path of current directory
  * auto current_dir = get_absolute_path(".");
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_absolute_path(const std::filesystem::path& path)
     -> std::filesystem::path;
@@ -88,15 +89,15 @@ CPP_TOOLBOX_EXPORT auto get_absolute_path(const std::filesystem::path& path)
  * @param base The base path to compute relative path from
  * @return std::filesystem::path The relative path from base to target
  *
- * @example
+ * @code{.cpp}
  * // Get relative path between two directories
  * auto rel_path = get_relative_path("/usr/local/bin", "/usr");
  * // rel_path will be "local/bin"
  *
- * @example
  * // Get relative path between files
  * auto file_rel = get_relative_path("/a/b/c.txt", "/a/d/e.txt");
  * // file_rel will be "../b/c.txt"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_relative_path(const std::filesystem::path& path,
                                           const std::filesystem::path& base)
@@ -107,15 +108,15 @@ CPP_TOOLBOX_EXPORT auto get_relative_path(const std::filesystem::path& path,
  * @param path The path to get the parent of
  * @return std::filesystem::path The parent directory path
  *
- * @example
+ * @code{.cpp}
  * // Get parent directory of file
  * auto parent = get_parent_path("/usr/local/bin/gcc");
  * // parent will be "/usr/local/bin"
  *
- * @example
  * // Get parent directory of directory
  * auto parent_dir = get_parent_path("/usr/local/bin/");
  * // parent_dir will be "/usr/local"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_parent_path(const std::filesystem::path& path)
     -> std::filesystem::path;
@@ -125,15 +126,15 @@ CPP_TOOLBOX_EXPORT auto get_parent_path(const std::filesystem::path& path)
  * @param path The path to extract the file name from
  * @return std::string The file name component
  *
- * @example
+ * @code{.cpp}
  * // Get file name from full path
  * auto name = get_file_name("/usr/local/bin/gcc");
  * // name will be "gcc"
  *
- * @example
  * // Get file name from relative path
  * auto rel_name = get_file_name("docs/readme.txt");
  * // rel_name will be "readme.txt"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_file_name(const std::filesystem::path& path)
     -> std::string;
@@ -143,15 +144,15 @@ CPP_TOOLBOX_EXPORT auto get_file_name(const std::filesystem::path& path)
  * @param path The path to extract the extension from
  * @return std::string The file extension including the dot
  *
- * @example
+ * @code{.cpp}
  * // Get extension from file path
  * auto ext = get_file_extension("/path/to/document.pdf");
  * // ext will be ".pdf"
  *
- * @example
  * // Get extension from file name
  * auto ext2 = get_file_extension("archive.tar.gz");
  * // ext2 will be ".gz"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_file_extension(const std::filesystem::path& path)
     -> std::string;
@@ -179,7 +180,7 @@ CPP_TOOLBOX_EXPORT auto move_file(const std::filesystem::path& src,
  * @param path The filesystem path to the file to delete
  * @return True if the file was successfully deleted, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Delete an existing file
  * if (delete_file("/tmp/test.txt")) {
  *     std::cout << "File deleted successfully\n";
@@ -187,10 +188,10 @@ CPP_TOOLBOX_EXPORT auto move_file(const std::filesystem::path& src,
  *     std::cerr << "Failed to delete file\n";
  * }
  *
- * @example
  * // Attempt to delete non-existent file
  * bool result = delete_file("/path/to/nonexistent.file");
  * // result will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto delete_file(const std::filesystem::path& path) -> bool;
 
@@ -199,7 +200,7 @@ CPP_TOOLBOX_EXPORT auto delete_file(const std::filesystem::path& path) -> bool;
  * @param path The filesystem path to check
  * @return True if the file exists, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if file exists
  * if (file_exists("/etc/passwd")) {
  *     std::cout << "File exists\n";
@@ -207,10 +208,10 @@ CPP_TOOLBOX_EXPORT auto delete_file(const std::filesystem::path& path) -> bool;
  *     std::cout << "File does not exist\n";
  * }
  *
- * @example
  * // Check non-existent file
  * bool exists = file_exists("/tmp/nonexistent.file");
  * // exists will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto file_exists(const std::filesystem::path& path) -> bool;
 
@@ -219,7 +220,7 @@ CPP_TOOLBOX_EXPORT auto file_exists(const std::filesystem::path& path) -> bool;
  * @param path The filesystem path where the directory should be created
  * @return True if the directory was created successfully, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Create a new directory
  * if (create_directory("/tmp/new_dir")) {
  *     std::cout << "Directory created\n";
@@ -227,9 +228,9 @@ CPP_TOOLBOX_EXPORT auto file_exists(const std::filesystem::path& path) -> bool;
  *     std::cerr << "Failed to create directory\n";
  * }
  *
- * @example
  * // Create nested directories
  * create_directory("/tmp/a/b/c");  // Creates all directories in path
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto create_directory(const std::filesystem::path& path)
     -> bool;
@@ -239,7 +240,7 @@ CPP_TOOLBOX_EXPORT auto create_directory(const std::filesystem::path& path)
  * @param path The filesystem path to check
  * @return True if the directory exists, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if directory exists
  * if (directory_exists("/usr/local/bin")) {
  *     std::cout << "Directory exists\n";
@@ -247,10 +248,10 @@ CPP_TOOLBOX_EXPORT auto create_directory(const std::filesystem::path& path)
  *     std::cout << "Directory does not exist\n";
  * }
  *
- * @example
  * // Check non-existent directory
  * bool exists = directory_exists("/tmp/nonexistent_dir");
  * // exists will be false
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto directory_exists(const std::filesystem::path& path)
     -> bool;
@@ -260,7 +261,7 @@ CPP_TOOLBOX_EXPORT auto directory_exists(const std::filesystem::path& path)
  * @param path The filesystem path of the directory to delete
  * @return True if the directory was deleted successfully, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Delete an empty directory
  * if (delete_directory("/tmp/empty_dir")) {
  *     std::cout << "Directory deleted\n";
@@ -268,9 +269,9 @@ CPP_TOOLBOX_EXPORT auto directory_exists(const std::filesystem::path& path)
  *     std::cerr << "Failed to delete directory\n";
  * }
  *
- * @example
  * // Delete non-empty directory
  * delete_directory("/tmp/non_empty_dir");  // Will fail unless recursive
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto delete_directory(const std::filesystem::path& path)
     -> bool;
@@ -279,15 +280,15 @@ CPP_TOOLBOX_EXPORT auto delete_directory(const std::filesystem::path& path)
  * @brief Get the current working directory
  * @return The current working directory as a filesystem path
  *
- * @example
+ * @code{.cpp}
  * // Print current directory
  * auto current_dir = get_current_directory();
  * std::cout << "Current directory: " << current_dir << "\n";
  *
- * @example
  * // Change and get current directory
  * std::filesystem::current_path("/tmp");
  * auto dir = get_current_directory();  // Returns "/tmp"
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_current_directory() -> std::filesystem::path;
 
@@ -296,19 +297,19 @@ CPP_TOOLBOX_EXPORT auto get_current_directory() -> std::filesystem::path;
  * @param path The filesystem path to check
  * @return The type of the filesystem object (file, directory, etc.)
  *
- * @example
+ * @code{.cpp}
  * // Check type of a file
  * auto type = path_type("/etc/passwd");
  * if (type == std::filesystem::file_type::regular) {
  *     std::cout << "Regular file\n";
  * }
  *
- * @example
  * // Check type of a directory
  * auto dir_type = path_type("/usr/local/bin");
  * if (dir_type == std::filesystem::file_type::directory) {
  *     std::cout << "Directory\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto path_type(const std::filesystem::path& path)
     -> std::filesystem::file_type;
@@ -318,13 +319,14 @@ CPP_TOOLBOX_EXPORT auto path_type(const std::filesystem::path& path)
  * @param path The path to check
  * @return True if the path is a regular file, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a file exists and is regular
  * if (is_regular_file("/path/to/file.txt")) {
  *     std::cout << "Regular file exists\n";
  * } else {
  *     std::cerr << "Not a regular file\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_regular_file(const std::filesystem::path& path)
     -> bool;
@@ -334,13 +336,14 @@ CPP_TOOLBOX_EXPORT auto is_regular_file(const std::filesystem::path& path)
  * @param path The path to check
  * @return True if the path is a directory, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a directory exists
  * if (is_directory("/path/to/dir")) {
  *     std::cout << "Directory exists\n";
  * } else {
  *     std::cerr << "Not a directory\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_directory(const std::filesystem::path& path) -> bool;
 
@@ -349,13 +352,14 @@ CPP_TOOLBOX_EXPORT auto is_directory(const std::filesystem::path& path) -> bool;
  * @param path The path to check
  * @return True if the path is a symbolic link, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is a symlink
  * if (is_symlink("/path/to/symlink")) {
  *     std::cout << "Symbolic link detected\n";
  * } else {
  *     std::cerr << "Not a symbolic link\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_symlink(const std::filesystem::path& path) -> bool;
 
@@ -364,13 +368,14 @@ CPP_TOOLBOX_EXPORT auto is_symlink(const std::filesystem::path& path) -> bool;
  * @param path The path to check
  * @return True if the path is a FIFO, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is a FIFO
  * if (is_fifo("/path/to/fifo")) {
  *     std::cout << "FIFO detected\n";
  * } else {
  *     std::cerr << "Not a FIFO\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_fifo(const std::filesystem::path& path) -> bool;
 
@@ -379,13 +384,14 @@ CPP_TOOLBOX_EXPORT auto is_fifo(const std::filesystem::path& path) -> bool;
  * @param path The path to check
  * @return True if the path is a socket, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is a socket
  * if (is_socket("/path/to/socket")) {
  *     std::cout << "Socket detected\n";
  * } else {
  *     std::cerr << "Not a socket\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_socket(const std::filesystem::path& path) -> bool;
 
@@ -394,13 +400,14 @@ CPP_TOOLBOX_EXPORT auto is_socket(const std::filesystem::path& path) -> bool;
  * @param path The path to check
  * @return True if the path is a block device, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is a block device
  * if (is_block_file("/dev/sda1")) {
  *     std::cout << "Block device detected\n";
  * } else {
  *     std::cerr << "Not a block device\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_block_file(const std::filesystem::path& path)
     -> bool;
@@ -410,13 +417,14 @@ CPP_TOOLBOX_EXPORT auto is_block_file(const std::filesystem::path& path)
  * @param path The path to check
  * @return True if the path is a character device, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is a character device
  * if (is_character_file("/dev/tty")) {
  *     std::cout << "Character device detected\n";
  * } else {
  *     std::cerr << "Not a character device\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_character_file(const std::filesystem::path& path)
     -> bool;
@@ -426,13 +434,14 @@ CPP_TOOLBOX_EXPORT auto is_character_file(const std::filesystem::path& path)
  * @param path The path to check
  * @return True if the path is of an unknown type, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a path is of unknown type
  * if (is_other("/path/to/unknown")) {
  *     std::cout << "Unknown file type detected\n";
  * } else {
  *     std::cerr << "File type is known\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_other(const std::filesystem::path& path) -> bool;
 
@@ -441,13 +450,14 @@ CPP_TOOLBOX_EXPORT auto is_other(const std::filesystem::path& path) -> bool;
  * @param path The path to check
  * @return True if the path is empty, false otherwise
  *
- * @example
+ * @code{.cpp}
  * // Check if a directory is empty
  * if (is_empty("/path/to/dir")) {
  *     std::cout << "Directory is empty\n";
  * } else {
  *     std::cerr << "Directory is not empty\n";
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto is_empty(const std::filesystem::path& path) -> bool;
 
@@ -458,7 +468,7 @@ CPP_TOOLBOX_EXPORT auto is_empty(const std::filesystem::path& path) -> bool;
  * @throws std::filesystem::filesystem_error if the file doesn't exist or can't
  * be accessed
  *
- * @example
+ * @code{.cpp}
  * // Get creation time of a file
  * try {
  *     auto creation_time = get_creation_time("/path/to/file.txt");
@@ -466,6 +476,7 @@ CPP_TOOLBOX_EXPORT auto is_empty(const std::filesystem::path& path) -> bool;
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_creation_time(const std::filesystem::path& path)
     -> file_time_type;
@@ -477,7 +488,7 @@ CPP_TOOLBOX_EXPORT auto get_creation_time(const std::filesystem::path& path)
  * @throws std::filesystem::filesystem_error if the file doesn't exist or can't
  * be accessed
  *
- * @example
+ * @code{.cpp}
  * // Get last access time of a file
  * try {
  *     auto access_time = get_last_access_time("/path/to/file.txt");
@@ -485,6 +496,7 @@ CPP_TOOLBOX_EXPORT auto get_creation_time(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_last_access_time(const std::filesystem::path& path)
     -> file_time_type;
@@ -496,7 +508,7 @@ CPP_TOOLBOX_EXPORT auto get_last_access_time(const std::filesystem::path& path)
  * @throws std::filesystem::filesystem_error if the file doesn't exist or can't
  * be accessed
  *
- * @example
+ * @code{.cpp}
  * // Get last modification time of a file
  * try {
  *     auto write_time = get_last_write_time("/path/to/file.txt");
@@ -504,6 +516,7 @@ CPP_TOOLBOX_EXPORT auto get_last_access_time(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_last_write_time(const std::filesystem::path& path)
     -> file_time_type;
@@ -514,7 +527,7 @@ CPP_TOOLBOX_EXPORT auto get_last_write_time(const std::filesystem::path& path)
  * @return The target path as std::filesystem::path
  * @throws std::filesystem::filesystem_error if the path is not a symbolic link
  *
- * @example
+ * @code{.cpp}
  * // Get symlink target
  * try {
  *     auto target = get_symlink_target("/path/to/symlink");
@@ -522,6 +535,7 @@ CPP_TOOLBOX_EXPORT auto get_last_write_time(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_symlink_target(const std::filesystem::path& path)
     -> std::filesystem::path;
@@ -532,7 +546,7 @@ CPP_TOOLBOX_EXPORT auto get_symlink_target(const std::filesystem::path& path)
  * @return A vector of paths in the directory
  * @throws std::filesystem::filesystem_error if the path is not a directory
  *
- * @example
+ * @code{.cpp}
  * // List files in a directory
  * try {
  *     auto files = traverse_directory("/path/to/dir");
@@ -542,6 +556,7 @@ CPP_TOOLBOX_EXPORT auto get_symlink_target(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path& path)
     -> std::vector<std::filesystem::path>;
@@ -552,7 +567,7 @@ CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path& path)
  * @return A vector of paths in the directory and its subdirectories
  * @throws std::filesystem::filesystem_error if the path is not a directory
  *
- * @example
+ * @code{.cpp}
  * // Recursively list files in a directory
  * try {
  *     auto all_files = recursive_traverse_directory("/path/to/dir");
@@ -562,6 +577,7 @@ CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path& path)
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto recursive_traverse_directory(
     const std::filesystem::path& path) -> std::vector<std::filesystem::path>;
@@ -572,7 +588,7 @@ CPP_TOOLBOX_EXPORT auto recursive_traverse_directory(
  * @param callback The callback to call for each file
  * @throws std::filesystem::filesystem_error if the path is not a directory
  *
- * @example
+ * @code{.cpp}
  * // Process each file in a directory
  * try {
  *     traverse_directory_files("/path/to/dir", [](const auto& file) {
@@ -581,6 +597,7 @@ CPP_TOOLBOX_EXPORT auto recursive_traverse_directory(
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto traverse_directory_files(
     const std::filesystem::path& path,
@@ -592,7 +609,7 @@ CPP_TOOLBOX_EXPORT auto traverse_directory_files(
  * @param callback The callback to call for each file
  * @throws std::filesystem::filesystem_error if the path is not a directory
  *
- * @example
+ * @code{.cpp}
  * // Process each file recursively
  * try {
  *     recursive_traverse_directory_files("/path/to/dir", [](const auto& file) {
@@ -601,6 +618,7 @@ CPP_TOOLBOX_EXPORT auto traverse_directory_files(
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto recursive_traverse_directory_files(
     const std::filesystem::path& path,
@@ -612,7 +630,7 @@ CPP_TOOLBOX_EXPORT auto recursive_traverse_directory_files(
  * @throws std::filesystem::filesystem_error if the current directory cannot be
  * determined
  *
- * @example
+ * @code{.cpp}
  * // Print current working directory
  * try {
  *     auto cwd = get_current_working_directory();
@@ -620,6 +638,7 @@ CPP_TOOLBOX_EXPORT auto recursive_traverse_directory_files(
  * } catch (const std::filesystem::filesystem_error& e) {
  *     std::cerr << "Error: " << e.what() << '\n';
  * }
+ * @endcode
  */
 CPP_TOOLBOX_EXPORT auto get_current_working_directory()
     -> std::filesystem::path;

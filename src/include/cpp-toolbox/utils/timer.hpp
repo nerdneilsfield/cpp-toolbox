@@ -10,25 +10,24 @@ namespace toolbox::utils
 {
 
 /**
- * @class StopWatchTimer
+ * @class stop_watch_timer_t
  * @brief A high-resolution stopwatch timer for measuring elapsed time.
  *
  * This class provides a simple interface for measuring elapsed time with
  * nanosecond precision. It supports starting, stopping, and resetting the
  * timer, as well as retrieving elapsed time in milliseconds or seconds.
  *
- * @example
+ * @code
  * // Basic usage
- * StopWatchTimer timer("MyTimer");
+ * stop_watch_timer_t timer("MyTimer");
  * timer.start();
  * // ... perform some operations ...
  * timer.stop();
  * double elapsed_ms = timer.elapsed_time_ms();
  * timer.print_stats();
  *
- * @example
  * // Multiple start/stop cycles
- * StopWatchTimer timer;
+ * stop_watch_timer_t timer;
  * timer.start();
  * // ... first operation ...
  * timer.stop();
@@ -36,15 +35,16 @@ namespace toolbox::utils
  * // ... second operation ...
  * timer.stop();
  * double total_seconds = timer.elapsed_time();
+ * @endcode
  */
-class CPP_TOOLBOX_EXPORT StopWatchTimer
+class CPP_TOOLBOX_EXPORT stop_watch_timer_t
 {
 public:
   /**
-   * @brief Construct a new StopWatchTimer object
+   * @brief Construct a new stop_watch_timer_t object
    * @param name The name of the timer (default: "default_timer")
    */
-  StopWatchTimer(std::string name = "default_timer");
+  stop_watch_timer_t(std::string name = "default_timer");
 
   /**
    * @brief Set the name of the timer
@@ -105,30 +105,31 @@ private:
 };
 
 /**
- * @class SimpleTimerInterface
+ * @class simple_timer_interface_t
  * @brief Interface for managing a collection of timers
  *
  * This interface provides a unified way to manage multiple timers through
  * a single interface. It supports starting, stopping, resetting, and querying
  * timers by index.
  *
- * @example
+ * @code
  * // Basic usage
- * SimpleTimerInterface* timers = createTimer(3);
+ * simple_timer_interface_t* timers = create_timer(3);
  * timers->start(0);
  * // ... perform operation ...
  * timers->stop(0);
  * double elapsed = timers->elapsed_time_ms(0);
  * timers->print_all_stats();
- * deleteTimer(&timers);
+ * delete_timer(&timers);
+ * @endcode
  */
-class CPP_TOOLBOX_EXPORT SimpleTimerInterface
+class CPP_TOOLBOX_EXPORT simple_timer_interface_t
 {
 public:
   /**
    * @brief Virtual destructor to ensure proper cleanup
    */
-  virtual ~SimpleTimerInterface() = default;
+  virtual ~simple_timer_interface_t() = default;
 
   /**
    * @brief Start the timer at specified index
@@ -181,45 +182,48 @@ public:
 };
 
 /**
- * @class SimpleTimerArray
- * @brief Concrete implementation of SimpleTimerInterface using an array of
+ * @class simple_timer_array_t
+ * @brief Concrete implementation of simple_timer_interface_t using an array of
  * timers
  *
- * This class implements the SimpleTimerInterface using a vector of
- * StopWatchTimer objects. It provides thread-safe operations on multiple
+ * This class implements the simple_timer_interface_t using a vector of
+ * stop_watch_timer_t objects. It provides thread-safe operations on multiple
  * timers.
  *
- * @example
+ * @code
  * // Basic usage
- * SimpleTimerArray timers(3);
+ * simple_timer_array_t timers(3);
  * timers.start(0);
  * // ... perform operation ...
  * timers.stop(0);
  * double elapsed = timers.elapsed_time_ms(0);
  * timers.print_all_stats();
+ * @endcode
  */
-class CPP_TOOLBOX_EXPORT SimpleTimerArray : public SimpleTimerInterface
+class CPP_TOOLBOX_EXPORT simple_timer_array_t : public simple_timer_interface_t
 {
 public:
   /**
-   * @brief Construct a SimpleTimerArray with specified size
+   * @brief Construct a simple_timer_array_t with specified size
    * @param size Number of timers to create
    */
-  explicit SimpleTimerArray(int size);
+  explicit simple_timer_array_t(int size);
 
   /**
-   * @brief Construct a SimpleTimerArray with specified names
+   * @brief Construct a simple_timer_array_t with specified names
    * @param names Vector of names for each timer
    */
-  SimpleTimerArray(const std::vector<std::string>& names);
+  explicit simple_timer_array_t(const std::vector<std::string>& names);
 
   // Delete copy constructor and assignment operator
-  SimpleTimerArray(const SimpleTimerArray&) = delete;
-  auto operator=(const SimpleTimerArray&) -> SimpleTimerArray& = delete;
+  simple_timer_array_t(const simple_timer_array_t&) = delete;
+  auto operator=(const simple_timer_array_t&) -> simple_timer_array_t& = delete;
 
   // Allow move semantics
-  SimpleTimerArray(SimpleTimerArray&&) = default;
-  auto operator=(SimpleTimerArray&&) -> SimpleTimerArray& = default;
+  simple_timer_array_t(simple_timer_array_t&&) = default;
+  auto operator=(simple_timer_array_t&&) -> simple_timer_array_t& = default;
+
+  ~simple_timer_array_t() override = default;
 
   // Implement interface methods
   void start(int index) override;
@@ -239,7 +243,7 @@ private:
    */
   void check_id(int index) const;
 
-  std::vector<StopWatchTimer> timers_;  ///< Collection of timers
+  std::vector<stop_watch_timer_t> timers_;  ///< Collection of timers
 };
 
 /**
@@ -248,14 +252,16 @@ private:
  * @param size Number of timers to create
  * @return true if creation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
+ * @code
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * @endcode
  */
-inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
+inline auto create_timer(simple_timer_interface_t** timer_interface, int size)
+    -> bool
 {
-  *timer_interface =
-      reinterpret_cast<SimpleTimerInterface*>(new SimpleTimerArray(size));
+  *timer_interface = reinterpret_cast<simple_timer_interface_t*>(
+      new simple_timer_array_t(size));
   return (*timer_interface != nullptr) ? true : false;
 }
 
@@ -265,16 +271,18 @@ inline bool createTimer(SimpleTimerInterface** timer_interface, int size)
  * @param names Vector of names for each timer
  * @return true if creation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
+ * @code{.cpp}
+ * simple_timer_interface_t* timers;
  * std::vector<std::string> names = {"timer1", "timer2", "timer3"};
- * createTimerWithName(&timers, names);
+ * create_timer_with_names(&timers, names);
+ * @endcode
  */
-inline bool createTimerWithName(SimpleTimerInterface** timer_interface,
-                                const std::vector<std::string>& name)
+inline auto create_timer_with_names(simple_timer_interface_t** timer_interface,
+                                    const std::vector<std::string>& names)
+    -> bool
 {
-  *timer_interface =
-      reinterpret_cast<SimpleTimerInterface*>(new SimpleTimerArray(name));
+  *timer_interface = reinterpret_cast<simple_timer_interface_t*>(
+      new simple_timer_array_t(names));
   return (*timer_interface != nullptr) ? true : false;
 }
 
@@ -283,13 +291,14 @@ inline bool createTimerWithName(SimpleTimerInterface** timer_interface,
  * @param timer_interface Pointer to the interface to delete
  * @return true if deletion succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
+ * @code{.cpp}
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
  * // ... use timers ...
- * deleteTimer(&timers);
+ * delete_timer(&timers);
+ * @endcode
  */
-inline bool deleteTimer(SimpleTimerInterface** timer_interface)
+inline auto delete_timer(simple_timer_interface_t** timer_interface) -> bool
 {
   if (*timer_interface != nullptr) {
     delete *timer_interface;
@@ -304,12 +313,14 @@ inline bool deleteTimer(SimpleTimerInterface** timer_interface)
  * @param id Index of the timer to start
  * @return true if operation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * @code
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
+ * @endcode
  */
-inline bool startTimer(SimpleTimerInterface** timer_interface, int id)
+inline auto start_timer(simple_timer_interface_t** timer_interface, int id)
+    -> bool
 {
   if (*timer_interface != nullptr) {
     (*timer_interface)->start(id);
@@ -323,14 +334,16 @@ inline bool startTimer(SimpleTimerInterface** timer_interface, int id)
  * @param id Index of the timer to stop
  * @return true if operation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * @code
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * stopTimer(&timers, 0);
+ * stop_timer(&timers, 0);
+ * @endcode
  */
-inline bool stopTimer(SimpleTimerInterface** timer_interface, int id)
+inline auto stop_timer(simple_timer_interface_t** timer_interface, int id)
+    -> bool
 {
   if (*timer_interface != nullptr) {
     (*timer_interface)->stop(id);
@@ -344,14 +357,16 @@ inline bool stopTimer(SimpleTimerInterface** timer_interface, int id)
  * @param id Index of the timer to reset
  * @return true if operation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * @code
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * resetTimer(&timers, 0);
+ * reset_timer(&timers, 0);
+ * @endcode
  */
-inline bool resetTimer(SimpleTimerInterface** timer_interface, int id)
+inline auto reset_timer(simple_timer_interface_t** timer_interface, int id)
+    -> bool
 {
   if (*timer_interface != nullptr) {
     (*timer_interface)->reset(id);
@@ -365,14 +380,16 @@ inline bool resetTimer(SimpleTimerInterface** timer_interface, int id)
  * @param id Index of the timer to display
  * @return true if operation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * @code
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * displayTimer(&timers, 0);
+ * display_timer(&timers, 0);
+ * @endcode
  */
-inline bool displayTimer(SimpleTimerInterface** timer_interface, int id)
+inline auto display_timer(simple_timer_interface_t** timer_interface, int id)
+    -> bool
 {
   if (*timer_interface != nullptr) {
     (*timer_interface)->print_stats(id);
@@ -385,14 +402,14 @@ inline bool displayTimer(SimpleTimerInterface** timer_interface, int id)
  * @param timer_interface Pointer to the timer interface
  * @return true if operation succeeded, false otherwise
  *
- * @example
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * @code
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * displayAllTimer(&timers);
+ * display_all_timer(&timers);
+ * @endcode
  */
-inline bool displayAllTimer(SimpleTimerInterface** timer_interface)
+inline auto display_all_timer(simple_timer_interface_t** timer_interface)
+    -> bool
 {
   if (*timer_interface != nullptr) {
     (*timer_interface)->print_all_stats();
@@ -406,20 +423,21 @@ inline bool displayAllTimer(SimpleTimerInterface** timer_interface)
  * @param id Index of the timer to query
  * @return Elapsed time in seconds. Returns 0.0 if timer_interface is null
  *
- * @example
+ * @code{.cpp}
  * // Basic usage
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * double elapsed_seconds = getTimerElapsed(&timers, 0);
+ * double elapsed_seconds = get_timer_elapsed(&timers, 0);
  *
- * @example
  * // Safe usage with null check
- * SimpleTimerInterface* timers = nullptr;
- * double elapsed = getTimerElapsed(&timers, 0); // Returns 0.0
+ * simple_timer_interface_t* timers = nullptr;
+ * double elapsed = get_timer_elapsed(&timers, 0); // Returns 0.0
+ * @endcode
  */
-inline double getTimerElapsed(SimpleTimerInterface** timer_interface, int id)
+inline auto get_timer_elapsed(simple_timer_interface_t** timer_interface,
+                              int id) -> double
 {
   if (*timer_interface != nullptr) {
     return (*timer_interface)->elapsed_time(id);
@@ -433,25 +451,26 @@ inline double getTimerElapsed(SimpleTimerInterface** timer_interface, int id)
  * @param id Index of the timer to query
  * @return Elapsed time in milliseconds. Returns 0.0 if timer_interface is null
  *
- * @example
+ * @code{.cpp}
  * // Basic usage
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 3);
- * startTimer(&timers, 0);
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 3);
+ * start_timer(&timers, 0);
  * // ... perform operation ...
- * double elapsed_ms = getTimerElapsedMs(&timers, 0);
+ * double elapsed_ms = get_timer_elapsed_ms(&timers, 0);
  *
- * @example
  * // Comparing seconds and milliseconds
- * SimpleTimerInterface* timers;
- * createTimer(&timers, 1);
- * startTimer(&timers, 0);
+ * simple_timer_interface_t* timers;
+ * create_timer(&timers, 1);
+ * start_timer(&timers, 0);
  * std::this_thread::sleep_for(std::chrono::milliseconds(1500));
- * stopTimer(&timers, 0);
- * double seconds = getTimerElapsed(&timers, 0);    // ~1.5 seconds
- * double milliseconds = getTimerElapsedMs(&timers, 0); // ~1500.0 ms
+ * stop_timer(&timers, 0);
+ * double seconds = get_timer_elapsed(&timers, 0);    // ~1.5 seconds
+ * double milliseconds = get_timer_elapsed_ms(&timers, 0); // ~1500.0 ms
+ * @endcode
  */
-inline double getTimerElapsedMs(SimpleTimerInterface** timer_interface, int id)
+inline auto get_timer_elapsed_ms(simple_timer_interface_t** timer_interface,
+                                 int id) -> double
 {
   if (*timer_interface != nullptr) {
     return (*timer_interface)->elapsed_time_ms(id);

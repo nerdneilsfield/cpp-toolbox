@@ -22,74 +22,113 @@
 namespace toolbox::base
 {
 
+/**
+ * @brief A singleton thread pool implementation that manages a pool of worker
+ * threads
+ *
+ * This class provides a thread-safe singleton thread pool that can execute
+ * tasks asynchronously. Tasks are submitted as functions/lambdas and are queued
+ * for execution by worker threads.
+ *
+ * @code{.cpp}
+ * // Get thread pool instance
+ * auto& pool = thread_pool_singleton_t::instance();
+ *
+ * // Submit a task and get future
+ * auto future = pool.submit([](int x) { return x * 2; }, 42);
+ *
+ * // Get result
+ * int result = future.get(); // result = 84
+ * @endcode
+ */
 class CPP_TOOLBOX_EXPORT thread_pool_singleton_t
 {
 public:
-  // --- 单例访问 ---
+  /**
+   * @brief Get the singleton instance of the thread pool
+   * @return Reference to the singleton thread pool instance
+   */
   static thread_pool_singleton_t& instance()
   {
     static thread_pool_singleton_t instance;
     return instance;
   }
 
-  // 删除拷贝和移动操作
+  // Delete copy and move operations to ensure singleton pattern
   thread_pool_singleton_t(const thread_pool_singleton_t&) = delete;
   thread_pool_singleton_t& operator=(const thread_pool_singleton_t&) = delete;
   thread_pool_singleton_t(thread_pool_singleton_t&&) = delete;
   thread_pool_singleton_t& operator=(thread_pool_singleton_t&&) = delete;
 
-  // --- 公共接口 ---
-
   /**
-   * @brief 析构函数，停止线程池并等待所有工作线程结束。
+   * @brief Destructor that stops the thread pool and waits for all worker
+   * threads to finish
    */
   ~thread_pool_singleton_t();
 
   /**
-   * @brief 提交一个任务到线程池执行。
-   * (实现保持在头文件中，因为它是一个模板)
-   * @return std::future<...> 用于获取结果或异常。
-   * @throws std::runtime_error 如果线程池已停止。
+   * @brief Submit a task to be executed by the thread pool
+   *
+   * This method queues a task for asynchronous execution by one of the worker
+   * threads. The task can be a function, lambda, or any callable object.
+   *
+   * @tparam F Type of the callable
+   * @tparam Args Types of the arguments
+   * @param f The callable to execute
+   * @param args Arguments to pass to the callable
+   * @return std::future containing the eventual result
+   * @throws std::runtime_error if the thread pool has been stopped
+   *
+   * @code{.cpp}
+   * // Submit a lambda
+   * auto future1 = pool.submit([]() { return "Hello"; });
+   *
+   * // Submit a function with arguments
+   * auto future2 = pool.submit([](int x, int y) { return x + y; }, 2, 3);
+   * @endcode
    */
   template<class F, class... Args>
   auto submit(F&& f, Args&&... args)
       -> std::future<typename std::invoke_result_t<F, Args...>>;
 
   /**
-   * @brief 获取线程池中的工作线程数量。
-   * @return size_t 线程数量。
+   * @brief Get the number of worker threads in the pool
+   * @return The number of worker threads
    */
   size_t get_thread_count() const { return workers_.size(); }
 
 private:
-  // 构造函数声明
+  /**
+   * @brief Private constructor for singleton pattern
+   */
   thread_pool_singleton_t();
 
+  // Member variables
   std::vector<std::thread> workers_;
   toolbox::container::concurrent_queue_t<std::function<void()>> tasks_;
   std::atomic<bool> stop_;
 
-  // --- 辅助函数 ---
   /**
-   * @brief 初始化并启动线程池（在单例首次访问时调用）。
-   * @param threads 线程数，0 表示默认。
+   * @brief Initialize and start the thread pool
+   * @param threads Number of threads to create (0 means use hardware
+   * concurrency)
    */
   void start_pool(size_t threads = 0);
 
   /**
-   * @brief 停止并销毁线程池资源。
+   * @brief Stop the thread pool and cleanup resources
    */
   void stop_pool();
 
   /**
-   * @brief 工作线程执行的主循环函数。
-   * @param worker_id 工作线程的ID（用于日志/调试）。
+   * @brief Main worker thread function that processes tasks
+   * @param worker_id ID of the worker thread for logging/debugging
    */
   void worker_loop(size_t worker_id);
 
 };  // class thread_pool_singleton_t
 
-// --- Template Member Function Implementation (保持在头文件) ---
+// Template implementation
 
 template<class F, class... Args>
 auto thread_pool_singleton_t::submit(F&& f, Args&&... args)
@@ -106,21 +145,19 @@ auto thread_pool_singleton_t::submit(F&& f, Args&&... args)
 
   std::future<return_type> res = task->get_future();
 
-  tasks_.enqueue([task]() mutable { // mutable 如果 F 是可变 lambda
+  tasks_.enqueue(
+      [task]() mutable
+      {
         try {
-            (*task)();
+          (*task)();
         } catch (const std::future_error& fe) {
-            // 可以考虑使用 logger 记录异常
-            LOG_ERROR_S << "Worker caught future_error: " << fe.what();
-            // std::cerr << "Worker caught future_error: " << fe.what() << std::endl;
+          LOG_ERROR_S << "Worker caught future_error: " << fe.what();
         } catch (const std::exception& e) {
-            LOG_ERROR_S << "Worker caught exception: " << e.what();
-            // std::cerr << "Worker caught exception: " << e.what() << std::endl;
+          LOG_ERROR_S << "Worker caught exception: " << e.what();
         } catch (...) {
-            LOG_ERROR_S << "Worker caught unknown exception.";
-            // std::cerr << "Worker caught unknown exception." << std::endl;
+          LOG_ERROR_S << "Worker caught unknown exception.";
         }
-    });
+      });
 
   return res;
 }

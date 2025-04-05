@@ -18,9 +18,9 @@ void delay(std::chrono::milliseconds duration)
   std::this_thread::sleep_for(duration);
 }
 
-TEST_CASE("StopWatchTimer Basic Tests", "[timer][stopwatch]")
+TEST_CASE("stop_watch_timer_t Basic Tests", "[timer][stopwatch]")
 {
-  StopWatchTimer timer("Basic");
+  stop_watch_timer_t timer("Basic");
 
   SECTION("Initial state")
   {
@@ -99,16 +99,16 @@ TEST_CASE("StopWatchTimer Basic Tests", "[timer][stopwatch]")
   }
 }
 
-TEST_CASE("SimpleTimerArray Tests", "[timer][array]")
+TEST_CASE("simple_timer_array_t Tests", "[timer][array]")
 {
   SECTION("Constructor with size")
   {
-    SimpleTimerArray timers(3);
+    simple_timer_array_t timers(3);
     REQUIRE(timers.size() == 3);
     // Default names are timer_0, timer_1, timer_2 - checking one is enough
-    // Need a way to get the StopWatchTimer object or its name to verify this.
-    // Let's add a get_timer_name(index) method for testing, or rely on print
-    // output. For now, just check size and basic operation.
+    // Need a way to get the stop_watch_timer_t object or its name to verify
+    // this. Let's add a get_timer_name(index) method for testing, or rely on
+    // print output. For now, just check size and basic operation.
     REQUIRE(timers.elapsed_time_ms(0) == Catch::Approx(0.0));
     REQUIRE(timers.elapsed_time_ms(1) == Catch::Approx(0.0));
     REQUIRE(timers.elapsed_time_ms(2) == Catch::Approx(0.0));
@@ -117,7 +117,7 @@ TEST_CASE("SimpleTimerArray Tests", "[timer][array]")
   SECTION("Constructor with names")
   {
     std::vector<std::string> names = {"Load", "Process", "Save"};
-    SimpleTimerArray timers(names);
+    simple_timer_array_t timers(names);
     REQUIRE(timers.size() == 3);
     // Again, checking names requires access or print check.
     REQUIRE(timers.elapsed_time_ms(0) == Catch::Approx(0.0));
@@ -127,16 +127,16 @@ TEST_CASE("SimpleTimerArray Tests", "[timer][array]")
 
   SECTION("Invalid Constructor Args")
   {
-    REQUIRE_THROWS_AS(SimpleTimerArray(0), std::invalid_argument);
-    REQUIRE_THROWS_AS(SimpleTimerArray(-1), std::invalid_argument);
+    REQUIRE_THROWS_AS(simple_timer_array_t(0), std::invalid_argument);
+    REQUIRE_THROWS_AS(simple_timer_array_t(-1), std::invalid_argument);
     std::vector<std::string> empty_names;
-    REQUIRE_THROWS_AS(SimpleTimerArray(empty_names), std::invalid_argument);
+    REQUIRE_THROWS_AS(simple_timer_array_t(empty_names), std::invalid_argument);
   }
 
   SECTION("Basic Operations and Indexing")
   {
     std::vector<std::string> names = {"A", "B"};
-    SimpleTimerArray timers(names);
+    simple_timer_array_t timers(names);
 
     timers.start(0);
     delay(50ms);
@@ -169,7 +169,7 @@ TEST_CASE("SimpleTimerArray Tests", "[timer][array]")
 
   SECTION("Index Out of Bounds")
   {
-    SimpleTimerArray timers(2);
+    simple_timer_array_t timers(2);
     REQUIRE_THROWS_AS(timers.start(-1), std::out_of_range);
     REQUIRE_THROWS_AS(timers.start(2), std::out_of_range);
     REQUIRE_THROWS_AS(timers.stop(2), std::out_of_range);
@@ -191,7 +191,7 @@ TEST_CASE("SimpleTimerArray Tests", "[timer][array]")
 
   SECTION("Get time while running in array")
   {
-    SimpleTimerArray timers(1);
+    simple_timer_array_t timers(1);
     timers.start(0);
     delay(50ms);
     double time1 = timers.elapsed_time_ms(0);

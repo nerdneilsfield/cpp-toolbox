@@ -12,8 +12,8 @@
 namespace toolbox::utils
 {
 
-// --- StopWatchTimer Implementation ---
-StopWatchTimer::StopWatchTimer(std::string name)
+// --- stop_watch_timer_t Implementation ---
+stop_watch_timer_t::stop_watch_timer_t(std::string name)
     : name_(std::move(name))
     ,  // Use std::move for efficiency
     total_duration_(0)
@@ -23,24 +23,24 @@ StopWatchTimer::StopWatchTimer(std::string name)
   start_time_ = std::chrono::high_resolution_clock::now();
 }
 
-void StopWatchTimer::set_name(const std::string& name)
+void stop_watch_timer_t::set_name(const std::string& name)
 {
   name_ = name;
 }
 
-const std::string& StopWatchTimer::get_name() const
+const std::string& stop_watch_timer_t::get_name() const
 {
   return name_;
 }
 
-void StopWatchTimer::start()
+void stop_watch_timer_t::start()
 {
   // Avoid restarting if already running, just update start time
   start_time_ = std::chrono::high_resolution_clock::now();
   running_ = true;
 }
 
-void StopWatchTimer::stop()
+void stop_watch_timer_t::stop()
 {
   if (running_) {
     auto end_time = std::chrono::high_resolution_clock::now();
@@ -51,7 +51,7 @@ void StopWatchTimer::stop()
   // If stop() is called when not running, do nothing.
 }
 
-void StopWatchTimer::reset()
+void stop_watch_timer_t::reset()
 {
   total_duration_ = std::chrono::nanoseconds(0);
   running_ = false;
@@ -59,7 +59,7 @@ void StopWatchTimer::reset()
   // start_time_ = std::chrono::high_resolution_clock::now();
 }
 
-auto StopWatchTimer::elapsed_time_ms() const -> double
+auto stop_watch_timer_t::elapsed_time_ms() const -> double
 {
   // If the timer is currently running, add the time since the last start()
   std::chrono::nanoseconds current_total = total_duration_;
@@ -71,7 +71,7 @@ auto StopWatchTimer::elapsed_time_ms() const -> double
   return static_cast<double>(current_total.count()) * 1e-6;
 }
 
-auto StopWatchTimer::elapsed_time() const -> double
+auto stop_watch_timer_t::elapsed_time() const -> double
 {
   // If the timer is currently running, add the time since the last start()
   std::chrono::nanoseconds current_total = total_duration_;
@@ -83,7 +83,7 @@ auto StopWatchTimer::elapsed_time() const -> double
   return static_cast<double>(current_total.count()) * 1e-9;
 }
 
-void StopWatchTimer::print_stats() const
+void stop_watch_timer_t::print_stats() const
 {
   // Use std::fixed and std::setprecision for consistent output format
   std::cout << std::fixed << std::setprecision(4);
@@ -91,9 +91,9 @@ void StopWatchTimer::print_stats() const
             << elapsed_time() << " s)" << std::endl;
 }
 
-// --- SimpleTimerArray Implementation ---
+// --- simple_timer_array_t Implementation ---
 
-SimpleTimerArray::SimpleTimerArray(int size)
+simple_timer_array_t::simple_timer_array_t(int size)
 {
   if (size <= 0) {
     throw std::invalid_argument("Timer array size must be positive.");
@@ -105,7 +105,8 @@ SimpleTimerArray::SimpleTimerArray(int size)
   }
 }
 
-SimpleTimerArray::SimpleTimerArray(const std::vector<std::string>& names)
+simple_timer_array_t::simple_timer_array_t(
+    const std::vector<std::string>& names)
 {
   if (names.empty()) {
     throw std::invalid_argument("Timer name vector cannot be empty.");
@@ -116,7 +117,7 @@ SimpleTimerArray::SimpleTimerArray(const std::vector<std::string>& names)
   }
 }
 
-void SimpleTimerArray::check_id(int index) const
+void simple_timer_array_t::check_id(int index) const
 {
   // Use size() method of vector, check >= 0 for signed/unsigned comparison
   // safety
@@ -127,43 +128,43 @@ void SimpleTimerArray::check_id(int index) const
   }
 }
 
-void SimpleTimerArray::start(int index)
+void simple_timer_array_t::start(int index)
 {
   check_id(index);
   timers_[index].start();
 }
 
-void SimpleTimerArray::stop(int index)
+void simple_timer_array_t::stop(int index)
 {
   check_id(index);
   timers_[index].stop();
 }
 
-void SimpleTimerArray::reset(int index)
+void simple_timer_array_t::reset(int index)
 {
   check_id(index);
   timers_[index].reset();
 }
 
-auto SimpleTimerArray::elapsed_time_ms(int index) const -> double
+auto simple_timer_array_t::elapsed_time_ms(int index) const -> double
 {
   check_id(index);
   return timers_[index].elapsed_time_ms();
 }
 
-auto SimpleTimerArray::elapsed_time(int index) const -> double
+auto simple_timer_array_t::elapsed_time(int index) const -> double
 {
   check_id(index);
   return timers_[index].elapsed_time();
 }
 
-void SimpleTimerArray::print_stats(int index) const
+void simple_timer_array_t::print_stats(int index) const
 {
   check_id(index);
   timers_[index].print_stats();
 }
 
-void SimpleTimerArray::print_all_stats() const
+void simple_timer_array_t::print_all_stats() const
 {
   std::cout << "--- All Timer Stats ---" << std::endl;
   for (const auto& timer : timers_) {  // Use range-based for loop
@@ -172,7 +173,7 @@ void SimpleTimerArray::print_all_stats() const
   std::cout << "-----------------------" << std::endl;
 }
 
-auto SimpleTimerArray::size() const -> size_t
+auto simple_timer_array_t::size() const -> size_t
 {
   return timers_.size();
 }

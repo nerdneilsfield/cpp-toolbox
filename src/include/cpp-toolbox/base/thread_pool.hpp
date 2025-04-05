@@ -30,7 +30,7 @@ namespace toolbox::base
  * gracefully stops them during destruction. Uses
  * `toolbox::container::concurrent_queue_t` as the underlying task queue.
  *
- * @example
+ * @code{.cpp}
  * // Create a thread pool with default number of threads
  * thread_pool_t pool;
  *
@@ -41,6 +41,7 @@ namespace toolbox::base
  * // Submit a task with arguments
  * auto future2 = pool.submit([](int a, int b) { return a + b; }, 10, 20);
  * int result2 = future2.get(); // result2 will be 30
+ * @endcode
  */
 class CPP_TOOLBOX_EXPORT thread_pool_t
 {
@@ -53,12 +54,13 @@ public:
    * at least 1 thread.
    * @throws std::invalid_argument if thread count parameter is 0.
    *
-   * @example
+   * @code{.cpp}
    * // Create pool with 4 threads
    * thread_pool_t pool(4);
    *
    * // Create pool with default number of threads
    * thread_pool_t default_pool;
+   * @endcode
    */
   explicit thread_pool_t(size_t threads = 0);
 
@@ -84,7 +86,7 @@ public:
    * @throws std::runtime_error if the thread pool has been stopped and cannot
    * accept new tasks.
    *
-   * @example
+   * @code{.cpp}
    * // Submit a lambda task
    * auto future = pool.submit([]() { return 42; });
    *
@@ -98,6 +100,7 @@ public:
    * } catch (const std::exception& e) {
    *     // Handle exception
    * }
+   * @endcode
    */
   template<class F, class... Args>
   auto submit(F&& f, Args&&... args)

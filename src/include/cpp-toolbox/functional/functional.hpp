@@ -25,6 +25,14 @@ namespace detail
 /**
  * @brief Helper class for creating overload sets
  * @tparam Fs Types of functions to overload
+ *
+ * @code{.cpp}
+ * // Create overloaded visitor for variant
+ * auto visitor = overloaded{
+ *   [](int x) { return x * 2; },
+ *   [](const std::string& s) { return s + s; }
+ * };
+ * @endcode
  */
 template<class... Fs>
 struct overloaded : Fs...
@@ -39,6 +47,11 @@ overloaded(Fs...) -> overloaded<Fs...>;
 
 /**
  * @brief Type trait to check if T is a std::optional
+ *
+ * @code{.cpp}
+ * static_assert(is_optional<std::optional<int>>::value, "is optional");
+ * static_assert(!is_optional<int>::value, "not optional");
+ * @endcode
  */
 template<typename T>
 struct is_optional : std::false_type
@@ -55,6 +68,11 @@ inline constexpr bool is_optional_v = is_optional<std::decay_t<T>>::value;
 
 /**
  * @brief Type trait to check if type has size() member function
+ *
+ * @code{.cpp}
+ * static_assert(has_size<std::vector<int>>::value, "has size");
+ * static_assert(!has_size<int>::value, "no size");
+ * @endcode
  */
 template<typename T, typename = void>
 struct has_size : std::false_type
@@ -71,6 +89,12 @@ struct has_size<T, std::void_t<decltype(std::declval<T>().size())>>
  * @brief Helper function to get minimum size from multiple containers
  * @tparam Containers Container types
  * @return Minimum size among all containers, or 0 if no containers
+ *
+ * @code{.cpp}
+ * std::vector<int> v1{1,2,3};
+ * std::list<int> l1{1,2};
+ * auto min_size = get_min_size(v1, l1); // Returns 2
+ * @endcode
  */
 template<typename... Containers>
 auto get_min_size(const Containers&... containers) -> size_t
@@ -84,6 +108,12 @@ auto get_min_size(const Containers&... containers) -> size_t
 
 /**
  * @brief Helper function to increment all iterators in a tuple
+ *
+ * @code{.cpp}
+ * auto iters = std::make_tuple(v.begin(), l.begin());
+ * increment_iterators(iters,
+ * std::index_sequence_for<decltype(v),decltype(l)>{});
+ * @endcode
  */
 template<typename Tuple, std::size_t... Is>
 void increment_iterators(Tuple& iter_tuple, std::index_sequence<Is...>)
@@ -94,6 +124,12 @@ void increment_iterators(Tuple& iter_tuple, std::index_sequence<Is...>)
 /**
  * @brief Helper function to dereference iterators and create tuple of
  * references
+ *
+ * @code{.cpp}
+ * auto iters = std::make_tuple(v.begin(), l.begin());
+ * auto refs = dereference_iterators_as_tuple(iters,
+ * std::index_sequence_for<decltype(v),decltype(l)>{});
+ * @endcode
  */
 template<typename Tuple, std::size_t... Is>
 auto dereference_iterators_as_tuple(Tuple& iter_tuple,
@@ -104,6 +140,11 @@ auto dereference_iterators_as_tuple(Tuple& iter_tuple,
 
 /**
  * @brief Internal state for memoization
+ *
+ * @code{.cpp}
+ * MemoizeState<int(int), int, int> state{[](int x) { return x*x; }};
+ * auto result = state.original_func(5); // Returns 25
+ * @endcode
  */
 template<typename Func, typename R, typename... Args>
 struct MemoizeState
@@ -130,11 +171,13 @@ struct MemoizeState
  * @param f Inner function
  * @return A function that applies f then g
  *
- * @example
+ * @code{.cpp}
+ * // Example of function composition
  * auto add_one = [](int x) { return x + 1; };
  * auto multiply_two = [](int x) { return x * 2; };
  * auto composed = compose(multiply_two, add_one);
  * int result = composed(5); // Returns 12: ((5 + 1) * 2)
+ * @endcode
  */
 template<typename G, typename F>
 CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f)
@@ -153,12 +196,14 @@ CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f)
  * @param rest Remaining functions
  * @return A function that applies functions from right to left
  *
- * @example
+ * @code{.cpp}
+ * // Example of multiple function composition
  * auto add_one = [](int x) { return x + 1; };
  * auto multiply_two = [](int x) { return x * 2; };
  * auto square = [](int x) { return x * x; };
  * auto composed = compose(square, multiply_two, add_one);
  * int result = composed(5); // Returns 144: ((5 + 1) * 2)^2
+ * @endcode
  */
 template<typename F1, typename... FRest>
 CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
@@ -170,11 +215,9 @@ CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
   } else {
     auto composed_rest = compose(std::forward<FRest>(rest)...);
 
-    return
-        [f1_cap = std::forward<F1>(f1),
-         composed_rest_cap = std::move(composed_rest)](auto&&... args) mutable
-            -> decltype(f1_cap(
-                composed_rest_cap(std::forward<decltype(args)>(args)...)))
+    return [f1_cap = std::forward<F1>(f1),
+            composed_rest_cap = std::move(composed_rest)](
+               auto&&... args) mutable -> decltype(auto)
     {
       return f1_cap(composed_rest_cap(std::forward<decltype(args)>(args)...));
     };
@@ -184,6 +227,14 @@ CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
 /**
  * @brief Empty compose function that throws an error
  * @throws std::logic_error when called
+ *
+ * @code{.cpp}
+ * try {
+ *   auto empty = compose();
+ * } catch(const std::logic_error& e) {
+ *   // Exception caught
+ * }
+ * @endcode
  */
 inline CPP_TOOLBOX_EXPORT auto compose()
 {
@@ -198,10 +249,12 @@ inline CPP_TOOLBOX_EXPORT auto compose()
  * @param arg1 Value to bind as first argument
  * @return Function with first argument bound
  *
- * @example
+ * @code{.cpp}
+ * // Example of binding first argument
  * auto divide = [](int x, int y) { return x / y; };
  * auto divide_10_by = bind_first(divide, 10);
  * int result = divide_10_by(2); // Returns 5
+ * @endcode
  */
 template<typename F, typename Arg1>
 CPP_TOOLBOX_EXPORT auto bind_first(F&& f, Arg1&& arg1)
@@ -222,10 +275,12 @@ CPP_TOOLBOX_EXPORT auto bind_first(F&& f, Arg1&& arg1)
  * @return Optional containing result of f if opt has value, empty optional
  * otherwise
  *
- * @example
+ * @code{.cpp}
+ * // Example of mapping over optional
  * std::optional<int> opt(5);
  * auto times_two = [](int x) { return x * 2; };
  * auto result = map(opt, times_two); // Contains 10
+ * @endcode
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto map(const std::optional<T>& opt, F&& f)
@@ -249,6 +304,12 @@ CPP_TOOLBOX_EXPORT auto map(const std::optional<T>& opt, F&& f)
  * @param f Function to apply
  * @return Optional containing result of f if opt has value, empty optional
  * otherwise
+ *
+ * @code{.cpp}
+ * // Example of mapping over optional rvalue
+ * auto result = map(std::optional<int>(5), [](int x) { return x * 2; }); //
+ * Contains 10
+ * @endcode
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto map(std::optional<T>&& opt, F&& f)
@@ -273,12 +334,14 @@ CPP_TOOLBOX_EXPORT auto map(std::optional<T>&& opt, F&& f)
  * @param f Function to apply
  * @return Result of f if opt has value, empty optional otherwise
  *
- * @example
+ * @code{.cpp}
+ * // Example of flat mapping over optional
  * std::optional<int> opt(5);
  * auto maybe_double = [](int x) -> std::optional<int> {
  *   return x < 10 ? std::optional(x * 2) : std::nullopt;
  * };
  * auto result = flatMap(opt, maybe_double); // Contains 10
+ * @endcode
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto flatMap(const std::optional<T>& opt, F&& f)
@@ -303,6 +366,14 @@ CPP_TOOLBOX_EXPORT auto flatMap(const std::optional<T>& opt, F&& f)
  * @param opt Optional rvalue to flat map over
  * @param f Function to apply
  * @return Result of f if opt has value, empty optional otherwise
+ *
+ * @code{.cpp}
+ * // Example of flat mapping over optional rvalue
+ * auto result = flatMap(std::optional<int>(5),
+ *                      [](int x) -> std::optional<int> {
+ *                        return x < 10 ? std::optional(x * 2) : std::nullopt;
+ *                      }); // Contains 10
+ * @endcode
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto flatMap(std::optional<T>&& opt, F&& f)
@@ -327,9 +398,11 @@ CPP_TOOLBOX_EXPORT auto flatMap(std::optional<T>&& opt, F&& f)
  * @param default_value Value to return if optional is empty
  * @return Contained value or default
  *
- * @example
+ * @code{.cpp}
+ * // Example of providing default value
  * std::optional<int> opt;
  * int result = orElse(opt, 42); // Returns 42
+ * @endcode
  */
 template<typename T, typename U>
 CPP_TOOLBOX_EXPORT auto orElse(const std::optional<T>& opt, U&& default_value)
@@ -350,10 +423,12 @@ CPP_TOOLBOX_EXPORT auto orElse(const std::optional<T>& opt, U&& default_value)
  * @param default_func Function to call for default value
  * @return Contained value or result of default_func
  *
- * @example
+ * @code{.cpp}
+ * // Example of providing default via function
  * std::optional<int> opt;
  * auto get_default = []() { return 42; };
  * int result = orElseGet(opt, get_default); // Returns 42
+ * @endcode
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto orElseGet(const std::optional<T>& opt, F&& default_func)
@@ -382,10 +457,12 @@ CPP_TOOLBOX_EXPORT auto orElseGet(const std::optional<T>& opt, F&& default_func)
  * @param p Predicate to apply
  * @return Optional if predicate returns true, empty optional otherwise
  *
- * @example
+ * @code{.cpp}
+ * // Example of filtering optional
  * std::optional<int> opt(42);
  * auto is_even = [](int x) { return x % 2 == 0; };
  * auto result = filter(opt, is_even); // Contains 42
+ * @endcode
  */
 template<typename T, typename P>
 CPP_TOOLBOX_EXPORT auto filter(const std::optional<T>& opt, P&& p)
@@ -415,6 +492,12 @@ CPP_TOOLBOX_EXPORT auto filter(const std::optional<T>& opt, P&& p)
  * @param opt Optional rvalue to filter
  * @param p Predicate to apply
  * @return Optional if predicate returns true, empty optional otherwise
+ *
+ * @code{.cpp}
+ * // Example of filtering optional rvalue
+ * auto result = filter(std::optional<int>(42), [](int x) { return x % 2 == 0;
+ * }); // Contains 42
+ * @endcode
  */
 template<typename T, typename P>
 CPP_TOOLBOX_EXPORT auto filter(std::optional<T>&& opt, P&& p)
@@ -447,12 +530,14 @@ CPP_TOOLBOX_EXPORT auto filter(std::optional<T>&& opt, P&& p)
  * @param visitors Visitor functions for each type
  * @return Result of matched visitor
  *
- * @example
+ * @code{.cpp}
+ * // Example of pattern matching on variant
  * std::variant<int, std::string> v = 42;
  * auto result = match(v,
  *   [](int i) { return i * 2; },
  *   [](const std::string& s) { return s.length(); }
  * ); // Returns 84
+ * @endcode
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(const std::variant<Ts...>& var, Fs&&... visitors)
@@ -473,12 +558,14 @@ CPP_TOOLBOX_EXPORT auto match(const std::variant<Ts...>& var, Fs&&... visitors)
  * @param visitors Visitor functions for each type
  * @return Result of matched visitor
  *
- * @example
+ * @code{.cpp}
+ * // Example of pattern matching on lvalue variant
  * std::variant<int, std::string> v = 42;
  * auto result = match(v,
  *   [](int& i) { i *= 2; return i; },
  *   [](std::string& s) { s += "!"; return s.length(); }
  * ); // Modifies v and returns 84
+ * @endcode
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>& var, Fs&&... visitors)
@@ -499,11 +586,13 @@ CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>& var, Fs&&... visitors)
  * @param visitors Visitor functions for each type
  * @return Result of matched visitor
  *
- * @example
+ * @code{.cpp}
+ * // Example of pattern matching on rvalue variant
  * auto result = match(std::variant<int, std::string>(42),
  *   [](int&& i) { return i * 2; },
  *   [](std::string&& s) { return s + "!"; }
  * ); // Returns 84
+ * @endcode
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>&& var, Fs&&... visitors)
@@ -530,7 +619,8 @@ CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>&& var, Fs&&... visitors)
  * @throws std::bad_variant_access if f's result cannot construct any
  * ResultVariant type
  *
- * @example
+ * @code{.cpp}
+ * // Example of mapping over variant
  * std::variant<int, std::string> v = 42;
  * auto result = map<std::variant<double, size_t>>(v,
  *   [](const auto& x) -> std::variant<double, size_t> {
@@ -541,6 +631,7 @@ CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>&& var, Fs&&... visitors)
  *     }
  *   }
  * ); // Returns variant containing 63.0
+ * @endcode
  */
 template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
@@ -581,11 +672,13 @@ CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
  * @param f Function to apply to variant value
  * @return ResultVariant containing f's result
  *
- * @example
+ * @code{.cpp}
+ * // Example of mapping over lvalue variant
  * std::variant<int, std::string> v = 42;
  * auto result = map<std::variant<double>>(v,
  *   [](int& x) { x *= 2; return x * 1.5; }
  * ); // Modifies v and returns variant containing 126.0
+ * @endcode
  */
 template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
@@ -628,11 +721,13 @@ CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
  * @param f Function to apply to variant value
  * @return ResultVariant containing f's result
  *
- * @example
+ * @code{.cpp}
+ * // Example of mapping over rvalue variant
  * auto result = map<std::variant<std::string>>(
  *   std::variant<int, std::string>(42),
  *   [](auto&& x) { return std::to_string(x); }
  * ); // Returns variant containing "42"
+ * @endcode
  */
 template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>&& var, F&& f) -> ResultVariant
@@ -665,13 +760,15 @@ CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>&& var, F&& f) -> ResultVariant
  * @param f Function to apply to each element
  * @return Vector containing results of applying f to each element
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of map on containers
  * std::vector<int> nums = {1, 2, 3};
  * auto squares = map(nums, [](int x) { return x * x; }); // Returns {1, 4, 9}
  *
  * std::list<std::string> strs = {"a", "bb", "ccc"};
  * auto lengths = map(strs, [](const auto& s) { return s.length(); }); //
  * Returns {1, 2, 3}
+ * @endcode
  */
 template<typename Container, typename Func>
 CPP_TOOLBOX_EXPORT auto map(const Container& input, Func&& f) -> std::vector<
@@ -702,7 +799,8 @@ CPP_TOOLBOX_EXPORT auto map(const Container& input, Func&& f) -> std::vector<
  * @param p Predicate function returning bool
  * @return Vector containing elements that satisfy predicate p
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of filter
  * std::vector<int> nums = {1, 2, 3, 4, 5};
  * auto evens = filter(nums, [](int x) { return x % 2 == 0; }); // Returns {2,
  * 4}
@@ -710,6 +808,7 @@ CPP_TOOLBOX_EXPORT auto map(const Container& input, Func&& f) -> std::vector<
  * std::list<std::string> strs = {"a", "bb", "ccc"};
  * auto long_strs = filter(strs, [](const auto& s) { return s.length() > 1; });
  * // Returns {"bb", "ccc"}
+ * @endcode
  */
 template<typename Container, typename Predicate>
 CPP_TOOLBOX_EXPORT auto filter(const Container& input, Predicate&& p)
@@ -737,7 +836,8 @@ CPP_TOOLBOX_EXPORT auto filter(const Container& input, Predicate&& p)
  * @param op Binary operation to combine elements
  * @return Result of reduction
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of reduce with identity value
  * std::vector<int> nums = {1, 2, 3, 4};
  * auto sum = reduce(nums, 0, std::plus<int>()); // Returns 10
  * auto product = reduce(nums, 1, std::multiplies<int>()); // Returns 24
@@ -745,6 +845,7 @@ CPP_TOOLBOX_EXPORT auto filter(const Container& input, Predicate&& p)
  * std::list<std::string> strs = {"a", "b", "c"};
  * auto concat = reduce(strs, std::string(), std::plus<std::string>()); //
  * Returns "abc"
+ * @endcode
  */
 template<typename Container, typename T, typename BinaryOp>
 CPP_TOOLBOX_EXPORT auto reduce(const Container& input,
@@ -767,7 +868,8 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input,
  * @return Result of reduction
  * @throws std::invalid_argument if input container is empty
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of reduce without identity value
  * std::vector<int> nums = {1, 2, 3, 4};
  * auto sum = reduce(nums, std::plus<int>()); // Returns 10
  *
@@ -778,6 +880,7 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input,
  * std::vector<int> empty;
  * auto result = reduce(empty, std::plus<int>()); // throws
  * std::invalid_argument
+ * @endcode
  */
 template<typename Container, typename BinaryOp>
 CPP_TOOLBOX_EXPORT auto reduce(const Container& input, BinaryOp&& op) ->
@@ -803,7 +906,8 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input, BinaryOp&& op) ->
  * @return Vector of tuples containing references to elements from each
  * container
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of zip with multiple containers
  * std::vector<int> nums = {1, 2, 3};
  * std::vector<std::string> strs = {"a", "b", "c"};
  * std::array<double> dbls = {1.1, 2.2, 3.3};
@@ -814,6 +918,7 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input, BinaryOp&& op) ->
  * //   {2, "b", 2.2},
  * //   {3, "c", 3.3}
  * // }
+ * @endcode
  *
  * @note The length of result is determined by the shortest input container
  */
@@ -861,7 +966,8 @@ CPP_TOOLBOX_EXPORT auto zip(const Containers&... containers) -> std::vector<
  * @param values Container of values
  * @return Unordered map containing key-value pairs
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of zip_to_unordered_map
  * std::vector<std::string> keys = {"a", "b", "c"};
  * std::vector<int> values = {1, 2, 3};
  *
@@ -871,6 +977,7 @@ CPP_TOOLBOX_EXPORT auto zip(const Containers&... containers) -> std::vector<
  * //   {"b", 2},
  * //   {"c", 3}
  * // }
+ * @endcode
  *
  * @note If keys container has duplicates, only the first occurrence is used
  * @note The number of pairs is determined by the shorter container
@@ -907,7 +1014,8 @@ CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys& keys,
  * @brief Memoized function class that caches function results
  * @tparam Signature Function signature type (e.g., int(int, std::string))
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of MemoizedFunction class
  * // Create memoized factorial function
  * MemoizedFunction<int(int)> fact([](int n) {
  *   if (n <= 1) return 1;
@@ -916,6 +1024,7 @@ CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys& keys,
  *
  * int result1 = fact(5); // Computes and caches
  * int result2 = fact(5); // Returns cached result
+ * @endcode
  *
  * @note Thread-safe implementation
  * @note Function arguments must be copyable and form valid map key
@@ -986,10 +1095,12 @@ public:
  * @param f Function to memoize
  * @return MemoizedFunction object
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of memoize with explicit signature
  * auto memoized_add = memoize<int(int,int)>([](int a, int b) { return a + b;
  * }); int result1 = memoized_add(2, 3); // Computes and caches int result2 =
  * memoized_add(2, 3); // Returns cached result
+ * @endcode
  */
 template<typename Signature, typename Func>
 auto memoize(Func&& f)
@@ -1006,12 +1117,14 @@ auto memoize(Func&& f)
  * @param f Function to memoize
  * @return std::function with memoization
  *
- * @example
+ * @code{.cpp}
+ * // Example usage of memoize_explicit
  * auto fib = memoize_explicit<int, int>([&](int n) {
  *   if (n <= 1) return n;
  *   return fib(n-1) + fib(n-2);
  * });
  * int result = fib(10); // Efficiently computes fibonacci
+ * @endcode
  *
  * @note Thread-safe implementation using shared state
  * @note Arguments must form valid map key after decay
@@ -1052,5 +1165,7 @@ auto memoize_explicit(Func&& f) -> std::function<R(Args...)>
     }
   };
 }
+
+// !!TODO: more intelligent memoization
 
 }  // namespace toolbox::functional
