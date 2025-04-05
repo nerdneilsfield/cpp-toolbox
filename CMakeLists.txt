@@ -3,16 +3,17 @@ cmake_minimum_required(VERSION 3.14)
 include(cmake/prelude.cmake)
 
 project(
-    cpp-toolbox
-    VERSION 0.1.0
-    DESCRIPTION "A tools box library for accelerating cpp programe developing."
-    HOMEPAGE_URL "https://github.com/nerdneilsfield/cpp-toolbox"
-    LANGUAGES CXX
+  cpp-toolbox
+  VERSION 0.1.0
+  DESCRIPTION "A tools box library for accelerating cpp programe developing."
+  HOMEPAGE_URL "https://github.com/nerdneilsfield/cpp-toolbox"
+  LANGUAGES CXX
 )
 
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 include(cmake/cache.cmake)
+include(cmake/output.cmake)
 # ---- Dependencies ----
 
 add_subdirectory(deps)
@@ -34,8 +35,8 @@ if(NOT cpp-toolbox_DEVELOPER_MODE)
   return()
 elseif(NOT PROJECT_IS_TOP_LEVEL)
   message(
-      AUTHOR_WARNING
-      "Developer mode is intended for developers of cpp-toolbox"
+    AUTHOR_WARNING
+    "Developer mode is intended for developers of cpp-toolbox"
   )
 endif()
 
