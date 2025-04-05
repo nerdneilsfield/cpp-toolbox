@@ -21,8 +21,13 @@ endif()
 # add_test(NAME cpp-toolbox_test COMMAND cpp-toolbox_test)
 
 add_library(cpp-toolbox_test_lib INTERFACE)
-target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox)
 target_compile_features(cpp-toolbox_test_lib INTERFACE cxx_std_17)
+if(WIN32)
+  target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox_static)
+  target_compile_options(cpp-toolbox_test_lib INTERFACE /std:c++17 /Zc:__cplusplus)
+else()
+  target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox)
+endif()
 
 # # ---- End-of-file commands ----
 

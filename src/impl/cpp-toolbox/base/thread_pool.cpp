@@ -34,47 +34,42 @@ thread_pool_t::thread_pool_t(size_t threads)
   workers_.reserve(num_threads);
   for (size_t i = 0; i < num_threads; ++i) {
     workers_.emplace_back(
-            [this, i] { // Worker thread lambda function
-                std::function<void()> task; // Stores dequeued tasks
+           [this, i] { // Worker thread lambda function
+                std::unique_ptr<detail::task_base> task_ptr; // Stores dequeued task wrapper
                 while(true) {
-                    // Try to dequeue a task
-                    bool task_dequeued = this->tasks_.try_dequeue(task);
+                    bool task_dequeued = this->tasks_.try_dequeue(task_ptr);
 
                     if (task_dequeued) {
-                        // Execute the task
-                        try {
-                            task(); // Execute the packaged_task wrapper
-                        } catch (const std::exception& e) {
-                             std::cerr << "Worker thread " << i << " caught exception: " << e.what() << std::endl;
-                        } catch (...) {
-                             std::cerr << "Worker thread " << i << " caught unknown exception." << std::endl;
+                        if (task_ptr) { // Check if the unique_ptr is valid
+                            try {
+                                task_ptr->execute(); // Execute via virtual dispatch
+                            } catch (const std::exception& e) {
+                                std::cerr << "Worker thread " << i << " caught exception during task execution: " << e.what() << std::endl;
+                            } catch (...) {
+                                std::cerr << "Worker thread " << i << " caught unknown exception during task execution." << std::endl;
+                            }
                         }
-                        // Reset task function object to release resources
-                        task = nullptr;
+                        task_ptr.reset(); // Reset unique_ptr, deleting the task object
                     } else {
-                        // Queue is empty, check if we should stop
+                        // Queue is empty, check stop condition or yield/sleep
                         if (this->stop_.load(std::memory_order_acquire)) {
-                           // Check queue one more time in case tasks were added after stop
-                           if (!this->tasks_.try_dequeue(task)) {
-                               return; // Exit lambda function, thread ends
-                           } else {
-                               // Execute final task after stop signal
-                               try {
-                                   task();
-                               } catch (const std::exception& e) {
-                                   std::cerr << "Worker thread " << i << " caught exception (final task): " << e.what() << std::endl;
-                               } catch (...) {
-                                   std::cerr << "Worker thread " << i << " caught unknown exception (final task)." << std::endl;
-                               }
-                           }
+                          // Double check queue
+                          if (!this->tasks_.try_dequeue(task_ptr)) {
+                              return; // Exit lambda function
+                          } else {
+                              // Execute final task
+                              if (task_ptr) {
+                                    try { task_ptr->execute(); } catch (...) { /* Handle */ }
+                              }
+                              task_ptr.reset();
+                          }
+                        } else {
+                            std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Or yield
                         }
-
-                        // If not stopping and queue is empty, sleep briefly
-                        std::this_thread::sleep_for(std::chrono::milliseconds(1));
                     }
                 }
-            }
-        );
+              }
+      );
   }
 }
 

@@ -351,8 +351,8 @@ CPP_TOOLBOX_EXPORT T parallel_reduce(Iterator begin,
   const size_t min_chunk_size = 256;
   const size_t hardware_threads =
       std::max(1u, std::thread::hardware_concurrency());
-  const size_t num_tasks =
-      std::max(1ul, std::min(num_threads, hardware_threads));
+  const size_t num_tasks = std::max(static_cast<size_t>(1ul),
+                                    std::min(num_threads, hardware_threads));
 
   size_t chunk_size =
       std::max(min_chunk_size,

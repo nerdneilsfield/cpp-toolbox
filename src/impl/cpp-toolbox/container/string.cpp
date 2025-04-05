@@ -1,5 +1,5 @@
-#include <array> // For array
 #include <algorithm>  // For trim, contains, etc.
+#include <array>  // For array
 #include <cctype>  // For isspace
 #include <charconv>  // For std::from_chars (C++17)
 #include <iterator>  // For join

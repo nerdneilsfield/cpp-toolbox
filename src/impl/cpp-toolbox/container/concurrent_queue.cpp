@@ -4,13 +4,18 @@
 #include <optional>
 #include <type_traits>
 #include <typeinfo>
+#include <memory>
 
 #include "cpp-toolbox/container/concurrent_queue.hpp"
+#include "cpp-toolbox/base/thread_pool.hpp"
 
 // Include the third-party header ONLY in the .cpp file
 #include <utility>  // For std::move
 
 #include <concurrentqueue.h>  // Path depends on how you integrated it
+
+template class CPP_TOOLBOX_EXPORT
+    toolbox::container::concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
 
 namespace toolbox::container
 {

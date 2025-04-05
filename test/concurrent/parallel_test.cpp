@@ -1,5 +1,6 @@
 // test/concurrent/parallel_test.cpp
 #include <algorithm>  // std::transform, std::equal
+#include <array>
 #include <atomic>
 #include <cmath>  // std::sqrt
 #include <functional>  // std::plus, std::multiplies

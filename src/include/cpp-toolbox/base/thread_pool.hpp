@@ -21,6 +21,32 @@
 namespace toolbox::base
 {
 
+namespace detail
+{
+// Abstract base class for type erasure
+struct task_base
+{
+  virtual ~task_base() = default;
+  virtual void execute() = 0;  // Pure virtual function to execute the task
+};
+
+// Template derived class to hold the actual callable object
+template<typename F>
+struct task_derived : task_base
+{
+  F func;  // The callable object (lambda, function, etc.)
+
+  // Constructor moves the callable object into the 'func' member
+  explicit task_derived(F&& f)
+      : func(std::move(f))
+  {
+  }
+
+  // Override execute to call the stored callable
+  void execute() override { func(); }
+};
+}  // namespace detail
+
 /**
  * @brief A high-performance C++17 thread pool implementation using
  * moodycamel::ConcurrentQueue (via wrapper).
@@ -117,7 +143,8 @@ private:
   // List of worker threads
   std::vector<std::thread> workers_;
   // Concurrent queue for tasks
-  toolbox::container::concurrent_queue_t<std::function<void()>> tasks_;
+  toolbox::container::concurrent_queue_t<std::unique_ptr<detail::task_base>>
+      tasks_;
   // Atomic flag indicating whether the thread pool should stop
   std::atomic<bool> stop_;
 };
@@ -130,40 +157,46 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
 {
   using return_type = typename std::invoke_result_t<F, Args...>;
 
-  // Check if thread pool is stopped
   if (stop_.load(std::memory_order_relaxed)) {
     throw std::runtime_error("Cannot submit task to stopped thread pool");
   }
 
-  // Create a packaged task to wrap the function and its arguments
-  auto task = std::make_shared<std::packaged_task<return_type()>>(
-      std::bind(std::forward<F>(f), std::forward<Args>(args)...));
+  // 1. Create promise and get future
+  auto promise = std::make_shared<std::promise<return_type>>();
+  std::future<return_type> future = promise->get_future();
 
-  // Get the future associated with the packaged task
-  std::future<return_type> res = task->get_future();
+  // 2. Create the lambda that does the work and sets the promise
+  auto task_payload =
+          // Use mutable if the lambda needs to modify its captures (like moving from args_tuple)
+          [func = std::forward<F>(f), // Move/forward the original callable
+           args_tuple = std::make_tuple(std::forward<Args>(args)...), // Move/forward args
+           promise_ptr = std::move(promise)]() mutable { // Capture promise by moved shared_ptr
+              try {
+                  if constexpr (std::is_void_v<return_type>) {
+                      std::apply(func, std::move(args_tuple)); // Invoke original function
+                      promise_ptr->set_value(); // Set void promise
+                  } else {
+                      return_type result = std::apply(func, std::move(args_tuple)); // Invoke original function
+                      promise_ptr->set_value(std::move(result)); // Set promise with result
+                  }
+              } catch (...) {
+                  promise_ptr->set_exception(std::current_exception()); // Set exception on promise
+              }
+          }; // End of task_payload lambda
 
-  // Enqueue the task to the concurrent queue
-  tasks_.enqueue(
-      [task]()
-      {
-        try {
-          // Execute the packaged task
-          (*task)();
-        } catch (const std::future_error& fe) {
-          std::cerr << "Worker lambda caught future_error for task "
-                    << task.get() << ": " << fe.what() << std::endl;
-        } catch (const std::exception& e) {
-          std::cerr << "Worker lambda caught unexpected exception during "
-                    << "packaged_task invocation for task " << task.get()
-                    << ": " << e.what() << std::endl;
-        } catch (...) {
-          std::cerr << "Worker lambda caught unknown exception during "
-                    << "packaged_task invocation for task " << task.get()
-                    << std::endl;
-        }
-      });
+  // 3. Create the type-erased task wrapper using the derived class template
+  //    Get the concrete type of the task_payload lambda
+  using PayloadType = decltype(task_payload);
+  //    Create unique_ptr<task_base> holding task_derived<PayloadType>
+  auto task_wrapper_ptr = std::make_unique<detail::task_derived<PayloadType>>(
+      std::move(task_payload)  // Move the payload lambda into the wrapper
+  );
 
-  return res;
+  // 4. Enqueue the unique_ptr to the base class
+  tasks_.enqueue(std::move(task_wrapper_ptr));
+
+  // 5. Return the future
+  return future;
 }
 
 }  // namespace toolbox::base

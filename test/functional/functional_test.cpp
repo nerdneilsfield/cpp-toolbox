@@ -1,4 +1,5 @@
 // test/functional/functional_test.cpp
+#include <array>
 #include <atomic>
 #include <chrono>  // For sleep simulation
 #include <functional>
@@ -768,6 +769,8 @@ TEST_CASE("Functional Zip To Unordered Map", "[functional][zip][map]")
   }
 }
 
+/// @brief Test case for memoization functionality
+/// @details Tests memoization of functions with different signatures
 TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
 {
   /// @brief Test basic function memoization
@@ -942,4 +945,15 @@ TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
     std::cout << "Fib(12) after Fib(10) took " << calls3 << " additional calls."
               << std::endl;
   }
+}
+
+template<typename T, size_t N, typename F>
+auto map(const std::array<T, N>& container, F&& func)
+{
+  std::array<decltype(func(std::declval<T>())), N> result;
+  std::transform(container.begin(),
+                 container.end(),
+                 result.begin(),
+                 std::forward<F>(func));
+  return result;
 }
