@@ -1,3 +1,4 @@
+#include <array> // For array
 #include <algorithm>  // For trim, contains, etc.
 #include <cctype>  // For isspace
 #include <charconv>  // For std::from_chars (C++17)
@@ -956,7 +957,7 @@ auto base64_decode(std::string_view encoded_string) -> std::string
     }
 
     // Use the runtime lookup table via the getter function
-    unsigned char lookup_val = lookup[static_cast<unsigned char>(c)];
+    unsigned char lookup_val = lookup.at(static_cast<unsigned char>(c));
     if (lookup_val == 0xFF) {  // Check for the invalid marker
       return "";  // Invalid character encountered
     }
