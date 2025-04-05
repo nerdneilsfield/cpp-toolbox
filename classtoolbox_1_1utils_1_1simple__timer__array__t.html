@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>toolbox::utils::SimpleTimerArray class | cpp-toolbox</title>
+  <title>toolbox::utils::simple_timer_array_t class | cpp-toolbox</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,10 +49,9 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1utils.html">utils</a>::<wbr/></span>SimpleTimerArray <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="timer_8hpp.html">&lt;timer.hpp&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1utils.html">utils</a>::<wbr/></span>simple_timer_array_t <span class="m-thin">class</span>
         </h1>
-        <p>Concrete implementation of <a href="classtoolbox_1_1utils_1_1SimpleTimerInterface.html" class="m-doc">SimpleTimerInterface</a> using an array of timers.</p>
+        <p>Concrete implementation of <a href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html" class="m-doc">simple_<wbr />timer_<wbr />interface_<wbr />t</a> using an array of timers.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -66,12 +65,18 @@
             </li>
           </ul>
         </div>
-<p>This class implements the <a href="classtoolbox_1_1utils_1_1SimpleTimerInterface.html" class="m-doc">SimpleTimerInterface</a> using a vector of <a href="classtoolbox_1_1utils_1_1StopWatchTimer.html" class="m-doc">StopWatchTimer</a> objects. It provides thread-safe operations on multiple timers.</p>
+<p>This class implements the <a href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html" class="m-doc">simple_<wbr />timer_<wbr />interface_<wbr />t</a> using a vector of <a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html" class="m-doc">stop_<wbr />watch_<wbr />timer_<wbr />t</a> objects. It provides thread-safe operations on multiple timers.</p><pre class="m-code"><span class="c1">// Basic usage</span>
+<span class="n">simple_timer_array_t</span><span class="w"> </span><span class="nf">timers</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">timers</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="c1">// ... perform operation ...</span>
+<span class="n">timers</span><span class="p">.</span><span class="n">stop</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">elapsed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timers</span><span class="p">.</span><span class="n">elapsed_time_ms</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">timers</span><span class="p">.</span><span class="n">print_all_stats</span><span class="p">();</span></pre>
         <section id="base-classes">
           <h2><a href="#base-classes">Base classes</a></h2>
           <dl class="m-doc">
             <dt>
-              class <a href="classtoolbox_1_1utils_1_1SimpleTimerInterface.html" class="m-doc">SimpleTimerInterface</a>
+              class <a href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html" class="m-doc">simple_timer_interface_t</a>
             </dt>
             <dd>Interface for managing a collection of timers.</dd>
           </dl>
@@ -80,75 +85,59 @@
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#af40eab0f386eaf250c0a0609c88e52af" class="m-doc">SimpleTimerArray</a>(</span><span class="m-doc-wrap">int size) <span class="m-label m-flat m-info">explicit</span> </span>
+              <span class="m-doc-wrap-bumper"><a href="#a4ff7b3e1baadeb8633aab9cfdef38bb4" class="m-doc">simple_timer_array_t</a>(</span><span class="m-doc-wrap">int size) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>Construct a <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a> with specified size.</dd>
+            <dd>Construct a <a href="classtoolbox_1_1utils_1_1simple__timer__array__t.html" class="m-doc">simple_<wbr />timer_<wbr />array_<wbr />t</a> with specified size.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a8fec891dd8477426f499ca5037d9d1b6" class="m-doc">SimpleTimerArray</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string&gt;&amp; names)</span>
+              <span class="m-doc-wrap-bumper"><a href="#a9001933e544e95aa937ff62b6667ad76" class="m-doc">simple_timer_array_t</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string&gt;&amp; names) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd>Construct a <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a> with specified names.</dd>
-            <dt id="a0f35b7ef38d34539a784dfed392df87c">
-              <span class="m-doc-wrap-bumper"><a href="#a0f35b7ef38d34539a784dfed392df87c" class="m-doc-self">SimpleTimerArray</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a58bb7fbfdc02102394da97b63053faf3">
-              <span class="m-doc-wrap-bumper"><a href="#a58bb7fbfdc02102394da97b63053faf3" class="m-doc-self">SimpleTimerArray</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a>&amp;&amp;) <span class="m-label m-flat m-info">defaulted</span></span>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Construct a <a href="classtoolbox_1_1utils_1_1simple__timer__array__t.html" class="m-doc">simple_<wbr />timer_<wbr />array_<wbr />t</a> with specified names.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="aae4bca09ec2fe9189eebe37c1e2fd601">
-              <span class="m-doc-wrap-bumper">auto <a href="#aae4bca09ec2fe9189eebe37c1e2fd601" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a>&amp;) -&gt; SimpleTimerArray &amp; <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a43903bbe9640bee77899df98b5445dc8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a43903bbe9640bee77899df98b5445dc8" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a>&amp;&amp;) -&gt; SimpleTimerArray &amp; <span class="m-label m-flat m-info">defaulted</span></span>
-            </dt>
-            <dd><span></span></dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a8a83948bf34046337d5bf7c954bf5be7" class="m-doc">start</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#ab66c6eef78372b7ec8593bb48512ce9c" class="m-doc">start</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Start the timer at specified index.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a19be7224da4259070b387b7ee8cc9db2" class="m-doc">stop</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a5bc4381c9055816bcc3846cc0b1a124d" class="m-doc">stop</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Stop the timer at specified index.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#af059c48643d880f10989d9c727793159" class="m-doc">reset</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#a98bcb5ccd773bf01438c9fe9d5345edb" class="m-doc">reset</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Reset the timer at specified index.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a47dccaae4a3b2be11f881d8cdf84689a" class="m-doc">elapsed_time_ms</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a5bfdd8935616beb1edfd57172b418a51" class="m-doc">elapsed_time_ms</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Get elapsed time in milliseconds for specified timer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#ade36f2baa98d2f9fcee137f5b180b52f" class="m-doc">elapsed_time</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9f37c360c2a1965b1bebb817570ddcde" class="m-doc">elapsed_time</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Get elapsed time in seconds for specified timer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#accce8798729d5c31801ac6d3758dfc4a" class="m-doc">print_stats</a>(</span><span class="m-doc-wrap">int index) const <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">void <a href="#af18d3dac5fd50aebf1f6611166dcfcaa" class="m-doc">print_stats</a>(</span><span class="m-doc-wrap">int index) const <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Print statistics for the timer at specified index.</dd>
-            <dt id="ad63fb9d6dd9513df8b1838f5cba72660">
-              <span class="m-doc-wrap-bumper">void <a href="#ad63fb9d6dd9513df8b1838f5cba72660" class="m-doc-self">print_all_stats</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-warning">override</span></span>
+            <dt id="a2f62036ebec41a0d6a635ac371495fa9">
+              <span class="m-doc-wrap-bumper">void <a href="#a2f62036ebec41a0d6a635ac371495fa9" class="m-doc-self">print_all_stats</a>(</span><span class="m-doc-wrap">) const <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Print statistics for all timers.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#aa70fc9acaf8d8643f3db3851b0d996c4" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa55c1ca9b04efdd34d924d85b889d397" class="m-doc">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-flat m-warning">override</span></span>
             </dt>
             <dd>Get the number of timers in the collection.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="af40eab0f386eaf250c0a0609c88e52af"><div>
+          <section class="m-doc-details" id="a4ff7b3e1baadeb8633aab9cfdef38bb4"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af40eab0f386eaf250c0a0609c88e52af" class="m-doc-self">SimpleTimerArray</a>(</span><span class="m-doc-wrap">int size) <span class="m-label m-info">explicit</span> </span></span>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4ff7b3e1baadeb8633aab9cfdef38bb4" class="m-doc-self">simple_timer_array_t</a>(</span><span class="m-doc-wrap">int size) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
-            <p>Construct a <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a> with specified size.</p>
+            <p>Construct a <a href="classtoolbox_1_1utils_1_1simple__timer__array__t.html" class="m-doc">simple_<wbr />timer_<wbr />array_<wbr />t</a> with specified size.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -161,11 +150,11 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8fec891dd8477426f499ca5037d9d1b6"><div>
+          <section class="m-doc-details" id="a9001933e544e95aa937ff62b6667ad76"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8fec891dd8477426f499ca5037d9d1b6" class="m-doc-self">SimpleTimerArray</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string&gt;&amp; names)</span></span>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9001933e544e95aa937ff62b6667ad76" class="m-doc-self">simple_timer_array_t</a>(</span><span class="m-doc-wrap">const std::vector&lt;std::string&gt;&amp; names) <span class="m-label m-info">explicit</span> </span></span>
             </h3>
-            <p>Construct a <a href="classtoolbox_1_1utils_1_1SimpleTimerArray.html" class="m-doc">SimpleTimerArray</a> with specified names.</p>
+            <p>Construct a <a href="classtoolbox_1_1utils_1_1simple__timer__array__t.html" class="m-doc">simple_<wbr />timer_<wbr />array_<wbr />t</a> with specified names.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -178,9 +167,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a8a83948bf34046337d5bf7c954bf5be7"><div>
+          <section class="m-doc-details" id="ab66c6eef78372b7ec8593bb48512ce9c"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8a83948bf34046337d5bf7c954bf5be7" class="m-doc-self">start</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab66c6eef78372b7ec8593bb48512ce9c" class="m-doc-self">start</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Start the timer at specified index.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -195,9 +184,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a19be7224da4259070b387b7ee8cc9db2"><div>
+          <section class="m-doc-details" id="a5bc4381c9055816bcc3846cc0b1a124d"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a19be7224da4259070b387b7ee8cc9db2" class="m-doc-self">stop</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bc4381c9055816bcc3846cc0b1a124d" class="m-doc-self">stop</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Stop the timer at specified index.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -212,9 +201,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="af059c48643d880f10989d9c727793159"><div>
+          <section class="m-doc-details" id="a98bcb5ccd773bf01438c9fe9d5345edb"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af059c48643d880f10989d9c727793159" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a98bcb5ccd773bf01438c9fe9d5345edb" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">int index) <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Reset the timer at specified index.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -229,9 +218,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a47dccaae4a3b2be11f881d8cdf84689a"><div>
+          <section class="m-doc-details" id="a5bfdd8935616beb1edfd57172b418a51"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a47dccaae4a3b2be11f881d8cdf84689a" class="m-doc-self">elapsed_time_ms</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5bfdd8935616beb1edfd57172b418a51" class="m-doc-self">elapsed_time_ms</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Get elapsed time in milliseconds for specified timer.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -252,9 +241,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ade36f2baa98d2f9fcee137f5b180b52f"><div>
+          <section class="m-doc-details" id="a9f37c360c2a1965b1bebb817570ddcde"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ade36f2baa98d2f9fcee137f5b180b52f" class="m-doc-self">elapsed_time</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9f37c360c2a1965b1bebb817570ddcde" class="m-doc-self">elapsed_time</a>(</span><span class="m-doc-wrap">int index) const -&gt; double <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Get elapsed time in seconds for specified timer.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -275,9 +264,9 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="accce8798729d5c31801ac6d3758dfc4a"><div>
+          <section class="m-doc-details" id="af18d3dac5fd50aebf1f6611166dcfcaa"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#accce8798729d5c31801ac6d3758dfc4a" class="m-doc-self">print_stats</a>(</span><span class="m-doc-wrap">int index) const <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af18d3dac5fd50aebf1f6611166dcfcaa" class="m-doc-self">print_stats</a>(</span><span class="m-doc-wrap">int index) const <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Print statistics for the timer at specified index.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -292,9 +281,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="aa70fc9acaf8d8643f3db3851b0d996c4"><div>
+          <section class="m-doc-details" id="aa55c1ca9b04efdd34d924d85b889d397"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />SimpleTimerArray::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa70fc9acaf8d8643f3db3851b0d996c4" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-warning">override</span></span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />simple_timer_array_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa55c1ca9b04efdd34d924d85b889d397" class="m-doc-self">size</a>(</span><span class="m-doc-wrap">) const -&gt; size_t <span class="m-label m-warning">override</span></span></span>
             </h3>
             <p>Get the number of timers in the collection.</p>
             <table class="m-table m-fullwidth m-flat">

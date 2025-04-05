@@ -49,63 +49,12 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;functional.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename Func, typename R, typename... Args&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1functional.html">functional</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1functional_1_1detail.html">detail</a>::<wbr/></span>MemoizeState <span class="m-thin">struct</span>
         </h1>
         <p>Internal state for memoization.</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-types">Public types</a></li>
-                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
-                <li><a href="#pub-attribs">Public variables</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="ad6ad3485a98e162c328816616145caa5">
-              using <a href="#ad6ad3485a98e162c328816616145caa5" class="m-doc-self">KeyType</a> = std::tuple&lt;std::decay_t&lt;Args&gt;...&gt;
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a0c3bb92ef50f79d303fe75ed1e7eb178">
-              using <a href="#a0c3bb92ef50f79d303fe75ed1e7eb178" class="m-doc-self">ResultType</a> = R
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="typeless-methods">
-          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
-          <dl class="m-doc">
-            <dt id="acd2869e33a4b1e6d052d66c0d8dba349">
-              <span class="m-doc-wrap-bumper"><a href="#acd2869e33a4b1e6d052d66c0d8dba349" class="m-doc-self">MemoizeState</a>(</span><span class="m-doc-wrap">Func&amp;&amp; f)</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-attribs">
-          <h2><a href="#pub-attribs">Public variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a1bafd0fec40682cca4825d6af6810b3d">
-              Func <a href="#a1bafd0fec40682cca4825d6af6810b3d" class="m-doc-self">original_func</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ae1f1475b804e61955db9a60e564e42f8">
-              std::map&lt;<a href="structtoolbox_1_1functional_1_1detail_1_1MemoizeState.html#ad6ad3485a98e162c328816616145caa5" class="m-doc">KeyType</a>, <a href="structtoolbox_1_1functional_1_1detail_1_1MemoizeState.html#a0c3bb92ef50f79d303fe75ed1e7eb178" class="m-doc">ResultType</a>&gt; <a href="#ae1f1475b804e61955db9a60e564e42f8" class="m-doc-self">cache</a>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a3ab5f6a25db8402dfb45fca8ae6248a3">
-              std::mutex <a href="#a3ab5f6a25db8402dfb45fca8ae6248a3" class="m-doc-self">cache_mutex</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+<pre class="m-code"><span class="n">MemoizeState</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">),</span><span class="w"> </span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">state</span><span class="p">{[](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">;</span><span class="w"> </span><span class="p">}};</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">original_func</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Returns 25</span></pre>
       </div>
     </div>
   </div>

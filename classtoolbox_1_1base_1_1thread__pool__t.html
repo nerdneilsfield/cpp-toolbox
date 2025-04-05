@@ -50,9 +50,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1base.html">base</a>::<wbr/></span>thread_pool_t <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__pool_8hpp.html">&lt;thread_pool.hpp&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>A high-performance C++17 thread pool implementation using moodycamel::ConcurrentQueue (via wrapper).</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -65,13 +64,23 @@
             </li>
           </ul>
         </div>
+<p>This thread pool allows submitting tasks and asynchronously retrieving results. It creates a fixed number of worker threads upon construction and gracefully stops them during destruction. Uses <code><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html" class="m-doc">toolbox::<wbr />container::<wbr />concurrent_queue_t</a></code> as the underlying task queue.</p><pre class="m-code"><span class="c1">// Create a thread pool with default number of threads</span>
+<span class="n">thread_pool_t</span><span class="w"> </span><span class="n">pool</span><span class="p">;</span>
+
+<span class="c1">// Submit a simple task</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">future</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// result will be 42</span>
+
+<span class="c1">// Submit a task with arguments</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([](</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">future2</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// result2 will be 30</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="ae08a2a6cdf82861586256335e54c5991">
-              <span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc-self">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-flat m-info">explicit</span> </span>
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-flat m-info">explicit</span> </span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Constructs and initializes the thread pool.</dd>
             <dt>
               <span class="m-doc-wrap-bumper"><a href="#a95a99126dbc2f85da807b08e7ab5566d" class="m-doc">~thread_pool_t</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
@@ -81,22 +90,119 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a4d11cc8664186d7ddb3fd5cc8124aa53">
+            <dt>
               <div class="m-doc-template">template&lt;class F, class... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc-self">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              <span class="m-doc-wrap-bumper">auto <a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
               Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Submits a task to the thread pool for execution.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="ae08a2a6cdf82861586256335e54c5991"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae08a2a6cdf82861586256335e54c5991" class="m-doc-self">thread_pool_t</a>(</span><span class="m-doc-wrap"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> threads = 0) <span class="m-label m-info">explicit</span> </span></span>
+            </h3>
+            <p>Constructs and initializes the thread pool.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">threads</td>
+                  <td>Number of worker threads to create. Defaults to hardware concurrency. If hardware concurrency cannot be determined or is 0, creates at least 1 thread.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::invalid_argument</td>
+                  <td>if thread count parameter is 0.</td>
+                </tr>
+              </tbody>
+            </table>
+<pre class="m-code"><span class="c1">// Create pool with 4 threads</span>
+<span class="n">thread_pool_t</span><span class="w"> </span><span class="nf">pool</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+
+<span class="c1">// Create pool with default number of threads</span>
+<span class="n">thread_pool_t</span><span class="w"> </span><span class="n">default_pool</span><span class="p">;</span></pre>
+          </div></section>
           <section class="m-doc-details" id="a95a99126dbc2f85da807b08e7ab5566d"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a95a99126dbc2f85da807b08e7ab5566d" class="m-doc-self">~thread_pool_t</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Destructor that stops the thread pool and waits for all worker threads to finish.</p>
 <p>Waits for tasks already dequeued by threads to complete. After destruction, the thread pool becomes unusable.</p>
+          </div></section>
+          <section class="m-doc-details" id="a4d11cc8664186d7ddb3fd5cc8124aa53"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;class F, class... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />base::<wbr />thread_pool_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4d11cc8664186d7ddb3fd5cc8124aa53" class="m-doc-self">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
+              Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span></span>
+            </h3>
+            <p>Submits a task to the thread pool for execution.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">F</td>
+                  <td>Type of the task function.</td>
+                </tr>
+                <tr>
+                  <td>Args</td>
+                  <td>Types of the task function arguments.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>f</td>
+                  <td>Task function (can be function pointer, lambda, std::function, or any callable object).</td>
+                </tr>
+                <tr>
+                  <td>args</td>
+                  <td>Arguments to pass to the task function.</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>std::future object that can be used to get the task&#x27;s return value or catch its exceptions.</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>if the thread pool has been stopped and cannot accept new tasks.</td>
+                </tr>
+              </tbody>
+            </table>
+<pre class="m-code"><span class="c1">// Submit a lambda task</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">42</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// Submit a task with arguments</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([](</span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">20</span><span class="p">);</span>
+
+<span class="c1">// Submit a task that throws an exception</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span><span class="w"> </span><span class="p">});</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">future3</span><span class="p">.</span><span class="n">get</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Handle exception</span>
+<span class="p">}</span></pre>
           </div></section>
         </section>
       </div>

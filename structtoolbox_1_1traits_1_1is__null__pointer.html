@@ -49,31 +49,23 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8hpp.html">&lt;type_traits.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits.html">traits</a>::<wbr/></span>is_null_pointer <span class="m-thin">struct</span>
         </h1>
-        <p>是否是空类型</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="afacf125110ba5efccaf19915be7b1c1b">
-              static bool <a href="#afacf125110ba5efccaf19915be7b1c1b" class="m-doc-self">value</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+        <p>Check if type is std::nullptr_t.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Type to check</td>
+            </tr>
+          </tbody>
+        </table>
+<p>Example:</p><pre class="m-code"><span class="k">static_assert</span><span class="p">(</span><span class="n">is_null_pointer</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">nullptr_t</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">);</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="o">!</span><span class="n">is_null_pointer</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">*&gt;::</span><span class="n">value</span><span class="p">);</span></pre>
       </div>
     </div>
   </div>

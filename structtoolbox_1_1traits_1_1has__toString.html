@@ -49,31 +49,23 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8hpp.html">&lt;type_traits.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits.html">traits</a>::<wbr/></span>has_toString <span class="m-thin">struct</span>
         </h1>
-        <p><span></span></p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="a42f4c65618ab0ed2dbc2f1d0999acc9c">
-              static bool <a href="#a42f4c65618ab0ed2dbc2f1d0999acc9c" class="m-doc-self">value</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+        <p>Check if type has toString method (pre-C++17 version)</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Type to check</td>
+            </tr>
+          </tbody>
+        </table>
+<p>Example:</p><pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="nf">toString</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;A&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">has_toString</span><span class="o">&lt;</span><span class="n">A</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;A has toString&quot;</span><span class="p">);</span></pre>
       </div>
     </div>
   </div>

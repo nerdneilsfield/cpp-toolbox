@@ -50,9 +50,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1logger.html">logger</a>::<wbr/></span><span class="m-breadcrumb"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html">thread_logger_t</a>::<wbr/></span>thread_stream_logger_t <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;thread_logger.hpp&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Thread-safe stream logger class for formatted output.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -65,6 +64,13 @@
             </li>
           </ul>
         </div>
+<p>The <code><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a></code> class provides a thread-safe mechanism for logging messages using stream operators. It supports various data types including containers, tuples, and C-style strings. The logger automatically handles message formatting and ensures thread safety during logging operations.</p><aside class="m-note m-info"><h4>Note</h4><p>This class is typically used through the <a href="classtoolbox_1_1logger_1_1thread__logger__t.html" class="m-doc">thread_<wbr />logger_<wbr />t</a> interface and its associated macros. Direct instantiation is not recommended.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classtoolbox_1_1logger_1_1thread__logger__t.html" class="m-doc">thread_<wbr />logger_<wbr />t</a></p></aside><pre class="m-code"><span class="c1">// Basic usage with stream logger</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toolbox</span><span class="o">::</span><span class="n">logger</span><span class="o">::</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Processing &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; items&quot;</span><span class="p">;</span>
+
+<span class="c1">// Logging containers</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">values</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Values: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">values</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output: Values: [1, 2, 3]</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -82,20 +88,20 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="aeac33666839401af2bd2bb5bff656b0f">
-              <span class="m-doc-wrap-bumper">auto <a href="#aeac33666839401af2bd2bb5bff656b0f" class="m-doc-self">str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aeac33666839401af2bd2bb5bff656b0f" class="m-doc">str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ab8beb7c8cdf06081cdc0273c48524a5c">
+            <dd>Get the logged message as a string.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#ab8beb7c8cdf06081cdc0273c48524a5c" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#ab8beb7c8cdf06081cdc0273c48524a5c" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a6b2e773bb7c208849b9444e00dc209b0">
+            <dd>Overload operator&lt;&lt; for containers.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a6b2e773bb7c208849b9444e00dc209b0" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::tuple&lt;Args...&gt;&amp; t) -&gt; thread_stream_logger_t &amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6b2e773bb7c208849b9444e00dc209b0" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::tuple&lt;Args...&gt;&amp; t) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Overload operator&lt;&lt; for tuples.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2269dea461b207e1924a6c938271f03f" class="m-doc">red</a>(</span><span class="m-doc-wrap">const std::string&amp; text) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
@@ -112,34 +118,34 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a3dabbc117f69a5241f1d58c6db2eca0c" class="m-doc">bold</a>(</span><span class="m-doc-wrap">const std::string&amp; text) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
             <dd>Format text in bold style.</dd>
-            <dt id="af7b0c288f07c785387655dc0c6126055">
-              <span class="m-doc-wrap-bumper">auto <a href="#af7b0c288f07c785387655dc0c6126055" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const char* value) -&gt; thread_stream_logger_t &amp;</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#af7b0c288f07c785387655dc0c6126055" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const char* value) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a4e10c5cd09173cb92ae140ed1706b4e8">
+            <dd>Overload operator&lt;&lt; for C-style strings.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a4e10c5cd09173cb92ae140ed1706b4e8" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; value) -&gt; std::enable_if_t&lt; has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4e10c5cd09173cb92ae140ed1706b4e8" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; value) -&gt; std::enable_if_t&lt; has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a487a7e3da24e3cd9f30a6ee068bd65bf">
+            <dd>Overload operator&lt;&lt; for types that have an operator&lt;&lt; with an ostream.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename T&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a487a7e3da24e3cd9f30a6ee068bd65bf" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">T&amp;&amp; value) -&gt; std::enable_if_t&lt;!has_stream_operator_v&lt; T &gt; &amp;&amp;has_ostream_method_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a487a7e3da24e3cd9f30a6ee068bd65bf" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">T&amp;&amp; value) -&gt; std::enable_if_t&lt;!has_stream_operator_v&lt; T &gt; &amp;&amp;has_ostream_method_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a7bc1e3cde55775af3d534d9d3defd103">
-              <span class="m-doc-wrap-bumper">auto <a href="#a7bc1e3cde55775af3d534d9d3defd103" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a>&amp; logger) -&gt; thread_stream_logger_t &amp;</span>
+            <dd>Overload operator&lt;&lt; for types with member operator&lt;&lt;.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a7bc1e3cde55775af3d534d9d3defd103" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a>&amp; logger) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="afabe26dba003c7f70ad34e628454ecff">
+            <dd>Overload operator&lt;&lt; for combining loggers.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename K, typename V&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#afabe26dba003c7f70ad34e628454ecff" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#afabe26dba003c7f70ad34e628454ecff" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a0778d036f44c3dbcb5ea7752fe1cce38">
+            <dd>Overload operator&lt;&lt; for std::map containers.</dd>
+            <dt>
               <div class="m-doc-template">template&lt;typename K, typename V&gt;</div>
-              <span class="m-doc-wrap-bumper">auto <a href="#a0778d036f44c3dbcb5ea7752fe1cce38" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::unordered_map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0778d036f44c3dbcb5ea7752fe1cce38" class="m-doc">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::unordered_map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Overload operator&lt;&lt; for std::unordered_map containers.</dd>
           </dl>
         </section>
         <section>
@@ -172,6 +178,98 @@
             </h3>
             <p>Destroy the thread stream logger object.</p>
 <p>The destructor ensures the final message is flushed to the underlying logger.</p>
+          </div></section>
+          <section class="m-doc-details" id="aeac33666839401af2bd2bb5bff656b0f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aeac33666839401af2bd2bb5bff656b0f" class="m-doc-self">str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span></span>
+            </h3>
+            <p>Get the logged message as a string.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The logged message as a string.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This method returns the current content of the log stream as a string. It can be used to inspect or manipulate the message before it is written to the log.</p><pre class="m-code"><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
+<span class="n">thread_stream_logger_t</span><span class="w"> </span><span class="nf">stream_logger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span><span class="w"> </span><span class="n">Level</span><span class="o">::</span><span class="n">INFO</span><span class="p">);</span>
+<span class="n">stream_logger</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Test message&quot;</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream_logger</span><span class="p">.</span><span class="n">str</span><span class="p">();</span><span class="w">  </span><span class="c1">// msg = &quot;Test message&quot;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ab8beb7c8cdf06081cdc0273c48524a5c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab8beb7c8cdf06081cdc0273c48524a5c" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for containers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>Container type (must satisfy is_container_v)</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>container</td>
+                  <td>The container to log</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator allows logging of container types (e.g., vectors, lists) that don&#x27;t have their own stream operator. The container elements are printed in a comma-separated list enclosed in square brackets.</p><pre class="m-code"><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">vec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Vector: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">vec</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output: Vector: [1, 2, 3]</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a6b2e773bb7c208849b9444e00dc209b0"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6b2e773bb7c208849b9444e00dc209b0" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::tuple&lt;Args...&gt;&amp; t) -&gt; thread_stream_logger_t &amp;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for tuples.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Args</td>
+                  <td>Types of tuple elements</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>t</td>
+                  <td>The tuple to log</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator allows logging of std::tuple objects. The tuple elements are printed in a comma-separated list enclosed in parentheses.</p><pre class="m-code"><span class="k">auto</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;test&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">3.14</span><span class="p">);</span>
+<span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Tuple: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">t</span><span class="p">;</span><span class="w">  </span><span class="c1">// Output: Tuple: (1, test, 3.14)</span></pre>
           </div></section>
           <section class="m-doc-details" id="a2269dea461b207e1924a6c938271f03f"><div>
             <h3>
@@ -264,6 +362,229 @@
                 </tr>
               </tfoot>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="af7b0c288f07c785387655dc0c6126055"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af7b0c288f07c785387655dc0c6126055" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const char* value) -&gt; thread_stream_logger_t &amp;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for C-style strings.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">value</td>
+                  <td>The C-style string to log</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator allows logging of C-style strings (const char*). The string is directly written to the log stream.</p><p><code class="m-code"><span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;C-style string: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">;</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a4e10c5cd09173cb92ae140ed1706b4e8"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4e10c5cd09173cb92ae140ed1706b4e8" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const T&amp; value) -&gt; std::enable_if_t&lt; has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for types that have an operator&lt;&lt; with an ostream.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>The type of value to log, must have operator&lt;&lt; defined</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value</td>
+                  <td>The value to print to the log stream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator allows logging of any type that supports the standard stream insertion operator (operator&lt;&lt;). It checks the logging level before performing the operation and only logs if the current level is sufficient.</p><pre class="m-code"><span class="c1">// Logging basic types</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="c1">// Output: 42 3.14 true</span>
+
+<span class="c1">// Logging custom types</span>
+<span class="k">struct</span><span class="w"> </span><span class="nc">Point</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">};</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">Point</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Point</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">};</span>
+<span class="c1">// Output: (1,2)</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a487a7e3da24e3cd9f30a6ee068bd65bf"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a487a7e3da24e3cd9f30a6ee068bd65bf" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">T&amp;&amp; value) -&gt; std::enable_if_t&lt;!has_stream_operator_v&lt; T &gt; &amp;&amp;has_ostream_method_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for types with member operator&lt;&lt;.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">T</td>
+                  <td>The type of value to log, must have member operator&lt;&lt;</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value</td>
+                  <td>The value to print to the log stream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator handles types that implement operator&lt;&lt; as a member function rather than a free function. It&#x27;s particularly useful for types that can&#x27;t modify the global namespace to add stream operators.</p><pre class="m-code"><span class="k">struct</span><span class="w"> </span><span class="nc">Logger</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span><span class="w"> </span><span class="n">os</span><span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">os</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Logger instance&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">};</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">Logger</span><span class="p">();</span>
+<span class="c1">// Output: Logger instance</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a7bc1e3cde55775af3d534d9d3defd103"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7bc1e3cde55775af3d534d9d3defd103" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a>&amp; logger) -&gt; thread_stream_logger_t &amp;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for combining loggers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">logger</td>
+                  <td>The other logger whose contents to append</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator allows combining the contents of one logger into another. It&#x27;s useful for building complex log messages from multiple sources while maintaining the same logging level.</p><pre class="m-code"><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Part 1: &quot;</span><span class="p">;</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Part 2&quot;</span><span class="p">;</span>
+<span class="n">logger1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">logger2</span><span class="p">;</span><span class="w">  </span><span class="c1">// Only logs if INFO level is enabled</span>
+<span class="c1">// Output: Part 1: Part 2</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="afabe26dba003c7f70ad34e628454ecff"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename K, typename V&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afabe26dba003c7f70ad34e628454ecff" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for std::map containers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">K</td>
+                  <td>The key type of the map</td>
+                </tr>
+                <tr>
+                  <td>V</td>
+                  <td>The value type of the map</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>map</td>
+                  <td>The map to print to the log stream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator provides formatted output for std::map containers, displaying key-value pairs in a readable format. The output is similar to Python&#x27;s dictionary representation.</p><pre class="m-code"><span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ages</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="s">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">}};</span>
+<span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ages</span><span class="p">;</span>
+<span class="c1">// Output: {Alice: 30, Bob: 25}</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a0778d036f44c3dbcb5ea7752fe1cce38"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename K, typename V&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_stream_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0778d036f44c3dbcb5ea7752fe1cce38" class="m-doc-self">operator&lt;&lt;</a>(</span><span class="m-doc-wrap">const std::unordered_map&lt;K, V&gt;&amp; map) -&gt; thread_stream_logger_t &amp;</span></span>
+            </h3>
+            <p>Overload operator&lt;&lt; for std::unordered_map containers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">K</td>
+                  <td>The key type of the map</td>
+                </tr>
+                <tr>
+                  <td>V</td>
+                  <td>The value type of the map</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>map</td>
+                  <td>The map to print to the log stream</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this logger for chaining</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This operator provides formatted output for std::unordered_map containers. The output format is similar to std::map, but the order of elements may vary due to the unordered nature of the container.</p><pre class="m-code"><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">ids</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Alice&quot;</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Bob&quot;</span><span class="p">}};</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">ids</span><span class="p">;</span>
+<span class="c1">// Output: {1: Alice, 2: Bob} (order may vary)</span></pre>
           </div></section>
         </section>
       </div>

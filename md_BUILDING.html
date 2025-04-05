@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>src/include/cpp-toolbox/base/thread_pool_singleton.hpp file | cpp-toolbox</title>
+  <title>Building with CMake | cpp-toolbox</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,39 +49,17 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a>/</span><span class="m-breadcrumb"><a href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a>/</span><span class="m-breadcrumb"><a href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a>/</span><span class="m-breadcrumb"><a href="dir_175064ea02679cf4c3a50b5407502295.html">base</a>/</span>thread_pool_singleton.hpp <span class="m-thin">file</span>
+          Building with CMake
         </h1>
-        <p><span></span></p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#namespaces">Namespaces</a></li>
-                <li><a href="#nested-classes">Classes</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section id="namespaces">
-          <h2><a href="#namespaces">Namespaces</a></h2>
-          <dl class="m-doc">
-            <dt>namespace <a href="namespacetoolbox.html" class="m-doc">toolbox</a></dt>
-            <dd><span></span></dd>
-            <dt>namespace <a href="namespacetoolbox_1_1base.html" class="m-doc">toolbox::base</a></dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="nested-classes">
-          <h2><a href="#nested-classes">Classes</a></h2>
-          <dl class="m-doc">
-            <dt>
-              class <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">toolbox::base::thread_pool_singleton_t</a>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+<section id="autotoc_md4"><h2><a href="#autotoc_md4">Build</a></h2><p>This project doesn&#x27;t require any special command-line flags to build to keep things simple.</p><p>Here are the steps for building in release mode with a single-configuration generator, like the Unix Makefiles one:</p><pre class="m-code">cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build<span class="w"> </span>-D<span class="w"> </span><span class="nv">CMAKE_BUILD_TYPE</span><span class="o">=</span>Release
+cmake<span class="w"> </span>--build<span class="w"> </span>build</pre><p>Here are the steps for building in release mode with a multi-configuration generator, like the Visual Studio ones:</p><pre class="m-code">cmake<span class="w"> </span>-S<span class="w"> </span>.<span class="w"> </span>-B<span class="w"> </span>build
+cmake<span class="w"> </span>--build<span class="w"> </span>build<span class="w"> </span>--config<span class="w"> </span>Release</pre><section id="autotoc_md5"><h3><a href="#autotoc_md5">Building with MSVC</a></h3><p>Note that MSVC by default is not standards compliant and you need to pass some flags to make it behave properly. See the <code>flags-msvc</code> preset in the <a href="CMakePresets.json">CMakePresets.json</a> file for the flags and with what variable to provide them to CMake during configuration.</p></section><section id="autotoc_md6"><h3><a href="#autotoc_md6">Building on Apple Silicon</a></h3><p>CMake supports building on Apple Silicon properly since 3.20.1. Make sure you have the <a href="https://cmake.org/download/">latest version</a> installed.</p></section></section><section id="autotoc_md7"><h2><a href="#autotoc_md7">Install</a></h2><p>This project doesn&#x27;t require any special command-line flags to install to keep things simple. As a prerequisite, the project has to be built with the above commands already.</p><p>The below commands require at least CMake 3.15 to run, because that is the version in which <a href="https://cmake.org/cmake/help/latest/manual/cmake.1.html#install-a-project">Install a Project</a> was added.</p><p>Here is the command for installing the release mode artifacts with a single-configuration generator, like the Unix Makefiles one:</p><pre class="m-code">cmake<span class="w"> </span>--install<span class="w"> </span>build</pre><p>Here is the command for installing the release mode artifacts with a multi-configuration generator, like the Visual Studio ones:</p><pre class="m-code">cmake<span class="w"> </span>--install<span class="w"> </span>build<span class="w"> </span>--config<span class="w"> </span>Release</pre><section id="autotoc_md8"><h3><a href="#autotoc_md8">CMake package</a></h3><p>This project exports a CMake package to be used with the <a href="https://cmake.org/cmake/help/latest/command/find_package.html"><code>find_package</code></a> command of CMake:</p><ul><li>Package name: <code>cpp-toolbox</code></li><li>Target name: <code>cpp-toolbox::cpp-toolbox</code></li></ul><p>Example usage:</p><pre class="m-code"><span class="nb">find_package</span><span class="p">(</span><span class="s">cpp-toolbox</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+<span class="c"># Declare the imported target as a build requirement using PRIVATE, where</span>
+<span class="c"># project_target is a target created in the consuming project</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span>
+<span class="w">    </span><span class="s">project_target</span><span class="w"> </span><span class="s">PRIVATE</span>
+<span class="w">    </span><span class="s">cpp-toolbox::cpp-toolbox</span>
+<span class="p">)</span></pre></section><section id="autotoc_md9"><h3><a href="#autotoc_md9">Note to packagers</a></h3><p>The <code>CMAKE_INSTALL_INCLUDEDIR</code> is set to a path other than just <code>include</code> if the project is configured as a top level project to avoid indirectly including other libraries when installed to a common prefix. Please review the <a href="cmake/install-rules.cmake">install-rules.cmake</a> file for the full set of install rules.</p></section></section>
       </div>
     </div>
   </div>

@@ -49,40 +49,25 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8hpp.html">&lt;type_traits.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits.html">traits</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits_1_1detail.html">detail</a>::<wbr/></span>storage_traits <span class="m-thin">struct</span>
         </h1>
-        <p>检查类型是否可能在堆上分配</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-<aside class="m-note m-info"><h4>Note</h4><p>用于 SFINAE</p></aside>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="aecf29f202af47a09288819cfdee89dba">
-              static bool <a href="#aecf29f202af47a09288819cfdee89dba" class="m-doc-self">may_be_heap_allocated</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a96a7f89c14d09c3250bfabd60d3f974d">
-              static bool <a href="#a96a7f89c14d09c3250bfabd60d3f974d" class="m-doc-self">must_be_heap_allocated</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a23b09d5db923794336b115df09f4a576">
-              static bool <a href="#a23b09d5db923794336b115df09f4a576" class="m-doc-self">may_be_stack_allocated</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+        <p>Storage traits for types.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Type to analyze</td>
+            </tr>
+          </tbody>
+        </table>
+<p>Provides information about storage characteristics of a type:</p><ul><li>Whether it may be heap allocated</li><li>Whether it must be heap allocated</li><li>Whether it may be stack allocated</li></ul><p>Example:</p><pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{};</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">mayBeHeap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">storage_traits</span><span class="o">&lt;</span><span class="n">MyClass</span><span class="o">&gt;::</span><span class="n">may_be_heap_allocated</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">mustBeHeap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">storage_traits</span><span class="o">&lt;</span><span class="n">MyClass</span><span class="o">&gt;::</span><span class="n">must_be_heap_allocated</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">mayBeStack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">storage_traits</span><span class="o">&lt;</span><span class="n">MyClass</span><span class="o">&gt;::</span><span class="n">may_be_stack_allocated</span><span class="p">;</span></pre>
       </div>
     </div>
   </div>

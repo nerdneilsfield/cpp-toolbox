@@ -49,11 +49,27 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;thread_logger.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T, typename = void&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1logger.html">logger</a>::<wbr/></span>is_container <span class="m-thin">struct</span>
         </h1>
-        <p><span></span></p>
+        <p>Type trait to check if a type is a container.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>The type to check for container properties.</td>
+            </tr>
+          </tbody>
+        </table>
+<p>This template checks if a type meets the basic requirements of a container:</p><ul><li>Has a value_type typedef</li><li>Has an iterator typedef</li><li>Has begin() and end() methods</li></ul><pre class="m-code"><span class="c1">// Check if std::vector is a container</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">is_container</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;::</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;vector is a</span>
+<span class="n">container</span><span class="s">&quot;);</span>
+
+<span class="c1">// Check if int is a container</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="o">!</span><span class="n">is_container</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;int is not a container&quot;</span><span class="p">);</span></pre>
       </div>
     </div>
   </div>

@@ -49,24 +49,29 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8hpp.html">&lt;type_traits.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename R, typename... Args&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits.html">traits</a>::<wbr/></span>function_traits&lt;R(Args...)&gt; <span class="m-thin">struct</span>
         </h1>
-        <p>普通函数类型萃取</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#derived-classes">Derived classes</a></li>
-                <li><a href="#pub-types">Public types</a></li>
-                <li><a href="#pub-static-attribs">Public static variables</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+        <p>Function traits for regular functions.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">R</td>
+              <td>Return type</td>
+            </tr>
+            <tr>
+              <td>Args</td>
+              <td>Function parameter types</td>
+            </tr>
+          </tbody>
+        </table>
+<p>Example:</p><pre class="m-code"><span class="kt">int</span><span class="w"> </span><span class="nf">func</span><span class="p">(</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="p">);</span>
+<span class="k">using</span><span class="w"> </span><span class="n">traits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">function_traits</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="o">&gt;</span><span class="p">;</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_same_v</span><span class="o">&lt;</span><span class="n">traits</span><span class="o">::</span><span class="n">return_type</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="p">);</span>
+<span class="k">static_assert</span><span class="p">(</span><span class="n">traits</span><span class="o">::</span><span class="n">arity</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span></pre>
         <section id="derived-classes">
           <h2><a href="#derived-classes">Derived classes</a></h2>
           <dl class="m-doc">
@@ -74,30 +79,7 @@
               <div class="m-doc-template">template&lt;typename C, typename R, typename... Args&gt;</div>
               struct <a href="structtoolbox_1_1traits_1_1function__traits_3_01R_07C_1_1_5_08_07Args_8_8_8_08_4.html" class="m-doc">function_traits&lt;R(C::*)(Args...)&gt;</a>
             </dt>
-            <dd>成员函数类型萃取</dd>
-          </dl>
-        </section>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="a90bf05fe7186e146d5c448f5bc49ad92">
-              using <a href="#a90bf05fe7186e146d5c448f5bc49ad92" class="m-doc-self">return_type</a> = R
-            </dt>
-            <dd><span></span></dd>
-            <dt id="ac1e5d57d1b1e20d04954cee3a7c13044">
-              <div class="m-doc-template">template&lt;<a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> N&gt;</div>
-              using <a href="#ac1e5d57d1b1e20d04954cee3a7c13044" class="m-doc-self">arg_type</a> = typename std::tuple_element&lt;N, std::tuple&lt;Args...&gt;&gt;::type
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
-        <section id="pub-static-attribs">
-          <h2><a href="#pub-static-attribs">Public static variables</a></h2>
-          <dl class="m-doc">
-            <dt id="af4b192b6770f192d971013be7cd56a57">
-              static <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> <a href="#af4b192b6770f192d971013be7cd56a57" class="m-doc-self">arity</a> <span class="m-label m-flat m-primary">constexpr</span>
-            </dt>
-            <dd><span></span></dd>
+            <dd>Function traits for member functions.</dd>
           </dl>
         </section>
       </div>

@@ -50,9 +50,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1logger.html">logger</a>::<wbr/></span>thread_logger_t <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;thread_logger.hpp&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Thread-safe logging class with multiple logging levels and formats.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -67,17 +66,26 @@
             </li>
           </ul>
         </div>
+<p>The <code><a href="classtoolbox_1_1logger_1_1thread__logger__t.html" class="m-doc">thread_<wbr />logger_<wbr />t</a></code> class provides a thread-safe logging mechanism with support for different logging levels (TRACE, DEBUG, INFO, WARN, ERROR, CRITICAL). It offers both stream-based and format-based logging capabilities through its nested classes <code><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a></code> and <code><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a></code>.</p><aside class="m-note m-info"><h4>Note</h4><p>This class implements the singleton pattern and is thread-safe for concurrent logging operations from multiple threads.</p></aside><aside class="m-note m-default"><h4>See also</h4><p><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a></p><p><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a></p></aside><pre class="m-code"><span class="c1">// Basic usage with stream logger</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toolbox</span><span class="o">::</span><span class="n">logger</span><span class="o">::</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">toolbox</span><span class="o">::</span><span class="n">logger</span><span class="o">::</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">INFO</span><span class="p">);</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Application started with version &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">version</span><span class="p">;</span>
+
+<span class="c1">// Basic usage with format logger</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">toolbox</span><span class="o">::</span><span class="n">logger</span><span class="o">::</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
+<span class="n">logger</span><span class="p">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">toolbox</span><span class="o">::</span><span class="n">logger</span><span class="o">::</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">DEBUG</span><span class="p">);</span>
+<span class="n">LOG_DEBUG_F</span><span class="p">(</span><span class="s">&quot;Processing {} items in batch {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">item_count</span><span class="p">,</span><span class="w"> </span><span class="n">batch_id</span><span class="p">);</span></pre>
         <section id="pub-types">
           <h2><a href="#pub-types">Public types</a></h2>
           <dl class="m-doc">
             <dt>
               class <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_format_logger_t</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Format-based logger for printf-style message formatting.</dd>
             <dt>
               class <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_stream_logger_t</a>
             </dt>
-            <dd><span></span></dd>
+            <dd>Thread-safe stream logger class for formatted output.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">enum class <a href="#aac8a891f00498ff98550a300d99f3fa1" class="m-doc">Level</a>: uint8_t { </span><span class="m-doc-wrap"><a href="#aac8a891f00498ff98550a300d99f3fa1a2d3e4144aa384b18849ab9a8abad74d6" class="m-doc">TRACE</a>,
               <a href="#aac8a891f00498ff98550a300d99f3fa1adc30ec20708ef7b0f641ef78b7880a15" class="m-doc">DEBUG</a>,
@@ -92,10 +100,10 @@
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="acc6c92f4fe66ee6d17852eb6b6f393bb">
-              <span class="m-doc-wrap-bumper">static auto <a href="#acc6c92f4fe66ee6d17852eb6b6f393bb" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">) -&gt; thread_logger_t &amp;</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#acc6c92f4fe66ee6d17852eb6b6f393bb" class="m-doc">instance</a>(</span><span class="m-doc-wrap">) -&gt; thread_logger_t &amp;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Get the singleton instance of the logger.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
@@ -110,66 +118,66 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a8f822fcbcee8aadd60583d97d2aa45b8">
-              <span class="m-doc-wrap-bumper">auto <a href="#a8f822fcbcee8aadd60583d97d2aa45b8" class="m-doc-self">level</a>(</span><span class="m-doc-wrap">) -&gt; Level</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a8f822fcbcee8aadd60583d97d2aa45b8" class="m-doc">level</a>(</span><span class="m-doc-wrap">) -&gt; Level</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a767cfaa33472f68fd9536dfc210aec6b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a767cfaa33472f68fd9536dfc210aec6b" class="m-doc-self">level_str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
+            <dd>Get the current logging level.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a767cfaa33472f68fd9536dfc210aec6b" class="m-doc">level_str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a52a973b6b75e6278e7b099b8774de23c">
-              <span class="m-doc-wrap-bumper">auto <a href="#a52a973b6b75e6278e7b099b8774de23c" class="m-doc-self">set_level</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1" class="m-doc">Level</a> level) -&gt; void</span>
+            <dd>Get the current logging level as a string.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a52a973b6b75e6278e7b099b8774de23c" class="m-doc">set_level</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1" class="m-doc">Level</a> level) -&gt; void</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a87c89bdf54ca24f0ceebfd4597b27a9b">
-              <span class="m-doc-wrap-bumper">auto <a href="#a87c89bdf54ca24f0ceebfd4597b27a9b" class="m-doc-self">trace_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Set the logging level.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a87c89bdf54ca24f0ceebfd4597b27a9b" class="m-doc">trace_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a2fbc1244fa04b01301c8dfd16a7197ba">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2fbc1244fa04b01301c8dfd16a7197ba" class="m-doc-self">debug_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Get a format logger for TRACE level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2fbc1244fa04b01301c8dfd16a7197ba" class="m-doc">debug_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="acd81a17202ffb123e8ba7fbb33761c01">
-              <span class="m-doc-wrap-bumper">auto <a href="#acd81a17202ffb123e8ba7fbb33761c01" class="m-doc-self">info_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Get a format logger for DEBUG level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acd81a17202ffb123e8ba7fbb33761c01" class="m-doc">info_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a618b9574195ad98c77d18f3e866ca963">
-              <span class="m-doc-wrap-bumper">auto <a href="#a618b9574195ad98c77d18f3e866ca963" class="m-doc-self">warn_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Get a format logger for INFO level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a618b9574195ad98c77d18f3e866ca963" class="m-doc">warn_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ad4846b51ece6ae120a580d0db0fb1942">
-              <span class="m-doc-wrap-bumper">auto <a href="#ad4846b51ece6ae120a580d0db0fb1942" class="m-doc-self">error_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Get a format logger for WARN level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ad4846b51ece6ae120a580d0db0fb1942" class="m-doc">error_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ae330bc70bd65bf2105c63cde91684385">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae330bc70bd65bf2105c63cde91684385" class="m-doc-self">critical_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
+            <dd>Get a format logger for ERROR level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae330bc70bd65bf2105c63cde91684385" class="m-doc">critical_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ac67a39040494c1559b4b5384dd3ed85f">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac67a39040494c1559b4b5384dd3ed85f" class="m-doc-self">trace_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a format logger for CRITICAL level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac67a39040494c1559b4b5384dd3ed85f" class="m-doc">trace_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a2d37d88931782f4766bafc4830c98b58">
-              <span class="m-doc-wrap-bumper">auto <a href="#a2d37d88931782f4766bafc4830c98b58" class="m-doc-self">debug_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a stream logger for TRACE level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a2d37d88931782f4766bafc4830c98b58" class="m-doc">debug_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ac92b425365d15afbf46ce75bd437c906">
-              <span class="m-doc-wrap-bumper">auto <a href="#ac92b425365d15afbf46ce75bd437c906" class="m-doc-self">info_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a stream logger for DEBUG level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ac92b425365d15afbf46ce75bd437c906" class="m-doc">info_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="ae2fb595ab6a1b85aae88e387550eaaf9">
-              <span class="m-doc-wrap-bumper">auto <a href="#ae2fb595ab6a1b85aae88e387550eaaf9" class="m-doc-self">warn_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a stream logger for INFO level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae2fb595ab6a1b85aae88e387550eaaf9" class="m-doc">warn_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a3c9390804f6e71bfa4e071392ae46fad">
-              <span class="m-doc-wrap-bumper">auto <a href="#a3c9390804f6e71bfa4e071392ae46fad" class="m-doc-self">error_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a stream logger for WARN level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3c9390804f6e71bfa4e071392ae46fad" class="m-doc">error_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
-            <dt id="a71c413499ec2090385405577482eaff5">
-              <span class="m-doc-wrap-bumper">auto <a href="#a71c413499ec2090385405577482eaff5" class="m-doc-self">critical_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
+            <dd>Get a stream logger for ERROR level messages.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a71c413499ec2090385405577482eaff5" class="m-doc">critical_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Get a stream logger for CRITICAL level messages.</dd>
           </dl>
         </section>
         <section>
@@ -225,12 +233,262 @@
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="acc6c92f4fe66ee6d17852eb6b6f393bb"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acc6c92f4fe66ee6d17852eb6b6f393bb" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">) -&gt; thread_logger_t &amp;</span></span>
+            </h3>
+            <p>Get the singleton instance of the logger.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Reference to the thread-safe logger instance.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span></code></p>
+          </div></section>
           <section class="m-doc-details" id="a62019791053d5141848092b66528bea8"><div>
             <h3>
               <span class="m-doc-wrap-bumper"> toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a62019791053d5141848092b66528bea8" class="m-doc-self">~thread_logger_t</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Destructor for the logger.</p>
 <p>Ensures proper cleanup of logging resources.</p>
+          </div></section>
+          <section class="m-doc-details" id="a8f822fcbcee8aadd60583d97d2aa45b8"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8f822fcbcee8aadd60583d97d2aa45b8" class="m-doc-self">level</a>(</span><span class="m-doc-wrap">) -&gt; Level</span></span>
+            </h3>
+            <p>Get the current logging level.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The current logging level as a Level enum value.</td>
+                </tr>
+              </tfoot>
+            </table>
+<pre class="m-code"><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">logger</span><span class="p">.</span><span class="n">level</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">DEBUG</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Perform debug-specific operations</span>
+<span class="p">}</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a767cfaa33472f68fd9536dfc210aec6b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a767cfaa33472f68fd9536dfc210aec6b" class="m-doc-self">level_str</a>(</span><span class="m-doc-wrap">) -&gt; std::string</span></span>
+            </h3>
+            <p>Get the current logging level as a string.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>The current logging level as a human-readable string.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Current log level: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">logger</span><span class="p">.</span><span class="n">level_str</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a52a973b6b75e6278e7b099b8774de23c"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a52a973b6b75e6278e7b099b8774de23c" class="m-doc-self">set_level</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1" class="m-doc">Level</a> level) -&gt; void</span></span>
+            </h3>
+            <p>Set the logging level.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">level</td>
+                  <td>The new logging level to set.</td>
+                </tr>
+              </tbody>
+            </table>
+<p><code class="m-code"><span class="n">logger</span><span class="p">.</span><span class="n">set_level</span><span class="p">(</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">WARN</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a87c89bdf54ca24f0ceebfd4597b27a9b"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a87c89bdf54ca24f0ceebfd4597b27a9b" class="m-doc-self">trace_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for TRACE level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for TRACE level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_TRACE_F</span><span class="p">(</span><span class="s">&quot;Processing item {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">item_id</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a2fbc1244fa04b01301c8dfd16a7197ba"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2fbc1244fa04b01301c8dfd16a7197ba" class="m-doc-self">debug_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for DEBUG level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for DEBUG level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_DEBUG_F</span><span class="p">(</span><span class="s">&quot;Received {} bytes of data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_size</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="acd81a17202ffb123e8ba7fbb33761c01"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acd81a17202ffb123e8ba7fbb33761c01" class="m-doc-self">info_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for INFO level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for INFO level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_INFO_F</span><span class="p">(</span><span class="s">&quot;Application started successfully&quot;</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a618b9574195ad98c77d18f3e866ca963"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a618b9574195ad98c77d18f3e866ca963" class="m-doc-self">warn_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for WARN level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for WARN level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_WARN_F</span><span class="p">(</span><span class="s">&quot;Disk space is low: {}MB remaining&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">free_space</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="ad4846b51ece6ae120a580d0db0fb1942"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad4846b51ece6ae120a580d0db0fb1942" class="m-doc-self">error_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for ERROR level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for ERROR level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_ERROR_F</span><span class="p">(</span><span class="s">&quot;Failed to process request: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error_message</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="ae330bc70bd65bf2105c63cde91684385"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae330bc70bd65bf2105c63cde91684385" class="m-doc-self">critical_f</a>(</span><span class="m-doc-wrap">) -&gt; thread_format_logger_t</span></span>
+            </h3>
+            <p>Get a format logger for CRITICAL level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a> instance configured for CRITICAL level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_CRITICAL_F</span><span class="p">(</span><span class="s">&quot;System shutdown due to critical error: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">);</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="ac67a39040494c1559b4b5384dd3ed85f"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac67a39040494c1559b4b5384dd3ed85f" class="m-doc-self">trace_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for TRACE level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for TRACE level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_TRACE_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Entering function &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">__func__</span><span class="p">;</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="a2d37d88931782f4766bafc4830c98b58"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a2d37d88931782f4766bafc4830c98b58" class="m-doc-self">debug_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for DEBUG level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for DEBUG level</td>
+                </tr>
+              </tfoot>
+            </table>
+<p><code class="m-code"><span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Processing &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; items&quot;</span><span class="p">;</span></code></p>
+          </div></section>
+          <section class="m-doc-details" id="ac92b425365d15afbf46ce75bd437c906"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ac92b425365d15afbf46ce75bd437c906" class="m-doc-self">info_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for INFO level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for INFO level</td>
+                </tr>
+              </tfoot>
+            </table>
+<pre class="m-code"><span class="c1">// Log application version info</span>
+<span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Application started with version &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">version</span><span class="p">;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="ae2fb595ab6a1b85aae88e387550eaaf9"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae2fb595ab6a1b85aae88e387550eaaf9" class="m-doc-self">warn_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for WARN level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for WARN level</td>
+                </tr>
+              </tfoot>
+            </table>
+<pre class="m-code"><span class="c1">// Log unexpected value warning</span>
+<span class="n">LOG_WARN_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Unexpected value: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; (expected &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expected</span><span class="w"> </span><span class="o">&lt;&lt;</span>
+<span class="s">&quot;)&quot;</span><span class="p">;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a3c9390804f6e71bfa4e071392ae46fad"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3c9390804f6e71bfa4e071392ae46fad" class="m-doc-self">error_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for ERROR level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for ERROR level</td>
+                </tr>
+              </tfoot>
+            </table>
+<pre class="m-code"><span class="c1">// Log file open error</span>
+<span class="n">LOG_ERROR_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to open file: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">filename</span><span class="p">;</span></pre>
+          </div></section>
+          <section class="m-doc-details" id="a71c413499ec2090385405577482eaff5"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a71c413499ec2090385405577482eaff5" class="m-doc-self">critical_s</a>(</span><span class="m-doc-wrap">) -&gt; thread_stream_logger_t</span></span>
+            </h3>
+            <p>Get a stream logger for CRITICAL level messages.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>A <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" class="m-doc">thread_<wbr />stream_<wbr />logger_<wbr />t</a> instance configured for CRITICAL level</td>
+                </tr>
+              </tfoot>
+            </table>
+<pre class="m-code"><span class="c1">// Log critical system error</span>
+<span class="n">LOG_CRITICAL_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;System shutdown due to critical error in &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">component</span><span class="p">;</span></pre>
           </div></section>
         </section>
       </div>

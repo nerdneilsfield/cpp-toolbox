@@ -50,9 +50,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1base.html">base</a>::<wbr/></span>thread_pool_singleton_t <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__pool__singleton_8hpp.html">&lt;thread_pool_singleton.hpp&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>A singleton thread pool implementation that manages a pool of worker threads.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -66,57 +65,63 @@
             </li>
           </ul>
         </div>
+<p>This class provides a thread-safe singleton thread pool that can execute tasks asynchronously. Tasks are submitted as functions/lambdas and are queued for execution by worker threads.</p><pre class="m-code"><span class="c1">// Get thread pool instance</span>
+<span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thread_pool_singleton_t</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
+
+<span class="c1">// Submit a task and get future</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mi">42</span><span class="p">);</span>
+
+<span class="c1">// Get result</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">future</span><span class="p">.</span><span class="n">get</span><span class="p">();</span><span class="w"> </span><span class="c1">// result = 84</span></pre>
         <section id="pub-static-methods">
           <h2><a href="#pub-static-methods">Public static functions</a></h2>
           <dl class="m-doc">
-            <dt id="aae07bd8c92d5250118e6fac71da8bbfc">
-              <span class="m-doc-wrap-bumper">static auto <a href="#aae07bd8c92d5250118e6fac71da8bbfc" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;</span>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aae07bd8c92d5250118e6fac71da8bbfc" class="m-doc">instance</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Get the singleton instance of the thread pool.</dd>
           </dl>
         </section>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
-            <dt id="aa65e50131198b59c1840bca9dcbb8fb9">
-              <span class="m-doc-wrap-bumper"><a href="#aa65e50131198b59c1840bca9dcbb8fb9" class="m-doc-self">thread_pool_singleton_t</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a797a6ce91fd3f9f9e2b32d14d218354b">
-              <span class="m-doc-wrap-bumper"><a href="#a797a6ce91fd3f9f9e2b32d14d218354b" class="m-doc-self">thread_pool_singleton_t</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;&amp;) <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
             <dt id="aa5041f3e9ee0c6b6f982fa77c53a6ee1">
               <span class="m-doc-wrap-bumper"><a href="#aa5041f3e9ee0c6b6f982fa77c53a6ee1" class="m-doc-self">~thread_pool_singleton_t</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
-            <dd>析构函数，停止线程池并等待所有工作线程结束。</dd>
+            <dd>Destructor that stops the thread pool and waits for all worker threads to finish.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a819571d65765b44e5ffca61c1f20f339">
-              <span class="m-doc-wrap-bumper">auto <a href="#a819571d65765b44e5ffca61c1f20f339" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;) -&gt; <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
-            <dt id="a6f0f263ce928dccf8e20fdec8b72c547">
-              <span class="m-doc-wrap-bumper">auto <a href="#a6f0f263ce928dccf8e20fdec8b72c547" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp;&amp;) -&gt; <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp; <span class="m-label m-flat m-danger">deleted</span></span>
-            </dt>
-            <dd><span></span></dd>
             <dt>
               <div class="m-doc-template">template&lt;class F, class... Args&gt;</div>
               <span class="m-doc-wrap-bumper">auto <a href="#a7df92875a7403035819bc5c134d420ea" class="m-doc">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
               Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span>
             </dt>
-            <dd>提交一个任务到线程池执行。 (实现保持在头文件中，因为它是一个模板)</dd>
+            <dd>Submit a task to be executed by the thread pool.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ad214d4edef3d6ed542c4b408a5969ab4" class="m-doc">get_thread_count</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a></span>
             </dt>
-            <dd>获取线程池中的工作线程数量。</dd>
+            <dd>Get the number of worker threads in the pool.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
+          <section class="m-doc-details" id="aae07bd8c92d5250118e6fac71da8bbfc"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">static <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html" class="m-doc">thread_<wbr />pool_<wbr />singleton_<wbr />t</a>&amp; toolbox::<wbr />base::<wbr />thread_pool_singleton_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae07bd8c92d5250118e6fac71da8bbfc" class="m-doc-self">instance</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Get the singleton instance of the thread pool.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Reference to the singleton thread pool instance</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
           <section class="m-doc-details" id="a7df92875a7403035819bc5c134d420ea"><div>
             <h3>
               <div class="m-doc-template">
@@ -125,12 +130,38 @@
               <span class="m-doc-wrap-bumper">auto toolbox::<wbr />base::<wbr />thread_pool_singleton_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7df92875a7403035819bc5c134d420ea" class="m-doc-self">submit</a>(</span><span class="m-doc-wrap">F&amp;&amp; f,
               Args &amp;&amp; ... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt;&gt;</span></span>
             </h3>
-            <p>提交一个任务到线程池执行。 (实现保持在头文件中，因为它是一个模板)</p>
+            <p>Submit a task to be executed by the thread pool.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
                 <tr>
-                  <th style="width: 1%">Returns</th>
-                  <td>std::future&lt;...&gt; 用于获取结果或异常。</td>
+                  <td style="width: 1%">F</td>
+                  <td>Type of the callable</td>
+                </tr>
+                <tr>
+                  <td>Args</td>
+                  <td>Types of the arguments</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>f</td>
+                  <td>The callable to execute</td>
+                </tr>
+                <tr>
+                  <td>args</td>
+                  <td>Arguments to pass to the callable</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>std::future containing the eventual result</td>
                 </tr>
               </thead>
               <thead>
@@ -139,21 +170,26 @@
               <tbody>
                 <tr>
                   <td>std::runtime_error</td>
-                  <td>如果线程池已停止。</td>
+                  <td>if the thread pool has been stopped</td>
                 </tr>
               </tbody>
             </table>
+<p>This method queues a task for asynchronous execution by one of the worker threads. The task can be a function, lambda, or any callable object.</p><pre class="m-code"><span class="c1">// Submit a lambda</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([]()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">;</span><span class="w"> </span><span class="p">});</span>
+
+<span class="c1">// Submit a function with arguments</span>
+<span class="k">auto</span><span class="w"> </span><span class="n">future2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pool</span><span class="p">.</span><span class="n">submit</span><span class="p">([](</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ad214d4edef3d6ed542c4b408a5969ab4"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a> toolbox::<wbr />base::<wbr />thread_pool_singleton_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad214d4edef3d6ed542c4b408a5969ab4" class="m-doc-self">get_thread_count</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
-            <p>获取线程池中的工作线程数量。</p>
+            <p>Get the number of worker threads in the pool.</p>
             <table class="m-table m-fullwidth m-flat">
               <tfoot>
                 <tr>
                   <th style="width: 1%">Returns</th>
-                  <td>size_t 线程数量。</td>
+                  <td>The number of worker threads</td>
                 </tr>
               </tfoot>
             </table>

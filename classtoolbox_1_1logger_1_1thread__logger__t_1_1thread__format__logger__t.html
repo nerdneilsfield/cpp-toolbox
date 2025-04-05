@@ -50,9 +50,8 @@
       <div class="m-col-l-10 m-push-l-1">
         <h1>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1logger.html">logger</a>::<wbr/></span><span class="m-breadcrumb"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html">thread_logger_t</a>::<wbr/></span>thread_format_logger_t <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;thread_logger.hpp&gt;</a></div>
         </h1>
-        <p><span></span></p>
+        <p>Format-based logger for printf-style message formatting.</p>
         <div class="m-block m-default">
           <h3>Contents</h3>
           <ul>
@@ -65,6 +64,10 @@
             </li>
           </ul>
         </div>
+<p>The <code><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" class="m-doc">thread_<wbr />format_<wbr />logger_<wbr />t</a></code> class provides a thread-safe way to log messages using a printf-style format string. It supports format specifiers of the form <code>{}</code> which are replaced with the provided arguments.</p><aside class="m-note m-info"><h4>Note</h4><p>Messages are only logged if their level is equal to or higher than the current logging level.</p></aside><pre class="m-code"><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">thread_format_logger_t</span><span class="w"> </span><span class="nf">logger</span><span class="p">(</span>
+<span class="w">    </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">INFO</span><span class="p">);</span>
+<span class="n">logger</span><span class="p">(</span><span class="s">&quot;Processing {} of {} items&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">processed_count</span><span class="p">,</span><span class="w"> </span><span class="n">total_items</span><span class="p">);</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
@@ -78,12 +81,12 @@
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
-            <dt id="a8ac2b0715b8e5d657fa8c511754e852e">
+            <dt>
               <div class="m-doc-template">template&lt;typename... Args&gt;</div>
-              <span class="m-doc-wrap-bumper">void <a href="#a8ac2b0715b8e5d657fa8c511754e852e" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const char* format,
+              <span class="m-doc-wrap-bumper">void <a href="#a8ac2b0715b8e5d657fa8c511754e852e" class="m-doc">operator()</a>(</span><span class="m-doc-wrap">const char* format,
               Args &amp;&amp; ... args)</span>
             </dt>
-            <dd><span></span></dd>
+            <dd>Log a formatted message.</dd>
           </dl>
         </section>
         <section>
@@ -109,6 +112,43 @@
                 </tr>
               </tbody>
             </table>
+          </div></section>
+          <section class="m-doc-details" id="a8ac2b0715b8e5d657fa8c511754e852e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename... Args&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />logger::<wbr />thread_logger_t::<wbr />thread_format_logger_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a8ac2b0715b8e5d657fa8c511754e852e" class="m-doc-self">operator()</a>(</span><span class="m-doc-wrap">const char* format,
+              Args &amp;&amp; ... args)</span></span>
+            </h3>
+            <p>Log a formatted message.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Template parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Args</td>
+                  <td>Types of the format arguments</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>format</td>
+                  <td>The format string containing <code>{}</code> placeholders</td>
+                </tr>
+                <tr>
+                  <td>args</td>
+                  <td>The values to insert into the format string</td>
+                </tr>
+              </tbody>
+            </table>
+<pre class="m-code"><span class="n">thread_format_logger_t</span><span class="w"> </span><span class="nf">logger</span><span class="p">(</span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">instance</span><span class="p">(),</span>
+<span class="w">    </span><span class="n">thread_logger_t</span><span class="o">::</span><span class="n">Level</span><span class="o">::</span><span class="n">DEBUG</span><span class="p">);</span>
+<span class="n">logger</span><span class="p">(</span><span class="s">&quot;Processing time: {} ms&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">elapsed_time</span><span class="p">);</span></pre>
           </div></section>
         </section>
       </div>

@@ -51,9 +51,9 @@
         <h1>
           /home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/logger/thread_logger.hpp <span class="m-thin">source</span>
         </h1>
-        <p>Type trait to check if a type is a container.</p>
-<p>Type trait to check if a type is a container.This template checks if a type meets the basic requirements of a container:</p><ul><li>Has a value_type typedef</li><li>Has an iterator typedef</li><li>Has begin() and end() methods</li></ul><p>// Check if std::vector is a container static_assert(is_container&lt;std::vector&lt;int&gt;&gt;::value, &quot;vector is a
-container&quot;);</p><pre class="m-code"><span class="cp">#pragma once</span>
+        <p>Get a stream logger for INFO level messages.</p>
+<p>Get a stream logger for INFO level messages.
+<code class="m-code"><span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Application started with version &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">version</span><span class="p">;</span></code></p><pre class="m-code"><span class="cp">#pragma once</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;atomic&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;condition_variable&gt;</span>
 <span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;map&gt;</span>

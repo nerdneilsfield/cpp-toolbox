@@ -49,7 +49,6 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="concurrent__queue_8hpp.html">&lt;concurrent_queue.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1container.html">container</a>::<wbr/></span>concurrent_queue_t <span class="m-thin">class</span>
         </h1>
@@ -77,7 +76,23 @@
             </li>
           </ul>
         </div>
-<p>This class provides a stable interface while hiding the underlying third-party library implementation details using the Pimpl idiom.</p>
+<p>This class provides a stable interface while hiding the underlying third-party library implementation details using the Pimpl idiom.</p><pre class="m-code"><span class="c1">// Create a concurrent queue for integers</span>
+<span class="n">concurrent_queue_t</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">queue</span><span class="p">;</span>
+
+<span class="c1">// Producer thread</span>
+<span class="n">queue</span><span class="p">.</span><span class="n">enqueue</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+
+<span class="c1">// Consumer thread</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="p">;</span>
+<span class="k">if</span><span class="p">(</span><span class="n">queue</span><span class="p">.</span><span class="n">try_dequeue</span><span class="p">(</span><span class="n">value</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Process value</span>
+<span class="p">}</span>
+
+<span class="c1">// Alternative consumer using optional</span>
+<span class="k">if</span><span class="p">(</span><span class="k">auto</span><span class="w"> </span><span class="n">opt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">queue</span><span class="p">.</span><span class="n">try_dequeue</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">opt</span><span class="p">;</span>
+<span class="w">  </span><span class="c1">// Process value</span>
+<span class="p">}</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">

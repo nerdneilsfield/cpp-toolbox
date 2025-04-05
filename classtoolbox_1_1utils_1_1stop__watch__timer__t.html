@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>toolbox::utils::StopWatchTimer class | cpp-toolbox</title>
+  <title>toolbox::utils::stop_watch_timer_t class | cpp-toolbox</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
   <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
   <link rel="icon" href="favicon-dark.png" type="image/png" />
@@ -49,8 +49,7 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1utils.html">utils</a>::<wbr/></span>StopWatchTimer <span class="m-thin">class</span>
-          <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="timer_8hpp.html">&lt;timer.hpp&gt;</a></div>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1utils.html">utils</a>::<wbr/></span>stop_watch_timer_t <span class="m-thin">class</span>
         </h1>
         <p>A high-resolution stopwatch timer for measuring elapsed time.</p>
         <div class="m-block m-default">
@@ -65,60 +64,76 @@
             </li>
           </ul>
         </div>
-<p>This class provides a simple interface for measuring elapsed time with nanosecond precision. It supports starting, stopping, and resetting the timer, as well as retrieving elapsed time in milliseconds or seconds.</p>
+<p>This class provides a simple interface for measuring elapsed time with nanosecond precision. It supports starting, stopping, and resetting the timer, as well as retrieving elapsed time in milliseconds or seconds.</p><pre class="m-code"><span class="c1">// Basic usage</span>
+<span class="n">stop_watch_timer_t</span><span class="w"> </span><span class="n">timer</span><span class="p">(</span><span class="s">&quot;MyTimer&quot;</span><span class="p">);</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+<span class="c1">// ... perform some operations ...</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">elapsed_ms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timer</span><span class="p">.</span><span class="n">elapsed_time_ms</span><span class="p">();</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">print_stats</span><span class="p">();</span>
+
+<span class="c1">// Multiple start/stop cycles</span>
+<span class="n">stop_watch_timer_t</span><span class="w"> </span><span class="n">timer</span><span class="p">;</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+<span class="c1">// ... first operation ...</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">start</span><span class="p">();</span>
+<span class="c1">// ... second operation ...</span>
+<span class="n">timer</span><span class="p">.</span><span class="n">stop</span><span class="p">();</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">total_seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">timer</span><span class="p">.</span><span class="n">elapsed_time</span><span class="p">();</span></pre>
         <section id="typeless-methods">
           <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper"><a href="#a93d48edb63e5de48edffd338be205b75" class="m-doc">StopWatchTimer</a>(</span><span class="m-doc-wrap">std::string name = &quot;default_timer&quot;)</span>
+              <span class="m-doc-wrap-bumper"><a href="#ab869b3ea0d3f52a0589b848fb67c2a10" class="m-doc">stop_watch_timer_t</a>(</span><span class="m-doc-wrap">std::string name = &quot;default_timer&quot;)</span>
             </dt>
-            <dd>Construct a new <a href="classtoolbox_1_1utils_1_1StopWatchTimer.html" class="m-doc">StopWatchTimer</a> object.</dd>
+            <dd>Construct a new <a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html" class="m-doc">stop_<wbr />watch_<wbr />timer_<wbr />t</a> object.</dd>
           </dl>
         </section>
         <section id="pub-methods">
           <h2><a href="#pub-methods">Public functions</a></h2>
           <dl class="m-doc">
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a099c3b5f44cbcb260f9fc3e6ca088541" class="m-doc">set_name</a>(</span><span class="m-doc-wrap">const std::string&amp; name)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#abcc82e718432abb8d70fd26af4999a61" class="m-doc">set_name</a>(</span><span class="m-doc-wrap">const std::string&amp; name)</span>
             </dt>
             <dd>Set the name of the timer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a5c2f75e7e316184f1f6cdb3de8833380" class="m-doc">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; const std::string &amp;</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a6d1e2b7f98c31a20a980316f79cd7fdf" class="m-doc">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; const std::string &amp;</span>
             </dt>
             <dd>Get the name of the timer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#ad10e4089d155967b00d4d221774ac0af" class="m-doc">start</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#adf71d3b113d638712ca9373f0d01c5fd" class="m-doc">start</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Start or resume the timer.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a447fd69adc66a0ab7988cab7b47c7c0c" class="m-doc">stop</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a9dfddbc28505fdd2d4cd413daec64728" class="m-doc">stop</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Stop (pause) the timer and accumulate the duration.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#a7b9b1aac3675f3711ffba65db341e07d" class="m-doc">reset</a>(</span><span class="m-doc-wrap">)</span>
+              <span class="m-doc-wrap-bumper">void <a href="#af18d3c15931cba7c7312c89c6a166f62" class="m-doc">reset</a>(</span><span class="m-doc-wrap">)</span>
             </dt>
             <dd>Reset the timer to zero.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a25337a73624914758b3324b7ced4e536" class="m-doc">elapsed_time_ms</a>(</span><span class="m-doc-wrap">) const -&gt; double</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#a0c0cae7d727ebd26ad2912e2c6c28cbe" class="m-doc">elapsed_time_ms</a>(</span><span class="m-doc-wrap">) const -&gt; double</span>
             </dt>
             <dd>Get the total elapsed time in milliseconds.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">auto <a href="#a88ed8f0a894bdf5e83b76dc15d151e4a" class="m-doc">elapsed_time</a>(</span><span class="m-doc-wrap">) const -&gt; double</span>
+              <span class="m-doc-wrap-bumper">auto <a href="#aba0a1f15bef0d2b71a2cc467b434ca6e" class="m-doc">elapsed_time</a>(</span><span class="m-doc-wrap">) const -&gt; double</span>
             </dt>
             <dd>Get the total elapsed time in seconds.</dd>
             <dt>
-              <span class="m-doc-wrap-bumper">void <a href="#afb2e2be7d381156a28548b4bbb79a241" class="m-doc">print_stats</a>(</span><span class="m-doc-wrap">) const</span>
+              <span class="m-doc-wrap-bumper">void <a href="#a07dc549398de34042a0e0429560140da" class="m-doc">print_stats</a>(</span><span class="m-doc-wrap">) const</span>
             </dt>
             <dd>Print the timer statistics to standard output.</dd>
           </dl>
         </section>
         <section>
           <h2>Function documentation</h2>
-          <section class="m-doc-details" id="a93d48edb63e5de48edffd338be205b75"><div>
+          <section class="m-doc-details" id="ab869b3ea0d3f52a0589b848fb67c2a10"><div>
             <h3>
-              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a93d48edb63e5de48edffd338be205b75" class="m-doc-self">StopWatchTimer</a>(</span><span class="m-doc-wrap">std::string name = &quot;default_timer&quot;)</span></span>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ab869b3ea0d3f52a0589b848fb67c2a10" class="m-doc-self">stop_watch_timer_t</a>(</span><span class="m-doc-wrap">std::string name = &quot;default_timer&quot;)</span></span>
             </h3>
-            <p>Construct a new <a href="classtoolbox_1_1utils_1_1StopWatchTimer.html" class="m-doc">StopWatchTimer</a> object.</p>
+            <p>Construct a new <a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html" class="m-doc">stop_<wbr />watch_<wbr />timer_<wbr />t</a> object.</p>
             <table class="m-table m-fullwidth m-flat">
               <thead>
                 <tr><th colspan="2">Parameters</th></tr>
@@ -131,9 +146,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a099c3b5f44cbcb260f9fc3e6ca088541"><div>
+          <section class="m-doc-details" id="abcc82e718432abb8d70fd26af4999a61"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a099c3b5f44cbcb260f9fc3e6ca088541" class="m-doc-self">set_name</a>(</span><span class="m-doc-wrap">const std::string&amp; name)</span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abcc82e718432abb8d70fd26af4999a61" class="m-doc-self">set_name</a>(</span><span class="m-doc-wrap">const std::string&amp; name)</span></span>
             </h3>
             <p>Set the name of the timer.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -148,9 +163,9 @@
               </tbody>
             </table>
           </div></section>
-          <section class="m-doc-details" id="a5c2f75e7e316184f1f6cdb3de8833380"><div>
+          <section class="m-doc-details" id="a6d1e2b7f98c31a20a980316f79cd7fdf"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5c2f75e7e316184f1f6cdb3de8833380" class="m-doc-self">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; const std::string &amp;</span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a6d1e2b7f98c31a20a980316f79cd7fdf" class="m-doc-self">get_name</a>(</span><span class="m-doc-wrap">) const -&gt; const std::string &amp;</span></span>
             </h3>
             <p>Get the name of the timer.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -162,30 +177,30 @@
               </tfoot>
             </table>
           </div></section>
-          <section class="m-doc-details" id="ad10e4089d155967b00d4d221774ac0af"><div>
+          <section class="m-doc-details" id="adf71d3b113d638712ca9373f0d01c5fd"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ad10e4089d155967b00d4d221774ac0af" class="m-doc-self">start</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#adf71d3b113d638712ca9373f0d01c5fd" class="m-doc-self">start</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Start or resume the timer.</p>
 <aside class="m-note m-info"><h4>Note</h4><p>If the timer is already running, this will restart the timing</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a447fd69adc66a0ab7988cab7b47c7c0c"><div>
+          <section class="m-doc-details" id="a9dfddbc28505fdd2d4cd413daec64728"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a447fd69adc66a0ab7988cab7b47c7c0c" class="m-doc-self">stop</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9dfddbc28505fdd2d4cd413daec64728" class="m-doc-self">stop</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Stop (pause) the timer and accumulate the duration.</p>
 <aside class="m-note m-info"><h4>Note</h4><p>If the timer is not running, this function does nothing</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a7b9b1aac3675f3711ffba65db341e07d"><div>
+          <section class="m-doc-details" id="af18d3c15931cba7c7312c89c6a166f62"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a7b9b1aac3675f3711ffba65db341e07d" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">)</span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#af18d3c15931cba7c7312c89c6a166f62" class="m-doc-self">reset</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Reset the timer to zero.</p>
 <aside class="m-note m-info"><h4>Note</h4><p>This also stops the timer if it was running</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a25337a73624914758b3324b7ced4e536"><div>
+          <section class="m-doc-details" id="a0c0cae7d727ebd26ad2912e2c6c28cbe"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a25337a73624914758b3324b7ced4e536" class="m-doc-self">elapsed_time_ms</a>(</span><span class="m-doc-wrap">) const -&gt; double</span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a0c0cae7d727ebd26ad2912e2c6c28cbe" class="m-doc-self">elapsed_time_ms</a>(</span><span class="m-doc-wrap">) const -&gt; double</span></span>
             </h3>
             <p>Get the total elapsed time in milliseconds.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -198,9 +213,9 @@
             </table>
 <aside class="m-note m-info"><h4>Note</h4><p>This includes all accumulated time between start/stop cycles</p></aside>
           </div></section>
-          <section class="m-doc-details" id="a88ed8f0a894bdf5e83b76dc15d151e4a"><div>
+          <section class="m-doc-details" id="aba0a1f15bef0d2b71a2cc467b434ca6e"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a88ed8f0a894bdf5e83b76dc15d151e4a" class="m-doc-self">elapsed_time</a>(</span><span class="m-doc-wrap">) const -&gt; double</span></span>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aba0a1f15bef0d2b71a2cc467b434ca6e" class="m-doc-self">elapsed_time</a>(</span><span class="m-doc-wrap">) const -&gt; double</span></span>
             </h3>
             <p>Get the total elapsed time in seconds.</p>
             <table class="m-table m-fullwidth m-flat">
@@ -213,9 +228,9 @@
             </table>
 <aside class="m-note m-info"><h4>Note</h4><p>This includes all accumulated time between start/stop cycles</p></aside>
           </div></section>
-          <section class="m-doc-details" id="afb2e2be7d381156a28548b4bbb79a241"><div>
+          <section class="m-doc-details" id="a07dc549398de34042a0e0429560140da"><div>
             <h3>
-              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />StopWatchTimer::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afb2e2be7d381156a28548b4bbb79a241" class="m-doc-self">print_stats</a>(</span><span class="m-doc-wrap">) const</span></span>
+              <span class="m-doc-wrap-bumper">void toolbox::<wbr />utils::<wbr />stop_watch_timer_t::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a07dc549398de34042a0e0429560140da" class="m-doc-self">print_stats</a>(</span><span class="m-doc-wrap">) const</span></span>
             </h3>
             <p>Print the timer statistics to standard output.</p>
 <p>Prints the timer name and elapsed time in a human-readable format</p>

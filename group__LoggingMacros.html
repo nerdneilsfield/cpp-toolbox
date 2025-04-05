@@ -113,24 +113,24 @@
               <span class="m-doc-wrap-bumper">#define <a href="#ga00b710fb8e78bfaa73323b9deb1c43cc" class="m-doc">LOG_CRITICAL_S</a></span>
             </dt>
             <dd>Macro for CRITICAL level stream logging.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga1ba761e7159ad23893e8bb9807d31ead" class="m-doc">LOG_DEBUG_D</a>(</span><span class="m-doc-wrap">x)</span>
+            <dt id="ga1ba761e7159ad23893e8bb9807d31ead">
+              <span class="m-doc-wrap-bumper">#define <a href="#ga1ba761e7159ad23893e8bb9807d31ead" class="m-doc-self">LOG_DEBUG_D</a>(</span><span class="m-doc-wrap">x)</span>
             </dt>
             <dd>Macro for DEBUG level logging with source location.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#gab6b020a0e06bac23bb4d7a0cc02e5897" class="m-doc">LOG_INFO_D</a>(</span><span class="m-doc-wrap">x)</span>
+            <dt id="gab6b020a0e06bac23bb4d7a0cc02e5897">
+              <span class="m-doc-wrap-bumper">#define <a href="#gab6b020a0e06bac23bb4d7a0cc02e5897" class="m-doc-self">LOG_INFO_D</a>(</span><span class="m-doc-wrap">x)</span>
             </dt>
             <dd>Macro for INFO level logging with source location.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#gadf8b29748ab1e51dc7944748077ec0f7" class="m-doc">LOG_WARN_D</a>(</span><span class="m-doc-wrap">x)</span>
+            <dt id="gadf8b29748ab1e51dc7944748077ec0f7">
+              <span class="m-doc-wrap-bumper">#define <a href="#gadf8b29748ab1e51dc7944748077ec0f7" class="m-doc-self">LOG_WARN_D</a>(</span><span class="m-doc-wrap">x)</span>
             </dt>
             <dd>Macro for WARN level logging with source location.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga7768b4f32a0d8d3cdaa9a1db5423199a" class="m-doc">LOG_ERROR_D</a>(</span><span class="m-doc-wrap">x)</span>
+            <dt id="ga7768b4f32a0d8d3cdaa9a1db5423199a">
+              <span class="m-doc-wrap-bumper">#define <a href="#ga7768b4f32a0d8d3cdaa9a1db5423199a" class="m-doc-self">LOG_ERROR_D</a>(</span><span class="m-doc-wrap">x)</span>
             </dt>
             <dd>Macro for ERROR level logging with source location.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga227b917e88f64d9f90c06c54e04c648e" class="m-doc">LOG_CRITICAL_D</a>(</span><span class="m-doc-wrap">x)</span>
+            <dt id="ga227b917e88f64d9f90c06c54e04c648e">
+              <span class="m-doc-wrap-bumper">#define <a href="#ga227b917e88f64d9f90c06c54e04c648e" class="m-doc-self">LOG_CRITICAL_D</a>(</span><span class="m-doc-wrap">x)</span>
             </dt>
             <dd>Macro for CRITICAL level logging with source location.</dd>
           </dl>
@@ -140,176 +140,86 @@
           <section class="m-doc-details" id="ga9909fc8f33cb3e2c2d88d50e3088a0c2"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga9909fc8f33cb3e2c2d88d50e3088a0c2" class="m-doc-self">LOG_TRACE_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for TRACE level format logging.</p>
+<pre class="m-code"><span class="n">LOG_TRACE_F</span><span class="p">(</span><span class="s">&quot;Processing item {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">item_id</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga2eff2cba0a7856857be1df094bebf834"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga2eff2cba0a7856857be1df094bebf834" class="m-doc-self">LOG_DEBUG_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for DEBUG level format logging.</p>
+<pre class="m-code"><span class="n">LOG_DEBUG_F</span><span class="p">(</span><span class="s">&quot;Received {} bytes of data&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">data_size</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga0d7123d7bfdf773f24ed68b102c7f7c7"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga0d7123d7bfdf773f24ed68b102c7f7c7" class="m-doc-self">LOG_INFO_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for INFO level format logging.</p>
+<pre class="m-code"><span class="n">LOG_INFO_F</span><span class="p">(</span><span class="s">&quot;Application started successfully&quot;</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga7ce06e64838465cc3c438e9d99f201b0"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga7ce06e64838465cc3c438e9d99f201b0" class="m-doc-self">LOG_WARN_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for WARN level format logging.</p>
+<pre class="m-code"><span class="n">LOG_WARN_F</span><span class="p">(</span><span class="s">&quot;Disk space is low: {}MB remaining&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">free_space</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga4e4e99c3796c36ea1d541844fb955cd8"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga4e4e99c3796c36ea1d541844fb955cd8" class="m-doc-self">LOG_ERROR_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for ERROR level format logging.</p>
+<pre class="m-code"><span class="n">LOG_ERROR_F</span><span class="p">(</span><span class="s">&quot;Failed to process request: {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error_message</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="gaaa6f7679d883afb22171314099518ee1"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#gaaa6f7679d883afb22171314099518ee1" class="m-doc-self">LOG_CRITICAL_F</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for CRITICAL level format logging.</p>
+<pre class="m-code"><span class="n">LOG_CRITICAL_F</span><span class="p">(</span><span class="s">&quot;System failure in module {}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">module_name</span><span class="p">);</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga583ca116ff9e9817f4fde393c79d1b6a"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga583ca116ff9e9817f4fde393c79d1b6a" class="m-doc-self">LOG_TRACE_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for TRACE level stream logging.</p>
+<pre class="m-code"><span class="n">LOG_TRACE_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Entering function &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">function_name</span><span class="p">;</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga1b58a6e7c97c1f4ca2fddf21b5e47251" class="m-doc-self">LOG_DEBUG_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for DEBUG level stream logging.</p>
+<pre class="m-code"><span class="n">LOG_DEBUG_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Processing &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">items</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; items&quot;</span><span class="p">;</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga28d4d51a64e29b87c59c10f86615f4bf"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga28d4d51a64e29b87c59c10f86615f4bf" class="m-doc-self">LOG_INFO_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for INFO level stream logging.</p>
+<pre class="m-code"><span class="n">LOG_INFO_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Application version: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">version</span><span class="p">;</span></pre>
           </div></section>
           <section class="m-doc-details" id="gad9b694972a4957493602ba1e7d3c5925"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#gad9b694972a4957493602ba1e7d3c5925" class="m-doc-self">LOG_WARN_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for WARN level stream logging.</p>
+<pre class="m-code"><span class="n">LOG_WARN_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Low memory: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">free_memory</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;MB available&quot;</span><span class="p">;</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga869e13d38a14388c77018138eb480ad5"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga869e13d38a14388c77018138eb480ad5" class="m-doc-self">LOG_ERROR_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for ERROR level stream logging.</p>
+<pre class="m-code"><span class="n">LOG_ERROR_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Failed to open file: &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">filename</span><span class="p">;</span></pre>
           </div></section>
           <section class="m-doc-details" id="ga00b710fb8e78bfaa73323b9deb1c43cc"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ga00b710fb8e78bfaa73323b9deb1c43cc" class="m-doc-self">LOG_CRITICAL_S</a></span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
             </h3>
             <p>Macro for CRITICAL level stream logging.</p>
-          </div></section>
-          <section class="m-doc-details" id="ga1ba761e7159ad23893e8bb9807d31ead"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga1ba761e7159ad23893e8bb9807d31ead" class="m-doc-self">LOG_DEBUG_D</a>(</span><span class="m-doc-wrap">x)</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
-            </h3>
-            <p>Macro for DEBUG level logging with source location.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">x</td>
-                  <td>The message to log</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="gab6b020a0e06bac23bb4d7a0cc02e5897"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#gab6b020a0e06bac23bb4d7a0cc02e5897" class="m-doc-self">LOG_INFO_D</a>(</span><span class="m-doc-wrap">x)</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
-            </h3>
-            <p>Macro for INFO level logging with source location.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">x</td>
-                  <td>The message to log</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="gadf8b29748ab1e51dc7944748077ec0f7"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#gadf8b29748ab1e51dc7944748077ec0f7" class="m-doc-self">LOG_WARN_D</a>(</span><span class="m-doc-wrap">x)</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
-            </h3>
-            <p>Macro for WARN level logging with source location.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">x</td>
-                  <td>The message to log</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga7768b4f32a0d8d3cdaa9a1db5423199a"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga7768b4f32a0d8d3cdaa9a1db5423199a" class="m-doc-self">LOG_ERROR_D</a>(</span><span class="m-doc-wrap">x)</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
-            </h3>
-            <p>Macro for ERROR level logging with source location.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">x</td>
-                  <td>The message to log</td>
-                </tr>
-              </tbody>
-            </table>
-          </div></section>
-          <section class="m-doc-details" id="ga227b917e88f64d9f90c06c54e04c648e"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ga227b917e88f64d9f90c06c54e04c648e" class="m-doc-self">LOG_CRITICAL_D</a>(</span><span class="m-doc-wrap">x)</span>
-              <div class="m-doc-include m-code m-inverted m-text-right"><span class="cp">#include</span> <a class="cpf" href="thread__logger_8hpp.html">&lt;src/include/cpp-toolbox/logger/thread_logger.hpp&gt;</a></div>
-            </h3>
-            <p>Macro for CRITICAL level logging with source location.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">x</td>
-                  <td>The message to log</td>
-                </tr>
-              </tbody>
-            </table>
+<pre class="m-code"><span class="n">LOG_CRITICAL_S</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;System shutdown due to critical error in &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">component</span><span class="p">;</span></pre>
           </div></section>
         </section>
       </div>

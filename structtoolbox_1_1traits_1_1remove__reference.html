@@ -49,31 +49,22 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="type__traits_8hpp.html">&lt;type_traits.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename T&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1traits.html">traits</a>::<wbr/></span>remove_reference <span class="m-thin">struct</span>
         </h1>
-        <p>移除引用</p>
-        <div class="m-block m-default">
-          <h3>Contents</h3>
-          <ul>
-            <li>
-              Reference
-              <ul>
-                <li><a href="#pub-types">Public types</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <section id="pub-types">
-          <h2><a href="#pub-types">Public types</a></h2>
-          <dl class="m-doc">
-            <dt id="a2401fc7fd855e8ee64efdeb8961d3a35">
-              using <a href="#a2401fc7fd855e8ee64efdeb8961d3a35" class="m-doc-self">type</a> = std::remove_reference_t&lt;T&gt;
-            </dt>
-            <dd><span></span></dd>
-          </dl>
-        </section>
+        <p>Remove reference from type.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>Type to remove reference from</td>
+            </tr>
+          </tbody>
+        </table>
+<p>Example: <code class="m-code"><span class="k">using</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">remove_reference</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&amp;&gt;::</span><span class="n">type</span><span class="p">;</span><span class="w"> </span><span class="c1">// type is int</span></code></p>
       </div>
     </div>
   </div>

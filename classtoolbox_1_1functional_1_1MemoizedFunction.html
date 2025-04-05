@@ -49,11 +49,30 @@
     <div class="m-row">
       <div class="m-col-l-10 m-push-l-1">
         <h1>
-          <div class="m-doc-include m-code m-inverted m-right-m m-text-right"><span class="cp">#include</span> <a class="cpf" href="functional_8hpp.html">&lt;src/include/cpp-toolbox/functional/functional.hpp&gt;</a></div>
           <div class="m-doc-template">template&lt;typename Signature&gt;</div>
           <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1functional.html">functional</a>::<wbr/></span>MemoizedFunction <span class="m-thin">class</span>
         </h1>
-        <p><span></span></p>
+        <p>Memoized function class that caches function results.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">Signature</td>
+              <td>Function signature type (e.g., int(int, std::string))</td>
+            </tr>
+          </tbody>
+        </table>
+<pre class="m-code"><span class="c1">// Example usage of MemoizedFunction class</span>
+<span class="c1">// Create memoized factorial function</span>
+<span class="n">MemoizedFunction</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span><span class="w"> </span><span class="n">fact</span><span class="p">([](</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nf">fact</span><span class="p">(</span><span class="n">n</span><span class="mi">-1</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Computes and caches</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w"> </span><span class="c1">// Returns cached result</span></pre><aside class="m-note m-info"><h4>Note</h4><p>Thread-safe implementation</p><p>Function arguments must be copyable and form valid map key</p><p>Return type must be copyable</p></aside>
       </div>
     </div>
   </div>
