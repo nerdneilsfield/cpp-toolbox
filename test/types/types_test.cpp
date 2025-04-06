@@ -1,7 +1,10 @@
+#include <array>
 #include <limits>
+#include <numeric>  // For std::iota in large vector test
 #include <sstream>
 #include <stdexcept>
 #include <utility>
+#include <vector>
 
 #include <catch2/catch_approx.hpp>
 #include <catch2/catch_test_macros.hpp>
@@ -135,14 +138,26 @@ TEST_CASE("MinMax point specialization", "[minmax][point]")
   SECTION("Default Construction")
   {
     minmax_t<point_t<double>> mm_point;
-    const auto min_p = point_t<double>::min_value();
-    const auto max_p = point_t<double>::max_value();
-    CHECK(mm_point.min.x == Catch::Approx(min_p.x));
-    CHECK(mm_point.min.y == Catch::Approx(min_p.y));
-    CHECK(mm_point.min.z == Catch::Approx(min_p.z));
-    CHECK(mm_point.max.x == Catch::Approx(max_p.x));
-    CHECK(mm_point.max.y == Catch::Approx(max_p.y));
-    CHECK(mm_point.max.z == Catch::Approx(max_p.z));
+    // Check against the expected initial values based on numeric_limits
+    CHECK(!mm_point.initialized_);  // Should start uninitialized
+    CHECK(mm_point.min.x == Catch::Approx(std::numeric_limits<double>::max()));
+    CHECK(mm_point.min.y == Catch::Approx(std::numeric_limits<double>::max()));
+    CHECK(mm_point.min.z == Catch::Approx(std::numeric_limits<double>::max()));
+    CHECK(mm_point.max.x
+          == Catch::Approx(std::numeric_limits<double>::lowest()));
+    CHECK(mm_point.max.y
+          == Catch::Approx(std::numeric_limits<double>::lowest()));
+    CHECK(mm_point.max.z
+          == Catch::Approx(std::numeric_limits<double>::lowest()));
+
+    minmax_t<point_t<int>> mm_point_int;
+    CHECK(!mm_point_int.initialized_);
+    CHECK(mm_point_int.min.x == std::numeric_limits<int>::max());
+    CHECK(mm_point_int.min.y == std::numeric_limits<int>::max());
+    CHECK(mm_point_int.min.z == std::numeric_limits<int>::max());
+    CHECK(mm_point_int.max.x == std::numeric_limits<int>::min());
+    CHECK(mm_point_int.max.y == std::numeric_limits<int>::min());
+    CHECK(mm_point_int.max.z == std::numeric_limits<int>::min());
   }
   SECTION("Operator Plus Equals")
   {
@@ -450,9 +465,10 @@ TEST_CASE("Point cloud copy and move", "[point_cloud]")
   CHECK(pc4_to_move_assign_from.intensity == 0);
 }
 
-// --- Tests for calculate_minmax ---
+// --- Tests for SEQUENTIAL calculate_minmax ---
 
-TEST_CASE("Calculate MinMax with single values", "[calculate_minmax]")
+TEST_CASE("Sequential Calculate MinMax with single values",
+          "[calculate_minmax][sequential]")
 {
   SECTION("Integer")
   {
@@ -483,12 +499,14 @@ TEST_CASE("Calculate MinMax with single values", "[calculate_minmax]")
   }
 }
 
-TEST_CASE("Calculate MinMax with containers", "[calculate_minmax][container]")
+TEST_CASE("Sequential Calculate MinMax with containers",
+          "[calculate_minmax][sequential][container]")
 {
   SECTION("Vector of Integers")
   {
     std::vector<int> vec = {3, 1, 4, 1, 5, 9, 2, 6};
-    auto mm = toolbox::types::calculate_minmax(vec);
+    auto mm =
+        toolbox::types::calculate_minmax(vec);  // Calls sequential version
     REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<int>>);
     CHECK(mm.min == 1);
     CHECK(mm.max == 9);
@@ -498,7 +516,6 @@ TEST_CASE("Calculate MinMax with containers", "[calculate_minmax][container]")
     std::vector<double> empty_vec;
     auto mm = toolbox::types::calculate_minmax(empty_vec);
     REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<double>>);
-    // Check against default constructed values for double
     CHECK(mm.min == Catch::Approx(std::numeric_limits<double>::max()));
     CHECK(mm.max == Catch::Approx(std::numeric_limits<double>::lowest()));
   }
@@ -514,7 +531,8 @@ TEST_CASE("Calculate MinMax with containers", "[calculate_minmax][container]")
   {
     std::vector<point_t<double>> points = {
         {1.0, 5.0, -2.0}, {-3.0, 6.0, 4.0}, {0.0, 0.0, 0.0}};
-    auto mm = toolbox::types::calculate_minmax(points);
+    auto mm =
+        toolbox::types::calculate_minmax(points);  // Calls sequential version
     REQUIRE(std::is_same_v<decltype(mm),
                            toolbox::types::minmax_t<point_t<double>>>);
     CHECK(mm.min.x == Catch::Approx(-3.0));
@@ -530,30 +548,24 @@ TEST_CASE("Calculate MinMax with containers", "[calculate_minmax][container]")
     auto mm = toolbox::types::calculate_minmax(empty_points);
     REQUIRE(
         std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<float>>>);
-    // Check against default constructed values for point specialization
-    const auto min_p = point_t<float>::min_value();
-    const auto max_p = point_t<float>::max_value();
-    CHECK(mm.min.x == Catch::Approx(min_p.x));
-    CHECK(mm.min.y == Catch::Approx(min_p.y));
-    CHECK(mm.min.z == Catch::Approx(min_p.z));
-    CHECK(mm.max.x == Catch::Approx(max_p.x));
-    CHECK(mm.max.y == Catch::Approx(max_p.y));
-    CHECK(mm.max.z == Catch::Approx(max_p.z));
-    // Also check the initialized flag if it were public
-    // CHECK_FALSE(mm.initialized_); // Assuming default construction sets it
-    // false
+    // For empty containers, result should be uninitialized
+    CHECK(!mm.initialized_);
+    // Optionally check default values if needed, but initialized_ is key
+    CHECK(mm.min.x == Catch::Approx(std::numeric_limits<float>::max()));
+    CHECK(mm.max.x == Catch::Approx(std::numeric_limits<float>::lowest()));
   }
 }
 
-TEST_CASE("Calculate MinMax with PointCloud", "[calculate_minmax][point_cloud]")
+TEST_CASE("Sequential Calculate MinMax with PointCloud",
+          "[calculate_minmax][sequential][point_cloud]")
 {
   point_cloud_t<double> cloud;
   cloud += point_t<double>(1.0, 5.0, -2.0);
   cloud += point_t<double>(-3.0, 6.0, 4.0);
   cloud += point_t<double>(0.0, 0.0, 0.0);
 
-  // Use the point_cloud_t overload
-  auto mm = toolbox::types::calculate_minmax(cloud);
+  auto mm =
+      toolbox::types::calculate_minmax(cloud);  // Calls sequential version
   REQUIRE(
       std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<double>>>);
   CHECK(mm.min.x == Catch::Approx(-3.0));
@@ -565,15 +577,189 @@ TEST_CASE("Calculate MinMax with PointCloud", "[calculate_minmax][point_cloud]")
 
   point_cloud_t<float> empty_cloud;
   auto mm_empty = toolbox::types::calculate_minmax(empty_cloud);
+  REQUIRE(std::is_same_v<decltype(mm_empty),
+                         toolbox::types::minmax_t<point_t<float>>>);
+  // For empty cloud, result should be uninitialized
+  CHECK(!mm_empty.initialized_);
+  CHECK(mm_empty.min.x == Catch::Approx(std::numeric_limits<float>::max()));
+  CHECK(mm_empty.max.x == Catch::Approx(std::numeric_limits<float>::lowest()));
+}
+
+// --- Tests for PARALLEL calculate_minmax_parallel ---
+
+TEST_CASE("Parallel Calculate MinMax with single values",
+          "[calculate_minmax][parallel]")
+{
+  // Parallel version just calls sequential for single items
+  SECTION("Integer")
+  {
+    auto mm = toolbox::types::calculate_minmax_parallel(5);
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<int>>);
+    CHECK(mm.min == 5);
+    CHECK(mm.max == 5);
+  }
+  SECTION("Double")
+  {
+    auto mm = toolbox::types::calculate_minmax_parallel(-3.14);
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<double>>);
+    CHECK(mm.min == Catch::Approx(-3.14));
+    CHECK(mm.max == Catch::Approx(-3.14));
+  }
+  SECTION("Point")
+  {
+    const point_t<float> p(1.0F, -2.0F, 3.0F);
+    auto mm = toolbox::types::calculate_minmax_parallel(p);
+    REQUIRE(
+        std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<float>>>);
+    CHECK(mm.min.x == Catch::Approx(1.0F));
+    CHECK(mm.min.y == Catch::Approx(-2.0F));
+    CHECK(mm.min.z == Catch::Approx(3.0F));
+    CHECK(mm.max.x == Catch::Approx(1.0F));
+    CHECK(mm.max.y == Catch::Approx(-2.0F));
+    CHECK(mm.max.z == Catch::Approx(3.0F));
+  }
+}
+
+TEST_CASE("Parallel Calculate MinMax with containers",
+          "[calculate_minmax][parallel][container]")
+{
+  SECTION("Vector of Integers (Small - Sequential Fallback)")
+  {
+    std::vector<int> vec = {3, 1, 4, 1, 5, 9, 2, 6};  // Below threshold
+    auto mm = toolbox::types::calculate_minmax_parallel(
+        vec);  // Calls parallel (falls back)
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<int>>);
+    CHECK(mm.min == 1);
+    CHECK(mm.max == 9);
+  }
+  SECTION("Vector of Integers (Large - Parallel Execution)")
+  {
+    std::vector<int> large_vec(2048);  // Larger than threshold in minmax.hpp
+    std::iota(large_vec.begin(), large_vec.end(), -1000);
+    large_vec[500] = -2000;  // Set min
+    large_vec[1500] = 3000;  // Set max
+    auto mm = toolbox::types::calculate_minmax_parallel(large_vec);
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<int>>);
+    CHECK(mm.min == -2000);
+    CHECK(mm.max == 3000);
+  }
+  SECTION("Empty Vector")
+  {
+    std::vector<double> empty_vec;
+    auto mm = toolbox::types::calculate_minmax_parallel(
+        empty_vec);  // Calls parallel (handles empty)
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<double>>);
+    CHECK(mm.min == Catch::Approx(std::numeric_limits<double>::max()));
+    CHECK(mm.max == Catch::Approx(std::numeric_limits<double>::lowest()));
+  }
+  SECTION("Array of Floats (Small - Sequential Fallback)")
+  {
+    std::array<float, 5> arr = {
+        1.1F, -2.2F, 0.0F, 5.5F, -5.5F};  // Below threshold
+    auto mm = toolbox::types::calculate_minmax_parallel(
+        arr);  // Calls parallel (falls back)
+    REQUIRE(std::is_same_v<decltype(mm), toolbox::types::minmax_t<float>>);
+    CHECK(mm.min == Catch::Approx(-5.5F));
+    CHECK(mm.max == Catch::Approx(5.5F));
+  }
+  SECTION("Vector of Points (Small - Sequential Fallback)")
+  {
+    std::vector<point_t<double>> points = {
+        {1.0, 5.0, -2.0}, {-3.0, 6.0, 4.0}, {0.0, 0.0, 0.0}};
+    auto mm = toolbox::types::calculate_minmax_parallel(
+        points);  // Calls parallel (falls back)
+    REQUIRE(std::is_same_v<decltype(mm),
+                           toolbox::types::minmax_t<point_t<double>>>);
+    CHECK(mm.min.x == Catch::Approx(-3.0));
+    CHECK(mm.min.y == Catch::Approx(0.0));
+    CHECK(mm.min.z == Catch::Approx(-2.0));
+    CHECK(mm.max.x == Catch::Approx(1.0));
+    CHECK(mm.max.y == Catch::Approx(6.0));
+    CHECK(mm.max.z == Catch::Approx(4.0));
+  }
+  SECTION("Vector of Points (Large - Parallel Execution)")
+  {
+    std::vector<point_t<double>> large_points(2048);
+    for (size_t i = 0; i < large_points.size(); ++i) {
+      // Simple pattern to ensure variation
+      large_points[i] = {
+          (double)(i % 100), (double)(i % 50 - 25), (double)(100 - i % 200)};
+    }
+    // Manually insert known min/max points somewhere
+    large_points[300] = {-50.0, -100.0, -200.0};  // Potential min point
+    large_points[1300] = {150.0, 100.0, 200.0};  // Potential max point
+
+    auto mm = toolbox::types::calculate_minmax_parallel(large_points);
+    REQUIRE(std::is_same_v<decltype(mm),
+                           toolbox::types::minmax_t<point_t<double>>>);
+
+    // Check against expected min/max based on inserted points and pattern
+    CHECK(mm.min.x == Catch::Approx(-50.0));
+    CHECK(mm.min.y == Catch::Approx(-100.0));
+    CHECK(mm.min.z == Catch::Approx(-200.0));
+    CHECK(mm.max.x == Catch::Approx(150.0));
+    CHECK(mm.max.y == Catch::Approx(100.0));
+    CHECK(mm.max.z == Catch::Approx(200.0));
+  }
+  SECTION("Empty Vector of Points")
+  {
+    std::vector<point_t<float>> empty_points;
+    auto mm = toolbox::types::calculate_minmax_parallel(
+        empty_points);  // Calls parallel (handles empty -> sequential)
+    REQUIRE(
+        std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<float>>>);
+    // For empty containers, result should be uninitialized
+    CHECK(!mm.initialized_);
+    // Optionally check default values
+    CHECK(mm.min.x == Catch::Approx(std::numeric_limits<float>::max()));
+    CHECK(mm.max.x == Catch::Approx(std::numeric_limits<float>::lowest()));
+  }
+}
+
+TEST_CASE("Parallel Calculate MinMax with PointCloud",
+          "[calculate_minmax][parallel][point_cloud]")
+{
+  point_cloud_t<double> cloud;
+  cloud += point_t<double>(1.0, 5.0, -2.0);
+  cloud += point_t<double>(-3.0, 6.0, 4.0);
+  cloud += point_t<double>(0.0, 0.0, 0.0);
+
+  auto mm = toolbox::types::calculate_minmax_parallel(
+      cloud);  // Calls parallel version (falls back)
   REQUIRE(
       std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<double>>>);
-  // Check against default constructed values
-  const auto min_p = point_t<float>::min_value();
-  const auto max_p = point_t<float>::max_value();
-  CHECK(mm_empty.min.x == Catch::Approx(min_p.x));
-  CHECK(mm_empty.min.y == Catch::Approx(min_p.y));
-  CHECK(mm_empty.min.z == Catch::Approx(min_p.z));
-  CHECK(mm_empty.max.x == Catch::Approx(max_p.x));
-  CHECK(mm_empty.max.y == Catch::Approx(max_p.y));
-  CHECK(mm_empty.max.z == Catch::Approx(max_p.z));
+  CHECK(mm.min.x == Catch::Approx(-3.0));
+  CHECK(mm.min.y == Catch::Approx(0.0));
+  CHECK(mm.min.z == Catch::Approx(-2.0));
+  CHECK(mm.max.x == Catch::Approx(1.0));
+  CHECK(mm.max.y == Catch::Approx(6.0));
+  CHECK(mm.max.z == Catch::Approx(4.0));
+
+  point_cloud_t<double> large_cloud;
+  large_cloud.points.resize(2048);
+  for (size_t i = 0; i < large_cloud.points.size(); ++i) {
+    large_cloud.points[i] = {
+        (double)(i % 100), (double)(i % 50 - 25), (double)(100 - i % 200)};
+  }
+  large_cloud.points[300] = {-50.0, -100.0, -200.0};  // Potential min point
+  large_cloud.points[1300] = {150.0, 100.0, 200.0};  // Potential max point
+
+  auto mm_large = toolbox::types::calculate_minmax_parallel(large_cloud);
+  REQUIRE(std::is_same_v<decltype(mm_large),
+                         toolbox::types::minmax_t<point_t<double>>>);
+  CHECK(mm_large.min.x == Catch::Approx(-50.0));
+  CHECK(mm_large.min.y == Catch::Approx(-100.0));
+  CHECK(mm_large.min.z == Catch::Approx(-200.0));
+  CHECK(mm_large.max.x == Catch::Approx(150.0));
+  CHECK(mm_large.max.y == Catch::Approx(100.0));
+  CHECK(mm_large.max.z == Catch::Approx(200.0));
+
+  point_cloud_t<float> empty_cloud;
+  auto mm_empty = toolbox::types::calculate_minmax_parallel(empty_cloud);
+  REQUIRE(std::is_same_v<decltype(mm_empty),
+                         toolbox::types::minmax_t<point_t<float>>>);
+  // For empty cloud, result should be uninitialized
+  CHECK(!mm_empty.initialized_);
+  CHECK(mm_empty.min.x == Catch::Approx(std::numeric_limits<float>::max()));
+  CHECK(mm_empty.max.x == Catch::Approx(std::numeric_limits<float>::lowest()));
 }

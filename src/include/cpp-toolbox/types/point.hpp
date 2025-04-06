@@ -246,6 +246,30 @@ struct CPP_TOOLBOX_EXPORT point_t
     return diff.p_norm(p_value);
   }
 
+  // Define comparison operators
+  bool operator==(const point_t& other) const
+  {
+    constexpr T epsilon = std::is_floating_point_v<T>
+        ? std::numeric_limits<T>::epsilon() * 100
+        : T {0};
+    return (std::abs(x - other.x) <= epsilon)
+        && (std::abs(y - other.y) <= epsilon)
+        && (std::abs(z - other.z) <= epsilon);
+  }
+
+  bool operator!=(const point_t& other) const { return !(*this == other); }
+
+  // Add a basic operator< for testing purposes
+  // Note: This provides an arbitrary but consistent ordering.
+  bool operator<(const point_t& other) const
+  {
+    if (x != other.x)
+      return x < other.x;
+    if (y != other.y)
+      return y < other.y;
+    return z < other.z;
+  }
+
   /**
    * @brief Get point with minimum possible values
    * @return Point with minimum coordinates
