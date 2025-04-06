@@ -1,0 +1,5 @@
+add_executable(types_test types_test.cpp)
+target_link_libraries(types_test PRIVATE cpp-toolbox_test_lib Catch2WithMain)
+target_compile_features(types_test PRIVATE cxx_std_17)
+target_compile_definitions(types_test PRIVATE PROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
+add_test(NAME types_test COMMAND types_test)

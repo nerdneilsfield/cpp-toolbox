@@ -11,6 +11,7 @@
 #include <utility>  // For std::forward, std::move
 #include <vector>  // For storing worker threads
 
+#include "cpp-toolbox/base/detail/task_base.hpp"
 // Include concurrent_queue
 #include "cpp-toolbox/container/concurrent_queue.hpp"
 // Export macro definition
@@ -20,32 +21,6 @@
 
 namespace toolbox::base
 {
-
-namespace detail
-{
-// Abstract base class for type erasure
-struct task_base
-{
-  virtual ~task_base() = default;
-  virtual void execute() = 0;  // Pure virtual function to execute the task
-};
-
-// Template derived class to hold the actual callable object
-template<typename F>
-struct task_derived : task_base
-{
-  F func;  // The callable object (lambda, function, etc.)
-
-  // Constructor moves the callable object into the 'func' member
-  explicit task_derived(F&& f)
-      : func(std::move(f))
-  {
-  }
-
-  // Override execute to call the stored callable
-  void execute() override { func(); }
-};
-}  // namespace detail
 
 /**
  * @brief A high-performance C++17 thread pool implementation using
@@ -198,5 +173,4 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
   // 5. Return the future
   return future;
 }
-
 }  // namespace toolbox::base

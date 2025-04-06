@@ -126,14 +126,6 @@ constexpr const char* get_cpp_version()
 /**
  * @brief Disable copy operations for a class
  * @param ClassType Class name
- *
- * @code{.cpp}
- * class MyClass {
- *   CPP_TOOLBOX_DISABLE_COPY(MyClass)
- * public:
- *   MyClass() = default;
- * };
- * @endcode
  */
 #define CPP_TOOLBOX_DISABLE_COPY(ClassType) \
   ClassType(const ClassType&) = delete; \
@@ -142,14 +134,6 @@ constexpr const char* get_cpp_version()
 /**
  * @brief Disable move operations for a class
  * @param ClassType Class name
- *
- * @code{.cpp}
- * class MyClass {
- *   CPP_TOOLBOX_DISABLE_MOVE(MyClass)
- * public:
- *   MyClass() = default;
- * };
- * @endcode
  */
 #define CPP_TOOLBOX_DISABLE_MOVE(ClassType) \
   ClassType(ClassType&&) = delete; \
@@ -180,17 +164,6 @@ constexpr const char* get_cpp_version()
 /**
  * @brief Singleton pattern macro
  * @param ClassType Class name
- *
- * @code{.cpp}
- * class MySingleton {
- *   CPP_TOOLBOX_SINGLETON(MySingleton)
- * public:
- *   void doSomething() {}
- * };
- *
- * // Usage:
- * MySingleton::instance().doSomething();
- * @endcode
  */
 #define CPP_TOOLBOX_SINGLETON(ClassType) \
 public: \
@@ -266,14 +239,16 @@ private: \
 #endif
 
 /**
- * @brief Alignment macro
+ * @brief Data alignment macro
+ * @param Alignment Alignment value
  */
 #define CPP_TOOLBOX_ALIGNAS(Alignment) alignas(Alignment)
 
 /**
- * @brief Unused variable marker
+ * @brief Mark variable as unused
+ * @param Variable Variable name
  */
-#define CPP_TOOLBOX_UNUSED(Variable) ((void)Variable)
+#define CPP_TOOLBOX_UNUSED(Variable) ((void)(Variable))
 
 /**
  * @brief No discard attribute

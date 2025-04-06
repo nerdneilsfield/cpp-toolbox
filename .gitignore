@@ -1,13 +1,14 @@
 **/.DS_Store
 .idea/
 .vs/
-.vscode/
+.vscode/*
+!.vscode/settings.json
 build/
 cmake-build-*/
 prefix/
 .clangd
 CMakeLists.txt.user
-CMakeUserPresets.json
+# CMakeUserPresets.json
 compile_commands.json
 env.bat
 env.ps1
@@ -16,3 +17,4 @@ log/
 
 CMakeCache.txt
 CMakeFiles/
+.cache/

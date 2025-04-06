@@ -1,0 +1,49 @@
+{
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f",
+    "activityBar.background": "#3C1F59",
+    "titleBar.activeBackground": "#542B7D",
+    "titleBar.activeForeground": "#FBFAFD"
+  },
+  "files.associations": {
+    "string_view": "cpp",
+    "limits": "cpp",
+    "*.tcc": "cpp",
+    "deque": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "unordered_map": "cpp",
+    "unordered_set": "cpp",
+    "vector": "cpp",
+    "system_error": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "ios": "cpp",
+    "map": "cpp",
+    "set": "cpp"
+  },
+  "C_Cpp.intelliSenseEngine": "disabled",
+  "C_Cpp.formatting": "Disabled",
+  "editor.formatOnSave": true,
+  "clangd.detectExtensionConflicts": true,
+  "clangd.path": "clangd-20",
+  "clangd.arguments": [
+    "--background-index",
+    "--all-scopes-completion",
+    "--cross-file-rename",
+    "--clang-tidy",
+    "--enable-config"
+  ],
+  "clangd.onConfigChanged": "restart",
+  "C_Cpp.default.cppStandard": "c++17",
+  "cmake.useCMakePresets": "always",
+  "cmake.configureOnOpen": true,
+  "cmake.configureOnEdit": false,
+  "cmake.generator": "Ninja",
+  "cmake.buildDirectory": "${workspaceFolder}/build/${presetName}",
+  "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+  "cmake.sourceDirectory": "/home/dengqi/Source/langs/cpp/cpp-toolbox"
+}

@@ -4,6 +4,7 @@
 #include <memory>  // For std::unique_ptr
 #include <optional>
 
+#include "cpp-toolbox/base/detail/task_base.hpp"
 // Assuming export macros are defined elsewhere if needed
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 // Assuming disable copy/move macros are defined elsewhere
@@ -105,5 +106,9 @@ private:
   // std::unique_ptr requires Impl to be defined where the destructor is called.
   std::unique_ptr<Impl> impl_;
 };
+
+extern template class CPP_TOOLBOX_EXPORT concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
+extern template class CPP_TOOLBOX_EXPORT concurrent_queue_t<std::function<void()>>;
+
 
 }  // namespace toolbox::container
