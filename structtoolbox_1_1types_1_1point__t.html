@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>toolbox::types::point_t struct | cpp-toolbox</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,600i%7CSource+Code+Pro:400,400i,600" />
+  <link rel="stylesheet" href="m-dark+documentation.compiled.css" />
+  <link rel="icon" href="favicon-dark.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#22272e" />
+</head>
+<body>
+<header><nav id="navigation">
+  <div class="m-container">
+    <div class="m-row">
+      <a href="index.html" id="m-navbar-brand" class="m-col-t-8 m-col-m-none m-left-m">cpp-toolbox</a>
+      <div class="m-col-t-4 m-hide-m m-text-right m-nopadr">
+        <a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+          <path id="m-doc-search-icon-path" d="m6 0c-3.31 0-6 2.69-6 6 0 3.31 2.69 6 6 6 1.49 0 2.85-0.541 3.89-1.44-0.0164 0.338 0.147 0.759 0.5 1.15l3.22 3.79c0.552 0.614 1.45 0.665 2 0.115 0.55-0.55 0.499-1.45-0.115-2l-3.79-3.22c-0.392-0.353-0.812-0.515-1.15-0.5 0.895-1.05 1.44-2.41 1.44-3.89 0-3.31-2.69-6-6-6zm0 1.56a4.44 4.44 0 0 1 4.44 4.44 4.44 4.44 0 0 1-4.44 4.44 4.44 4.44 0 0 1-4.44-4.44 4.44 4.44 0 0 1 4.44-4.44z"/>
+        </svg></a>
+        <a id="m-navbar-show" href="#navigation" title="Show navigation"></a>
+        <a id="m-navbar-hide" href="#" title="Hide navigation"></a>
+      </div>
+      <div id="m-navbar-collapse" class="m-col-t-12 m-show-m m-col-m-none m-right-m">
+        <div class="m-row">
+          <ol class="m-col-t-6 m-col-m-none">
+            <li>
+              <a href="pages.html">Pages</a>
+              <ol>
+                <li><a href="about.html">About</a></li>
+              </ol>
+            </li>
+            <li><a href="namespaces.html">Namespaces</a></li>
+          </ol>
+          <ol class="m-col-t-6 m-col-m-none" start="3">
+            <li><a href="annotated.html">Classes</a></li>
+            <li><a href="files.html">Files</a></li>
+            <li class="m-show-m"><a href="#search" class="m-doc-search-icon" title="Search" onclick="return showSearch()"><svg style="height: 0.9rem;" viewBox="0 0 16 16">
+              <use href="#m-doc-search-icon-path" />
+            </svg></a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav></header>
+<main><article>
+  <div class="m-container m-container-inflatable">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <h1>
+          <div class="m-doc-template">template&lt;typename T&gt;</div>
+          <span class="m-breadcrumb"><a href="namespacetoolbox.html">toolbox</a>::<wbr/></span><span class="m-breadcrumb"><a href="namespacetoolbox_1_1types.html">types</a>::<wbr/></span>point_t <span class="m-thin">struct</span>
+        </h1>
+        <p>A 3D point/vector template class.</p>
+        <table class="m-table m-fullwidth m-flat">
+          <thead>
+            <tr><th colspan="2">Template parameters</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="width: 1%">T</td>
+              <td>The numeric type for coordinates (e.g. float, double, int)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="m-block m-default">
+          <h3>Contents</h3>
+          <ul>
+            <li>
+              Reference
+              <ul>
+                <li><a href="#pub-static-methods">Public static functions</a></li>
+                <li><a href="#typeless-methods">Constructors, destructors, conversion operators</a></li>
+                <li><a href="#pub-methods">Public functions</a></li>
+                <li><a href="#pub-attribs">Public variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+<p>This class represents a 3D point or vector with x, y, z coordinates. It provides common vector operations and supports arithmetic operators.</p><pre class="m-code"><span class="c1">// Create points</span>
+<span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p1</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">3.0</span><span class="p">);</span>
+<span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">p2</span><span class="p">(</span><span class="mf">4.0</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">,</span><span class="w"> </span><span class="mf">6.0</span><span class="p">);</span>
+
+<span class="c1">// Vector operations</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">dot_product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">dot</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+<span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">cross_product</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">cross</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">norm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="p">.</span><span class="n">norm</span><span class="p">();</span>
+
+<span class="c1">// Arithmetic</span>
+<span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">p2</span><span class="p">;</span>
+<span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">scaled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2.0</span><span class="p">;</span></pre>
+        <section id="pub-static-methods">
+          <h2><a href="#pub-static-methods">Public static functions</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#a10b8e4cd3dc68c2772a4cb35e22e5a4d" class="m-doc">min_value</a>(</span><span class="m-doc-wrap">) -&gt; point_t</span>
+            </dt>
+            <dd>Get point with minimum possible values.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">static auto <a href="#aa3b0a411dff3c72d4143a798e3652360" class="m-doc">max_value</a>(</span><span class="m-doc-wrap">) -&gt; point_t</span>
+            </dt>
+            <dd>Get point with maximum possible values.</dd>
+          </dl>
+        </section>
+        <section id="typeless-methods">
+          <h2><a href="#typeless-methods">Constructors, destructors, conversion operators</a></h2>
+          <dl class="m-doc">
+            <dt>
+              <span class="m-doc-wrap-bumper"><a href="#a562974be138dbf613f340cab7b6d37ac" class="m-doc">point_t</a>(</span><span class="m-doc-wrap">T x_coord,
+              T y_coord,
+              T z_coord)</span>
+            </dt>
+            <dd>Constructs a point with given coordinates.</dd>
+            <dt id="a09f13a0dc148b311f1617c36521fd812">
+              <span class="m-doc-wrap-bumper"><a href="#a09f13a0dc148b311f1617c36521fd812" class="m-doc-self">point_t</a>(</span><span class="m-doc-wrap">)</span>
+            </dt>
+            <dd>Default constructor, initializes to origin (0,0,0)</dd>
+            <dt id="a12ff9bf8c55cc0ec8f15870737ff95f4">
+              <span class="m-doc-wrap-bumper"><a href="#a12ff9bf8c55cc0ec8f15870737ff95f4" class="m-doc-self">point_t</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd>Copy constructor.</dd>
+            <dt id="a0c8d73beda63939951ab7566c6f4e24a">
+              <span class="m-doc-wrap-bumper"><a href="#a0c8d73beda63939951ab7566c6f4e24a" class="m-doc-self">point_t</a>(</span><span class="m-doc-wrap"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;&amp; other) <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move constructor.</dd>
+          </dl>
+        </section>
+        <section id="pub-methods">
+          <h2><a href="#pub-methods">Public functions</a></h2>
+          <dl class="m-doc">
+            <dt id="abfbc80bc72eb5e4f9d84129cffaa0269">
+              <span class="m-doc-wrap-bumper">auto <a href="#abfbc80bc72eb5e4f9d84129cffaa0269" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; <span class="m-label m-flat m-info">defaulted</span></span>
+            </dt>
+            <dd>Copy assignment.</dd>
+            <dt id="a002bac1a6e6cf698e373d2a8ebb2877e">
+              <span class="m-doc-wrap-bumper">auto <a href="#a002bac1a6e6cf698e373d2a8ebb2877e" class="m-doc-self">operator=</a>(</span><span class="m-doc-wrap"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;&amp; other) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; <span class="m-label m-flat m-info">defaulted</span> <span class="m-label m-flat m-success">noexcept</span></span>
+            </dt>
+            <dd>Move assignment.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aa362d818a8dddcd7b087614a00350e9c" class="m-doc">operator+=</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd>Add another point component-wise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a442426dd4d1820127b8f74d298777471" class="m-doc">operator-=</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd>Subtract another point component-wise.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aae278321d7bd352cca0ade0901c86704" class="m-doc">operator*=</a>(</span><span class="m-doc-wrap">const T&amp; scalar) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd>Multiply coordinates by a scalar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#afc7a914f24cef85caffa7fdb06de3951" class="m-doc">operator/=</a>(</span><span class="m-doc-wrap">const T&amp; scalar) -&gt; <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp;</span>
+            </dt>
+            <dd>Divide coordinates by a scalar.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#abfcdd416b11a3a2292184805782b768f" class="m-doc">dot</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; T</span>
+            </dt>
+            <dd>Calculate dot product with another point.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a1d705d8b2e6e7b688802c2e7894b77dd" class="m-doc">cross</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; point_t</span>
+            </dt>
+            <dd>Calculate cross product with another point.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a58a06ce4deffa10cbad6747095360c2a" class="m-doc">norm</a>(</span><span class="m-doc-wrap">) const -&gt; double</span>
+            </dt>
+            <dd>Calculate Euclidean norm (length) of vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a4fd70b4134e57d8361cc2633f3aeeb71" class="m-doc">normalize</a>(</span><span class="m-doc-wrap">) const -&gt; point_t&lt; double &gt;</span>
+            </dt>
+            <dd>Return normalized vector (unit length)</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a124666311659f8bc42794d2d6bf461d3" class="m-doc">p_norm</a>(</span><span class="m-doc-wrap">const double&amp; p_value) const -&gt; double</span>
+            </dt>
+            <dd>Calculate p-norm of vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a059bc727620c0bb056e80658471e3768" class="m-doc">p_normalize</a>(</span><span class="m-doc-wrap">const double&amp; p_value) const -&gt; point_t&lt; double &gt;</span>
+            </dt>
+            <dd>Return p-normalized vector.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a74fdf288fba57e8ef0f7b598054c98bd" class="m-doc">distance</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; double</span>
+            </dt>
+            <dd>Calculate Euclidean distance to another point.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#acdba49ccc737841c4daf5db008888b91" class="m-doc">distance_p</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other,
+              const double&amp; p_value) const -&gt; double</span>
+            </dt>
+            <dd>Calculate p-distance to another point.</dd>
+          </dl>
+        </section>
+        <section id="pub-attribs">
+          <h2><a href="#pub-attribs">Public variables</a></h2>
+          <dl class="m-doc">
+            <dt id="a171efb0a8686791dd6b042babab79ad4">
+              T <a href="#a171efb0a8686791dd6b042babab79ad4" class="m-doc-self">x</a>
+            </dt>
+            <dd>X coordinate.</dd>
+            <dt id="ae84eeb1bacaf6f2aa28321f152f38624">
+              T <a href="#ae84eeb1bacaf6f2aa28321f152f38624" class="m-doc-self">y</a>
+            </dt>
+            <dd>Y coordinate.</dd>
+            <dt id="a5697097cf3fe9bed97c2ebc8e9544db6">
+              T <a href="#a5697097cf3fe9bed97c2ebc8e9544db6" class="m-doc-self">z</a>
+            </dt>
+            <dd>Z coordinate.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Function documentation</h2>
+          <section class="m-doc-details" id="a10b8e4cd3dc68c2772a4cb35e22e5a4d"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a10b8e4cd3dc68c2772a4cb35e22e5a4d" class="m-doc-self">min_value</a>(</span><span class="m-doc-wrap">) -&gt; point_t</span></span>
+            </h3>
+            <p>Get point with minimum possible values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Point with minimum coordinates</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa3b0a411dff3c72d4143a798e3652360"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">static auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa3b0a411dff3c72d4143a798e3652360" class="m-doc-self">max_value</a>(</span><span class="m-doc-wrap">) -&gt; point_t</span></span>
+            </h3>
+            <p>Get point with maximum possible values.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Point with maximum coordinates</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a562974be138dbf613f340cab7b6d37ac"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"> toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a562974be138dbf613f340cab7b6d37ac" class="m-doc-self">point_t</a>(</span><span class="m-doc-wrap">T x_coord,
+              T y_coord,
+              T z_coord)</span></span>
+            </h3>
+            <p>Constructs a point with given coordinates.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">x_coord</td>
+                  <td>X coordinate</td>
+                </tr>
+                <tr>
+                  <td>y_coord</td>
+                  <td>Y coordinate</td>
+                </tr>
+                <tr>
+                  <td>z_coord</td>
+                  <td>Z coordinate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aa362d818a8dddcd7b087614a00350e9c"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aa362d818a8dddcd7b087614a00350e9c" class="m-doc-self">operator+=</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other)</span></span>
+            </h3>
+            <p>Add another point component-wise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to add</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this point</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a442426dd4d1820127b8f74d298777471"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a442426dd4d1820127b8f74d298777471" class="m-doc-self">operator-=</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other)</span></span>
+            </h3>
+            <p>Subtract another point component-wise.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to subtract</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this point</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="aae278321d7bd352cca0ade0901c86704"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae278321d7bd352cca0ade0901c86704" class="m-doc-self">operator*=</a>(</span><span class="m-doc-wrap">const T&amp; scalar)</span></span>
+            </h3>
+            <p>Multiply coordinates by a scalar.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scalar</td>
+                  <td>Value to multiply by</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this point</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="afc7a914f24cef85caffa7fdb06de3951"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper"><a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#afc7a914f24cef85caffa7fdb06de3951" class="m-doc-self">operator/=</a>(</span><span class="m-doc-wrap">const T&amp; scalar)</span></span>
+            </h3>
+            <p>Divide coordinates by a scalar.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">scalar</td>
+                  <td>Value to divide by</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <th>Returns</th>
+                  <td>Reference to this point</td>
+                </tr>
+              </thead>
+              <thead>
+                <tr><th colspan="2">Exceptions</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>std::runtime_error</td>
+                  <td>if scalar is zero</td>
+                </tr>
+              </tbody>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="abfcdd416b11a3a2292184805782b768f"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#abfcdd416b11a3a2292184805782b768f" class="m-doc-self">dot</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; T</span></span>
+            </h3>
+            <p>Calculate dot product with another point.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to calculate dot product with</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Dot product value</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a1d705d8b2e6e7b688802c2e7894b77dd"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a1d705d8b2e6e7b688802c2e7894b77dd" class="m-doc-self">cross</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; point_t</span></span>
+            </h3>
+            <p>Calculate cross product with another point.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to calculate cross product with</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>New point representing cross product</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a58a06ce4deffa10cbad6747095360c2a"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a58a06ce4deffa10cbad6747095360c2a" class="m-doc-self">norm</a>(</span><span class="m-doc-wrap">) const -&gt; double</span></span>
+            </h3>
+            <p>Calculate Euclidean norm (length) of vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Norm as double</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a4fd70b4134e57d8361cc2633f3aeeb71"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a4fd70b4134e57d8361cc2633f3aeeb71" class="m-doc-self">normalize</a>(</span><span class="m-doc-wrap">) const -&gt; point_t&lt; double &gt;</span></span>
+            </h3>
+            <p>Return normalized vector (unit length)</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>Normalized vector as point_t&lt;double&gt;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a124666311659f8bc42794d2d6bf461d3"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a124666311659f8bc42794d2d6bf461d3" class="m-doc-self">p_norm</a>(</span><span class="m-doc-wrap">const double&amp; p_value) const -&gt; double</span></span>
+            </h3>
+            <p>Calculate p-norm of vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">p_value</td>
+                  <td>The p value for norm calculation</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>p-norm as double</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a059bc727620c0bb056e80658471e3768"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a059bc727620c0bb056e80658471e3768" class="m-doc-self">p_normalize</a>(</span><span class="m-doc-wrap">const double&amp; p_value) const -&gt; point_t&lt; double &gt;</span></span>
+            </h3>
+            <p>Return p-normalized vector.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">p_value</td>
+                  <td>The p value for normalization</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>p-normalized vector as point_t&lt;double&gt;</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a74fdf288fba57e8ef0f7b598054c98bd"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a74fdf288fba57e8ef0f7b598054c98bd" class="m-doc-self">distance</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other) const -&gt; double</span></span>
+            </h3>
+            <p>Calculate Euclidean distance to another point.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to calculate distance to</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>Distance as double</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="acdba49ccc737841c4daf5db008888b91"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">auto toolbox::<wbr />types::<wbr />point_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#acdba49ccc737841c4daf5db008888b91" class="m-doc-self">distance_p</a>(</span><span class="m-doc-wrap">const <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&amp; other,
+              const double&amp; p_value) const -&gt; double</span></span>
+            </h3>
+            <p>Calculate p-distance to another point.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">other</td>
+                  <td>Point to calculate distance to</td>
+                </tr>
+                <tr>
+                  <td>p_value</td>
+                  <td>The p value for distance calculation</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>p-distance as double</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+        </section>
+      </div>
+    </div>
+  </div>
+</article></main>
+<div class="m-doc-search" id="search">
+  <a href="#!" onclick="return hideSearch()"></a>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-m-8 m-push-m-2">
+        <div class="m-doc-search-header m-text m-small">
+          <div><span class="m-label m-default">Tab</span> / <span class="m-label m-default">T</span> to search, <span class="m-label m-default">Esc</span> to close</div>
+          <div id="search-symbolcount">&hellip;</div>
+        </div>
+        <div class="m-doc-search-content">
+          <form>
+            <input type="search" name="q" id="search-input" placeholder="Loading &hellip;" disabled="disabled" autofocus="autofocus" autocomplete="off" spellcheck="false" />
+          </form>
+          <noscript class="m-text m-danger m-text-center">Unlike everything else in the docs, the search functionality <em>requires</em> JavaScript.</noscript>
+          <div id="search-help" class="m-text m-dim m-text-center">
+            <p class="m-noindent">Search for symbols, directories, files, pages or
+            modules. You can omit any prefix from the symbol or file path; adding a
+            <code>:</code> or <code>/</code> suffix lists all members of given symbol or
+            directory.</p>
+            <p class="m-noindent">Use <span class="m-label m-dim">&darr;</span>
+            / <span class="m-label m-dim">&uarr;</span> to navigate through the list,
+            <span class="m-label m-dim">Enter</span> to go.
+            <span class="m-label m-dim">Tab</span> autocompletes common prefix, you can
+            copy a link to the result using <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">L</span> while <span class="m-label m-dim">⌘</span>
+            <span class="m-label m-dim">M</span> produces a Markdown link.</p>
+          </div>
+          <div id="search-notfound" class="m-text m-warning m-text-center">Sorry, nothing was found.</div>
+          <ul id="search-results"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="search-v1.js"></script>
+<script src="searchdata-v1.js" async="async"></script>
+<footer><nav>
+  <div class="m-container">
+    <div class="m-row">
+      <div class="m-col-l-10 m-push-l-1">
+        <p>cpp-toolbox. Created with <a href="https://doxygen.org/">Doxygen</a> 1.9.1 and <a href="https://mcss.mosra.cz/">m.css</a>.</p>
+      </div>
+    </div>
+  </div>
+</nav></footer>
+</body>
+</html>

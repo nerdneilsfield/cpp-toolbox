@@ -98,12 +98,12 @@
               <span class="m-doc-wrap-bumper">#define <a href="#a8ea85e1fa8e67520bf3aff86c29e747e" class="m-doc-self">CPP_TOOLBOX_CXX_VERSION</a></span>
             </dt>
             <dd>Get C++ version string.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#af1de779914dcded178fdd741367d0bcd" class="m-doc">CPP_TOOLBOX_DISABLE_COPY</a>(</span><span class="m-doc-wrap">ClassType)</span>
+            <dt id="af1de779914dcded178fdd741367d0bcd">
+              <span class="m-doc-wrap-bumper">#define <a href="#af1de779914dcded178fdd741367d0bcd" class="m-doc-self">CPP_TOOLBOX_DISABLE_COPY</a>(</span><span class="m-doc-wrap">ClassType)</span>
             </dt>
             <dd>Disable copy operations for a class.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#afdec75c7ea0e64620c5b13546ab3a0a2" class="m-doc">CPP_TOOLBOX_DISABLE_MOVE</a>(</span><span class="m-doc-wrap">ClassType)</span>
+            <dt id="afdec75c7ea0e64620c5b13546ab3a0a2">
+              <span class="m-doc-wrap-bumper">#define <a href="#afdec75c7ea0e64620c5b13546ab3a0a2" class="m-doc-self">CPP_TOOLBOX_DISABLE_MOVE</a>(</span><span class="m-doc-wrap">ClassType)</span>
             </dt>
             <dd>Disable move operations for a class.</dd>
             <dt id="a6497f847f85135e611cfce9aed2b051c">
@@ -118,8 +118,8 @@
               <span class="m-doc-wrap-bumper">#define <a href="#ab9531237c7e39a8932c326b76e8fa836" class="m-doc-self">CPP_TOOLBOX_DELETE_CONSTRUCTOR</a>(</span><span class="m-doc-wrap">ClassType)</span>
             </dt>
             <dd>Delete copy and move constructors.</dd>
-            <dt>
-              <span class="m-doc-wrap-bumper">#define <a href="#ae96fe8cc69010f510fec50602c56b466" class="m-doc">CPP_TOOLBOX_SINGLETON</a>(</span><span class="m-doc-wrap">ClassType)</span>
+            <dt id="ae96fe8cc69010f510fec50602c56b466">
+              <span class="m-doc-wrap-bumper">#define <a href="#ae96fe8cc69010f510fec50602c56b466" class="m-doc-self">CPP_TOOLBOX_SINGLETON</a>(</span><span class="m-doc-wrap">ClassType)</span>
             </dt>
             <dd>Singleton pattern macro.</dd>
             <dt id="aeee8264ff582ee75d54d3ad07d099e62">
@@ -151,7 +151,7 @@
             <dt id="af8c06a20283c12abe6586da7762a8ae5">
               <span class="m-doc-wrap-bumper">#define <a href="#af8c06a20283c12abe6586da7762a8ae5" class="m-doc-self">CPP_TOOLBOX_UNUSED</a>(</span><span class="m-doc-wrap">Variable)</span>
             </dt>
-            <dd>Unused variable marker.</dd>
+            <dd>Mark variable as unused.</dd>
             <dt id="ab22050c00281c86d4ff32c97a8c3fa97">
               <span class="m-doc-wrap-bumper">#define <a href="#ab22050c00281c86d4ff32c97a8c3fa97" class="m-doc-self">CPP_TOOLBOX_NODISCARD</a></span>
             </dt>
@@ -277,81 +277,23 @@
             <p>C++ standard detection.</p>
 <p>C++ version macros</p>
           </div></section>
-          <section class="m-doc-details" id="af1de779914dcded178fdd741367d0bcd"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#af1de779914dcded178fdd741367d0bcd" class="m-doc-self">CPP_TOOLBOX_DISABLE_COPY</a>(</span><span class="m-doc-wrap">ClassType)</span>
-            </h3>
-            <p>Disable copy operations for a class.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">ClassType</td>
-                  <td>Class name</td>
-                </tr>
-              </tbody>
-            </table>
-<pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">CPP_TOOLBOX_DISABLE_COPY</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">MyClass</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
-<span class="p">};</span></pre>
-          </div></section>
-          <section class="m-doc-details" id="afdec75c7ea0e64620c5b13546ab3a0a2"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#afdec75c7ea0e64620c5b13546ab3a0a2" class="m-doc-self">CPP_TOOLBOX_DISABLE_MOVE</a>(</span><span class="m-doc-wrap">ClassType)</span>
-            </h3>
-            <p>Disable move operations for a class.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">ClassType</td>
-                  <td>Class name</td>
-                </tr>
-              </tbody>
-            </table>
-<pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">MyClass</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">CPP_TOOLBOX_DISABLE_MOVE</span><span class="p">(</span><span class="n">MyClass</span><span class="p">)</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="n">MyClass</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">default</span><span class="p">;</span>
-<span class="p">};</span></pre>
-          </div></section>
-          <section class="m-doc-details" id="ae96fe8cc69010f510fec50602c56b466"><div>
-            <h3>
-              <span class="m-doc-wrap-bumper">#define <a href="#ae96fe8cc69010f510fec50602c56b466" class="m-doc-self">CPP_TOOLBOX_SINGLETON</a>(</span><span class="m-doc-wrap">ClassType)</span>
-            </h3>
-            <p>Singleton pattern macro.</p>
-            <table class="m-table m-fullwidth m-flat">
-              <thead>
-                <tr><th colspan="2">Parameters</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td style="width: 1%">ClassType</td>
-                  <td>Class name</td>
-                </tr>
-              </tbody>
-            </table>
-<pre class="m-code"><span class="k">class</span><span class="w"> </span><span class="nc">MySingleton</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="n">CPP_TOOLBOX_SINGLETON</span><span class="p">(</span><span class="n">MySingleton</span><span class="p">)</span>
-<span class="k">public</span><span class="o">:</span>
-<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">doSomething</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
-<span class="p">};</span>
-
-<span class="c1">// Usage:</span>
-<span class="n">MySingleton</span><span class="o">::</span><span class="n">instance</span><span class="p">().</span><span class="n">doSomething</span><span class="p">();</span></pre>
-          </div></section>
           <section class="m-doc-details" id="ae8ab5f666fb0fcd7484e839c0a3913ba"><div>
             <h3>
               <span class="m-doc-wrap-bumper">#define <a href="#ae8ab5f666fb0fcd7484e839c0a3913ba" class="m-doc-self">CPP_TOOLBOX_ALIGNAS</a>(</span><span class="m-doc-wrap">Alignment)</span>
             </h3>
             <p>Function name macro.</p>
-<p>Alignment macro</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">Alignment</td>
+                  <td>Alignment value</td>
+                </tr>
+              </tbody>
+            </table>
+<p>Data alignment macro</p>
           </div></section>
         </section>
       </div>
