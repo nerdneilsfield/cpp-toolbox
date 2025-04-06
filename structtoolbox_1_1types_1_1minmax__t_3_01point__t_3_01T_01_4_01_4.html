@@ -143,10 +143,11 @@
               <span class="m-doc-wrap-bumper"> toolbox::<wbr />types::<wbr />minmax_t&lt;point_t&lt;T&gt;&gt;&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ace7496bac5f36669d5dd1c2ccb343d4a" class="m-doc-self">minmax_t</a>(</span><span class="m-doc-wrap">)</span></span>
             </h3>
             <p>Default constructor.</p>
-<p>Initializes using <a href="structtoolbox_1_1types_1_1point__t.html" class="m-doc">point_<wbr />t</a>&#x27;s static min_value() and max_value() functions.</p><pre class="m-code"><span class="c1">// Example of default construction:</span>
+<p>Initializes min components to the maximum possible value of T, and max components to the lowest possible value of T (or min for integers). This ensures correct comparison behavior when combining results.</p><pre class="m-code"><span class="c1">// Example of default construction:</span>
 <span class="n">toolbox</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">minmax_t</span><span class="o">&lt;</span><span class="n">toolbox</span><span class="o">::</span><span class="n">types</span><span class="o">::</span><span class="n">point_t</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">mm</span><span class="p">;</span>
-<span class="c1">// mm.min is set to the point_t&lt;double&gt;::min_value()</span>
-<span class="c1">// mm.max is set to the point_t&lt;double&gt;::max_value()</span></pre>
+<span class="c1">// mm.min components are initialized to std::numeric_limits&lt;double&gt;::max()</span>
+<span class="c1">// mm.max components are initialized to</span>
+<span class="n">std</span><span class="o">::</span><span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">lowest</span><span class="p">()</span></pre>
           </div></section>
           <section class="m-doc-details" id="ae464184e2631cd1311c64810354e1a67"><div>
             <h3>
