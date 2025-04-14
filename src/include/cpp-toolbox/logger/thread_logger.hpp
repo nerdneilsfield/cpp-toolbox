@@ -1,4 +1,8 @@
 #pragma once
+#if __cplusplus >= 202002L && defined(__cpp_lib_format)
+#  include <format>
+#  include <stdexcept>  // For std::format_error
+#endif
 #include <atomic>
 #include <condition_variable>
 #include <map>
@@ -14,6 +18,9 @@
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 
 #include "cpp-toolbox/macro.hpp"
+
+// Include the concurrent queue header
+#include "cpp-toolbox/container/concurrent_queue.hpp"
 
 // #define PROJECT_SOURCE_DIR
 
@@ -217,20 +224,13 @@ public:
   /**
    * @brief Get the singleton instance of the logger.
    *
-   * @return Reference to the thread-safe logger instance.
+   * Uses dynamic allocation and ensures the instance persists until program
+   * exit to mitigate issues with static destruction order. Thread-safe
+   * initialization.
    *
-   * @code{.cpp}
-   * auto& logger = thread_logger_t::instance();
-   * @endcode
+   * @return Reference to the thread-safe logger instance.
    */
   static auto instance() -> thread_logger_t&;
-
-  /**
-   * @brief Destructor for the logger.
-   *
-   * @details Ensures proper cleanup of logging resources.
-   */
-  ~thread_logger_t();
 
   /**
    * @brief Get the current logging level.
@@ -314,8 +314,26 @@ public:
       if (level_ < logger_.level()) {
         return;
       }
+
+#if __cplusplus >= 202002L && defined(__cpp_lib_format)
+      // C++20: Use std::format for better performance and standard compliance
+      try {
+        std::string message = std::format(format, std::forward<Args>(args)...);
+        logger_.enqueue(level_, std::move(message));
+      } catch (const std::format_error& e) {
+        // Handle potential format errors gracefully
+        std::string error_message = "[Formatting Error] ";
+        error_message += e.what();
+        error_message += " | Original format: '";
+        error_message += format;
+        error_message += "'";
+        logger_.enqueue(Level::ERROR, std::move(error_message));
+      }
+#else
+      // Pre-C++20: Use the existing custom format_message implementation
       std::string message = format_message(format, std::forward<Args>(args)...);
-      logger_.enqueue(level_, message);
+      logger_.enqueue(level_, std::move(message));
+#endif
     }
 
   private:
@@ -325,7 +343,10 @@ public:
      * @param format The format string
      * @return The formatted message
      */
-    static auto format_message(const char* format) -> std::string;
+    static auto format_message(const char* format) -> std::string
+    {
+      return {format};  // Simple implementation for no args
+    }
 
     /**
      * @brief Recursively format a message with arguments.
@@ -905,43 +926,45 @@ public:
     return {*this, Level::CRITICAL};
   }
 
+  /**
+   * @brief Explicitly shuts down the logger instance's worker thread.
+   *
+   * Stops the background worker thread. Should be called once before program
+   * termination to ensure clean shutdown, especially in complex scenarios
+   * like test frameworks.
+   */
+  static void shutdown();
+
 private:
+  // Constructor remains private
   thread_logger_t();
+  // Delete copy/move operations
   thread_logger_t(const thread_logger_t&) = delete;
   auto operator=(const thread_logger_t&) -> thread_logger_t& = delete;
+  thread_logger_t(thread_logger_t&&) = delete;
+  auto operator=(thread_logger_t&&) -> thread_logger_t& = delete;
+
+  // Make destructor private or protected if we want absolutely no deletion
+  // ~thread_logger_t() = default; // Or define it as empty in cpp
 
   void start();
   void stop();
-  void enqueue(Level level, const std::string& message);
+  void enqueue(Level level, std::string message);
   void processLogs();
 
   static auto level_to_string(Level level) -> std::string;
 
-  template<typename T, typename = void>
-  struct is_container : std::false_type
-  {
-  };
-
-  template<typename T>
-  struct is_container<T,
-                      std::void_t<typename T::value_type,
-                                  typename T::iterator,
-                                  decltype(std::declval<T>().begin()),
-                                  decltype(std::declval<T>().end())>>
-      : std::true_type
-  {
-  };
-
-  template<typename T>
-  static constexpr bool is_container_v = is_container<T>::value;
-
-  std::queue<std::pair<Level, std::string>> queue_;
-  std::mutex mutex_;
-  std::condition_variable cv_;
+  // Queue member remains
+  toolbox::container::concurrent_queue_t<std::pair<Level, std::string>> queue_;
+  // Worker thread member remains
   std::thread worker_;
   std::atomic<bool> running_ {false};
-
   Level level_ = Level::INFO;
+
+  // Static members for singleton pattern
+  static std::atomic<thread_logger_t*> instance_ptr_;
+  static std::mutex instance_mutex_;
+  static std::atomic<bool> shutdown_called_;
 };
 
 }  // namespace toolbox::logger

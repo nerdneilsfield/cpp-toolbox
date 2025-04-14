@@ -1,4 +1,5 @@
 #include <array>
+#include <atomic>
 #include <chrono>
 #include <condition_variable>
 #include <cstdio>
@@ -7,6 +8,7 @@
 #include <filesystem>
 #include <iostream>
 #include <mutex>
+#include <optional>
 #include <sstream>
 #include <string>
 #include <thread>
@@ -19,36 +21,68 @@
 namespace toolbox::logger
 {
 
+// Initialize static members for the singleton
+std::atomic<thread_logger_t*> thread_logger_t::instance_ptr_ = nullptr;
+std::mutex thread_logger_t::instance_mutex_;
+std::atomic<bool> thread_logger_t::shutdown_called_ = false;
+
 auto thread_logger_t::instance() -> thread_logger_t&
 {
-  static thread_logger_t logger;
-  return logger;
+  // Double-checked locking pattern for thread-safe initialization
+  thread_logger_t* ptr = instance_ptr_.load(std::memory_order_acquire);
+  if (ptr == nullptr) {  // First check (no lock)
+    std::lock_guard<std::mutex> lock(instance_mutex_);
+    ptr = instance_ptr_.load(
+        std::memory_order_relaxed);  // Second check (with lock)
+    if (ptr == nullptr) {
+      fprintf(stderr,
+              "[Logger Diag] Creating new logger instance (dynamic "
+              "allocation)...\n");
+      ptr = new thread_logger_t();  // Allocate instance
+      instance_ptr_.store(ptr, std::memory_order_release);
+      // Optional: Register an atexit handler to call shutdown? Risky due to
+      // order. std::atexit([](){ thread_logger_t::shutdown(); });
+    }
+  }
+  // fprintf(stderr, "[Logger Diag] Returning logger instance reference.\n"); //
+  // Can be noisy
+  return *ptr;
 }
 
 thread_logger_t::thread_logger_t()
 {
+  fprintf(stderr,
+          "[Logger Diag] thread_logger_t constructor starting (dynamic "
+          "instance).\n");
+  // Don't call start() immediately, let instance() handle it once?
+  // Or call start() here is fine as constructor is called only once.
   start();
-}
-
-thread_logger_t::~thread_logger_t()
-{
-  stop();
+  fprintf(stderr, "[Logger Diag] thread_logger_t constructor finished.\n");
 }
 
 void thread_logger_t::start()
 {
+  fprintf(stderr, "[Logger Diag] start() called.\n");
   running_ = true;
   worker_ = std::thread(&thread_logger_t::processLogs, this);
+  fprintf(stderr, "[Logger Diag] Worker thread started.\n");
 }
 
 void thread_logger_t::stop()
 {
+  fprintf(stderr, "[Logger Diag] stop() called.\n");
   if (running_) {
     running_ = false;
-    cv_.notify_one();
+    fprintf(stderr, "[Logger Diag] running_ set to false.\n");
     if (worker_.joinable()) {
+      fprintf(stderr, "[Logger Diag] Joining worker thread...\n");
       worker_.join();
+      fprintf(stderr, "[Logger Diag] Worker thread joined.\n");
+    } else {
+      fprintf(stderr, "[Logger Diag] Worker thread was not joinable.\n");
     }
+  } else {
+    fprintf(stderr, "[Logger Diag] stop() called but already stopped.\n");
   }
 }
 
@@ -67,32 +101,31 @@ auto thread_logger_t::level_to_string(Level level) -> std::string
       return "[ERROR]";
     case Level::CRITICAL:
       return "[CRITICAL]";
+    default:
+      // Handle unexpected level values
+      return "[UNKNOWN]";
   }
 }
 
-void thread_logger_t::enqueue(Level level, const std::string& message)
+void thread_logger_t::enqueue(Level level, std::string message)
 {
-  {
-    std::unique_lock<std::mutex> lock(mutex_);
-    queue_.emplace(level, message);
-  }
-  cv_.notify_one();
+  queue_.enqueue(std::make_pair(level, std::move(message)));
 }
 
 void thread_logger_t::processLogs()
 {
+  fprintf(stderr,
+          "[Logger Diag] processLogs() worker thread started execution.\n");
   constexpr size_t TIME_STR_BUFFER_SIZE = 20;
+  const auto wait_timeout = std::chrono::milliseconds(100);
 
   while (running_) {
-    std::unique_lock<std::mutex> lock(mutex_);
-    cv_.wait_for(lock,
-                 std::chrono::milliseconds(100),
-                 [this] { return !queue_.empty() || !running_; });
+    std::pair<Level, std::string> log_entry_value;
 
-    while (!queue_.empty()) {
-      auto [level, message] = std::move(queue_.front());
-      queue_.pop();
-      lock.unlock();
+    // Wait for an item with timeout
+    if (queue_.wait_dequeue_timed(log_entry_value, wait_timeout)) {
+      // If dequeue successful, process the log entry
+      auto& [level, message] = log_entry_value;  // Use structured binding
 
       auto now = std::chrono::system_clock::now();
       auto time = std::chrono::system_clock::to_time_t(now);
@@ -146,12 +179,31 @@ void thread_logger_t::processLogs()
           break;
       }
 
-      std::cout << time_str.data() << " " << level_str << " " << message
-                << "\n";
-
-      lock.lock();
+      fprintf(stderr,
+              "%s %s %s\n",
+              time_str.data(),
+              level_str.c_str(),
+              message.c_str());
+    } else {
+      // wait_dequeue_timed returned false (timeout)
+      if (!running_) {
+        fprintf(stderr,
+                "[Logger Diag] processLogs() timeout occurred and running is "
+                "false, breaking loop.\n");
+        break;
+      }
+    }
+    // Check running flag at the end of each iteration too
+    if (!running_) {
+      fprintf(stderr,
+              "[Logger Diag] processLogs() running is false at end of loop, "
+              "breaking.\n");
+      break;
     }
   }
+  fprintf(stderr,
+          "[Logger Diag] processLogs() worker thread loop finished. Exiting "
+          "thread function.\n");
 }
 
 thread_logger_t::thread_format_logger_t::thread_format_logger_t(
@@ -159,17 +211,6 @@ thread_logger_t::thread_format_logger_t::thread_format_logger_t(
     : logger_(logger)
     , level_(level)
 {
-}
-
-[[nodiscard]] auto thread_logger_t::thread_format_logger_t::format_message(
-    const char* format) -> std::string
-{
-  char buffer[2048];
-  int result = std::snprintf(buffer, sizeof(buffer), "%s", format);
-  if (result < 0 || result >= sizeof(buffer)) {
-    return "";  // Handle formatting error
-  }
-  return {buffer};
 }
 
 thread_logger_t::thread_stream_logger_t::thread_stream_logger_t(
@@ -183,7 +224,7 @@ thread_logger_t::thread_stream_logger_t::~thread_stream_logger_t()
 {
   if (level_ < logger_.level())
     return;
-  logger_.enqueue(level_, ss_.str());
+  logger_.enqueue(level_, std::move(ss_.str()));
 }
 
 auto thread_logger_t::thread_stream_logger_t::red(const std::string& text)
@@ -212,6 +253,33 @@ auto thread_logger_t::thread_stream_logger_t::bold(const std::string& text)
 {
   ss_ << "\033[1m" << text << "\033[0m";
   return *this;
+}
+
+// Implementation of the static shutdown method
+void thread_logger_t::shutdown()
+{
+  bool already_called =
+      shutdown_called_.exchange(true, std::memory_order_acq_rel);
+  if (already_called) {
+    // fprintf(stderr, "[Logger Diag] shutdown() called more than once.\n"); //
+    // Can be noisy
+    return;
+  }
+
+  fprintf(stderr, "[Logger Diag] shutdown() called explicitly.\n");
+  // Get the pointer, check if it was ever created
+  thread_logger_t* ptr = instance_ptr_.load(std::memory_order_acquire);
+  if (ptr != nullptr) {
+    fprintf(stderr, "[Logger Diag] Found instance, calling stop()...\n");
+    ptr->stop();  // Call the non-static stop method
+    fprintf(stderr,
+            "[Logger Diag] Logger worker explicitly stopped via shutdown().\n");
+    // DO NOT DELETE ptr - this is the leak strategy
+  } else {
+    fprintf(
+        stderr,
+        "[Logger Diag] shutdown() called but instance was never created.\n");
+  }
 }
 
 }  // namespace toolbox::logger
