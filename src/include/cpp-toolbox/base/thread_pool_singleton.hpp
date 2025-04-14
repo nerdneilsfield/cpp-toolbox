@@ -95,7 +95,10 @@ public:
    * @brief Get the number of worker threads in the pool
    * @return The number of worker threads
    */
-  size_t get_thread_count() const { return workers_.size(); }
+  size_t get_thread_count() const
+  {
+    return workers_.size();
+  }
 
 private:
   /**

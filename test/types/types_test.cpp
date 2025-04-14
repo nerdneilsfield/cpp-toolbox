@@ -679,32 +679,46 @@ TEST_CASE("Parallel Calculate MinMax with containers",
   }
   SECTION("Vector of Points (Large - Parallel Execution)")
   {
-    std::vector<point_t<double>> large_points(2048);
-    for (size_t i = 0; i < large_points.size(); ++i) {
-      // Simple pattern to ensure variation
-      large_points[i] = {
-          (double)(i % 100), (double)(i % 50 - 25), (double)(100 - i % 200)};
-    }
-    // Manually insert known min/max points somewhere
-    large_points[300] = {-50.0, -100.0, -200.0};  // Potential min point
-    large_points[1300] = {150.0, 100.0, 200.0};  // Potential max point
+    constexpr size_t large_size = 2048;
+    std::vector<point_t<double>> large_points(large_size);
 
+    // Generate data with a simple, predictable pattern
+    // x = [0, 2047], y = [1, 2048], z = [-2047, 0]
+    for (size_t i = 0; i < large_size; ++i) {
+      large_points[i] = {static_cast<double>(i),
+                         static_cast<double>(large_size - i),
+                         static_cast<double>(-static_cast<double>(i))};
+    }
+
+    // Define min/max points clearly outside the generated range
+    const point_t<double> min_point = {
+        -10.0, -10.0, -static_cast<double>(large_size) - 10.0};
+    const point_t<double> max_point = {static_cast<double>(large_size) + 10.0,
+                                       static_cast<double>(large_size) + 10.0,
+                                       10.0};
+
+    // Insert min/max points
+    large_points[large_size / 3] = min_point;
+    large_points[large_size * 2 / 3] = max_point;
+
+    // Calculate min/max in parallel
     auto mm = toolbox::types::calculate_minmax_parallel(large_points);
+
     REQUIRE(std::is_same_v<decltype(mm),
                            toolbox::types::minmax_t<point_t<double>>>);
 
-    // Check against expected min/max based on inserted points and pattern
-    CHECK(mm.min.x == Catch::Approx(-50.0));
-    CHECK(mm.min.y == Catch::Approx(-100.0));
-    CHECK(mm.min.z == Catch::Approx(-200.0));
-    CHECK(mm.max.x == Catch::Approx(150.0));
-    CHECK(mm.max.y == Catch::Approx(100.0));
-    CHECK(mm.max.z == Catch::Approx(200.0));
+    // Check against the explicitly inserted min/max points
+    CHECK(mm.min.x == Catch::Approx(min_point.x));
+    CHECK(mm.min.y == Catch::Approx(min_point.y));
+    CHECK(mm.min.z == Catch::Approx(min_point.z));
+    CHECK(mm.max.x == Catch::Approx(max_point.x));
+    CHECK(mm.max.y == Catch::Approx(max_point.y));
+    CHECK(mm.max.z == Catch::Approx(max_point.z));
   }
   SECTION("Empty Vector of Points")
   {
     std::vector<point_t<float>> empty_points;
-    auto mm = toolbox::types::calculate_minmax_parallel(
+    auto mm = toolbox::types::calculate_minmax(
         empty_points);  // Calls parallel (handles empty -> sequential)
     REQUIRE(
         std::is_same_v<decltype(mm), toolbox::types::minmax_t<point_t<float>>>);
@@ -736,23 +750,39 @@ TEST_CASE("Parallel Calculate MinMax with PointCloud",
   CHECK(mm.max.z == Catch::Approx(4.0));
 
   point_cloud_t<double> large_cloud;
-  large_cloud.points.resize(2048);
-  for (size_t i = 0; i < large_cloud.points.size(); ++i) {
-    large_cloud.points[i] = {
-        (double)(i % 100), (double)(i % 50 - 25), (double)(100 - i % 200)};
-  }
-  large_cloud.points[300] = {-50.0, -100.0, -200.0};  // Potential min point
-  large_cloud.points[1300] = {150.0, 100.0, 200.0};  // Potential max point
+  constexpr size_t large_size = 2048;
+  large_cloud.points.resize(large_size);
 
+  // Generate data with the same simple pattern as the vector test
+  // x = [0, 2047], y = [1, 2048], z = [-2047, 0]
+  for (size_t i = 0; i < large_size; ++i) {
+    large_cloud.points[i] = {static_cast<double>(i),
+                             static_cast<double>(large_size - i),
+                             static_cast<double>(-static_cast<double>(i))};
+  }
+
+  // Define and insert the same min/max points
+  const point_t<double> min_point = {
+      -10.0, -10.0, -static_cast<double>(large_size) - 10.0};
+  const point_t<double> max_point = {static_cast<double>(large_size) + 10.0,
+                                     static_cast<double>(large_size) + 10.0,
+                                     10.0};
+  large_cloud.points[large_size / 3] = min_point;
+  large_cloud.points[large_size * 2 / 3] = max_point;
+
+  // Calculate min/max in parallel
   auto mm_large = toolbox::types::calculate_minmax_parallel(large_cloud);
+
   REQUIRE(std::is_same_v<decltype(mm_large),
                          toolbox::types::minmax_t<point_t<double>>>);
-  CHECK(mm_large.min.x == Catch::Approx(-50.0));
-  CHECK(mm_large.min.y == Catch::Approx(-100.0));
-  CHECK(mm_large.min.z == Catch::Approx(-200.0));
-  CHECK(mm_large.max.x == Catch::Approx(150.0));
-  CHECK(mm_large.max.y == Catch::Approx(100.0));
-  CHECK(mm_large.max.z == Catch::Approx(200.0));
+
+  // Check against the explicitly inserted min/max points
+  CHECK(mm_large.min.x == Catch::Approx(min_point.x));
+  CHECK(mm_large.min.y == Catch::Approx(min_point.y));
+  CHECK(mm_large.min.z == Catch::Approx(min_point.z));
+  CHECK(mm_large.max.x == Catch::Approx(max_point.x));
+  CHECK(mm_large.max.y == Catch::Approx(max_point.y));
+  CHECK(mm_large.max.z == Catch::Approx(max_point.z));
 
   point_cloud_t<float> empty_cloud;
   auto mm_empty = toolbox::types::calculate_minmax_parallel(empty_cloud);

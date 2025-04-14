@@ -33,43 +33,50 @@ thread_pool_t::thread_pool_t(size_t threads)
   // Reserve space and create worker threads
   workers_.reserve(num_threads);
   for (size_t i = 0; i < num_threads; ++i) {
-    workers_.emplace_back(
-           [this, i] { // Worker thread lambda function
-                std::unique_ptr<detail::task_base> task_ptr; // Stores dequeued task wrapper
-                while(true) {
-                    bool task_dequeued = this->tasks_.try_dequeue(task_ptr);
+    workers_.emplace_back([this, i] {  // Worker thread lambda function
+      std::unique_ptr<detail::task_base>
+          task_ptr;  // Stores dequeued task wrapper
+      while (true) {
+        bool task_dequeued = this->tasks_.try_dequeue(task_ptr);
 
-                    if (task_dequeued) {
-                        if (task_ptr) { // Check if the unique_ptr is valid
-                            try {
-                                task_ptr->execute(); // Execute via virtual dispatch
-                            } catch (const std::exception& e) {
-                                std::cerr << "Worker thread " << i << " caught exception during task execution: " << e.what() << std::endl;
-                            } catch (...) {
-                                std::cerr << "Worker thread " << i << " caught unknown exception during task execution." << std::endl;
-                            }
-                        }
-                        task_ptr.reset(); // Reset unique_ptr, deleting the task object
-                    } else {
-                        // Queue is empty, check stop condition or yield/sleep
-                        if (this->stop_.load(std::memory_order_acquire)) {
-                          // Double check queue
-                          if (!this->tasks_.try_dequeue(task_ptr)) {
-                              return; // Exit lambda function
-                          } else {
-                              // Execute final task
-                              if (task_ptr) {
-                                    try { task_ptr->execute(); } catch (...) { /* Handle */ }
-                              }
-                              task_ptr.reset();
-                          }
-                        } else {
-                            std::this_thread::sleep_for(std::chrono::milliseconds(1)); // Or yield
-                        }
-                    }
+        if (task_dequeued) {
+          if (task_ptr) {  // Check if the unique_ptr is valid
+            try {
+              task_ptr->execute();  // Execute via virtual dispatch
+            } catch (const std::exception& e) {
+              std::cerr << "Worker thread " << i
+                        << " caught exception during task execution: "
+                        << e.what() << std::endl;
+            } catch (...) {
+              std::cerr << "Worker thread " << i
+                        << " caught unknown exception during task execution."
+                        << std::endl;
+            }
+          }
+          task_ptr.reset();  // Reset unique_ptr, deleting the task object
+        } else {
+          // Queue is empty, check stop condition or yield/sleep
+          if (this->stop_.load(std::memory_order_acquire)) {
+            // Double check queue
+            if (!this->tasks_.try_dequeue(task_ptr)) {
+              return;  // Exit lambda function
+            } else {
+              // Execute final task
+              if (task_ptr) {
+                try {
+                  task_ptr->execute();
+                } catch (...) { /* Handle */
                 }
               }
-      );
+              task_ptr.reset();
+            }
+          } else {
+            std::this_thread::sleep_for(
+                std::chrono::milliseconds(1));  // Or yield
+          }
+        }
+      }
+    });
   }
 }
 

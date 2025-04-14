@@ -408,7 +408,8 @@ auto replace(std::string_view s,
       - static_cast<std::ptrdiff_t>(old_value.length());
   std::size_t estimated_size = s.length();
   if (size_diff_per_replacement > 0) {
-    estimated_size += count * size_diff_per_replacement;
+    // Cast is safe here because size_diff_per_replacement is positive
+    estimated_size += count * static_cast<size_t>(size_diff_per_replacement);
   }
   result.reserve(estimated_size);
 
@@ -787,7 +788,9 @@ auto url_encode(std::string_view s) -> std::string
   encoded.fill('0');  // Set fill character for hex representation
   encoded << std::hex << std::uppercase;  // Use uppercase hex digits
 
-  for (unsigned char c : s) {
+  // Iterate using char, then cast to unsigned char for functions like isalnum
+  for (const char raw_c : s) {
+    const unsigned char c = static_cast<unsigned char>(raw_c);
     // Keep alphanumeric and other unreserved characters
     if (std::isalnum(c) || c == '-' || c == '_' || c == '.' || c == '~') {
       encoded << c;
@@ -892,7 +895,8 @@ auto base64_encode(std::string_view data) -> std::string
   ret.reserve(((in_len + 2) / 3) * 4);  // Pre-allocate memory
 
   while (in_len--) {
-    char_array_3[i++] = *(bytes_to_encode++);
+    // Cast char to unsigned char when storing byte data
+    char_array_3[i++] = static_cast<unsigned char>(*(bytes_to_encode++));
     if (i == 3) {
       char_array_4[0] =
           (char_array_3[0] & 0xfc) >> 2;  // First 6 bits of byte 0

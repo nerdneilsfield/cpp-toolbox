@@ -1,6 +1,8 @@
 #pragma once
 
+#include <chrono>  // For std::chrono::microseconds
 #include <cstddef>  // For size_t
+#include <functional>  // Needed for std::function template instantiation
 #include <memory>  // For std::unique_ptr
 #include <optional>
 
@@ -82,6 +84,17 @@ public:
    */
   std::optional<T> try_dequeue();
 
+  /**
+   * @brief Attempts to dequeue an item, blocking until an item is available
+   *        or the specified timeout elapses (non-blocking).
+   * Thread-safe for multiple consumers.
+   * @param[out] item Reference to store the dequeued value if successful.
+   * @param timeout The maximum duration to wait.
+   * @return True if an item was successfully dequeued within the timeout,
+   *         false otherwise.
+   */
+  bool wait_dequeue_timed(T& item, std::chrono::microseconds timeout);
+
   // --- Additional Utility Functions (Exposed from underlying queue) ---
 
   /**
@@ -107,8 +120,9 @@ private:
   std::unique_ptr<Impl> impl_;
 };
 
-extern template class CPP_TOOLBOX_EXPORT concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
-extern template class CPP_TOOLBOX_EXPORT concurrent_queue_t<std::function<void()>>;
-
+extern template class CPP_TOOLBOX_EXPORT
+    concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
+extern template class CPP_TOOLBOX_EXPORT
+    concurrent_queue_t<std::function<void()>>;
 
 }  // namespace toolbox::container

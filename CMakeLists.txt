@@ -14,6 +14,7 @@ include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 include(cmake/cache.cmake)
 include(cmake/output.cmake)
+include(cmake/example.cmake)
 # ---- Dependencies ----
 
 add_subdirectory(deps)

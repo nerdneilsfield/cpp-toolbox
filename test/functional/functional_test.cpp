@@ -33,10 +33,10 @@ using Catch::Matchers::Equals;
 /// @param a First integer operand
 /// @param b Second integer operand
 /// @return Sum of a and b
-static auto add(int a, int b) -> int
+/* static auto add(int a, int b) -> int
 {
   return a + b;
-}
+} */
 
 /// @brief Multiplies two integers together
 /// @param a First integer operand
@@ -65,10 +65,10 @@ struct Point
 /// @param lhs Left-hand side Point operand
 /// @param rhs Right-hand side Point operand
 /// @return true if points have equal coordinates, false otherwise
-static auto operator==(const Point& lhs, const Point& rhs) -> bool
+/* static auto operator==(const Point& lhs, const Point& rhs) -> bool
 {
   return lhs.x == rhs.x && lhs.y == rhs.y;
-}
+} */
 
 /// @brief Global atomic counter for tracking function calls
 static std::atomic<int> global_call_count = 0;
@@ -398,7 +398,7 @@ TEST_CASE("Functional Variant Match", "[functional][variant][match]")
     std::variant<int, std::string> rval_var = std::string("move me");
     std::string result = match(
         std::move(rval_var),
-        [](int i) -> std::string { return "int"; },
+        [](int /*i*/) -> std::string { return "int"; },
         // Visitor for rvalue string can take by value or rvalue ref
         [](std::string s) -> std::string { return "moved string " + s; });
     REQUIRE(result == "moved string move me");
@@ -536,8 +536,8 @@ TEST_CASE("Functional Container Operations", "[functional][container]")
         filter(strs, [](const std::string& s) { return s.length() > 1; });
     REQUIRE_THAT(long_strs, Equals(std::vector<std::string> {"bb", "ccc"}));
 
-    REQUIRE(filter(empty_vec, [](int x) { return true; }).empty());
-    REQUIRE(filter(nums, [](int x) { return false; }).empty());
+    REQUIRE(filter(empty_vec, [](int /*x*/) { return true; }).empty());
+    REQUIRE(filter(nums, [](int /*x*/) { return false; }).empty());
   }
 
   /// @brief Test reducing container elements
@@ -844,7 +844,7 @@ TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
       threads.emplace_back(
           [&memoized_func]()
           {
-            int res = 0;
+            [[maybe_unused]] int res;
             for (int j = 0; j < calls_per_thread; ++j) {
               res = memoized_func(5, "test");  // Expected: 5 + 4 = 9
               // Small delay to increase chance of concurrent access
@@ -885,7 +885,7 @@ TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
           [&memoized_func, i]()
           {
             // Multiple calls to test caching
-            int res = 0;
+            [[maybe_unused]] int res;
             for (int k = 0; k < 3; ++k) {
               res = memoized_func(
                   i, std::to_string(i));  // Args: (0,"0"), (1,"1"), ...
@@ -895,14 +895,14 @@ TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
     }
 
     // Verify results
-    for (int i = 0; i < num_threads; ++i) {
-      int expected_result = i + static_cast<int>(std::to_string(i).length());
+    for (size_t i = 0; i < static_cast<size_t>(num_threads); ++i) {
+      int expected_result =
+          static_cast<int>(i) + static_cast<int>(std::to_string(i).length());
       REQUIRE(futures[i].valid());
       REQUIRE(futures[i].get() == expected_result);
     }
 
     // Verify: original function should be called once per unique argument
-    // combination
     REQUIRE(global_call_count == num_threads);
 
     // Call again with some arguments, should hit cache

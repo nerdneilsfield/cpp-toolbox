@@ -127,27 +127,33 @@ TEST_CASE("ThreadPoolSingleton Basic Operations",
 
   SECTION("Submit multiple tasks and check results")
   {
-    const int num_tasks =
+    const size_t num_tasks =
         pool.get_thread_count() * 2;  // Submit more tasks than threads
     std::vector<std::future<int>> futures;
     futures.reserve(num_tasks);
 
-    for (int i = 0; i < num_tasks; ++i) {
-      futures.push_back(pool.submit([](int val) { return val * 2; }, i));
+    for (size_t i = 0; i < num_tasks; ++i) {
+      futures.push_back(
+          pool.submit([](int val) { return val * 2; }, static_cast<int>(i)));
     }
 
     int sum = 0;
-    for (int i = 0; i < num_tasks; ++i) {
+    for (size_t i = 0; i < num_tasks; ++i) {
       REQUIRE(futures[i].valid());
       int result = futures[i].get();  // Blocks until task completes
-      REQUIRE(result == i * 2);
+      REQUIRE(result == static_cast<int>(i) * 2);
       sum += result;
     }
 
     // Calculate expected sum: 2 * (0 + 1 + ... + num_tasks-1)
     int expected_sum = 0;
     if (num_tasks > 0) {
-      expected_sum = 2 * (num_tasks * (num_tasks - 1) / 2);
+      size_t n = num_tasks;
+      size_t intermediate_sum = n * (n - 1) / 2;  // This might be large
+      // Be careful about potential overflow when multiplying by 2 and assigning
+      // to int If intermediate_sum * 2 might exceed INT_MAX, this needs
+      // adjustment. Assuming it fits within int for typical test cases.
+      expected_sum = static_cast<int>(2 * intermediate_sum);
     }
     REQUIRE(sum == expected_sum);
   }
@@ -218,7 +224,7 @@ TEST_CASE("ThreadPoolSingleton Concurrency",
     std::mutex future_mutex;  // Protects concurrent access to all_futures
 
     // Task submission function
-    auto submit_func = [&](int thread_id)
+    auto submit_func = [&](int /*thread_id*/)
     {
       std::vector<std::future<void>> local_futures;
       local_futures.reserve(tasks_per_thread);

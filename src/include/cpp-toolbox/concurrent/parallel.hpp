@@ -236,8 +236,11 @@ CPP_TOOLBOX_EXPORT void parallel_transform(InputIt first1,
     futures.emplace_back(pool.submit(
         [first1, d_first, chunk_start_index, chunk_end_index, unary_op]()
         {
+          using diff_t =
+              typename std::iterator_traits<InputIt>::difference_type;
           for (size_t k = chunk_start_index; k < chunk_end_index; ++k) {
-            *(d_first + k) = unary_op(*(first1 + k));
+            *(d_first + static_cast<diff_t>(k)) =
+                unary_op(*(first1 + static_cast<diff_t>(k)));
           }
         }));
 

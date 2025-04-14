@@ -219,7 +219,9 @@ auto get_creation_time(const std::filesystem::path& path) -> file_time_type
           std::chrono::system_clock::from_time_t(statbuf.st_birthtime));
     }
 #else
-    struct stat statbuf {};
+    struct stat statbuf
+    {
+    };
     if (stat(path.c_str(), &statbuf) == 0) {
       auto sctp = std::chrono::system_clock::from_time_t(statbuf.st_ctime);
       auto duration = sctp.time_since_epoch();

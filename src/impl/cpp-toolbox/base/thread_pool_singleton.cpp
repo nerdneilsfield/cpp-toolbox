@@ -36,8 +36,9 @@ void thread_pool_singleton_t::start_pool(size_t threads)
   }
 
   // LOG_INFO_F("Starting thread pool with {} threads.", num_threads);
-  std::cout << "[INFO] Starting thread pool with " << num_threads << " threads."
-            << std::endl;  // 临时输出
+  // std::cout << "[INFO] Starting thread pool with " << num_threads << "
+  // threads."
+  //           << std::endl;  // 临时输出
 
   stop_ = false;  // 确保启动时 stop_ 标志为 false
   workers_.reserve(num_threads);
@@ -55,7 +56,7 @@ void thread_pool_singleton_t::stop_pool()
     return;
   }
   // LOG_INFO_S << "Stopping thread pool...";
-  std::cout << "[INFO] Stopping thread pool..." << std::endl;  // 临时输出
+  // std::cout << "[INFO] Stopping thread pool..." << std::endl;  // 临时输出
 
   // 等待所有工作线程结束
   for (std::thread& worker : workers_) {
@@ -64,7 +65,7 @@ void thread_pool_singleton_t::stop_pool()
     }
   }
   workers_.clear();
-  std::cout << "[INFO] Thread pool stopped." << std::endl;  // 临时输出
+  // std::cout << "[INFO] Thread pool stopped." << std::endl;  // 临时输出
   // LOG_INFO_S << "Thread pool stopped.";
 }
 
@@ -72,8 +73,8 @@ void thread_pool_singleton_t::stop_pool()
 void thread_pool_singleton_t::worker_loop(size_t worker_id)
 {
   // LOG_DEBUG_F("Worker thread {} started.", worker_id);
-  std::cout << "[DEBUG] Worker thread " << worker_id << " started."
-            << std::endl;  // 临时输出
+  // std::cout << "[DEBUG] Worker thread " << worker_id << " started."
+  //           << std::endl;  // 临时输出
 
   std::function<void()> task;
 

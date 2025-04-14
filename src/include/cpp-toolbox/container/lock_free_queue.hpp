@@ -404,7 +404,8 @@ public:
    */
   bool try_dequeue(T& result)
   {
-    detail::HPRec* hp_rec =
+    // Use [[maybe_unused]] to silence the warning about hp_rec
+    [[maybe_unused]] detail::HPRec* hp_rec =
         detail::acquire_hp_record();  // Ensure HP record exists
 
     while (true) {

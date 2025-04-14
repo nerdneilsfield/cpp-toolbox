@@ -42,13 +42,14 @@ add_subdirectory(container)
 add_subdirectory(concurrent)
 add_subdirectory(utils)
 add_subdirectory(functional)
-# add_subdirectory(types)
+add_subdirectory(types)
 
+list(APPEND TEST_FILES my_catch2_main.cpp)
 
 add_executable(cpp-toolbox_test ${TEST_FILES})
 target_link_libraries(cpp-toolbox_test PRIVATE cpp-toolbox_test_lib Catch2WithMain)
 target_compile_features(cpp-toolbox_test PRIVATE cxx_std_17)
-target_compile_definitions(cpp-toolbox_test PRIVATE CATCH_CONFIG_MAIN)
+# target_compile_definitions(cpp-toolbox_test PRIVATE CATCH_CONFIG_MAIN)
 add_test(NAME cpp-toolbox_test COMMAND cpp-toolbox_test)
 
 add_folders(Test)

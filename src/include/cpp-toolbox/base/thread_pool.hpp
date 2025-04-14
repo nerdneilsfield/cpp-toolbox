@@ -142,22 +142,29 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
 
   // 2. Create the lambda that does the work and sets the promise
   auto task_payload =
-          // Use mutable if the lambda needs to modify its captures (like moving from args_tuple)
-          [func = std::forward<F>(f), // Move/forward the original callable
-           args_tuple = std::make_tuple(std::forward<Args>(args)...), // Move/forward args
-           promise_ptr = std::move(promise)]() mutable { // Capture promise by moved shared_ptr
-              try {
-                  if constexpr (std::is_void_v<return_type>) {
-                      std::apply(func, std::move(args_tuple)); // Invoke original function
-                      promise_ptr->set_value(); // Set void promise
-                  } else {
-                      return_type result = std::apply(func, std::move(args_tuple)); // Invoke original function
-                      promise_ptr->set_value(std::move(result)); // Set promise with result
-                  }
-              } catch (...) {
-                  promise_ptr->set_exception(std::current_exception()); // Set exception on promise
-              }
-          }; // End of task_payload lambda
+      // Use mutable if the lambda needs to modify its captures (like moving
+      // from args_tuple)
+      [func = std::forward<F>(f),  // Move/forward the original callable
+       args_tuple =
+           std::make_tuple(std::forward<Args>(args)...),  // Move/forward args
+       promise_ptr = std::move(
+           promise)]() mutable {  // Capture promise by moved shared_ptr
+        try {
+          if constexpr (std::is_void_v<return_type>) {
+            std::apply(func,
+                       std::move(args_tuple));  // Invoke original function
+            promise_ptr->set_value();  // Set void promise
+          } else {
+            return_type result = std::apply(
+                func, std::move(args_tuple));  // Invoke original function
+            promise_ptr->set_value(
+                std::move(result));  // Set promise with result
+          }
+        } catch (...) {
+          promise_ptr->set_exception(
+              std::current_exception());  // Set exception on promise
+        }
+      };  // End of task_payload lambda
 
   // 3. Create the type-erased task wrapper using the derived class template
   //    Get the concrete type of the task_payload lambda

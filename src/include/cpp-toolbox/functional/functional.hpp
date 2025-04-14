@@ -184,7 +184,7 @@ CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f)
 {
   return
       [g = std::forward<G>(g), f = std::forward<F>(f)](auto&&... args) mutable
-          -> decltype(g(f(std::forward<decltype(args)>(args)...)))
+      -> decltype(g(f(std::forward<decltype(args)>(args)...)))
   { return g(f(std::forward<decltype(args)>(args)...)); };
 }
 
@@ -217,8 +217,7 @@ CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
 
     return [f1_cap = std::forward<F1>(f1),
             composed_rest_cap = std::move(composed_rest)](
-               auto&&... args) mutable -> decltype(auto)
-    {
+               auto&&... args) mutable -> decltype(auto) {
       return f1_cap(composed_rest_cap(std::forward<decltype(args)>(args)...));
     };
   }
@@ -470,8 +469,10 @@ CPP_TOOLBOX_EXPORT auto filter(const std::optional<T>& opt, P&& p)
 {
 #if __cpp_lib_is_invocable >= 201703L
   static_assert(
-      std::is_invocable_r_v<bool, P, const T&>
-          || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
+      std::is_invocable_r_v<
+          bool,
+          P,
+          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
       "Predicate must be callable with const T& and return bool or "
       "bool-convertible.");
 #else
@@ -505,8 +506,10 @@ CPP_TOOLBOX_EXPORT auto filter(std::optional<T>&& opt, P&& p)
 {
 #if __cpp_lib_is_invocable >= 201703L
   static_assert(
-      std::is_invocable_r_v<bool, P, const T&>
-          || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
+      std::is_invocable_r_v<
+          bool,
+          P,
+          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
       "Predicate must be callable with const T& and return bool or "
       "bool-convertible.");
 #else
@@ -637,12 +640,13 @@ template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
     -> ResultVariant
 {
-  std::cout << "[Debug map(const variant)] Entered map function.\n";
+  // std::cout << "[Debug map(const variant)] Entered map function.\n";
   return std::visit(
       [&f](const auto& value) -> ResultVariant
       {
-        std::cout << "  [Debug map] Inside visit lambda. Visited value type: "
-                  << typeid(value).name() << ".\n";
+        // std::cout << "  [Debug map] Inside visit lambda. Visited value type:
+        // "
+        //           << typeid(value).name() << ".\n";
         if constexpr (std::is_void_v<std::invoke_result_t<F, decltype(value)>>)
         {
           std::invoke(f, value);
@@ -652,11 +656,12 @@ CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
               "needs std::monostate).");
         } else {
           auto f_result = std::invoke(f, value);
-          std::cout << "    [Debug map] User lambda (f) returned type: "
-                    << typeid(f_result).name() << ".\n";
+          // std::cout << "    [Debug map] User lambda (f) returned type: "
+          //           << typeid(f_result).name() << ".\n";
           ResultVariant constructed_result {f_result};
-          std::cout << "    [Debug map] Constructed ResultVariant holds index: "
-                    << constructed_result.index() << ".\n";
+          // std::cout << "    [Debug map] Constructed ResultVariant holds
+          // index: "
+          //           << constructed_result.index() << ".\n";
           return constructed_result;
         }
       },
@@ -683,13 +688,13 @@ CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
 template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
 {
-  std::cout << "[Debug map(variant&)] Entered map function.\n";
+  // std::cout << "[Debug map(variant&)] Entered map function.\n";
   return std::visit(
       [&f](auto& value) -> ResultVariant
       {
-        std::cout << "  [Debug map(variant&)] Inside visit lambda. Visited "
-                     "value type: "
-                  << typeid(value).name() << ".\n";
+        // std::cout << "  [Debug map(variant&)] Inside visit lambda. Visited "
+        //              "value type: "
+        //           << typeid(value).name() << ".\n";
         if constexpr (std::is_void_v<std::invoke_result_t<F, decltype(value)>>)
         {
           std::invoke(f, value);
@@ -699,13 +704,13 @@ CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
               "needs std::monostate).");
         } else {
           auto f_result = std::invoke(f, value);
-          std::cout
-              << "    [Debug map(variant&)] User lambda (f) returned type: "
-              << typeid(f_result).name() << ".\n";
+          // std::cout
+          //     << "    [Debug map(variant&)] User lambda (f) returned type: "
+          //     << typeid(f_result).name() << ".\n";
           ResultVariant constructed_result {f_result};
-          std::cout << "    [Debug map(variant&)] Constructed ResultVariant "
-                       "holds index: "
-                    << constructed_result.index() << ".\n";
+          // std::cout << "    [Debug map(variant&)] Constructed ResultVariant "
+          //              "holds index: "
+          //           << constructed_result.index() << ".\n";
           return constructed_result;
         }
       },

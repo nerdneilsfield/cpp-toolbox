@@ -79,7 +79,7 @@ namespace toolbox::types
  * @endcode
  */
 template<typename T>
-struct CPP_TOOLBOX_EXPORT minmax_t
+struct minmax_t
 {
   T min;  ///< The minimum value.
   T max;  ///< The maximum value.
@@ -149,7 +149,7 @@ struct CPP_TOOLBOX_EXPORT minmax_t
 
 // Generic default constructor definition (for types without specialization)
 template<typename T>
-CPP_TOOLBOX_EXPORT minmax_t<T>::minmax_t()
+minmax_t<T>::minmax_t()
     : initialized_(false)
 {
   if constexpr (std::numeric_limits<T>::is_specialized) {
@@ -168,7 +168,7 @@ CPP_TOOLBOX_EXPORT minmax_t<T>::minmax_t()
 
 // --- Full specializations for primitive types' default constructors ---
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<int>::minmax_t()
+minmax_t<int>::minmax_t()
     : min(std::numeric_limits<int>::max())
     , max(std::numeric_limits<int>::min())
     , initialized_(false)
@@ -176,7 +176,7 @@ CPP_TOOLBOX_EXPORT minmax_t<int>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<float>::minmax_t()
+minmax_t<float>::minmax_t()
     : min(std::numeric_limits<float>::max())
     , max(std::numeric_limits<float>::lowest())
     , initialized_(false)
@@ -184,7 +184,7 @@ CPP_TOOLBOX_EXPORT minmax_t<float>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<double>::minmax_t()
+minmax_t<double>::minmax_t()
     : min(std::numeric_limits<double>::max())
     , max(std::numeric_limits<double>::lowest())
     , initialized_(false)
@@ -192,7 +192,7 @@ CPP_TOOLBOX_EXPORT minmax_t<double>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<long>::minmax_t()
+minmax_t<long>::minmax_t()
     : min(std::numeric_limits<long>::max())
     , max(std::numeric_limits<long>::min())
     , initialized_(false)
@@ -200,7 +200,7 @@ CPP_TOOLBOX_EXPORT minmax_t<long>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<unsigned int>::minmax_t()
+minmax_t<unsigned int>::minmax_t()
     : min(std::numeric_limits<unsigned int>::max())
     , max(std::numeric_limits<unsigned int>::min())
     , initialized_(false)
@@ -208,7 +208,7 @@ CPP_TOOLBOX_EXPORT minmax_t<unsigned int>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<unsigned long>::minmax_t()
+minmax_t<unsigned long>::minmax_t()
     : min(std::numeric_limits<unsigned long>::max())
     , max(std::numeric_limits<unsigned long>::min())
     , initialized_(false)
@@ -216,7 +216,7 @@ CPP_TOOLBOX_EXPORT minmax_t<unsigned long>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<unsigned long long>::minmax_t()
+minmax_t<unsigned long long>::minmax_t()
     : min(std::numeric_limits<unsigned long long>::max())
     , max(std::numeric_limits<unsigned long long>::min())
     , initialized_(false)
@@ -224,7 +224,7 @@ CPP_TOOLBOX_EXPORT minmax_t<unsigned long long>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<unsigned char>::minmax_t()
+minmax_t<unsigned char>::minmax_t()
     : min(std::numeric_limits<unsigned char>::max())
     , max(std::numeric_limits<unsigned char>::min())
     , initialized_(false)
@@ -232,7 +232,7 @@ CPP_TOOLBOX_EXPORT minmax_t<unsigned char>::minmax_t()
 }
 
 template<>
-CPP_TOOLBOX_EXPORT minmax_t<unsigned short>::minmax_t()
+minmax_t<unsigned short>::minmax_t()
     : min(std::numeric_limits<unsigned short>::max())
     , max(std::numeric_limits<unsigned short>::min())
     , initialized_(false)
@@ -267,41 +267,23 @@ CPP_TOOLBOX_EXPORT minmax_t<unsigned short>::minmax_t()
  * @endcode
  */
 template<typename T>  // T is the coordinate type for point_t
-struct CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>
+struct minmax_t<point_t<T>>
 {
-  point_t<T> min;  ///< The minimum point.
-  point_t<T> max;  ///< The maximum point.
-  bool initialized_ = false;  ///< Flag to track if the first point was added.
+  point_t<T> min;
+  point_t<T> max;
+  bool initialized_ = false;
 
-  /**
-   * @brief Default constructor.
-   *
-   * Initializes min components to the maximum possible value of T,
-   * and max components to the lowest possible value of T (or min for integers).
-   * This ensures correct comparison behavior when combining results.
-   *
-   * @code
-   * // Example of default construction:
-   * toolbox::types::minmax_t<toolbox::types::point_t<double>> mm;
-   * // mm.min components are initialized to std::numeric_limits<double>::max()
-   * // mm.max components are initialized to
-   * std::numeric_limits<double>::lowest()
-   * @endcode
-   */
   minmax_t()
       : initialized_(false)
   {
-    // Ensure the coordinate type has numeric limits defined.
     static_assert(
         std::numeric_limits<T>::is_specialized,
         "Coordinate type T must have specialized std::numeric_limits.");
 
-    // Initialize min components to the highest possible value.
     min = point_t<T>(std::numeric_limits<T>::max(),
                      std::numeric_limits<T>::max(),
                      std::numeric_limits<T>::max());
 
-    // Initialize max components to the lowest possible value.
     if constexpr (std::is_floating_point_v<T>) {
       max = point_t<T>(std::numeric_limits<T>::lowest(),
                        std::numeric_limits<T>::lowest(),
@@ -313,21 +295,6 @@ struct CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>
     }
   }
 
-  /**
-   * @brief Constructor with initial values.
-   *
-   * Marks the instance as initialized.
-   *
-   * @param initial_min The initial minimum point.
-   * @param initial_max The initial maximum point.
-   *
-   * @code
-   * // Example of constructed initialization:
-   * toolbox::types::point_t<float> a {1.0f, 2.0f, 3.0f};
-   * toolbox::types::point_t<float> b {4.0f, 5.0f, 6.0f};
-   * toolbox::types::minmax_t<toolbox::types::point_t<float>> mm(a, b);
-   * @endcode
-   */
   minmax_t(point_t<T> initial_min, point_t<T> initial_max)
       : min(initial_min)
       , max(initial_max)
@@ -335,53 +302,31 @@ struct CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>
   {
   }
 
-  // Rule of Five members (defaulted)
   minmax_t(const minmax_t&) = default;
   minmax_t(minmax_t&&) noexcept = default;
   minmax_t& operator=(const minmax_t&) = default;
   minmax_t& operator=(minmax_t&&) noexcept = default;
   ~minmax_t() = default;
 
-  /**
-   * @brief Updates the minmax_t with a new point.
-   *
-   * If the instance is not yet initialized, the first point sets both min and
-   * max. Otherwise, min and max are updated component-wise.
-   *
-   * @param value The point to incorporate.
-   * @return Reference to the updated minmax_t.
-   *
-   * @code
-   * // Example usage of operator+= for point_t:
-   * toolbox::types::minmax_t<toolbox::types::point_t<float>> mm;
-   * toolbox::types::point_t<float> point {2.0f, 3.0f, 1.0f};
-   * mm += point;
-   * @endcode
-   */
-  minmax_t& operator+=(const point_t<T>& value);  // Declaration only
-};
+  minmax_t& operator+=(const point_t<T>& value)
+  {
+    if (!initialized_) {
+      min = value;
+      max = value;
+      initialized_ = true;
+    } else {
+      min.x = std::min(min.x, value.x);
+      min.y = std::min(min.y, value.y);
+      min.z = std::min(min.z, value.z);
 
-// --- Definition of operator+= for minmax_t<point_t<T>> ---
-template<typename T>
-CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>& minmax_t<point_t<T>>::operator+=(
-    const point_t<T>& value)
-{
-  if (!initialized_) {
-    min = value;
-    max = value;
-    initialized_ = true;
-  } else {
-    // Component-wise update
-    min.x = std::min(min.x, value.x);
-    min.y = std::min(min.y, value.y);
-    min.z = std::min(min.z, value.z);
-
-    max.x = std::max(max.x, value.x);
-    max.y = std::max(max.y, value.y);
-    max.z = std::max(max.z, value.z);
+      // Use manual comparison which is functionally equivalent to std::max
+      max.x = (max.x > value.x) ? max.x : value.x;
+      max.y = (max.y > value.y) ? max.y : value.y;
+      max.z = (max.z > value.z) ? max.z : value.z;
+    }
+    return *this;
   }
-  return *this;
-}
+};
 
 // --- Helper functions for combining minmax results (Now in main namespace) ---
 
@@ -439,8 +384,7 @@ minmax_t<point_t<CoordT>> combine_minmax(const minmax_t<point_t<CoordT>>& a,
  * @endcode
  */
 template<typename InputType>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax(
-    const InputType& input)
+[[nodiscard]] inline auto calculate_minmax(const InputType& input)
     -> std::enable_if_t<!detail::is_calculable_container_v<InputType>,
                         minmax_t<std::decay_t<InputType>>>
 {
@@ -462,8 +406,7 @@ template<typename InputType>
  * @endcode
  */
 template<typename InputType>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax(
-    const InputType& input)
+[[nodiscard]] inline auto calculate_minmax(const InputType& input)
     -> std::enable_if_t<detail::is_calculable_container_v<InputType>,
                         minmax_t<typename InputType::value_type>>
 {
@@ -473,6 +416,7 @@ template<typename InputType>
   for (const auto& item : input) {
     result += item;
   }
+
   return result;
 }
 
@@ -493,8 +437,7 @@ template<typename InputType>
  * @endcode
  */
 template<typename T>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax(
-    const point_cloud_t<T>& input)
+[[nodiscard]] inline auto calculate_minmax(const point_cloud_t<T>& input)
 {
   return calculate_minmax(input.points);  // Calls sequential container version
 }
@@ -513,8 +456,7 @@ template<typename T>
  * @endcode
  */
 template<typename InputType>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax_parallel(
-    const InputType& input)
+[[nodiscard]] inline auto calculate_minmax_parallel(const InputType& input)
     -> std::enable_if_t<!detail::is_calculable_container_v<InputType>,
                         minmax_t<std::decay_t<InputType>>>
 {
@@ -537,27 +479,33 @@ template<typename InputType>
  * @endcode
  */
 template<typename InputType>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax_parallel(
-    const InputType& input)
+[[nodiscard]] inline auto calculate_minmax_parallel(const InputType& input)
     -> std::enable_if_t<detail::is_calculable_container_v<InputType>,
                         minmax_t<typename InputType::value_type>>
 {
+  // --- Restore Original Parallel Logic --- START
   using ItemType = typename InputType::value_type;
   using ResultType = minmax_t<ItemType>;
 
-  const auto total_size = std::distance(std::begin(input), std::end(input));
+  // Use std::distance to get the size, which returns ptrdiff_t (signed)
+  const auto total_size_signed =
+      std::distance(std::begin(input), std::end(input));
+  // Threshold is size_t (unsigned)
   constexpr size_t sequential_threshold = 1024;
 
-  // Use sequential version if empty or below threshold
+  // Convert total_size_signed to size_t for comparison, after checking
+  // non-negative
+  if (total_size_signed <= 0) {  // Handle empty or invalid range
+    return ResultType();  // Return default-constructed minmax
+  }
+  const size_t total_size = static_cast<size_t>(total_size_signed);
+
+  // Now compare size_t with size_t
   if (total_size < sequential_threshold) {
-    // std::cout << "[DEBUG] Parallel fallback to sequential for size: " <<
-    // total_size << std::endl;
     return calculate_minmax(input);  // Fallback to sequential execution
   }
 
   // --- Parallel execution logic (Map-Reduce style) ---
-  // std::cout << "[DEBUG] Parallel execution for size: " << total_size <<
-  // std::endl;
   auto& pool = toolbox::concurrent::default_pool();
   const size_t num_threads = pool.get_thread_count();
   const size_t hardware_threads =
@@ -568,8 +516,10 @@ template<typename InputType>
   size_t chunk_size =
       std::max(min_chunk_size,
                static_cast<size_t>(
+                   // Use unsigned total_size here for calculations
                    std::ceil(static_cast<double>(total_size) / max_tasks)));
   size_t num_tasks = static_cast<size_t>(
+      // Use unsigned total_size here for calculations
       std::ceil(static_cast<double>(total_size) / chunk_size));
   if (num_tasks == 0)
     num_tasks = 1;
@@ -577,73 +527,45 @@ template<typename InputType>
   std::vector<std::future<ResultType>> futures;
   futures.reserve(num_tasks);
 
-  auto chunk_begin_it = std::begin(input);
-  for (size_t i = 0; i < num_tasks && chunk_begin_it != std::end(input); ++i) {
-    auto chunk_end_it = chunk_begin_it;
-    size_t current_chunk_actual_size = std::min(
-        chunk_size,
-        static_cast<size_t>(std::distance(chunk_begin_it, std::end(input))));
+  size_t start_idx = 0;  // Use size_t for index
+  for (size_t i = 0; i < num_tasks; ++i) {
+    // Calculate remaining size (should be safe with size_t)
+    size_t remaining_size = total_size - start_idx;
+    size_t current_chunk_actual_size = std::min(chunk_size, remaining_size);
     if (current_chunk_actual_size == 0)
       break;
-    std::advance(chunk_end_it, current_chunk_actual_size);
-    // std::cout << "[DEBUG] Submitting task " << i << " for range size " <<
-    // current_chunk_actual_size << std::endl;
+    size_t end_idx = start_idx + current_chunk_actual_size;
+
+    // --- Create a copy of the chunk for the task --- START
+    std::vector<ItemType> chunk_copy;
+    chunk_copy.reserve(current_chunk_actual_size);
+    auto chunk_it = std::begin(input);
+    std::advance(chunk_it, start_idx);
+    for (size_t k = 0; k < current_chunk_actual_size; ++k) {
+      chunk_copy.push_back(*chunk_it);
+      ++chunk_it;
+    }
+    // --- Create a copy of the chunk for the task --- END
 
     futures.emplace_back(pool.submit(
-        [begin = chunk_begin_it, end = chunk_end_it, task_id = i]()
-            -> ResultType
+        // Capture the chunk copy by value (via move)
+        [chunk = std::move(chunk_copy)]() -> ResultType
         {
           ResultType local_result;
-          for (auto it = begin; it != end; ++it) {
-            const auto& value = *it;
-            // Simply use the appropriate operator+=, which is specialized for
-            // point_t
+          // Iterate over the local chunk copy
+          for (const auto& value : chunk) {
             local_result += value;
-          }
-
-          // Keep the debug output section if needed, adjust if ItemType might
-          // not be point_t<double>
-          using ItemType =
-              decltype(local_result.min);  // Determine ItemType for debug check
-          if constexpr (std::is_same_v<ItemType, point_t<double>>) {
-            if (local_result.initialized_) {
-              std::cout << "[DEBUG] Task " << task_id
-                        << " Local Max: (y=" << local_result.max.y
-                        << ", z=" << local_result.max.z << ")" << std::endl;
-            } else {
-              std::cout << "[DEBUG] Task " << task_id
-                        << " Local result not initialized." << std::endl;
-            }
           }
           return local_result;
         }));
-    chunk_begin_it = chunk_end_it;
+    start_idx = end_idx;
   }
 
   ResultType final_result;
   try {
-    for (int fut_idx = 0; fut_idx < futures.size(); ++fut_idx)
-    {  // Use index for clarity
-      ResultType partial_result = futures[fut_idx].get();
-      // DEBUG: Print results before and after combining
-      if constexpr (std::is_same_v<ItemType, point_t<double>>) {
-        std::cout << "[DEBUG] Reducing future " << fut_idx << ":" << std::endl;
-        std::cout << "  Final (Before): initialized="
-                  << final_result.initialized_
-                  << " max=(y=" << final_result.max.y
-                  << ", z=" << final_result.max.z << ")" << std::endl;
-        std::cout << "  Partial:        initialized="
-                  << partial_result.initialized_
-                  << " max=(y=" << partial_result.max.y
-                  << ", z=" << partial_result.max.z << ")" << std::endl;
-      }
+    for (auto& fut : futures) {  // Simplified loop
+      ResultType partial_result = fut.get();
       final_result = combine_minmax(final_result, partial_result);
-      if constexpr (std::is_same_v<ItemType, point_t<double>>) {
-        std::cout << "  Final (After):  initialized="
-                  << final_result.initialized_
-                  << " max=(y=" << final_result.max.y
-                  << ", z=" << final_result.max.z << ")" << std::endl;
-      }
     }
   } catch (const std::exception& e) {
     std::cerr << "Exception during parallel minmax reduction: " << e.what()
@@ -653,31 +575,18 @@ template<typename InputType>
     std::cerr << "Unknown exception during parallel minmax reduction.\n";
     throw;
   }
-  // std::cout << "[DEBUG] Parallel execution finished." << std::endl;
   return final_result;
+  // --- Restore Original Parallel Logic --- END
 }
 
 /**
  * @brief Calculates min/max for a point_cloud_t in parallel.
- *
- * This function extracts the underlying points from a point_cloud_t and
- * applies the parallel container version of calculate_minmax on them.
- *
- * Example:
- * @code{.cpp}
- * point_cloud_t<float> cloud;
- * cloud.points.push_back(point_t<float>(1.0f, 2.0f, 3.0f));
- * cloud.points.push_back(point_t<float>(-1.0f, 4.0f, 0.0f));
- * auto mm = calculate_minmax_parallel(cloud);
- * // The min and max values are calculated using parallel processing on
- * cloud.points.
- * @endcode
  */
 template<typename T>
-[[nodiscard]] CPP_TOOLBOX_EXPORT inline auto calculate_minmax_parallel(
+[[nodiscard]] inline auto calculate_minmax_parallel(
     const point_cloud_t<T>& input)
 {
-  // Calls the parallel container version by using the points member.
+  // Calls the container version
   return calculate_minmax_parallel(input.points);
 }
 

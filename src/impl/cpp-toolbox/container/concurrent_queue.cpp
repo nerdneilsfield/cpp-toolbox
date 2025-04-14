@@ -1,19 +1,21 @@
+#include <chrono>  // Needed for timeout
 #include <cstddef>
 #include <exception>
 #include <functional>
 #include <memory>
 #include <optional>
+#include <string>
 #include <type_traits>
 #include <typeinfo>
+#include <utility>
 
 #include "cpp-toolbox/container/concurrent_queue.hpp"
 
 #include "cpp-toolbox/base/thread_pool.hpp"
+#include "cpp-toolbox/logger/thread_logger.hpp"
 
 // Include the third-party header ONLY in the .cpp file
-#include <utility>  // For std::move
-
-#include <concurrentqueue.h>  // Path depends on how you integrated it
+#include <blockingconcurrentqueue.h>  // Path depends on how you integrated it
 
 namespace toolbox::container
 {
@@ -22,8 +24,10 @@ namespace toolbox::container
 template<typename T>
 struct concurrent_queue_t<T>::Impl
 {
-  // The actual concurrent queue instance from the library
-  moodycamel::ConcurrentQueue<T> queue;
+  // Use the Blocking version of the queue to access blocking methods
+  moodycamel::BlockingConcurrentQueue<T> queue;
+  // Remove the unnecessary consumer token
+  // moodycamel::ConsumerToken consumer_token{queue};
 
   // Constructor (optional, default is likely fine)
   Impl() = default;
@@ -73,24 +77,27 @@ size_t concurrent_queue_t<T>::size_approx() const
   return impl_->queue.size_approx();
 }
 
+// --- Implementation for wait_dequeue_timed ---
+template<typename T>
+bool concurrent_queue_t<T>::wait_dequeue_timed(
+    T& item, std::chrono::microseconds timeout)
+{
+  // Call the correct moodycamel API, converting duration to microseconds count
+  return impl_->queue.wait_dequeue_timed(
+      item, static_cast<std::uint64_t>(timeout.count()));
+}
+
+// --- Explicit Template Instantiations ---
+// Define explicit instantiations requested in the header.
+// Do NOT repeat CPP_TOOLBOX_EXPORT here, it's on the class definition.
+
+using TaskPtr = std::unique_ptr<toolbox::base::detail::task_base>;
+using VoidFunc = std::function<void()>;
+using LogEntry =
+    std::pair<toolbox::logger::thread_logger_t::Level, std::string>;
+
+template class toolbox::container::concurrent_queue_t<TaskPtr>;
+template class toolbox::container::concurrent_queue_t<VoidFunc>;
+template class toolbox::container::concurrent_queue_t<LogEntry>;
+
 }  // namespace toolbox::container
-
-// --- Explicit Template Instantiation ---
-// IMPORTANT: Because the implementation of the template methods is in this .cpp
-// file, you MUST explicitly instantiate the template for EACH type `T` that you
-// intend to use with `concurrent_queue_wrapper_t`. Otherwise, you will get
-// linker errors. Add instantiations for all types you need here.
-// #ifdef CPP_TOOLBOX_COMPILER_MSVC
-// Example instantiation for the type needed by the thread pool:
-template class CPP_TOOLBOX_EXPORT
-    toolbox::container::concurrent_queue_t<std::function<void()>>;
-
-template class CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<
-    std::unique_ptr<toolbox::base::detail::task_base>>;
-
-// Example instantiation for another type:
-// template class CPP_TOOLBOX_EXPORT
-// toolbox::container::concurrent_queue_t<int>; template class
-// CPP_TOOLBOX_EXPORT toolbox::container::concurrent_queue_t<MyClass>;
-
-// #endif

@@ -206,7 +206,10 @@ using remove_all_qualifiers_t = typename remove_all_qualifiers<T>::type;
  * @endcode
  */
 template<typename T>
-concept Callable = requires(T t) { &T::operator(); };
+concept Callable = requires(T t)
+{
+  &T::operator();
+};
 #else
 /**
  * @brief Check if type is callable
@@ -310,10 +313,11 @@ struct function_traits<R (C::*)(Args...)> : function_traits<R(Args...)>
  * @endcode
  */
 template<typename T>
-concept HasSize = requires(T t) {
+concept HasSize = requires(T t)
+{
   {
     t.size()
-  } -> std::convertible_to<std::size_t>;
+    } -> std::convertible_to<std::size_t>;
 };
 
 /**
@@ -326,10 +330,11 @@ concept HasSize = requires(T t) {
  * @endcode
  */
 template<typename T>
-concept Printable = requires(T t, std::ostream& os) {
+concept Printable = requires(T t, std::ostream& os)
+{
   {
     os << t
-  } -> std::same_as<std::ostream&>;
+    } -> std::same_as<std::ostream&>;
 };
 #else
 /**
@@ -405,7 +410,10 @@ public:
   {
   }
 
-  constexpr operator EnumType() const { return value_; }
+  constexpr operator EnumType() const
+  {
+    return value_;
+  }
   constexpr auto to_underlying() const -> underlying_type
   {
     return static_cast<underlying_type>(value_);

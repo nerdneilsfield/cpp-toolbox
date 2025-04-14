@@ -100,10 +100,10 @@ TEST_CASE("ThreadPool Basic Operations", "[base][thread_pool]")
     }
 
     int sum = 0;
-    for (int i = 0; i < num_tasks; ++i) {
+    for (size_t i = 0; i < static_cast<size_t>(num_tasks); ++i) {
       REQUIRE(futures[i].valid());
       int result = futures[i].get();  // 只调用一次 get()
-      REQUIRE(result == i * 2);  // 使用获取到的结果
+      REQUIRE(result == static_cast<int>(i) * 2);  // 使用获取到的结果
       sum += result;
     }
     // Sum of 0*2 + 1*2 + ... + 9*2 = 2 * (0+1+...+9) = 2 * (9*10/2) = 90
@@ -202,9 +202,10 @@ TEST_CASE("ThreadPool Concurrent Submissions",
 
   auto submit_task_func = [&](int thread_id)
   {
+    size_t futures_idx = static_cast<size_t>(thread_id);
     for (int i = 0; i < tasks_per_thread; ++i) {
       int value = thread_id * tasks_per_thread + i;
-      futures[thread_id].push_back(pool.submit(
+      futures[futures_idx].push_back(pool.submit(
           [value]()
           {
             // Simulate some small work
@@ -226,9 +227,9 @@ TEST_CASE("ThreadPool Concurrent Submissions",
 
   // Wait for all tasks to complete and verify results
   int expected_sum = 0;
-  for (int i = 0; i < num_threads; ++i) {
-    for (int j = 0; j < tasks_per_thread; ++j) {
-      int value = i * tasks_per_thread + j;
+  for (size_t i = 0; i < static_cast<size_t>(num_threads); ++i) {
+    for (size_t j = 0; j < static_cast<size_t>(tasks_per_thread); ++j) {
+      int value = static_cast<int>(i) * tasks_per_thread + static_cast<int>(j);
       expected_sum += value;
       REQUIRE(futures[i][j].valid());
       total_sum += futures[i][j].get();  // Accumulate results

@@ -230,10 +230,13 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
   auto consumer_func = [&](int consumer_id)
   {
     int value;
+    // Cast consumer_id for indexing
+    size_t consumer_idx = static_cast<size_t>(consumer_id);
     while (consumed_count.load() < total_items)
     {  // Check global consumed count
       if (queue.try_dequeue(value)) {
-        consumer_results[consumer_id].push_back(value);  // Store locally
+        // Use casted index
+        consumer_results[consumer_idx].push_back(value);  // Store locally
         consumed_count++;
       } else {
         // If producer might be finished and queue is empty, break
@@ -244,7 +247,8 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
           if (!queue.try_dequeue(value))
             break;  // exit if still empty
           else {  // got one element, process it and continue
-            consumer_results[consumer_id].push_back(value);
+            // Use casted index
+            consumer_results[consumer_idx].push_back(value);
             consumed_count++;
           }
         } else {
@@ -279,15 +283,20 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
 
   // Combine results and verify all items were consumed
   std::set<int> consumed_set;
-  int total_consumed_locally = 0;
+  // Change type to size_t to match results.size()
+  size_t total_consumed_locally = 0;
   for (const auto& results : consumer_results) {
+    // No conversion needed now
     total_consumed_locally += results.size();
     for (int item : results) {
       consumed_set.insert(item);
     }
   }
-  REQUIRE(total_consumed_locally == total_items);  // Sanity check
-  REQUIRE(consumed_set.size() == total_items);  // Check for duplicates/missing
+  // Cast total_items to size_t for comparison
+  REQUIRE(total_consumed_locally
+          == static_cast<size_t>(total_items));  // Sanity check
+  REQUIRE(consumed_set.size()
+          == static_cast<size_t>(total_items));  // Check for duplicates/missing
 
   std::set<int> produced_set;
   for (int i = 0; i < total_items; ++i) {
@@ -330,9 +339,12 @@ TEST_CASE("LockFreeQueue Multi-Producer Multi-Consumer (MPMC)",
   auto consumer_func = [&](int consumer_id)
   {
     int value;
+    // Cast consumer_id for indexing
+    size_t consumer_idx = static_cast<size_t>(consumer_id);
     while (consumed_count.load() < total_items) {  // Approximate exit condition
       if (queue.try_dequeue(value)) {
-        consumer_results[consumer_id].push_back(value);
+        // Use casted index
+        consumer_results[consumer_idx].push_back(value);
         consumed_count++;
       } else {
         // Check if producers might be done AND queue seems empty
@@ -342,7 +354,8 @@ TEST_CASE("LockFreeQueue Multi-Producer Multi-Consumer (MPMC)",
             break;  // Likely finished
           } else {
             // Got one, process it
-            consumer_results[consumer_id].push_back(value);
+            // Use casted index
+            consumer_results[consumer_idx].push_back(value);
             consumed_count++;
           }
         } else {
@@ -353,7 +366,8 @@ TEST_CASE("LockFreeQueue Multi-Producer Multi-Consumer (MPMC)",
     // Try one final dequeue sweep after loop exit, as count checks are racy
     int v_final;
     while (queue.try_dequeue(v_final)) {
-      consumer_results[consumer_id].push_back(v_final);
+      // Use casted index
+      consumer_results[consumer_idx].push_back(v_final);
       consumed_count++;  // Note: This might overshoot total_items slightly, but
                          // helps drain
     }
@@ -383,8 +397,10 @@ TEST_CASE("LockFreeQueue Multi-Producer Multi-Consumer (MPMC)",
   // Verification (final count might be slightly off due to race on
   // consumed_count)
   std::set<int> consumed_set;
-  int total_consumed_locally = 0;
+  // Change type to size_t
+  size_t total_consumed_locally = 0;
   for (const auto& results : consumer_results) {
+    // No conversion needed
     total_consumed_locally += results.size();
     for (int item : results) {
       consumed_set.insert(item);
@@ -392,9 +408,11 @@ TEST_CASE("LockFreeQueue Multi-Producer Multi-Consumer (MPMC)",
   }
 
   // The most reliable check is the content of the consumed set
+  // Cast total_items to size_t for comparison
   REQUIRE(total_consumed_locally
-          == total_items);  // Check exact count collected
-  REQUIRE(consumed_set.size() == total_items);  // Check for duplicates/missing
+          == static_cast<size_t>(total_items));  // Check exact count collected
+  REQUIRE(consumed_set.size()
+          == static_cast<size_t>(total_items));  // Check for duplicates/missing
 
   std::set<int> produced_set;
   for (int i = 0; i < num_producers; ++i) {

@@ -1,0 +1,2 @@
+add_executable(example_logger logger/thread_logger_example.cpp)
+target_link_libraries(example_logger PRIVATE cpp-toolbox)

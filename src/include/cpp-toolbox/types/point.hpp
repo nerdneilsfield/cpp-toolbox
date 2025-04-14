@@ -263,10 +263,16 @@ struct CPP_TOOLBOX_EXPORT point_t
   // Note: This provides an arbitrary but consistent ordering.
   bool operator<(const point_t& other) const
   {
-    if (x != other.x)
+    constexpr T epsilon = std::is_floating_point_v<T>
+        ? std::numeric_limits<T>::epsilon() * 100
+        : T {0};
+
+    if (std::abs(x - other.x) > epsilon) {
       return x < other.x;
-    if (y != other.y)
+    }
+    if (std::abs(y - other.y) > epsilon) {
       return y < other.y;
+    }
     return z < other.z;
   }
 

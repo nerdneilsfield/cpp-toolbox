@@ -113,8 +113,9 @@ TEST_CASE("ThreadLogger stream log test", "[ThreadLogger]")
 
   SECTION("multiple types stream log")
   {
-    REQUIRE_NOTHROW(LOG_DEBUG_S << "number: " << 42 << ", float number: "
-                                << 3.14 << ", string: " << "test");
+    REQUIRE_NOTHROW(LOG_DEBUG_S << "number: " << 42
+                                << ", float number: " << 3.14 << ", string: "
+                                << "test");
   }
 
   SECTION("container log")

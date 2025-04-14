@@ -24,6 +24,9 @@ struct task_derived : task_base
   }
 
   // Override execute to call the stored callable
-  void execute() override { func(); }
+  void execute() override
+  {
+    func();
+  }
 };
-}  // namespace detail
+}  // namespace toolbox::base::detail

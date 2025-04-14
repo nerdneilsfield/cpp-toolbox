@@ -98,7 +98,8 @@ simple_timer_array_t::simple_timer_array_t(int size)
   if (size <= 0) {
     throw std::invalid_argument("Timer array size must be positive.");
   }
-  timers_.reserve(size);  // Reserve space for efficiency
+  // Cast size to size_t after checking it's positive
+  timers_.reserve(static_cast<size_t>(size));  // Reserve space for efficiency
   for (int i = 0; i < size; ++i) {
     // Use emplace_back to construct in place
     timers_.emplace_back("timer_" + std::to_string(i));
@@ -131,37 +132,43 @@ void simple_timer_array_t::check_id(int index) const
 void simple_timer_array_t::start(int index)
 {
   check_id(index);
-  timers_[index].start();
+  // Cast index to size_t after check_id confirms it's non-negative
+  timers_[static_cast<size_t>(index)].start();
 }
 
 void simple_timer_array_t::stop(int index)
 {
   check_id(index);
-  timers_[index].stop();
+  // Cast index to size_t after check_id confirms it's non-negative
+  timers_[static_cast<size_t>(index)].stop();
 }
 
 void simple_timer_array_t::reset(int index)
 {
   check_id(index);
-  timers_[index].reset();
+  // Cast index to size_t after check_id confirms it's non-negative
+  timers_[static_cast<size_t>(index)].reset();
 }
 
 auto simple_timer_array_t::elapsed_time_ms(int index) const -> double
 {
   check_id(index);
-  return timers_[index].elapsed_time_ms();
+  // Cast index to size_t after check_id confirms it's non-negative
+  return timers_[static_cast<size_t>(index)].elapsed_time_ms();
 }
 
 auto simple_timer_array_t::elapsed_time(int index) const -> double
 {
   check_id(index);
-  return timers_[index].elapsed_time();
+  // Cast index to size_t after check_id confirms it's non-negative
+  return timers_[static_cast<size_t>(index)].elapsed_time();
 }
 
 void simple_timer_array_t::print_stats(int index) const
 {
   check_id(index);
-  timers_[index].print_stats();
+  // Cast index to size_t after check_id confirms it's non-negative
+  timers_[static_cast<size_t>(index)].print_stats();
 }
 
 void simple_timer_array_t::print_all_stats() const

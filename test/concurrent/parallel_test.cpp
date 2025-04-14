@@ -296,8 +296,9 @@ TEST_CASE("Parallel Reduce Tests", "[concurrent][parallel_reduce]")
     Point identity = {0, 0};
     Point expected = {9, 12};
 
-    auto reduce_op = [](const Point& accumulated, const Point& current)
-    { return Point {accumulated.x + current.x, accumulated.y + current.y}; };
+    auto reduce_op = [](const Point& accumulated, const Point& current) {
+      return Point {accumulated.x + current.x, accumulated.y + current.y};
+    };
 
     Point result =
         parallel_reduce(points.begin(), points.end(), identity, reduce_op);

@@ -27,7 +27,7 @@ set_description("Build tests")
 option_end()
 
 -- Set common compilation flags
-add_rules("mode.debug", "mode.release")
+add_rules("mode.debug", "mode.release", "mode.coverage", "mode.profile", "mode.asan", "mode.tsan", "mode.lsan", "mode.ubsan")
 
 -- Platform specific configurations
 if is_plat("windows") then
@@ -115,11 +115,33 @@ add_requires("concurrentqueue")
 add_requires("catch2")
 
 
+local source_files = {
+        "src/impl/cpp-toolbox/base/**.cpp",
+        "src/impl/cpp-toolbox/container/**.cpp",
+        -- "src/impl/cpp-toolbox/concurrent/**.cpp",
+        "src/impl/cpp-toolbox/file/**.cpp",
+        "src/impl/cpp-toolbox/logger/**.cpp",
+        "src/impl/cpp-toolbox/utils/**.cpp",
+}
+
+local test_files = {
+        "test/base/**.cpp",
+        "test/container/**.cpp",
+        "test/concurrent/**.cpp",
+        "test/file/**.cpp",
+        "test/logger/**.cpp",
+        "test/utils/**.cpp",
+        "test/types/**.cpp",
+        "test/functional/**.cpp",
+        "test/my_catch2_main.cpp",
+}
+
+
 -- Define the library target
 target("cpp-toolbox")
         -- Apply the export header generation rule
         add_rules("generate_export_header")
-        add_files("src/impl/cpp-toolbox/**.cpp")
+        add_files(source_files)
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
 
@@ -139,7 +161,7 @@ target("cpp-toolbox")
 target("cpp-toolbox_static")
         -- Apply the export header generation rule
         add_rules("generate_export_header")
-        add_files("src/impl/cpp-toolbox/**.cpp")
+        add_files(source_files)
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
 
@@ -160,11 +182,18 @@ if has_config("tests") or has_config("developer") then
 
         target("cpp-toolbox-tests")
                 set_kind("binary")
-                add_files("test/**/*.cpp")
+                add_files(test_files)
                 add_deps("cpp-toolbox_static")
                 add_packages("catch2")
                 add_rules("generate_export_header")
-                add_defines("CATCH_CONFIG_MAIN")
+                -- add_defines("CATCH_CONFIG_MAIN")
+end
+
+if has_config("examples") or has_config("developer") then
+        target("cpp-toolbox-examples")
+                set_kind("binary")
+                add_files(example_files)
+                add_deps("cpp-toolbox_static")
 end
 
 -- Documentation with Doxygen
