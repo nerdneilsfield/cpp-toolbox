@@ -122,6 +122,11 @@
             </dt>
             <dd>Attempts to dequeue an item, returning it in an std::optional (non-blocking). Thread-safe for multiple consumers.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a35bc2569336e065de2197b568e0d041e" class="m-doc">wait_dequeue_timed</a>(</span><span class="m-doc-wrap">T&amp; item,
+              std::chrono::microseconds timeout) -&gt; bool</span>
+            </dt>
+            <dd>Attempts to dequeue an item, blocking until an item is available or the specified timeout elapses (non-blocking). Thread-safe for multiple consumers.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ac2ad05e78bebe8ad3738e7a7f70cbe7c" class="m-doc">size_approx</a>(</span><span class="m-doc-wrap">) const -&gt; <a href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638" class="m-doc">size_<wbr />t</a></span>
             </dt>
             <dd>Returns an approximate count of items in the queue. Useful for heuristics but may not be exact in a highly concurrent scenario.</dd>
@@ -198,6 +203,37 @@
                 <tr>
                   <th style="width: 1%">Returns</th>
                   <td>std::optional&lt;T&gt; containing the dequeued value if successful, or std::nullopt if the queue was empty.</td>
+                </tr>
+              </tfoot>
+            </table>
+          </div></section>
+          <section class="m-doc-details" id="a35bc2569336e065de2197b568e0d041e"><div>
+            <h3>
+              <div class="m-doc-template">
+                template&lt;typename T&gt;
+              </div>
+              <span class="m-doc-wrap-bumper">bool toolbox::<wbr />container::<wbr />concurrent_queue_t&lt;T&gt;::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a35bc2569336e065de2197b568e0d041e" class="m-doc-self">wait_dequeue_timed</a>(</span><span class="m-doc-wrap">T&amp; item,
+              std::chrono::microseconds timeout)</span></span>
+            </h3>
+            <p>Attempts to dequeue an item, blocking until an item is available or the specified timeout elapses (non-blocking). Thread-safe for multiple consumers.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">item&nbsp;<span class="m-label m-flat m-warning">out</span></td>
+                  <td>Reference to store the dequeued value if successful.</td>
+                </tr>
+                <tr>
+                  <td>timeout</td>
+                  <td>The maximum duration to wait.</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>True if an item was successfully dequeued within the timeout, false otherwise.</td>
                 </tr>
               </tfoot>
             </table>
