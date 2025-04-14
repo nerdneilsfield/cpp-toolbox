@@ -5,6 +5,7 @@
 #include <limits>
 #include <memory>
 #include <ostream>
+#include <random>
 #include <stdexcept>
 #include <vector>
 

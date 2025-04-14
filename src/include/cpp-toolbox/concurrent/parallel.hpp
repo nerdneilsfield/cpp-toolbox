@@ -1,3 +1,5 @@
+#pragma once
+
 #include <algorithm>  // for std::min
 #include <cmath>  // for std::ceil
 #include <future>

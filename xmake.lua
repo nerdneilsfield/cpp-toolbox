@@ -131,48 +131,51 @@ local test_files = {"test/base/**.cpp", "test/container/**.cpp", "test/concurren
                     "test/logger/**.cpp", "test/utils/**.cpp", "test/types/**.cpp", "test/functional/**.cpp",
                     "test/my_catch2_main.cpp"}
 
+-- Define benchmark files
+local benchmark_files = {"benchmark/**.cpp"}
+
 -- Define the shared library target
 target("cpp-toolbox")
-add_rules("generate_export_header")
-add_files(source_files)
-add_headerfiles("src/include/(**.hpp)")
-add_packages("concurrentqueue")
-set_kind("shared")
-add_defines("CPP_TOOLBOX_EXPORTS")
+        add_rules("generate_export_header")
+        add_files(source_files)
+        add_headerfiles("src/include/(**.hpp)")
+        add_packages("concurrentqueue")
+        set_kind("shared")
+        add_defines("CPP_TOOLBOX_EXPORTS")
 
--- Add thread library
-add_syslinks(is_plat("windows") and "kernel32" or "pthread")
+        -- Add thread library
+        add_syslinks(is_plat("windows") and "kernel32" or "pthread")
 
--- Set symbol visibility on non-Windows platforms
-if not is_plat("windows") then
-    add_cxflags("-fvisibility=hidden")
-end
+        -- Set symbol visibility on non-Windows platforms
+        if not is_plat("windows") then
+        add_cxflags("-fvisibility=hidden")
+        end
 
 -- Define the static library target
 target("cpp-toolbox_static")
-add_rules("generate_export_header")
-add_files(source_files)
-add_headerfiles("src/include/(**.hpp)")
-add_packages("concurrentqueue")
-set_kind("static")
-add_defines("CPP_TOOLBOX_STATIC_DEFINE")
+        add_rules("generate_export_header")
+        add_files(source_files)
+        add_headerfiles("src/include/(**.hpp)")
+        add_packages("concurrentqueue")
+        set_kind("static")
+        add_defines("CPP_TOOLBOX_STATIC_DEFINE")
 
--- Add thread library
-add_syslinks(is_plat("windows") and "kernel32" or "pthread")
+        -- Add thread library
+        add_syslinks(is_plat("windows") and "kernel32" or "pthread")
 
--- Set symbol visibility on non-Windows platforms
-if not is_plat("windows") then
-    add_cxflags("-fvisibility=hidden")
-end
+        -- Set symbol visibility on non-Windows platforms
+        if not is_plat("windows") then
+        add_cxflags("-fvisibility=hidden")
+        end
 
 -- Define tests if enabled
 if has_config("tests") or has_config("developer") then
     target("cpp-toolbox-tests")
-    set_kind("binary")
-    add_files(test_files)
-    add_deps("cpp-toolbox_static")
-    add_packages("catch2")
-    add_rules("generate_export_header")
+        set_kind("binary")
+        add_files(test_files)
+        add_deps("cpp-toolbox_static")
+        add_packages("catch2")
+        add_rules("generate_export_header")
 end
 
 -- Build examples if enabled
@@ -193,19 +196,19 @@ if has_config("examples") or has_config("developer") then
             targetname = string.gsub(targetname, "_example$", "")
             -- Define a target for each file
             target("example_" .. targetname)
-            set_kind("binary")
-            add_files(filepath)
-            add_deps("cpp-toolbox")
-            add_rules("generate_export_header")
-            
-            -- Add platform specific system libraries
-            if is_plat("linux", "macosx", "bsd") then
-                add_syslinks("pthread")
-            elseif is_plat("windows") then
-                add_syslinks("kernel32")
-            else
-                add_syslinks("pthread")
-            end
+                set_kind("binary")
+                add_files(filepath)
+                add_deps("cpp-toolbox")
+                add_rules("generate_export_header")
+                
+                -- Add platform specific system libraries
+                if is_plat("linux", "macosx", "bsd") then
+                        add_syslinks("pthread")
+                elseif is_plat("windows") then
+                        add_syslinks("kernel32")
+                else
+                        add_syslinks("pthread")
+                end
 
             -- Print information
             print("Added example target: example_%s from %s", targetname, filepath)
@@ -213,15 +216,28 @@ if has_config("examples") or has_config("developer") then
     end
 end
 
--- Documentation with Doxygen
-if has_config("docs") or has_config("developer") then
-    add_requires("doxygen", {
-        optional = true
-    })
-
-    target("docs")
-    set_kind("phony")
-    on_build(function(target)
-        os.exec("doxygen docs/Doxyfile")
-    end)
+-- Define tests if enabled
+if has_config("benchmark") or has_config("developer") then
+    target("cpp-toolbox-benchmark")
+        set_kind("binary")
+        add_files(benchmark_files)
+        add_deps("cpp-toolbox_static")
+        add_packages("catch2")
+        add_defines("CATCH_CONFIG_MAIN")
+        add_rules("generate_export_header")
 end
+
+
+
+-- Documentation with Doxygen
+-- if has_config("docs") or has_config("developer") then
+--     add_requires("doxygen", {
+--         optional = true
+--     })
+
+--     target("docs")
+--     set_kind("phony")
+--     on_build(function(target)
+--         os.exec("doxygen docs/Doxyfile")
+--     end)
+-- end
