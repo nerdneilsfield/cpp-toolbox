@@ -1,6 +1,3 @@
-// test/timer/timer_test.cpp
-#define CATCH_CONFIG_MAIN  // Provides main() function for Catch2
-
 #include <chrono>
 #include <thread>
 

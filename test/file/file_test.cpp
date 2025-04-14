@@ -1,5 +1,3 @@
-#define CATCH_CONFIG_MAIN
-
 #include <iostream>
 
 #include "cpp-toolbox/file/file.hpp"

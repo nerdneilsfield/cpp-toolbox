@@ -16,7 +16,6 @@
 #include "cpp-toolbox/types.hpp"  // 引入类型别名，如 i64
 
 // Include Catch2 testing framework
-#define CATCH_CONFIG_MAIN
 #include <catch2/catch_approx.hpp>  // For floating point comparison
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_vector.hpp>  // For vector comparison

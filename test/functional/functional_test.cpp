@@ -20,7 +20,6 @@
 #include "cpp-toolbox/functional/functional.hpp"
 
 // Include Catch2 testing framework
-#define CATCH_CONFIG_MAIN
 #include <catch2/catch_approx.hpp>  // For floating point comparison
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_string.hpp>  // For string matching
@@ -34,7 +33,7 @@ using Catch::Matchers::Equals;
 /// @param a First integer operand
 /// @param b Second integer operand
 /// @return Sum of a and b
-auto add(int a, int b) -> int
+static auto add(int a, int b) -> int
 {
   return a + b;
 }
@@ -43,7 +42,7 @@ auto add(int a, int b) -> int
 /// @param a First integer operand
 /// @param b Second integer operand
 /// @return Product of a and b
-auto multiply(int a, int b) -> int
+static auto multiply(int a, int b) -> int
 {
   return a * b;
 }
@@ -51,7 +50,7 @@ auto multiply(int a, int b) -> int
 /// @brief Creates a greeting string for a given name
 /// @param name The name to include in the greeting
 /// @return A string containing "Hello, " followed by the name
-auto greet(const std::string& name) -> std::string
+static auto greet(const std::string& name) -> std::string
 {
   return "Hello, " + name;
 }
@@ -66,7 +65,7 @@ struct Point
 /// @param lhs Left-hand side Point operand
 /// @param rhs Right-hand side Point operand
 /// @return true if points have equal coordinates, false otherwise
-auto operator==(const Point& lhs, const Point& rhs) -> bool
+static auto operator==(const Point& lhs, const Point& rhs) -> bool
 {
   return lhs.x == rhs.x && lhs.y == rhs.y;
 }
@@ -78,7 +77,7 @@ static std::atomic<int> global_call_count = 0;
 /// @param x Integer input
 /// @param y String input
 /// @return Sum of x and y's length
-int function_to_memoize(int x, const std::string& y)
+static auto function_to_memoize(int x, const std::string& y) -> int
 {
   global_call_count++;  // Increment on each actual execution
   return x + static_cast<int>(y.length());
@@ -87,7 +86,7 @@ int function_to_memoize(int x, const std::string& y)
 /// @brief Another test function with different signature
 /// @param a Double input value
 /// @return Input multiplied by 1.5
-double another_function(double a)
+static auto another_function(double a) -> double
 {
   global_call_count++;
   return a * 1.5;
@@ -101,7 +100,7 @@ static std::atomic<int> fib_call_count = 0;
 static std::function<long long(int)> fib_rec;
 
 /// @brief Sets up the memoized recursive Fibonacci calculator
-void setup_fib_rec()
+static void setup_fib_rec()
 {
   fib_call_count = 0;  // Reset counter
   fib_rec = toolbox::functional::memoize_explicit<long long, int>(

@@ -361,6 +361,28 @@ struct CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>
   minmax_t& operator+=(const point_t<T>& value);  // Declaration only
 };
 
+// --- Definition of operator+= for minmax_t<point_t<T>> ---
+template<typename T>
+CPP_TOOLBOX_EXPORT minmax_t<point_t<T>>& minmax_t<point_t<T>>::operator+=(
+    const point_t<T>& value)
+{
+  if (!initialized_) {
+    min = value;
+    max = value;
+    initialized_ = true;
+  } else {
+    // Component-wise update
+    min.x = std::min(min.x, value.x);
+    min.y = std::min(min.y, value.y);
+    min.z = std::min(min.z, value.z);
+
+    max.x = std::max(max.x, value.x);
+    max.y = std::max(max.y, value.y);
+    max.z = std::max(max.z, value.z);
+  }
+  return *this;
+}
+
 // --- Helper functions for combining minmax results (Now in main namespace) ---
 
 // Helper function to combine two minmax results, handling initialization state

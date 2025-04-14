@@ -12,7 +12,6 @@
 #include "cpp-toolbox/base/thread_pool_singleton.hpp"
 
 // Include Catch2 testing framework
-#define CATCH_CONFIG_MAIN  // Let Catch2 provide main()
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/matchers/catch_matchers_string.hpp>  // For exception message matching
 
@@ -30,7 +29,7 @@ using Catch::Matchers::ContainsSubstring;  // For checking exception messages
  * @example
  * int result = simulate_work(100, 5); // Sleeps 5ms and returns 101
  */
-int simulate_work(int value, int milliseconds)
+static int simulate_work(int value, int milliseconds)
 {
   std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
   return value + 1;
@@ -48,7 +47,7 @@ int simulate_work(int value, int milliseconds)
  *   // Handle exception
  * }
  */
-void throwing_task()
+static void throwing_task()
 {
   throw std::runtime_error("Task failed intentionally");
 }

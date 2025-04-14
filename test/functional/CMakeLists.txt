@@ -1,7 +1,6 @@
-add_executable(functional_test functional_test.cpp)
-target_link_libraries(functional_test PRIVATE cpp-toolbox_test_lib Catch2WithMain)
-target_compile_features(functional_test PRIVATE cxx_std_17)
-# NOTICE: this is a workaround for the macro PROJECT_SOURCE_DIR not being defined
-# in the test environment.
-target_compile_definitions(functional_test PRIVATE PROJECT_SOURCE_DIR="${PROJECT_SOURCE_DIR}")
-add_test(NAME functional_test COMMAND functional_test)
+set(BASE_TEST_FILES 
+        ${CMAKE_CURRENT_SOURCE_DIR}/functional_test.cpp
+)
+
+list(APPEND TEST_FILES ${BASE_TEST_FILES})
+set(TEST_FILES ${TEST_FILES} PARENT_SCOPE)

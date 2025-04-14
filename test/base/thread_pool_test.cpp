@@ -24,7 +24,7 @@ using Catch::Matchers::Message;
  * @param milliseconds Duration to sleep.
  * @return The duration slept in milliseconds.
  */
-int simulate_work(int milliseconds)
+static int simulate_work(int milliseconds)
 {
   std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
   return milliseconds;
@@ -33,7 +33,7 @@ int simulate_work(int milliseconds)
 /**
  * @brief Helper function that throws an exception.
  */
-void throwing_task()
+static void throwing_task()
 {
   throw std::runtime_error("Task failed intentionally");
 }

@@ -1,7 +1,6 @@
 #include "cpp-toolbox/base/env.hpp"
 
 #include <catch2/catch_test_macros.hpp>
-#define CATCH_CONFIG_MAIN
 
 TEST_CASE("set_environment_variable")
 {

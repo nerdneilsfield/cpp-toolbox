@@ -18,3 +18,4 @@ log/
 CMakeCache.txt
 CMakeFiles/
 .cache/
+.xmake/
