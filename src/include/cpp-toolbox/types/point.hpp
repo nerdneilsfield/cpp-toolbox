@@ -53,22 +53,12 @@ struct CPP_TOOLBOX_EXPORT point_t
    * @param y_coord Y coordinate
    * @param z_coord Z coordinate
    */
-  point_t(T x_coord, T y_coord, T z_coord)
-      : x(x_coord)
-      , y(y_coord)
-      , z(z_coord)
-  {
-  }
+  point_t(T x_coord, T y_coord, T z_coord);
 
   /**
    * @brief Default constructor, initializes to origin (0,0,0)
    */
-  point_t()
-      : x(T {})
-      , y(T {})
-      , z(T {})
-  {
-  }
+  point_t();
 
   point_t(const point_t& other) = default;  ///< Copy constructor
   point_t(point_t&& other) noexcept = default;  ///< Move constructor
@@ -81,39 +71,21 @@ struct CPP_TOOLBOX_EXPORT point_t
    * @param other Point to add
    * @return Reference to this point
    */
-  point_t& operator+=(const point_t& other)
-  {
-    x += other.x;
-    y += other.y;
-    z += other.z;
-    return *this;
-  }
+  point_t& operator+=(const point_t& other);
 
   /**
    * @brief Subtract another point component-wise
    * @param other Point to subtract
    * @return Reference to this point
    */
-  point_t& operator-=(const point_t& other)
-  {
-    x -= other.x;
-    y -= other.y;
-    z -= other.z;
-    return *this;
-  }
+  point_t& operator-=(const point_t& other);
 
   /**
    * @brief Multiply coordinates by a scalar
    * @param scalar Value to multiply by
    * @return Reference to this point
    */
-  point_t& operator*=(const T& scalar)
-  {
-    x *= scalar;
-    y *= scalar;
-    z *= scalar;
-    return *this;
-  }
+  point_t& operator*=(const T& scalar);
 
   /**
    * @brief Divide coordinates by a scalar
@@ -121,118 +93,55 @@ struct CPP_TOOLBOX_EXPORT point_t
    * @return Reference to this point
    * @throws std::runtime_error if scalar is zero
    */
-  point_t& operator/=(const T& scalar)
-  {
-    if constexpr (std::is_floating_point_v<T>) {
-      constexpr T epsilon = std::numeric_limits<T>::epsilon();
-      if (std::abs(scalar) < epsilon) {
-        throw std::runtime_error("Division by zero in point_t::operator/=");
-      }
-    } else if constexpr (std::is_integral_v<T>) {
-      if (scalar == T {0}) {
-        throw std::runtime_error("Division by zero in point_t::operator/=");
-      }
-    }
-
-    x /= scalar;
-    y /= scalar;
-    z /= scalar;
-    return *this;
-  }
+  point_t& operator/=(const T& scalar);
 
   /**
    * @brief Calculate dot product with another point
    * @param other Point to calculate dot product with
    * @return Dot product value
    */
-  [[nodiscard]] auto dot(const point_t& other) const -> T
-  {
-    return (x * other.x) + (y * other.y) + (z * other.z);
-  }
+  [[nodiscard]] auto dot(const point_t& other) const -> T;
 
   /**
    * @brief Calculate cross product with another point
    * @param other Point to calculate cross product with
    * @return New point representing cross product
    */
-  [[nodiscard]] auto cross(const point_t& other) const -> point_t
-  {
-    return point_t((y * other.z) - (z * other.y),
-                   (z * other.x) - (x * other.z),
-                   (x * other.y) - (y * other.x));
-  }
+  [[nodiscard]] auto cross(const point_t& other) const -> point_t;
 
   /**
    * @brief Calculate Euclidean norm (length) of vector
    * @return Norm as double
    */
-  [[nodiscard]] auto norm() const -> double
-  {
-    const double dx = static_cast<double>(x);
-    const double dy = static_cast<double>(y);
-    const double dz = static_cast<double>(z);
-    return std::sqrt((dx * dx) + (dy * dy) + (dz * dz));
-  }
+  [[nodiscard]] auto norm() const -> double;
 
   /**
    * @brief Return normalized vector (unit length)
    * @return Normalized vector as point_t<double>
    */
-  [[nodiscard]] auto normalize() const -> point_t<double>
-  {
-    const double length = this->norm();
-    constexpr double epsilon = std::numeric_limits<double>::epsilon();
-    if (std::abs(length) < epsilon) {
-      return point_t<double>(0.0, 0.0, 0.0);
-    }
-    return point_t<double>(static_cast<double>(x) / length,
-                           static_cast<double>(y) / length,
-                           static_cast<double>(z) / length);
-  }
+  [[nodiscard]] auto normalize() const -> point_t<double>;
 
   /**
    * @brief Calculate p-norm of vector
    * @param p_value The p value for norm calculation
    * @return p-norm as double
    */
-  [[nodiscard]] auto p_norm(const double& p_value) const -> double
-  {
-    const double dx = static_cast<double>(x);
-    const double dy = static_cast<double>(y);
-    const double dz = static_cast<double>(z);
-    return std::pow(std::pow(std::abs(dx), p_value)
-                        + std::pow(std::abs(dy), p_value)
-                        + std::pow(std::abs(dz), p_value),
-                    1.0 / p_value);
-  }
+  [[nodiscard]] auto p_norm(const double& p_value) const -> double;
 
   /**
    * @brief Return p-normalized vector
    * @param p_value The p value for normalization
    * @return p-normalized vector as point_t<double>
    */
-  [[nodiscard]] auto p_normalize(const double& p_value) const -> point_t<double>
-  {
-    const double length = this->p_norm(p_value);
-    constexpr double epsilon = std::numeric_limits<double>::epsilon();
-    if (std::abs(length) < epsilon) {
-      return point_t<double>(0.0, 0.0, 0.0);
-    }
-    return point_t<double>(static_cast<double>(x) / length,
-                           static_cast<double>(y) / length,
-                           static_cast<double>(z) / length);
-  }
+  [[nodiscard]] auto p_normalize(const double& p_value) const
+      -> point_t<double>;
 
   /**
    * @brief Calculate Euclidean distance to another point
    * @param other Point to calculate distance to
    * @return Distance as double
    */
-  [[nodiscard]] auto distance(const point_t& other) const -> double
-  {
-    const point_t diff(other.x - x, other.y - y, other.z - z);
-    return diff.norm();
-  }
+  [[nodiscard]] auto distance(const point_t& other) const -> double;
 
   /**
    * @brief Calculate p-distance to another point
@@ -241,41 +150,16 @@ struct CPP_TOOLBOX_EXPORT point_t
    * @return p-distance as double
    */
   [[nodiscard]] auto distance_p(const point_t& other,
-                                const double& p_value) const -> double
-  {
-    const point_t diff(other.x - x, other.y - y, other.z - z);
-    return diff.p_norm(p_value);
-  }
+                                const double& p_value) const -> double;
 
   // Define comparison operators
-  bool operator==(const point_t& other) const
-  {
-    constexpr T epsilon = std::is_floating_point_v<T>
-        ? std::numeric_limits<T>::epsilon() * 100
-        : T {0};
-    return (std::abs(x - other.x) <= epsilon)
-        && (std::abs(y - other.y) <= epsilon)
-        && (std::abs(z - other.z) <= epsilon);
-  }
+  bool operator==(const point_t& other) const;
 
-  bool operator!=(const point_t& other) const { return !(*this == other); }
+  bool operator!=(const point_t& other) const;
 
   // Add a basic operator< for testing purposes
   // Note: This provides an arbitrary but consistent ordering.
-  bool operator<(const point_t& other) const
-  {
-    constexpr T epsilon = std::is_floating_point_v<T>
-        ? std::numeric_limits<T>::epsilon() * 100
-        : T {0};
-
-    if (std::abs(x - other.x) > epsilon) {
-      return x < other.x;
-    }
-    if (std::abs(y - other.y) > epsilon) {
-      return y < other.y;
-    }
-    return z < other.z;
-  }
+  bool operator<(const point_t& other) const;
 
   /**
    * @brief Get point with minimum possible values
@@ -290,33 +174,7 @@ struct CPP_TOOLBOX_EXPORT point_t
   [[nodiscard]] static auto max_value() -> point_t;
 };
 
-// Static member definitions
-template<typename T>
-auto point_t<T>::min_value() -> point_t<T>
-{
-  if constexpr (std::numeric_limits<T>::is_specialized) {
-    T min_val = std::numeric_limits<T>::is_integer
-        ? std::numeric_limits<T>::min()
-        : std::numeric_limits<T>::lowest();
-    return point_t<T>(min_val, min_val, min_val);
-  } else {
-    return point_t<T>();
-  }
-}
-
-template<typename T>
-auto point_t<T>::max_value() -> point_t<T>
-{
-  if constexpr (std::numeric_limits<T>::is_specialized) {
-    return point_t<T>(std::numeric_limits<T>::max(),
-                      std::numeric_limits<T>::max(),
-                      std::numeric_limits<T>::max());
-  } else {
-    return point_t<T>();
-  }
-}
-
-// Specializations for static members
+// Specializations for static members (keep inline definitions here)
 template<>
 [[nodiscard]] inline auto point_t<int>::min_value() -> point_t<int>
 {
@@ -350,18 +208,14 @@ template<>
 }
 
 /**
- * @brief Stream output operator for point_t
+ * @brief Stream output operator for point_t - Declaration Only
  * @param output_stream Output stream
  * @param pt Point to output
  * @return Reference to output stream
  */
 template<typename T>
 auto operator<<(std::ostream& output_stream, const point_t<T>& pt)
-    -> std::ostream&
-{
-  output_stream << "(" << pt.x << ", " << pt.y << ", " << pt.z << ")";
-  return output_stream;
-}
+    -> std::ostream&;
 
 /**
  * @brief A point cloud class containing points and associated data
@@ -395,84 +249,35 @@ public:
 
   ~point_cloud_t() = default;
 
-  point_cloud_t()
-      : intensity(T {})
-  {
-  }
+  point_cloud_t();
 
-  point_cloud_t(const point_cloud_t& other)
-      : points(other.points)
-      , normals(other.normals)
-      , colors(other.colors)
-      , intensity(other.intensity)
-  {
-  }
-
-  point_cloud_t(point_cloud_t&& other) noexcept
-      : points(std::move(other.points))
-      , normals(std::move(other.normals))
-      , colors(std::move(other.colors))
-      , intensity(std::move(other.intensity))
-  {
-    other.intensity = T {};
-  }
-
-  point_cloud_t& operator=(const point_cloud_t& other)
-  {
-    if (this != &other) {
-      points = other.points;
-      normals = other.normals;
-      colors = other.colors;
-      intensity = other.intensity;
-    }
-    return *this;
-  }
-
-  point_cloud_t& operator=(point_cloud_t&& other) noexcept
-  {
-    if (this != &other) {
-      points = std::move(other.points);
-      normals = std::move(other.normals);
-      colors = std::move(other.colors);
-      intensity = std::move(other.intensity);
-      other.intensity = T {};
-    }
-    return *this;
-  }
+  point_cloud_t(const point_cloud_t& other);
+  point_cloud_t(point_cloud_t&& other) noexcept;
+  point_cloud_t& operator=(const point_cloud_t& other);
+  point_cloud_t& operator=(point_cloud_t&& other) noexcept;
 
   /**
    * @brief Get number of points in cloud
    * @return Number of points
    */
-  [[nodiscard]] auto size() const -> std::size_t { return points.size(); }
+  [[nodiscard]] auto size() const -> std::size_t;
 
   /**
    * @brief Check if cloud is empty
    * @return true if empty, false otherwise
    */
-  [[nodiscard]] auto empty() const -> bool { return points.empty(); }
+  [[nodiscard]] auto empty() const -> bool;
 
   /**
    * @brief Clear all data from cloud
    */
-  void clear()
-  {
-    points.clear();
-    normals.clear();
-    colors.clear();
-    intensity = T {};
-  }
+  void clear();
 
   /**
    * @brief Reserve memory for points
    * @param required_size Number of points to reserve space for
    */
-  void reserve(const std::size_t& required_size)
-  {
-    points.reserve(required_size);
-    normals.reserve(required_size);
-    colors.reserve(required_size);
-  }
+  void reserve(const std::size_t& required_size);
 
   /**
    * @brief Add two point clouds
@@ -480,140 +285,59 @@ public:
    * @return New combined cloud
    */
   [[nodiscard]] auto operator+(const point_cloud_t& other) const
-      -> point_cloud_t
-  {
-    point_cloud_t result = *this;
-    result += other;
-    return result;
-  }
+      -> point_cloud_t;
 
   /**
    * @brief Add point to cloud
    * @param point Point to add
    * @return New cloud with added point
    */
-  [[nodiscard]] auto operator+(const point_t<T>& point) const -> point_cloud_t
-  {
-    point_cloud_t result = *this;
-    result += point;
-    return result;
-  }
+  [[nodiscard]] auto operator+(const point_t<T>& point) const -> point_cloud_t;
 
   /**
    * @brief Add point to cloud (move version)
    * @param point Point to add
    * @return New cloud with added point
    */
-  [[nodiscard]] auto operator+(point_t<T>&& point) const -> point_cloud_t
-  {
-    point_cloud_t result = *this;
-    result += std::move(point);
-    return result;
-  }
+  [[nodiscard]] auto operator+(point_t<T>&& point) const -> point_cloud_t;
 
   /**
    * @brief Add two point clouds (move version)
    * @param other Cloud to add
    * @return New combined cloud
    */
-  [[nodiscard]] auto operator+(point_cloud_t&& other) const -> point_cloud_t
-  {
-    point_cloud_t result = *this;
-    result += std::move(other);
-    return result;
-  }
+  [[nodiscard]] auto operator+(point_cloud_t&& other) const -> point_cloud_t;
 
   /**
    * @brief Add point to cloud
    * @param point Point to add
    * @return Reference to this cloud
    */
-  point_cloud_t& operator+=(const point_t<T>& point)
-  {
-    points.push_back(point);
-    return *this;
-  }
+  point_cloud_t& operator+=(const point_t<T>& point);
 
   /**
    * @brief Add point to cloud (move version)
    * @param point Point to add
    * @return Reference to this cloud
    */
-  point_cloud_t& operator+=(point_t<T>&& point)
-  {
-    points.push_back(std::move(point));
-    return *this;
-  }
+  point_cloud_t& operator+=(point_t<T>&& point);
 
   /**
    * @brief Add another cloud to this one
    * @param other Cloud to add
    * @return Reference to this cloud
    */
-  point_cloud_t& operator+=(const point_cloud_t& other)
-  {
-    if (this != &other) {
-      points.insert(points.end(), other.points.begin(), other.points.end());
-      if (normals.size() == points.size() - other.points.size()
-          && !other.normals.empty())
-      {
-        normals.insert(
-            normals.end(), other.normals.begin(), other.normals.end());
-      } else if (!normals.empty() || !other.normals.empty()) {
-        std::cerr
-            << "Warning: Normals mismatch in point_cloud_t += operation.\n";
-      }
-      if (colors.size() == points.size() - other.points.size()
-          && !other.colors.empty())
-      {
-        colors.insert(colors.end(), other.colors.begin(), other.colors.end());
-      } else if (!colors.empty() || !other.colors.empty()) {
-        std::cerr
-            << "Warning: Colors mismatch in point_cloud_t += operation.\n";
-      }
-
-      intensity += other.intensity;
-    }
-    return *this;
-  }
+  point_cloud_t& operator+=(const point_cloud_t& other);
 
   /**
    * @brief Add another cloud to this one (move version)
    * @param other Cloud to add
    * @return Reference to this cloud
    */
-  point_cloud_t& operator+=(point_cloud_t&& other)
-  {
-    if (this != &other) {
-      points.insert(points.end(),
-                    std::make_move_iterator(other.points.begin()),
-                    std::make_move_iterator(other.points.end()));
-      if (normals.size() == points.size() - other.points.size()
-          && !other.normals.empty())
-      {
-        normals.insert(normals.end(),
-                       std::make_move_iterator(other.normals.begin()),
-                       std::make_move_iterator(other.normals.end()));
-      } else if (!normals.empty() || !other.normals.empty()) {
-        std::cerr << "Warning: Normals mismatch in point_cloud_t += move "
-                     "operation.\n";
-      }
-      if (colors.size() == points.size() - other.colors.size()
-          && !other.colors.empty())
-      {
-        colors.insert(colors.end(),
-                      std::make_move_iterator(other.colors.begin()),
-                      std::make_move_iterator(other.colors.end()));
-      } else if (!colors.empty() || !other.colors.empty()) {
-        std::cerr
-            << "Warning: Colors mismatch in point_cloud_t += move operation.\n";
-      }
-
-      intensity += other.intensity;
-      other.clear();
-    }
-    return *this;
-  }
+  point_cloud_t& operator+=(point_cloud_t&& other);
 };
 
 }  // namespace toolbox::types
+
+// Include the implementation file
+#include "cpp-toolbox/types/impl/point_impl.hpp"

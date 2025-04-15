@@ -4,6 +4,7 @@
 #include <functional>  // Potentially useful, though not strictly required by compose itself
 #include <iostream>
 #include <iterator>
+#include <map>
 #include <memory>  // std::shared_ptr, std::make_shared
 #include <mutex>  // std::mutex
 #include <numeric>
@@ -180,13 +181,7 @@ struct MemoizeState
  * @endcode
  */
 template<typename G, typename F>
-CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f)
-{
-  return
-      [g = std::forward<G>(g), f = std::forward<F>(f)](auto&&... args) mutable
-      -> decltype(g(f(std::forward<decltype(args)>(args)...)))
-  { return g(f(std::forward<decltype(args)>(args)...)); };
-}
+CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f);
 
 /**
  * @brief Composes multiple functions into a single function
@@ -206,22 +201,7 @@ CPP_TOOLBOX_EXPORT auto compose(G&& g, F&& f)
  * @endcode
  */
 template<typename F1, typename... FRest>
-CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
-{
-  if constexpr (sizeof...(FRest) == 0) {
-    return [f1_cap =
-                std::forward<F1>(f1)](auto&&... args) mutable -> decltype(auto)
-    { return f1_cap(std::forward<decltype(args)>(args)...); };
-  } else {
-    auto composed_rest = compose(std::forward<FRest>(rest)...);
-
-    return [f1_cap = std::forward<F1>(f1),
-            composed_rest_cap = std::move(composed_rest)](
-               auto&&... args) mutable -> decltype(auto) {
-      return f1_cap(composed_rest_cap(std::forward<decltype(args)>(args)...));
-    };
-  }
-}
+CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest);
 
 /**
  * @brief Empty compose function that throws an error
@@ -235,10 +215,7 @@ CPP_TOOLBOX_EXPORT auto compose(F1&& f1, FRest&&... rest)
  * }
  * @endcode
  */
-inline CPP_TOOLBOX_EXPORT auto compose()
-{
-  throw std::logic_error("compose called with no functions");
-}
+inline CPP_TOOLBOX_EXPORT auto compose();
 
 /**
  * @brief Binds the first argument of a function
@@ -256,14 +233,7 @@ inline CPP_TOOLBOX_EXPORT auto compose()
  * @endcode
  */
 template<typename F, typename Arg1>
-CPP_TOOLBOX_EXPORT auto bind_first(F&& f, Arg1&& arg1)
-{
-  return
-      [f = std::forward<F>(f),
-       arg1 = std::forward<Arg1>(arg1)](auto&&... rest_args)
-          -> decltype(f(arg1, std::forward<decltype(rest_args)>(rest_args)...))
-  { return f(arg1, std::forward<decltype(rest_args)>(rest_args)...); };
-}
+CPP_TOOLBOX_EXPORT auto bind_first(F&& f, Arg1&& arg1);
 
 /**
  * @brief Maps a function over an optional value
@@ -283,17 +253,7 @@ CPP_TOOLBOX_EXPORT auto bind_first(F&& f, Arg1&& arg1)
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto map(const std::optional<T>& opt, F&& f)
-    -> std::optional<std::invoke_result_t<F, const T&>>
-{
-  using result_type = std::invoke_result_t<F, const T&>;
-  using result_optional_type = std::optional<result_type>;
-
-  if (opt.has_value()) {
-    return result_optional_type(std::invoke(std::forward<F>(f), *opt));
-  } else {
-    return std::nullopt;
-  }
-}
+    -> std::optional<std::invoke_result_t<F, const T&>>;
 
 /**
  * @brief Maps a function over an optional rvalue
@@ -312,18 +272,7 @@ CPP_TOOLBOX_EXPORT auto map(const std::optional<T>& opt, F&& f)
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto map(std::optional<T>&& opt, F&& f)
-    -> std::optional<std::invoke_result_t<F, T&&>>
-{
-  using result_type = std::invoke_result_t<F, T&&>;
-  using result_optional_type = std::optional<result_type>;
-
-  if (opt.has_value()) {
-    return result_optional_type(
-        std::invoke(std::forward<F>(f), std::move(*opt)));
-  } else {
-    return std::nullopt;
-  }
-}
+    -> std::optional<std::invoke_result_t<F, T&&>>;
 
 /**
  * @brief Flat maps a function over an optional value
@@ -344,19 +293,7 @@ CPP_TOOLBOX_EXPORT auto map(std::optional<T>&& opt, F&& f)
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto flatMap(const std::optional<T>& opt, F&& f)
-    -> std::invoke_result_t<F, const T&>
-{
-  using result_optional_type = std::invoke_result_t<F, const T&>;
-
-  static_assert(detail::is_optional_v<result_optional_type>,
-                "Function passed to flatMap must return a std::optional type.");
-
-  if (opt.has_value()) {
-    return std::invoke(std::forward<F>(f), *opt);
-  } else {
-    return result_optional_type {};
-  }
-}
+    -> std::invoke_result_t<F, const T&>;
 
 /**
  * @brief Flat maps a function over an optional rvalue
@@ -376,18 +313,7 @@ CPP_TOOLBOX_EXPORT auto flatMap(const std::optional<T>& opt, F&& f)
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto flatMap(std::optional<T>&& opt, F&& f)
-    -> std::invoke_result_t<F, T&&>
-{
-  using result_optional_type = std::invoke_result_t<F, T&&>;
-  static_assert(detail::is_optional_v<result_optional_type>,
-                "Function passed to flatMap must return a std::optional type.");
-
-  if (opt.has_value()) {
-    return std::invoke(std::forward<F>(f), std::move(*opt));
-  } else {
-    return result_optional_type {};
-  }
-}
+    -> std::invoke_result_t<F, T&&>;
 
 /**
  * @brief Returns the contained value or a default
@@ -405,14 +331,7 @@ CPP_TOOLBOX_EXPORT auto flatMap(std::optional<T>&& opt, F&& f)
  */
 template<typename T, typename U>
 CPP_TOOLBOX_EXPORT auto orElse(const std::optional<T>& opt, U&& default_value)
-    -> T
-{
-  static_assert(
-      std::is_convertible_v<U, T>,
-      "Default value type must be convertible to optional's value type T.");
-
-  return opt.value_or(std::forward<U>(default_value));
-}
+    -> T;
 
 /**
  * @brief Returns the contained value or calls function for default
@@ -431,22 +350,7 @@ CPP_TOOLBOX_EXPORT auto orElse(const std::optional<T>& opt, U&& default_value)
  */
 template<typename T, typename F>
 CPP_TOOLBOX_EXPORT auto orElseGet(const std::optional<T>& opt, F&& default_func)
-    -> T
-{
-  static_assert(std::is_invocable_v<F>,
-                "Default function must be callable with no arguments.");
-
-  using default_result_type = std::invoke_result_t<F>;
-  static_assert(std::is_convertible_v<default_result_type, T>,
-                "Default function's return type must be convertible to "
-                "optional's value type T.");
-
-  if (opt.has_value()) {
-    return *opt;
-  } else {
-    return static_cast<T>(std::invoke(std::forward<F>(default_func)));
-  }
-}
+    -> T;
 
 /**
  * @brief Filters an optional based on a predicate
@@ -465,26 +369,7 @@ CPP_TOOLBOX_EXPORT auto orElseGet(const std::optional<T>& opt, F&& default_func)
  */
 template<typename T, typename P>
 CPP_TOOLBOX_EXPORT auto filter(const std::optional<T>& opt, P&& p)
-    -> std::optional<T>
-{
-#if __cpp_lib_is_invocable >= 201703L
-  static_assert(
-      std::is_invocable_r_v<
-          bool,
-          P,
-          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
-      "Predicate must be callable with const T& and return bool or "
-      "bool-convertible.");
-#else
-  static_assert(
-      std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
-      "Predicate must be callable with const T& and return bool-convertible.");
-#endif
-
-  return (opt.has_value() && std::invoke(std::forward<P>(p), *opt))
-      ? opt
-      : std::nullopt;
-}
+    -> std::optional<T>;
 
 /**
  * @brief Filters an optional rvalue based on a predicate
@@ -502,28 +387,7 @@ CPP_TOOLBOX_EXPORT auto filter(const std::optional<T>& opt, P&& p)
  */
 template<typename T, typename P>
 CPP_TOOLBOX_EXPORT auto filter(std::optional<T>&& opt, P&& p)
-    -> std::optional<T>
-{
-#if __cpp_lib_is_invocable >= 201703L
-  static_assert(
-      std::is_invocable_r_v<
-          bool,
-          P,
-          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
-      "Predicate must be callable with const T& and return bool or "
-      "bool-convertible.");
-#else
-  static_assert(
-      std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
-      "Predicate must be callable with const T& and return bool-convertible.");
-#endif
-
-  if (opt.has_value() && std::invoke(std::forward<P>(p), *opt)) {
-    return std::move(opt);
-  } else {
-    return std::nullopt;
-  }
-}
+    -> std::optional<T>;
 
 /**
  * @brief Pattern matches on a variant using visitor functions
@@ -544,14 +408,7 @@ CPP_TOOLBOX_EXPORT auto filter(std::optional<T>&& opt, P&& p)
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(const std::variant<Ts...>& var, Fs&&... visitors)
-    -> decltype(auto)
-{
-  static_assert(
-      sizeof...(Ts) == sizeof...(Fs),
-      "Number of visitors must match the number of types in the variant");
-  auto visitor_set = detail::overloaded {std::forward<Fs>(visitors)...};
-  return std::visit(visitor_set, var);
-}
+    -> decltype(auto);
 
 /**
  * @brief Match variant with visitor functions for non-const lvalue variant
@@ -572,14 +429,7 @@ CPP_TOOLBOX_EXPORT auto match(const std::variant<Ts...>& var, Fs&&... visitors)
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>& var, Fs&&... visitors)
-    -> decltype(auto)
-{
-  static_assert(
-      sizeof...(Ts) == sizeof...(Fs),
-      "Number of visitors must match the number of types in the variant");
-  auto visitor_set = detail::overloaded {std::forward<Fs>(visitors)...};
-  return std::visit(visitor_set, var);
-}
+    -> decltype(auto);
 
 /**
  * @brief Match variant with visitor functions for rvalue variant
@@ -599,14 +449,7 @@ CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>& var, Fs&&... visitors)
  */
 template<typename... Ts, typename... Fs>
 CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>&& var, Fs&&... visitors)
-    -> decltype(auto)
-{
-  static_assert(
-      sizeof...(Ts) == sizeof...(Fs),
-      "Number of visitors must match the number of types in the variant");
-  auto visitor_set = detail::overloaded {std::forward<Fs>(visitors)...};
-  return std::visit(visitor_set, std::move(var));
-}
+    -> decltype(auto);
 
 /**
  * @brief Apply a function to the value held by a variant and return result in a
@@ -638,35 +481,7 @@ CPP_TOOLBOX_EXPORT auto match(std::variant<Ts...>&& var, Fs&&... visitors)
  */
 template<typename ResultVariant, typename... Ts, typename F>
 CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
-    -> ResultVariant
-{
-  // std::cout << "[Debug map(const variant)] Entered map function.\n";
-  return std::visit(
-      [&f](const auto& value) -> ResultVariant
-      {
-        // std::cout << "  [Debug map] Inside visit lambda. Visited value type:
-        // "
-        //           << typeid(value).name() << ".\n";
-        if constexpr (std::is_void_v<std::invoke_result_t<F, decltype(value)>>)
-        {
-          std::invoke(f, value);
-          static_assert(
-              !std::is_void_v<std::invoke_result_t<F, decltype(value)>>,
-              "Function used with map cannot return void (or ResultVariant "
-              "needs std::monostate).");
-        } else {
-          auto f_result = std::invoke(f, value);
-          // std::cout << "    [Debug map] User lambda (f) returned type: "
-          //           << typeid(f_result).name() << ".\n";
-          ResultVariant constructed_result {f_result};
-          // std::cout << "    [Debug map] Constructed ResultVariant holds
-          // index: "
-          //           << constructed_result.index() << ".\n";
-          return constructed_result;
-        }
-      },
-      var);
-}
+    -> ResultVariant;
 
 /**
  * @brief Apply a function to the value held by a non-const lvalue variant
@@ -686,36 +501,7 @@ CPP_TOOLBOX_EXPORT auto map(const std::variant<Ts...>& var, F&& f)
  * @endcode
  */
 template<typename ResultVariant, typename... Ts, typename F>
-CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
-{
-  // std::cout << "[Debug map(variant&)] Entered map function.\n";
-  return std::visit(
-      [&f](auto& value) -> ResultVariant
-      {
-        // std::cout << "  [Debug map(variant&)] Inside visit lambda. Visited "
-        //              "value type: "
-        //           << typeid(value).name() << ".\n";
-        if constexpr (std::is_void_v<std::invoke_result_t<F, decltype(value)>>)
-        {
-          std::invoke(f, value);
-          static_assert(
-              !std::is_void_v<std::invoke_result_t<F, decltype(value)>>,
-              "Function used with map cannot return void (or ResultVariant "
-              "needs std::monostate).");
-        } else {
-          auto f_result = std::invoke(f, value);
-          // std::cout
-          //     << "    [Debug map(variant&)] User lambda (f) returned type: "
-          //     << typeid(f_result).name() << ".\n";
-          ResultVariant constructed_result {f_result};
-          // std::cout << "    [Debug map(variant&)] Constructed ResultVariant "
-          //              "holds index: "
-          //           << constructed_result.index() << ".\n";
-          return constructed_result;
-        }
-      },
-      var);
-}
+CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant;
 
 /**
  * @brief Apply a function to the value held by an rvalue variant
@@ -735,25 +521,7 @@ CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>& var, F&& f) -> ResultVariant
  * @endcode
  */
 template<typename ResultVariant, typename... Ts, typename F>
-CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>&& var, F&& f) -> ResultVariant
-{
-  return std::visit(
-      [&f](auto&& value) -> ResultVariant
-      {
-        if constexpr (std::is_void_v<std::invoke_result_t<F, decltype(value)>>)
-        {
-          std::invoke(f, std::forward<decltype(value)>(value));
-          static_assert(
-              !std::is_void_v<std::invoke_result_t<F, decltype(value)>>,
-              "Function used with map cannot return void (or ResultVariant "
-              "needs std::monostate).");
-        } else {
-          return ResultVariant {
-              std::invoke(f, std::forward<decltype(value)>(value))};
-        }
-      },
-      std::move(var));
-}
+CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>&& var, F&& f) -> ResultVariant;
 
 /**
  * @brief Apply a function to each element in a container and return results in
@@ -777,23 +545,7 @@ CPP_TOOLBOX_EXPORT auto map(std::variant<Ts...>&& var, F&& f) -> ResultVariant
  */
 template<typename Container, typename Func>
 CPP_TOOLBOX_EXPORT auto map(const Container& input, Func&& f) -> std::vector<
-    std::invoke_result_t<Func, typename Container::const_reference>>
-{
-  using ResultValueType =
-      std::invoke_result_t<Func, typename Container::const_reference>;
-  std::vector<ResultValueType> result;
-
-  if constexpr (detail::has_size<Container>::value) {
-    result.reserve(input.size());
-  }
-
-  std::transform(input.cbegin(),
-                 input.cend(),
-                 std::back_inserter(result),
-                 std::forward<Func>(f));
-
-  return result;
-}
+    std::invoke_result_t<Func, typename Container::const_reference>>;
 
 /**
  * @brief Filter elements from a container that satisfy a predicate
@@ -817,18 +569,7 @@ CPP_TOOLBOX_EXPORT auto map(const Container& input, Func&& f) -> std::vector<
  */
 template<typename Container, typename Predicate>
 CPP_TOOLBOX_EXPORT auto filter(const Container& input, Predicate&& p)
-    -> std::vector<typename Container::value_type>
-{
-  using ValueType = typename Container::value_type;
-  std::vector<ValueType> result;
-
-  std::copy_if(input.cbegin(),
-               input.cend(),
-               std::back_inserter(result),
-               std::forward<Predicate>(p));
-
-  return result;
-}
+    -> std::vector<typename Container::value_type>;
 
 /**
  * @brief Reduce container elements using a binary operation with initial value
@@ -855,13 +596,7 @@ CPP_TOOLBOX_EXPORT auto filter(const Container& input, Predicate&& p)
 template<typename Container, typename T, typename BinaryOp>
 CPP_TOOLBOX_EXPORT auto reduce(const Container& input,
                                T identity,
-                               BinaryOp&& op) -> T
-{
-  return std::accumulate(input.cbegin(),
-                         input.cend(),
-                         std::move(identity),
-                         std::forward<BinaryOp>(op));
-}
+                               BinaryOp&& op) -> T;
 
 /**
  * @brief Reduce non-empty container elements using a binary operation
@@ -889,20 +624,7 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input,
  */
 template<typename Container, typename BinaryOp>
 CPP_TOOLBOX_EXPORT auto reduce(const Container& input, BinaryOp&& op) ->
-    typename Container::value_type
-{
-  if (input.empty()) {
-    throw std::invalid_argument(
-        "reduce called on empty container without an identity value");
-  }
-
-  auto it = input.cbegin();
-  typename Container::value_type result = *it;
-  ++it;
-
-  return std::accumulate(
-      it, input.cend(), std::move(result), std::forward<BinaryOp>(op));
-}
+    typename Container::value_type;
 
 /**
  * @brief Zip multiple containers into a vector of tuples
@@ -929,34 +651,7 @@ CPP_TOOLBOX_EXPORT auto reduce(const Container& input, BinaryOp&& op) ->
  */
 template<typename... Containers>
 CPP_TOOLBOX_EXPORT auto zip(const Containers&... containers) -> std::vector<
-    std::tuple<decltype(*std::cbegin(std::declval<const Containers&>()))...>>
-{
-  using TupleType =
-      std::tuple<decltype(*std::cbegin(std::declval<const Containers&>()))...>;
-  std::vector<TupleType> result;
-
-  if constexpr (sizeof...(containers) == 0) {
-    return result;
-  }
-
-  const size_t min_size = detail::get_min_size(containers...);
-  if (min_size == 0) {
-    return result;
-  }
-
-  result.reserve(min_size);
-
-  auto iter_tuple = std::make_tuple(std::cbegin(containers)...);
-  auto index_seq = std::index_sequence_for<Containers...> {};
-
-  for (size_t i = 0; i < min_size; ++i) {
-    result.emplace_back(
-        detail::dereference_iterators_as_tuple(iter_tuple, index_seq));
-    detail::increment_iterators(iter_tuple, index_seq);
-  }
-
-  return result;
-}
+    std::tuple<decltype(*std::cbegin(std::declval<const Containers&>()))...>>;
 
 /**
  * @brief Zip two sequences into an unordered_map
@@ -996,24 +691,7 @@ template<typename ContainerKeys,
          typename Alloc = std::allocator<std::pair<const Key, Value>>>
 CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys& keys,
                                              const ContainerValues& values)
-    -> std::unordered_map<Key, Value, Hash, KeyEqual, Alloc>
-{
-  using ResultMapType = std::unordered_map<Key, Value, Hash, KeyEqual, Alloc>;
-  ResultMapType result;
-
-  auto keys_it = std::cbegin(keys);
-  auto keys_end = std::cend(keys);
-  auto values_it = std::cbegin(values);
-  auto values_end = std::cend(values);
-
-  while (keys_it != keys_end && values_it != values_end) {
-    result.emplace(*keys_it, *values_it);
-    ++keys_it;
-    ++values_it;
-  }
-
-  return result;
-}
+    -> std::unordered_map<Key, Value, Hash, KeyEqual, Alloc>;
 
 /**
  * @brief Memoized function class that caches function results
@@ -1036,61 +714,35 @@ CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys& keys,
  * @note Return type must be copyable
  */
 template<typename Signature>
-class MemoizedFunction;
+class CPP_TOOLBOX_EXPORT MemoizedFunction;  // Forward declaration
 
 /**
  * @brief Specialization of MemoizedFunction for specific function signature
- * @tparam R Return type
- * @tparam Args Argument types
+ * Declaration only, definition in impl
  */
 template<typename R, typename... Args>
-class MemoizedFunction<R(Args...)>
+class CPP_TOOLBOX_EXPORT MemoizedFunction<R(Args...)>
 {
 private:
   using FuncType = std::function<R(Args...)>;
   using KeyType = std::tuple<std::decay_t<Args>...>;
   using ResultType = R;
 
-  FuncType original_func_;
-  std::map<KeyType, ResultType> cache_;
-  std::mutex cache_mutex_;
+  // Use pimpl idiom or shared_ptr to hide implementation details
+  // This avoids including <map> and <mutex> in the header
+  struct State;  // Forward declare the state struct
+  std::shared_ptr<State> state_;  // Pointer to implementation state
 
 public:
-  explicit MemoizedFunction(FuncType f)
-      : original_func_(std::move(f))
-  {
-  }
+  explicit MemoizedFunction(FuncType f);
 
   MemoizedFunction(const MemoizedFunction&) = delete;
   MemoizedFunction& operator=(const MemoizedFunction&) = delete;
-  MemoizedFunction(MemoizedFunction&&) = delete;
-  MemoizedFunction& operator=(MemoizedFunction&&) = delete;
+  // Allow moving
+  MemoizedFunction(MemoizedFunction&&) noexcept = default;
+  MemoizedFunction& operator=(MemoizedFunction&&) noexcept = default;
 
-  auto operator()(Args... args) -> ResultType
-  {
-    KeyType key = std::make_tuple(std::decay_t<Args>(args)...);
-
-    {
-      std::lock_guard<std::mutex> lock(cache_mutex_);
-      auto it = cache_.find(key);
-      if (it != cache_.end()) {
-        return it->second;
-      }
-    }
-
-    ResultType result = original_func_(std::forward<Args>(args)...);
-
-    {
-      std::lock_guard<std::mutex> lock(cache_mutex_);
-      auto it = cache_.find(key);
-      if (it == cache_.end()) {
-        cache_.emplace(std::move(key), result);
-        return result;
-      } else {
-        return it->second;
-      }
-    }
-  }
+  auto operator()(Args... args) -> ResultType;
 };
 
 /**
@@ -1108,11 +760,7 @@ public:
  * @endcode
  */
 template<typename Signature, typename Func>
-auto memoize(Func&& f)
-{
-  std::function<Signature> func_wrapper = std::forward<Func>(f);
-  return MemoizedFunction<Signature>(std::move(func_wrapper));
-}
+CPP_TOOLBOX_EXPORT auto memoize(Func&& f);
 
 /**
  * @brief Create a memoized function with explicit return and argument types
@@ -1136,41 +784,8 @@ auto memoize(Func&& f)
  * @note Return type must be copyable
  */
 template<typename R, typename... Args, typename Func>
-auto memoize_explicit(Func&& f) -> std::function<R(Args...)>
-{
-  std::function<R(Args...)> func = std::forward<Func>(f);
-
-  using StateType = detail::MemoizeState<std::function<R(Args...)>, R, Args...>;
-  auto state = std::make_shared<StateType>(std::move(func));
-
-  return [state](Args... args) -> R
-  {
-    using KeyType = typename StateType::KeyType;
-    KeyType key = std::make_tuple(std::decay_t<Args>(args)...);
-
-    {
-      std::lock_guard<std::mutex> lock(state->cache_mutex);
-      auto it = state->cache.find(key);
-      if (it != state->cache.end()) {
-        return it->second;
-      }
-    }
-
-    R result = state->original_func(std::forward<Args>(args)...);
-
-    {
-      std::lock_guard<std::mutex> lock(state->cache_mutex);
-      auto it = state->cache.find(key);
-      if (it == state->cache.end()) {
-        state->cache.emplace(std::move(key), result);
-        return result;
-      } else {
-        return it->second;
-      }
-    }
-  };
-}
-
-// !!TODO: more intelligent memoization
+CPP_TOOLBOX_EXPORT auto memoize_explicit(Func&& f) -> std::function<R(Args...)>;
 
 }  // namespace toolbox::functional
+
+#include <cpp-toolbox/functional/impl/functional_impl.hpp>

@@ -122,7 +122,8 @@ add_requires("catch2")
 
 -- Define source files
 local source_files = {"src/impl/cpp-toolbox/base/**.cpp", "src/impl/cpp-toolbox/container/**.cpp",
--- "src/impl/cpp-toolbox/concurrent/**.cpp",
+                      "src/impl/cpp-toolbox/types/**.cpp",
+                      -- "src/impl/cpp-toolbox/concurrent/**.cpp",
                       "src/impl/cpp-toolbox/file/**.cpp", "src/impl/cpp-toolbox/logger/**.cpp",
                       "src/impl/cpp-toolbox/utils/**.cpp"}
 
@@ -141,7 +142,10 @@ target("cpp-toolbox")
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
         set_kind("shared")
+        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
         add_defines("CPP_TOOLBOX_EXPORTS")
+        set_policy("build.optimization.lto", true)
+
 
         -- Add thread library
         add_syslinks(is_plat("windows") and "kernel32" or "pthread")
@@ -158,7 +162,10 @@ target("cpp-toolbox_static")
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
         set_kind("static")
+        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
         add_defines("CPP_TOOLBOX_STATIC_DEFINE")
+        set_policy("build.optimization.lto", true)
+
 
         -- Add thread library
         add_syslinks(is_plat("windows") and "kernel32" or "pthread")
@@ -176,6 +183,8 @@ if has_config("tests") or has_config("developer") then
         add_deps("cpp-toolbox_static")
         add_packages("catch2")
         add_rules("generate_export_header")
+        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        set_policy("build.optimization.lto", true)
 end
 
 -- Build examples if enabled
@@ -200,7 +209,8 @@ if has_config("examples") or has_config("developer") then
                 add_files(filepath)
                 add_deps("cpp-toolbox")
                 add_rules("generate_export_header")
-                
+                set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+                set_policy("build.optimization.lto", true)
                 -- Add platform specific system libraries
                 if is_plat("linux", "macosx", "bsd") then
                         add_syslinks("pthread")
@@ -225,6 +235,8 @@ if has_config("benchmark") or has_config("developer") then
         add_packages("catch2")
         add_defines("CATCH_CONFIG_MAIN")
         add_rules("generate_export_header")
+        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        set_policy("build.optimization.lto", true)
 end
 
 

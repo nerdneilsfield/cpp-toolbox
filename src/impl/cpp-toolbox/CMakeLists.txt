@@ -13,6 +13,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/container/string.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/concurrent_queue.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/types/point.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})
