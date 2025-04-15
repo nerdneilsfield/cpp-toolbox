@@ -17,7 +17,7 @@ foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
     # Link against cpp-toolbox library
     # Assumes library target name is cpp-toolbox, modify if different
     target_link_libraries(${FINAL_TARGET_NAME} PRIVATE cpp-toolbox)
-
+    target_precompile_headers(${FINAL_TARGET_NAME} PRIVATE ${CPP_TOOLBOX_PCH_FILE})
     # (Optional) Add example-specific compile definitions or include directories if needed
     # target_compile_definitions(${FINAL_TARGET_NAME} PRIVATE ...)
     # target_include_directories(${FINAL_TARGET_NAME} PRIVATE ...)

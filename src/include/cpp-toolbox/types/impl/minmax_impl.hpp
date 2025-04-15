@@ -267,7 +267,7 @@ template<typename InputType>
   size_t num_tasks = (total_size == 0)
       ? 0
       : static_cast<size_t>(
-            std::ceil(static_cast<double>(total_size) / chunk_size));
+          std::ceil(static_cast<double>(total_size) / chunk_size));
   if (num_tasks == 0 && total_size > 0)
     num_tasks = 1;  // Ensure at least one task if not empty
 

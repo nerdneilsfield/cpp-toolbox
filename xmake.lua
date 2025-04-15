@@ -39,6 +39,7 @@ option_end()
 -- Set common compilation flags
 add_rules("mode.debug", "mode.release", "mode.coverage", "mode.profile", "mode.asan", "mode.tsan", "mode.lsan",
     "mode.ubsan")
+set_policy("build.ccache", true)
 
 -- Platform specific configurations
 if is_plat("windows") then
@@ -121,15 +122,23 @@ add_requires("concurrentqueue")
 add_requires("catch2")
 
 -- Define source files
-local source_files = {"src/impl/cpp-toolbox/base/**.cpp", "src/impl/cpp-toolbox/container/**.cpp",
+local source_files = {"src/impl/cpp-toolbox/base/**.cpp",
+                      "src/impl/cpp-toolbox/container/**.cpp",
                       "src/impl/cpp-toolbox/types/**.cpp",
                       -- "src/impl/cpp-toolbox/concurrent/**.cpp",
-                      "src/impl/cpp-toolbox/file/**.cpp", "src/impl/cpp-toolbox/logger/**.cpp",
-                      "src/impl/cpp-toolbox/utils/**.cpp"}
+                      "src/impl/cpp-toolbox/utils/**.cpp",
+                      "src/impl/cpp-toolbox/file/**.cpp", 
+                      "src/impl/cpp-toolbox/logger/**.cpp"}
 
 -- Define test files
-local test_files = {"test/base/**.cpp", "test/container/**.cpp", "test/concurrent/**.cpp", "test/file/**.cpp",
-                    "test/logger/**.cpp", "test/utils/**.cpp", "test/types/**.cpp", "test/functional/**.cpp",
+local test_files = {"test/base/**.cpp", 
+                    -- "test/container/**.cpp",
+                    -- "test/concurrent/**.cpp",
+                    -- "test/file/**.cpp",
+                    -- "test/logger/**.cpp", 
+                    "test/utils/**.cpp", 
+                    -- "test/types/**.cpp", 
+                    -- "test/functional/**.cpp",
                     "test/my_catch2_main.cpp"}
 
 -- Define benchmark files

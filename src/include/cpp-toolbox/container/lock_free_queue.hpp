@@ -129,8 +129,7 @@ inline void scan_retired_nodes()
     for (const HPRec* rec : g_hp_list) {
       // Check if record is actually owned
       if (rec->owner_thread_id.load(std::memory_order_acquire)
-          != std::thread::id())
-      {
+          != std::thread::id()) {
         for (size_t i = 0; i < MAX_HAZARD_POINTERS_PER_THREAD; ++i) {
           void* hp = rec->hazard_pointers[i].load(std::memory_order_acquire);
           if (hp) {
@@ -208,7 +207,10 @@ public:
     // setting HP This protects against certain race conditions.
   }
 
-  ~HazardPointerGuard() { detail::clear_hazard_pointer(index_); }
+  ~HazardPointerGuard()
+  {
+    detail::clear_hazard_pointer(index_);
+  }
 
   HazardPointerGuard(const HazardPointerGuard&) = delete;
   HazardPointerGuard& operator=(const HazardPointerGuard&) = delete;

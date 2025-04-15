@@ -6,6 +6,8 @@
 int main(int argc, char* argv[])
 {
   fprintf(stderr, "[Custom Main] Starting test run...\n");
+  toolbox::logger::thread_logger_t::instance().set_level(
+      toolbox::logger::thread_logger_t::Level::TRACE);
 
   Catch::Session session;  // Create Catch2 session
 

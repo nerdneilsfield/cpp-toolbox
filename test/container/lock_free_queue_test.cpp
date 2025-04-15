@@ -241,8 +241,7 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
       } else {
         // If producer might be finished and queue is empty, break
         if (produced_count.load() == total_items
-            && queue.try_dequeue(value) == false)
-        {
+            && queue.try_dequeue(value) == false) {
           // Double check after producer is done
           if (!queue.try_dequeue(value))
             break;  // exit if still empty

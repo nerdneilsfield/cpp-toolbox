@@ -135,7 +135,7 @@ void thread_pool_singleton_t::worker_loop(size_t worker_id)
         if (tasks_.try_dequeue(task)) {
           task_found = true;  // 执行最后一个任务
         } else {
-          LOG_DEBUG_F("Worker thread {} stopping.", worker_id);
+          // LOG_DEBUG_F("Worker thread {} stopping.", worker_id);
           //      std::cout << "[DEBUG] Worker thread " << worker_id << "
           //      stopping." << std::endl; // 临时输出
           return;  // 退出循环
@@ -152,7 +152,7 @@ void thread_pool_singleton_t::worker_loop(size_t worker_id)
 
     // --- 执行任务 ---
     if (task_found && task) {  // 确保 task 有效
-      LOG_TRACE_F("Worker thread {} executing task.", worker_id);
+      // LOG_TRACE_F("Worker thread {} executing task.", worker_id);
       try {
         task();
       } catch (const std::exception& e) {

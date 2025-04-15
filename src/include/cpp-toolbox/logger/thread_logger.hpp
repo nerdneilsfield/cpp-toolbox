@@ -22,6 +22,9 @@
 // Include the concurrent queue header
 #include "cpp-toolbox/container/concurrent_queue.hpp"
 
+// Include object pool
+#include "cpp-toolbox/base/object_pool.hpp"
+
 // #define PROJECT_SOURCE_DIR
 
 // !TODO: Why docxgen doesn't work?
@@ -243,7 +246,10 @@ public:
    * }
    * @endcode
    */
-  auto level() -> Level { return level_; }
+  auto level() -> Level
+  {
+    return level_;
+  }
 
   /**
    * @brief Get the current logging level as a string.
@@ -254,7 +260,10 @@ public:
    * std::cout << "Current log level: " << logger.level_str() << std::endl;
    * @endcode
    */
-  auto level_str() -> std::string { return level_to_string(level_); }
+  auto level_str() -> std::string
+  {
+    return level_to_string(level_);
+  }
 
   /**
    * @brief Set the logging level.
@@ -265,7 +274,10 @@ public:
    * logger.set_level(thread_logger_t::Level::WARN);
    * @endcode
    */
-  auto set_level(Level level) -> void { level_ = level; }
+  auto set_level(Level level) -> void
+  {
+    level_ = level;
+  }
 
   /**
    * @brief Format-based logger for printf-style message formatting.
@@ -413,38 +425,39 @@ public:
   {
   public:
     /**
-     * @brief Construct a new thread stream logger object.
+     * @brief Construct a new thread stream logger object using the pool.
      *
      * @param logger Reference to the parent thread logger.
      * @param level Logging level for this stream logger.
+     * @param pool Reference to the stringstream object pool.
      */
-    thread_stream_logger_t(thread_logger_t& logger, Level level);
+    thread_stream_logger_t(
+        thread_logger_t& logger,
+        Level level,
+        toolbox::base::object_pool_t<std::stringstream>& pool);
 
     /**
      * @brief Destroy the thread stream logger object.
      *
-     * @details The destructor ensures the final message is flushed to the
-     * underlying logger.
+     * Enqueues the final message. The stringstream is automatically
+     * returned to the pool by the ss_ptr_ destructor.
      */
     ~thread_stream_logger_t();
 
+    // Deleted copy/move constructors/assignments
+    thread_stream_logger_t(const thread_stream_logger_t&) = delete;
+    thread_stream_logger_t& operator=(const thread_stream_logger_t&) = delete;
+    thread_stream_logger_t(thread_stream_logger_t&&) = delete;
+    thread_stream_logger_t& operator=(thread_stream_logger_t&&) = delete;
+
     /**
      * @brief Get the logged message as a string.
-     *
-     * @details This method returns the current content of the log stream as
-     * a string. It can be used to inspect or manipulate the message before
-     * it is written to the log.
-     *
      * @return The logged message as a string.
-     *
-     * @code{.cpp}
-     * auto& logger = thread_logger_t::instance();
-     * thread_stream_logger_t stream_logger(logger, Level::INFO);
-     * stream_logger << "Test message";
-     * std::string msg = stream_logger.str();  // msg = "Test message"
-     * @endcode
      */
-    auto str() -> std::string { return ss_.str(); }
+    auto str() -> std::string
+    {
+      return ss_ptr_->str();
+    }  // Use pointer
 
     /**
      * @brief Overload operator<< for containers.
@@ -470,16 +483,16 @@ public:
       if (level_ < logger_.level()) {
         return *this;
       }
-      ss_ << "[";
+      *ss_ptr_ << "[";  // Use pointer
       bool first = true;
       for (const auto& item : container) {
         if (!first) {
-          ss_ << ", ";
+          *ss_ptr_ << ", ";
         }
-        ss_ << item;
+        *ss_ptr_ << item;  // Use pointer
         first = false;
       }
-      ss_ << "]";
+      *ss_ptr_ << "]";  // Use pointer
       return *this;
     }
 
@@ -558,17 +571,9 @@ public:
       if (level_ < logger_.level()) {
         return *this;
       }
-      ss_ << value;
+      *ss_ptr_ << value;  // Use pointer
       return *this;
     }
-
-    // template<typename T,
-    //     typename = std::enable_if_t<!std::is_same_v<T, ThreadStreamLogger>>
-    // >
-    // auto operator()(const T& value) -> ThreadStreamLogger& {
-    //     ss_ << value;
-    //     return *this;
-    // }
 
     /**
      * @brief Overload operator<< for types that have an operator<< with an
@@ -604,7 +609,7 @@ public:
       if (level_ < logger_.level()) {
         return *this;
       }
-      ss_ << value;
+      *ss_ptr_ << value;  // Use pointer
       return *this;
     }
 
@@ -630,15 +635,14 @@ public:
      * @endcode
      */
     template<typename T>
-    auto operator<<(T&& value)
-        -> std::enable_if_t<!has_stream_operator_v<T>
-                                && has_ostream_method_v<T>,
-                            thread_stream_logger_t&>
+    auto operator<<(T&& value) -> std::enable_if_t<
+        !has_stream_operator_v<T> && has_ostream_method_v<T>,
+        thread_stream_logger_t&>
     {
       if (level_ < logger_.level()) {
         return *this;
       }
-      value.operator<<(ss_);
+      value.operator<<(*ss_ptr_);  // Use pointer
       return *this;
     }
 
@@ -661,7 +665,7 @@ public:
      */
     auto operator<<(thread_stream_logger_t& logger) -> thread_stream_logger_t&
     {
-      ss_ << logger.str();
+      *ss_ptr_ << logger.str();  // Use pointer
       return *this;
     }
 
@@ -689,16 +693,16 @@ public:
       if (level_ < logger_.level()) {
         return *this;
       }
-      ss_ << "{";
+      *ss_ptr_ << "{";  // Use pointer
       bool first = true;
       for (const auto& [key, value] : map) {
         if (!first) {
-          ss_ << ", ";
+          *ss_ptr_ << ", ";
         }
-        ss_ << key << ": " << value;
+        *ss_ptr_ << key << ": " << value;  // Use pointer
         first = false;
       }
-      ss_ << "}";
+      *ss_ptr_ << "}";  // Use pointer
       return *this;
     }
 
@@ -726,16 +730,15 @@ public:
     {
       if (level_ < logger_.level())
         return *this;
-
-      ss_ << "{";
+      *ss_ptr_ << "{";  // Use pointer
       bool first = true;
       for (const auto& [key, value] : map) {
         if (!first)
-          ss_ << ", ";
-        ss_ << key << ": " << value;
+          *ss_ptr_ << ", ";
+        *ss_ptr_ << key << ": " << value;  // Use pointer
         first = false;
       }
-      ss_ << "}";
+      *ss_ptr_ << "}";  // Use pointer
       return *this;
     }
 
@@ -763,14 +766,15 @@ public:
       if (level_ < logger_.level()) {
         return;
       }
-      ss_ << "(";
-      ((ss_ << (Is == 0 ? "" : ", ") << std::get<Is>(t)), ...);
-      ss_ << ")";
+      *ss_ptr_ << "(";  // Use pointer
+      ((*ss_ptr_ << (Is == 0 ? "" : ", ") << std::get<Is>(t)), ...);
+      *ss_ptr_ << ")";  // Use pointer
     }
 
     thread_logger_t& logger_;  ///< Reference to the parent logger
     Level level_;  ///< Current logging level
-    std::stringstream ss_;  ///< Internal string stream for message building
+    // Store the stringstream in a unique_ptr obtained from the pool
+    toolbox::base::object_pool_t<std::stringstream>::PooledObjectPtr ss_ptr_;
   };
 
   /**
@@ -782,7 +786,10 @@ public:
    * LOG_TRACE_F("Processing item {}", item_id);
    * @endcode
    */
-  auto trace_f() -> thread_format_logger_t { return {*this, Level::TRACE}; }
+  auto trace_f() -> thread_format_logger_t
+  {
+    return {*this, Level::TRACE};
+  }
 
   /**
    * @brief Get a format logger for DEBUG level messages.
@@ -793,7 +800,10 @@ public:
    * LOG_DEBUG_F("Received {} bytes of data", data_size);
    * @endcode
    */
-  auto debug_f() -> thread_format_logger_t { return {*this, Level::DEBUG}; }
+  auto debug_f() -> thread_format_logger_t
+  {
+    return {*this, Level::DEBUG};
+  }
 
   /**
    * @brief Get a format logger for INFO level messages.
@@ -804,7 +814,10 @@ public:
    * LOG_INFO_F("Application started successfully");
    * @endcode
    */
-  auto info_f() -> thread_format_logger_t { return {*this, Level::INFO}; }
+  auto info_f() -> thread_format_logger_t
+  {
+    return {*this, Level::INFO};
+  }
 
   /**
    * @brief Get a format logger for WARN level messages.
@@ -815,7 +828,10 @@ public:
    * LOG_WARN_F("Disk space is low: {}MB remaining", free_space);
    * @endcode
    */
-  auto warn_f() -> thread_format_logger_t { return {*this, Level::WARN}; }
+  auto warn_f() -> thread_format_logger_t
+  {
+    return {*this, Level::WARN};
+  }
 
   /**
    * @brief Get a format logger for ERROR level messages.
@@ -826,7 +842,10 @@ public:
    * LOG_ERROR_F("Failed to process request: {}", error_message);
    * @endcode
    */
-  auto error_f() -> thread_format_logger_t { return {*this, Level::ERROR}; }
+  auto error_f() -> thread_format_logger_t
+  {
+    return {*this, Level::ERROR};
+  }
 
   /**
    * @brief Get a format logger for CRITICAL level messages.
@@ -851,7 +870,10 @@ public:
    * LOG_TRACE_S << "Entering function " << __func__;
    * @endcode
    */
-  auto trace_s() -> thread_stream_logger_t { return {*this, Level::TRACE}; }
+  auto trace_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::TRACE, stringstream_pool_};
+  }
 
   /**
    * @brief Get a stream logger for DEBUG level messages.
@@ -862,7 +884,10 @@ public:
    * LOG_DEBUG_S << "Processing " << items.size() << " items";
    * @endcode
    */
-  auto debug_s() -> thread_stream_logger_t { return {*this, Level::DEBUG}; }
+  auto debug_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::DEBUG, stringstream_pool_};
+  }
 
   /**
    * @brief Get a stream logger for INFO level messages.
@@ -884,7 +909,10 @@ public:
    * LOG_INFO_S << "Application started with version " << version;
    * @endcode
    */
-  auto info_s() -> thread_stream_logger_t { return {*this, Level::INFO}; }
+  auto info_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::INFO, stringstream_pool_};
+  }
 
   /**
    * @brief Get a stream logger for WARN level messages.
@@ -897,7 +925,10 @@ public:
    * ")";
    * @endcode
    */
-  auto warn_s() -> thread_stream_logger_t { return {*this, Level::WARN}; }
+  auto warn_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::WARN, stringstream_pool_};
+  }
 
   /**
    * @brief Get a stream logger for ERROR level messages.
@@ -909,7 +940,10 @@ public:
    * LOG_ERROR_S << "Failed to open file: " << filename;
    * @endcode
    */
-  auto error_s() -> thread_stream_logger_t { return {*this, Level::ERROR}; }
+  auto error_s() -> thread_stream_logger_t
+  {
+    return {*this, Level::ERROR, stringstream_pool_};
+  }
 
   /**
    * @brief Get a stream logger for CRITICAL level messages.
@@ -923,7 +957,7 @@ public:
    */
   auto critical_s() -> thread_stream_logger_t
   {
-    return {*this, Level::CRITICAL};
+    return {*this, Level::CRITICAL, stringstream_pool_};
   }
 
   /**
@@ -965,6 +999,9 @@ private:
   static std::atomic<thread_logger_t*> instance_ptr_;
   static std::mutex instance_mutex_;
   static std::atomic<bool> shutdown_called_;
+
+  // Add the stringstream pool
+  toolbox::base::object_pool_t<std::stringstream> stringstream_pool_;
 };
 
 }  // namespace toolbox::logger

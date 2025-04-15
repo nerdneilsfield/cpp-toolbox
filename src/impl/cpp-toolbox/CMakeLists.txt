@@ -14,6 +14,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/container/concurrent_queue.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/types/point.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/click.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})
@@ -46,7 +47,7 @@ target_link_libraries(cpp-toolbox
     concurrentqueue::concurrentqueue
 )
 target_link_libraries(cpp-toolbox PUBLIC Threads::Threads)
-
+target_precompile_headers(cpp-toolbox PRIVATE ${CPP_TOOLBOX_PCH_FILE})
 
 add_library(cpp-toolbox_static STATIC ${cpp-toolbox_srcs})
 target_include_directories(cpp-toolbox_static PUBLIC ${CPP_TOOLBOX_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR})
@@ -58,5 +59,5 @@ target_compile_definitions(cpp-toolbox_static PUBLIC
 target_link_libraries(cpp-toolbox_static PRIVATE concurrentqueue::concurrentqueue)
 target_link_libraries(cpp-toolbox_static PUBLIC Threads::Threads)
 add_library(cpp-toolbox::cpp-toolbox_static ALIAS cpp-toolbox_static)
-
+target_precompile_headers(cpp-toolbox_static PRIVATE ${CPP_TOOLBOX_PCH_FILE})
 

@@ -13,6 +13,33 @@
 
 using namespace toolbox::logger;
 
+// RAII helper to restore logger level
+class LoggerLevelGuard
+{
+public:
+  LoggerLevelGuard()
+      : logger_(thread_logger_t::instance())
+      , original_level_(logger_.level())
+  {
+  }
+
+  ~LoggerLevelGuard()
+  {
+    // Restore original level when guard goes out of scope
+    logger_.set_level(original_level_);
+  }
+
+  // Prevent copying/moving
+  LoggerLevelGuard(const LoggerLevelGuard&) = delete;
+  LoggerLevelGuard& operator=(const LoggerLevelGuard&) = delete;
+  LoggerLevelGuard(LoggerLevelGuard&&) = delete;
+  LoggerLevelGuard& operator=(LoggerLevelGuard&&) = delete;
+
+private:
+  thread_logger_t& logger_;
+  thread_logger_t::Level original_level_;
+};
+
 struct TestStruct
 {
   int a;
@@ -52,6 +79,7 @@ TEST_CASE("ThreadLogger singleton test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger log level test", "[ThreadLogger]")
 {
+  LoggerLevelGuard level_guard;
   auto& logger = thread_logger_t::instance();
 
   SECTION("default log level")
@@ -187,6 +215,7 @@ TEST_CASE("ThreadLogger debug log test", "[ThreadLogger]")
 
 TEST_CASE("ThreadLogger log level filter test", "[ThreadLogger]")
 {
+  LoggerLevelGuard level_guard;
   auto& logger = thread_logger_t::instance();
 
   SECTION("log level filter")

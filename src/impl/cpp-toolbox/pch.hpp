@@ -1,5 +1,3 @@
-#pragma once
-
 #include <algorithm>
 #include <atomic>
 #include <cassert>
@@ -52,4 +50,5 @@
 #include <cpp-toolbox/types/impl/point_impl.hpp>
 #include <cpp-toolbox/types/minmax.hpp>
 #include <cpp-toolbox/types/point.hpp>
+#include <cpp-toolbox/utils/click.hpp>
 #include <cpp-toolbox/utils/timer.hpp>

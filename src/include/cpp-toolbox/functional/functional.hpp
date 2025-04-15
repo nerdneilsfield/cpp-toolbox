@@ -18,6 +18,48 @@
 
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 
+/**
+ * @brief Macro to define a simple functor (function object) with a single
+ * operator()
+ *
+ * @param FunctorName Name of the functor struct to create
+ * @param ReturnType Return type of operator()
+ * @param Params Parameter list for operator() (must include parentheses)
+ * @param Body Function body code (must include return statement if ReturnType
+ * is not void)
+ *
+ * @code{.cpp}
+ * // Define a functor that adds two numbers
+ * CPP_TOOLBOX_DEFINE_SIMPLE_FUNCTOR(
+ *   Adder,           // FunctorName
+ *   int,             // ReturnType
+ *   (int a, int b),  // Params
+ *   return a + b;    // Body
+ * );
+ *
+ * // Use the functor
+ * Adder add;
+ * int sum = add(1, 2); // Returns 3
+ *
+ * // Define a functor that prints a message
+ * CPP_TOOLBOX_DEFINE_SIMPLE_FUNCTOR(
+ *   Printer,         // FunctorName
+ *   void,           // ReturnType
+ *   (const std::string& msg),  // Params
+ *   std::cout << msg << std::endl;  // Body
+ * );
+ * @endcode
+ */
+#define CPP_TOOLBOX_DEFINE_SIMPLE_FUNCTOR( \
+    FunctorName, ReturnType, Params, Body) \
+  struct FunctorName \
+  { \
+    ReturnType operator() Params const \
+    { \
+      Body \
+    } \
+  };
+
 namespace toolbox::functional
 {
 

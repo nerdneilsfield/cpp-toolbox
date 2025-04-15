@@ -107,7 +107,7 @@ auto compose(G&& g, F&& f)
 {
   return
       [g = std::forward<G>(g), f = std::forward<F>(f)](auto&&... args) mutable
-          -> decltype(g(f(std::forward<decltype(args)>(args)...)))
+      -> decltype(g(f(std::forward<decltype(args)>(args)...)))
   { return g(f(std::forward<decltype(args)>(args)...)); };
 }
 
@@ -243,8 +243,10 @@ auto filter(const std::optional<T>& opt, P&& p) -> std::optional<T>
 {
 #if __cpp_lib_is_invocable >= 201703L
   static_assert(
-      std::is_invocable_r_v<bool, P, const T&>
-          || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
+      std::is_invocable_r_v<
+          bool,
+          P,
+          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
       "Predicate must be callable with const T& and return bool or "
       "bool-convertible.");
 #else
@@ -264,8 +266,10 @@ auto filter(std::optional<T>&& opt, P&& p) -> std::optional<T>
 {
 #if __cpp_lib_is_invocable >= 201703L
   static_assert(
-      std::is_invocable_r_v<bool, P, const T&>
-          || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
+      std::is_invocable_r_v<
+          bool,
+          P,
+          const T&> || std::is_convertible_v<std::invoke_result_t<P, const T&>, bool>,
       "Predicate must be callable with const T& and return bool or "
       "bool-convertible.");
 #else

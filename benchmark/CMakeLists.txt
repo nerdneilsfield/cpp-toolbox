@@ -12,3 +12,4 @@ target_link_libraries(cpp-toolbox_benchmark PRIVATE cpp-toolbox_test_lib Catch2W
 target_include_directories(cpp-toolbox_benchmark PRIVATE ${CMAKE_SOURCE_DIR}/src/include)
 target_compile_features(cpp-toolbox_benchmark PRIVATE cxx_std_17)
 target_compile_definitions(cpp-toolbox_benchmark PRIVATE CATCH_CONFIG_MAIN)
+target_precompile_headers(cpp-toolbox_benchmark PRIVATE ${CPP_TOOLBOX_PCH_FILE})

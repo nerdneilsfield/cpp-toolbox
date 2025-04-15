@@ -251,7 +251,7 @@ point_cloud_t<T>::point_cloud_t(const point_cloud_t& other)
 template<typename T>
 point_cloud_t<T>::point_cloud_t(point_cloud_t&& other) noexcept
     : base_file_data_t(
-          std::move(other))  // Assuming base class needs move construction
+        std::move(other))  // Assuming base class needs move construction
     , points(std::move(other.points))
     , normals(std::move(other.normals))
     , colors(std::move(other.colors))
