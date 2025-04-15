@@ -116,85 +116,132 @@ test:  ## Run the tests
 PROJECT_NAME      ?= cpp-toolbox
 PROJECT_VERSION   ?= 0.0.1
 PROJECT_DESC      ?= "A C++ toolbox project"
-PROJECT_URL       ?= "https://github.com/nerdneilsfield/cpp-toolbox" # Example URL
+PROJECT_URL       ?= "https://github.com/nerdneilsfield/cpp-toolbox"
+PROJECT_SOURCE_DIR:= $(PWD)# Revert to project root
 
+# --- Build & Documentation Directories ---
 BUILD_DIR         := build
-DOCS_DIR          := $(BUILD_DIR)/docs
-MCSS_DIR          := $(DOCS_DIR)/.ci
-MCSS_SCRIPT       := $(MCSS_DIR)/documentation/doxygen.py
-MCSS_ZIP_URL      := https://github.com/friendlyanon/m.css/releases/download/release-1/mcss.zip
-MCSS_ZIP_MD5      := 00cd2757ebafb9bcba7f5d399b3bec7f
-PROJECT_SOURCE_DIR:= $(PWD) # Assuming Makefile is at the root
+DOCS_BUILD_DIR    := $(BUILD_DIR)/docs_gen
+DOXYGEN_XML_DIR   := $(BUILD_DIR)/doxygen-xml
+RST_DOCS_DIR      := docs/rst/
+DOXIDE_SITE_DIR   := $(BUILD_DIR)/docs-site
+MKDOCS_MARKDOWN_DIR := $(DOXIDE_SITE_DIR)/docs
+MKDOCS_OUTPUT_DIR := $(DOXIDE_SITE_DIR)/site
 
+# Generated config files
+DOXYFILE_CONF       := $(DOCS_BUILD_DIR)/Doxyfile
+# DOXYREST_CONF       := $(DOCS_BUILD_DIR)/doxyrest-config.lua # Removed, using static file
+DOXIDE_CONF         := doxide.yaml
 
-# --- Documentation Targets ---
+# --- Helper Targets ---
 
-# Ensure m.css is downloaded and extracted
-$(MCSS_SCRIPT): check-curl-unzip ## Download and extract m.css if needed
-	@echo "--- Setting up m.css ---"
-	@if [ ! -f "$@" ]; then \
-		mkdir -p $(MCSS_DIR); \
-		echo "Downloading m.css from $(MCSS_ZIP_URL)..."; \
-		curl -# -L $(MCSS_ZIP_URL) -o $(MCSS_DIR)/mcss.zip; \
-		echo "Verifying m.css checksum..."; \
-		echo "$(MCSS_ZIP_MD5)  $(MCSS_DIR)/mcss.zip" | md5sum -c --status || (echo "ERROR: MD5 checksum failed for mcss.zip"; exit 1); \
-		echo "Extracting m.css..."; \
-		unzip -q -o $(MCSS_DIR)/mcss.zip -d $(MCSS_DIR); \
-		echo "Cleaning up..."; \
-		rm $(MCSS_DIR)/mcss.zip; \
-	else \
-		echo "m.css script found at $(abspath $@). Skipping setup."; \
-	fi
-	@echo "------------------------"
+.PHONY: check-doc-tools
+check-doc-tools: ## Check for Doxygen, Doxyrest, Doxide, MkDocs
+	@command -v doxygen >/dev/null 2>&1 || { echo >&2 "ERROR: 'doxygen' not found. Please install it."; exit 1; }
+	@command -v doxyrest >/dev/null 2>&1 || { echo >&2 "ERROR: 'doxyrest' not found. Please install it (e.g., pip install doxyrest)."; exit 1; }
+	@command -v doxide >/dev/null 2>&1 || { echo >&2 "ERROR: 'doxide' not found. Please install it."; exit 1; }
+	@command -v pip3 >/dev/null 2>&1 || { echo >&2 "ERROR: 'pip3' not found. Please install Python 3 pip."; exit 1; }
+	@pip3 show mkdocs >/dev/null 2>&1 || { echo >&2 "WARNING: 'mkdocs' not found or not installed via pip. Trying to run anyway, but consider 'pip3 install mkdocs mkdocs-material'."; }
+	@echo "Documentation tools checked."
 
-# Generate Doxyfile from template
-$(DOCS_DIR)/Doxyfile: docs/Doxyfile.in Makefile ## Generate Doxyfile configuration
-	@echo "--- Generating Doxyfile ---"
-	@mkdir -p $(DOCS_DIR)
-	@sed \
-		-e 's|@PROJECT_NAME@|$(PROJECT_NAME)|g' \
-		-e 's|@PROJECT_VERSION@|$(PROJECT_VERSION)|g' \
-		-e 's|@PROJECT_SOURCE_DIR@|$(PROJECT_SOURCE_DIR)|g' \
-		-e 's|@DOXYGEN_OUTPUT_DIRECTORY@|$(DOCS_DIR)|g' \
-		$< > $@
+# Debug: Print variable value before the rule
+$(info --- Debug: DOXYFILE_CONF is [$(DOXYFILE_CONF)] ---)
+
+# Generate Doxyfile for XML output (Echo/Grep Approach)
+$(DOXYFILE_CONF): docs/Doxyfile.in Makefile
+	@echo "--- Generating Doxyfile for XML output (Echo/Grep Approach) ---"
+	@mkdir -p $(DOCS_BUILD_DIR)
+	@# Echo the customized/required lines first
+	@echo "PROJECT_NAME = $(PROJECT_NAME)" > $(DOXYFILE_CONF)
+	@echo "PROJECT_NUMBER = $(PROJECT_VERSION)" >> $(DOXYFILE_CONF)
+	@echo "OUTPUT_DIRECTORY = $(DOXYGEN_XML_DIR)" >> $(DOXYFILE_CONF)
+	@# Ensure paths are quoted correctly for Doxygen INPUT
+	@echo "INPUT = \"$(PROJECT_SOURCE_DIR)/README.md\" \\" >> $(DOXYFILE_CONF)
+	@echo "        \"$(PROJECT_SOURCE_DIR)/BUILDING.md\" \\" >> $(DOXYFILE_CONF)
+	@echo "        \"$(PROJECT_SOURCE_DIR)/src/include\" \\" >> $(DOXYFILE_CONF)
+	@echo "        \"$(PROJECT_SOURCE_DIR)/docs/pages\"" >> $(DOXYFILE_CONF)
+	@echo "USE_MDFILE_AS_MAINPAGE = \"$(PROJECT_SOURCE_DIR)/README.md\"" >> $(DOXYFILE_CONF)
+	@# Ensure paths are quoted correctly for Doxygen STRIP_FROM_PATH
+	@echo "STRIP_FROM_PATH = \"$(PROJECT_SOURCE_DIR)/src/include\" \\" >> $(DOXYFILE_CONF)
+	@echo "                  \"$(PROJECT_SOURCE_DIR)\"" >> $(DOXYFILE_CONF)
+	@echo "EXAMPLE_PATH = \"$(PROJECT_SOURCE_DIR)/examples\"" >> $(DOXYFILE_CONF)
+	@echo "GENERATE_XML = YES" >> $(DOXYFILE_CONF)
+	@echo "GENERATE_HTML = NO" >> $(DOXYFILE_CONF)
+	@echo "GENERATE_LATEX = NO" >> $(DOXYFILE_CONF)
+	@echo "XML_OUTPUT = xml" >> $(DOXYFILE_CONF)
+	@# Append the rest of Doxyfile.in, excluding overridden/problematic lines
+	@grep -vE '^PROJECT_NAME|^PROJECT_NUMBER|^OUTPUT_DIRECTORY|^INPUT|^USE_MDFILE_AS_MAINPAGE|^STRIP_FROM_PATH|^EXAMPLE_PATH|^GENERATE_XML|^GENERATE_HTML|^GENERATE_LATEX|^XML_OUTPUT|^PREDEFINED' docs/Doxyfile.in >> $(DOXYFILE_CONF)
+	@echo "Generated $(abspath $(DOXYFILE_CONF))"
+	@echo "--------------------------------------------------------------------"
+
+# Generate basic Doxide configuration file if it doesn't exist
+$(DOXIDE_CONF):
+	@echo "--- Generating basic Doxide configuration (YAML) ---"
+	@printf "title: $(PROJECT_NAME) Documentation\n" > $@
+	@printf "description: $(PROJECT_DESC)\n" >> $@
+	@printf "output: $(DOXIDE_SITE_DIR)\n" >> $@
+	@printf "# IMPORTANT: Specify source directory(ies) below!\n" >> $@
+	@printf "# src: src/include # Uncomment and set the correct path to your headers/sources\n" >> $@
+	@printf "# base: /\n" >> $@
 	@echo "Generated $(abspath $@)"
-	@echo "--------------------------"
+	@echo "--------------------------------------------------"
+	@echo "[1;31mAction Required:[0m Edit '$(DOXIDE_CONF)' and set the 'src:' path(s) correctly!"
+	@echo "--------------------------------------------------"
 
-# Generate conf.py from template
-# NOTE: This assumes placeholders in conf.py.in. Adjust if needed.
-$(DOCS_DIR)/conf.py: docs/conf.py.in Makefile ## Generate m.css python configuration
-	@echo "--- Generating conf.py ---"
-	@mkdir -p $(DOCS_DIR)
-	@sed \
-		-e 's|@PROJECT_NAME@|$(PROJECT_NAME)|g' \
-		-e 's|@PROJECT_VERSION@|$(PROJECT_VERSION)|g' \
-		-e 's|@PROJECT_DESCRIPTION@|$(PROJECT_DESC)|g' \
-		-e 's|@PROJECT_HOMEPAGE_URL@|$(PROJECT_URL)|g' \
-		-e 's|@DOXYGEN_OUTPUT_DIRECTORY@|$(DOCS_DIR)|g' \
-		$< > $@
-	@echo "Generated $(abspath $@)"
-	@echo "-------------------------"
+# Create build subdirectories if they don't exist
+# $(DOCS_BUILD_DIR): ; @mkdir -p $@ # Removed this rule
 
-.PHONY: docs-deps
-docs-deps: $(MCSS_SCRIPT) $(DOCS_DIR)/Doxyfile $(DOCS_DIR)/conf.py ## Prepare documentation dependencies (download m.css, generate configs)
+.PHONY: docs-configs
+docs-configs: $(DOXYFILE_CONF) $(DOXIDE_CONF) ## Generate documentation config files (Doxyfile, Doxide)
 
 .PHONY: docs
-docs: docs-deps ## Generate the documentation using Doxygen and m.css
-	@echo "--- Generating Documentation ---"
-	@echo "Cleaning previous output..."
-	@rm -rf $(DOCS_DIR)/html $(DOCS_DIR)/xml
-	@echo "Running m.css generator (Python script)..."
-	@echo "MCSS_SCRIPT = $(abspath $(MCSS_SCRIPT))"
-	@cd $(DOCS_DIR) && python3 $(abspath $(MCSS_SCRIPT)) conf.py
-	@echo "Documentation generated in $(abspath $(DOCS_DIR))/html"
-	@echo "------------------------------"
+docs: check-doc-tools docs-configs ## Generate all documentation (Doxygen XML, RST, Static Site)
+	@echo "--- Cleaning previous documentation output ---"
+	@rm -rf $(DOXYGEN_XML_DIR) $(RST_DOCS_DIR) $(DOXIDE_SITE_DIR)
+	@mkdir -p $(DOXYGEN_XML_DIR) $(RST_DOCS_DIR) $(DOXIDE_SITE_DIR)
+	@echo "---------------------------------------------"
+	@echo "--- [1/4] Running Doxygen to generate XML ---"
+	@doxygen $(DOXYFILE_CONF)
+	@echo "Checking for Doxygen XML output..."
+	@ls -l $(DOXYGEN_XML_DIR)/xml/index.xml || (echo "ERROR: Doxygen XML output (xml/index.xml) not found!"; exit 1)
+	@echo "---------------------------------------------"
+	@echo "--- [2/4] Running Doxyrest to generate RST ---"
+	@# Explicitly pass XML index file and frame directory, use static config file
+	@doxyrest $(DOXYGEN_XML_DIR)/xml/index.xml \
+		 -o $(RST_DOCS_DIR)/index.rst \
+		 -c docs/doxyrest-config.lua \
+		 -F /home/dengqi/.local/share/doxyrest/frame/cfamily \
+		 -F /home/dengqi/.local/share/doxyrest/frame/common
+	@echo "RST documentation generated in $(abspath $(RST_DOCS_DIR))"
+	@echo "---------------------------------------------"
+	@echo "--- [3/4] Running Doxide to generate Markdown ---" # Uncomment after configuring doxide.yaml
+	@doxide build # Use default config (doxide.yaml) and output from config # Uncomment after configuring doxide.yaml
+	@echo "Markdown documentation generated in $(abspath $(MKDOCS_MARKDOWN_DIR))" # Uncomment after configuring doxide.yaml
+	@echo "------------------------------------------------" # Uncomment after configuring doxide.yaml
+	@echo "--- [4/4] Running MkDocs to build static site ---" # Uncomment after configuring doxide.yaml
+	@cd $(DOXIDE_SITE_DIR) && mkdocs build # Uncomment after configuring doxide.yaml
+	@echo "Static site generated in $(abspath $(MKDOCS_OUTPUT_DIR))" # Uncomment after configuring doxide.yaml
+	@echo "-----------------------------------------------"
+
+.PHONY: serve-docs
+serve-docs: ## Serve the generated static site locally
+	@echo "Serving documentation site from $(abspath $(MKDOCS_OUTPUT_DIR))"
+	@cd $(DOXIDE_SITE_DIR) && mkdocs serve
 
 
-.PHONY: check-curl-unzip
-check-curl-unzip: ## Check for curl and unzip commands
-	@command -v curl >/dev/null 2>&1 || { echo >&2 "ERROR: 'curl' command not found. Please install curl."; exit 1; }
-	@command -v unzip >/dev/null 2>&1 || { echo >&2 "ERROR: 'unzip' command not found. Please install unzip."; exit 1; }
-	@command -v python3 >/dev/null 2>&1 || { echo >&2 "ERROR: 'python3' command not found. Please install Python 3."; exit 1; }
-	@command -v md5sum >/dev/null 2>&1 || { echo >&2 "ERROR: 'md5sum' command not found. Please install coreutils or equivalent."; exit 1; }
+# --- Cleanup ---
+
+.PHONY: clean-docs
+clean-docs: ## Clean generated documentation files and directories
+	@echo "Cleaning documentation artifacts..."
+	@rm -rf $(DOXYGEN_XML_DIR) $(RST_DOCS_DIR) $(DOXIDE_SITE_DIR)
+	@rm -rf $(DOXYFILE_CONF) $(DOXIDE_CONF)
+	@echo "Done cleaning documentation."
+
+.PHONY: clean
+clean: clean-docs ## Clean build directory and documentation artifacts
+	@echo "Cleaning build directory..."
+	@rm -rf $(BUILD_DIR)
+	@echo "Done cleaning build directory."
 
 

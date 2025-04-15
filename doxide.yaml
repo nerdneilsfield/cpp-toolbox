@@ -1,0 +1,8 @@
+title: cpp-toolbox Documentation
+description: A collection of C++ tools and utilities
+output: build/docs-site
+files:
+  - src/include/**/**/*.hpp
+  - src/include/**/*.hpp
+  - src/impl/**/*.cpp
+  - src/impl/**/**/*.hpp
