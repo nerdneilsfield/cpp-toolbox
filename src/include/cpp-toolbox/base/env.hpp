@@ -6,6 +6,10 @@
 
 #include "cpp-toolbox/macro.hpp"
 
+/**
+ * @namespace toolbox::base
+ * @brief Base namespace for toolbox library
+ */
 namespace toolbox::base
 {
 
