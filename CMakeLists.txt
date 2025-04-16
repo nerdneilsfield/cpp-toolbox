@@ -10,6 +10,10 @@ project(
   LANGUAGES CXX
 )
 
+# ---- Declare library ----
+set(CPP_TOOLBOX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/src/include)
+set(CPP_TOOLBOX_PCH_FILE ${CMAKE_SOURCE_DIR}/src/impl/cpp-toolbox/pch.hpp)
+
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 include(cmake/cache.cmake)
@@ -20,9 +24,7 @@ include(cmake/optimization.cmake)
 
 add_subdirectory(deps)
 
-# ---- Declare library ----
-set(CPP_TOOLBOX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/src/include)
-set(CPP_TOOLBOX_PCH_FILE ${CMAKE_SOURCE_DIR}/src/impl/cpp-toolbox/pch.hpp)
+
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 

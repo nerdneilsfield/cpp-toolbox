@@ -131,10 +131,12 @@ minmax_t<point_t<T>>& minmax_t<point_t<T>>::operator+=(const point_t<T>& value)
 template<typename T>
 minmax_t<T> combine_minmax(const minmax_t<T>& a, const minmax_t<T>& b)
 {
-  if (!a.initialized_)
+  if (!a.initialized_) {
     return b;
-  if (!b.initialized_)
+  }
+  if (!b.initialized_) {
     return a;
+  }
   // Both are initialized, combine them
   return minmax_t<T>(std::min(a.min, b.min), std::max(a.max, b.max));
 }
@@ -143,11 +145,12 @@ template<typename CoordT>
 minmax_t<point_t<CoordT>> combine_minmax(const minmax_t<point_t<CoordT>>& a,
                                          const minmax_t<point_t<CoordT>>& b)
 {
-  if (!a.initialized_)
+  if (!a.initialized_) {
     return b;
-  if (!b.initialized_)
+  }
+  if (!b.initialized_) {
     return a;
-
+  }
   // Both are initialized, combine component-wise
   point_t<CoordT> combined_min;
   point_t<CoordT> combined_max;
@@ -267,7 +270,7 @@ template<typename InputType>
   size_t num_tasks = (total_size == 0)
       ? 0
       : static_cast<size_t>(
-          std::ceil(static_cast<double>(total_size) / chunk_size));
+            std::ceil(static_cast<double>(total_size) / chunk_size));
   if (num_tasks == 0 && total_size > 0)
     num_tasks = 1;  // Ensure at least one task if not empty
 

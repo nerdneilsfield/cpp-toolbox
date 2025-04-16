@@ -132,13 +132,13 @@ local source_files = {"src/impl/cpp-toolbox/base/**.cpp",
 
 -- Define test files
 local test_files = {"test/base/**.cpp", 
-                    -- "test/container/**.cpp",
-                    -- "test/concurrent/**.cpp",
-                    -- "test/file/**.cpp",
-                    -- "test/logger/**.cpp", 
+                    "test/container/**.cpp",
+                    "test/concurrent/**.cpp",
+                    "test/file/**.cpp",
+                    "test/logger/**.cpp", 
                     "test/utils/**.cpp", 
-                    -- "test/types/**.cpp", 
-                    -- "test/functional/**.cpp",
+                    "test/types/**.cpp", 
+                    "test/functional/**.cpp",
                     "test/my_catch2_main.cpp"}
 
 -- Define benchmark files

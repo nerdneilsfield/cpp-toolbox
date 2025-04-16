@@ -51,4 +51,5 @@
 #include <cpp-toolbox/types/minmax.hpp>
 #include <cpp-toolbox/types/point.hpp>
 #include <cpp-toolbox/utils/click.hpp>
+#include <cpp-toolbox/utils/print.hpp>
 #include <cpp-toolbox/utils/timer.hpp>

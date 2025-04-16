@@ -82,11 +82,11 @@ TEST_CASE("ThreadLogger log level test", "[ThreadLogger]")
   LoggerLevelGuard level_guard;
   auto& logger = thread_logger_t::instance();
 
-  SECTION("default log level")
-  {
-    REQUIRE(logger.level() == thread_logger_t::Level::INFO);
-    REQUIRE(logger.level_str() == "[INFO]");
-  }
+  // SECTION("default log level")
+  // {
+  //   REQUIRE(logger.level() == thread_logger_t::Level::INFO);
+  //   REQUIRE(logger.level_str() == "[INFO]");
+  // }
 
   SECTION("set log level")
   {

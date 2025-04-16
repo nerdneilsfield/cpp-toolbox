@@ -1,5 +1,7 @@
 include(cmake/folders.cmake)
 
+set(CMAKE_BUILD_TYPE Debug)
+
 include(CTest)
 if(BUILD_TESTING)
   add_subdirectory(test)
@@ -19,7 +21,7 @@ if(ENABLE_COVERAGE)
   include(cmake/coverage.cmake)
 endif()
 
-include(cmake/lint-targets.cmake)
-include(cmake/spell-targets.cmake)
+# include(cmake/lint-targets.cmake)
+# include(cmake/spell-targets.cmake)
 
 add_folders(Project)

@@ -15,6 +15,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/types/point.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/click.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/print.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})

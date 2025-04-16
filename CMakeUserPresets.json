@@ -51,6 +51,15 @@
       "name": "dev-coverage",
       "binaryDir": "${sourceDir}/build/coverage",
       "inherits": ["dev-mode", "coverage-linux"]
+    },
+    {
+      "name": "dev-linux-clang",
+      "binaryDir": "${sourceDir}/build/dev-linux-clang",
+      "inherits": ["dev-linux"],
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++-21",
+        "CMAKE_C_COMPILER": "clang-21"
+      }
     }
   ],
   "buildPresets": [

@@ -6,7 +6,9 @@
 #include <cstdlib>
 #include <cstring>
 #include <deque>
+#include <functional>
 #include <iostream>
+#include <iterator>
 #include <list>
 #include <map>
 #include <queue>
@@ -22,12 +24,12 @@
 #include "cpp-toolbox/base/env.hpp"
 #include "cpp-toolbox/cpp-toolbox_export.hpp"
 #include "cpp-toolbox/macro.hpp"
-
+#include "cpp-toolbox/type_traits.hpp"
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
 #  include <windows.h>
 #endif
 
-namespace cpp_toolbox::utils
+namespace toolbox::utils
 {
 /**
  * @enum align_t
@@ -280,11 +282,31 @@ public:
 template<typename T>
 auto to_string_value(const T& value) -> std::string
 {
+  // 专门处理 std::string 本身
   if constexpr (std::is_same_v<T, std::string>) {
     return value;
-  } else {
+  }
+  // 如果是可迭代容器（且不是 string），就把它当作列表打印
+  else if constexpr (toolbox::traits::is_iterable_v<T>)
+  {
     std::ostringstream oss;
-    oss << value;
+    oss << "[";
+    bool first = true;
+    for (auto const& elem : value) {
+      if (!first) {
+        oss << ", ";
+      }
+      oss << to_string_value(elem);  // 递归；如果 elem 也是容器会继续走这里
+      first = false;
+    }
+    oss << "]";
+    return oss.str();
+  }
+  // 否则尝试用 operator<< 打印
+  else
+  {
+    std::ostringstream oss;
+    oss << value;  // 只有当 stream << T 可用才会编译
     return oss.str();
   }
 }
@@ -330,264 +352,307 @@ inline auto align_text(const std::string& text,
 }
 
 /**
- * @class table
- * @brief 表格类/Table class
+ * @class table_t
+ * @brief 格式化打印表格工具/Formatted table printing utility
  *
- * 用于格式化打印表格/Used for formatted table printing
+ * @details 支持以下高级特性/Supports the following advanced features:
+ * - 自动列宽/Auto column width
+ * - 最小/最大宽度约束/Min/max width constraints
+ * - 内容换行或截断/Content wrapping and truncation
+ * - 单元格合并(水平/垂直)/Cell merging (horizontal/vertical)
+ * - 斑马纹(隔行变色)/Zebra striping (alternating row colors)
+ * - 条件高亮/Conditional highlighting
+ * - 文件/终端颜色输出切换/File/terminal color output switching
+ *
  * @code
- * cpp_toolbox::utils::table t;
- * t.set_headers({"Name", "Age"}).add_row("Alice", 18).add_row("Bob", 20);
- * std::cout << t;
+ * table_t tbl;
+ * tbl.set_headers({"Name", "Age", "Role"});
+ * tbl.add_row("Alice", 25, "Engineer");
+ * tbl.add_row("Bob", 30, "Manager");
+ * std::cout << tbl;
+ * // Output:
+ * // +--------+-----+----------+
+ * // | Name   | Age | Role     |
+ * // +--------+-----+----------+
+ * // | Alice  | 25  | Engineer |
+ * // | Bob    | 30  | Manager  |
+ * // +--------+-----+----------+
  * @endcode
  */
-class CPP_TOOLBOX_EXPORT table
+class CPP_TOOLBOX_EXPORT table_t;
+
+CPP_TOOLBOX_EXPORT std::ostream& operator<<(std::ostream& os,
+                                            const table_t& tbl);
+
+class CPP_TOOLBOX_EXPORT table_t
 {
-private:
-  std::vector<std::vector<std::string>> m_data;  ///< 表格数据/Table data
-  std::vector<std::string> m_headers;  ///< 表头/Headers
-  mutable std::vector<size_t> m_col_widths;  ///< 列宽/Column widths
-  mutable std::vector<align_t> m_col_aligns;  ///< 列对齐方式/Column alignments
-  print_style_t m_style;  ///< 打印风格/Print style
-
-  /**
-   * @brief 计算每列宽度/Calculate column widths
-   */
-  void calculate_col_widths() const
-  {
-    size_t num_columns = m_headers.size();
-    m_col_widths.assign(num_columns, m_style.min_width);
-
-    // 确保列对齐向量大小正确/Ensure column alignment vector size is correct
-    if (m_col_aligns.size() < num_columns) {
-      m_col_aligns.resize(num_columns, m_style.alignment);
-    }
-
-    // 检查表头宽度/Check header width
-    for (size_t i = 0; i < m_headers.size(); ++i) {
-      m_col_widths[i] = std::max(m_col_widths[i], m_headers[i].length());
-    }
-
-    // 检查数据宽度/Check data width
-    for (const auto& row : m_data) {
-      for (size_t i = 0; i < row.size() && i < m_col_widths.size(); ++i) {
-        m_col_widths[i] = std::max(m_col_widths[i], row[i].length());
-      }
-    }
-  }
-
-  /**
-   * @brief 打印水平边框/Print horizontal border
-   * @param os 输出流/Output stream
-   */
-  void print_horizontal_border(std::ostream& os) const
-  {
-    if (!m_style.show_border) {
-      return;
-    }
-
-    const std::string corner = m_style.use_colors
-        ? color_handler_t::colorize(
-              m_style.corner, m_style.border_color, color_t::DEFAULT)
-        : m_style.corner;
-    const std::string border_h = m_style.use_colors
-        ? color_handler_t::colorize(
-              m_style.border_h, m_style.border_color, color_t::DEFAULT)
-        : m_style.border_h;
-
-    os << corner;
-    for (size_t width : m_col_widths) {
-      os << std::string(width + 2 * m_style.padding.length(), border_h[0])
-         << corner;
-    }
-    os << "\n";
-  }
-
-  /**
-   * @brief 打印一行/Print a row
-   * @param os 输出流/Output stream
-   * @param row 行数据/Row data
-   * @param is_header 是否为表头/Is header row
-   */
-  void print_row(std::ostream& os,
-                 const std::vector<std::string>& row,
-                 bool is_header = false) const
-  {
-    const std::string border_v = m_style.use_colors
-        ? color_handler_t::colorize(
-              m_style.border_v, m_style.border_color, color_t::DEFAULT)
-        : m_style.border_v;
-
-    if (m_style.show_border) {
-      os << border_v;
-    }
-
-    for (size_t i = 0; i < m_headers.size(); ++i) {
-      const std::string cell = (i < row.size()) ? row[i] : "";
-      const std::string aligned_cell =
-          align_text(cell, m_col_widths[i], m_col_aligns[i]);
-
-      // 应用颜色/Apply color
-      std::string colored_cell;
-      if (m_style.use_colors) {
-        if (is_header) {
-          colored_cell = color_handler_t::colorize(
-              aligned_cell, m_style.header_fg, m_style.header_bg);
-        } else {
-          colored_cell = color_handler_t::colorize(
-              aligned_cell, m_style.data_fg, m_style.data_bg);
-        }
-      } else {
-        colored_cell = aligned_cell;
-      }
-
-      os << m_style.padding << colored_cell << m_style.padding;
-
-      if (m_style.show_border) {
-        os << border_v;
-      } else {
-        os << " ";
-      }
-    }
-    os << "\n";
-  }
-
 public:
-  /**
-   * @brief 构造函数/Constructor
-   * @param style 打印风格/Print style
-   */
-  explicit table(print_style_t style = get_default_style())
-      : m_style(std::move(style))
-  {
-  }
+  /** @brief 构造函数 / Constructor */
+  explicit table_t(const print_style_t& style = get_default_style());
 
   /**
-   * @brief 设置表头/Set table headers
-   * @param hdrs 表头向量/Header vector
-   * @return table& 当前对象引用/Reference to current object
-   * @code
-   * t.set_headers({"A", "B"});
-   * @endcode
+   * @brief 设置表头 / Set table_t headers
+   * @param hdrs 表头字符串向量 / Vector of header strings
+   * @return table_t& 当前对象的引用 / Reference to this table_t
    */
-  auto set_headers(std::vector<std::string> hdrs) -> table&
-  {
-    m_headers = std::move(hdrs);
-    return *this;
-  }
+  table_t& set_headers(const std::vector<std::string>& hdrs);
 
   /**
-   * @brief 添加一行/Add a row
-   * @param row 行数据/Row data
-   * @return table& 当前对象引用/Reference to current object
-   * @code
-   * t.add_row({"1", "2"});
-   * @endcode
+   * @brief 添加一行数据 / Add a data row
+   * @param row 字符串向量，每个元素对应一列 / Vector of strings, each for a
+   * column
+   * @return table_t& 当前对象的引用 / Reference to this table_t
    */
-  auto add_row(std::vector<std::string> row) -> table&
-  {
-    m_data.push_back(std::move(row));
-    return *this;
-  }
+  table_t& add_row(const std::vector<std::string>& row);
 
   /**
-   * @brief 添加一行（可变参数）/Add a row (variadic)
+   * @brief 添加一行数据（可变参数）/ Add a row with variadic arguments
    * @tparam Args 参数类型/Parameter types
-   * @param args 行数据/Row data
-   * @return table& 当前对象引用/Reference to current object
+   * @param args 行数据，每个参数对应一列的值 / Row data, each argument
+   * corresponds to a column value
+   * @return table_t& 当前对象的引用 / Reference to this table_t
    * @code
-   * t.add_row("Tom", 18);
+   * t.add_row("Alice", 30, "Engineer");
    * @endcode
    */
-  template<typename... Args>
-  auto add_row(Args&&... args) -> table&
+  template<typename... Args,
+           // SFINAE: Disable this template if called with a single
+           // std::vector<std::string> to ensure the non-template overload
+           // add_row(const std::vector<std::string>&) is chosen instead.
+           std::enable_if_t<
+               !(sizeof...(Args) == 1
+                 && std::is_same_v<
+                     std::decay_t<std::tuple_element_t<0, std::tuple<Args...>>>,
+                     std::vector<std::string>>),
+               int> = 0>
+  auto add_row(Args&&... args) -> table_t&
   {
-    std::vector<std::string> row;
-    (row.push_back(to_string_value(std::forward<Args>(args))), ...);
-    return add_row(std::move(row));
+    // No need for static_assert check anymore due to SFINAE constraint above.
+
+    std::vector<std::string> row_data;
+    row_data.reserve(sizeof...(args));
+    // Convert all arguments to string and collect them
+    (row_data.push_back(to_string_value(std::forward<Args>(args))), ...);
+
+    // Call the non-template add_row(const std::vector<std::string>&) overload.
+    // Passing 'row_data' as an lvalue ensures the correct overload is selected.
+    return this->add_row(row_data);
   }
 
   /**
-   * @brief 设置特定列的对齐方式/Set alignment for a specific column
-   * @param column_index 列索引/Column index
-   * @param align 对齐方式/Alignment
-   * @return table& 当前对象引用/Reference to current object
-   * @code
-   * t.set_column_align(1, align_t::RIGHT);
-   * @endcode
+   * @brief 设置指定列的对齐方式 / Set alignment for a specific column
+   * @param column_index 列索引 / Column index
+   * @param align 对齐方式 / Alignment
+   * @return table& 当前对象的引用 / Reference to this table
    */
-  auto set_column_align(size_t column_index, align_t align) -> table&
-  {
-    if (m_col_aligns.size() <= column_index) {
-      m_col_aligns.resize(column_index + 1, m_style.alignment);
-    }
-    m_col_aligns[column_index] = align;
-    return *this;
-  }
+  table_t& set_column_align(size_t column_index, align_t align);
 
   /**
-   * @brief 设置所有列的对齐方式/Set alignment for all columns
-   * @param align 对齐方式/Alignment
-   * @return table& 当前对象引用/Reference to current object
-   * @code
-   * t.set_all_columns_align(align_t::CENTER);
-   * @endcode
+   * @brief 设置所有列的对齐方式 / Set alignment for all columns
+   * @param align 对齐方式 / Alignment
+   * @return table& 当前对象的引用 / Reference to this table
    */
-  auto set_all_columns_align(align_t align) -> table&
-  {
-    m_col_aligns.clear();
-    m_col_aligns.resize(m_headers.size(), align);
-    return *this;
-  }
+  table_t& set_all_columns_align(align_t align);
 
   /**
-   * @brief 修改样式/Set print style
-   * @param new_style 新样式/New style
-   * @return table& 当前对象引用/Reference to current object
-   * @code
-   * t.set_style(my_style);
-   * @endcode
+   * @brief 为指定列设置固定宽度 / Set fixed width for a column
+   * @param col 列索引，从0开始 / Column index (0-based)
+   * @param width 固定字符宽度 / Fixed width in characters
+   * @return table_t& 当前对象的引用 / Reference to this table_t
    */
-  auto set_style(print_style_t new_style) -> table&
-  {
-    m_style = std::move(new_style);
-    return *this;
-  }
+  table_t& set_column_width(size_t col, size_t width);
 
   /**
-   * @brief 输出表格/Output table
-   * @param os 输出流/Output stream
-   * @param table 表格对象/Table object
-   * @return std::ostream& 输出流引用/Reference to output stream
-   * @code
-   * std::cout << t;
-   * @endcode
+   * @brief 为指定列设置最小和最大宽度约束 / Set min and max width constraints
+   * for a column
+   * @param col 列索引，从0开始 / Column index (0-based)
+   * @param min_width 最小宽度 / Minimum width
+   * @param max_width 最大宽度 / Maximum width
+   * @return table_t& 当前对象的引用 / Reference to this table_t
    */
-  friend auto operator<<(std::ostream& os, const table& table) -> std::ostream&
+  table_t& set_column_min_max(size_t col, size_t min_width, size_t max_width);
+
+  /**
+   * @brief 为指定行设置固定行高 / Set fixed height for a row
+   * @param row 行索引，从0开始 / Row index (0-based)
+   * @param height 固定行数 / Fixed number of printed lines
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_row_height(size_t row, size_t height);
+
+  /**
+   * @brief 启用或禁用自动内容换行 / Enable or disable automatic content
+   * wrapping
+   * @param enable true: 启用换行, false: 截断 / true to wrap, false to truncate
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& enable_wrap(bool enable);
+
+  /**
+   * @brief 设置截断时的省略符 / Set ellipsis string when truncating
+   * @param ellipsis 省略符文本 / Ellipsis text (e.g. "...")
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_wrap_ellipsis(const std::string& ellipsis);
+
+  /**
+   * @brief 合并单元格 / Merge cells
+   * @param start_row 起始行索引 / Starting row index
+   * @param start_col 起始列索引 / Starting column index
+   * @param row_span 垂直合并跨度 / Number of rows to span vertically
+   * @param col_span 水平合并跨度 / Number of columns to span horizontally
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& span_cells(size_t start_row,
+                      size_t start_col,
+                      size_t row_span,
+                      size_t col_span);
+
+  /**
+   * @brief 启用或禁用斑马纹 / Enable or disable zebra striping
+   * @param enable true: 启用斑马纹, false: 禁用 / true to enable zebra
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& enable_zebra(bool enable);
+
+  /**
+   * @brief 设置斑马纹的奇偶行背景色 / Set zebra background colors for odd/even
+   * rows
+   * @param odd_bg 奇数行背景色 / Background color for odd rows
+   * @param even_bg 偶数行背景色 / Background color for even rows
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_zebra_colors(color_t odd_bg, color_t even_bg);
+
+  /**
+   * @brief 设置条件高亮回调 / Set conditional highlight callback
+   * @param cb 回调函数：接收(row, col, cell_value)并返回print_style_t /
+   * Callback receiving (row, col, value) returning style
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_highlight_callback(
+      std::function<print_style_t(size_t, size_t, const std::string&)> cb);
+
+  /**
+   * @brief 控制终端输出时是否保留颜色码 / Control whether to keep ANSI colors
+   * for terminal output
+   * @param enable true: 保留颜色, false: 不保留 / true to keep colors, false to
+   * strip
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_output_color(bool enable);
+
+  /**
+   * @brief 控制写入文件时是否保留颜色码 / Control whether to keep ANSI colors
+   * for file output
+   * @param enable true: 保留颜色, false: 不保留 / true to keep colors, false to
+   * strip
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_file_output_color(bool enable);
+
+  /**
+   * @brief 打印表格 / Stream operator for printing table_t
+   * @param os 输出流 / Output stream
+   * @param tbl 要打印的table_t对象 / Table object to print
+   * @return std::ostream& 输出流引用 / Reference to output stream
+   */
+  friend CPP_TOOLBOX_EXPORT std::ostream& operator<<(std::ostream& os,
+                                                     const table_t& tbl);
+
+private:
+  /** @brief 表头 / Table headers */
+  std::vector<std::string> m_headers;
+
+  /** @brief 数据行 / Data rows */
+  std::vector<std::vector<std::string>> m_data;
+
+  /** @brief 打印风格 / Base print style */
+  print_style_t m_style;
+
+  /** @brief 列固定宽度映射 (col -> width) / Map of column to fixed width */
+  std::unordered_map<size_t, size_t> m_col_fixed_width;
+
+  /** @brief 列最小/最大宽度映射 (col -> {min, max}) / Map of column to
+   * (min,max) widths */
+  std::unordered_map<size_t, std::pair<size_t, size_t>> m_col_min_max;
+
+  /** @brief 行固定高度映射 (row -> height) / Map of row to fixed height */
+  std::unordered_map<size_t, size_t> m_row_fixed_height;
+
+  /** @brief 每列对齐方式 / Column alignments */
+  std::vector<align_t> m_col_aligns;
+
+  /** @brief 是否启用换行 / Wrap enabled flag */
+  bool m_wrap_enabled;
+
+  /** @brief 换行截断省略符 / Ellipsis for truncation */
+  std::string m_wrap_ellipsis;
+
+  /**
+   * @brief 合并单元格记录结构 / Structure for merged cell spans
+   * row, col为起始单元格索引；row_span, col_span分别为垂直和水平跨度
+   */
+  struct Span
   {
-    // 确保有表头/Ensure header exists
-    if (table.m_headers.empty()) {
-      return os << "[Empty table]" << "\n";
-    }
+    size_t row, col, row_span, col_span;
+  };
+  std::vector<Span> m_spans;
 
-    // 计算列宽/Calculate column widths
-    table.calculate_col_widths();
+  /** @brief 是否启用斑马纹 / Zebra striping enabled flag */
+  bool m_zebra_enabled;
 
-    // 打印表格/Print table
-    table.print_horizontal_border(os);
+  /** @brief 奇数/偶数行背景色 / Background colors for odd/even rows */
+  color_t m_zebra_odd_bg;
+  color_t m_zebra_even_bg;
 
-    if (table.m_style.show_header && !table.m_headers.empty()) {
-      table.print_row(os, table.m_headers, true);
-      table.print_horizontal_border(os);
-    }
+  /** @brief 条件高亮回调 / Conditional highlight callback */
+  std::function<print_style_t(size_t, size_t, const std::string&)>
+      m_highlight_cb;
 
-    for (const auto& row : table.m_data) {
-      table.print_row(os, row);
-    }
+  /** @brief 终端输出时是否保留颜色 / Keep ANSI colors when printing to terminal
+   */
+  bool m_out_color;
 
-    table.print_horizontal_border(os);
+  /** @brief 文件输出时是否保留颜色 / Keep ANSI colors when writing to file */
+  bool m_file_color;
 
-    return os;
-  }
+  /**
+   * @brief 计算各列宽度 / Calculate column widths considering fixed/min/max
+   * @remarks 会更新m_col_widths向量 / Updates m_col_widths vector
+   */
+  void calculate_col_widths() const;
+
+  /**
+   * @brief 打印水平边框 / Print horizontal border line
+   * @param os 输出流 / Output stream
+   */
+  void print_horizontal_border(std::ostream& os) const;
+
+  /**
+   * @brief 打印单行（支持换行/截断及合并） / Print a logical row with
+   * wrap/truncate and spans
+   * @param os 输出流 / Output stream
+   * @param row_data 行数据 / Row data vector
+   * @param is_header 是否为表头行 / True if header row
+   * @param row_index 行索引 / Row index for zebra/highlight
+   */
+  void print_wrapped_row(std::ostream& os,
+                         const std::vector<std::string>& row_data,
+                         bool is_header,
+                         size_t row_index) const;
+
+  /**
+   * @brief 检查指定单元格是否被合并跨度覆盖 / Check if cell is covered by a
+   * span
+   * @param row 行索引 / Row index
+   * @param col 列索引 / Column index
+   * @return true: 被覆盖，需要跳过打印 / true if should skip printing
+   */
+  bool is_spanned_cell(size_t row, size_t col) const;
+
+  /** @brief 已计算的列宽度 / Computed column widths */
+  mutable std::vector<size_t> m_col_widths;
 };
 
 /**
@@ -689,9 +754,11 @@ auto operator<<(std::ostream& os, const container_printer_t<Container>& printer)
                                   printer.get_style().header_bg)
       : printer.get_name();
 
-  os << name_colored << " [" << printer.get_size() << "] = {" << "\n";
+  os << name_colored << " [" << printer.get_size() << "] = {"
+     << "\n";
   printer.print_content(os);  // 调用虚函数 / Call virtual function
-  os << "}" << "\n";
+  os << "}"
+     << "\n";
   return os;
 }
 
@@ -1405,4 +1472,4 @@ auto print_queue(const std::queue<T>& q,
   return queue_printer_t<T>(q, name, style);
 }
 
-}  // namespace cpp_toolbox::utils
+}  // namespace toolbox::utils

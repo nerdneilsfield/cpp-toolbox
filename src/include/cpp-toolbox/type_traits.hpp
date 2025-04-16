@@ -255,10 +255,7 @@ using remove_all_qualifiers_t = typename remove_all_qualifiers<T>::type;
  * @endcode
  */
 template<typename T>
-concept Callable = requires(T t)
-{
-  &T::operator();
-};
+concept Callable = requires(T t) { &T::operator(); };
 #else
 /**
  * @brief 检查类型是否可调用/Check if type is callable
@@ -376,11 +373,10 @@ struct function_traits<R (C::*)(Args...)> : function_traits<R(Args...)>
  * @endcode
  */
 template<typename T>
-concept HasSize = requires(T t)
-{
+concept HasSize = requires(T t) {
   {
     t.size()
-    } -> std::convertible_to<std::size_t>;
+  } -> std::convertible_to<std::size_t>;
 };
 
 /**
@@ -399,11 +395,10 @@ concept HasSize = requires(T t)
  * @endcode
  */
 template<typename T>
-concept Printable = requires(T t, std::ostream& os)
-{
+concept Printable = requires(T t, std::ostream& os) {
   {
     os << t
-    } -> std::same_as<std::ostream&>;
+  } -> std::same_as<std::ostream&>;
 };
 #else
 /**
@@ -491,10 +486,7 @@ public:
   {
   }
 
-  constexpr operator EnumType() const
-  {
-    return value_;
-  }
+  constexpr operator EnumType() const { return value_; }
   constexpr auto to_underlying() const -> underlying_type
   {
     return static_cast<underlying_type>(value_);
@@ -786,6 +778,27 @@ struct is_null_pointer
 template<typename T>
 inline constexpr bool is_null_pointer_v = is_null_pointer<T>::value;
 #endif
+
+// 1. 基础：void_t 实现（C++17 提供，但习惯写出来更清晰）
+template<typename...>
+using void_t = void;
+
+// 2. is_iterable trait：只有当 T 有 begin/end 时才是可迭代的
+template<typename T, typename = void>
+struct is_iterable : std::false_type
+{
+};
+
+template<typename T>
+struct is_iterable<T,
+                   void_t<decltype(std::begin(std::declval<T>())),
+                          decltype(std::end(std::declval<T>()))>>
+    : std::true_type
+{
+};
+
+template<typename T>
+inline constexpr bool is_iterable_v = is_iterable<T>::value;
 
 }  // namespace traits
 }  // namespace toolbox
