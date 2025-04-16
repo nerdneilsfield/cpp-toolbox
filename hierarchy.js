@@ -10,7 +10,7 @@ var hierarchy =
     [ "std::bool_constant", null, [
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::color_handler_t", "classcpp__toolbox_1_1utils_1_1color__handler__t.html", null ],
+    [ "toolbox::utils::color_handler_t", "classtoolbox_1_1utils_1_1color__handler__t.html", null ],
     [ "toolbox::utils::command_t", "classtoolbox_1_1utils_1_1command__t.html", [
       [ "toolbox::utils::CommandLineApp", "classtoolbox_1_1utils_1_1_command_line_app.html", null ]
     ] ],
@@ -18,33 +18,33 @@ var hierarchy =
     [ "toolbox::container::concurrent_queue_t< std::function< void()> >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
     [ "toolbox::container::concurrent_queue_t< std::pair< Level, std::string > >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
     [ "toolbox::container::concurrent_queue_t< std::unique_ptr< toolbox::base::detail::task_base > >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
-    [ "cpp_toolbox::utils::container_printer_t< Container >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", null ],
-    [ "cpp_toolbox::utils::container_printer_t< std::array< T, N > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::array_printer_t< T, N >", "classcpp__toolbox_1_1utils_1_1array__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< Container >", "classtoolbox_1_1utils_1_1container__printer__t.html", null ],
+    [ "toolbox::utils::container_printer_t< std::array< T, N > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::array_printer_t< T, N >", "classtoolbox_1_1utils_1_1array__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::deque< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::deque_printer_t< T >", "classcpp__toolbox_1_1utils_1_1deque__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::deque< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::deque_printer_t< T >", "classtoolbox_1_1utils_1_1deque__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::list< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::list_printer_t< T >", "classcpp__toolbox_1_1utils_1_1list__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::list< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::list_printer_t< T >", "classtoolbox_1_1utils_1_1list__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::map< K, V > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::map_printer_t< K, V >", "classcpp__toolbox_1_1utils_1_1map__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::map< K, V > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::map_printer_t< K, V >", "classtoolbox_1_1utils_1_1map__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::queue< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::queue_printer_t< T >", "classcpp__toolbox_1_1utils_1_1queue__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::queue< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::queue_printer_t< T >", "classtoolbox_1_1utils_1_1queue__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::set< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::set_printer_t< T >", "classcpp__toolbox_1_1utils_1_1set__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::set< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::set_printer_t< T >", "classtoolbox_1_1utils_1_1set__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::unordered_map< K, V > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::unorderedmap_printer_t< K, V >", "classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::unordered_map< K, V > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::unorderedmap_printer_t< K, V >", "classtoolbox_1_1utils_1_1unorderedmap__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::unordered_set< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::unorderedset_printer_t< T >", "classcpp__toolbox_1_1utils_1_1unorderedset__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::unordered_set< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::unorderedset_printer_t< T >", "classtoolbox_1_1utils_1_1unorderedset__printer__t.html", null ]
     ] ],
-    [ "cpp_toolbox::utils::container_printer_t< std::vector< T > >", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", [
-      [ "cpp_toolbox::utils::vector_printer_t< T >", "classcpp__toolbox_1_1utils_1_1vector__printer__t.html", null ]
+    [ "toolbox::utils::container_printer_t< std::vector< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
+      [ "toolbox::utils::vector_printer_t< T >", "classtoolbox_1_1utils_1_1vector__printer__t.html", null ]
     ] ],
     [ "toolbox::traits::enum_wrapper< EnumType >", "classtoolbox_1_1traits_1_1enum__wrapper.html", null ],
     [ "exported_class", "classexported__class.html", null ],
@@ -55,6 +55,7 @@ var hierarchy =
       [ "toolbox::traits::detail::has_type_impl< T, typename >", "structtoolbox_1_1traits_1_1detail_1_1has__type__impl.html", null ],
       [ "toolbox::traits::has_size< T, typename >", "structtoolbox_1_1traits_1_1has__size.html", null ],
       [ "toolbox::traits::is_callable< T, typename >", "structtoolbox_1_1traits_1_1is__callable.html", null ],
+      [ "toolbox::traits::is_iterable< T, typename >", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
       [ "toolbox::types::detail::is_calculable_container< T, typename >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container.html", null ],
       [ "toolbox::utils::detail::has_istream_operator< T, typename >", "structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html", null ],
       [ "toolbox::utils::detail::is_optional< T >", "structtoolbox_1_1utils_1_1detail_1_1is__optional.html", null ]
@@ -103,7 +104,7 @@ var hierarchy =
     ] ],
     [ "toolbox::types::point_t< T >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::base::PoolDeleter< T >", "classtoolbox_1_1base_1_1_pool_deleter.html", null ],
-    [ "cpp_toolbox::utils::print_style_t", "structcpp__toolbox_1_1utils_1_1print__style__t.html", null ],
+    [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", null ],
     [ "toolbox::traits::remove_all_qualifiers< T >", "structtoolbox_1_1traits_1_1remove__all__qualifiers.html", null ],
     [ "toolbox::traits::remove_reference< T >", "structtoolbox_1_1traits_1_1remove__reference.html", null ],
     [ "std::runtime_error", null, [
@@ -118,7 +119,7 @@ var hierarchy =
     [ "toolbox::functional::MemoizedFunction< R(Args...)>::State", "structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html", null ],
     [ "toolbox::utils::stop_watch_timer_t", "classtoolbox_1_1utils_1_1stop__watch__timer__t.html", null ],
     [ "toolbox::traits::detail::storage_traits< T >", "structtoolbox_1_1traits_1_1detail_1_1storage__traits.html", null ],
-    [ "cpp_toolbox::utils::table", "classcpp__toolbox_1_1utils_1_1table.html", null ],
+    [ "toolbox::utils::table_t", "classtoolbox_1_1utils_1_1table__t.html", null ],
     [ "toolbox::base::detail::task_base", "structtoolbox_1_1base_1_1detail_1_1task__base.html", [
       [ "toolbox::base::detail::task_derived< F >", "structtoolbox_1_1base_1_1detail_1_1task__derived.html", null ]
     ] ],
@@ -134,6 +135,7 @@ var hierarchy =
       [ "toolbox::traits::detail::has_type_impl< T, void_t< typename T::type > >", "structtoolbox_1_1traits_1_1detail_1_1has__type__impl_3_01_t_00_01void__t_3_01typename_01_t_1_1type_01_4_01_4.html", null ],
       [ "toolbox::traits::has_size< T, std::void_t< decltype(std::declval< T >().size())> >", "structtoolbox_1_1traits_1_1has__size_3_01_t_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_ae1b1d65497178907f8aa92c18c8ee7d.html", null ],
       [ "toolbox::traits::is_callable< T, std::void_t< decltype(&T::operator())> >", "structtoolbox_1_1traits_1_1is__callable_3_01_t_00_01std_1_1void__t_3_01decltype_07_6_t_1_1operator_07_08_08_4_01_4.html", null ],
+      [ "toolbox::traits::is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
       [ "toolbox::utils::detail::is_optional< std::optional< U > >", "structtoolbox_1_1utils_1_1detail_1_1is__optional_3_01std_1_1optional_3_01_u_01_4_01_4.html", null ]
     ] ],
     [ "toolbox::traits::type_identity< T >", "structtoolbox_1_1traits_1_1type__identity.html", null ],

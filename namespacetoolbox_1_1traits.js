@@ -15,6 +15,8 @@ var namespacetoolbox_1_1traits =
     [ "is_const_volatile", "structtoolbox_1_1traits_1_1is__const__volatile.html", null ],
     [ "is_function", "structtoolbox_1_1traits_1_1is__function.html", null ],
     [ "is_heap_allocated", "structtoolbox_1_1traits_1_1is__heap__allocated.html", null ],
+    [ "is_iterable", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
+    [ "is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
     [ "is_member_pointer", "structtoolbox_1_1traits_1_1is__member__pointer.html", null ],
     [ "is_null_pointer", "structtoolbox_1_1traits_1_1is__null__pointer.html", null ],
     [ "is_pointer", "structtoolbox_1_1traits_1_1is__pointer.html", null ],
@@ -25,5 +27,7 @@ var namespacetoolbox_1_1traits =
     [ "remove_all_qualifiers", "structtoolbox_1_1traits_1_1remove__all__qualifiers.html", "structtoolbox_1_1traits_1_1remove__all__qualifiers" ],
     [ "remove_reference", "structtoolbox_1_1traits_1_1remove__reference.html", "structtoolbox_1_1traits_1_1remove__reference" ],
     [ "type_identity", "structtoolbox_1_1traits_1_1type__identity.html", "structtoolbox_1_1traits_1_1type__identity" ],
-    [ "type_list", "structtoolbox_1_1traits_1_1type__list.html", null ]
+    [ "type_list", "structtoolbox_1_1traits_1_1type__list.html", null ],
+    [ "void_t", "namespacetoolbox_1_1traits.html#ab78b03f232f72f2deeb66f99ef3d4802", null ],
+    [ "is_iterable_v", "namespacetoolbox_1_1traits.html#aff9226c5f441dc4babdc37c493939f40", null ]
 ];

@@ -7,7 +7,7 @@ var searchData=
   ['add_5fcommand_4',['add_command',['../classtoolbox_1_1utils_1_1command__t.html#ac094de2cfd77dfac6bc755526cb41ecc',1,'toolbox::utils::command_t']]],
   ['add_5fflag_5',['add_flag',['../classtoolbox_1_1utils_1_1command__t.html#a604225b2bad1940e51570b3e3f22ffae',1,'toolbox::utils::command_t']]],
   ['add_5foption_6',['add_option',['../classtoolbox_1_1utils_1_1command__t.html#aec9f0c285f02c46a544245f83bb2bf65',1,'toolbox::utils::command_t']]],
-  ['add_5frow_7',['add_row',['../classcpp__toolbox_1_1utils_1_1table.html#ac960eb9afe78c1aeb7898e1aa1190560',1,'cpp_toolbox::utils::table::add_row(std::vector&lt; std::string &gt; row) -&gt; table &amp;'],['../classcpp__toolbox_1_1utils_1_1table.html#af78ce9028faa11cbb3045891a168bcd9',1,'cpp_toolbox::utils::table::add_row(Args &amp;&amp;... args) -&gt; table &amp;']]],
-  ['align_5ftext_8',['align_text',['../namespacecpp__toolbox_1_1utils.html#aba1094aeab82a1f7c43ff896871ea4da',1,'cpp_toolbox::utils']]],
+  ['add_5frow_7',['add_row',['../classtoolbox_1_1utils_1_1table__t.html#a2cac2d56ba172c48d34b1e4f462accda',1,'toolbox::utils::table_t::add_row(const std::vector&lt; std::string &gt; &amp;row)'],['../classtoolbox_1_1utils_1_1table__t.html#a33cd78523abc93e548623e81cd8fb303',1,'toolbox::utils::table_t::add_row(Args &amp;&amp;... args) -&gt; table_t &amp;']]],
+  ['align_5ftext_8',['align_text',['../namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805',1,'toolbox::utils']]],
   ['argument_5ft_9',['argument_t',['../classtoolbox_1_1utils_1_1argument__t.html#abd4140876e1a410c138eb2bd9e0d0803',1,'toolbox::utils::argument_t']]]
 ];

@@ -247,18 +247,18 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aaf4ba06e16ef767bd29d5b1c9fc760e6" id="r_aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name) -&gt; std::string</td></tr>
-<tr class="memdesc:aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable.  <br /></td></tr>
+<tr class="memdesc:aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取环境变量的值 (Retrieves the value of an environment variable)  <br /></td></tr>
 <tr class="separator:aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8f1b6b2951fa719590c6a8483eaa17e" id="r_af8f1b6b2951fa719590c6a8483eaa17e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name, <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;value) -&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td></tr>
-<tr class="memdesc:af8f1b6b2951fa719590c6a8483eaa17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or updates an environment variable.  <br /></td></tr>
+<tr class="memdesc:af8f1b6b2951fa719590c6a8483eaa17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置或更新环境变量 (Sets or updates an environment variable)  <br /></td></tr>
 <tr class="separator:af8f1b6b2951fa719590c6a8483eaa17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad492fe465930e627f40feec79b17eb8e" id="r_ad492fe465930e627f40feec79b17eb8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name) -&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td></tr>
-<tr class="memdesc:ad492fe465930e627f40feec79b17eb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an environment variable from the current process environment.  <br /></td></tr>
+<tr class="memdesc:ad492fe465930e627f40feec79b17eb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">从当前进程环境中删除环境变量 (Removes an environment variable from the current process environment)  <br /></td></tr>
 <tr class="separator:ad492fe465930e627f40feec79b17eb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components. </p>
-<p>Base namespace for toolbox library.</p>
+<p>工具箱库的基础命名空间 (Base namespace for toolbox library)</p>
 <p>该命名空间包含了一系列用于 C++ 开发的核心基础功能，旨在提高开发效率和代码质量。 主要包括：</p><ul>
 <li><b>线程管理 (Thread Management):</b> 提供易于使用的线程池 (<code>ThreadPool</code>, <code>ThreadPoolSingleton</code>)，用于高效管理并发任务。</li>
 <li><b>资源管理 (Resource Management):</b> 提供对象池 (<code>ObjectPool</code>) 和可能的内存池 (<code>MemoryPool</code>) 实现，以优化资源的分配和回收。</li>
@@ -419,23 +419,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Retrieves the value of an environment variable. </p>
-<p>This function queries the system environment variables and returns the value associated with the specified name. If the environment variable does not exist, an empty string is returned.</p>
+<p>获取环境变量的值 (Retrieves the value of an environment variable) </p>
+<p>该函数查询系统环境变量并返回与指定名称关联的值。如果环境变量不存在，则返回空字符串。 (This function queries the system environment variables and returns the value associated with the specified name. If the environment variable does not exist, an empty string is returned.)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the environment variable to retrieve. Must be non-empty. </td></tr>
+    <tr><td class="paramname">name</td><td>要获取的环境变量名称，不能为空 (The name of the environment variable to retrieve. Must be non-empty) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value of the environment variable as a string. Returns an empty string if the variable is not found.</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// Get the PATH environment variable</span></div>
+<dl class="section return"><dt>Returns</dt><dd>环境变量的字符串值。如果变量未找到则返回空字符串 (The value of the environment variable as a string. Returns an empty string if not found)</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取 PATH 环境变量 (Get the PATH environment variable)</span></div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">path</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><span class="comment">// path will contain the PATH environment variable value</span></div>
+<div class="line"><span class="comment">// path 将包含 PATH 环境变量的值 (path will contain the PATH value)</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Get a non-existent variable</span></div>
+<div class="line"><span class="comment">// 获取不存在的变量 (Get a non-existent variable)</span></div>
 <div class="line"><span class="keyword">auto</span> value = <a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;NON_EXISTENT_VAR&quot;</span>);</div>
-<div class="line"><span class="comment">// value will be an empty string</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1base_html_aaf4ba06e16ef767bd29d5b1c9fc760e6"><div class="ttname"><a href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">toolbox::base::get_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_environment_variable(const std::string &amp;name) -&gt; std::string</div><div class="ttdoc">Retrieves the value of an environment variable.</div></div>
+<div class="line"><span class="comment">// value 将是空字符串 (value will be empty)</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_aaf4ba06e16ef767bd29d5b1c9fc760e6"><div class="ttname"><a href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">toolbox::base::get_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_environment_variable(const std::string &amp;name) -&gt; std::string</div><div class="ttdoc">获取环境变量的值 (Retrieves the value of an environment variable)</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -455,23 +455,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Removes an environment variable from the current process environment. </p>
-<p>This function deletes the specified environment variable from the current process's environment. The change affects the current process and any child processes spawned after the change.</p>
+<p>从当前进程环境中删除环境变量 (Removes an environment variable from the current process environment) </p>
+<p>该函数从当前进程的环境中删除指定的环境变量。更改会影响当前进程及其后创建的任何子进程。 (This function deletes the specified environment variable from the current process's environment. The change affects the current process and any child processes spawned after the change.)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the environment variable to remove. Must be non-empty. </td></tr>
+    <tr><td class="paramname">name</td><td>要删除的环境变量名称，不能为空 (The name of the environment variable to remove. Must be non-empty) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the environment variable was successfully removed, false otherwise. Returns false if the variable did not exist or could not be removed.</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// Remove a temporary environment variable</span></div>
+<dl class="section return"><dt>Returns</dt><dd>如果环境变量成功删除则返回true，否则返回false (True if successfully removed, false otherwise)</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 删除临时环境变量 (Remove a temporary environment variable)</span></div>
 <div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">removed</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;TEMP_VAR&quot;</span>);</div>
-<div class="line"><span class="comment">// removed will be true if the variable existed and was removed</span></div>
+<div class="line"><span class="comment">// removed 如果变量存在并被删除将为true (removed will be true if existed and</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">removed</a>)</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Attempt to remove a non-existent variable</span></div>
+<div class="line"><span class="comment">// 尝试删除不存在的变量 (Try to remove non-existent variable)</span></div>
 <div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">result</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;NON_EXISTENT_VAR&quot;</span>);</div>
-<div class="line"><span class="comment">// result will be false</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1base_html_ad492fe465930e627f40feec79b17eb8e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">toolbox::base::remove_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto remove_environment_variable(const std::string &amp;name) -&gt; bool</div><div class="ttdoc">Removes an environment variable from the current process environment.</div></div>
+<div class="line"><span class="comment">// result 将为false (result will be false)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 清理会话变量 (Clean up session variables)</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;SESSION_ID&quot;</span>);</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;USER_TEMP&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_ad492fe465930e627f40feec79b17eb8e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">toolbox::base::remove_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto remove_environment_variable(const std::string &amp;name) -&gt; bool</div><div class="ttdoc">从当前进程环境中删除环境变量 (Removes an environment variable from the current process environment)</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -501,24 +506,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets or updates an environment variable. </p>
-<p>This function creates or modifies an environment variable with the specified name and value. The change affects the current process and any child processes spawned after the change.</p>
+<p>设置或更新环境变量 (Sets or updates an environment variable) </p>
+<p>该函数创建或修改具有指定名称和值的环境变量。更改会影响当前进程及其后创建的任何子进程。 (This function creates or modifies an environment variable with the specified name and value. The change affects the current process and any child processes spawned after the change.)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the environment variable to set. Must be non-empty. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to assign to the environment variable. </td></tr>
+    <tr><td class="paramname">name</td><td>要设置的环境变量名称，不能为空 (The name of the environment variable to set. Must be non-empty) </td></tr>
+    <tr><td class="paramname">value</td><td>要分配给环境变量的值 (The value to assign to the environment variable) </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the environment variable was successfully set, false otherwise. Failure can occur due to invalid input or system limitations.</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// Set a new environment variable</span></div>
+<dl class="section return"><dt>Returns</dt><dd>如果环境变量设置成功则返回true，否则返回false (True if successfully set, false otherwise)</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 设置新的环境变量 (Set a new environment variable)</span></div>
 <div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">success</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a>(<span class="stringliteral">&quot;MY_VAR&quot;</span>, <span class="stringliteral">&quot;12345&quot;</span>);</div>
-<div class="line"><span class="comment">// success will be true if the variable was set</span></div>
+<div class="line"><span class="comment">// success 如果变量设置成功将为true (success will be true if set)</span></div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// Update an existing variable</span></div>
+<div class="line"><span class="comment">// 更新现有变量 (Update existing variable)</span></div>
 <div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>, <span class="stringliteral">&quot;/new/path:&quot;</span> +</div>
-<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>));</div>
-<div class="ttc" id="anamespacetoolbox_1_1base_html_af8f1b6b2951fa719590c6a8483eaa17e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">toolbox::base::set_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto set_environment_variable(const std::string &amp;name, const std::string &amp;value) -&gt; bool</div><div class="ttdoc">Sets or updates an environment variable.</div></div>
+<div class="line">                        <a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>));</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置临时变量 (Set temporary variable)</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a>(<span class="stringliteral">&quot;TEMP_DIR&quot;</span>, <span class="stringliteral">&quot;/tmp/workdir&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_af8f1b6b2951fa719590c6a8483eaa17e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">toolbox::base::set_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto set_environment_variable(const std::string &amp;name, const std::string &amp;value) -&gt; bool</div><div class="ttdoc">设置或更新环境变量 (Sets or updates an environment variable)</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

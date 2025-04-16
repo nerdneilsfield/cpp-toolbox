@@ -3,21 +3,6 @@ var annotated_dup =
     [ "cpp_toolbox", "namespacecpp__toolbox.html", [
       [ "io", "namespacecpp__toolbox_1_1io.html", [
         [ "pcd_file_data_t", "classcpp__toolbox_1_1io_1_1pcd__file__data__t.html", "classcpp__toolbox_1_1io_1_1pcd__file__data__t" ]
-      ] ],
-      [ "utils", "namespacecpp__toolbox_1_1utils.html", [
-        [ "array_printer_t", "classcpp__toolbox_1_1utils_1_1array__printer__t.html", "classcpp__toolbox_1_1utils_1_1array__printer__t" ],
-        [ "color_handler_t", "classcpp__toolbox_1_1utils_1_1color__handler__t.html", null ],
-        [ "container_printer_t", "classcpp__toolbox_1_1utils_1_1container__printer__t.html", "classcpp__toolbox_1_1utils_1_1container__printer__t" ],
-        [ "deque_printer_t", "classcpp__toolbox_1_1utils_1_1deque__printer__t.html", "classcpp__toolbox_1_1utils_1_1deque__printer__t" ],
-        [ "list_printer_t", "classcpp__toolbox_1_1utils_1_1list__printer__t.html", "classcpp__toolbox_1_1utils_1_1list__printer__t" ],
-        [ "map_printer_t", "classcpp__toolbox_1_1utils_1_1map__printer__t.html", "classcpp__toolbox_1_1utils_1_1map__printer__t" ],
-        [ "print_style_t", "structcpp__toolbox_1_1utils_1_1print__style__t.html", "structcpp__toolbox_1_1utils_1_1print__style__t" ],
-        [ "queue_printer_t", "classcpp__toolbox_1_1utils_1_1queue__printer__t.html", "classcpp__toolbox_1_1utils_1_1queue__printer__t" ],
-        [ "set_printer_t", "classcpp__toolbox_1_1utils_1_1set__printer__t.html", "classcpp__toolbox_1_1utils_1_1set__printer__t" ],
-        [ "table", "classcpp__toolbox_1_1utils_1_1table.html", "classcpp__toolbox_1_1utils_1_1table" ],
-        [ "unorderedmap_printer_t", "classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html", "classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t" ],
-        [ "unorderedset_printer_t", "classcpp__toolbox_1_1utils_1_1unorderedset__printer__t.html", "classcpp__toolbox_1_1utils_1_1unorderedset__printer__t" ],
-        [ "vector_printer_t", "classcpp__toolbox_1_1utils_1_1vector__printer__t.html", "classcpp__toolbox_1_1utils_1_1vector__printer__t" ]
       ] ]
     ] ],
     [ "toolbox", "namespacetoolbox.html", [
@@ -85,6 +70,8 @@ var annotated_dup =
         [ "is_const_volatile", "structtoolbox_1_1traits_1_1is__const__volatile.html", null ],
         [ "is_function", "structtoolbox_1_1traits_1_1is__function.html", null ],
         [ "is_heap_allocated", "structtoolbox_1_1traits_1_1is__heap__allocated.html", null ],
+        [ "is_iterable", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
+        [ "is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
         [ "is_member_pointer", "structtoolbox_1_1traits_1_1is__member__pointer.html", null ],
         [ "is_null_pointer", "structtoolbox_1_1traits_1_1is__null__pointer.html", null ],
         [ "is_pointer", "structtoolbox_1_1traits_1_1is__pointer.html", null ],
@@ -117,17 +104,30 @@ var annotated_dup =
           [ "optional_value_type< std::optional< U > >", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4" ]
         ] ],
         [ "argument_t", "classtoolbox_1_1utils_1_1argument__t.html", "classtoolbox_1_1utils_1_1argument__t" ],
+        [ "array_printer_t", "classtoolbox_1_1utils_1_1array__printer__t.html", "classtoolbox_1_1utils_1_1array__printer__t" ],
         [ "ClickException", "classtoolbox_1_1utils_1_1_click_exception.html", "classtoolbox_1_1utils_1_1_click_exception" ],
+        [ "color_handler_t", "classtoolbox_1_1utils_1_1color__handler__t.html", null ],
         [ "command_t", "classtoolbox_1_1utils_1_1command__t.html", "classtoolbox_1_1utils_1_1command__t" ],
         [ "CommandLineApp", "classtoolbox_1_1utils_1_1_command_line_app.html", "classtoolbox_1_1utils_1_1_command_line_app" ],
+        [ "container_printer_t", "classtoolbox_1_1utils_1_1container__printer__t.html", "classtoolbox_1_1utils_1_1container__printer__t" ],
+        [ "deque_printer_t", "classtoolbox_1_1utils_1_1deque__printer__t.html", "classtoolbox_1_1utils_1_1deque__printer__t" ],
         [ "flag_t", "classtoolbox_1_1utils_1_1flag__t.html", "classtoolbox_1_1utils_1_1flag__t" ],
+        [ "list_printer_t", "classtoolbox_1_1utils_1_1list__printer__t.html", "classtoolbox_1_1utils_1_1list__printer__t" ],
+        [ "map_printer_t", "classtoolbox_1_1utils_1_1map__printer__t.html", "classtoolbox_1_1utils_1_1map__printer__t" ],
         [ "option_t", "classtoolbox_1_1utils_1_1option__t.html", "classtoolbox_1_1utils_1_1option__t" ],
         [ "parameter_t", "classtoolbox_1_1utils_1_1parameter__t.html", "classtoolbox_1_1utils_1_1parameter__t" ],
         [ "ParameterError", "classtoolbox_1_1utils_1_1_parameter_error.html", "classtoolbox_1_1utils_1_1_parameter_error" ],
+        [ "print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", "structtoolbox_1_1utils_1_1print__style__t" ],
+        [ "queue_printer_t", "classtoolbox_1_1utils_1_1queue__printer__t.html", "classtoolbox_1_1utils_1_1queue__printer__t" ],
+        [ "set_printer_t", "classtoolbox_1_1utils_1_1set__printer__t.html", "classtoolbox_1_1utils_1_1set__printer__t" ],
         [ "simple_timer_array_t", "classtoolbox_1_1utils_1_1simple__timer__array__t.html", "classtoolbox_1_1utils_1_1simple__timer__array__t" ],
         [ "simple_timer_interface_t", "classtoolbox_1_1utils_1_1simple__timer__interface__t.html", "classtoolbox_1_1utils_1_1simple__timer__interface__t" ],
         [ "stop_watch_timer_t", "classtoolbox_1_1utils_1_1stop__watch__timer__t.html", "classtoolbox_1_1utils_1_1stop__watch__timer__t" ],
-        [ "UsageError", "classtoolbox_1_1utils_1_1_usage_error.html", "classtoolbox_1_1utils_1_1_usage_error" ]
+        [ "table_t", "classtoolbox_1_1utils_1_1table__t.html", "classtoolbox_1_1utils_1_1table__t" ],
+        [ "unorderedmap_printer_t", "classtoolbox_1_1utils_1_1unorderedmap__printer__t.html", "classtoolbox_1_1utils_1_1unorderedmap__printer__t" ],
+        [ "unorderedset_printer_t", "classtoolbox_1_1utils_1_1unorderedset__printer__t.html", "classtoolbox_1_1utils_1_1unorderedset__printer__t" ],
+        [ "UsageError", "classtoolbox_1_1utils_1_1_usage_error.html", "classtoolbox_1_1utils_1_1_usage_error" ],
+        [ "vector_printer_t", "classtoolbox_1_1utils_1_1vector__printer__t.html", "classtoolbox_1_1utils_1_1vector__printer__t" ]
       ] ]
     ] ],
     [ "exported_class", "classexported__class.html", "classexported__class" ]

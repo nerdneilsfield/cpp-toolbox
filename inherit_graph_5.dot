@@ -5,7 +5,11 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="cpp_toolbox::utils\l::container_printer\l_t\< std::list\< T \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcpp__toolbox_1_1utils_1_1container__printer__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge4_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="cpp_toolbox::utils\l::list_printer_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcpp__toolbox_1_1utils_1_1list__printer__t.html",tooltip="List 打印器/List printer."];
+  Node0 [id="Node000000",label="std::runtime_error",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge14_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::utils::ClickException",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1_click_exception.html",tooltip=" "];
+  Node1 -> Node2 [id="edge15_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::utils::Parameter\lError",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1_parameter_error.html",tooltip=" "];
+  Node1 -> Node3 [id="edge16_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="toolbox::utils::UsageError",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1_usage_error.html",tooltip=" "];
 }

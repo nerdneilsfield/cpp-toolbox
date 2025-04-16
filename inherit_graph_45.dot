@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::logger::thread\l_logger_t::thread_stream\l_logger_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html",tooltip="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output"];
+  Node0 [id="Node000000",label="toolbox::traits::is\l_pointer\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__pointer.html",tooltip="检查类型是否为指针/Check if type is a pointer"];
 }

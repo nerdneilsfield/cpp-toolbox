@@ -27,5 +27,9 @@ var type__traits_8hpp =
     [ "toolbox::traits::is_member_pointer< T >", "structtoolbox_1_1traits_1_1is__member__pointer.html", null ],
     [ "toolbox::traits::is_pointer< T >", "structtoolbox_1_1traits_1_1is__pointer.html", null ],
     [ "toolbox::traits::is_null_pointer< T >", "structtoolbox_1_1traits_1_1is__null__pointer.html", null ],
-    [ "void_t", "type__traits_8hpp.html#af947ecd84c1315e86403e59d3508e4f3", null ]
+    [ "toolbox::traits::is_iterable< T, typename >", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
+    [ "toolbox::traits::is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
+    [ "void_t", "type__traits_8hpp.html#af947ecd84c1315e86403e59d3508e4f3", null ],
+    [ "void_t", "type__traits_8hpp.html#ab78b03f232f72f2deeb66f99ef3d4802", null ],
+    [ "is_iterable_v", "type__traits_8hpp.html#aff9226c5f441dc4babdc37c493939f40", null ]
 ];

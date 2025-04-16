@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="cpp_toolbox::utils\l::color_handler_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classcpp__toolbox_1_1utils_1_1color__handler__t.html",tooltip="平台无关的颜色处理类/Platform-independent color handler"];
+  Node0 [id="Node000000",label="exported_class",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classexported__class.html",tooltip="Reports the name of the library."];
 }

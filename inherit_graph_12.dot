@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="cpp_toolbox::utils\l::print_style_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structcpp__toolbox_1_1utils_1_1print__style__t.html",tooltip="打印风格设置/Print style settings"];
+  Node0 [id="Node000000",label="toolbox::base::thread\l_pool_singleton_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1base_1_1thread__pool__singleton__t.html",tooltip=" "];
 }

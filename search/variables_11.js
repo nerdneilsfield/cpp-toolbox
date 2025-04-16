@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['white_0',['WHITE',['../namespacecpp__toolbox_1_1utils.html#aa405a1f527f09f64d0cb1394cdc59e39',1,'cpp_toolbox::utils']]]
+  ['white_0',['WHITE',['../namespacetoolbox_1_1utils.html#a0b6c6a8ce7bceb3da9f4efc0a343ccb2',1,'toolbox::utils']]]
 ];
