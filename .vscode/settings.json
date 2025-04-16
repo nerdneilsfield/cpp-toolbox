@@ -23,7 +23,8 @@
     "__tree": "cpp",
     "ios": "cpp",
     "map": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "memory": "cpp"
   },
   "C_Cpp.intelliSenseEngine": "disabled",
   "C_Cpp.formatting": "Disabled",

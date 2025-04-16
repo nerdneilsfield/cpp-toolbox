@@ -1,4 +1,7 @@
-// type_traits.hpp
+/**
+ * @file type_traits.hpp
+ * @brief 类型特征工具集合/Type traits utilities collection
+ */
 #pragma once
 #include <cstddef>
 #include <ostream>
@@ -10,7 +13,7 @@ namespace toolbox
 namespace traits
 {
 
-// Version detection
+// 版本检测/Version detection
 #if __cplusplus >= 202002L
 #  define TOOLBOX_CPP20
 #elif __cplusplus >= 201703L
@@ -21,20 +24,27 @@ namespace traits
 #  define TOOLBOX_CPP11
 #endif
 
-// Basic type traits utilities
+// 基本类型特征工具/Basic type traits utilities
 namespace detail
 {
 /**
- * @brief Empty type for SFINAE
- * @tparam ... Variable number of template parameters
+ * @brief 用于SFINAE的空类型/Empty type for SFINAE
+ * @tparam ... 可变数量的模板参数/Variable number of template parameters
  */
 template<typename...>
 using void_t = void;
 
 /**
- * @brief Check if type has a type member
- * @tparam T Type to check
- * @tparam void SFINAE parameter
+ * @brief 检查类型是否具有type成员/Check if type has a type member
+ * @tparam T 要检查的类型/Type to check
+ * @tparam void SFINAE参数/SFINAE parameter
+ *
+ * @code
+ * struct HasType { using type = int; };
+ * struct NoType {};
+ * static_assert(has_type_impl<HasType>::value);
+ * static_assert(!has_type_impl<NoType>::value);
+ * @endcode
  */
 template<typename T, typename = void>
 struct has_type_impl : std::false_type
@@ -42,8 +52,9 @@ struct has_type_impl : std::false_type
 };
 
 /**
- * @brief Check if type has a type member (specialization)
- * @tparam T Type to check
+ * @brief 检查类型是否具有type成员(特化版本)/Check if type has a type member
+ * (specialization)
+ * @tparam T 要检查的类型/Type to check
  */
 template<typename T>
 struct has_type_impl<T, void_t<typename T::type>> : std::true_type
@@ -51,49 +62,60 @@ struct has_type_impl<T, void_t<typename T::type>> : std::true_type
 };
 
 /**
- * @brief Storage traits for types
- * @tparam T Type to analyze
+ * @brief 类型存储特征/Storage traits for types
+ * @tparam T 要分析的类型/Type to analyze
  *
- * Provides information about storage characteristics of a type:
- * - Whether it may be heap allocated
- * - Whether it must be heap allocated
- * - Whether it may be stack allocated
+ * 提供类型的存储特征信息/Provides information about storage characteristics of
+ * a type:
+ * - 是否可以堆分配/Whether it may be heap allocated
+ * - 是否必须堆分配/Whether it must be heap allocated
+ * - 是否可以栈分配/Whether it may be stack allocated
  *
- * Example:
  * @code
  * class MyClass {};
- * bool mayBeHeap = storage_traits<MyClass>::may_be_heap_allocated;
- * bool mustBeHeap = storage_traits<MyClass>::must_be_heap_allocated;
- * bool mayBeStack = storage_traits<MyClass>::may_be_stack_allocated;
+ * class Abstract { virtual void foo() = 0; };
+ *
+ * // 检查普通类/Check regular class
+ * static_assert(storage_traits<MyClass>::may_be_stack_allocated);
+ * static_assert(!storage_traits<MyClass>::must_be_heap_allocated);
+ *
+ * // 检查抽象类/Check abstract class
+ * static_assert(storage_traits<Abstract>::must_be_heap_allocated);
+ * static_assert(!storage_traits<Abstract>::may_be_stack_allocated);
  * @endcode
  */
 template<typename T>
 struct storage_traits
 {
-  // Check if type may be heap allocated
+  // 检查类型是否可以堆分配/Check if type may be heap allocated
   static constexpr bool may_be_heap_allocated = !std::is_array_v<T>
-      && (sizeof(T) > 1024 ||  // Large objects may be heap allocated
+      && (sizeof(T) > 1024
+          ||  // 大对象可能需要堆分配/Large objects may be heap allocated
           std::has_virtual_destructor_v<T>
-          ||  // Virtual destructor implies dynamic allocation
-          std::is_polymorphic_v<T>);  // Polymorphic types usually on heap
+          ||  // 虚析构函数暗示动态分配/Virtual destructor implies dynamic
+              // allocation
+          std::is_polymorphic_v<T>);  // 多态类型通常在堆上/Polymorphic types
+                                      // usually on heap
 
-  // Check if type must be heap allocated
+  // 检查类型是否必须堆分配/Check if type must be heap allocated
   static constexpr bool must_be_heap_allocated =
-      std::is_abstract_v<T>;  // Abstract classes must be heap allocated
+      std::is_abstract_v<T>;  // 抽象类必须堆分配/Abstract classes must be heap
+                              // allocated
 
-  // Check if type may be stack allocated
+  // 检查类型是否可以栈分配/Check if type may be stack allocated
   static constexpr bool may_be_stack_allocated =
       !must_be_heap_allocated && std::is_object_v<T> && !std::is_abstract_v<T>;
 };
 }  // namespace detail
 
 /**
- * @brief Type identity trait
- * @tparam T Type to identify
+ * @brief 类型标识特征/Type identity trait
+ * @tparam T 要标识的类型/Type to identify
  *
- * Example:
  * @code
- * using type = type_identity<int>::type; // type is int
+ * // 保持类型不变/Keep type unchanged
+ * using type1 = type_identity<int>::type;  // type1 is int
+ * using type2 = type_identity<std::string>::type;  // type2 is std::string
  * @endcode
  */
 template<typename T>
@@ -103,12 +125,14 @@ struct type_identity
 };
 
 /**
- * @brief Remove reference from type
- * @tparam T Type to remove reference from
+ * @brief 移除类型的引用/Remove reference from type
+ * @tparam T 要移除引用的类型/Type to remove reference from
  *
- * Example:
  * @code
- * using type = remove_reference<int&>::type; // type is int
+ * // 移除左值引用/Remove lvalue reference
+ * using type1 = remove_reference<int&>::type;  // type1 is int
+ * // 移除右值引用/Remove rvalue reference
+ * using type2 = remove_reference<int&&>::type;  // type2 is int
  * @endcode
  */
 template<typename T>
@@ -117,17 +141,22 @@ struct remove_reference
   using type = std::remove_reference_t<T>;
 };
 
-// Detection of specific members or methods
+// 特定成员或方法的检测/Detection of specific members or methods
 #ifdef TOOLBOX_CPP17
 /**
- * @brief Check if type has toString method (C++17 version)
- * @tparam T Type to check
- * @tparam void SFINAE parameter
+ * @brief 检查类型是否有toString方法(C++17版本)/Check if type has toString
+ * method (C++17 version)
+ * @tparam T 要检查的类型/Type to check
+ * @tparam void SFINAE参数/SFINAE parameter
  *
- * Example:
  * @code
- * class A { std::string toString() { return "A"; } };
- * static_assert(has_toString<A>::value, "A has toString");
+ * struct WithToString {
+ *   std::string toString() { return "hello"; }
+ * };
+ * struct WithoutToString {};
+ *
+ * static_assert(has_toString<WithToString>::value);
+ * static_assert(!has_toString<WithoutToString>::value);
  * @endcode
  */
 template<typename T, typename = void>
@@ -142,13 +171,18 @@ struct has_toString<T, std::void_t<decltype(std::declval<T>().toString())>>
 };
 #else
 /**
- * @brief Check if type has toString method (pre-C++17 version)
- * @tparam T Type to check
+ * @brief 检查类型是否有toString方法(C++17之前版本)/Check if type has toString
+ * method (pre-C++17 version)
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
- * class A { std::string toString() { return "A"; } };
- * static_assert(has_toString<A>::value, "A has toString");
+ * struct WithToString {
+ *   std::string toString() { return "hello"; }
+ * };
+ * struct WithoutToString {};
+ *
+ * static_assert(has_toString<WithToString>::value);
+ * static_assert(!has_toString<WithoutToString>::value);
  * @endcode
  */
 template<typename T>
@@ -168,12 +202,15 @@ public:
 #endif
 
 /**
- * @brief Remove all qualifiers from type
- * @tparam T Type to remove qualifiers from
+ * @brief 移除类型的所有限定符/Remove all qualifiers from type
+ * @tparam T 要移除限定符的类型/Type to remove qualifiers from
  *
- * Example:
  * @code
- * using type = remove_all_qualifiers<const int&>::type; // type is int
+ * // 移除const和引用限定符/Remove const and reference qualifiers
+ * using type1 = remove_all_qualifiers<const int&>::type;  // type1 is int
+ * // 移除volatile和const限定符/Remove volatile and const qualifiers
+ * using type2 = remove_all_qualifiers<volatile const double>::type;  // type2
+ * is double
  * @endcode
  */
 template<typename T>
@@ -183,26 +220,38 @@ struct remove_all_qualifiers
       typename std::remove_cv<typename std::remove_reference<T>::type>::type;
 };
 
-// C++17 and above helper aliases
+// C++17及以上的辅助别名/C++17 and above helper aliases
 #ifdef TOOLBOX_CPP17
 /**
- * @brief Helper alias to remove all qualifiers
- * @tparam T Type to remove qualifiers from
+ * @brief 移除所有限定符的辅助别名/Helper alias to remove all qualifiers
+ * @tparam T 要移除限定符的类型/Type to remove qualifiers from
+ *
+ * @code
+ * // 使用别名模板简化语法/Use alias template to simplify syntax
+ * using type1 = remove_all_qualifiers_t<const int&>;  // type1 is int
+ * using type2 = remove_all_qualifiers_t<volatile const double>;  // type2 is
+ * double
+ * @endcode
  */
 template<typename T>
 using remove_all_qualifiers_t = typename remove_all_qualifiers<T>::type;
 #endif
 
-// Callable detection
+// 可调用对象检测/Callable detection
 #ifdef TOOLBOX_CPP20
 /**
- * @brief Check if type is callable (C++20 concept)
- * @tparam T Type to check
+ * @brief 检查类型是否可调用(C++20概念)/Check if type is callable (C++20
+ * concept)
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
+ * // 检查lambda是否可调用/Check if lambda is callable
  * auto lambda = []() { return 42; };
  * static_assert(Callable<decltype(lambda)>);
+ *
+ * // 检查函数对象是否可调用/Check if function object is callable
+ * struct Functor { void operator()() {} };
+ * static_assert(Callable<Functor>);
  * @endcode
  */
 template<typename T>
@@ -212,14 +261,18 @@ concept Callable = requires(T t)
 };
 #else
 /**
- * @brief Check if type is callable
- * @tparam T Type to check
- * @tparam void SFINAE parameter
+ * @brief 检查类型是否可调用/Check if type is callable
+ * @tparam T 要检查的类型/Type to check
+ * @tparam void SFINAE参数/SFINAE parameter
  *
- * Example:
  * @code
+ * // 检查lambda是否可调用/Check if lambda is callable
  * auto lambda = []() { return 42; };
  * static_assert(is_callable<decltype(lambda)>::value);
+ *
+ * // 检查函数对象是否可调用/Check if function object is callable
+ * struct Functor { void operator()() {} };
+ * static_assert(is_callable<Functor>::value);
  * @endcode
  */
 template<typename T, typename = void>
@@ -234,13 +287,17 @@ struct is_callable<T, std::void_t<decltype(&T::operator())>> : std::true_type
 #endif
 
 /**
- * @brief Type list container
- * @tparam Ts Parameter pack of types
+ * @brief 类型列表容器/Type list container
+ * @tparam Ts 类型参数包/Parameter pack of types
  *
- * Example:
  * @code
- * using list = type_list<int, float, double>;
- * static_assert(list::size == 3);
+ * // 创建类型列表/Create type list
+ * using number_types = type_list<int, float, double>;
+ * static_assert(number_types::size == 3);
+ *
+ * // 创建空类型列表/Create empty type list
+ * using empty_list = type_list<>;
+ * static_assert(empty_list::size == 0);
  * @endcode
  */
 template<typename... Ts>
@@ -250,23 +307,24 @@ struct type_list
 };
 
 /**
- * @brief Function traits base template
- * @tparam T Function type
+ * @brief 函数特征基础模板/Function traits base template
+ * @tparam T 函数类型/Function type
  */
 template<typename T>
 struct function_traits;
 
 /**
- * @brief Function traits for regular functions
- * @tparam R Return type
- * @tparam Args Function parameter types
+ * @brief 普通函数的函数特征/Function traits for regular functions
+ * @tparam R 返回类型/Return type
+ * @tparam Args 函数参数类型/Function parameter types
  *
- * Example:
  * @code
- * int func(float, double);
+ * // 分析普通函数/Analyze regular function
+ * int func(float x, double y) { return 0; }
  * using traits = function_traits<decltype(func)>;
  * static_assert(std::is_same_v<traits::return_type, int>);
  * static_assert(traits::arity == 2);
+ * static_assert(std::is_same_v<traits::arg_type<0>, float>);
  * @endcode
  */
 template<typename R, typename... Args>
@@ -280,18 +338,21 @@ struct function_traits<R(Args...)>
 };
 
 /**
- * @brief Function traits for member functions
- * @tparam C Class type
- * @tparam R Return type
- * @tparam Args Function parameter types
+ * @brief 成员函数的函数特征/Function traits for member functions
+ * @tparam C 类类型/Class type
+ * @tparam R 返回类型/Return type
+ * @tparam Args 函数参数类型/Function parameter types
  *
- * Example:
  * @code
- * struct A {
- *   int method(float, double);
+ * // 分析成员函数/Analyze member function
+ * struct MyClass {
+ *   double method(int x, float y) { return 0.0; }
  * };
- * using traits = function_traits<decltype(&A::method)>;
- * static_assert(std::is_same_v<traits::class_type, A>);
+ *
+ * using traits = function_traits<decltype(&MyClass::method)>;
+ * static_assert(std::is_same_v<traits::class_type, MyClass>);
+ * static_assert(std::is_same_v<traits::return_type, double>);
+ * static_assert(traits::arity == 2);
  * @endcode
  */
 template<typename C, typename R, typename... Args>
@@ -300,16 +361,18 @@ struct function_traits<R (C::*)(Args...)> : function_traits<R(Args...)>
   using class_type = C;
 };
 
-// SFINAE utilities
+// SFINAE工具/SFINAE utilities
 #ifdef TOOLBOX_CPP20
 /**
- * @brief Check if type has size member (C++20 concept)
- * @tparam T Type to check
+ * @brief 检查类型是否有size成员(C++20概念)/Check if type has size member (C++20
+ * concept)
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
- * std::vector<int> v;
- * static_assert(HasSize<decltype(v)>);
+ * // 检查容器类型/Check container types
+ * static_assert(HasSize<std::vector<int>>);
+ * static_assert(HasSize<std::string>);
+ * static_assert(!HasSize<int>);
  * @endcode
  */
 template<typename T>
@@ -321,12 +384,18 @@ concept HasSize = requires(T t)
 };
 
 /**
- * @brief Check if type is printable (C++20 concept)
- * @tparam T Type to check
+ * @brief 检查类型是否可打印(C++20概念)/Check if type is printable (C++20
+ * concept)
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
+ * struct Printable { friend std::ostream& operator<<(std::ostream& os, const
+ * Printable&) { return os; } }; struct NonPrintable {};
+ *
  * static_assert(Printable<int>);
+ * static_assert(Printable<std::string>);
+ * static_assert(Printable<Printable>);
+ * static_assert(!Printable<NonPrintable>);
  * @endcode
  */
 template<typename T>
@@ -338,14 +407,15 @@ concept Printable = requires(T t, std::ostream& os)
 };
 #else
 /**
- * @brief Check if type has size member
- * @tparam T Type to check
- * @tparam void SFINAE parameter
+ * @brief 检查类型是否有size成员/Check if type has size member
+ * @tparam T 要检查的类型/Type to check
+ * @tparam void SFINAE参数/SFINAE parameter
  *
- * Example:
  * @code
- * std::vector<int> v;
- * static_assert(has_size<decltype(v)>::value);
+ * // 检查容器类型/Check container types
+ * static_assert(has_size<std::vector<int>>::value);
+ * static_assert(has_size<std::string>::value);
+ * static_assert(!has_size<int>::value);
  * @endcode
  */
 template<typename T, typename = void>
@@ -360,12 +430,17 @@ struct has_size<T, std::void_t<decltype(std::declval<T>().size())>>
 };
 
 /**
- * @brief Check if type is printable
- * @tparam T Type to check
+ * @brief 检查类型是否可打印/Check if type is printable
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
+ * struct Printable { friend std::ostream& operator<<(std::ostream& os, const
+ * Printable&) { return os; } }; struct NonPrintable {};
+ *
  * static_assert(is_printable<int>::value);
+ * static_assert(is_printable<std::string>::value);
+ * static_assert(is_printable<Printable>::value);
+ * static_assert(!is_printable<NonPrintable>::value);
  * @endcode
  */
 template<typename T>
@@ -386,14 +461,20 @@ public:
 #endif
 
 /**
- * @brief Type-safe enum wrapper
- * @tparam EnumType Enum type to wrap
+ * @brief 类型安全的枚举包装器/Type-safe enum wrapper
+ * @tparam EnumType 要包装的枚举类型/Enum type to wrap
  *
- * Example:
  * @code
  * enum class Color { Red, Green, Blue };
- * enum_wrapper<Color> wrapped(Color::Red);
- * auto value = wrapped.to_underlying(); // Get underlying value
+ *
+ * // 创建和使用包装器/Create and use wrapper
+ * enum_wrapper<Color> color(Color::Red);
+ * Color raw_color = color;  // 隐式转换/Implicit conversion
+ * auto value = color.to_underlying();  // 获取底层值/Get underlying value
+ *
+ * // 编译期检查/Compile-time check
+ * // enum_wrapper<int> error;  // 编译错误：不是枚举类型/Compilation error: not
+ * an enum type
  * @endcode
  */
 template<typename EnumType>
@@ -423,17 +504,22 @@ private:
   EnumType value_;
 };
 
-// Compile-time type name
+// 编译期类型名称/Compile-time type name
 #ifdef TOOLBOX_CPP17
 /**
- * @brief Get type name at compile time
- * @tparam T Type to get name of
- * @return std::string_view containing type name
+ * @brief 在编译期获取类型名称/Get type name at compile time
+ * @tparam T 要获取名称的类型/Type to get name of
+ * @return 包含类型名称的std::string_view/std::string_view containing type name
  *
- * Example:
  * @code
- * constexpr auto name = type_name<int>();
- * std::cout << name; // Prints "int"
+ * // 获取基本类型名称/Get basic type names
+ * constexpr auto int_name = type_name<int>();  // "int"
+ * constexpr auto string_name = type_name<std::string>();  // "std::string"
+ *
+ * // 获取复杂类型名称/Get complex type names
+ * template<typename T>
+ * class MyTemplate {};
+ * constexpr auto template_name = type_name<MyTemplate<int>>();
  * @endcode
  */
 template<typename T>
@@ -463,13 +549,15 @@ constexpr std::string_view type_name()
 #endif
 
 /**
- * @brief Check if type must be heap allocated
- * @tparam T Type to check
+ * @brief 检查类型是否必须堆分配/Check if type must be heap allocated
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * class Abstract { virtual void foo() = 0; };
+ * class Concrete {};
+ *
  * static_assert(is_heap_allocated<Abstract>::value);
+ * static_assert(!is_heap_allocated<Concrete>::value);
  * @endcode
  */
 template<typename T>
@@ -480,13 +568,15 @@ struct is_heap_allocated
 };
 
 /**
- * @brief Check if type can be stack allocated
- * @tparam T Type to check
+ * @brief 检查类型是否可以栈分配/Check if type can be stack allocated
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
- * struct Simple {};
- * static_assert(is_stack_allocated<Simple>::value);
+ * class Abstract { virtual void foo() = 0; };
+ * class Concrete {};
+ *
+ * static_assert(!is_stack_allocated<Abstract>::value);
+ * static_assert(is_stack_allocated<Concrete>::value);
  * @endcode
  */
 template<typename T>
@@ -505,13 +595,13 @@ inline constexpr bool is_stack_allocated_v = is_stack_allocated<T>::value;
 #endif
 
 /**
- * @brief Check if type is const-qualified
- * @tparam T Type to check
+ * @brief 检查类型是否为const限定/Check if type is const-qualified
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_const<const int>::value);
  * static_assert(!is_const<int>::value);
+ * static_assert(is_const<const std::string>::value);
  * @endcode
  */
 template<typename T>
@@ -526,13 +616,13 @@ inline constexpr bool is_const_v = is_const<T>::value;
 #endif
 
 /**
- * @brief Check if type is volatile-qualified
- * @tparam T Type to check
+ * @brief 检查类型是否为volatile限定/Check if type is volatile-qualified
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_volatile<volatile int>::value);
  * static_assert(!is_volatile<int>::value);
+ * static_assert(is_volatile<volatile double>::value);
  * @endcode
  */
 template<typename T>
@@ -547,13 +637,14 @@ inline constexpr bool is_volatile_v = is_volatile<T>::value;
 #endif
 
 /**
- * @brief Check if type is const-volatile qualified
- * @tparam T Type to check
+ * @brief 检查类型是否同时具有const和volatile限定/Check if type is
+ * const-volatile qualified
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_const_volatile<const volatile int>::value);
  * static_assert(!is_const_volatile<const int>::value);
+ * static_assert(!is_const_volatile<volatile int>::value);
  * @endcode
  */
 template<typename T>
@@ -568,12 +659,12 @@ inline constexpr bool is_const_volatile_v = is_const_volatile<T>::value;
 #endif
 
 /**
- * @brief Check if type is a reference
- * @tparam T Type to check
+ * @brief 检查类型是否为引用/Check if type is a reference
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_reference<int&>::value);
+ * static_assert(is_reference<int&&>::value);
  * static_assert(!is_reference<int>::value);
  * @endcode
  */
@@ -589,13 +680,13 @@ inline constexpr bool is_reference_v = is_reference<T>::value;
 #endif
 
 /**
- * @brief Check if type is an array
- * @tparam T Type to check
+ * @brief 检查类型是否为数组/Check if type is an array
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_array<int[]>::value);
- * static_assert(!is_array<int>::value);
+ * static_assert(is_array<int[5]>::value);
+ * static_assert(!is_array<int*>::value);
  * @endcode
  */
 template<typename T>
@@ -610,14 +701,14 @@ inline constexpr bool is_array_v = is_array<T>::value;
 #endif
 
 /**
- * @brief Check if type is a function
- * @tparam T Type to check
+ * @brief 检查类型是否为函数/Check if type is a function
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
- * void func();
+ * void func(int);
  * static_assert(is_function<decltype(func)>::value);
  * static_assert(!is_function<int>::value);
+ * static_assert(!is_function<void(*)()>::value);
  * @endcode
  */
 template<typename T>
@@ -632,13 +723,13 @@ inline constexpr bool is_function_v = is_function<T>::value;
 #endif
 
 /**
- * @brief Check if type is a member pointer
- * @tparam T Type to check
+ * @brief 检查类型是否为成员指针/Check if type is a member pointer
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
- * struct S { int m; };
+ * struct S { int m; void f(); };
  * static_assert(is_member_pointer<int S::*>::value);
+ * static_assert(is_member_pointer<void (S::*)()>::value);
  * static_assert(!is_member_pointer<int*>::value);
  * @endcode
  */
@@ -654,13 +745,14 @@ inline constexpr bool is_member_pointer_v = is_member_pointer<T>::value;
 #endif
 
 /**
- * @brief Check if type is a pointer
- * @tparam T Type to check
+ * @brief 检查类型是否为指针/Check if type is a pointer
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_pointer<int*>::value);
+ * static_assert(is_pointer<void*>::value);
  * static_assert(!is_pointer<int>::value);
+ * static_assert(!is_pointer<int&>::value);
  * @endcode
  */
 template<typename T>
@@ -675,12 +767,12 @@ inline constexpr bool is_pointer_v = is_pointer<T>::value;
 #endif
 
 /**
- * @brief Check if type is std::nullptr_t
- * @tparam T Type to check
+ * @brief 检查类型是否为std::nullptr_t/Check if type is std::nullptr_t
+ * @tparam T 要检查的类型/Type to check
  *
- * Example:
  * @code
  * static_assert(is_null_pointer<std::nullptr_t>::value);
+ * static_assert(!is_null_pointer<void*>::value);
  * static_assert(!is_null_pointer<int*>::value);
  * @endcode
  */
