@@ -1,6 +1,6 @@
 # cpp-toolbox
 
-[![Stable Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://cpp-toolbox.dengqi.site/) [![Latest Docs](https://img.shields.io/badge/docs-latest-orange.svg)](https://cpp-toolbox.dengqi.site/)
+[![Stable Docs](https://img.shields.io/badge/docs-stable-blue.svg)](https://cpp-toolbox.dengqi.site/) [![Latest Docs](https://img.shields.io/badge/docs-latest-orange.svg)](https://cpp-toolbox-latest.dengqi.site/)
 
 ---
 
