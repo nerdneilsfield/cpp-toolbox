@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: /home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<p>自定义删除器,用于将对象返回到 object_pool_t/Custom deleter for std::unique_ptr to return objects to an object_pool_t</p>
+<p>自定义删除器,用于将对象返回到 object_pool_t/Custom deleter for std::unique_ptr to return objects to an object_pool_t </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>池管理的对象类型/The type of object managed by the pool</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">object_pool_t&lt;MyClass&gt; pool;</div>
+<div class="line">{</div>
+<div class="line">  <span class="keyword">auto</span> obj = pool.acquire(); <span class="comment">// obj 使用 PoolDeleter 作为删除器/obj uses</span></div>
+<div class="line">PoolDeleter } <span class="comment">// obj 超出作用域时自动返回池中/obj automatically returns to</span></div>
+<div class="line">pool when out of scope</div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// For potential exceptions if needed</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span>  <span class="comment">// Alternative storage</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1base.html">toolbox::base</a></div>
+<div class="line">{</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">class </span>object_pool_t;  <span class="comment">// Forward declaration</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">class </span>PoolDeleter</div>
+<div class="line">{</div>
+<div class="line">  object_pool_t&lt;T&gt;* pool_ =</div>
+<div class="line">      <span class="keyword">nullptr</span>;  <span class="comment">// 指向对象池的非拥有指针/Non-owning pointer to the pool</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">explicit</span> PoolDeleter(object_pool_t&lt;T&gt;* pool = <span class="keyword">nullptr</span>)</div>
+<div class="line">      : pool_(pool)</div>
+<div class="line">  {</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1_pool_deleter.html#a85aa08132d5284793d3399919cb98bbe">operator()</a>(T* ptr)<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">  </span>{</div>
+<div class="line">    <span class="keywordflow">if</span> (pool_ &amp;&amp; ptr) {</div>
+<div class="line">      pool_-&gt;<a id="a1" name="a1"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a>(ptr);  <span class="comment">// 告诉池回收对象/Tell the pool to take it back</span></div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">      <span class="comment">// 如果没有关联的池,执行默认删除/If no pool is associated, perform default</span></div>
+<div class="line">      <span class="comment">// delete 处理在池外创建新对象或池过早销毁的情况/This handles cases where</span></div>
+<div class="line">      <span class="comment">// acquire might create a new object outside the pool&#39;s direct management</span></div>
+<div class="line">      <span class="comment">// or if the pool is destroyed early</span></div>
+<div class="line">      <span class="keyword">delete</span> ptr;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="keyword">class </span>object_pool_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">using </span><a id="a2" name="a2"></a><a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> = std::unique_ptr&lt;T, PoolDeleter&lt;T&gt;&gt;;</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">explicit</span> object_pool_t(<span class="keywordtype">size_t</span> initial_size = 0,</div>
+<div class="line">                         std::function&lt;<span class="keywordtype">void</span>(T&amp;)&gt; resetter = <span class="keyword">nullptr</span>)</div>
+<div class="line">      : reset_func_(std::move(resetter))</div>
+<div class="line">  {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; initial_size; ++i) {</div>
+<div class="line">      pool_.push(std::make_unique&lt;T&gt;());</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 为简单起见删除复制/移动操作/Deleted copy/move operations for simplicity</span></div>
+<div class="line">  object_pool_t(<span class="keyword">const</span> object_pool_t&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">  object_pool_t&amp; <a id="a3" name="a3"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">operator=</a>(<span class="keyword">const</span> object_pool_t&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">  object_pool_t(object_pool_t&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">  object_pool_t&amp; <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">operator=</a>(object_pool_t&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> <a id="a4" name="a4"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">acquire</a>()</div>
+<div class="line">  {</div>
+<div class="line">    std::unique_ptr&lt;T&gt; obj_ptr = <span class="keyword">nullptr</span>;  <span class="comment">// 用于临时所有权的 unique_ptr/Use</span></div>
+<div class="line">                                           <span class="comment">// unique_ptr for temporary ownership</span></div>
+<div class="line"> </div>
+<div class="line">    {  <span class="comment">// 锁作用域/Lock scope</span></div>
+<div class="line">      std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
+<div class="line">      <span class="keywordflow">if</span> (!pool_.empty()) {</div>
+<div class="line">        obj_ptr = std::move(pool_.front());  <span class="comment">// 从池中取出/Take from pool</span></div>
+<div class="line">        pool_.pop();</div>
+<div class="line">      }</div>
+<div class="line">    }  <span class="comment">// 在可能创建新对象前解锁互斥量/Unlock mutex before potentially creating</span></div>
+<div class="line">       <span class="comment">// a new object</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (!obj_ptr) {  <span class="comment">// 如果池为空/If pool was empty</span></div>
+<div class="line">      obj_ptr = std::make_unique&lt;T&gt;();  <span class="comment">// 创建新对象/Create a new one</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 将对象包装在带自定义删除器的 unique_ptr 中返回/Return the object wrapped</span></div>
+<div class="line">    <span class="comment">// in a unique_ptr with our custom deleter</span></div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a>(obj_ptr.release(), <a id="a5" name="a5"></a><a class="code hl_friend" href="classtoolbox_1_1base_1_1object__pool__t.html#a6857aaca2124f8646392d423bc1a2f39">PoolDeleter&lt;T&gt;</a>(<span class="keyword">this</span>));</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a>(T* ptr)</div>
+<div class="line">  {</div>
+<div class="line">    <span class="keywordflow">if</span> (!ptr)</div>
+<div class="line">      <span class="keywordflow">return</span>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 如果有重置函数则重置对象状态/Reset object state if a reset function is</span></div>
+<div class="line">    <span class="comment">// available</span></div>
+<div class="line">    <span class="keywordflow">if</span> (reset_func_) {</div>
+<div class="line">      <span class="keywordflow">try</span> {</div>
+<div class="line">        reset_func_(*ptr);</div>
+<div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line">        <span class="comment">// 记录错误?不要让重置器的异常破坏池/Log error? Don&#39;t let exceptions</span></div>
+<div class="line">        <span class="comment">// from resetter break the pool</span></div>
+<div class="line">        <span class="comment">// 考虑使用不使用此池的机制进行日志记录/Consider logging using a</span></div>
+<div class="line">        <span class="comment">// mechanism that doesn&#39;t use this pool</span></div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;[ObjectPool] Exception during reset: %s\n&quot;</span>, e.what());</div>
+<div class="line">        <span class="comment">// 决定是继续池化对象还是删除它/Decide whether to still pool the object</span></div>
+<div class="line">        <span class="comment">// or delete it 如果重置严重失败,删除可能更安全/Deleting might be safer</span></div>
+<div class="line">        <span class="comment">// if reset failed critically</span></div>
+<div class="line">        <span class="keyword">delete</span> ptr;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">      } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">        fprintf(stderr, <span class="stringliteral">&quot;[ObjectPool] Unknown exception during reset.\n&quot;</span>);</div>
+<div class="line">        <span class="keyword">delete</span> ptr;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::unique_ptr&lt;T&gt; obj_ptr(ptr);  <span class="comment">// 重新包装原始指针以管理所有权/Re-wrap</span></div>
+<div class="line">                                      <span class="comment">// raw pointer to manage ownership</span></div>
+<div class="line">    {  <span class="comment">// 锁作用域/Lock scope</span></div>
+<div class="line">      std::lock_guard&lt;std::mutex&gt; lock(mutex_);</div>
+<div class="line">      pool_.push(std::move(obj_ptr));  <span class="comment">// 将 unique_ptr 添加回池中/Add</span></div>
+<div class="line">                                       <span class="comment">// unique_ptr back to the pool</span></div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keyword">friend</span> <span class="keyword">class </span>PoolDeleter&lt;T&gt;;  <span class="comment">// 允许删除器调用 release/Allow deleter to call</span></div>
+<div class="line">                                <span class="comment">// release</span></div>
+<div class="line"> </div>
+<div class="line">  std::queue&lt;std::unique_ptr&lt;T&gt;&gt; pool_;  <span class="comment">// 对象池队列/Object pool queue</span></div>
+<div class="line">  <span class="keyword">mutable</span> std::mutex mutex_;  <span class="comment">// 用于线程安全的互斥量/Mutex for thread safety</span></div>
+<div class="line">  std::function&lt;void(T&amp;)&gt; reset_func_;  <span class="comment">// 对象重置函数/Object reset function</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">}  <span class="comment">// namespace toolbox::base</span></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1_pool_deleter_html_a85aa08132d5284793d3399919cb98bbe"><div class="ttname"><a href="classtoolbox_1_1base_1_1_pool_deleter.html#a85aa08132d5284793d3399919cb98bbe">toolbox::base::PoolDeleter::operator()</a></div><div class="ttdeci">void operator()(T *ptr) const</div><div class="ttdoc">std::unique_ptr 调用此函数代替 delete/The function called by std::unique_ptr instead of delete</div><div class="ttdef"><b>Definition</b> object_pool.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_a6857aaca2124f8646392d423bc1a2f39"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#a6857aaca2124f8646392d423bc1a2f39">toolbox::base::object_pool_t::PoolDeleter&lt; T &gt;</a></div><div class="ttdeci">friend class PoolDeleter&lt; T &gt;</div><div class="ttdef"><b>Definition</b> object_pool.hpp:214</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_a82c2e1d372a903ddb13ec40aec526c1b"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">toolbox::base::object_pool_t::operator=</a></div><div class="ttdeci">object_pool_t &amp; operator=(const object_pool_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ad760b438b3168f37bfe95d2bf16c1735"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">toolbox::base::object_pool_t::release</a></div><div class="ttdeci">void release(T *ptr)</div><div class="ttdoc">将对象释放回池中/Release an object back to the pool</div><div class="ttdef"><b>Definition</b> object_pool.hpp:176</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ae721bc932699daa4c5e521583b54eb5f"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">toolbox::base::object_pool_t::PooledObjectPtr</a></div><div class="ttdeci">std::unique_ptr&lt; T, PoolDeleter&lt; T &gt; &gt; PooledObjectPtr</div><div class="ttdoc">管理池化对象的 unique_ptr 的别名。当超出作用域时自动将对象返回池中/ Alias for a unique_ptr managing a pooled object....</div><div class="ttdef"><b>Definition</b> object_pool.hpp:107</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_aee1365b915dd94ff289623f8b8e3818f"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">toolbox::base::object_pool_t::acquire</a></div><div class="ttdeci">PooledObjectPtr acquire()</div><div class="ttdoc">从池中获取一个对象/Acquire an object from the pool</div><div class="ttdef"><b>Definition</b> object_pool.hpp:142</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html"><div class="ttname"><a href="namespacetoolbox_1_1base.html">toolbox::base</a></div><div class="ttdoc">提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.</div></div>
+</div><!-- fragment --> </div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

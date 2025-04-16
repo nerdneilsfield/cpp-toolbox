@@ -1,0 +1,904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::types::point_cloud_t&lt; T &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1types_1_1point__cloud__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="classtoolbox_1_1types_1_1point__cloud__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::types::point_cloud_t&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>包含点和相关数据的点云类 / A point cloud class containing points and associated data  
+ <a href="classtoolbox_1_1types_1_1point__cloud__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="point_8hpp_source.html">point.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::types::point_cloud_t&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a766b7179b312f34670a20ceadb1568a1" id="r_a766b7179b312f34670a20ceadb1568a1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a766b7179b312f34670a20ceadb1568a1">~point_cloud_t</a> ()=default</td></tr>
+<tr class="separator:a766b7179b312f34670a20ceadb1568a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a478dfcbe07eb70d052519522aad5d03d" id="r_a478dfcbe07eb70d052519522aad5d03d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a478dfcbe07eb70d052519522aad5d03d">point_cloud_t</a> ()</td></tr>
+<tr class="separator:a478dfcbe07eb70d052519522aad5d03d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04e06c7252010bd49ca9d3b8fd0e684" id="r_ab04e06c7252010bd49ca9d3b8fd0e684"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#ab04e06c7252010bd49ca9d3b8fd0e684">point_cloud_t</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;other)</td></tr>
+<tr class="separator:ab04e06c7252010bd49ca9d3b8fd0e684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a48def5ba0ec3fe0bfef3c039cd65b2" id="r_a4a48def5ba0ec3fe0bfef3c039cd65b2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4a48def5ba0ec3fe0bfef3c039cd65b2">point_cloud_t</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a4a48def5ba0ec3fe0bfef3c039cd65b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f724d45d43a5907207147c52d7d13b2" id="r_a6f724d45d43a5907207147c52d7d13b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a6f724d45d43a5907207147c52d7d13b2">operator=</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;other)</td></tr>
+<tr class="separator:a6f724d45d43a5907207147c52d7d13b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13942ff83b297a424204d93bf6044f09" id="r_a13942ff83b297a424204d93bf6044f09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a13942ff83b297a424204d93bf6044f09">operator=</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a13942ff83b297a424204d93bf6044f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a929bfd294a28a1f344bf4a6183ccb664" id="r_a929bfd294a28a1f344bf4a6183ccb664"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a> () const -&gt; std::size_t</td></tr>
+<tr class="memdesc:a929bfd294a28a1f344bf4a6183ccb664"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点云中的点数 / Get number of points in cloud  <br /></td></tr>
+<tr class="separator:a929bfd294a28a1f344bf4a6183ccb664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ea56dc4d88223facc3a0fc77e51f0d" id="r_ac8ea56dc4d88223facc3a0fc77e51f0d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#ac8ea56dc4d88223facc3a0fc77e51f0d">empty</a> () const -&gt; bool</td></tr>
+<tr class="memdesc:ac8ea56dc4d88223facc3a0fc77e51f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查点云是否为空 / Check if cloud is empty  <br /></td></tr>
+<tr class="separator:ac8ea56dc4d88223facc3a0fc77e51f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41475bb191d4ed9ded2031e64e00b107" id="r_a41475bb191d4ed9ded2031e64e00b107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a41475bb191d4ed9ded2031e64e00b107">clear</a> ()</td></tr>
+<tr class="memdesc:a41475bb191d4ed9ded2031e64e00b107"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除点云中的所有数据 / Clear all data from cloud  <br /></td></tr>
+<tr class="separator:a41475bb191d4ed9ded2031e64e00b107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8059d1b9775fe09ba3d09e81c20deded" id="r_a8059d1b9775fe09ba3d09e81c20deded"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a8059d1b9775fe09ba3d09e81c20deded">reserve</a> (const std::size_t &amp;required_size)</td></tr>
+<tr class="memdesc:a8059d1b9775fe09ba3d09e81c20deded"><td class="mdescLeft">&#160;</td><td class="mdescRight">为点预留内存 / Reserve memory for points  <br /></td></tr>
+<tr class="separator:a8059d1b9775fe09ba3d09e81c20deded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f4502c2c35feb7484c25a576b8be4d5" id="r_a2f4502c2c35feb7484c25a576b8be4d5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a2f4502c2c35feb7484c25a576b8be4d5">operator+</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;other) const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td></tr>
+<tr class="memdesc:a2f4502c2c35feb7484c25a576b8be4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">合并两个点云 / Add two point clouds  <br /></td></tr>
+<tr class="separator:a2f4502c2c35feb7484c25a576b8be4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6db32b8a4fa631904cadb47fceac9de" id="r_ae6db32b8a4fa631904cadb47fceac9de"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#ae6db32b8a4fa631904cadb47fceac9de">operator+</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;point) const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td></tr>
+<tr class="memdesc:ae6db32b8a4fa631904cadb47fceac9de"><td class="mdescLeft">&#160;</td><td class="mdescRight">向点云添加点 / Add point to cloud  <br /></td></tr>
+<tr class="separator:ae6db32b8a4fa631904cadb47fceac9de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab660617664fca538f637c4e6f21704" id="r_a8ab660617664fca538f637c4e6f21704"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a8ab660617664fca538f637c4e6f21704">operator+</a> (<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;point) const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td></tr>
+<tr class="memdesc:a8ab660617664fca538f637c4e6f21704"><td class="mdescLeft">&#160;</td><td class="mdescRight">向点云添加点(移动版本) / Add point to cloud (move version)  <br /></td></tr>
+<tr class="separator:a8ab660617664fca538f637c4e6f21704"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a224ee764d8a644f41ee13065a32d8ef6" id="r_a224ee764d8a644f41ee13065a32d8ef6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a224ee764d8a644f41ee13065a32d8ef6">operator+</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&amp;other) const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td></tr>
+<tr class="memdesc:a224ee764d8a644f41ee13065a32d8ef6"><td class="mdescLeft">&#160;</td><td class="mdescRight">合并两个点云(移动版本) / Add two point clouds (move version)  <br /></td></tr>
+<tr class="separator:a224ee764d8a644f41ee13065a32d8ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ed32e45c473a7406172aa3ac058989f" id="r_a4ed32e45c473a7406172aa3ac058989f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4ed32e45c473a7406172aa3ac058989f">operator+=</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;point)</td></tr>
+<tr class="memdesc:a4ed32e45c473a7406172aa3ac058989f"><td class="mdescLeft">&#160;</td><td class="mdescRight">向点云添加点 / Add point to cloud  <br /></td></tr>
+<tr class="separator:a4ed32e45c473a7406172aa3ac058989f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59d06c4e89cb6acd12ff1160cea74bc1" id="r_a59d06c4e89cb6acd12ff1160cea74bc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a59d06c4e89cb6acd12ff1160cea74bc1">operator+=</a> (<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;point)</td></tr>
+<tr class="memdesc:a59d06c4e89cb6acd12ff1160cea74bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">向点云添加点(移动版本) / Add point to cloud (move version)  <br /></td></tr>
+<tr class="separator:a59d06c4e89cb6acd12ff1160cea74bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eed7008d41253e042096bde64a945e7" id="r_a9eed7008d41253e042096bde64a945e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a9eed7008d41253e042096bde64a945e7">operator+=</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;other)</td></tr>
+<tr class="memdesc:a9eed7008d41253e042096bde64a945e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">合并另一个点云到当前点云 / Add another cloud to this one  <br /></td></tr>
+<tr class="separator:a9eed7008d41253e042096bde64a945e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d6a9daaea864ec62c36aec55b3a1f3" id="r_ae5d6a9daaea864ec62c36aec55b3a1f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#ae5d6a9daaea864ec62c36aec55b3a1f3">operator+=</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> &amp;&amp;other)</td></tr>
+<tr class="memdesc:ae5d6a9daaea864ec62c36aec55b3a1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">合并另一个点云到当前点云(移动版本) / Add another cloud to this one (move version)  <br /></td></tr>
+<tr class="separator:ae5d6a9daaea864ec62c36aec55b3a1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1io_1_1base__file__data__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">toolbox::io::base_file_data_t</a></td></tr>
+<tr class="memitem:aea8a907016c5b371aae316df46b3df3a inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_aea8a907016c5b371aae316df46b3df3a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#aea8a907016c5b371aae316df46b3df3a">~base_file_data_t</a> ()=default</td></tr>
+<tr class="separator:aea8a907016c5b371aae316df46b3df3a inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51bc72d6e0ba659dbc99cecce56a18f inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_ae51bc72d6e0ba659dbc99cecce56a18f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#ae51bc72d6e0ba659dbc99cecce56a18f">base_file_data_t</a> (const <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;)=default</td></tr>
+<tr class="separator:ae51bc72d6e0ba659dbc99cecce56a18f inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7af8463c3f0745b908a744d2d1db78aa inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_a7af8463c3f0745b908a744d2d1db78aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#a7af8463c3f0745b908a744d2d1db78aa">operator=</a> (const <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;)=default</td></tr>
+<tr class="separator:a7af8463c3f0745b908a744d2d1db78aa inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9b20947e8bc1ddfdb1c0d897410d257 inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_ac9b20947e8bc1ddfdb1c0d897410d257"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#ac9b20947e8bc1ddfdb1c0d897410d257">base_file_data_t</a> (<a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:ac9b20947e8bc1ddfdb1c0d897410d257 inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7945a0af4ef8cdac125b2f1aa0dde487 inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_a7945a0af4ef8cdac125b2f1aa0dde487"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#a7945a0af4ef8cdac125b2f1aa0dde487">operator=</a> (<a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7945a0af4ef8cdac125b2f1aa0dde487 inherit pub_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a4b4825f28913d3404e4bbe52164671ff" id="r_a4b4825f28913d3404e4bbe52164671ff"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a></td></tr>
+<tr class="memdesc:a4b4825f28913d3404e4bbe52164671ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">点坐标 / Point coordinates  <br /></td></tr>
+<tr class="separator:a4b4825f28913d3404e4bbe52164671ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51a93c21f4e4ac87d6356e687047326a" id="r_a51a93c21f4e4ac87d6356e687047326a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a">normals</a></td></tr>
+<tr class="memdesc:a51a93c21f4e4ac87d6356e687047326a"><td class="mdescLeft">&#160;</td><td class="mdescRight">点法线(可选) / Point normals (optional)  <br /></td></tr>
+<tr class="separator:a51a93c21f4e4ac87d6356e687047326a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190ddb2bc0ad9a8c96e660e0863fe3b8" id="r_a190ddb2bc0ad9a8c96e660e0863fe3b8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a190ddb2bc0ad9a8c96e660e0863fe3b8">colors</a></td></tr>
+<tr class="memdesc:a190ddb2bc0ad9a8c96e660e0863fe3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">点颜色(可选) / Point colors (optional)  <br /></td></tr>
+<tr class="separator:a190ddb2bc0ad9a8c96e660e0863fe3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a705226af021f0d079adc4669de37f073" id="r_a705226af021f0d079adc4669de37f073"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html#a705226af021f0d079adc4669de37f073">intensity</a></td></tr>
+<tr class="memdesc:a705226af021f0d079adc4669de37f073"><td class="mdescLeft">&#160;</td><td class="mdescRight">全局强度值 / Global intensity value  <br /></td></tr>
+<tr class="separator:a705226af021f0d079adc4669de37f073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1io_1_1base__file__data__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1io_1_1base__file__data__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">toolbox::io::base_file_data_t</a></td></tr>
+<tr class="memitem:a70f790dab70db2d08ac227ef473fa8a7 inherit pro_methods_classtoolbox_1_1io_1_1base__file__data__t" id="r_a70f790dab70db2d08ac227ef473fa8a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html#a70f790dab70db2d08ac227ef473fa8a7">base_file_data_t</a> ()=default</td></tr>
+<tr class="separator:a70f790dab70db2d08ac227ef473fa8a7 inherit pro_methods_classtoolbox_1_1io_1_1base__file__data__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class toolbox::types::point_cloud_t&lt; T &gt;</div><p>包含点和相关数据的点云类 / A point cloud class containing points and associated data </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点坐标的数值类型 / The numeric type for point coordinates</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>该类表示3D点的集合，可选包含法线、颜色和强度数据。/ This class represents a collection of 3D points with optional normals, colors and intensity data.</p>
+<div class="fragment"><div class="line"><span class="comment">// 创建点云 / Create point cloud</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;double&gt;</a> cloud;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 添加点 / Add points</span></div>
+<div class="line">cloud += <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a>(1.0, 2.0, 3.0);</div>
+<div class="line">cloud += <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a>(4.0, 5.0, 6.0);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 访问数据 / Access data</span></div>
+<div class="line">std::size_t num_points = cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>();</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> first_point = cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[0];</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 合并点云 / Merge clouds</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;double&gt;</a> cloud2;</div>
+<div class="line">cloud2 += <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a>(7.0, 8.0, 9.0);</div>
+<div class="line"><span class="keyword">auto</span> merged = cloud + cloud2;</div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a929bfd294a28a1f344bf4a6183ccb664"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">toolbox::types::point_cloud_t::size</a></div><div class="ttdeci">auto size() const -&gt; std::size_t</div><div class="ttdoc">获取点云中的点数 / Get number of points in cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:293</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a766b7179b312f34670a20ceadb1568a1" name="a766b7179b312f34670a20ceadb1568a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a766b7179b312f34670a20ceadb1568a1">&#9670;&#160;</a></span>~point_cloud_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::~<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a478dfcbe07eb70d052519522aad5d03d" name="a478dfcbe07eb70d052519522aad5d03d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a478dfcbe07eb70d052519522aad5d03d">&#9670;&#160;</a></span>point_cloud_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::point_cloud_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab04e06c7252010bd49ca9d3b8fd0e684" name="ab04e06c7252010bd49ca9d3b8fd0e684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04e06c7252010bd49ca9d3b8fd0e684">&#9670;&#160;</a></span>point_cloud_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::point_cloud_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a48def5ba0ec3fe0bfef3c039cd65b2" name="a4a48def5ba0ec3fe0bfef3c039cd65b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a48def5ba0ec3fe0bfef3c039cd65b2">&#9670;&#160;</a></span>point_cloud_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::point_cloud_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a41475bb191d4ed9ded2031e64e00b107" name="a41475bb191d4ed9ded2031e64e00b107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41475bb191d4ed9ded2031e64e00b107">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>清除点云中的所有数据 / Clear all data from cloud </p>
+
+</div>
+</div>
+<a id="ac8ea56dc4d88223facc3a0fc77e51f0d" name="ac8ea56dc4d88223facc3a0fc77e51f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ea56dc4d88223facc3a0fc77e51f0d">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查点云是否为空 / Check if cloud is empty </p>
+<dl class="section return"><dt>Returns</dt><dd>如果为空返回true，否则返回false / true if empty, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a2f4502c2c35feb7484c25a576b8be4d5" name="a2f4502c2c35feb7484c25a576b8be4d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4502c2c35feb7484c25a576b8be4d5">&#9670;&#160;</a></span>operator+() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>合并两个点云 / Add two point clouds </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要合并的点云 / Cloud to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>新的合并后的点云 / New combined cloud </dd></dl>
+
+</div>
+</div>
+<a id="ae6db32b8a4fa631904cadb47fceac9de" name="ae6db32b8a4fa631904cadb47fceac9de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6db32b8a4fa631904cadb47fceac9de">&#9670;&#160;</a></span>operator+() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向点云添加点 / Add point to cloud </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>要添加的点 / Point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>添加点后的新点云 / New cloud with added point </dd></dl>
+
+</div>
+</div>
+<a id="a224ee764d8a644f41ee13065a32d8ef6" name="a224ee764d8a644f41ee13065a32d8ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a224ee764d8a644f41ee13065a32d8ef6">&#9670;&#160;</a></span>operator+() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>合并两个点云(移动版本) / Add two point clouds (move version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要合并的点云 / Cloud to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>新的合并后的点云 / New combined cloud </dd></dl>
+
+</div>
+</div>
+<a id="a8ab660617664fca538f637c4e6f21704" name="a8ab660617664fca538f637c4e6f21704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ab660617664fca538f637c4e6f21704">&#9670;&#160;</a></span>operator+() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向点云添加点(移动版本) / Add point to cloud (move version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>要添加的点 / Point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>添加点后的新点云 / New cloud with added point </dd></dl>
+
+</div>
+</div>
+<a id="a9eed7008d41253e042096bde64a945e7" name="a9eed7008d41253e042096bde64a945e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eed7008d41253e042096bde64a945e7">&#9670;&#160;</a></span>operator+=() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>合并另一个点云到当前点云 / Add another cloud to this one </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要合并的点云 / Cloud to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点云的引用 / Reference to this cloud </dd></dl>
+
+</div>
+</div>
+<a id="a4ed32e45c473a7406172aa3ac058989f" name="a4ed32e45c473a7406172aa3ac058989f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ed32e45c473a7406172aa3ac058989f">&#9670;&#160;</a></span>operator+=() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向点云添加点 / Add point to cloud </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>要添加的点 / Point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点云的引用 / Reference to this cloud </dd></dl>
+
+</div>
+</div>
+<a id="ae5d6a9daaea864ec62c36aec55b3a1f3" name="ae5d6a9daaea864ec62c36aec55b3a1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d6a9daaea864ec62c36aec55b3a1f3">&#9670;&#160;</a></span>operator+=() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>合并另一个点云到当前点云(移动版本) / Add another cloud to this one (move version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要合并的点云 / Cloud to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点云的引用 / Reference to this cloud </dd></dl>
+
+</div>
+</div>
+<a id="a59d06c4e89cb6acd12ff1160cea74bc1" name="a59d06c4e89cb6acd12ff1160cea74bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59d06c4e89cb6acd12ff1160cea74bc1">&#9670;&#160;</a></span>operator+=() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>向点云添加点(移动版本) / Add point to cloud (move version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>要添加的点 / Point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点云的引用 / Reference to this cloud </dd></dl>
+
+</div>
+</div>
+<a id="a6f724d45d43a5907207147c52d7d13b2" name="a6f724d45d43a5907207147c52d7d13b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f724d45d43a5907207147c52d7d13b2">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13942ff83b297a424204d93bf6044f09" name="a13942ff83b297a424204d93bf6044f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13942ff83b297a424204d93bf6044f09">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8059d1b9775fe09ba3d09e81c20deded" name="a8059d1b9775fe09ba3d09e81c20deded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8059d1b9775fe09ba3d09e81c20deded">&#9670;&#160;</a></span>reserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::reserve </td>
+          <td>(</td>
+          <td class="paramtype">const std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>required_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>为点预留内存 / Reserve memory for points </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">required_size</td><td>要预留空间的点数 / Number of points to reserve space for </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a929bfd294a28a1f344bf4a6183ccb664" name="a929bfd294a28a1f344bf4a6183ccb664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a929bfd294a28a1f344bf4a6183ccb664">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; std::size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取点云中的点数 / Get number of points in cloud </p>
+<dl class="section return"><dt>Returns</dt><dd>点的数量 / Number of points </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a190ddb2bc0ad9a8c96e660e0863fe3b8" name="a190ddb2bc0ad9a8c96e660e0863fe3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a190ddb2bc0ad9a8c96e660e0863fe3b8">&#9670;&#160;</a></span>colors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;T&gt; &gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::colors</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>点颜色(可选) / Point colors (optional) </p>
+
+</div>
+</div>
+<a id="a705226af021f0d079adc4669de37f073" name="a705226af021f0d079adc4669de37f073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705226af021f0d079adc4669de37f073">&#9670;&#160;</a></span>intensity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::intensity</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>全局强度值 / Global intensity value </p>
+
+</div>
+</div>
+<a id="a51a93c21f4e4ac87d6356e687047326a" name="a51a93c21f4e4ac87d6356e687047326a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a93c21f4e4ac87d6356e687047326a">&#9670;&#160;</a></span>normals</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;T&gt; &gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::normals</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>点法线(可选) / Point normals (optional) </p>
+
+</div>
+</div>
+<a id="a4b4825f28913d3404e4bbe52164671ff" name="a4b4825f28913d3404e4bbe52164671ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b4825f28913d3404e4bbe52164671ff">&#9670;&#160;</a></span>points</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;T&gt; &gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt;::points</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>点坐标 / Point coordinates </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/types/<a class="el" href="point_8hpp_source.html">point.hpp</a></li>
+<li>src/include/cpp-toolbox/types/impl/<a class="el" href="point__impl_8hpp_source.html">point_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1types.html">types</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

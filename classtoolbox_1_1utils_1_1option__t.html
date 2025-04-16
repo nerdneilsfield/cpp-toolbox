@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::utils::option_t&lt; T &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1utils_1_1option__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1utils_1_1option__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::utils::option_t&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="click_8hpp_source.html">click.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::utils::option_t&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac3a446c6b879711daa15780e73e75253" id="r_ac3a446c6b879711daa15780e73e75253"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#ac3a446c6b879711daa15780e73e75253">option_t</a> (const std::string &amp;name, const std::string &amp;short_name, const std::string &amp;description, bool required=false)</td></tr>
+<tr class="separator:ac3a446c6b879711daa15780e73e75253"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ba182db603d6f07a3380f09cea7430a" id="r_a2ba182db603d6f07a3380f09cea7430a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">option_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#a2ba182db603d6f07a3380f09cea7430a">set_default</a> (const T &amp;default_value)</td></tr>
+<tr class="separator:a2ba182db603d6f07a3380f09cea7430a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5552a69de0a9fa11311c049c7a61c072" id="r_a5552a69de0a9fa11311c049c7a61c072"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">option_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#a5552a69de0a9fa11311c049c7a61c072">set_parser</a> (std::function&lt; bool(const std::string &amp;, T &amp;)&gt; parser)</td></tr>
+<tr class="separator:a5552a69de0a9fa11311c049c7a61c072"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bbb86c7dd96b473c86b5412df2a35c8" id="r_a7bbb86c7dd96b473c86b5412df2a35c8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#a7bbb86c7dd96b473c86b5412df2a35c8">get_short_name</a> () const override</td></tr>
+<tr class="separator:a7bbb86c7dd96b473c86b5412df2a35c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae87b226fece8b4189b12d27a5fdfe308" id="r_ae87b226fece8b4189b12d27a5fdfe308"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#ae87b226fece8b4189b12d27a5fdfe308">get</a> () const</td></tr>
+<tr class="separator:ae87b226fece8b4189b12d27a5fdfe308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2adf77f412836ea9ac9e1b5b4887ed9d" id="r_a2adf77f412836ea9ac9e1b5b4887ed9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#a2adf77f412836ea9ac9e1b5b4887ed9d">parse</a> (const std::string &amp;value) override</td></tr>
+<tr class="separator:a2adf77f412836ea9ac9e1b5b4887ed9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa56eaf9813d1d93373ad83d45e8e068" id="r_afa56eaf9813d1d93373ad83d45e8e068"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#afa56eaf9813d1d93373ad83d45e8e068">accepts_missing_value</a> () const override</td></tr>
+<tr class="separator:afa56eaf9813d1d93373ad83d45e8e068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2676dcaa4e469230bf28040dda2456" id="r_aed2676dcaa4e469230bf28040dda2456"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html#aed2676dcaa4e469230bf28040dda2456">is_option</a> () const override</td></tr>
+<tr class="separator:aed2676dcaa4e469230bf28040dda2456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1utils_1_1parameter__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html">toolbox::utils::parameter_t</a></td></tr>
+<tr class="memitem:a216dba492f5cb3b26be8218142883a57 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_a216dba492f5cb3b26be8218142883a57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a216dba492f5cb3b26be8218142883a57">parameter_t</a> (const std::string &amp;name, const std::string &amp;description, bool required=false)</td></tr>
+<tr class="separator:a216dba492f5cb3b26be8218142883a57 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77df61793825459d52e84566e4ee381f inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_a77df61793825459d52e84566e4ee381f"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a77df61793825459d52e84566e4ee381f">~parameter_t</a> ()=default</td></tr>
+<tr class="separator:a77df61793825459d52e84566e4ee381f inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad295aeea05f5ecdf8a1e95a23629c050 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_ad295aeea05f5ecdf8a1e95a23629c050"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#ad295aeea05f5ecdf8a1e95a23629c050">get_name</a> () const</td></tr>
+<tr class="separator:ad295aeea05f5ecdf8a1e95a23629c050 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add04a6d135dca61cca2a558209fca301 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_add04a6d135dca61cca2a558209fca301"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#add04a6d135dca61cca2a558209fca301">get_description</a> () const</td></tr>
+<tr class="separator:add04a6d135dca61cca2a558209fca301 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2604d826c76ce17f0abda5a09ed8c69 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_ad2604d826c76ce17f0abda5a09ed8c69"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#ad2604d826c76ce17f0abda5a09ed8c69">is_required</a> () const</td></tr>
+<tr class="separator:ad2604d826c76ce17f0abda5a09ed8c69 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a218823735f8a81af7bf2cbb00c7f1f1e inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_a218823735f8a81af7bf2cbb00c7f1f1e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a218823735f8a81af7bf2cbb00c7f1f1e">is_set</a> () const</td></tr>
+<tr class="separator:a218823735f8a81af7bf2cbb00c7f1f1e inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68091176259a3811efa190bf6158d4a7 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_a68091176259a3811efa190bf6158d4a7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a68091176259a3811efa190bf6158d4a7">is_argument</a> () const</td></tr>
+<tr class="separator:a68091176259a3811efa190bf6158d4a7 inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa29360aa4741572bbf3757830e2e379f inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t" id="r_aa29360aa4741572bbf3757830e2e379f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#aa29360aa4741572bbf3757830e2e379f">is_flag</a> () const</td></tr>
+<tr class="separator:aa29360aa4741572bbf3757830e2e379f inherit pub_methods_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classtoolbox_1_1utils_1_1parameter__t"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoolbox_1_1utils_1_1parameter__t')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html">toolbox::utils::parameter_t</a></td></tr>
+<tr class="memitem:a5450c4b69af915e04a45431b6e3f23a8 inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t" id="r_a5450c4b69af915e04a45431b6e3f23a8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a5450c4b69af915e04a45431b6e3f23a8">name_</a></td></tr>
+<tr class="separator:a5450c4b69af915e04a45431b6e3f23a8 inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82d7153e79b8b3f66c72e7c7713f108d inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t" id="r_a82d7153e79b8b3f66c72e7c7713f108d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a82d7153e79b8b3f66c72e7c7713f108d">description_</a></td></tr>
+<tr class="separator:a82d7153e79b8b3f66c72e7c7713f108d inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedd279b88390ca7fa43ffa307c32914c inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t" id="r_aedd279b88390ca7fa43ffa307c32914c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#aedd279b88390ca7fa43ffa307c32914c">required_</a></td></tr>
+<tr class="separator:aedd279b88390ca7fa43ffa307c32914c inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abed65262a722d13905b0eb3f0dee8399 inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t" id="r_abed65262a722d13905b0eb3f0dee8399"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#abed65262a722d13905b0eb3f0dee8399">is_set_</a></td></tr>
+<tr class="separator:abed65262a722d13905b0eb3f0dee8399 inherit pro_attribs_classtoolbox_1_1utils_1_1parameter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac3a446c6b879711daa15780e73e75253" name="ac3a446c6b879711daa15780e73e75253"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a446c6b879711daa15780e73e75253">&#9670;&#160;</a></span>option_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::option_t </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>short_name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>description</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>required</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="afa56eaf9813d1d93373ad83d45e8e068" name="afa56eaf9813d1d93373ad83d45e8e068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa56eaf9813d1d93373ad83d45e8e068">&#9670;&#160;</a></span>accepts_missing_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::accepts_missing_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#aca3a378b667d23cd94e879ae51204de4">toolbox::utils::parameter_t</a>.</p>
+
+</div>
+</div>
+<a id="ae87b226fece8b4189b12d27a5fdfe308" name="ae87b226fece8b4189b12d27a5fdfe308"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae87b226fece8b4189b12d27a5fdfe308">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7bbb86c7dd96b473c86b5412df2a35c8" name="a7bbb86c7dd96b473c86b5412df2a35c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bbb86c7dd96b473c86b5412df2a35c8">&#9670;&#160;</a></span>get_short_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::get_short_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a01d024edc8d73ed0bf1dbc415f3154ff">toolbox::utils::parameter_t</a>.</p>
+
+</div>
+</div>
+<a id="aed2676dcaa4e469230bf28040dda2456" name="aed2676dcaa4e469230bf28040dda2456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed2676dcaa4e469230bf28040dda2456">&#9670;&#160;</a></span>is_option()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::is_option </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a9ddf9fd9104e7ae26fcac73499a1b453">toolbox::utils::parameter_t</a>.</p>
+
+</div>
+</div>
+<a id="a2adf77f412836ea9ac9e1b5b4887ed9d" name="a2adf77f412836ea9ac9e1b5b4887ed9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2adf77f412836ea9ac9e1b5b4887ed9d">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::parse </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="classtoolbox_1_1utils_1_1parameter__t.html#a9d30f04fd949c09a712d2564acf5eb39">toolbox::utils::parameter_t</a>.</p>
+
+</div>
+</div>
+<a id="a2ba182db603d6f07a3380f09cea7430a" name="a2ba182db603d6f07a3380f09cea7430a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba182db603d6f07a3380f09cea7430a">&#9670;&#160;</a></span>set_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">option_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::set_default </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>default_value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5552a69de0a9fa11311c049c7a61c072" name="a5552a69de0a9fa11311c049c7a61c072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5552a69de0a9fa11311c049c7a61c072">&#9670;&#160;</a></span>set_parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">option_t</a>&lt; T &gt; &amp; <a class="el" href="classtoolbox_1_1utils_1_1option__t.html">toolbox::utils::option_t</a>&lt; T &gt;::set_parser </td>
+          <td>(</td>
+          <td class="paramtype">std::function&lt; bool(const std::string &amp;, T &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>parser</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/utils/<a class="el" href="click_8hpp_source.html">click.hpp</a></li>
+<li>src/include/cpp-toolbox/utils/impl/<a class="el" href="click__impl_8hpp_source.html">click_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1utils_1_1option__t.html">option_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

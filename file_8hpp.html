@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/file/file.hpp File Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('file_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">file.hpp File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;filesystem&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</code><br />
+<code>#include &quot;<a class="el" href="macro_8hpp_source.html">cpp-toolbox/macro.hpp</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for file.hpp:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
+</div>
+<p><a href="file_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox" id="r_namespacetoolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox.html">toolbox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1file" id="r_namespacetoolbox_1_1file"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html">toolbox::file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9d370d4f448be574533574f643bc1298" id="r_a9d370d4f448be574533574f643bc1298"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">toolbox::file::file_time_type</a> = std::filesystem::file_time_type</td></tr>
+<tr class="separator:a9d370d4f448be574533574f643bc1298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab939fdda9a10c744810dcab68833b841" id="r_ab939fdda9a10c744810dcab68833b841"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">toolbox::file::file_type</a> = std::filesystem::file_type</td></tr>
+<tr class="separator:ab939fdda9a10c744810dcab68833b841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a60f6004279fd475e4d1951e177b46c69" id="r_a60f6004279fd475e4d1951e177b46c69"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">toolbox::file::string_to_path</a> (const std::string &amp;str) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a60f6004279fd475e4d1951e177b46c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为文件系统路径 / Convert a string to a filesystem path  <br /></td></tr>
+<tr class="separator:a60f6004279fd475e4d1951e177b46c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ae9f96e511dc7feafcb507ad1f6c31" id="r_aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">toolbox::file::path_to_string</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">将文件系统路径转换为字符串 / Convert a filesystem path to a string  <br /></td></tr>
+<tr class="separator:aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1137011f0ab9390578e201f5df1a5d4c" id="r_a1137011f0ab9390578e201f5df1a5d4c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">toolbox::file::get_file_size</a> (const std::filesystem::path &amp;path) -&gt; std::size_t</td></tr>
+<tr class="memdesc:a1137011f0ab9390578e201f5df1a5d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的字节大小 / Get the size of a file in bytes  <br /></td></tr>
+<tr class="separator:a1137011f0ab9390578e201f5df1a5d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85dd8c020456e11f9e8217aa3941216e" id="r_a85dd8c020456e11f9e8217aa3941216e"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">toolbox::file::get_absolute_path</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a85dd8c020456e11f9e8217aa3941216e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件或目录的绝对路径 / Get the absolute path of a file or directory  <br /></td></tr>
+<tr class="separator:a85dd8c020456e11f9e8217aa3941216e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa193ebd895ae2c8602885121f1e8c72d" id="r_aa193ebd895ae2c8602885121f1e8c72d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">toolbox::file::get_relative_path</a> (const std::filesystem::path &amp;path, const std::filesystem::path &amp;base) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:aa193ebd895ae2c8602885121f1e8c72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取两个路径之间的相对路径 / Get the relative path between two paths  <br /></td></tr>
+<tr class="separator:aa193ebd895ae2c8602885121f1e8c72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2785348e22ba0c2a203ccca4890aa00" id="r_ab2785348e22ba0c2a203ccca4890aa00"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">toolbox::file::get_parent_path</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:ab2785348e22ba0c2a203ccca4890aa00"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的父目录 / Get the parent directory of a path  <br /></td></tr>
+<tr class="separator:ab2785348e22ba0c2a203ccca4890aa00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d0f2a1bed7286d6779f57c7a016781" id="r_a94d0f2a1bed7286d6779f57c7a016781"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">toolbox::file::get_file_name</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:a94d0f2a1bed7286d6779f57c7a016781"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的文件名部分 / Get the file name component of a path  <br /></td></tr>
+<tr class="separator:a94d0f2a1bed7286d6779f57c7a016781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2b9f2a5b7df4bfb3e2afc92486f02fc" id="r_ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的文件扩展名 / Get the file extension of a path  <br /></td></tr>
+<tr class="separator:ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac210d89b1411dada1371a94f0b64ebd" id="r_aac210d89b1411dada1371a94f0b64ebd"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">toolbox::file::copy_file</a> (const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</td></tr>
+<tr class="memdesc:aac210d89b1411dada1371a94f0b64ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">复制文件 / Copy a file  <br /></td></tr>
+<tr class="separator:aac210d89b1411dada1371a94f0b64ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5444c60648ca97bfa4b21c0b7dc09b" id="r_a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">toolbox::file::move_file</a> (const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</td></tr>
+<tr class="memdesc:a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动文件 / Move a file  <br /></td></tr>
+<tr class="separator:a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e643e4658fd230eced397b5b6adeb0" id="r_ac6e643e4658fd230eced397b5b6adeb0"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">toolbox::file::delete_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ac6e643e4658fd230eced397b5b6adeb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除指定路径的文件 / Delete a file at the specified path  <br /></td></tr>
+<tr class="separator:ac6e643e4658fd230eced397b5b6adeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46034cf680e496550ad944f62ba49a64" id="r_a46034cf680e496550ad944f62ba49a64"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">toolbox::file::file_exists</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a46034cf680e496550ad944f62ba49a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查指定路径是否存在文件 / Check if a file exists at the specified path  <br /></td></tr>
+<tr class="separator:a46034cf680e496550ad944f62ba49a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c9fa4b7d4d61845edf6f7270b597ab" id="r_ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">toolbox::file::create_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">在指定路径创建目录 / Create a directory at the specified path  <br /></td></tr>
+<tr class="separator:ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f58adf72e4c7d32fa0d4b1c86eb6eb1" id="r_a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">toolbox::file::directory_exists</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查指定路径是否存在目录 / Check if a directory exists at the specified path  <br /></td></tr>
+<tr class="separator:a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433c83e6efcc1c9482e518a28dd47632" id="r_a433c83e6efcc1c9482e518a28dd47632"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">toolbox::file::delete_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a433c83e6efcc1c9482e518a28dd47632"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除指定路径的目录 / Delete a directory at the specified path  <br /></td></tr>
+<tr class="separator:a433c83e6efcc1c9482e518a28dd47632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c5527a6ca0799d2bf7141f88fdf8ce" id="r_a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">toolbox::file::get_current_directory</a> () -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前工作目录 / Get the current working directory  <br /></td></tr>
+<tr class="separator:a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e38d49fe1aa7ebeef6139c908e5f15" id="r_ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">toolbox::file::path_type</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::file_type</td></tr>
+<tr class="memdesc:ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定路径的文件系统对象类型 / Get the type of the filesystem object at the specified path  <br /></td></tr>
+<tr class="separator:ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43823bbfcad90d86c042e3627791ffaa" id="r_a43823bbfcad90d86c042e3627791ffaa"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">toolbox::file::is_regular_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a43823bbfcad90d86c042e3627791ffaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为常规文件 / Check if a path is a regular file  <br /></td></tr>
+<tr class="separator:a43823bbfcad90d86c042e3627791ffaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25c437b3e41a9a5ef2860f9b7c2012f" id="r_aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">toolbox::file::is_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为目录 / Check if a path is a directory  <br /></td></tr>
+<tr class="separator:aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8" id="r_aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">toolbox::file::is_symlink</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为符号链接 / Check if a path is a symbolic link  <br /></td></tr>
+<tr class="separator:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d000663dbb8b2ddcbb88c613cdac2b" id="r_a18d000663dbb8b2ddcbb88c613cdac2b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">toolbox::file::is_fifo</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a18d000663dbb8b2ddcbb88c613cdac2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为FIFO(命名管道) / Check if a path is a FIFO (named pipe)  <br /></td></tr>
+<tr class="separator:a18d000663dbb8b2ddcbb88c613cdac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac1ee2d33be226474ce83fb1d5df0c4" id="r_a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">toolbox::file::is_socket</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为套接字 / Check if a path is a socket  <br /></td></tr>
+<tr class="separator:a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e1f7c73c64935f5c3c1cdb0003da67" id="r_a71e1f7c73c64935f5c3c1cdb0003da67"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">toolbox::file::is_block_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a71e1f7c73c64935f5c3c1cdb0003da67"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为块设备 / Check if a path is a block device  <br /></td></tr>
+<tr class="separator:a71e1f7c73c64935f5c3c1cdb0003da67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07f7f5501955c1019ba3536ba0973e1" id="r_ab07f7f5501955c1019ba3536ba0973e1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">toolbox::file::is_character_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ab07f7f5501955c1019ba3536ba0973e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为字符设备 / Check if a path is a character device  <br /></td></tr>
+<tr class="separator:ab07f7f5501955c1019ba3536ba0973e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5baf94bae1c814008785e16d5925a93d" id="r_a5baf94bae1c814008785e16d5925a93d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">toolbox::file::is_other</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a5baf94bae1c814008785e16d5925a93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为未知类型 / Check if a path is of an unknown type  <br /></td></tr>
+<tr class="separator:a5baf94bae1c814008785e16d5925a93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b627127638d1708e29fb365e4c1f1c" id="r_a72b627127638d1708e29fb365e4c1f1c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">toolbox::file::is_empty</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a72b627127638d1708e29fb365e4c1f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为空 / Check if a path is empty  <br /></td></tr>
+<tr class="separator:a72b627127638d1708e29fb365e4c1f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3979fb549eb4b46b46c71b829bab0c1" id="r_ad3979fb549eb4b46b46c71b829bab0c1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">toolbox::file::get_creation_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:ad3979fb549eb4b46b46c71b829bab0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的创建时间 / Get the creation time of a file  <br /></td></tr>
+<tr class="separator:ad3979fb549eb4b46b46c71b829bab0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3833d3e8d3e54e2dadd40cbdbe412d3e" id="r_a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">toolbox::file::get_last_access_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的最后访问时间 / Get the last access time of a file  <br /></td></tr>
+<tr class="separator:a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98028c1a5c72cc4c4b8b4c0f9e6d4af6" id="r_a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">toolbox::file::get_last_write_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的最后修改时间 / Get the last write time of a file  <br /></td></tr>
+<tr class="separator:a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5edf9150543eb7a956ea0eee18c87f20" id="r_a5edf9150543eb7a956ea0eee18c87f20"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">toolbox::file::get_symlink_target</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a5edf9150543eb7a956ea0eee18c87f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取符号链接的目标路径 / Get the target of a symbolic link  <br /></td></tr>
+<tr class="separator:a5edf9150543eb7a956ea0eee18c87f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4085a2e77b2b2c55e81b3161960c55d" id="r_aa4085a2e77b2b2c55e81b3161960c55d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">toolbox::file::traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:aa4085a2e77b2b2c55e81b3161960c55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历目录 / Traverse a directory  <br /></td></tr>
+<tr class="separator:aa4085a2e77b2b2c55e81b3161960c55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131b4596d21d7af9c3a20625c2b84f7b" id="r_a131b4596d21d7af9c3a20625c2b84f7b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">toolbox::file::recursive_traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:a131b4596d21d7af9c3a20625c2b84f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归遍历目录 / Recursively traverse a directory  <br /></td></tr>
+<tr class="separator:a131b4596d21d7af9c3a20625c2b84f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fa6ba4b9d31a41208fa4bf7b98ee0c" id="r_a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">toolbox::file::traverse_directory_files</a> (const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</td></tr>
+<tr class="memdesc:a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历目录并为每个文件调用回调函数 / Traverse a directory and call a callback for each file  <br /></td></tr>
+<tr class="separator:a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61389af42cef158903ec3cdd1487837d" id="r_a61389af42cef158903ec3cdd1487837d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">toolbox::file::recursive_traverse_directory_files</a> (const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</td></tr>
+<tr class="memdesc:a61389af42cef158903ec3cdd1487837d"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归遍历目录并为每个文件调用回调函数 / Recursively traverse a directory and call a callback for each file  <br /></td></tr>
+<tr class="separator:a61389af42cef158903ec3cdd1487837d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab446410f8d2e28ef4709e79c6f3192c9" id="r_ab446410f8d2e28ef4709e79c6f3192c9"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">toolbox::file::get_current_working_directory</a> () -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:ab446410f8d2e28ef4709e79c6f3192c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前工作目录 / Get the current working directory  <br /></td></tr>
+<tr class="separator:ab446410f8d2e28ef4709e79c6f3192c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_b5aa90370c16f0962bf4137c01c04103.html">file</a></li><li class="navelem"><a class="el" href="file_8hpp.html">file.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

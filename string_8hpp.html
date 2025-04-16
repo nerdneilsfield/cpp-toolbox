@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/container/string.hpp File Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('string_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">string.hpp File Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;string_view&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for string.hpp:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+</div>
+<p><a href="string_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox" id="r_namespacetoolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox.html">toolbox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1container" id="r_namespacetoolbox_1_1container"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container.html">toolbox::container</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1container_1_1string" id="r_namespacetoolbox_1_1container_1_1string"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html">toolbox::container::string</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ac5641c9a187e3701f2ceb6466362ba04" id="r_ac5641c9a187e3701f2ceb6466362ba04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="string_8hpp.html#ac5641c9a187e3701f2ceb6466362ba04">CPP_TOOLBOX_CONTAINER_STRING_HPP</a></td></tr>
+<tr class="separator:ac5641c9a187e3701f2ceb6466362ba04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa78cfc3e9c8968b9494a687e31b0484a" id="r_aa78cfc3e9c8968b9494a687e31b0484a"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#aa78cfc3e9c8968b9494a687e31b0484a">toolbox::container::string::split</a> (std::string_view str, std::string_view delimiter) -&gt; std::vector&lt; std::string &gt;</td></tr>
+<tr class="memdesc:aa78cfc3e9c8968b9494a687e31b0484a"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用字符串分隔符将字符串视图分割成字符串向量 / Splits a string view into a vector of strings based on a string delimiter.  <br /></td></tr>
+<tr class="separator:aa78cfc3e9c8968b9494a687e31b0484a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4df8b3fed6f1414348272acca9884f3c" id="r_a4df8b3fed6f1414348272acca9884f3c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a4df8b3fed6f1414348272acca9884f3c">toolbox::container::string::split</a> (std::string_view str, char delimiter) -&gt; std::vector&lt; std::string &gt;</td></tr>
+<tr class="memdesc:a4df8b3fed6f1414348272acca9884f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用字符分隔符将字符串视图分割成字符串向量 / Splits a string view into a vector of strings based on a character delimiter  <br /></td></tr>
+<tr class="separator:a4df8b3fed6f1414348272acca9884f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0369d79e2b2e82054f851b9198c2b4" id="r_ade0369d79e2b2e82054f851b9198c2b4"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#ade0369d79e2b2e82054f851b9198c2b4">toolbox::container::string::join</a> (const std::vector&lt; std::string &gt; &amp;parts, std::string_view glue) -&gt; std::string</td></tr>
+<tr class="memdesc:ade0369d79e2b2e82054f851b9198c2b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用连接字符串将字符串向量连接成单个字符串 / Joins a vector of strings into a single string, separated by a glue string  <br /></td></tr>
+<tr class="separator:ade0369d79e2b2e82054f851b9198c2b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f457265ff3716c7be7782101b2a8c24" id="r_a4f457265ff3716c7be7782101b2a8c24"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a4f457265ff3716c7be7782101b2a8c24">toolbox::container::string::join</a> (const std::vector&lt; std::string_view &gt; &amp;parts, std::string_view glue) -&gt; std::string</td></tr>
+<tr class="memdesc:a4f457265ff3716c7be7782101b2a8c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用连接字符串将字符串视图向量连接成单个字符串 / Joins a vector of string views into a single string, separated by a glue string  <br /></td></tr>
+<tr class="separator:a4f457265ff3716c7be7782101b2a8c24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d279eb61e3b616544f55127a6253157" id="r_a3d279eb61e3b616544f55127a6253157"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a3d279eb61e3b616544f55127a6253157">toolbox::container::string::trim_left</a> (std::string_view str) -&gt; std::string</td></tr>
+<tr class="memdesc:a3d279eb61e3b616544f55127a6253157"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除字符串视图开头的空白字符 / Removes leading whitespace characters from a string view  <br /></td></tr>
+<tr class="separator:a3d279eb61e3b616544f55127a6253157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde8a34b13dae9538085d224846ae150" id="r_afde8a34b13dae9538085d224846ae150"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#afde8a34b13dae9538085d224846ae150">toolbox::container::string::trim_right</a> (std::string_view str) -&gt; std::string</td></tr>
+<tr class="memdesc:afde8a34b13dae9538085d224846ae150"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除字符串视图末尾的空白字符 / Removes trailing whitespace characters from a string view  <br /></td></tr>
+<tr class="separator:afde8a34b13dae9538085d224846ae150"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c3328d557f247bf50e7d217860c773b" id="r_a0c3328d557f247bf50e7d217860c773b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a0c3328d557f247bf50e7d217860c773b">toolbox::container::string::trim</a> (std::string_view str) -&gt; std::string</td></tr>
+<tr class="memdesc:a0c3328d557f247bf50e7d217860c773b"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除字符串视图两端的空白字符 / Removes both leading and trailing whitespace characters from a string view  <br /></td></tr>
+<tr class="separator:a0c3328d557f247bf50e7d217860c773b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c06fca35d12ef89f919b7adea4a603" id="r_af0c06fca35d12ef89f919b7adea4a603"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#af0c06fca35d12ef89f919b7adea4a603">toolbox::container::string::starts_with</a> (std::string_view s, std::string_view prefix) -&gt; bool</td></tr>
+<tr class="memdesc:af0c06fca35d12ef89f919b7adea4a603"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否以指定前缀开头 / Checks if a string view starts with a specified prefix  <br /></td></tr>
+<tr class="separator:af0c06fca35d12ef89f919b7adea4a603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a338bcf1ed2a6371f5e1f9b8fcb37a3bd" id="r_a338bcf1ed2a6371f5e1f9b8fcb37a3bd"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a338bcf1ed2a6371f5e1f9b8fcb37a3bd">toolbox::container::string::ends_with</a> (std::string_view s, std::string_view suffix) -&gt; bool</td></tr>
+<tr class="memdesc:a338bcf1ed2a6371f5e1f9b8fcb37a3bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否以指定后缀结尾 / Checks if a string view ends with a specified suffix  <br /></td></tr>
+<tr class="separator:a338bcf1ed2a6371f5e1f9b8fcb37a3bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aeef0d623cbc0f3363f76254ad3dcbe" id="r_a7aeef0d623cbc0f3363f76254ad3dcbe"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a7aeef0d623cbc0f3363f76254ad3dcbe">toolbox::container::string::contains</a> (std::string_view s, std::string_view substring) -&gt; bool</td></tr>
+<tr class="memdesc:a7aeef0d623cbc0f3363f76254ad3dcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否包含指定子字符串 / Checks if a string view contains a specified substring  <br /></td></tr>
+<tr class="separator:a7aeef0d623cbc0f3363f76254ad3dcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c4e4f083067427959b909ef72c2572c" id="r_a3c4e4f083067427959b909ef72c2572c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a3c4e4f083067427959b909ef72c2572c">toolbox::container::string::is_empty_or_whitespace</a> (std::string_view s) -&gt; bool</td></tr>
+<tr class="memdesc:a3c4e4f083067427959b909ef72c2572c"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否为空或仅包含空白字符 / Checks if a string view is empty or consists only of whitespace characters  <br /></td></tr>
+<tr class="separator:a3c4e4f083067427959b909ef72c2572c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298d9ca66bdcb1f33cfc7cf5a0a9408d" id="r_a298d9ca66bdcb1f33cfc7cf5a0a9408d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a298d9ca66bdcb1f33cfc7cf5a0a9408d">toolbox::container::string::is_numeric</a> (std::string_view s) -&gt; bool</td></tr>
+<tr class="memdesc:a298d9ca66bdcb1f33cfc7cf5a0a9408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否表示数值（整数或浮点数）/ Checks if a string view represents a numeric value (integer or floating-point)  <br /></td></tr>
+<tr class="separator:a298d9ca66bdcb1f33cfc7cf5a0a9408d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a598ab7a0c4cdb7dd64b5f7beca650874" id="r_a598ab7a0c4cdb7dd64b5f7beca650874"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a598ab7a0c4cdb7dd64b5f7beca650874">toolbox::container::string::is_integer</a> (std::string_view s) -&gt; bool</td></tr>
+<tr class="memdesc:a598ab7a0c4cdb7dd64b5f7beca650874"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否表示有效的整数值 / Checks if a string view represents a valid integer value  <br /></td></tr>
+<tr class="separator:a598ab7a0c4cdb7dd64b5f7beca650874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c094d493d2e3469b7dd1f908e1779a" id="r_a02c094d493d2e3469b7dd1f908e1779a"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a02c094d493d2e3469b7dd1f908e1779a">toolbox::container::string::is_float</a> (std::string_view s) -&gt; bool</td></tr>
+<tr class="memdesc:a02c094d493d2e3469b7dd1f908e1779a"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查字符串视图是否表示有效的浮点数值 / Checks if a string view represents a valid floating-point value  <br /></td></tr>
+<tr class="separator:a02c094d493d2e3469b7dd1f908e1779a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07665505e11dbafe025bfe8bdf6f54ee" id="r_a07665505e11dbafe025bfe8bdf6f54ee"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a07665505e11dbafe025bfe8bdf6f54ee">toolbox::container::string::replace</a> (std::string_view s, std::string_view old_value, std::string_view new_value, std::size_t count=std::numeric_limits&lt; std::size_t &gt;::max()) -&gt; std::string</td></tr>
+<tr class="memdesc:a07665505e11dbafe025bfe8bdf6f54ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串视图中将一个子字符串替换为另一个子字符串，最多替换指定次数 / Replaces occurrences of a substring within a string view with another substring, up to a specified count  <br /></td></tr>
+<tr class="separator:a07665505e11dbafe025bfe8bdf6f54ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59eb0df9fb535bd78ce425e5585a8b96" id="r_a59eb0df9fb535bd78ce425e5585a8b96"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a59eb0df9fb535bd78ce425e5585a8b96">toolbox::container::string::replace_all</a> (std::string_view s, std::string_view old_value, std::string_view new_value) -&gt; std::string</td></tr>
+<tr class="memdesc:a59eb0df9fb535bd78ce425e5585a8b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">替换字符串视图中所有出现的子字符串 / Replaces all occurrences of a substring within a string view  <br /></td></tr>
+<tr class="separator:a59eb0df9fb535bd78ce425e5585a8b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd988a07b4fd7e8e5c9eb19b1b96dcf" id="r_a6cd988a07b4fd7e8e5c9eb19b1b96dcf"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a6cd988a07b4fd7e8e5c9eb19b1b96dcf">toolbox::container::string::replace_by_nth</a> (std::string_view s, std::string_view old_value, std::string_view new_value, std::size_t n) -&gt; std::string</td></tr>
+<tr class="memdesc:a6cd988a07b4fd7e8e5c9eb19b1b96dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">替换字符串中第N次出现的子字符串 / Replaces the Nth occurrence of a substring within a string  <br /></td></tr>
+<tr class="separator:a6cd988a07b4fd7e8e5c9eb19b1b96dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af65f000fce00e0783423dd06feac6139" id="r_af65f000fce00e0783423dd06feac6139"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#af65f000fce00e0783423dd06feac6139">toolbox::container::string::remove_nth</a> (std::string_view s, std::string_view from, std::size_t n) -&gt; std::string</td></tr>
+<tr class="memdesc:af65f000fce00e0783423dd06feac6139"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除字符串中第N次出现的子字符串 / Removes the Nth occurrence of a substring within a string  <br /></td></tr>
+<tr class="separator:af65f000fce00e0783423dd06feac6139"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac5b7ea533715149a2aa9ee3a6c9bb8b" id="r_aac5b7ea533715149a2aa9ee3a6c9bb8b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#aac5b7ea533715149a2aa9ee3a6c9bb8b">toolbox::container::string::remove</a> (std::string_view s, std::string_view value, std::size_t count=std::numeric_limits&lt; std::size_t &gt;::max()) -&gt; std::string</td></tr>
+<tr class="memdesc:aac5b7ea533715149a2aa9ee3a6c9bb8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串视图中删除子字符串的出现，最多删除指定次数 / Removes occurrences of a substring from a string view, up to a specified count  <br /></td></tr>
+<tr class="separator:aac5b7ea533715149a2aa9ee3a6c9bb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b83e2e53fedfea757514e8867c94f38" id="r_a5b83e2e53fedfea757514e8867c94f38"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a5b83e2e53fedfea757514e8867c94f38">toolbox::container::string::remove_all</a> (std::string_view s, std::string_view value) -&gt; std::string</td></tr>
+<tr class="memdesc:a5b83e2e53fedfea757514e8867c94f38"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串视图中删除所有出现的子字符串 / Removes all occurrences of a substring from a string view  <br /></td></tr>
+<tr class="separator:a5b83e2e53fedfea757514e8867c94f38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e4961d94fcd4a87a6956d6ff96bfe28" id="r_a3e4961d94fcd4a87a6956d6ff96bfe28"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a3e4961d94fcd4a87a6956d6ff96bfe28">toolbox::container::string::remove_all</a> (std::string_view s, char value) -&gt; std::string</td></tr>
+<tr class="memdesc:a3e4961d94fcd4a87a6956d6ff96bfe28"><td class="mdescLeft">&#160;</td><td class="mdescRight">从字符串视图中删除所有出现的特定字符 / Removes all occurrences of a specific character from a string view  <br /></td></tr>
+<tr class="separator:a3e4961d94fcd4a87a6956d6ff96bfe28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11fa99f0b4bf9ce0e0ed35306a8d210b" id="r_a11fa99f0b4bf9ce0e0ed35306a8d210b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a11fa99f0b4bf9ce0e0ed35306a8d210b">toolbox::container::string::to_lower</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a11fa99f0b4bf9ce0e0ed35306a8d210b"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串视图中的所有字符转换为小写 / Converts all characters in a string view to lowercase  <br /></td></tr>
+<tr class="separator:a11fa99f0b4bf9ce0e0ed35306a8d210b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7590fc540fcff0df33cf1b3cfda6b03c" id="r_a7590fc540fcff0df33cf1b3cfda6b03c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a7590fc540fcff0df33cf1b3cfda6b03c">toolbox::container::string::to_upper</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a7590fc540fcff0df33cf1b3cfda6b03c"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串视图中的所有字符转换为大写 / Converts all characters in a string view to uppercase  <br /></td></tr>
+<tr class="separator:a7590fc540fcff0df33cf1b3cfda6b03c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093a4692179779a03018bc34fb696b60" id="r_a093a4692179779a03018bc34fb696b60"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a093a4692179779a03018bc34fb696b60">toolbox::container::string::to_string</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a093a4692179779a03018bc34fb696b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串视图转换为标准字符串 / Converts a string view to a standard string  <br /></td></tr>
+<tr class="separator:a093a4692179779a03018bc34fb696b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048891f47e89fbd9e898ad8fb1f196c7" id="r_a048891f47e89fbd9e898ad8fb1f196c7"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a048891f47e89fbd9e898ad8fb1f196c7">toolbox::container::string::left_pad</a> (std::string_view s, std::size_t width, char pad_char=' ') -&gt; std::string</td></tr>
+<tr class="memdesc:a048891f47e89fbd9e898ad8fb1f196c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串左侧填充指定字符以达到最小宽度 / Pads a string on the left with a specified character to reach a minimum width  <br /></td></tr>
+<tr class="separator:a048891f47e89fbd9e898ad8fb1f196c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db71b47681be86df5fea13f8999e2aa" id="r_a1db71b47681be86df5fea13f8999e2aa"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a1db71b47681be86df5fea13f8999e2aa">toolbox::container::string::right_pad</a> (std::string_view s, std::size_t width, char pad_char=' ') -&gt; std::string</td></tr>
+<tr class="memdesc:a1db71b47681be86df5fea13f8999e2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">在字符串右侧填充指定字符以达到最小宽度 / Pads a string on the right with a specified character to reach a minimum width  <br /></td></tr>
+<tr class="separator:a1db71b47681be86df5fea13f8999e2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3352651f569c5ed05d6ec2ce0a9412" id="r_a8b3352651f569c5ed05d6ec2ce0a9412"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a8b3352651f569c5ed05d6ec2ce0a9412">toolbox::container::string::pad</a> (std::string_view s, std::size_t width, char pad_char=' ', std::size_t position=0) -&gt; std::string</td></tr>
+<tr class="memdesc:a8b3352651f569c5ed05d6ec2ce0a9412"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用指定字符填充字符串以达到最小宽度，可控制填充位置 / Pads a string with a specified character to reach a minimum width, controlling padding position  <br /></td></tr>
+<tr class="separator:a8b3352651f569c5ed05d6ec2ce0a9412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13e2b7a2101c8a7497a9b15ad307ab01" id="r_a13e2b7a2101c8a7497a9b15ad307ab01"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a13e2b7a2101c8a7497a9b15ad307ab01">toolbox::container::string::reverse</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a13e2b7a2101c8a7497a9b15ad307ab01"><td class="mdescLeft">&#160;</td><td class="mdescRight">反转字符串视图中字符的顺序 / Reverses the order of characters in a string view  <br /></td></tr>
+<tr class="separator:a13e2b7a2101c8a7497a9b15ad307ab01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177efbbd07806730f409280e993beb94" id="r_a177efbbd07806730f409280e993beb94"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a177efbbd07806730f409280e993beb94">toolbox::container::string::try_parse_int</a> (std::string_view s, int &amp;out) -&gt; bool</td></tr>
+<tr class="memdesc:a177efbbd07806730f409280e993beb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试从字符串视图解析整数 / Attempts to parse an integer from a string view  <br /></td></tr>
+<tr class="separator:a177efbbd07806730f409280e993beb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd44eb3b69488f814fb5eb059784af56" id="r_afd44eb3b69488f814fb5eb059784af56"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#afd44eb3b69488f814fb5eb059784af56">toolbox::container::string::try_parse_double</a> (std::string_view s, double &amp;out) -&gt; bool</td></tr>
+<tr class="memdesc:afd44eb3b69488f814fb5eb059784af56"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试从字符串视图解析双精度浮点数 / Attempts to parse a double-precision floating-point number from a string view  <br /></td></tr>
+<tr class="separator:afd44eb3b69488f814fb5eb059784af56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477149220be79a76aeab534853bf5721" id="r_a477149220be79a76aeab534853bf5721"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a477149220be79a76aeab534853bf5721">toolbox::container::string::try_parse_float</a> (std::string_view s, float &amp;out) -&gt; bool</td></tr>
+<tr class="memdesc:a477149220be79a76aeab534853bf5721"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试从字符串视图解析单精度浮点数 / Attempts to parse a single-precision floating-point number from a string view  <br /></td></tr>
+<tr class="separator:a477149220be79a76aeab534853bf5721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf00945757752e93f4592917811033c5" id="r_adf00945757752e93f4592917811033c5"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#adf00945757752e93f4592917811033c5">toolbox::container::string::levenshtein_distance</a> (std::string_view s1, std::string_view s2) -&gt; std::size_t</td></tr>
+<tr class="memdesc:adf00945757752e93f4592917811033c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个字符串之间的Levenshtein距离 / Calculates the Levenshtein distance between two strings  <br /></td></tr>
+<tr class="separator:adf00945757752e93f4592917811033c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769608e53956a31c6920fdd30d30035b" id="r_a769608e53956a31c6920fdd30d30035b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a769608e53956a31c6920fdd30d30035b">toolbox::container::string::longest_common_subsequence_length</a> (std::string_view s1, std::string_view s2) -&gt; std::size_t</td></tr>
+<tr class="memdesc:a769608e53956a31c6920fdd30d30035b"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个字符串的最长公共子序列（LCS）长度 / Calculates the length of the Longest Common Subsequence (LCS) of two strings  <br /></td></tr>
+<tr class="separator:a769608e53956a31c6920fdd30d30035b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7d1d7d53c01978d757929bb13b204f" id="r_a0b7d1d7d53c01978d757929bb13b204f"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a0b7d1d7d53c01978d757929bb13b204f">toolbox::container::string::longest_common_substring_length</a> (std::string_view s1, std::string_view s2) -&gt; std::size_t</td></tr>
+<tr class="memdesc:a0b7d1d7d53c01978d757929bb13b204f"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算两个字符串的最长公共子串长度 / Calculates the length of the Longest Common Substring of two strings  <br /></td></tr>
+<tr class="separator:a0b7d1d7d53c01978d757929bb13b204f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19556e830ae2bfbbbbe0905a454844f4" id="r_a19556e830ae2bfbbbbe0905a454844f4"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a19556e830ae2bfbbbbe0905a454844f4">toolbox::container::string::url_encode</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a19556e830ae2bfbbbbe0905a454844f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">对字符串进行百分比编码以安全地包含在URL中 / Percent-encodes a string for safe inclusion in a URL  <br /></td></tr>
+<tr class="separator:a19556e830ae2bfbbbbe0905a454844f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace2f63ba20582b4e048fefeac749de3d" id="r_ace2f63ba20582b4e048fefeac749de3d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#ace2f63ba20582b4e048fefeac749de3d">toolbox::container::string::url_decode</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:ace2f63ba20582b4e048fefeac749de3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">解码百分比编码的字符串（URL解码） / Decodes a percent-encoded string (URL decoding)  <br /></td></tr>
+<tr class="separator:ace2f63ba20582b4e048fefeac749de3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2e3a6aeac0c69c43250b792e035e593" id="r_af2e3a6aeac0c69c43250b792e035e593"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#af2e3a6aeac0c69c43250b792e035e593">toolbox::container::string::base64_encode</a> (std::string_view data) -&gt; std::string</td></tr>
+<tr class="memdesc:af2e3a6aeac0c69c43250b792e035e593"><td class="mdescLeft">&#160;</td><td class="mdescRight">将二进制数据（以字符串视图表示）编码为Base64格式 / Encodes binary data (represented as a string_view) into Base64 format  <br /></td></tr>
+<tr class="separator:af2e3a6aeac0c69c43250b792e035e593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4267ad272a87495724c13bbb5b607ec5" id="r_a4267ad272a87495724c13bbb5b607ec5"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a4267ad272a87495724c13bbb5b607ec5">toolbox::container::string::base64_decode</a> (std::string_view encoded_data) -&gt; std::string</td></tr>
+<tr class="memdesc:a4267ad272a87495724c13bbb5b607ec5"><td class="mdescLeft">&#160;</td><td class="mdescRight">将Base64编码的字符串解码回原始数据 / Decodes a Base64 encoded string back into its original data  <br /></td></tr>
+<tr class="separator:a4267ad272a87495724c13bbb5b607ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4d6af2e41f817dca51139247152a02" id="r_a5c4d6af2e41f817dca51139247152a02"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1container_1_1string.html#a5c4d6af2e41f817dca51139247152a02">toolbox::container::string::slugify</a> (std::string_view s) -&gt; std::string</td></tr>
+<tr class="memdesc:a5c4d6af2e41f817dca51139247152a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为URL友好的"slug" / Converts a string into a URL-friendly "slug"  <br /></td></tr>
+<tr class="separator:a5c4d6af2e41f817dca51139247152a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ac5641c9a187e3701f2ceb6466362ba04" name="ac5641c9a187e3701f2ceb6466362ba04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5641c9a187e3701f2ceb6466362ba04">&#9670;&#160;</a></span>CPP_TOOLBOX_CONTAINER_STRING_HPP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CPP_TOOLBOX_CONTAINER_STRING_HPP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_5e35b7373085dba8dab58644e4548795.html">container</a></li><li class="navelem"><a class="el" href="string_8hpp.html">string.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

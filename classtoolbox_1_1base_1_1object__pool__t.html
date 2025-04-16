@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::base::object_pool_t&lt; T &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1base_1_1object__pool__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classtoolbox_1_1base_1_1object__pool__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::base::object_pool_t&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="object__pool_8hpp_source.html">object_pool.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae721bc932699daa4c5e521583b54eb5f" id="r_ae721bc932699daa4c5e521583b54eb5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> = std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &gt;</td></tr>
+<tr class="memdesc:ae721bc932699daa4c5e521583b54eb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">管理池化对象的 unique_ptr 的别名。当超出作用域时自动将对象返回池中/ Alias for a unique_ptr managing a pooled object. Automatically returns the object to the pool when it goes out of scope  <br /></td></tr>
+<tr class="separator:ae721bc932699daa4c5e521583b54eb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a76ed5cc37a23b4b4c05e7035c844b44e" id="r_a76ed5cc37a23b4b4c05e7035c844b44e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">object_pool_t</a> (<a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_size</a>=0, std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &amp;)&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">resetter</a>=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">nullptr</a>)</td></tr>
+<tr class="memdesc:a76ed5cc37a23b4b4c05e7035c844b44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造对象池/Construct an object pool  <br /></td></tr>
+<tr class="separator:a76ed5cc37a23b4b4c05e7035c844b44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade913fc522724ec24d9e670856c9f248" id="r_ade913fc522724ec24d9e670856c9f248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ade913fc522724ec24d9e670856c9f248">object_pool_t</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
+<tr class="separator:ade913fc522724ec24d9e670856c9f248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c2e1d372a903ddb13ec40aec526c1b" id="r_a82c2e1d372a903ddb13ec40aec526c1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">operator=</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
+<tr class="separator:a82c2e1d372a903ddb13ec40aec526c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad80f3c326e026fde449d11560d12c4ce" id="r_ad80f3c326e026fde449d11560d12c4ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ad80f3c326e026fde449d11560d12c4ce">object_pool_t</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;&amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
+<tr class="separator:ad80f3c326e026fde449d11560d12c4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb43a1de388efb9ab4ab2ce04180f5e" id="r_afdb43a1de388efb9ab4ab2ce04180f5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#afdb43a1de388efb9ab4ab2ce04180f5e">operator=</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;&amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
+<tr class="separator:afdb43a1de388efb9ab4ab2ce04180f5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee1365b915dd94ff289623f8b8e3818f" id="r_aee1365b915dd94ff289623f8b8e3818f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">acquire</a> ()</td></tr>
+<tr class="memdesc:aee1365b915dd94ff289623f8b8e3818f"><td class="mdescLeft">&#160;</td><td class="mdescRight">从池中获取一个对象/Acquire an object from the pool  <br /></td></tr>
+<tr class="separator:aee1365b915dd94ff289623f8b8e3818f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad760b438b3168f37bfe95d2bf16c1735" id="r_ad760b438b3168f37bfe95d2bf16c1735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> *<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</td></tr>
+<tr class="memdesc:ad760b438b3168f37bfe95d2bf16c1735"><td class="mdescLeft">&#160;</td><td class="mdescRight">将对象释放回池中/Release an object back to the pool  <br /></td></tr>
+<tr class="separator:ad760b438b3168f37bfe95d2bf16c1735"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a6857aaca2124f8646392d423bc1a2f39" id="r_a6857aaca2124f8646392d423bc1a2f39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a6857aaca2124f8646392d423bc1a2f39">PoolDeleter&lt; T &gt;</a></td></tr>
+<tr class="separator:a6857aaca2124f8646392d423bc1a2f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ae721bc932699daa4c5e521583b54eb5f" name="ae721bc932699daa4c5e521583b54eb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae721bc932699daa4c5e521583b54eb5f">&#9670;&#160;</a></span>PooledObjectPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::PooledObjectPtr =  std::unique_ptr&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>管理池化对象的 unique_ptr 的别名。当超出作用域时自动将对象返回池中/ Alias for a unique_ptr managing a pooled object. Automatically returns the object to the pool when it goes out of scope </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html#a2">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a76ed5cc37a23b4b4c05e7035c844b44e" name="a76ed5cc37a23b4b4c05e7035c844b44e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76ed5cc37a23b4b4c05e7035c844b44e">&#9670;&#160;</a></span>object_pool_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>initial_size</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>resetter</em> = <code><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">nullptr</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造对象池/Construct an object pool </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initial_size</td><td>初始创建的对象数量,默认为0/Number of objects to create initially. Defaults to 0 </td></tr>
+    <tr><td class="paramname">resetter</td><td>可选的重置函数,在对象返回池前调用以重置状态/Optional function to call on an object to reset its state before returning it to the pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade913fc522724ec24d9e670856c9f248" name="ade913fc522724ec24d9e670856c9f248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade913fc522724ec24d9e670856c9f248">&#9670;&#160;</a></span>object_pool_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad80f3c326e026fde449d11560d12c4ce" name="ad80f3c326e026fde449d11560d12c4ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad80f3c326e026fde449d11560d12c4ce">&#9670;&#160;</a></span>object_pool_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aee1365b915dd94ff289623f8b8e3818f" name="aee1365b915dd94ff289623f8b8e3818f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee1365b915dd94ff289623f8b8e3818f">&#9670;&#160;</a></span>acquire()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::acquire </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从池中获取一个对象/Acquire an object from the pool </p>
+<p>如果池为空则创建新对象。返回的 unique_ptr 在析构时会自动将对象释放回池中/ If the pool is empty, a new object is created. The returned unique_ptr will automatically release the object back to the pool upon destruction.</p>
+<dl class="section return"><dt>Returns</dt><dd>管理获取对象的 std::unique_ptr/A std::unique_ptr managing the acquired object </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html#a4">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="a82c2e1d372a903ddb13ec40aec526c1b" name="a82c2e1d372a903ddb13ec40aec526c1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c2e1d372a903ddb13ec40aec526c1b">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html#a3">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</a>, and <a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_singleton_8hpp-example.html#a0">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool_singleton.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="afdb43a1de388efb9ab4ab2ce04180f5e" name="afdb43a1de388efb9ab4ab2ce04180f5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb43a1de388efb9ab4ab2ce04180f5e">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad760b438b3168f37bfe95d2bf16c1735" name="ad760b438b3168f37bfe95d2bf16c1735"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad760b438b3168f37bfe95d2bf16c1735">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::release </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将对象释放回池中/Release an object back to the pool </p>
+<p>当 unique_ptr 超出作用域时由 <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a> 自动调用。如果提供了重置函数则重置对象状态/ Called automatically by the <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a> when the unique_ptr goes out of scope. Resets the object's state if a reset function was provided.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>要释放的对象的原始指针,所有权由池接管/Raw pointer to the object to release. Ownership is taken by the pool </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html#a1">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a6857aaca2124f8646392d423bc1a2f39" name="a6857aaca2124f8646392d423bc1a2f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6857aaca2124f8646392d423bc1a2f39">&#9670;&#160;</a></span>PoolDeleter&lt; T &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">friend</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html#a5">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/object_pool.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/base/<a class="el" href="object__pool_8hpp_source.html">object_pool.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1base.html">base</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

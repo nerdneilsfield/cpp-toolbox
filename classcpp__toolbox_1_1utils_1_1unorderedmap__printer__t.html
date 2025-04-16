@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: cpp_toolbox::utils::unorderedmap_printer_t&lt; K, V &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">cpp_toolbox::utils::unorderedmap_printer_t&lt; K, V &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Unordered Map 打印器/Unordered map printer.  
+ <a href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="print_8hpp_source.html">print.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for cpp_toolbox::utils::unorderedmap_printer_t&lt; K, V &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:abe5d8a286707872dfc13d392d5f58525" id="r_abe5d8a286707872dfc13d392d5f58525"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html#abe5d8a286707872dfc13d392d5f58525">get_size</a> () const -&gt; <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> override</td></tr>
+<tr class="memdesc:abe5d8a286707872dfc13d392d5f58525"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取容器大小/Get container size  <br /></td></tr>
+<tr class="separator:abe5d8a286707872dfc13d392d5f58525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9822dcbcb0242165b55a1b6e25987bed" id="r_a9822dcbcb0242165b55a1b6e25987bed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html#a9822dcbcb0242165b55a1b6e25987bed">print_content</a> (std::ostream &amp;os) const override</td></tr>
+<tr class="memdesc:a9822dcbcb0242165b55a1b6e25987bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">打印内容/Print content  <br /></td></tr>
+<tr class="separator:a9822dcbcb0242165b55a1b6e25987bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">cpp_toolbox::utils::container_printer_t&lt; std::unordered_map&lt; K, V &gt; &gt;</a></td></tr>
+<tr class="memitem:ae9f1d8d64be6a07605dbc84f3ead9ab5 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_ae9f1d8d64be6a07605dbc84f3ead9ab5"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#ae9f1d8d64be6a07605dbc84f3ead9ab5">get_container</a> () const -&gt; const std::unordered_map&lt; K, V &gt; &amp;</td></tr>
+<tr class="memdesc:ae9f1d8d64be6a07605dbc84f3ead9ab5 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取容器引用/Get container reference  <br /></td></tr>
+<tr class="separator:ae9f1d8d64be6a07605dbc84f3ead9ab5 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae516fc81f037bb66e3c3a7303c1b7453 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_ae516fc81f037bb66e3c3a7303c1b7453"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#ae516fc81f037bb66e3c3a7303c1b7453">get_name</a> () const -&gt; const std::string &amp;</td></tr>
+<tr class="memdesc:ae516fc81f037bb66e3c3a7303c1b7453 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取名称/Get name  <br /></td></tr>
+<tr class="separator:ae516fc81f037bb66e3c3a7303c1b7453 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade0c7c7f3f60d9fff9e566843595fd91 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_ade0c7c7f3f60d9fff9e566843595fd91"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#ade0c7c7f3f60d9fff9e566843595fd91">get_style</a> () const -&gt; const <a class="el" href="structcpp__toolbox_1_1utils_1_1print__style__t.html">print_style_t</a> &amp;</td></tr>
+<tr class="memdesc:ade0c7c7f3f60d9fff9e566843595fd91 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取打印风格/Get print style  <br /></td></tr>
+<tr class="separator:ade0c7c7f3f60d9fff9e566843595fd91 inherit pro_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">cpp_toolbox::utils::container_printer_t&lt; std::unordered_map&lt; K, V &gt; &gt;</a></td></tr>
+<tr class="memitem:a121c424003fa0b6a86548fbb3c8879d6 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_a121c424003fa0b6a86548fbb3c8879d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#a121c424003fa0b6a86548fbb3c8879d6">container_printer_t</a> (const std::unordered_map&lt; K, V &gt; &amp;c, std::string name, <a class="el" href="structcpp__toolbox_1_1utils_1_1print__style__t.html">print_style_t</a> style)</td></tr>
+<tr class="memdesc:a121c424003fa0b6a86548fbb3c8879d6 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数/Constructor  <br /></td></tr>
+<tr class="separator:a121c424003fa0b6a86548fbb3c8879d6 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac9d65648720f6486ee2d88a34c66830 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_aac9d65648720f6486ee2d88a34c66830"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#aac9d65648720f6486ee2d88a34c66830">container_printer_t</a> (const <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;)=delete</td></tr>
+<tr class="separator:aac9d65648720f6486ee2d88a34c66830 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4764115462a5d4c0984a722cb3a8184e inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_a4764115462a5d4c0984a722cb3a8184e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#a4764115462a5d4c0984a722cb3a8184e">container_printer_t</a> (<a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a4764115462a5d4c0984a722cb3a8184e inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9767375476333e48b91547d5cb2bbe3a inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_a9767375476333e48b91547d5cb2bbe3a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#a9767375476333e48b91547d5cb2bbe3a">~container_printer_t</a> ()=default</td></tr>
+<tr class="memdesc:a9767375476333e48b91547d5cb2bbe3a inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数/Destructor  <br /></td></tr>
+<tr class="separator:a9767375476333e48b91547d5cb2bbe3a inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab5d86d64005cb12ad41c29db92f326 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_aeab5d86d64005cb12ad41c29db92f326"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#aeab5d86d64005cb12ad41c29db92f326">operator=</a> (const <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;)=delete</td></tr>
+<tr class="separator:aeab5d86d64005cb12ad41c29db92f326 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af243f47815a7142a85f9a4cd422e8921 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t" id="r_af243f47815a7142a85f9a4cd422e8921"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#af243f47815a7142a85f9a4cd422e8921">operator=</a> (<a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html">container_printer_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:af243f47815a7142a85f9a4cd422e8921 inherit pub_methods_classcpp__toolbox_1_1utils_1_1container__printer__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename K, typename V&gt;<br />
+class cpp_toolbox::utils::unorderedmap_printer_t&lt; K, V &gt;</div><p>Unordered Map 打印器/Unordered map printer. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>键类型/Key type </td></tr>
+    <tr><td class="paramname">V</td><td>值类型/Value type <div class="fragment"><div class="line">std::unordered_map&lt;int, std::string&gt; m{{1,<span class="stringliteral">&quot;a&quot;</span>},{2,<span class="stringliteral">&quot;b&quot;</span>}};</div>
+<div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacecpp__toolbox_1_1utils.html#a6cd4a730fcaafbccff5dbc564ce759ae">print_unordered_map</a>(m);</div>
+<div class="ttc" id="anamespacecpp__toolbox_1_1utils_html_a6cd4a730fcaafbccff5dbc564ce759ae"><div class="ttname"><a href="namespacecpp__toolbox_1_1utils.html#a6cd4a730fcaafbccff5dbc564ce759ae">cpp_toolbox::utils::print_unordered_map</a></div><div class="ttdeci">auto print_unordered_map(const std::unordered_map&lt; K, V &gt; &amp;m, const std::string &amp;name=&quot;Unordered Map&quot;, const print_style_t &amp;style=get_default_style()) -&gt; unorderedmap_printer_t&lt; K, V &gt;</div><div class="ttdoc">打印unordered_map的工厂函数/Factory function to print unordered_map</div><div class="ttdef"><b>Definition</b> print.hpp:1272</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="abe5d8a286707872dfc13d392d5f58525" name="abe5d8a286707872dfc13d392d5f58525"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe5d8a286707872dfc13d392d5f58525">&#9670;&#160;</a></span>get_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html">cpp_toolbox::utils::unorderedmap_printer_t</a>&lt; K, V &gt;::get_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取容器大小/Get container size </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t 容器大小/Container size </dd></dl>
+
+<p>Implements <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#aab60a79d17bcc86d231aae88525b7eb4">cpp_toolbox::utils::container_printer_t&lt; std::unordered_map&lt; K, V &gt; &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a9822dcbcb0242165b55a1b6e25987bed" name="a9822dcbcb0242165b55a1b6e25987bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9822dcbcb0242165b55a1b6e25987bed">&#9670;&#160;</a></span>print_content()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html">cpp_toolbox::utils::unorderedmap_printer_t</a>&lt; K, V &gt;::print_content </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>打印内容/Print content </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>输出流/Output stream </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classcpp__toolbox_1_1utils_1_1container__printer__t.html#aea3b3ad32fd6447f2566b81c73ed2cbb">cpp_toolbox::utils::container_printer_t&lt; std::unordered_map&lt; K, V &gt; &gt;</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/utils/<a class="el" href="print_8hpp_source.html">print.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacecpp__toolbox.html">cpp_toolbox</a></li><li class="navelem"><a class="el" href="namespacecpp__toolbox_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classcpp__toolbox_1_1utils_1_1unorderedmap__printer__t.html">unorderedmap_printer_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

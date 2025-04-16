@@ -1,0 +1,492 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::container::concurrent_queue_t&lt; T &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1container_1_1concurrent__queue__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1container_1_1concurrent__queue__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::container::concurrent_queue_t&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue  
+ <a href="classtoolbox_1_1container_1_1concurrent__queue__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="concurrent__queue_8hpp_source.html">concurrent_queue.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9392c24d66938afb09982809df0e4aca" id="r_a9392c24d66938afb09982809df0e4aca"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a9392c24d66938afb09982809df0e4aca">concurrent_queue_t</a> ()</td></tr>
+<tr class="memdesc:a9392c24d66938afb09982809df0e4aca"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造队列包装器/Constructs the queue wrapper  <br /></td></tr>
+<tr class="separator:a9392c24d66938afb09982809df0e4aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94525706908c0f9cf4c5821a1a591533" id="r_a94525706908c0f9cf4c5821a1a591533"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a94525706908c0f9cf4c5821a1a591533">~concurrent_queue_t</a> ()</td></tr>
+<tr class="memdesc:a94525706908c0f9cf4c5821a1a591533"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁队列包装器并清理资源/Destroys the queue wrapper and cleans up resources  <br /></td></tr>
+<tr class="separator:a94525706908c0f9cf4c5821a1a591533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8b857daac08b48651621c00feff4a3d" id="r_ad8b857daac08b48651621c00feff4a3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#ad8b857daac08b48651621c00feff4a3d">enqueue</a> (T &amp;&amp;value)</td></tr>
+<tr class="memdesc:ad8b857daac08b48651621c00feff4a3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">将元素入队/Enqueues an item into the queue  <br /></td></tr>
+<tr class="separator:ad8b857daac08b48651621c00feff4a3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a845607470339dbca7081c0cbe626e0" id="r_a6a845607470339dbca7081c0cbe626e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a6a845607470339dbca7081c0cbe626e0">try_dequeue</a> (T &amp;item)</td></tr>
+<tr class="memdesc:a6a845607470339dbca7081c0cbe626e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试从队列中出队一个元素(非阻塞)/Attempts to dequeue an item from the queue (non-blocking)  <br /></td></tr>
+<tr class="separator:a6a845607470339dbca7081c0cbe626e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40483c6f89765dd59a31b8739afb5427" id="r_a40483c6f89765dd59a31b8739afb5427"><td class="memItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a40483c6f89765dd59a31b8739afb5427">try_dequeue</a> ()</td></tr>
+<tr class="memdesc:a40483c6f89765dd59a31b8739afb5427"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试出队一个元素，以std::optional形式返回(非阻塞)/Attempts to dequeue an item, returning it in an std::optional (non-blocking)  <br /></td></tr>
+<tr class="separator:a40483c6f89765dd59a31b8739afb5427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35bc2569336e065de2197b568e0d041e" id="r_a35bc2569336e065de2197b568e0d041e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a35bc2569336e065de2197b568e0d041e">wait_dequeue_timed</a> (T &amp;item, std::chrono::microseconds timeout)</td></tr>
+<tr class="memdesc:a35bc2569336e065de2197b568e0d041e"><td class="mdescLeft">&#160;</td><td class="mdescRight">尝试出队一个元素，阻塞直到有元素可用或超时/Attempts to dequeue an item, blocking until an item is available or timeout  <br /></td></tr>
+<tr class="separator:a35bc2569336e065de2197b568e0d041e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2ad05e78bebe8ad3738e7a7f70cbe7c" id="r_ac2ad05e78bebe8ad3738e7a7f70cbe7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#ac2ad05e78bebe8ad3738e7a7f70cbe7c">size_approx</a> () const</td></tr>
+<tr class="memdesc:ac2ad05e78bebe8ad3738e7a7f70cbe7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回队列中元素的近似数量/Returns an approximate count of items in the queue  <br /></td></tr>
+<tr class="separator:ac2ad05e78bebe8ad3738e7a7f70cbe7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+class toolbox::container::concurrent_queue_t&lt; T &gt;</div><p>高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue </p>
+<p>该类使用PIMPL惯用法隐藏底层第三方库实现细节，同时提供稳定的接口/This class provides a stable interface while hiding the underlying third-party library implementation details using the Pimpl idiom</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>队列中存储的元素类型，必须是可移动的/The type of elements stored in the queue. Must be movable</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建一个整数类型的并发队列/Create a concurrent queue for integers</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t&lt;int&gt;</a> queue;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 生产者线程/Producer thread</span></div>
+<div class="line">queue.<a class="code hl_function" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#ad8b857daac08b48651621c00feff4a3d">enqueue</a>(42);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 消费者线程 - 使用引用方式/Consumer thread - using reference</span></div>
+<div class="line"><span class="keywordtype">int</span> value;</div>
+<div class="line"><span class="keywordflow">if</span>(queue.<a class="code hl_function" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a6a845607470339dbca7081c0cbe626e0">try_dequeue</a>(value)) {</div>
+<div class="line">  <span class="comment">// 处理值/Process value</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 消费者线程 - 使用optional方式/Consumer thread - using optional</span></div>
+<div class="line"><span class="keywordflow">if</span>(<span class="keyword">auto</span> opt = queue.<a class="code hl_function" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a6a845607470339dbca7081c0cbe626e0">try_dequeue</a>()) {</div>
+<div class="line">  <span class="keywordtype">int</span> value = *opt;</div>
+<div class="line">  <span class="comment">// 处理值/Process value</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 带超时的消费/Timed consumption</span></div>
+<div class="line"><span class="keywordtype">int</span> value;</div>
+<div class="line"><span class="keywordflow">if</span>(queue.<a class="code hl_function" href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a35bc2569336e065de2197b568e0d041e">wait_dequeue_timed</a>(value, std::chrono::microseconds(1000))) {</div>
+<div class="line">  <span class="comment">// 在1ms内成功获取到值/Successfully got value within 1ms</span></div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a></div><div class="ttdoc">高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue</div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:57</div></div>
+<div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html_a35bc2569336e065de2197b568e0d041e"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a35bc2569336e065de2197b568e0d041e">toolbox::container::concurrent_queue_t::wait_dequeue_timed</a></div><div class="ttdeci">bool wait_dequeue_timed(T &amp;item, std::chrono::microseconds timeout)</div><div class="ttdoc">尝试出队一个元素，阻塞直到有元素可用或超时/Attempts to dequeue an item, blocking until an item is available or timeout</div></div>
+<div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html_a6a845607470339dbca7081c0cbe626e0"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html#a6a845607470339dbca7081c0cbe626e0">toolbox::container::concurrent_queue_t::try_dequeue</a></div><div class="ttdeci">bool try_dequeue(T &amp;item)</div><div class="ttdoc">尝试从队列中出队一个元素(非阻塞)/Attempts to dequeue an item from the queue (non-blocking)</div></div>
+<div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html_ad8b857daac08b48651621c00feff4a3d"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html#ad8b857daac08b48651621c00feff4a3d">toolbox::container::concurrent_queue_t::enqueue</a></div><div class="ttdeci">void enqueue(T &amp;&amp;value)</div><div class="ttdoc">将元素入队/Enqueues an item into the queue</div></div>
+</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_8hpp-example.html#_a2">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</a>, and <a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_singleton_8hpp-example.html#_a1">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool_singleton.hpp</a>.</dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9392c24d66938afb09982809df0e4aca" name="a9392c24d66938afb09982809df0e4aca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9392c24d66938afb09982809df0e4aca">&#9670;&#160;</a></span>concurrent_queue_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::concurrent_queue_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>构造队列包装器/Constructs the queue wrapper </p>
+
+</div>
+</div>
+<a id="a94525706908c0f9cf4c5821a1a591533" name="a94525706908c0f9cf4c5821a1a591533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94525706908c0f9cf4c5821a1a591533">&#9670;&#160;</a></span>~concurrent_queue_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::~<a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>销毁队列包装器并清理资源/Destroys the queue wrapper and cleans up resources </p>
+<dl class="section note"><dt>Note</dt><dd>由于使用了PIMPL惯用法和unique_ptr，必须在cpp文件中定义/Must be defined in the .cpp file due to Pimpl idiom with unique_ptr </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad8b857daac08b48651621c00feff4a3d" name="ad8b857daac08b48651621c00feff4a3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8b857daac08b48651621c00feff4a3d">&#9670;&#160;</a></span>enqueue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::enqueue </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将元素入队/Enqueues an item into the queue </p>
+<p>支持多生产者线程安全/Thread-safe for multiple producers </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>要入队的值(将被移动)/The value to enqueue (will be moved) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac2ad05e78bebe8ad3738e7a7f70cbe7c" name="ac2ad05e78bebe8ad3738e7a7f70cbe7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ad05e78bebe8ad3738e7a7f70cbe7c">&#9670;&#160;</a></span>size_approx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::size_approx </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回队列中元素的近似数量/Returns an approximate count of items in the queue </p>
+<p>适用于启发式估计，在高并发场景下可能不精确/Useful for heuristics but may not be exact in a highly concurrent scenario </p><dl class="section return"><dt>Returns</dt><dd>队列中元素的近似数量/Approximate number of items in the queue </dd></dl>
+
+</div>
+</div>
+<a id="a40483c6f89765dd59a31b8739afb5427" name="a40483c6f89765dd59a31b8739afb5427"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40483c6f89765dd59a31b8739afb5427">&#9670;&#160;</a></span>try_dequeue() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; T &gt; <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::try_dequeue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尝试出队一个元素，以std::optional形式返回(非阻塞)/Attempts to dequeue an item, returning it in an std::optional (non-blocking) </p>
+<p>支持多消费者线程安全/Thread-safe for multiple consumers </p><dl class="section return"><dt>Returns</dt><dd>如果成功包含出队值的std::optional&lt;T&gt;，否则返回std::nullopt/std::optional&lt;T&gt; containing the dequeued value if successful, or std::nullopt if the queue was empty </dd></dl>
+
+</div>
+</div>
+<a id="a6a845607470339dbca7081c0cbe626e0" name="a6a845607470339dbca7081c0cbe626e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a845607470339dbca7081c0cbe626e0">&#9670;&#160;</a></span>try_dequeue() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::try_dequeue </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尝试从队列中出队一个元素(非阻塞)/Attempts to dequeue an item from the queue (non-blocking) </p>
+<p>支持多消费者线程安全/Thread-safe for multiple consumers </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">item</td><td>如果成功，用于存储出队值的引用/Reference to store the dequeued value if successful </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果成功出队返回true，队列为空返回false/True if an item was successfully dequeued, false if the queue was empty </dd></dl>
+
+</div>
+</div>
+<a id="a35bc2569336e065de2197b568e0d041e" name="a35bc2569336e065de2197b568e0d041e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35bc2569336e065de2197b568e0d041e">&#9670;&#160;</a></span>wait_dequeue_timed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a>&lt; T &gt;::wait_dequeue_timed </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::chrono::microseconds&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>尝试出队一个元素，阻塞直到有元素可用或超时/Attempts to dequeue an item, blocking until an item is available or timeout </p>
+<p>支持多消费者线程安全/Thread-safe for multiple consumers </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">item</td><td>如果成功，用于存储出队值的引用/Reference to store the dequeued value if successful </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">timeout</td><td>最大等待时间/The maximum duration to wait </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果在超时前成功出队返回true，否则返回false/True if an item was successfully dequeued within the timeout, false otherwise </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/container/<a class="el" href="concurrent__queue_8hpp_source.html">concurrent_queue.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1container.html">container</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

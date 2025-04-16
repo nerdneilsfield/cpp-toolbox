@@ -1,0 +1,1892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::file Namespace Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespacetoolbox_1_1file.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::file Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a9d370d4f448be574533574f643bc1298" id="r_a9d370d4f448be574533574f643bc1298"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a> = std::filesystem::file_time_type</td></tr>
+<tr class="separator:a9d370d4f448be574533574f643bc1298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab939fdda9a10c744810dcab68833b841" id="r_ab939fdda9a10c744810dcab68833b841"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">file_type</a> = std::filesystem::file_type</td></tr>
+<tr class="separator:ab939fdda9a10c744810dcab68833b841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a60f6004279fd475e4d1951e177b46c69" id="r_a60f6004279fd475e4d1951e177b46c69"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">string_to_path</a> (const std::string &amp;str) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a60f6004279fd475e4d1951e177b46c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">将字符串转换为文件系统路径 / Convert a string to a filesystem path  <br /></td></tr>
+<tr class="separator:a60f6004279fd475e4d1951e177b46c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5ae9f96e511dc7feafcb507ad1f6c31" id="r_aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">path_to_string</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">将文件系统路径转换为字符串 / Convert a filesystem path to a string  <br /></td></tr>
+<tr class="separator:aa5ae9f96e511dc7feafcb507ad1f6c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1137011f0ab9390578e201f5df1a5d4c" id="r_a1137011f0ab9390578e201f5df1a5d4c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">get_file_size</a> (const std::filesystem::path &amp;path) -&gt; std::size_t</td></tr>
+<tr class="memdesc:a1137011f0ab9390578e201f5df1a5d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的字节大小 / Get the size of a file in bytes  <br /></td></tr>
+<tr class="separator:a1137011f0ab9390578e201f5df1a5d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85dd8c020456e11f9e8217aa3941216e" id="r_a85dd8c020456e11f9e8217aa3941216e"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">get_absolute_path</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a85dd8c020456e11f9e8217aa3941216e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件或目录的绝对路径 / Get the absolute path of a file or directory  <br /></td></tr>
+<tr class="separator:a85dd8c020456e11f9e8217aa3941216e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa193ebd895ae2c8602885121f1e8c72d" id="r_aa193ebd895ae2c8602885121f1e8c72d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">get_relative_path</a> (const std::filesystem::path &amp;path, const std::filesystem::path &amp;base) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:aa193ebd895ae2c8602885121f1e8c72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取两个路径之间的相对路径 / Get the relative path between two paths  <br /></td></tr>
+<tr class="separator:aa193ebd895ae2c8602885121f1e8c72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2785348e22ba0c2a203ccca4890aa00" id="r_ab2785348e22ba0c2a203ccca4890aa00"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">get_parent_path</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:ab2785348e22ba0c2a203ccca4890aa00"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的父目录 / Get the parent directory of a path  <br /></td></tr>
+<tr class="separator:ab2785348e22ba0c2a203ccca4890aa00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d0f2a1bed7286d6779f57c7a016781" id="r_a94d0f2a1bed7286d6779f57c7a016781"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">get_file_name</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:a94d0f2a1bed7286d6779f57c7a016781"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的文件名部分 / Get the file name component of a path  <br /></td></tr>
+<tr class="separator:a94d0f2a1bed7286d6779f57c7a016781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2b9f2a5b7df4bfb3e2afc92486f02fc" id="r_ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">get_file_extension</a> (const std::filesystem::path &amp;path) -&gt; std::string</td></tr>
+<tr class="memdesc:ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取路径的文件扩展名 / Get the file extension of a path  <br /></td></tr>
+<tr class="separator:ac2b9f2a5b7df4bfb3e2afc92486f02fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac210d89b1411dada1371a94f0b64ebd" id="r_aac210d89b1411dada1371a94f0b64ebd"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">copy_file</a> (const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</td></tr>
+<tr class="memdesc:aac210d89b1411dada1371a94f0b64ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">复制文件 / Copy a file  <br /></td></tr>
+<tr class="separator:aac210d89b1411dada1371a94f0b64ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f5444c60648ca97bfa4b21c0b7dc09b" id="r_a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">move_file</a> (const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</td></tr>
+<tr class="memdesc:a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动文件 / Move a file  <br /></td></tr>
+<tr class="separator:a3f5444c60648ca97bfa4b21c0b7dc09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e643e4658fd230eced397b5b6adeb0" id="r_ac6e643e4658fd230eced397b5b6adeb0"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">delete_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ac6e643e4658fd230eced397b5b6adeb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除指定路径的文件 / Delete a file at the specified path  <br /></td></tr>
+<tr class="separator:ac6e643e4658fd230eced397b5b6adeb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46034cf680e496550ad944f62ba49a64" id="r_a46034cf680e496550ad944f62ba49a64"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a46034cf680e496550ad944f62ba49a64"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查指定路径是否存在文件 / Check if a file exists at the specified path  <br /></td></tr>
+<tr class="separator:a46034cf680e496550ad944f62ba49a64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4c9fa4b7d4d61845edf6f7270b597ab" id="r_ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">在指定路径创建目录 / Create a directory at the specified path  <br /></td></tr>
+<tr class="separator:ae4c9fa4b7d4d61845edf6f7270b597ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f58adf72e4c7d32fa0d4b1c86eb6eb1" id="r_a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">directory_exists</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查指定路径是否存在目录 / Check if a directory exists at the specified path  <br /></td></tr>
+<tr class="separator:a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433c83e6efcc1c9482e518a28dd47632" id="r_a433c83e6efcc1c9482e518a28dd47632"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">delete_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a433c83e6efcc1c9482e518a28dd47632"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除指定路径的目录 / Delete a directory at the specified path  <br /></td></tr>
+<tr class="separator:a433c83e6efcc1c9482e518a28dd47632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c5527a6ca0799d2bf7141f88fdf8ce" id="r_a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">get_current_directory</a> () -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前工作目录 / Get the current working directory  <br /></td></tr>
+<tr class="separator:a18c5527a6ca0799d2bf7141f88fdf8ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e38d49fe1aa7ebeef6139c908e5f15" id="r_ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">path_type</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::file_type</td></tr>
+<tr class="memdesc:ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取指定路径的文件系统对象类型 / Get the type of the filesystem object at the specified path  <br /></td></tr>
+<tr class="separator:ae9e38d49fe1aa7ebeef6139c908e5f15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43823bbfcad90d86c042e3627791ffaa" id="r_a43823bbfcad90d86c042e3627791ffaa"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">is_regular_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a43823bbfcad90d86c042e3627791ffaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为常规文件 / Check if a path is a regular file  <br /></td></tr>
+<tr class="separator:a43823bbfcad90d86c042e3627791ffaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa25c437b3e41a9a5ef2860f9b7c2012f" id="r_aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">is_directory</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为目录 / Check if a path is a directory  <br /></td></tr>
+<tr class="separator:aa25c437b3e41a9a5ef2860f9b7c2012f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8" id="r_aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">is_symlink</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为符号链接 / Check if a path is a symbolic link  <br /></td></tr>
+<tr class="separator:aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d000663dbb8b2ddcbb88c613cdac2b" id="r_a18d000663dbb8b2ddcbb88c613cdac2b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">is_fifo</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a18d000663dbb8b2ddcbb88c613cdac2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为FIFO(命名管道) / Check if a path is a FIFO (named pipe)  <br /></td></tr>
+<tr class="separator:a18d000663dbb8b2ddcbb88c613cdac2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ac1ee2d33be226474ce83fb1d5df0c4" id="r_a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">is_socket</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为套接字 / Check if a path is a socket  <br /></td></tr>
+<tr class="separator:a9ac1ee2d33be226474ce83fb1d5df0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e1f7c73c64935f5c3c1cdb0003da67" id="r_a71e1f7c73c64935f5c3c1cdb0003da67"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">is_block_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a71e1f7c73c64935f5c3c1cdb0003da67"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为块设备 / Check if a path is a block device  <br /></td></tr>
+<tr class="separator:a71e1f7c73c64935f5c3c1cdb0003da67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab07f7f5501955c1019ba3536ba0973e1" id="r_ab07f7f5501955c1019ba3536ba0973e1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">is_character_file</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:ab07f7f5501955c1019ba3536ba0973e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为字符设备 / Check if a path is a character device  <br /></td></tr>
+<tr class="separator:ab07f7f5501955c1019ba3536ba0973e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5baf94bae1c814008785e16d5925a93d" id="r_a5baf94bae1c814008785e16d5925a93d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">is_other</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a5baf94bae1c814008785e16d5925a93d"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为未知类型 / Check if a path is of an unknown type  <br /></td></tr>
+<tr class="separator:a5baf94bae1c814008785e16d5925a93d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72b627127638d1708e29fb365e4c1f1c" id="r_a72b627127638d1708e29fb365e4c1f1c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">is_empty</a> (const std::filesystem::path &amp;path) -&gt; bool</td></tr>
+<tr class="memdesc:a72b627127638d1708e29fb365e4c1f1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查路径是否为空 / Check if a path is empty  <br /></td></tr>
+<tr class="separator:a72b627127638d1708e29fb365e4c1f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3979fb549eb4b46b46c71b829bab0c1" id="r_ad3979fb549eb4b46b46c71b829bab0c1"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">get_creation_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:ad3979fb549eb4b46b46c71b829bab0c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的创建时间 / Get the creation time of a file  <br /></td></tr>
+<tr class="separator:ad3979fb549eb4b46b46c71b829bab0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3833d3e8d3e54e2dadd40cbdbe412d3e" id="r_a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">get_last_access_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的最后访问时间 / Get the last access time of a file  <br /></td></tr>
+<tr class="separator:a3833d3e8d3e54e2dadd40cbdbe412d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98028c1a5c72cc4c4b8b4c0f9e6d4af6" id="r_a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">get_last_write_time</a> (const std::filesystem::path &amp;path) -&gt; <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td></tr>
+<tr class="memdesc:a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取文件的最后修改时间 / Get the last write time of a file  <br /></td></tr>
+<tr class="separator:a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5edf9150543eb7a956ea0eee18c87f20" id="r_a5edf9150543eb7a956ea0eee18c87f20"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">get_symlink_target</a> (const std::filesystem::path &amp;path) -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:a5edf9150543eb7a956ea0eee18c87f20"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取符号链接的目标路径 / Get the target of a symbolic link  <br /></td></tr>
+<tr class="separator:a5edf9150543eb7a956ea0eee18c87f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4085a2e77b2b2c55e81b3161960c55d" id="r_aa4085a2e77b2b2c55e81b3161960c55d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:aa4085a2e77b2b2c55e81b3161960c55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历目录 / Traverse a directory  <br /></td></tr>
+<tr class="separator:aa4085a2e77b2b2c55e81b3161960c55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a131b4596d21d7af9c3a20625c2b84f7b" id="r_a131b4596d21d7af9c3a20625c2b84f7b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">recursive_traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:a131b4596d21d7af9c3a20625c2b84f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归遍历目录 / Recursively traverse a directory  <br /></td></tr>
+<tr class="separator:a131b4596d21d7af9c3a20625c2b84f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77fa6ba4b9d31a41208fa4bf7b98ee0c" id="r_a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">traverse_directory_files</a> (const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</td></tr>
+<tr class="memdesc:a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历目录并为每个文件调用回调函数 / Traverse a directory and call a callback for each file  <br /></td></tr>
+<tr class="separator:a77fa6ba4b9d31a41208fa4bf7b98ee0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61389af42cef158903ec3cdd1487837d" id="r_a61389af42cef158903ec3cdd1487837d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">recursive_traverse_directory_files</a> (const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</td></tr>
+<tr class="memdesc:a61389af42cef158903ec3cdd1487837d"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归遍历目录并为每个文件调用回调函数 / Recursively traverse a directory and call a callback for each file  <br /></td></tr>
+<tr class="separator:a61389af42cef158903ec3cdd1487837d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab446410f8d2e28ef4709e79c6f3192c9" id="r_ab446410f8d2e28ef4709e79c6f3192c9"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">get_current_working_directory</a> () -&gt; std::filesystem::path</td></tr>
+<tr class="memdesc:ab446410f8d2e28ef4709e79c6f3192c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前工作目录 / Get the current working directory  <br /></td></tr>
+<tr class="separator:ab446410f8d2e28ef4709e79c6f3192c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a9d370d4f448be574533574f643bc1298" name="a9d370d4f448be574533574f643bc1298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d370d4f448be574533574f643bc1298">&#9670;&#160;</a></span>file_time_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">toolbox::file::file_time_type</a> = typedef std::filesystem::file_time_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab939fdda9a10c744810dcab68833b841" name="ab939fdda9a10c744810dcab68833b841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab939fdda9a10c744810dcab68833b841">&#9670;&#160;</a></span>file_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">toolbox::file::file_type</a> = typedef std::filesystem::file_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="aac210d89b1411dada1371a94f0b64ebd" name="aac210d89b1411dada1371a94f0b64ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac210d89b1411dada1371a94f0b64ebd">&#9670;&#160;</a></span>copy_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::copy_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>复制文件 / Copy a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>源文件 / The source file </td></tr>
+    <tr><td class="paramname">dst</td><td>目标文件 / The destination file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果文件复制成功则返回true / True if the file was copied successfully</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 复制单个文件 / Copy a single file</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">copy_file</a>(<span class="stringliteral">&quot;/path/to/source.txt&quot;</span>, <span class="stringliteral">&quot;/path/to/dest.txt&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件复制成功 / File copied successfully\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 复制并覆盖现有文件 / Copy and overwrite existing file</span></div>
+<div class="line"><span class="keywordtype">bool</span> success = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">copy_file</a>(<span class="stringliteral">&quot;data.bak&quot;</span>, <span class="stringliteral">&quot;data.txt&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aac210d89b1411dada1371a94f0b64ebd"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">toolbox::file::copy_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto copy_file(const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</div><div class="ttdoc">复制文件 / Copy a file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ae4c9fa4b7d4d61845edf6f7270b597ab" name="ae4c9fa4b7d4d61845edf6f7270b597ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4c9fa4b7d4d61845edf6f7270b597ab">&#9670;&#160;</a></span>create_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::create_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>在指定路径创建目录 / Create a directory at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>应创建目录的文件系统路径 / The filesystem path where the directory should be created </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果目录创建成功返回true，否则返回false / True if the directory was created successfully, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建新目录 / Create a new directory</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a>(<span class="stringliteral">&quot;/tmp/new_dir&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录创建成功 / Directory created\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;创建目录失败 / Failed to create directory\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 创建嵌套目录 / Create nested directories</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a>(<span class="stringliteral">&quot;/tmp/a/b/c&quot;</span>);  <span class="comment">// 创建路径中的所有目录 / Creates all</span></div>
+<div class="line">directories in path</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 创建带时间戳的目录 / Create directory with timestamp</span></div>
+<div class="line"><span class="keyword">auto</span> timestamp_dir = <span class="stringliteral">&quot;/tmp/backup_&quot;</span> + std::to_string(time(<span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="keywordtype">bool</span> created = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a>(timestamp_dir);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ae4c9fa4b7d4d61845edf6f7270b597ab"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">toolbox::file::create_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto create_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">在指定路径创建目录 / Create a directory at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a433c83e6efcc1c9482e518a28dd47632" name="a433c83e6efcc1c9482e518a28dd47632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433c83e6efcc1c9482e518a28dd47632">&#9670;&#160;</a></span>delete_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::delete_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除指定路径的目录 / Delete a directory at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要删除的目录的文件系统路径 / The filesystem path of the directory to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果目录删除成功返回true，否则返回false / True if the directory was deleted successfully, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 删除空目录 / Delete an empty directory</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">delete_directory</a>(<span class="stringliteral">&quot;/tmp/empty_dir&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录删除成功 / Directory deleted\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;删除目录失败 / Failed to delete directory\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 删除非空目录 / Delete non-empty directory</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">delete_directory</a>(<span class="stringliteral">&quot;/tmp/non_empty_dir&quot;</span>);  <span class="comment">// 除非递归否则将失败 / Will fail</span></div>
+<div class="line">unless recursive</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 删除临时目录 / Delete temporary directory</span></div>
+<div class="line"><span class="keyword">auto</span> temp_dir = <span class="stringliteral">&quot;/tmp/temp_&quot;</span> + std::to_string(time(<span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="keywordtype">bool</span> deleted = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">delete_directory</a>(temp_dir);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a433c83e6efcc1c9482e518a28dd47632"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">toolbox::file::delete_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto delete_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">删除指定路径的目录 / Delete a directory at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ac6e643e4658fd230eced397b5b6adeb0" name="ac6e643e4658fd230eced397b5b6adeb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e643e4658fd230eced397b5b6adeb0">&#9670;&#160;</a></span>delete_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::delete_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>删除指定路径的文件 / Delete a file at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要删除的文件的文件系统路径 / The filesystem path to the file to delete </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果文件删除成功返回true，否则返回false / True if the file was successfully deleted, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 删除现有文件 / Delete an existing file</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">delete_file</a>(<span class="stringliteral">&quot;/tmp/test.txt&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件删除成功 / File deleted successfully\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;删除文件失败 / Failed to delete file\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 尝试删除不存在的文件 / Attempt to delete non-existent file</span></div>
+<div class="line"><span class="keywordtype">bool</span> result = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">delete_file</a>(<span class="stringliteral">&quot;/path/to/nonexistent.file&quot;</span>);</div>
+<div class="line"><span class="comment">// result 将是 false / result will be false</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 删除临时文件 / Delete temporary file</span></div>
+<div class="line"><span class="keyword">auto</span> temp_file = <span class="stringliteral">&quot;/tmp/temp_&quot;</span> + std::to_string(time(<span class="keyword">nullptr</span>)) + <span class="stringliteral">&quot;.tmp&quot;</span>;</div>
+<div class="line"><span class="keywordtype">bool</span> deleted = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">delete_file</a>(temp_file);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ac6e643e4658fd230eced397b5b6adeb0"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">toolbox::file::delete_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto delete_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">删除指定路径的文件 / Delete a file at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a3f58adf72e4c7d32fa0d4b1c86eb6eb1" name="a3f58adf72e4c7d32fa0d4b1c86eb6eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">&#9670;&#160;</a></span>directory_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::directory_exists </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查指定路径是否存在目录 / Check if a directory exists at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的文件系统路径 / The filesystem path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果目录存在返回true，否则返回false / True if the directory exists, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查目录是否存在 / Check if directory exists</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">directory_exists</a>(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录存在 / Directory exists\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录不存在 / Directory does not exist\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查不存在的目录 / Check non-existent directory</span></div>
+<div class="line"><span class="keywordtype">bool</span> exists = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">directory_exists</a>(<span class="stringliteral">&quot;/tmp/nonexistent_dir&quot;</span>);</div>
+<div class="line"><span class="comment">// exists 将是 false / exists will be false</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在创建目录前检查 / Check before creating directory</span></div>
+<div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">directory_exists</a>(<span class="stringliteral">&quot;/tmp/data&quot;</span>)) {</div>
+<div class="line">    <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a>(<span class="stringliteral">&quot;/tmp/data&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">toolbox::file::directory_exists</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto directory_exists(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查指定路径是否存在目录 / Check if a directory exists at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a46034cf680e496550ad944f62ba49a64" name="a46034cf680e496550ad944f62ba49a64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46034cf680e496550ad944f62ba49a64">&#9670;&#160;</a></span>file_exists()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::file_exists </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查指定路径是否存在文件 / Check if a file exists at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的文件系统路径 / The filesystem path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果文件存在返回true，否则返回false / True if the file exists, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查文件是否存在 / Check if file exists</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a>(<span class="stringliteral">&quot;/etc/passwd&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件存在 / File exists\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件不存在 / File does not exist\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查不存在的文件 / Check non-existent file</span></div>
+<div class="line"><span class="keywordtype">bool</span> exists = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a>(<span class="stringliteral">&quot;/tmp/nonexistent.file&quot;</span>);</div>
+<div class="line"><span class="comment">// exists 将是 false / exists will be false</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在处理文件前检查其存在性 / Check existence before processing</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a>(<span class="stringliteral">&quot;data.txt&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 处理文件 / Process file</span></div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a46034cf680e496550ad944f62ba49a64"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">toolbox::file::file_exists</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto file_exists(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查指定路径是否存在文件 / Check if a file exists at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a85dd8c020456e11f9e8217aa3941216e" name="a85dd8c020456e11f9e8217aa3941216e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85dd8c020456e11f9e8217aa3941216e">&#9670;&#160;</a></span>get_absolute_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_absolute_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取文件或目录的绝对路径 / Get the absolute path of a file or directory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要转换为绝对路径的路径 / The path to convert to absolute </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path 绝对路径 / The absolute path</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取相对路径的绝对路径 / Get absolute path of relative path</span></div>
+<div class="line"><span class="keyword">auto</span> abs_path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">get_absolute_path</a>(<span class="stringliteral">&quot;relative/path&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取当前目录的绝对路径 / Get absolute path of current directory</span></div>
+<div class="line"><span class="keyword">auto</span> current_dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">get_absolute_path</a>(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取上级目录文件的绝对路径 / Get absolute path of file in parent directory</span></div>
+<div class="line"><span class="keyword">auto</span> parent_file = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">get_absolute_path</a>(<span class="stringliteral">&quot;../config.json&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a85dd8c020456e11f9e8217aa3941216e"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">toolbox::file::get_absolute_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_absolute_path(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取文件或目录的绝对路径 / Get the absolute path of a file or directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ad3979fb549eb4b46b46c71b829bab0c1" name="ad3979fb549eb4b46b46c71b829bab0c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3979fb549eb4b46b46c71b829bab0c1">&#9670;&#160;</a></span>get_creation_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_creation_time </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取文件的创建时间 / Get the creation time of a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>文件的创建时间 / The creation time of the file </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果文件不存在或无法访问 / if the file doesn't exist or can't be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取文件的创建时间 / Get creation time of a file</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> creation_time = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">get_creation_time</a>(<span class="stringliteral">&quot;/path/to/file.txt&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件创建于: / File created at: &quot;</span> &lt;&lt; creation_time &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 比较两个文件的创建时间 / Compare creation times of two files</span></div>
+<div class="line"><span class="keyword">auto</span> time1 = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">get_creation_time</a>(<span class="stringliteral">&quot;file1.txt&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> time2 = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">get_creation_time</a>(<span class="stringliteral">&quot;file2.txt&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (time1 &lt; time2) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;file1.txt创建较早 / file1.txt is older\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ad3979fb549eb4b46b46c71b829bab0c1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">toolbox::file::get_creation_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_creation_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的创建时间 / Get the creation time of a file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a18c5527a6ca0799d2bf7141f88fdf8ce" name="a18c5527a6ca0799d2bf7141f88fdf8ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18c5527a6ca0799d2bf7141f88fdf8ce">&#9670;&#160;</a></span>get_current_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_current_directory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前工作目录 / Get the current working directory </p>
+<dl class="section return"><dt>Returns</dt><dd>当前工作目录的文件系统路径 / The current working directory as a filesystem path</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 打印当前目录 / Print current directory</span></div>
+<div class="line"><span class="keyword">auto</span> current_dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">get_current_directory</a>();</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;当前目录 / Current directory: &quot;</span> &lt;&lt; current_dir &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 更改并获取当前目录 / Change and get current directory</span></div>
+<div class="line">std::filesystem::current_path(<span class="stringliteral">&quot;/tmp&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">get_current_directory</a>();  <span class="comment">// 返回 &quot;/tmp&quot; / Returns &quot;/tmp&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 保存并恢复工作目录 / Save and restore working directory</span></div>
+<div class="line"><span class="keyword">auto</span> original_dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">get_current_directory</a>();</div>
+<div class="line"><span class="comment">// 执行一些操作 / Do some operations</span></div>
+<div class="line">std::filesystem::current_path(original_dir);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a18c5527a6ca0799d2bf7141f88fdf8ce"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">toolbox::file::get_current_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_current_directory() -&gt; std::filesystem::path</div><div class="ttdoc">获取当前工作目录 / Get the current working directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab446410f8d2e28ef4709e79c6f3192c9" name="ab446410f8d2e28ef4709e79c6f3192c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab446410f8d2e28ef4709e79c6f3192c9">&#9670;&#160;</a></span>get_current_working_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_current_working_directory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取当前工作目录 / Get the current working directory </p>
+<dl class="section return"><dt>Returns</dt><dd>当前工作目录路径 / The current working directory as std::filesystem::path </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果无法确定当前目录 / if the current directory cannot be determined</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 打印当前工作目录 / Print current working directory</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> cwd = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">get_current_working_directory</a>();</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;当前目录: / Current directory: &quot;</span> &lt;&lt; cwd &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 保存并恢复工作目录 / Save and restore working directory</span></div>
+<div class="line"><span class="keyword">auto</span> original_path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">get_current_working_directory</a>();</div>
+<div class="line"><span class="comment">// 更改目录 / Change directory</span></div>
+<div class="line">std::filesystem::current_path(<span class="stringliteral">&quot;/tmp&quot;</span>);</div>
+<div class="line"><span class="comment">// 恢复原始目录 / Restore original directory</span></div>
+<div class="line">std::filesystem::current_path(original_path);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab446410f8d2e28ef4709e79c6f3192c9"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">toolbox::file::get_current_working_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_current_working_directory() -&gt; std::filesystem::path</div><div class="ttdoc">获取当前工作目录 / Get the current working directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ac2b9f2a5b7df4bfb3e2afc92486f02fc" name="ac2b9f2a5b7df4bfb3e2afc92486f02fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2b9f2a5b7df4bfb3e2afc92486f02fc">&#9670;&#160;</a></span>get_file_extension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_file_extension </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取路径的文件扩展名 / Get the file extension of a path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要提取扩展名的路径 / The path to extract the extension from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 包含点号的文件扩展名 / The file extension including the dot</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 从文件路径获取扩展名 / Get extension from file path</span></div>
+<div class="line"><span class="keyword">auto</span> ext = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">get_file_extension</a>(<span class="stringliteral">&quot;/path/to/document.pdf&quot;</span>);</div>
+<div class="line"><span class="comment">// ext 将是 &quot;.pdf&quot; / ext will be &quot;.pdf&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 从文件名获取扩展名 / Get extension from file name</span></div>
+<div class="line"><span class="keyword">auto</span> ext2 = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">get_file_extension</a>(<span class="stringliteral">&quot;archive.tar.gz&quot;</span>);</div>
+<div class="line"><span class="comment">// ext2 将是 &quot;.gz&quot; / ext2 will be &quot;.gz&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取无扩展名文件的扩展名 / Get extension of file without extension</span></div>
+<div class="line"><span class="keyword">auto</span> no_ext = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">get_file_extension</a>(<span class="stringliteral">&quot;README&quot;</span>);</div>
+<div class="line"><span class="comment">// no_ext 将是空字符串 / no_ext will be empty string</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ac2b9f2a5b7df4bfb3e2afc92486f02fc"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_extension(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">获取路径的文件扩展名 / Get the file extension of a path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a94d0f2a1bed7286d6779f57c7a016781" name="a94d0f2a1bed7286d6779f57c7a016781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d0f2a1bed7286d6779f57c7a016781">&#9670;&#160;</a></span>get_file_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_file_name </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取路径的文件名部分 / Get the file name component of a path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要提取文件名的路径 / The path to extract the file name from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 文件名部分 / The file name component</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 从完整路径获取文件名 / Get file name from full path</span></div>
+<div class="line"><span class="keyword">auto</span> name = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">get_file_name</a>(<span class="stringliteral">&quot;/usr/local/bin/gcc&quot;</span>);</div>
+<div class="line"><span class="comment">// name 将是 &quot;gcc&quot; / name will be &quot;gcc&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 从相对路径获取文件名 / Get file name from relative path</span></div>
+<div class="line"><span class="keyword">auto</span> rel_name = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">get_file_name</a>(<span class="stringliteral">&quot;docs/readme.txt&quot;</span>);</div>
+<div class="line"><span class="comment">// rel_name 将是 &quot;readme.txt&quot; / rel_name will be &quot;readme.txt&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取带多个扩展名的文件名 / Get file name with multiple extensions</span></div>
+<div class="line"><span class="keyword">auto</span> multi_ext = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">get_file_name</a>(<span class="stringliteral">&quot;archive.tar.gz&quot;</span>);</div>
+<div class="line"><span class="comment">// multi_ext 将是 &quot;archive.tar.gz&quot; / multi_ext will be &quot;archive.tar.gz&quot;</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a94d0f2a1bed7286d6779f57c7a016781"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">toolbox::file::get_file_name</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_name(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">获取路径的文件名部分 / Get the file name component of a path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a1137011f0ab9390578e201f5df1a5d4c" name="a1137011f0ab9390578e201f5df1a5d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1137011f0ab9390578e201f5df1a5d4c">&#9670;&#160;</a></span>get_file_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_file_size </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::size_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取文件的字节大小 / Get the size of a file in bytes </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>文件的路径 / The path to the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::size_t 文件的字节大小 / The size of the file in bytes </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果文件不存在或无法访问 / if the file doesn't exist or can't be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取现有文件的大小 / Get size of existing file</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> size = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">get_file_size</a>(<span class="stringliteral">&quot;/path/to/file.txt&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件大小 / File size: &quot;</span> &lt;&lt; size &lt;&lt; <span class="stringliteral">&quot; bytes\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误 / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取大文件的大小 / Get size of a large file</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> large_size = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">get_file_size</a>(<span class="stringliteral">&quot;/path/to/large.iso&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;大文件大小 / Large file size: &quot;</span> &lt;&lt; large_size &lt;&lt; <span class="stringliteral">&quot;</span></div>
+<div class="line"><span class="stringliteral">bytes\n&quot;</span>; } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) { std::cerr &lt;&lt;</div>
+<div class="line"><span class="stringliteral">&quot;错误 / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a1137011f0ab9390578e201f5df1a5d4c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">toolbox::file::get_file_size</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_size(const std::filesystem::path &amp;path) -&gt; std::size_t</div><div class="ttdoc">获取文件的字节大小 / Get the size of a file in bytes</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a3833d3e8d3e54e2dadd40cbdbe412d3e" name="a3833d3e8d3e54e2dadd40cbdbe412d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3833d3e8d3e54e2dadd40cbdbe412d3e">&#9670;&#160;</a></span>get_last_access_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_last_access_time </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取文件的最后访问时间 / Get the last access time of a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>文件的最后访问时间 / The last access time as file_time_type </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果文件不存在或无法访问 / if the file doesn't exist or can't be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取文件的最后访问时间 / Get last access time of a file</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> access_time = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">get_last_access_time</a>(<span class="stringliteral">&quot;/path/to/file.txt&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;最后访问时间: / Last accessed: &quot;</span> &lt;&lt; access_time &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查文件是否最近被访问 / Check if file was recently accessed</span></div>
+<div class="line"><span class="keyword">auto</span> now = std::filesystem::file_time_type::clock::now();</div>
+<div class="line"><span class="keyword">auto</span> last_access = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">get_last_access_time</a>(<span class="stringliteral">&quot;data.log&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> ((now - last_access).count() &gt; 86400) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件超过24小时未访问 / File not accessed in 24 hours\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3833d3e8d3e54e2dadd40cbdbe412d3e"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">toolbox::file::get_last_access_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_last_access_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的最后访问时间 / Get the last access time of a file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a98028c1a5c72cc4c4b8b4c0f9e6d4af6" name="a98028c1a5c72cc4c4b8b4c0f9e6d4af6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">&#9670;&#160;</a></span>get_last_write_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_last_write_time </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取文件的最后修改时间 / Get the last write time of a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>文件的最后修改时间 / The last write time as file_time_type </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果文件不存在或无法访问 / if the file doesn't exist or can't be accessed</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取文件的最后修改时间 / Get last modification time of a file</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> write_time = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">get_last_write_time</a>(<span class="stringliteral">&quot;/path/to/file.txt&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;最后修改时间: / Last modified: &quot;</span> &lt;&lt; write_time &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查文件是否需要更新 / Check if file needs update</span></div>
+<div class="line"><span class="keyword">auto</span> cache_time = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">get_last_write_time</a>(<span class="stringliteral">&quot;cache.dat&quot;</span>);</div>
+<div class="line"><span class="keyword">auto</span> source_time = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">get_last_write_time</a>(<span class="stringliteral">&quot;source.dat&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (cache_time &lt; source_time) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;缓存需要更新 / Cache needs update\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">toolbox::file::get_last_write_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_last_write_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的最后修改时间 / Get the last write time of a file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab2785348e22ba0c2a203ccca4890aa00" name="ab2785348e22ba0c2a203ccca4890aa00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2785348e22ba0c2a203ccca4890aa00">&#9670;&#160;</a></span>get_parent_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_parent_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取路径的父目录 / Get the parent directory of a path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要获取父目录的路径 / The path to get the parent of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path 父目录路径 / The parent directory path</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取文件的父目录 / Get parent directory of file</span></div>
+<div class="line"><span class="keyword">auto</span> parent = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">get_parent_path</a>(<span class="stringliteral">&quot;/usr/local/bin/gcc&quot;</span>);</div>
+<div class="line"><span class="comment">// parent 将是 &quot;/usr/local/bin&quot; / parent will be &quot;/usr/local/bin&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取目录的父目录 / Get parent directory of directory</span></div>
+<div class="line"><span class="keyword">auto</span> parent_dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">get_parent_path</a>(<span class="stringliteral">&quot;/usr/local/bin/&quot;</span>);</div>
+<div class="line"><span class="comment">// parent_dir 将是 &quot;/usr/local&quot; / parent_dir will be &quot;/usr/local&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取根目录的父目录 / Get parent of root directory</span></div>
+<div class="line"><span class="keyword">auto</span> root_parent = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">get_parent_path</a>(<span class="stringliteral">&quot;/&quot;</span>);</div>
+<div class="line"><span class="comment">// root_parent 将是 &quot;/&quot; / root_parent will be &quot;/&quot;</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab2785348e22ba0c2a203ccca4890aa00"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">toolbox::file::get_parent_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_parent_path(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取路径的父目录 / Get the parent directory of a path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa193ebd895ae2c8602885121f1e8c72d" name="aa193ebd895ae2c8602885121f1e8c72d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa193ebd895ae2c8602885121f1e8c72d">&#9670;&#160;</a></span>get_relative_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_relative_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>base</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取两个路径之间的相对路径 / Get the relative path between two paths </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>目标路径 / The target path </td></tr>
+    <tr><td class="paramname">base</td><td>计算相对路径的基准路径 / The base path to compute relative path from </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path 从基准路径到目标路径的相对路径 / The relative path from base to target</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取两个目录之间的相对路径 / Get relative path between two directories</span></div>
+<div class="line"><span class="keyword">auto</span> rel_path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">get_relative_path</a>(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>, <span class="stringliteral">&quot;/usr&quot;</span>);</div>
+<div class="line"><span class="comment">// rel_path 将是 &quot;local/bin&quot; / rel_path will be &quot;local/bin&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取文件之间的相对路径 / Get relative path between files</span></div>
+<div class="line"><span class="keyword">auto</span> file_rel = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">get_relative_path</a>(<span class="stringliteral">&quot;/a/b/c.txt&quot;</span>, <span class="stringliteral">&quot;/a/d/e.txt&quot;</span>);</div>
+<div class="line"><span class="comment">// file_rel 将是 &quot;../b/c.txt&quot; / file_rel will be &quot;../b/c.txt&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取跨驱动器的相对路径 / Get relative path across drives</span></div>
+<div class="line"><span class="keyword">auto</span> cross_drive = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">get_relative_path</a>(<span class="stringliteral">&quot;D:/data&quot;</span>, <span class="stringliteral">&quot;C:/Program Files&quot;</span>);</div>
+<div class="line"><span class="comment">// 返回完整路径 / Returns full path</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa193ebd895ae2c8602885121f1e8c72d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">toolbox::file::get_relative_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_relative_path(const std::filesystem::path &amp;path, const std::filesystem::path &amp;base) -&gt; std::filesystem::path</div><div class="ttdoc">获取两个路径之间的相对路径 / Get the relative path between two paths</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a5edf9150543eb7a956ea0eee18c87f20" name="a5edf9150543eb7a956ea0eee18c87f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5edf9150543eb7a956ea0eee18c87f20">&#9670;&#160;</a></span>get_symlink_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::get_symlink_target </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取符号链接的目标路径 / Get the target of a symbolic link </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>符号链接的路径 / The path to the symbolic link </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>目标路径 / The target path as std::filesystem::path </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果路径不是符号链接 / if the path is not a symbolic link</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 获取符号链接的目标 / Get symlink target</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> target = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">get_symlink_target</a>(<span class="stringliteral">&quot;/path/to/symlink&quot;</span>);</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;符号链接指向: / Symlink points to: &quot;</span> &lt;&lt; target &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查符号链接是否指向有效文件 / Check if symlink points to valid file</span></div>
+<div class="line"><span class="keyword">auto</span> target = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">get_symlink_target</a>(<span class="stringliteral">&quot;link.txt&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a>(target)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;链接目标存在 / Link target exists\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a5edf9150543eb7a956ea0eee18c87f20"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">toolbox::file::get_symlink_target</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_symlink_target(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取符号链接的目标路径 / Get the target of a symbolic link</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a71e1f7c73c64935f5c3c1cdb0003da67" name="a71e1f7c73c64935f5c3c1cdb0003da67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71e1f7c73c64935f5c3c1cdb0003da67">&#9670;&#160;</a></span>is_block_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_block_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为块设备 / Check if a path is a block device </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是块设备返回true，否则返回false / True if the path is a block device, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为块设备 / Check if a path is a block device</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">is_block_file</a>(<span class="stringliteral">&quot;/dev/sda1&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;检测到块设备 / Block device detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是块设备 / Not a block device\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查磁盘分区 / Check disk partition</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_disk = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">is_block_file</a>(<span class="stringliteral">&quot;/dev/nvme0n1p1&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a71e1f7c73c64935f5c3c1cdb0003da67"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">toolbox::file::is_block_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_block_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为块设备 / Check if a path is a block device</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab07f7f5501955c1019ba3536ba0973e1" name="ab07f7f5501955c1019ba3536ba0973e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab07f7f5501955c1019ba3536ba0973e1">&#9670;&#160;</a></span>is_character_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_character_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为字符设备 / Check if a path is a character device </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是字符设备返回true，否则返回false / True if the path is a character device, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为字符设备 / Check if a path is a character device</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">is_character_file</a>(<span class="stringliteral">&quot;/dev/tty&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;检测到字符设备 / Character device detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是字符设备 / Not a character device\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查串口设备 / Check serial port device</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_serial = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">is_character_file</a>(<span class="stringliteral">&quot;/dev/ttyUSB0&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab07f7f5501955c1019ba3536ba0973e1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">toolbox::file::is_character_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_character_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为字符设备 / Check if a path is a character device</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa25c437b3e41a9a5ef2860f9b7c2012f" name="aa25c437b3e41a9a5ef2860f9b7c2012f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa25c437b3e41a9a5ef2860f9b7c2012f">&#9670;&#160;</a></span>is_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为目录 / Check if a path is a directory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是目录返回true，否则返回false / True if the path is a directory, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查目录是否存在 / Check if a directory exists</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">is_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;是目录 / Directory exists\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是目录 / Not a directory\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在遍历目录前检查 / Check before traversing directory</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">is_directory</a>(<span class="stringliteral">&quot;/usr/local&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 遍历目录 / Traverse directory</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查临时目录 / Check temporary directory</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_dir = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">is_directory</a>(<span class="stringliteral">&quot;/tmp&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa25c437b3e41a9a5ef2860f9b7c2012f"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">toolbox::file::is_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为目录 / Check if a path is a directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a72b627127638d1708e29fb365e4c1f1c" name="a72b627127638d1708e29fb365e4c1f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72b627127638d1708e29fb365e4c1f1c">&#9670;&#160;</a></span>is_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_empty </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为空 / Check if a path is empty </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径为空返回true，否则返回false / True if the path is empty, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查目录是否为空 / Check if a directory is empty</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">is_empty</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录为空 / Directory is empty\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;目录不为空 / Directory is not empty\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查文件是否为空 / Check if a file is empty</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_empty_file = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">is_empty</a>(<span class="stringliteral">&quot;data.txt&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a72b627127638d1708e29fb365e4c1f1c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">toolbox::file::is_empty</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_empty(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为空 / Check if a path is empty</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a18d000663dbb8b2ddcbb88c613cdac2b" name="a18d000663dbb8b2ddcbb88c613cdac2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d000663dbb8b2ddcbb88c613cdac2b">&#9670;&#160;</a></span>is_fifo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_fifo </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为FIFO(命名管道) / Check if a path is a FIFO (named pipe) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是FIFO返回true，否则返回false / True if the path is a FIFO, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为FIFO / Check if a path is a FIFO</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">is_fifo</a>(<span class="stringliteral">&quot;/path/to/fifo&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;检测到FIFO / FIFO detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是FIFO / Not a FIFO\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在打开FIFO前检查 / Check before opening FIFO</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">is_fifo</a>(<span class="stringliteral">&quot;/tmp/my_pipe&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 处理FIFO / Handle FIFO</span></div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a18d000663dbb8b2ddcbb88c613cdac2b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">toolbox::file::is_fifo</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_fifo(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为FIFO(命名管道) / Check if a path is a FIFO (named pipe)</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a5baf94bae1c814008785e16d5925a93d" name="a5baf94bae1c814008785e16d5925a93d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5baf94bae1c814008785e16d5925a93d">&#9670;&#160;</a></span>is_other()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_other </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为未知类型 / Check if a path is of an unknown type </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是未知类型返回true，否则返回false / True if the path is of an unknown type, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为未知类型 / Check if a path is of unknown type</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">is_other</a>(<span class="stringliteral">&quot;/path/to/unknown&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;检测到未知文件类型 / Unknown file type detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;文件类型已知 / File type is known\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在处理特殊文件前检查 / Check before handling special files</span></div>
+<div class="line"><span class="keywordflow">if</span> (!<a class="code hl_function" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">is_other</a>(<span class="stringliteral">&quot;/dev/custom_device&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 处理已知类型文件 / Handle known file type</span></div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a5baf94bae1c814008785e16d5925a93d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">toolbox::file::is_other</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_other(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为未知类型 / Check if a path is of an unknown type</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a43823bbfcad90d86c042e3627791ffaa" name="a43823bbfcad90d86c042e3627791ffaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43823bbfcad90d86c042e3627791ffaa">&#9670;&#160;</a></span>is_regular_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_regular_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为常规文件 / Check if a path is a regular file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是常规文件返回true，否则返回false / True if the path is a regular file, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查文件是否存在且为常规文件 / Check if a file exists and is regular</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">is_regular_file</a>(<span class="stringliteral">&quot;/path/to/file.txt&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;是常规文件 / Regular file exists\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是常规文件 / Not a regular file\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在读取文件前检查 / Check before reading file</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">is_regular_file</a>(<span class="stringliteral">&quot;config.json&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 读取文件 / Read file</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 区分文件和符号链接 / Distinguish between file and symlink</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_file = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">is_regular_file</a>(<span class="stringliteral">&quot;/usr/bin/python&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a43823bbfcad90d86c042e3627791ffaa"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">toolbox::file::is_regular_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_regular_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为常规文件 / Check if a path is a regular file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a9ac1ee2d33be226474ce83fb1d5df0c4" name="a9ac1ee2d33be226474ce83fb1d5df0c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ac1ee2d33be226474ce83fb1d5df0c4">&#9670;&#160;</a></span>is_socket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_socket </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为套接字 / Check if a path is a socket </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是套接字返回true，否则返回false / True if the path is a socket, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为套接字 / Check if a path is a socket</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">is_socket</a>(<span class="stringliteral">&quot;/path/to/socket&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;检测到套接字 / Socket detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是套接字 / Not a socket\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查Unix域套接字 / Check Unix domain socket</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_sock = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">is_socket</a>(<span class="stringliteral">&quot;/tmp/my.sock&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a9ac1ee2d33be226474ce83fb1d5df0c4"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">toolbox::file::is_socket</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_socket(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为套接字 / Check if a path is a socket</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aebd2ce80a8b6a1e94b58b9b7ab0dc6a8" name="aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">&#9670;&#160;</a></span>is_symlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::is_symlink </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查路径是否为符号链接 / Check if a path is a symbolic link </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的路径 / The path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果路径是符号链接返回true，否则返回false / True if the path is a symbolic link, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查路径是否为符号链接 / Check if a path is a symlink</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">is_symlink</a>(<span class="stringliteral">&quot;/path/to/symlink&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;是符号链接 / Symbolic link detected\n&quot;</span>;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;不是符号链接 / Not a symbolic link\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查Python可执行文件 / Check Python executable</span></div>
+<div class="line"><span class="keywordtype">bool</span> is_link = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">is_symlink</a>(<span class="stringliteral">&quot;/usr/bin/python&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在跟随链接前检查 / Check before following link</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">is_symlink</a>(<span class="stringliteral">&quot;link.txt&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// 处理符号链接 / Handle symbolic link</span></div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">toolbox::file::is_symlink</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_symlink(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为符号链接 / Check if a path is a symbolic link</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a3f5444c60648ca97bfa4b21c0b7dc09b" name="a3f5444c60648ca97bfa4b21c0b7dc09b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f5444c60648ca97bfa4b21c0b7dc09b">&#9670;&#160;</a></span>move_file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::move_file </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>dst</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>移动文件 / Move a file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td>源文件 / The source file </td></tr>
+    <tr><td class="paramname">dst</td><td>目标文件 / The destination file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果文件移动成功则返回true / True if the file was moved successfully</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 移动文件到新位置 / Move file to new location</span></div>
+<div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">move_file</a>(<span class="stringliteral">&quot;/tmp/temp.txt&quot;</span>, <span class="stringliteral">&quot;/home/user/final.txt&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;文件移动成功 / File moved successfully\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 重命名文件 / Rename file</span></div>
+<div class="line"><span class="keywordtype">bool</span> renamed = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">move_file</a>(<span class="stringliteral">&quot;old_name.txt&quot;</span>, <span class="stringliteral">&quot;new_name.txt&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3f5444c60648ca97bfa4b21c0b7dc09b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">toolbox::file::move_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto move_file(const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</div><div class="ttdoc">移动文件 / Move a file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa5ae9f96e511dc7feafcb507ad1f6c31" name="aa5ae9f96e511dc7feafcb507ad1f6c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5ae9f96e511dc7feafcb507ad1f6c31">&#9670;&#160;</a></span>path_to_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::path_to_string </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将文件系统路径转换为字符串 / Convert a filesystem path to a string </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要转换为字符串的路径 / The path to convert to a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string 路径的字符串表示 / The string representation of the path</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 基本用法 / Basic usage</span></div>
+<div class="line">std::filesystem::path p = <span class="stringliteral">&quot;/usr/local/bin&quot;</span>;</div>
+<div class="line"><span class="keyword">auto</span> str = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">path_to_string</a>(p);  <span class="comment">// 返回 &quot;/usr/local/bin&quot; / Returns</span></div>
+<div class="line"><span class="stringliteral">&quot;/usr/local/bin&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Windows路径转换 / Windows path conversion</span></div>
+<div class="line">std::filesystem::path win_p = <span class="stringliteral">&quot;C:\\Program Files\\MyApp&quot;</span>;</div>
+<div class="line"><span class="keyword">auto</span> win_str = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">path_to_string</a>(win_p);  <span class="comment">// 返回 &quot;C:\\Program Files\\MyApp&quot; /</span></div>
+<div class="line">Returns <span class="stringliteral">&quot;C:\\Program Files\\MyApp&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 相对路径转换 / Relative path conversion</span></div>
+<div class="line">std::filesystem::path rel_p = <span class="stringliteral">&quot;../data/config.json&quot;</span>;</div>
+<div class="line"><span class="keyword">auto</span> rel_str = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">path_to_string</a>(rel_p);  <span class="comment">// 返回 &quot;../data/config.json&quot; /</span></div>
+<div class="line">Returns <span class="stringliteral">&quot;../data/config.json&quot;</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa5ae9f96e511dc7feafcb507ad1f6c31"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">toolbox::file::path_to_string</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto path_to_string(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">将文件系统路径转换为字符串 / Convert a filesystem path to a string</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ae9e38d49fe1aa7ebeef6139c908e5f15" name="ae9e38d49fe1aa7ebeef6139c908e5f15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e38d49fe1aa7ebeef6139c908e5f15">&#9670;&#160;</a></span>path_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::path_type </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::filesystem::file_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>获取指定路径的文件系统对象类型 / Get the type of the filesystem object at the specified path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要检查的文件系统路径 / The filesystem path to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>文件系统对象的类型（文件、目录等） / The type of the filesystem object (file, directory, etc.)</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 检查文件类型 / Check type of a file</span></div>
+<div class="line"><span class="keyword">auto</span> type = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">path_type</a>(<span class="stringliteral">&quot;/etc/passwd&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (type == std::filesystem::file_type::regular) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;常规文件 / Regular file\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查目录类型 / Check type of a directory</span></div>
+<div class="line"><span class="keyword">auto</span> dir_type = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">path_type</a>(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (dir_type == std::filesystem::file_type::directory) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;目录 / Directory\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查符号链接 / Check symbolic link</span></div>
+<div class="line"><span class="keyword">auto</span> link_type = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">path_type</a>(<span class="stringliteral">&quot;/usr/bin/python&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (link_type == std::filesystem::file_type::symlink) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;符号链接 / Symbolic link\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ae9e38d49fe1aa7ebeef6139c908e5f15"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">toolbox::file::path_type</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto path_type(const std::filesystem::path &amp;path) -&gt; std::filesystem::file_type</div><div class="ttdoc">获取指定路径的文件系统对象类型 / Get the type of the filesystem object at the specified path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a131b4596d21d7af9c3a20625c2b84f7b" name="a131b4596d21d7af9c3a20625c2b84f7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a131b4596d21d7af9c3a20625c2b84f7b">&#9670;&#160;</a></span>recursive_traverse_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::recursive_traverse_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::vector&lt; std::filesystem::path &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>递归遍历目录 / Recursively traverse a directory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要遍历的路径 / The path to traverse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>目录及其子目录中的路径向量 / A vector of paths in the directory and its subdirectories </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果路径不是目录 / if the path is not a directory</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 递归列出目录中的所有文件 / Recursively list files in a directory</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> all_files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">recursive_traverse_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : all_files) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;找到文件: / Found file: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 查找特定扩展名的文件 / Find files with specific extension</span></div>
+<div class="line"><span class="keyword">auto</span> files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">recursive_traverse_directory</a>(<span class="stringliteral">&quot;/home/user&quot;</span>);</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : files) {</div>
+<div class="line">    <span class="keywordflow">if</span> (file.extension() == <span class="stringliteral">&quot;.txt&quot;</span>) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;找到文本文件: / Found text file: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a131b4596d21d7af9c3a20625c2b84f7b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">toolbox::file::recursive_traverse_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto recursive_traverse_directory(const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</div><div class="ttdoc">递归遍历目录 / Recursively traverse a directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a61389af42cef158903ec3cdd1487837d" name="a61389af42cef158903ec3cdd1487837d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61389af42cef158903ec3cdd1487837d">&#9670;&#160;</a></span>recursive_traverse_directory_files()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::recursive_traverse_directory_files </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>递归遍历目录并为每个文件调用回调函数 / Recursively traverse a directory and call a callback for each file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要遍历的路径 / The path to traverse </td></tr>
+    <tr><td class="paramname">callback</td><td>为每个文件调用的回调函数 / The callback to call for each file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果路径不是目录 / if the path is not a directory</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 递归处理每个文件 / Process each file recursively</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">recursive_traverse_directory_files</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>, [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;处理文件: / Processing: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    });</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 查找大文件 / Find large files</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">recursive_traverse_directory_files</a>(<span class="stringliteral">&quot;/home&quot;</span>, [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file) {</div>
+<div class="line">    <span class="keywordflow">if</span> (std::filesystem::file_size(file) &gt; 1024*1024) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;大文件: / Large file: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">});</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a61389af42cef158903ec3cdd1487837d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">toolbox::file::recursive_traverse_directory_files</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto recursive_traverse_directory_files(const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</div><div class="ttdoc">递归遍历目录并为每个文件调用回调函数 / Recursively traverse a directory and call a callback for each file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a60f6004279fd475e4d1951e177b46c69" name="a60f6004279fd475e4d1951e177b46c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60f6004279fd475e4d1951e177b46c69">&#9670;&#160;</a></span>string_to_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::string_to_path </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td> -&gt;  std::filesystem::path</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将字符串转换为文件系统路径 / Convert a string to a filesystem path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>要转换为路径的字符串 / The string to convert to a path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::filesystem::path 转换后的路径对象 / The converted path object</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 基本用法 / Basic usage</span></div>
+<div class="line"><span class="keyword">auto</span> path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">string_to_path</a>(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Windows路径转换 / Windows path conversion</span></div>
+<div class="line"><span class="keyword">auto</span> win_path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">string_to_path</a>(<span class="stringliteral">&quot;C:\\Program Files\\MyApp&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 相对路径转换 / Relative path conversion</span></div>
+<div class="line"><span class="keyword">auto</span> rel_path = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">string_to_path</a>(<span class="stringliteral">&quot;../data/config.json&quot;</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a60f6004279fd475e4d1951e177b46c69"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">toolbox::file::string_to_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto string_to_path(const std::string &amp;str) -&gt; std::filesystem::path</div><div class="ttdoc">将字符串转换为文件系统路径 / Convert a string to a filesystem path</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa4085a2e77b2b2c55e81b3161960c55d" name="aa4085a2e77b2b2c55e81b3161960c55d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4085a2e77b2b2c55e81b3161960c55d">&#9670;&#160;</a></span>traverse_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::traverse_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> -&gt;  std::vector&lt; std::filesystem::path &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>遍历目录 / Traverse a directory </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要遍历的路径 / The path to traverse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>目录中的路径向量 / A vector of paths in the directory </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果路径不是目录 / if the path is not a directory</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 列出目录中的文件 / List files in a directory</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <span class="keyword">auto</span> files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">traverse_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : files) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;找到文件: / Found file: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 统计目录中的文件数量 / Count files in directory</span></div>
+<div class="line"><span class="keyword">auto</span> files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">traverse_directory</a>(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>);</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;文件总数: / Total files: &quot;</span> &lt;&lt; files.size() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa4085a2e77b2b2c55e81b3161960c55d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">toolbox::file::traverse_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</div><div class="ttdoc">遍历目录 / Traverse a directory</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a77fa6ba4b9d31a41208fa4bf7b98ee0c" name="a77fa6ba4b9d31a41208fa4bf7b98ee0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77fa6ba4b9d31a41208fa4bf7b98ee0c">&#9670;&#160;</a></span>traverse_directory_files()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::traverse_directory_files </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  void</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>遍历目录并为每个文件调用回调函数 / Traverse a directory and call a callback for each file </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要遍历的路径 / The path to traverse </td></tr>
+    <tr><td class="paramname">callback</td><td>为每个文件调用的回调函数 / The callback to call for each file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::filesystem::filesystem_error</td><td>如果路径不是目录 / if the path is not a directory</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 处理目录中的每个文件 / Process each file in a directory</span></div>
+<div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    <a class="code hl_function" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">traverse_directory_files</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>, [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;处理文件: / Processing: &quot;</span> &lt;&lt; file &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line">    });</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::filesystem::filesystem_error&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;错误: / Error: &quot;</span> &lt;&lt; e.what() &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 统计文件大小 / Count file sizes</span></div>
+<div class="line">std::size_t total_size = 0;</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">traverse_directory_files</a>(<span class="stringliteral">&quot;/data&quot;</span>, [&amp;total_size](<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file) {</div>
+<div class="line">    total_size += std::filesystem::file_size(file);</div>
+<div class="line">});</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;总大小: / Total size: &quot;</span> &lt;&lt; total_size &lt;&lt; <span class="stringliteral">&quot; bytes\n&quot;</span>;</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a77fa6ba4b9d31a41208fa4bf7b98ee0c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">toolbox::file::traverse_directory_files</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto traverse_directory_files(const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</div><div class="ttdoc">遍历目录并为每个文件调用回调函数 / Traverse a directory and call a callback for each file</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1file.html">file</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

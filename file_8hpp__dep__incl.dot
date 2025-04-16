@@ -1,0 +1,27 @@
+digraph "src/include/cpp-toolbox/file/file.hpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/include/cpp-toolbox\l/file/file.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/include/cpp-toolbox\l/io/formats/base.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$io_2formats_2base_8hpp.html",tooltip=" "];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="src/include/cpp-toolbox\l/io/formats/pcd.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$pcd_8hpp.html",tooltip=" "];
+  Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="src/include/cpp-toolbox\l/types/minmax.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$minmax_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="src/include/cpp-toolbox\l/types/impl/minmax_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$minmax__impl_8hpp.html",tooltip=" "];
+  Node5 -> Node4 [id="edge5_Node000005_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node6 [id="edge6_Node000004_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="src/include/cpp-toolbox\l/types/point_utils.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__utils_8hpp.html",tooltip=" "];
+  Node2 -> Node7 [id="edge7_Node000002_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="src/include/cpp-toolbox\l/types/point.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point_8hpp.html",tooltip=" "];
+  Node7 -> Node5 [id="edge8_Node000007_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node8 [id="edge9_Node000007_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="src/include/cpp-toolbox\l/types/impl/point_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__impl_8hpp.html",tooltip=" "];
+  Node8 -> Node7 [id="edge10_Node000008_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node4 [id="edge11_Node000007_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 -> Node6 [id="edge12_Node000007_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

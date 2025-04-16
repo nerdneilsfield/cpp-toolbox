@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/base/object_pool.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('object__pool_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">object_pool.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="object__pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;queue&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// For potential exceptions if needed</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span>  <span class="comment">// Alternative storage</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1base.html">toolbox::base</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span>object_pool_t;  <span class="comment">// Forward declaration</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1_pool_deleter.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t&lt;T&gt;</a>* pool_ =</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keyword">nullptr</span>;  <span class="comment">// 指向对象池的非拥有指针/Non-owning pointer to the pool</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1_pool_deleter.html#a68dcde0408c7f633cdf81773f3896806">   42</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classtoolbox_1_1base_1_1_pool_deleter.html#a68dcde0408c7f633cdf81773f3896806">PoolDeleter</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t&lt;T&gt;</a>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      : pool_(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  }</div>
+</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1_pool_deleter.html#a85aa08132d5284793d3399919cb98bbe">   52</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1base_1_1_pool_deleter.html#a85aa08132d5284793d3399919cb98bbe">operator()</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">if</span> (pool_ &amp;&amp; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      pool_-&gt;<a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>);  <span class="comment">// 告诉池回收对象/Tell the pool to take it back</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <span class="comment">// 如果没有关联的池,执行默认删除/If no pool is associated, perform default</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="comment">// delete 处理在池外创建新对象或池过早销毁的情况/This handles cases where</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="comment">// acquire might create a new object outside the pool&#39;s direct management</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="comment">// or if the pool is destroyed early</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      <span class="keyword">delete</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="};">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html">   99</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>{</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">  107</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> = std::unique_ptr&lt;T, PoolDeleter&lt;T&gt;&gt;;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="foldopen" id="foldopen00117" data-start="{" data-end="}">
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">  117</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">object_pool_t</a>(<span class="keywordtype">size_t</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_size</a> = 0,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                         std::function&lt;<span class="keywordtype">void</span>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>&amp;)&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">resetter</a> = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      : reset_func_(std::<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">move</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">resetter</a>))</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a> = 0; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a> &lt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_size</a>; ++<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a>) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      pool_.push(std::make_unique&lt;T&gt;());</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  }</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="comment">// 为简单起见删除复制/移动操作/Deleted copy/move operations for simplicity</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#ade913fc522724ec24d9e670856c9f248">  127</a></span>  <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ade913fc522724ec24d9e670856c9f248">object_pool_t</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">  128</a></span>  <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#ad80f3c326e026fde449d11560d12c4ce">  129</a></span>  <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad80f3c326e026fde449d11560d12c4ce">object_pool_t</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#afdb43a1de388efb9ab4ab2ce04180f5e">  130</a></span>  <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#afdb43a1de388efb9ab4ab2ce04180f5e">operator=</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="}">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">  142</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">acquire</a>()</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    std::unique_ptr&lt;T&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a> = <span class="keyword">nullptr</span>;  <span class="comment">// 用于临时所有权的 unique_ptr/Use</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                                           <span class="comment">// unique_ptr for temporary ownership</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    {  <span class="comment">// 锁作用域/Lock scope</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      std::lock_guard&lt;std::mutex&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">lock</a>(mutex_);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      <span class="keywordflow">if</span> (!pool_.empty()) {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a> = std::move(pool_.front());  <span class="comment">// 从池中取出/Take from pool</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        pool_.pop();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>      }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    }  <span class="comment">// 在可能创建新对象前解锁互斥量/Unlock mutex before potentially creating</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>       <span class="comment">// a new object</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a>) {  <span class="comment">// 如果池为空/If pool was empty</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a> = std::make_unique&lt;T&gt;();  <span class="comment">// 创建新对象/Create a new one</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// 将对象包装在带自定义删除器的 unique_ptr 中返回/Return the object wrapped</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="comment">// in a unique_ptr with our custom deleter</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a>.<a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a>(), <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">PoolDeleter&lt;T&gt;</a>(<span class="keyword">this</span>));</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  }</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classtoolbox_1_1base_1_1object__pool__t.html#a6857aaca2124f8646392d423bc1a2f39">  176</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keywordflow">if</span> (!<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// 如果有重置函数则重置对象状态/Reset object state if a reset function is</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <span class="comment">// available</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">if</span> (reset_func_) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        reset_func_(*<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">e</a>) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="comment">// 记录错误?不要让重置器的异常破坏池/Log error? Don&#39;t let exceptions</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="comment">// from resetter break the pool</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="comment">// 考虑使用不使用此池的机制进行日志记录/Consider logging using a</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <span class="comment">// mechanism that doesn&#39;t use this pool</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">fprintf</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">stderr</a>, <span class="stringliteral">&quot;[ObjectPool] Exception during reset: %s\n&quot;</span>, <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">e</a>.what());</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="comment">// 决定是继续池化对象还是删除它/Decide whether to still pool the object</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <span class="comment">// or delete it 如果重置严重失败,删除可能更安全/Deleting might be safer</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="comment">// if reset failed critically</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="keyword">delete</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">fprintf</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">stderr</a>, <span class="stringliteral">&quot;[ObjectPool] Unknown exception during reset.\n&quot;</span>);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="keyword">delete</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    std::unique_ptr&lt;T&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>);  <span class="comment">// 重新包装原始指针以管理所有权/Re-wrap</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                                      <span class="comment">// raw pointer to manage ownership</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    {  <span class="comment">// 锁作用域/Lock scope</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      std::lock_guard&lt;std::mutex&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">lock</a>(mutex_);</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      pool_.push(std::move(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">obj_ptr</a>));  <span class="comment">// 将 unique_ptr 添加回池中/Add</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                       <span class="comment">// unique_ptr back to the pool</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  }</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt;<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>&gt;;  <span class="comment">// 允许删除器调用 release/Allow deleter to call</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>                                <span class="comment">// release</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  std::queue&lt;std::unique_ptr&lt;T&gt;&gt; pool_;  <span class="comment">// 对象池队列/Object pool queue</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keyword">mutable</span> std::mutex mutex_;  <span class="comment">// 用于线程安全的互斥量/Mutex for thread safety</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  std::function&lt;<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>&amp;)&gt; reset_func_;  <span class="comment">// 对象重置函数/Object reset function</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>};</div>
+</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>}  <span class="comment">// namespace toolbox::base</span></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1_pool_deleter_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1_pool_deleter.html">toolbox::base::PoolDeleter</a></div><div class="ttdef"><b>Definition</b> object_pool.hpp:32</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1_pool_deleter_html_a68dcde0408c7f633cdf81773f3896806"><div class="ttname"><a href="classtoolbox_1_1base_1_1_pool_deleter.html#a68dcde0408c7f633cdf81773f3896806">toolbox::base::PoolDeleter::PoolDeleter</a></div><div class="ttdeci">PoolDeleter(object_pool_t&lt; T &gt; *pool=nullptr)</div><div class="ttdoc">构造 PoolDeleter/Construct a PoolDeleter</div><div class="ttdef"><b>Definition</b> object_pool.hpp:42</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1_pool_deleter_html_a85aa08132d5284793d3399919cb98bbe"><div class="ttname"><a href="classtoolbox_1_1base_1_1_pool_deleter.html#a85aa08132d5284793d3399919cb98bbe">toolbox::base::PoolDeleter::operator()</a></div><div class="ttdeci">void operator()(T *ptr) const</div><div class="ttdoc">std::unique_ptr 调用此函数代替 delete/The function called by std::unique_ptr instead of delete</div><div class="ttdef"><b>Definition</b> object_pool.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a></div><div class="ttdef"><b>Definition</b> object_pool.hpp:100</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_a76ed5cc37a23b4b4c05e7035c844b44e"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">toolbox::base::object_pool_t::object_pool_t</a></div><div class="ttdeci">object_pool_t(size_t initial_size=0, std::function&lt; void(T &amp;)&gt; resetter=nullptr)</div><div class="ttdoc">构造对象池/Construct an object pool</div><div class="ttdef"><b>Definition</b> object_pool.hpp:117</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_a82c2e1d372a903ddb13ec40aec526c1b"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">toolbox::base::object_pool_t::operator=</a></div><div class="ttdeci">object_pool_t &amp; operator=(const object_pool_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ad760b438b3168f37bfe95d2bf16c1735"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">toolbox::base::object_pool_t::release</a></div><div class="ttdeci">void release(T *ptr)</div><div class="ttdoc">将对象释放回池中/Release an object back to the pool</div><div class="ttdef"><b>Definition</b> object_pool.hpp:176</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ad80f3c326e026fde449d11560d12c4ce"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ad80f3c326e026fde449d11560d12c4ce">toolbox::base::object_pool_t::object_pool_t</a></div><div class="ttdeci">object_pool_t(object_pool_t &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ade913fc522724ec24d9e670856c9f248"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ade913fc522724ec24d9e670856c9f248">toolbox::base::object_pool_t::object_pool_t</a></div><div class="ttdeci">object_pool_t(const object_pool_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_ae721bc932699daa4c5e521583b54eb5f"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">toolbox::base::object_pool_t::PooledObjectPtr</a></div><div class="ttdeci">std::unique_ptr&lt; T, PoolDeleter&lt; T &gt; &gt; PooledObjectPtr</div><div class="ttdoc">管理池化对象的 unique_ptr 的别名。当超出作用域时自动将对象返回池中/ Alias for a unique_ptr managing a pooled object....</div><div class="ttdef"><b>Definition</b> object_pool.hpp:107</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_aee1365b915dd94ff289623f8b8e3818f"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">toolbox::base::object_pool_t::acquire</a></div><div class="ttdeci">PooledObjectPtr acquire()</div><div class="ttdoc">从池中获取一个对象/Acquire an object from the pool</div><div class="ttdef"><b>Definition</b> object_pool.hpp:142</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_afdb43a1de388efb9ab4ab2ce04180f5e"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#afdb43a1de388efb9ab4ab2ce04180f5e">toolbox::base::object_pool_t::operator=</a></div><div class="ttdeci">object_pool_t &amp; operator=(object_pool_t &amp;&amp;)=delete</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html"><div class="ttname"><a href="namespacetoolbox_1_1base.html">toolbox::base</a></div><div class="ttdoc">提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_175064ea02679cf4c3a50b5407502295.html">base</a></li><li class="navelem"><a class="el" href="object__pool_8hpp.html">object_pool.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

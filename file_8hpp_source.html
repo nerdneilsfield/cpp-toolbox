@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/file/file.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('file_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">file.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="file_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="macro_8hpp.html">cpp-toolbox/macro.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html">   10</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1file.html">toolbox::file</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">   13</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a> = std::filesystem::file_time_type;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">   14</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">file_type</a> = std::filesystem::file_type;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">   32</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">string_to_path</a>(<span class="keyword">const</span> std::string&amp; str)</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">   57</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">path_to_string</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    -&gt; std::string;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">   85</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">get_file_size</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    -&gt; std::size_t;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">  105</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">get_absolute_path</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">  130</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">get_relative_path</a>(<span class="keyword">const</span> std::filesystem::path&amp; path,</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>                                          <span class="keyword">const</span> std::filesystem::path&amp; base)</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">  153</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">get_parent_path</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">  175</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">get_file_name</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    -&gt; std::string;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">  198</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">get_file_extension</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    -&gt; std::string;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">  217</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">copy_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; src,</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>                                  <span class="keyword">const</span> std::filesystem::path&amp; dst) -&gt; bool;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">  236</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">move_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; src,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                  <span class="keyword">const</span> std::filesystem::path&amp; dst) -&gt; bool;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">  263</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">delete_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">  290</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">file_exists</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">  316</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">create_directory</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    -&gt; bool;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">  344</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">directory_exists</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>    -&gt; bool;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">  371</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">delete_directory</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    -&gt; bool;</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">  394</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">get_current_directory</a>() -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">  423</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">path_type</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    -&gt; std::filesystem::file_type;</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">  449</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">is_regular_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>    -&gt; bool;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span> </div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">  475</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">is_directory</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span> </div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">  500</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">is_symlink</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span> </div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">  522</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">is_fifo</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span> </div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">  542</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">is_socket</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span> </div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">  562</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">is_block_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    -&gt; bool;</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">  583</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">is_character_file</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    -&gt; bool;</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span> </div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">  606</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">is_other</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">  626</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">is_empty</a>(<span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; bool;</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span> </div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">  652</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">get_creation_time</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    -&gt; <a class="code hl_typedef" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a>;</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">  679</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">get_last_access_time</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    -&gt; <a class="code hl_typedef" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a>;</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">  706</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">get_last_write_time</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>    -&gt; <a class="code hl_typedef" href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">file_time_type</a>;</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span> </div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">  732</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">get_symlink_target</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">  758</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">traverse_directory</a>(<span class="keyword">const</span> std::filesystem::path&amp; path)</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    -&gt; std::vector&lt;std::filesystem::path&gt;;</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span> </div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">  789</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">recursive_traverse_directory</a>(</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    <span class="keyword">const</span> std::filesystem::path&amp; path) -&gt; std::vector&lt;std::filesystem::path&gt;;</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span> </div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">  818</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">traverse_directory_files</a>(</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>    <span class="keyword">const</span> std::filesystem::path&amp; path,</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>    std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> std::filesystem::path&amp;)&gt;&amp; callback) -&gt; void;</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span> </div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">  848</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">recursive_traverse_directory_files</a>(</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>    <span class="keyword">const</span> std::filesystem::path&amp; path,</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    std::function&lt;<span class="keywordtype">void</span>(<span class="keyword">const</span> std::filesystem::path&amp;)&gt;&amp; callback) -&gt; void;</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">  876</a></span>CPP_TOOLBOX_EXPORT <span class="keyword">auto</span> <a class="code hl_function" href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">get_current_working_directory</a>()</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    -&gt; std::filesystem::path;</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span> </div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>}  <span class="comment">// namespace toolbox::file</span></div>
+</div>
+<div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html"><div class="ttname"><a href="namespacetoolbox_1_1file.html">toolbox::file</a></div><div class="ttdef"><b>Definition</b> file.hpp:11</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a1137011f0ab9390578e201f5df1a5d4c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a1137011f0ab9390578e201f5df1a5d4c">toolbox::file::get_file_size</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_size(const std::filesystem::path &amp;path) -&gt; std::size_t</div><div class="ttdoc">获取文件的字节大小 / Get the size of a file in bytes</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a131b4596d21d7af9c3a20625c2b84f7b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">toolbox::file::recursive_traverse_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto recursive_traverse_directory(const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</div><div class="ttdoc">递归遍历目录 / Recursively traverse a directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a18c5527a6ca0799d2bf7141f88fdf8ce"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce">toolbox::file::get_current_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_current_directory() -&gt; std::filesystem::path</div><div class="ttdoc">获取当前工作目录 / Get the current working directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a18d000663dbb8b2ddcbb88c613cdac2b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a18d000663dbb8b2ddcbb88c613cdac2b">toolbox::file::is_fifo</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_fifo(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为FIFO(命名管道) / Check if a path is a FIFO (named pipe)</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3833d3e8d3e54e2dadd40cbdbe412d3e"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3833d3e8d3e54e2dadd40cbdbe412d3e">toolbox::file::get_last_access_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_last_access_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的最后访问时间 / Get the last access time of a file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3f5444c60648ca97bfa4b21c0b7dc09b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b">toolbox::file::move_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto move_file(const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</div><div class="ttdoc">移动文件 / Move a file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a3f58adf72e4c7d32fa0d4b1c86eb6eb1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a3f58adf72e4c7d32fa0d4b1c86eb6eb1">toolbox::file::directory_exists</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto directory_exists(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查指定路径是否存在目录 / Check if a directory exists at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a433c83e6efcc1c9482e518a28dd47632"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a433c83e6efcc1c9482e518a28dd47632">toolbox::file::delete_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto delete_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">删除指定路径的目录 / Delete a directory at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a43823bbfcad90d86c042e3627791ffaa"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa">toolbox::file::is_regular_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_regular_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为常规文件 / Check if a path is a regular file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a46034cf680e496550ad944f62ba49a64"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64">toolbox::file::file_exists</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto file_exists(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查指定路径是否存在文件 / Check if a file exists at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a5baf94bae1c814008785e16d5925a93d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d">toolbox::file::is_other</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_other(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为未知类型 / Check if a path is of an unknown type</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a5edf9150543eb7a956ea0eee18c87f20"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a5edf9150543eb7a956ea0eee18c87f20">toolbox::file::get_symlink_target</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_symlink_target(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取符号链接的目标路径 / Get the target of a symbolic link</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a60f6004279fd475e4d1951e177b46c69"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69">toolbox::file::string_to_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto string_to_path(const std::string &amp;str) -&gt; std::filesystem::path</div><div class="ttdoc">将字符串转换为文件系统路径 / Convert a string to a filesystem path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a61389af42cef158903ec3cdd1487837d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a61389af42cef158903ec3cdd1487837d">toolbox::file::recursive_traverse_directory_files</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto recursive_traverse_directory_files(const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</div><div class="ttdoc">递归遍历目录并为每个文件调用回调函数 / Recursively traverse a directory and call a callback for each file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a71e1f7c73c64935f5c3c1cdb0003da67"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a71e1f7c73c64935f5c3c1cdb0003da67">toolbox::file::is_block_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_block_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为块设备 / Check if a path is a block device</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a72b627127638d1708e29fb365e4c1f1c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a72b627127638d1708e29fb365e4c1f1c">toolbox::file::is_empty</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_empty(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为空 / Check if a path is empty</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a77fa6ba4b9d31a41208fa4bf7b98ee0c"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a77fa6ba4b9d31a41208fa4bf7b98ee0c">toolbox::file::traverse_directory_files</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto traverse_directory_files(const std::filesystem::path &amp;path, std::function&lt; void(const std::filesystem::path &amp;)&gt; &amp;callback) -&gt; void</div><div class="ttdoc">遍历目录并为每个文件调用回调函数 / Traverse a directory and call a callback for each file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a85dd8c020456e11f9e8217aa3941216e"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e">toolbox::file::get_absolute_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_absolute_path(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取文件或目录的绝对路径 / Get the absolute path of a file or directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a94d0f2a1bed7286d6779f57c7a016781"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a94d0f2a1bed7286d6779f57c7a016781">toolbox::file::get_file_name</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_name(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">获取路径的文件名部分 / Get the file name component of a path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a98028c1a5c72cc4c4b8b4c0f9e6d4af6"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a98028c1a5c72cc4c4b8b4c0f9e6d4af6">toolbox::file::get_last_write_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_last_write_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的最后修改时间 / Get the last write time of a file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a9ac1ee2d33be226474ce83fb1d5df0c4"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4">toolbox::file::is_socket</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_socket(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为套接字 / Check if a path is a socket</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a9d370d4f448be574533574f643bc1298"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298">toolbox::file::file_time_type</a></div><div class="ttdeci">std::filesystem::file_time_type file_time_type</div><div class="ttdef"><b>Definition</b> file.hpp:13</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa193ebd895ae2c8602885121f1e8c72d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa193ebd895ae2c8602885121f1e8c72d">toolbox::file::get_relative_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_relative_path(const std::filesystem::path &amp;path, const std::filesystem::path &amp;base) -&gt; std::filesystem::path</div><div class="ttdoc">获取两个路径之间的相对路径 / Get the relative path between two paths</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa25c437b3e41a9a5ef2860f9b7c2012f"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f">toolbox::file::is_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为目录 / Check if a path is a directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa4085a2e77b2b2c55e81b3161960c55d"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">toolbox::file::traverse_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</div><div class="ttdoc">遍历目录 / Traverse a directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aa5ae9f96e511dc7feafcb507ad1f6c31"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31">toolbox::file::path_to_string</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto path_to_string(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">将文件系统路径转换为字符串 / Convert a filesystem path to a string</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aac210d89b1411dada1371a94f0b64ebd"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd">toolbox::file::copy_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto copy_file(const std::filesystem::path &amp;src, const std::filesystem::path &amp;dst) -&gt; bool</div><div class="ttdoc">复制文件 / Copy a file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab07f7f5501955c1019ba3536ba0973e1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1">toolbox::file::is_character_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_character_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为字符设备 / Check if a path is a character device</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab2785348e22ba0c2a203ccca4890aa00"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab2785348e22ba0c2a203ccca4890aa00">toolbox::file::get_parent_path</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_parent_path(const std::filesystem::path &amp;path) -&gt; std::filesystem::path</div><div class="ttdoc">获取路径的父目录 / Get the parent directory of a path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab446410f8d2e28ef4709e79c6f3192c9"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9">toolbox::file::get_current_working_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_current_working_directory() -&gt; std::filesystem::path</div><div class="ttdoc">获取当前工作目录 / Get the current working directory</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ab939fdda9a10c744810dcab68833b841"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ab939fdda9a10c744810dcab68833b841">toolbox::file::file_type</a></div><div class="ttdeci">std::filesystem::file_type file_type</div><div class="ttdef"><b>Definition</b> file.hpp:14</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ac2b9f2a5b7df4bfb3e2afc92486f02fc"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_extension(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">获取路径的文件扩展名 / Get the file extension of a path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ac6e643e4658fd230eced397b5b6adeb0"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0">toolbox::file::delete_file</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto delete_file(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">删除指定路径的文件 / Delete a file at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ad3979fb549eb4b46b46c71b829bab0c1"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1">toolbox::file::get_creation_time</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_creation_time(const std::filesystem::path &amp;path) -&gt; file_time_type</div><div class="ttdoc">获取文件的创建时间 / Get the creation time of a file</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ae4c9fa4b7d4d61845edf6f7270b597ab"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ae4c9fa4b7d4d61845edf6f7270b597ab">toolbox::file::create_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto create_directory(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">在指定路径创建目录 / Create a directory at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ae9e38d49fe1aa7ebeef6139c908e5f15"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15">toolbox::file::path_type</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto path_type(const std::filesystem::path &amp;path) -&gt; std::filesystem::file_type</div><div class="ttdoc">获取指定路径的文件系统对象类型 / Get the type of the filesystem object at the specified path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">toolbox::file::is_symlink</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_symlink(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为符号链接 / Check if a path is a symbolic link</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_b5aa90370c16f0962bf4137c01c04103.html">file</a></li><li class="navelem"><a class="el" href="file_8hpp.html">file.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

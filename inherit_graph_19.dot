@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="std::true_type",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge25_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::functional\l::detail::has_size\<\l T, std::void_t\< decltype\l(std::declval\< T \>().size())\> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1functional_1_1detail_1_1has__size_3_01_t_00_01std_1_1void__t_3_01decltype_07std431779fbfc2ce525a80568a6245b1d79.html",tooltip=" "];
+  Node0 -> Node2 [id="edge26_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::functional\l::detail::is_optional\l\< std::optional\< T \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1functional_1_1detail_1_1is__optional_3_01std_1_1optional_3_01_t_01_4_01_4.html",tooltip=" "];
+  Node0 -> Node3 [id="edge27_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="toolbox::logger::is\l_container\< T, std::\lvoid_t\< T::value_type,\l T::iterator, decltype\l(std::declval\< T \>().begin\l()), decltype(std::declval\l\< T \>().end())\> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1logger_1_1is__container_3_01_t_00_01std_1_1void__t_3_01_t_1_1value__type_00_01_1041f7af6953dcde600448a7d1be57a1.html",tooltip=" "];
+  Node0 -> Node4 [id="edge28_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="toolbox::traits::detail\l::has_type_impl\< T, void\l_t\< typename T::type \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1detail_1_1has__type__impl_3_01_t_00_01void__t_3_01typename_01_t_1_1type_01_4_01_4.html",tooltip="检查类型是否具有type成员(特化版本)/Check if type has a type member (specialization)"];
+  Node0 -> Node5 [id="edge29_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="toolbox::traits::has\l_size\< T, std::void_t\l\< decltype(std::declval\l\< T \>().size())\> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1has__size_3_01_t_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_ae1b1d65497178907f8aa92c18c8ee7d.html",tooltip=" "];
+  Node0 -> Node6 [id="edge30_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="toolbox::traits::is\l_callable\< T, std::void\l_t\< decltype(&T::operator())\> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__callable_3_01_t_00_01std_1_1void__t_3_01decltype_07_6_t_1_1operator_07_08_08_4_01_4.html",tooltip=" "];
+  Node0 -> Node7 [id="edge31_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="toolbox::utils::detail\l::is_optional\< std::optional\l\< U \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1is__optional_3_01std_1_1optional_3_01_u_01_4_01_4.html",tooltip=" "];
+}

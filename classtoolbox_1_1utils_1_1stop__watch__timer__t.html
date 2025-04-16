@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::utils::stop_watch_timer_t Class Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1utils_1_1stop__watch__timer__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1utils_1_1stop__watch__timer__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::utils::stop_watch_timer_t Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>A high-resolution stopwatch timer for measuring elapsed time.  
+ <a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="timer_8hpp_source.html">timer.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab869b3ea0d3f52a0589b848fb67c2a10" id="r_ab869b3ea0d3f52a0589b848fb67c2a10"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#ab869b3ea0d3f52a0589b848fb67c2a10">stop_watch_timer_t</a> (std::string name=&quot;default_timer&quot;)</td></tr>
+<tr class="memdesc:ab869b3ea0d3f52a0589b848fb67c2a10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html" title="A high-resolution stopwatch timer for measuring elapsed time.">stop_watch_timer_t</a> object.  <br /></td></tr>
+<tr class="separator:ab869b3ea0d3f52a0589b848fb67c2a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcc82e718432abb8d70fd26af4999a61" id="r_abcc82e718432abb8d70fd26af4999a61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#abcc82e718432abb8d70fd26af4999a61">set_name</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:abcc82e718432abb8d70fd26af4999a61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the name of the timer.  <br /></td></tr>
+<tr class="separator:abcc82e718432abb8d70fd26af4999a61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d1e2b7f98c31a20a980316f79cd7fdf" id="r_a6d1e2b7f98c31a20a980316f79cd7fdf"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a6d1e2b7f98c31a20a980316f79cd7fdf">get_name</a> () const -&gt; const std::string &amp;</td></tr>
+<tr class="memdesc:a6d1e2b7f98c31a20a980316f79cd7fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the timer.  <br /></td></tr>
+<tr class="separator:a6d1e2b7f98c31a20a980316f79cd7fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf71d3b113d638712ca9373f0d01c5fd" id="r_adf71d3b113d638712ca9373f0d01c5fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#adf71d3b113d638712ca9373f0d01c5fd">start</a> ()</td></tr>
+<tr class="memdesc:adf71d3b113d638712ca9373f0d01c5fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or resume the timer.  <br /></td></tr>
+<tr class="separator:adf71d3b113d638712ca9373f0d01c5fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dfddbc28505fdd2d4cd413daec64728" id="r_a9dfddbc28505fdd2d4cd413daec64728"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a9dfddbc28505fdd2d4cd413daec64728">stop</a> ()</td></tr>
+<tr class="memdesc:a9dfddbc28505fdd2d4cd413daec64728"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stop (pause) the timer and accumulate the duration.  <br /></td></tr>
+<tr class="separator:a9dfddbc28505fdd2d4cd413daec64728"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af18d3c15931cba7c7312c89c6a166f62" id="r_af18d3c15931cba7c7312c89c6a166f62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#af18d3c15931cba7c7312c89c6a166f62">reset</a> ()</td></tr>
+<tr class="memdesc:af18d3c15931cba7c7312c89c6a166f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the timer to zero.  <br /></td></tr>
+<tr class="separator:af18d3c15931cba7c7312c89c6a166f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0cae7d727ebd26ad2912e2c6c28cbe" id="r_a0c0cae7d727ebd26ad2912e2c6c28cbe"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a0c0cae7d727ebd26ad2912e2c6c28cbe">elapsed_time_ms</a> () const -&gt; double</td></tr>
+<tr class="memdesc:a0c0cae7d727ebd26ad2912e2c6c28cbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total elapsed time in milliseconds.  <br /></td></tr>
+<tr class="separator:a0c0cae7d727ebd26ad2912e2c6c28cbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba0a1f15bef0d2b71a2cc467b434ca6e" id="r_aba0a1f15bef0d2b71a2cc467b434ca6e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#aba0a1f15bef0d2b71a2cc467b434ca6e">elapsed_time</a> () const -&gt; double</td></tr>
+<tr class="memdesc:aba0a1f15bef0d2b71a2cc467b434ca6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total elapsed time in seconds.  <br /></td></tr>
+<tr class="separator:aba0a1f15bef0d2b71a2cc467b434ca6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07dc549398de34042a0e0429560140da" id="r_a07dc549398de34042a0e0429560140da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a07dc549398de34042a0e0429560140da">print_stats</a> () const</td></tr>
+<tr class="memdesc:a07dc549398de34042a0e0429560140da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the timer statistics to standard output.  <br /></td></tr>
+<tr class="separator:a07dc549398de34042a0e0429560140da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A high-resolution stopwatch timer for measuring elapsed time. </p>
+<p>This class provides a simple interface for measuring elapsed time with nanosecond precision. It supports starting, stopping, and resetting the timer, as well as retrieving elapsed time in milliseconds or seconds.</p>
+<div class="fragment"><div class="line"><span class="comment">// Basic usage</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html">stop_watch_timer_t</a> timer(<span class="stringliteral">&quot;MyTimer&quot;</span>);</div>
+<div class="line">timer.start();</div>
+<div class="line"><span class="comment">// ... perform some operations ...</span></div>
+<div class="line">timer.stop();</div>
+<div class="line"><span class="keywordtype">double</span> elapsed_ms = timer.elapsed_time_ms();</div>
+<div class="line">timer.print_stats();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Multiple start/stop cycles</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html">stop_watch_timer_t</a> timer;</div>
+<div class="line">timer.<a class="code hl_function" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#adf71d3b113d638712ca9373f0d01c5fd">start</a>();</div>
+<div class="line"><span class="comment">// ... first operation ...</span></div>
+<div class="line">timer.<a class="code hl_function" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a9dfddbc28505fdd2d4cd413daec64728">stop</a>();</div>
+<div class="line">timer.<a class="code hl_function" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#adf71d3b113d638712ca9373f0d01c5fd">start</a>();</div>
+<div class="line"><span class="comment">// ... second operation ...</span></div>
+<div class="line">timer.<a class="code hl_function" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a9dfddbc28505fdd2d4cd413daec64728">stop</a>();</div>
+<div class="line"><span class="keywordtype">double</span> total_seconds = timer.<a class="code hl_function" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#aba0a1f15bef0d2b71a2cc467b434ca6e">elapsed_time</a>();</div>
+<div class="ttc" id="aclasstoolbox_1_1utils_1_1stop__watch__timer__t_html"><div class="ttname"><a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html">toolbox::utils::stop_watch_timer_t</a></div><div class="ttdoc">A high-resolution stopwatch timer for measuring elapsed time.</div><div class="ttdef"><b>Definition</b> timer.hpp:41</div></div>
+<div class="ttc" id="aclasstoolbox_1_1utils_1_1stop__watch__timer__t_html_a9dfddbc28505fdd2d4cd413daec64728"><div class="ttname"><a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#a9dfddbc28505fdd2d4cd413daec64728">toolbox::utils::stop_watch_timer_t::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stop (pause) the timer and accumulate the duration.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1utils_1_1stop__watch__timer__t_html_aba0a1f15bef0d2b71a2cc467b434ca6e"><div class="ttname"><a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#aba0a1f15bef0d2b71a2cc467b434ca6e">toolbox::utils::stop_watch_timer_t::elapsed_time</a></div><div class="ttdeci">auto elapsed_time() const -&gt; double</div><div class="ttdoc">Get the total elapsed time in seconds.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1utils_1_1stop__watch__timer__t_html_adf71d3b113d638712ca9373f0d01c5fd"><div class="ttname"><a href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html#adf71d3b113d638712ca9373f0d01c5fd">toolbox::utils::stop_watch_timer_t::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Start or resume the timer.</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab869b3ea0d3f52a0589b848fb67c2a10" name="ab869b3ea0d3f52a0589b848fb67c2a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab869b3ea0d3f52a0589b848fb67c2a10">&#9670;&#160;</a></span>stop_watch_timer_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::utils::stop_watch_timer_t::stop_watch_timer_t </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em> = <code>&quot;default_timer&quot;</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html" title="A high-resolution stopwatch timer for measuring elapsed time.">stop_watch_timer_t</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the timer (default: "default_timer") </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aba0a1f15bef0d2b71a2cc467b434ca6e" name="aba0a1f15bef0d2b71a2cc467b434ca6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba0a1f15bef0d2b71a2cc467b434ca6e">&#9670;&#160;</a></span>elapsed_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::utils::stop_watch_timer_t::elapsed_time </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the total elapsed time in seconds. </p>
+<dl class="section return"><dt>Returns</dt><dd>double The elapsed time in seconds </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This includes all accumulated time between start/stop cycles </dd></dl>
+
+</div>
+</div>
+<a id="a0c0cae7d727ebd26ad2912e2c6c28cbe" name="a0c0cae7d727ebd26ad2912e2c6c28cbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c0cae7d727ebd26ad2912e2c6c28cbe">&#9670;&#160;</a></span>elapsed_time_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::utils::stop_watch_timer_t::elapsed_time_ms </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the total elapsed time in milliseconds. </p>
+<dl class="section return"><dt>Returns</dt><dd>double The elapsed time in milliseconds </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This includes all accumulated time between start/stop cycles </dd></dl>
+
+</div>
+</div>
+<a id="a6d1e2b7f98c31a20a980316f79cd7fdf" name="a6d1e2b7f98c31a20a980316f79cd7fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d1e2b7f98c31a20a980316f79cd7fdf">&#9670;&#160;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::utils::stop_watch_timer_t::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  const std::string &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the name of the timer. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; The current name of the timer </dd></dl>
+
+</div>
+</div>
+<a id="a07dc549398de34042a0e0429560140da" name="a07dc549398de34042a0e0429560140da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07dc549398de34042a0e0429560140da">&#9670;&#160;</a></span>print_stats()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::stop_watch_timer_t::print_stats </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the timer statistics to standard output. </p>
+<p>Prints the timer name and elapsed time in a human-readable format </p>
+
+</div>
+</div>
+<a id="af18d3c15931cba7c7312c89c6a166f62" name="af18d3c15931cba7c7312c89c6a166f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af18d3c15931cba7c7312c89c6a166f62">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::stop_watch_timer_t::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the timer to zero. </p>
+<dl class="section note"><dt>Note</dt><dd>This also stops the timer if it was running </dd></dl>
+
+</div>
+</div>
+<a id="abcc82e718432abb8d70fd26af4999a61" name="abcc82e718432abb8d70fd26af4999a61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc82e718432abb8d70fd26af4999a61">&#9670;&#160;</a></span>set_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::stop_watch_timer_t::set_name </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the name of the timer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The new name for the timer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adf71d3b113d638712ca9373f0d01c5fd" name="adf71d3b113d638712ca9373f0d01c5fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf71d3b113d638712ca9373f0d01c5fd">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::stop_watch_timer_t::start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start or resume the timer. </p>
+<dl class="section note"><dt>Note</dt><dd>If the timer is already running, this will restart the timing </dd></dl>
+
+</div>
+</div>
+<a id="a9dfddbc28505fdd2d4cd413daec64728" name="a9dfddbc28505fdd2d4cd413daec64728"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dfddbc28505fdd2d4cd413daec64728">&#9670;&#160;</a></span>stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::stop_watch_timer_t::stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stop (pause) the timer and accumulate the duration. </p>
+<dl class="section note"><dt>Note</dt><dd>If the timer is not running, this function does nothing </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/utils/<a class="el" href="timer_8hpp_source.html">timer.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1utils_1_1stop__watch__timer__t.html">stop_watch_timer_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

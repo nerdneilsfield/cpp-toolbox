@@ -1,0 +1,667 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: 日志宏 / Logging Macros</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group___logging_macros.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">日志宏 / Logging Macros</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>用于不同级别和格式的便捷日志记录宏 / Macros for convenient logging with different levels and formats  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9909fc8f33cb3e2c2d88d50e3088a0c2" id="r_ga9909fc8f33cb3e2c2d88d50e3088a0c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().trace_f()</td></tr>
+<tr class="memdesc:ga9909fc8f33cb3e2c2d88d50e3088a0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">TRACE级别格式化日志的宏 / Macro for TRACE level format logging.  <br /></td></tr>
+<tr class="separator:ga9909fc8f33cb3e2c2d88d50e3088a0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eff2cba0a7856857be1df094bebf834" id="r_ga2eff2cba0a7856857be1df094bebf834"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga2eff2cba0a7856857be1df094bebf834">LOG_DEBUG_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().debug_f()</td></tr>
+<tr class="memdesc:ga2eff2cba0a7856857be1df094bebf834"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEBUG级别格式化日志的宏 / Macro for DEBUG level format logging.  <br /></td></tr>
+<tr class="separator:ga2eff2cba0a7856857be1df094bebf834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d7123d7bfdf773f24ed68b102c7f7c7" id="r_ga0d7123d7bfdf773f24ed68b102c7f7c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_f()</td></tr>
+<tr class="memdesc:ga0d7123d7bfdf773f24ed68b102c7f7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">INFO级别格式化日志的宏 / Macro for INFO level format logging.  <br /></td></tr>
+<tr class="separator:ga0d7123d7bfdf773f24ed68b102c7f7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ce06e64838465cc3c438e9d99f201b0" id="r_ga7ce06e64838465cc3c438e9d99f201b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_f()</td></tr>
+<tr class="memdesc:ga7ce06e64838465cc3c438e9d99f201b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">WARN级别格式化日志的宏 / Macro for WARN level format logging.  <br /></td></tr>
+<tr class="separator:ga7ce06e64838465cc3c438e9d99f201b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e4e99c3796c36ea1d541844fb955cd8" id="r_ga4e4e99c3796c36ea1d541844fb955cd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_f()</td></tr>
+<tr class="memdesc:ga4e4e99c3796c36ea1d541844fb955cd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ERROR级别格式化日志的宏 / Macro for ERROR level format logging.  <br /></td></tr>
+<tr class="separator:ga4e4e99c3796c36ea1d541844fb955cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa6f7679d883afb22171314099518ee1" id="r_gaaa6f7679d883afb22171314099518ee1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().critical_f()</td></tr>
+<tr class="memdesc:gaaa6f7679d883afb22171314099518ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRITICAL级别格式化日志的宏 / Macro for CRITICAL level format logging.  <br /></td></tr>
+<tr class="separator:gaaa6f7679d883afb22171314099518ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga583ca116ff9e9817f4fde393c79d1b6a" id="r_ga583ca116ff9e9817f4fde393c79d1b6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().trace_s()</td></tr>
+<tr class="memdesc:ga583ca116ff9e9817f4fde393c79d1b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">TRACE级别流式日志的宏 / Macro for TRACE level stream logging.  <br /></td></tr>
+<tr class="separator:ga583ca116ff9e9817f4fde393c79d1b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1b58a6e7c97c1f4ca2fddf21b5e47251" id="r_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().debug_s()</td></tr>
+<tr class="memdesc:ga1b58a6e7c97c1f4ca2fddf21b5e47251"><td class="mdescLeft">&#160;</td><td class="mdescRight">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.  <br /></td></tr>
+<tr class="separator:ga1b58a6e7c97c1f4ca2fddf21b5e47251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28d4d51a64e29b87c59c10f86615f4bf" id="r_ga28d4d51a64e29b87c59c10f86615f4bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td></tr>
+<tr class="memdesc:ga28d4d51a64e29b87c59c10f86615f4bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">INFO级别流式日志的宏 / Macro for INFO level stream logging.  <br /></td></tr>
+<tr class="separator:ga28d4d51a64e29b87c59c10f86615f4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9b694972a4957493602ba1e7d3c5925" id="r_gad9b694972a4957493602ba1e7d3c5925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td></tr>
+<tr class="memdesc:gad9b694972a4957493602ba1e7d3c5925"><td class="mdescLeft">&#160;</td><td class="mdescRight">WARN级别流式日志的宏 / Macro for WARN level stream logging.  <br /></td></tr>
+<tr class="separator:gad9b694972a4957493602ba1e7d3c5925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga869e13d38a14388c77018138eb480ad5" id="r_ga869e13d38a14388c77018138eb480ad5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td></tr>
+<tr class="memdesc:ga869e13d38a14388c77018138eb480ad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.  <br /></td></tr>
+<tr class="separator:ga869e13d38a14388c77018138eb480ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga00b710fb8e78bfaa73323b9deb1c43cc" id="r_ga00b710fb8e78bfaa73323b9deb1c43cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().critical_s()</td></tr>
+<tr class="memdesc:ga00b710fb8e78bfaa73323b9deb1c43cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">CRITICAL级别流式日志的宏 / Macro for CRITICAL level stream logging.  <br /></td></tr>
+<tr class="separator:ga00b710fb8e78bfaa73323b9deb1c43cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ba761e7159ad23893e8bb9807d31ead" id="r_ga1ba761e7159ad23893e8bb9807d31ead"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga1ba761e7159ad23893e8bb9807d31ead">LOG_DEBUG_D</a>(x)</td></tr>
+<tr class="memdesc:ga1ba761e7159ad23893e8bb9807d31ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">带源代码位置的DEBUG级别日志的宏 / Macro for DEBUG level logging with source location  <br /></td></tr>
+<tr class="separator:ga1ba761e7159ad23893e8bb9807d31ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab6b020a0e06bac23bb4d7a0cc02e5897" id="r_gab6b020a0e06bac23bb4d7a0cc02e5897"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#gab6b020a0e06bac23bb4d7a0cc02e5897">LOG_INFO_D</a>(x)</td></tr>
+<tr class="memdesc:gab6b020a0e06bac23bb4d7a0cc02e5897"><td class="mdescLeft">&#160;</td><td class="mdescRight">带源代码位置的INFO级别日志的宏 / Macro for INFO level logging with source location  <br /></td></tr>
+<tr class="separator:gab6b020a0e06bac23bb4d7a0cc02e5897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadf8b29748ab1e51dc7944748077ec0f7" id="r_gadf8b29748ab1e51dc7944748077ec0f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#gadf8b29748ab1e51dc7944748077ec0f7">LOG_WARN_D</a>(x)</td></tr>
+<tr class="memdesc:gadf8b29748ab1e51dc7944748077ec0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">带源代码位置的WARN级别日志的宏 / Macro for WARN level logging with source location  <br /></td></tr>
+<tr class="separator:gadf8b29748ab1e51dc7944748077ec0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7768b4f32a0d8d3cdaa9a1db5423199a" id="r_ga7768b4f32a0d8d3cdaa9a1db5423199a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga7768b4f32a0d8d3cdaa9a1db5423199a">LOG_ERROR_D</a>(x)</td></tr>
+<tr class="memdesc:ga7768b4f32a0d8d3cdaa9a1db5423199a"><td class="mdescLeft">&#160;</td><td class="mdescRight">带源代码位置的ERROR级别日志的宏 / Macro for ERROR level logging with source location  <br /></td></tr>
+<tr class="separator:ga7768b4f32a0d8d3cdaa9a1db5423199a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga227b917e88f64d9f90c06c54e04c648e" id="r_ga227b917e88f64d9f90c06c54e04c648e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___logging_macros.html#ga227b917e88f64d9f90c06c54e04c648e">LOG_CRITICAL_D</a>(x)</td></tr>
+<tr class="memdesc:ga227b917e88f64d9f90c06c54e04c648e"><td class="mdescLeft">&#160;</td><td class="mdescRight">带源代码位置的CRITICAL级别日志的宏 / Macro for CRITICAL level logging with source location  <br /></td></tr>
+<tr class="separator:ga227b917e88f64d9f90c06c54e04c648e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>用于不同级别和格式的便捷日志记录宏 / Macros for convenient logging with different levels and formats </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga227b917e88f64d9f90c06c54e04c648e" name="ga227b917e88f64d9f90c06c54e04c648e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga227b917e88f64d9f90c06c54e04c648e">&#9670;&#160;</a></span>LOG_CRITICAL_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_CRITICAL_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> \</div>
+<div class="line">                 &lt;&lt; <a class="code hl_define" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a> &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; x</div>
+<div class="ttc" id="agroup___logging_macros_html_ga00b710fb8e78bfaa73323b9deb1c43cc"><div class="ttname"><a href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a></div><div class="ttdeci">#define LOG_CRITICAL_S</div><div class="ttdoc">CRITICAL级别流式日志的宏 / Macro for CRITICAL level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1355</div></div>
+<div class="ttc" id="amacro_8hpp_html_a5436a8cb969eaf89c020539b27d28976"><div class="ttname"><a href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a></div><div class="ttdeci">#define __CURRENT_FUNCTION__</div><div class="ttdoc">当前函数名宏 / Current function name macro</div><div class="ttdef"><b>Definition</b> macro.hpp:506</div></div>
+</div><!-- fragment -->
+<p>带源代码位置的CRITICAL级别日志的宏 / Macro for CRITICAL level logging with source location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>要记录的消息 / The message to log <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga227b917e88f64d9f90c06c54e04c648e">LOG_CRITICAL_D</a>(<span class="stringliteral">&quot;检测到系统故障 / System failure detected&quot;</span>);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga227b917e88f64d9f90c06c54e04c648e"><div class="ttname"><a href="group___logging_macros.html#ga227b917e88f64d9f90c06c54e04c648e">LOG_CRITICAL_D</a></div><div class="ttdeci">#define LOG_CRITICAL_D(x)</div><div class="ttdoc">带源代码位置的CRITICAL级别日志的宏 / Macro for CRITICAL level logging with source location</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1369</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="gaaa6f7679d883afb22171314099518ee1" name="gaaa6f7679d883afb22171314099518ee1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaa6f7679d883afb22171314099518ee1">&#9670;&#160;</a></span>LOG_CRITICAL_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_CRITICAL_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().critical_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CRITICAL级别格式化日志的宏 / Macro for CRITICAL level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a>(<span class="stringliteral">&quot;模块 {} 发生系统故障 / System failure in module {}&quot;</span>,</div>
+<div class="line">module_name);</div>
+<div class="ttc" id="agroup___logging_macros_html_gaaa6f7679d883afb22171314099518ee1"><div class="ttname"><a href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a></div><div class="ttdeci">#define LOG_CRITICAL_F</div><div class="ttdoc">CRITICAL级别格式化日志的宏 / Macro for CRITICAL level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1348</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga00b710fb8e78bfaa73323b9deb1c43cc" name="ga00b710fb8e78bfaa73323b9deb1c43cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga00b710fb8e78bfaa73323b9deb1c43cc">&#9670;&#160;</a></span>LOG_CRITICAL_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_CRITICAL_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().critical_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>CRITICAL级别流式日志的宏 / Macro for CRITICAL level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a> &lt;&lt; <span class="stringliteral">&quot;组件 / System shutdown due to critical error in &quot;</span> &lt;&lt;</div>
+<div class="line">component;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga1ba761e7159ad23893e8bb9807d31ead" name="ga1ba761e7159ad23893e8bb9807d31ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ba761e7159ad23893e8bb9807d31ead">&#9670;&#160;</a></span>LOG_DEBUG_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_DEBUG_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_define" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a> \</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; x</div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1351</div></div>
+</div><!-- fragment -->
+<p>带源代码位置的DEBUG级别日志的宏 / Macro for DEBUG level logging with source location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>要记录的消息 / The message to log <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1ba761e7159ad23893e8bb9807d31ead">LOG_DEBUG_D</a>(<span class="stringliteral">&quot;意外的值 / Unexpected value: &quot;</span> &lt;&lt; value);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga1ba761e7159ad23893e8bb9807d31ead"><div class="ttname"><a href="group___logging_macros.html#ga1ba761e7159ad23893e8bb9807d31ead">LOG_DEBUG_D</a></div><div class="ttdeci">#define LOG_DEBUG_D(x)</div><div class="ttdoc">带源代码位置的DEBUG级别日志的宏 / Macro for DEBUG level logging with source location</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1357</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga2eff2cba0a7856857be1df094bebf834" name="ga2eff2cba0a7856857be1df094bebf834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2eff2cba0a7856857be1df094bebf834">&#9670;&#160;</a></span>LOG_DEBUG_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_DEBUG_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().debug_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DEBUG级别格式化日志的宏 / Macro for DEBUG level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga2eff2cba0a7856857be1df094bebf834">LOG_DEBUG_F</a>(<span class="stringliteral">&quot;收到 {} 字节数据 / Received {} bytes of data&quot;</span>, data_size);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga2eff2cba0a7856857be1df094bebf834"><div class="ttname"><a href="group___logging_macros.html#ga2eff2cba0a7856857be1df094bebf834">LOG_DEBUG_F</a></div><div class="ttdeci">#define LOG_DEBUG_F</div><div class="ttdoc">DEBUG级别格式化日志的宏 / Macro for DEBUG level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1344</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga1b58a6e7c97c1f4ca2fddf21b5e47251" name="ga1b58a6e7c97c1f4ca2fddf21b5e47251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1b58a6e7c97c1f4ca2fddf21b5e47251">&#9670;&#160;</a></span>LOG_DEBUG_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_DEBUG_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().debug_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;正在处理 / Processing &quot;</span> &lt;&lt; items.size() &lt;&lt; <span class="stringliteral">&quot; 个项目 / items&quot;</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga7768b4f32a0d8d3cdaa9a1db5423199a" name="ga7768b4f32a0d8d3cdaa9a1db5423199a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7768b4f32a0d8d3cdaa9a1db5423199a">&#9670;&#160;</a></span>LOG_ERROR_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_define" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a> \</div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; x</div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1354</div></div>
+</div><!-- fragment -->
+<p>带源代码位置的ERROR级别日志的宏 / Macro for ERROR level logging with source location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>要记录的消息 / The message to log <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga7768b4f32a0d8d3cdaa9a1db5423199a">LOG_ERROR_D</a>(<span class="stringliteral">&quot;无法连接到数据库 / Failed to connect to database&quot;</span>);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga7768b4f32a0d8d3cdaa9a1db5423199a"><div class="ttname"><a href="group___logging_macros.html#ga7768b4f32a0d8d3cdaa9a1db5423199a">LOG_ERROR_D</a></div><div class="ttdeci">#define LOG_ERROR_D(x)</div><div class="ttdoc">带源代码位置的ERROR级别日志的宏 / Macro for ERROR level logging with source location</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1366</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga4e4e99c3796c36ea1d541844fb955cd8" name="ga4e4e99c3796c36ea1d541844fb955cd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e4e99c3796c36ea1d541844fb955cd8">&#9670;&#160;</a></span>LOG_ERROR_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ERROR级别格式化日志的宏 / Macro for ERROR level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a>(<span class="stringliteral">&quot;请求处理失败: {} / Failed to process request: {}&quot;</span>,</div>
+<div class="line">error_message);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga4e4e99c3796c36ea1d541844fb955cd8"><div class="ttname"><a href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a></div><div class="ttdeci">#define LOG_ERROR_F</div><div class="ttdoc">ERROR级别格式化日志的宏 / Macro for ERROR level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1347</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga869e13d38a14388c77018138eb480ad5" name="ga869e13d38a14388c77018138eb480ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga869e13d38a14388c77018138eb480ad5">&#9670;&#160;</a></span>LOG_ERROR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ERROR级别流式日志的宏 / Macro for ERROR level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;无法打开文件 / Failed to open file: &quot;</span> &lt;&lt; filename;</div>
+</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_singleton_8hpp-example.html#a3">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool_singleton.hpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="gab6b020a0e06bac23bb4d7a0cc02e5897" name="gab6b020a0e06bac23bb4d7a0cc02e5897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab6b020a0e06bac23bb4d7a0cc02e5897">&#9670;&#160;</a></span>LOG_INFO_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_define" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a> \</div>
+<div class="line">             &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; x</div>
+<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1352</div></div>
+</div><!-- fragment -->
+<p>带源代码位置的INFO级别日志的宏 / Macro for INFO level logging with source location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>要记录的消息 / The message to log <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gab6b020a0e06bac23bb4d7a0cc02e5897">LOG_INFO_D</a>(<span class="stringliteral">&quot;初始化完成 / Initialization complete&quot;</span>);</div>
+<div class="ttc" id="agroup___logging_macros_html_gab6b020a0e06bac23bb4d7a0cc02e5897"><div class="ttname"><a href="group___logging_macros.html#gab6b020a0e06bac23bb4d7a0cc02e5897">LOG_INFO_D</a></div><div class="ttdeci">#define LOG_INFO_D(x)</div><div class="ttdoc">带源代码位置的INFO级别日志的宏 / Macro for INFO level logging with source location</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1360</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga0d7123d7bfdf773f24ed68b102c7f7c7" name="ga0d7123d7bfdf773f24ed68b102c7f7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0d7123d7bfdf773f24ed68b102c7f7c7">&#9670;&#160;</a></span>LOG_INFO_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INFO级别格式化日志的宏 / Macro for INFO level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a>(<span class="stringliteral">&quot;应用程序启动成功 / Application started successfully&quot;</span>);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga0d7123d7bfdf773f24ed68b102c7f7c7"><div class="ttname"><a href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a></div><div class="ttdeci">#define LOG_INFO_F</div><div class="ttdoc">INFO级别格式化日志的宏 / Macro for INFO level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1345</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga28d4d51a64e29b87c59c10f86615f4bf" name="ga28d4d51a64e29b87c59c10f86615f4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga28d4d51a64e29b87c59c10f86615f4bf">&#9670;&#160;</a></span>LOG_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>INFO级别流式日志的宏 / Macro for INFO level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;应用程序版本 / Application version: &quot;</span> &lt;&lt; version;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga9909fc8f33cb3e2c2d88d50e3088a0c2" name="ga9909fc8f33cb3e2c2d88d50e3088a0c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9909fc8f33cb3e2c2d88d50e3088a0c2">&#9670;&#160;</a></span>LOG_TRACE_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_TRACE_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().trace_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TRACE级别格式化日志的宏 / Macro for TRACE level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a>(<span class="stringliteral">&quot;正在处理项目 {} / Processing item {}&quot;</span>, item_id);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga9909fc8f33cb3e2c2d88d50e3088a0c2"><div class="ttname"><a href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a></div><div class="ttdeci">#define LOG_TRACE_F</div><div class="ttdoc">TRACE级别格式化日志的宏 / Macro for TRACE level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1343</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga583ca116ff9e9817f4fde393c79d1b6a" name="ga583ca116ff9e9817f4fde393c79d1b6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga583ca116ff9e9817f4fde393c79d1b6a">&#9670;&#160;</a></span>LOG_TRACE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_TRACE_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().trace_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>TRACE级别流式日志的宏 / Macro for TRACE level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a> &lt;&lt; <span class="stringliteral">&quot;进入函数 / Entering function &quot;</span> &lt;&lt; function_name;</div>
+<div class="ttc" id="agroup___logging_macros_html_ga583ca116ff9e9817f4fde393c79d1b6a"><div class="ttname"><a href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a></div><div class="ttdeci">#define LOG_TRACE_S</div><div class="ttdoc">TRACE级别流式日志的宏 / Macro for TRACE level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1350</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="gadf8b29748ab1e51dc7944748077ec0f7" name="gadf8b29748ab1e51dc7944748077ec0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadf8b29748ab1e51dc7944748077ec0f7">&#9670;&#160;</a></span>LOG_WARN_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; __FILE__ &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; __LINE__ &lt;&lt; <span class="stringliteral">&quot; (&quot;</span> &lt;&lt; <a class="code hl_define" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a> \</div>
+<div class="line">             &lt;&lt; <span class="stringliteral">&quot;) &quot;</span> &lt;&lt; x</div>
+<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1353</div></div>
+</div><!-- fragment -->
+<p>带源代码位置的WARN级别日志的宏 / Macro for WARN level logging with source location </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>要记录的消息 / The message to log <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gadf8b29748ab1e51dc7944748077ec0f7">LOG_WARN_D</a>(<span class="stringliteral">&quot;检测到潜在的内存泄漏 / Potential memory leak detected&quot;</span>);</div>
+<div class="ttc" id="agroup___logging_macros_html_gadf8b29748ab1e51dc7944748077ec0f7"><div class="ttname"><a href="group___logging_macros.html#gadf8b29748ab1e51dc7944748077ec0f7">LOG_WARN_D</a></div><div class="ttdeci">#define LOG_WARN_D(x)</div><div class="ttdoc">带源代码位置的WARN级别日志的宏 / Macro for WARN level logging with source location</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1363</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ga7ce06e64838465cc3c438e9d99f201b0" name="ga7ce06e64838465cc3c438e9d99f201b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7ce06e64838465cc3c438e9d99f201b0">&#9670;&#160;</a></span>LOG_WARN_F</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN_F&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_f()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WARN级别格式化日志的宏 / Macro for WARN level format logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a>(<span class="stringliteral">&quot;磁盘空间不足: 剩余{}MB / Disk space is low: {}MB remaining&quot;</span>,</div>
+<div class="line">free_space);</div>
+<div class="ttc" id="agroup___logging_macros_html_ga7ce06e64838465cc3c438e9d99f201b0"><div class="ttname"><a href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a></div><div class="ttdeci">#define LOG_WARN_F</div><div class="ttdoc">WARN级别格式化日志的宏 / Macro for WARN level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1346</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="gad9b694972a4957493602ba1e7d3c5925" name="gad9b694972a4957493602ba1e7d3c5925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad9b694972a4957493602ba1e7d3c5925">&#9670;&#160;</a></span>LOG_WARN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>WARN级别流式日志的宏 / Macro for WARN level stream logging. </p>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;内存不足 / Low memory: &quot;</span> &lt;&lt; free_memory &lt;&lt; <span class="stringliteral">&quot;MB 可用 /</span></div>
+<div class="line"><span class="stringliteral">available&quot;</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

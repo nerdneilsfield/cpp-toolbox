@@ -1,0 +1,1217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::types::point_t&lt; T &gt; Struct Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structtoolbox_1_1types_1_1point__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="structtoolbox_1_1types_1_1point__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::types::point_t&lt; T &gt; Struct Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>3D点/向量模板类 / A 3D point/vector template class  
+ <a href="structtoolbox_1_1types_1_1point__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="point_8hpp_source.html">point.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3b6a72a74b2f562ce835d451cdb6a1ac" id="r_a3b6a72a74b2f562ce835d451cdb6a1ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a3b6a72a74b2f562ce835d451cdb6a1ac">~point_t</a> ()=default</td></tr>
+<tr class="separator:a3b6a72a74b2f562ce835d451cdb6a1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a562974be138dbf613f340cab7b6d37ac" id="r_a562974be138dbf613f340cab7b6d37ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a562974be138dbf613f340cab7b6d37ac">point_t</a> (T x_coord, T y_coord, T z_coord)</td></tr>
+<tr class="memdesc:a562974be138dbf613f340cab7b6d37ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用给定坐标构造点 / Constructs a point with given coordinates  <br /></td></tr>
+<tr class="separator:a562974be138dbf613f340cab7b6d37ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f13a0dc148b311f1617c36521fd812" id="r_a09f13a0dc148b311f1617c36521fd812"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a09f13a0dc148b311f1617c36521fd812">point_t</a> ()</td></tr>
+<tr class="memdesc:a09f13a0dc148b311f1617c36521fd812"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数，初始化为原点(0,0,0) / Default constructor, initializes to origin (0,0,0)  <br /></td></tr>
+<tr class="separator:a09f13a0dc148b311f1617c36521fd812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ff9bf8c55cc0ec8f15870737ff95f4" id="r_a12ff9bf8c55cc0ec8f15870737ff95f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a12ff9bf8c55cc0ec8f15870737ff95f4">point_t</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other)=default</td></tr>
+<tr class="memdesc:a12ff9bf8c55cc0ec8f15870737ff95f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造函数 / Copy constructor  <br /></td></tr>
+<tr class="separator:a12ff9bf8c55cc0ec8f15870737ff95f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c8d73beda63939951ab7566c6f4e24a" id="r_a0c8d73beda63939951ab7566c6f4e24a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a0c8d73beda63939951ab7566c6f4e24a">point_t</a> (<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&amp;other) noexcept=default</td></tr>
+<tr class="memdesc:a0c8d73beda63939951ab7566c6f4e24a"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动构造函数 / Move constructor  <br /></td></tr>
+<tr class="separator:a0c8d73beda63939951ab7566c6f4e24a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4668cd11118b65db3c071a76ae9c918" id="r_ad4668cd11118b65db3c071a76ae9c918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ad4668cd11118b65db3c071a76ae9c918">operator=</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other)=default</td></tr>
+<tr class="memdesc:ad4668cd11118b65db3c071a76ae9c918"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝赋值运算符 / Copy assignment  <br /></td></tr>
+<tr class="separator:ad4668cd11118b65db3c071a76ae9c918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9675d8ab4320a542ab7686b1614718c" id="r_ab9675d8ab4320a542ab7686b1614718c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ab9675d8ab4320a542ab7686b1614718c">operator=</a> (<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&amp;other) noexcept=default</td></tr>
+<tr class="memdesc:ab9675d8ab4320a542ab7686b1614718c"><td class="mdescLeft">&#160;</td><td class="mdescRight">移动赋值运算符 / Move assignment  <br /></td></tr>
+<tr class="separator:ab9675d8ab4320a542ab7686b1614718c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fb8282a628b0a34838596ccc2e94af" id="r_a97fb8282a628b0a34838596ccc2e94af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a97fb8282a628b0a34838596ccc2e94af">operator+=</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other)</td></tr>
+<tr class="memdesc:a97fb8282a628b0a34838596ccc2e94af"><td class="mdescLeft">&#160;</td><td class="mdescRight">分量式加上另一个点 / Add another point component-wise  <br /></td></tr>
+<tr class="separator:a97fb8282a628b0a34838596ccc2e94af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732ad3dcf6da0e98bbf54d65efdb8e56" id="r_a732ad3dcf6da0e98bbf54d65efdb8e56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a732ad3dcf6da0e98bbf54d65efdb8e56">operator-=</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other)</td></tr>
+<tr class="memdesc:a732ad3dcf6da0e98bbf54d65efdb8e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">分量式减去另一个点 / Subtract another point component-wise  <br /></td></tr>
+<tr class="separator:a732ad3dcf6da0e98bbf54d65efdb8e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae688a2e416a93fb2e9c5bd51b21ec37e" id="r_ae688a2e416a93fb2e9c5bd51b21ec37e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ae688a2e416a93fb2e9c5bd51b21ec37e">operator*=</a> (const T &amp;scalar)</td></tr>
+<tr class="memdesc:ae688a2e416a93fb2e9c5bd51b21ec37e"><td class="mdescLeft">&#160;</td><td class="mdescRight">坐标乘以标量 / Multiply coordinates by a scalar  <br /></td></tr>
+<tr class="separator:ae688a2e416a93fb2e9c5bd51b21ec37e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13d63f2c969ca7f9ad14441cd87418e" id="r_ab13d63f2c969ca7f9ad14441cd87418e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ab13d63f2c969ca7f9ad14441cd87418e">operator/=</a> (const T &amp;scalar)</td></tr>
+<tr class="memdesc:ab13d63f2c969ca7f9ad14441cd87418e"><td class="mdescLeft">&#160;</td><td class="mdescRight">坐标除以标量 / Divide coordinates by a scalar  <br /></td></tr>
+<tr class="separator:ab13d63f2c969ca7f9ad14441cd87418e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfcdd416b11a3a2292184805782b768f" id="r_abfcdd416b11a3a2292184805782b768f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#abfcdd416b11a3a2292184805782b768f">dot</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const -&gt; T</td></tr>
+<tr class="memdesc:abfcdd416b11a3a2292184805782b768f"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算与另一点的点积 / Calculate dot product with another point  <br /></td></tr>
+<tr class="separator:abfcdd416b11a3a2292184805782b768f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d705d8b2e6e7b688802c2e7894b77dd" id="r_a1d705d8b2e6e7b688802c2e7894b77dd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a1d705d8b2e6e7b688802c2e7894b77dd">cross</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td></tr>
+<tr class="memdesc:a1d705d8b2e6e7b688802c2e7894b77dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算与另一点的叉积 / Calculate cross product with another point  <br /></td></tr>
+<tr class="separator:a1d705d8b2e6e7b688802c2e7894b77dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58a06ce4deffa10cbad6747095360c2a" id="r_a58a06ce4deffa10cbad6747095360c2a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a58a06ce4deffa10cbad6747095360c2a">norm</a> () const -&gt; double</td></tr>
+<tr class="memdesc:a58a06ce4deffa10cbad6747095360c2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量的欧几里得范数(长度) / Calculate Euclidean norm (length) of vector  <br /></td></tr>
+<tr class="separator:a58a06ce4deffa10cbad6747095360c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd70b4134e57d8361cc2633f3aeeb71" id="r_a4fd70b4134e57d8361cc2633f3aeeb71"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71">normalize</a> () const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; double &gt;</td></tr>
+<tr class="memdesc:a4fd70b4134e57d8361cc2633f3aeeb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回归一化向量(单位长度) / Return normalized vector (unit length)  <br /></td></tr>
+<tr class="separator:a4fd70b4134e57d8361cc2633f3aeeb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124666311659f8bc42794d2d6bf461d3" id="r_a124666311659f8bc42794d2d6bf461d3"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a124666311659f8bc42794d2d6bf461d3">p_norm</a> (const double &amp;p_value) const -&gt; double</td></tr>
+<tr class="memdesc:a124666311659f8bc42794d2d6bf461d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算向量的p范数 / Calculate p-norm of vector  <br /></td></tr>
+<tr class="separator:a124666311659f8bc42794d2d6bf461d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059bc727620c0bb056e80658471e3768" id="r_a059bc727620c0bb056e80658471e3768"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a059bc727620c0bb056e80658471e3768">p_normalize</a> (const double &amp;p_value) const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; double &gt;</td></tr>
+<tr class="memdesc:a059bc727620c0bb056e80658471e3768"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回p范数归一化向量 / Return p-normalized vector  <br /></td></tr>
+<tr class="separator:a059bc727620c0bb056e80658471e3768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74fdf288fba57e8ef0f7b598054c98bd" id="r_a74fdf288fba57e8ef0f7b598054c98bd"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a74fdf288fba57e8ef0f7b598054c98bd">distance</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const -&gt; double</td></tr>
+<tr class="memdesc:a74fdf288fba57e8ef0f7b598054c98bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算到另一点的欧几里得距离 / Calculate Euclidean distance to another point  <br /></td></tr>
+<tr class="separator:a74fdf288fba57e8ef0f7b598054c98bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdba49ccc737841c4daf5db008888b91" id="r_acdba49ccc737841c4daf5db008888b91"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#acdba49ccc737841c4daf5db008888b91">distance_p</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other, const double &amp;p_value) const -&gt; double</td></tr>
+<tr class="memdesc:acdba49ccc737841c4daf5db008888b91"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算到另一点的p距离 / Calculate p-distance to another point  <br /></td></tr>
+<tr class="separator:acdba49ccc737841c4daf5db008888b91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84ffd5da7296d926dadb6a9f72da48e6" id="r_a84ffd5da7296d926dadb6a9f72da48e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a84ffd5da7296d926dadb6a9f72da48e6">operator==</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const</td></tr>
+<tr class="separator:a84ffd5da7296d926dadb6a9f72da48e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9ac2e0e060e0f3073d04b873267b6d" id="r_ace9ac2e0e060e0f3073d04b873267b6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ace9ac2e0e060e0f3073d04b873267b6d">operator!=</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const</td></tr>
+<tr class="separator:ace9ac2e0e060e0f3073d04b873267b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e97be2e82223a9967e35f0469c2fa98" id="r_a8e97be2e82223a9967e35f0469c2fa98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a8e97be2e82223a9967e35f0469c2fa98">operator&lt;</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp;other) const</td></tr>
+<tr class="separator:a8e97be2e82223a9967e35f0469c2fa98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70da3aa13e710636e217356a7015b85" id="r_ad70da3aa13e710636e217356a7015b85"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ad70da3aa13e710636e217356a7015b85">min_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; int &gt;</td></tr>
+<tr class="separator:ad70da3aa13e710636e217356a7015b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab715ac706852e5cafafb2960b6433ffb" id="r_ab715ac706852e5cafafb2960b6433ffb"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ab715ac706852e5cafafb2960b6433ffb">max_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; int &gt;</td></tr>
+<tr class="separator:ab715ac706852e5cafafb2960b6433ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8040f6c5eebe2bc2a1ec128dad701312" id="r_a8040f6c5eebe2bc2a1ec128dad701312"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a8040f6c5eebe2bc2a1ec128dad701312">min_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:a8040f6c5eebe2bc2a1ec128dad701312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb8ea9686c80f160d9e2c903f63395e" id="r_a1bb8ea9686c80f160d9e2c903f63395e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a1bb8ea9686c80f160d9e2c903f63395e">max_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:a1bb8ea9686c80f160d9e2c903f63395e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a10b8e4cd3dc68c2772a4cb35e22e5a4d" id="r_a10b8e4cd3dc68c2772a4cb35e22e5a4d"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a10b8e4cd3dc68c2772a4cb35e22e5a4d">min_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td></tr>
+<tr class="memdesc:a10b8e4cd3dc68c2772a4cb35e22e5a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取具有最小可能值的点 / Get point with minimum possible values  <br /></td></tr>
+<tr class="separator:a10b8e4cd3dc68c2772a4cb35e22e5a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3b0a411dff3c72d4143a798e3652360" id="r_aa3b0a411dff3c72d4143a798e3652360"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#aa3b0a411dff3c72d4143a798e3652360">max_value</a> () -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td></tr>
+<tr class="memdesc:aa3b0a411dff3c72d4143a798e3652360"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取具有最大可能值的点 / Get point with maximum possible values  <br /></td></tr>
+<tr class="separator:aa3b0a411dff3c72d4143a798e3652360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a171efb0a8686791dd6b042babab79ad4" id="r_a171efb0a8686791dd6b042babab79ad4"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a></td></tr>
+<tr class="memdesc:a171efb0a8686791dd6b042babab79ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">X坐标 / X coordinate.  <br /></td></tr>
+<tr class="separator:a171efb0a8686791dd6b042babab79ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84eeb1bacaf6f2aa28321f152f38624" id="r_ae84eeb1bacaf6f2aa28321f152f38624"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a></td></tr>
+<tr class="memdesc:ae84eeb1bacaf6f2aa28321f152f38624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y坐标 / Y coordinate.  <br /></td></tr>
+<tr class="separator:ae84eeb1bacaf6f2aa28321f152f38624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5697097cf3fe9bed97c2ebc8e9544db6" id="r_a5697097cf3fe9bed97c2ebc8e9544db6"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a></td></tr>
+<tr class="memdesc:a5697097cf3fe9bed97c2ebc8e9544db6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z坐标 / Z coordinate.  <br /></td></tr>
+<tr class="separator:a5697097cf3fe9bed97c2ebc8e9544db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T&gt;<br />
+struct toolbox::types::point_t&lt; T &gt;</div><p>3D点/向量模板类 / A 3D point/vector template class </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>坐标的数值类型(如float、double、int) / The numeric type for coordinates (e.g. float, double, int)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>该类表示具有x、y、z坐标的3D点或向量。提供常见的向量运算并支持算术运算符。/ This class represents a 3D point or vector with x, y, z coordinates. It provides common vector operations and supports arithmetic operators.</p>
+<div class="fragment"><div class="line"><span class="comment">// 创建点 / Create points</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> p1(1.0, 2.0, 3.0);</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> p2(4.0, 5.0, 6.0);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 向量运算 / Vector operations</span></div>
+<div class="line"><span class="keywordtype">double</span> dot_product = p1.dot(p2);</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> cross_product = p1.<a class="code hl_function" href="structtoolbox_1_1types_1_1point__t.html#a1d705d8b2e6e7b688802c2e7894b77dd">cross</a>(p2);</div>
+<div class="line"><span class="keywordtype">double</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1point__t.html#a58a06ce4deffa10cbad6747095360c2a">norm</a> = p1.norm();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 标准化 / Normalization</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> normalized = p1.<a class="code hl_function" href="structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71">normalize</a>();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 算术运算 / Arithmetic</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> sum = p1 + p2;</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;double&gt;</a> scaled = p1 * 2.0;</div>
+<div class="line"><span class="keywordtype">double</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1point__t.html#a74fdf288fba57e8ef0f7b598054c98bd">distance</a> = p1.<a class="code hl_function" href="structtoolbox_1_1types_1_1point__t.html#a74fdf288fba57e8ef0f7b598054c98bd">distance</a>(p2);</div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a1d705d8b2e6e7b688802c2e7894b77dd"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a1d705d8b2e6e7b688802c2e7894b77dd">toolbox::types::point_t::cross</a></div><div class="ttdeci">auto cross(const point_t &amp;other) const -&gt; point_t</div><div class="ttdoc">计算与另一点的叉积 / Calculate cross product with another point</div><div class="ttdef"><b>Definition</b> point_impl.hpp:88</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a4fd70b4134e57d8361cc2633f3aeeb71"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71">toolbox::types::point_t::normalize</a></div><div class="ttdeci">auto normalize() const -&gt; point_t&lt; double &gt;</div><div class="ttdoc">返回归一化向量(单位长度) / Return normalized vector (unit length)</div><div class="ttdef"><b>Definition</b> point_impl.hpp:105</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a58a06ce4deffa10cbad6747095360c2a"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a58a06ce4deffa10cbad6747095360c2a">toolbox::types::point_t::norm</a></div><div class="ttdeci">auto norm() const -&gt; double</div><div class="ttdoc">计算向量的欧几里得范数(长度) / Calculate Euclidean norm (length) of vector</div><div class="ttdef"><b>Definition</b> point_impl.hpp:96</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a74fdf288fba57e8ef0f7b598054c98bd"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a74fdf288fba57e8ef0f7b598054c98bd">toolbox::types::point_t::distance</a></div><div class="ttdeci">auto distance(const point_t &amp;other) const -&gt; double</div><div class="ttdoc">计算到另一点的欧几里得距离 / Calculate Euclidean distance to another point</div><div class="ttdef"><b>Definition</b> point_impl.hpp:144</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3b6a72a74b2f562ce835d451cdb6a1ac" name="a3b6a72a74b2f562ce835d451cdb6a1ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b6a72a74b2f562ce835d451cdb6a1ac">&#9670;&#160;</a></span>~point_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::~<a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a562974be138dbf613f340cab7b6d37ac" name="a562974be138dbf613f340cab7b6d37ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562974be138dbf613f340cab7b6d37ac">&#9670;&#160;</a></span>point_t() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::point_t </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>x_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>y_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>z_coord</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用给定坐标构造点 / Constructs a point with given coordinates </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x_coord</td><td>X坐标值 / X coordinate value </td></tr>
+    <tr><td class="paramname">y_coord</td><td>Y坐标值 / Y coordinate value </td></tr>
+    <tr><td class="paramname">z_coord</td><td>Z坐标值 / Z coordinate value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09f13a0dc148b311f1617c36521fd812" name="a09f13a0dc148b311f1617c36521fd812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f13a0dc148b311f1617c36521fd812">&#9670;&#160;</a></span>point_t() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::point_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>默认构造函数，初始化为原点(0,0,0) / Default constructor, initializes to origin (0,0,0) </p>
+
+</div>
+</div>
+<a id="a12ff9bf8c55cc0ec8f15870737ff95f4" name="a12ff9bf8c55cc0ec8f15870737ff95f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ff9bf8c55cc0ec8f15870737ff95f4">&#9670;&#160;</a></span>point_t() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::point_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>拷贝构造函数 / Copy constructor </p>
+
+</div>
+</div>
+<a id="a0c8d73beda63939951ab7566c6f4e24a" name="a0c8d73beda63939951ab7566c6f4e24a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c8d73beda63939951ab7566c6f4e24a">&#9670;&#160;</a></span>point_t() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::point_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动构造函数 / Move constructor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1d705d8b2e6e7b688802c2e7894b77dd" name="a1d705d8b2e6e7b688802c2e7894b77dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d705d8b2e6e7b688802c2e7894b77dd">&#9670;&#160;</a></span>cross()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::cross </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算与另一点的叉积 / Calculate cross product with another point </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要计算叉积的点 / Point to calculate cross product with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>表示叉积的新点 / New point representing cross product </dd></dl>
+
+</div>
+</div>
+<a id="a74fdf288fba57e8ef0f7b598054c98bd" name="a74fdf288fba57e8ef0f7b598054c98bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74fdf288fba57e8ef0f7b598054c98bd">&#9670;&#160;</a></span>distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::distance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算到另一点的欧几里得距离 / Calculate Euclidean distance to another point </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要计算距离的目标点 / Point to calculate distance to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>以double类型返回距离 / Distance as double </dd></dl>
+
+</div>
+</div>
+<a id="acdba49ccc737841c4daf5db008888b91" name="acdba49ccc737841c4daf5db008888b91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdba49ccc737841c4daf5db008888b91">&#9670;&#160;</a></span>distance_p()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::distance_p </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt; double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算到另一点的p距离 / Calculate p-distance to another point </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要计算距离的目标点 / Point to calculate distance to </td></tr>
+    <tr><td class="paramname">p_value</td><td>p距离的p值 / The p value for distance calculation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>以double类型返回p距离 / p-distance as double </dd></dl>
+
+</div>
+</div>
+<a id="abfcdd416b11a3a2292184805782b768f" name="abfcdd416b11a3a2292184805782b768f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfcdd416b11a3a2292184805782b768f">&#9670;&#160;</a></span>dot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::dot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const -&gt; T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算与另一点的点积 / Calculate dot product with another point </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要计算点积的点 / Point to calculate dot product with </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>点积值 / Dot product value </dd></dl>
+
+</div>
+</div>
+<a id="aa3b0a411dff3c72d4143a798e3652360" name="aa3b0a411dff3c72d4143a798e3652360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3b0a411dff3c72d4143a798e3652360">&#9670;&#160;</a></span>max_value() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::max_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取具有最大可能值的点 / Get point with maximum possible values </p>
+<dl class="section return"><dt>Returns</dt><dd>具有最大坐标的点 / Point with maximum coordinates </dd></dl>
+
+</div>
+</div>
+<a id="a1bb8ea9686c80f160d9e2c903f63395e" name="a1bb8ea9686c80f160d9e2c903f63395e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1bb8ea9686c80f160d9e2c903f63395e">&#9670;&#160;</a></span>max_value() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; float &gt;::max_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;float&gt;
+</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab715ac706852e5cafafb2960b6433ffb" name="ab715ac706852e5cafafb2960b6433ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab715ac706852e5cafafb2960b6433ffb">&#9670;&#160;</a></span>max_value() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; int &gt;::max_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;int&gt;
+</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a10b8e4cd3dc68c2772a4cb35e22e5a4d" name="a10b8e4cd3dc68c2772a4cb35e22e5a4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10b8e4cd3dc68c2772a4cb35e22e5a4d">&#9670;&#160;</a></span>min_value() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::min_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取具有最小可能值的点 / Get point with minimum possible values </p>
+<dl class="section return"><dt>Returns</dt><dd>具有最小坐标的点 / Point with minimum coordinates </dd></dl>
+
+</div>
+</div>
+<a id="a8040f6c5eebe2bc2a1ec128dad701312" name="a8040f6c5eebe2bc2a1ec128dad701312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8040f6c5eebe2bc2a1ec128dad701312">&#9670;&#160;</a></span>min_value() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; float &gt;::min_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;float&gt;
+</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad70da3aa13e710636e217356a7015b85" name="ad70da3aa13e710636e217356a7015b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70da3aa13e710636e217356a7015b85">&#9670;&#160;</a></span>min_value() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; int &gt;::min_value </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;int&gt;
+</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a58a06ce4deffa10cbad6747095360c2a" name="a58a06ce4deffa10cbad6747095360c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58a06ce4deffa10cbad6747095360c2a">&#9670;&#160;</a></span>norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::norm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量的欧几里得范数(长度) / Calculate Euclidean norm (length) of vector </p>
+<dl class="section return"><dt>Returns</dt><dd>以double类型返回范数 / Norm as double </dd></dl>
+
+</div>
+</div>
+<a id="a4fd70b4134e57d8361cc2633f3aeeb71" name="a4fd70b4134e57d8361cc2633f3aeeb71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd70b4134e57d8361cc2633f3aeeb71">&#9670;&#160;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::normalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回归一化向量(单位长度) / Return normalized vector (unit length) </p>
+<dl class="section return"><dt>Returns</dt><dd>以point_t&lt;double&gt;类型返回归一化向量 / Normalized vector as point_t&lt;double&gt; </dd></dl>
+
+</div>
+</div>
+<a id="ace9ac2e0e060e0f3073d04b873267b6d" name="ace9ac2e0e060e0f3073d04b873267b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace9ac2e0e060e0f3073d04b873267b6d">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae688a2e416a93fb2e9c5bd51b21ec37e" name="ae688a2e416a93fb2e9c5bd51b21ec37e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae688a2e416a93fb2e9c5bd51b21ec37e">&#9670;&#160;</a></span>operator*=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>坐标乘以标量 / Multiply coordinates by a scalar </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>要乘的值 / Value to multiply by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点的引用 / Reference to this point </dd></dl>
+
+</div>
+</div>
+<a id="a97fb8282a628b0a34838596ccc2e94af" name="a97fb8282a628b0a34838596ccc2e94af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97fb8282a628b0a34838596ccc2e94af">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分量式加上另一个点 / Add another point component-wise </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要加的点 / Point to add </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点的引用 / Reference to this point </dd></dl>
+
+</div>
+</div>
+<a id="a732ad3dcf6da0e98bbf54d65efdb8e56" name="a732ad3dcf6da0e98bbf54d65efdb8e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a732ad3dcf6da0e98bbf54d65efdb8e56">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>分量式减去另一个点 / Subtract another point component-wise </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>要减的点 / Point to subtract </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点的引用 / Reference to this point </dd></dl>
+
+</div>
+</div>
+<a id="ab13d63f2c969ca7f9ad14441cd87418e" name="ab13d63f2c969ca7f9ad14441cd87418e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab13d63f2c969ca7f9ad14441cd87418e">&#9670;&#160;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>坐标除以标量 / Divide coordinates by a scalar </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td>要除的值 / Value to divide by </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对本点的引用 / Reference to this point </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>如果标量为零 / if scalar is zero </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e97be2e82223a9967e35f0469c2fa98" name="a8e97be2e82223a9967e35f0469c2fa98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e97be2e82223a9967e35f0469c2fa98">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4668cd11118b65db3c071a76ae9c918" name="ad4668cd11118b65db3c071a76ae9c918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4668cd11118b65db3c071a76ae9c918">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>拷贝赋值运算符 / Copy assignment </p>
+
+</div>
+</div>
+<a id="ab9675d8ab4320a542ab7686b1614718c" name="ab9675d8ab4320a542ab7686b1614718c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9675d8ab4320a542ab7686b1614718c">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a> &amp; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>移动赋值运算符 / Move assignment </p>
+
+</div>
+</div>
+<a id="a84ffd5da7296d926dadb6a9f72da48e6" name="a84ffd5da7296d926dadb6a9f72da48e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84ffd5da7296d926dadb6a9f72da48e6">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a124666311659f8bc42794d2d6bf461d3" name="a124666311659f8bc42794d2d6bf461d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124666311659f8bc42794d2d6bf461d3">&#9670;&#160;</a></span>p_norm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::p_norm </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p_value</em></td><td>)</td>
+          <td> const -&gt; double</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算向量的p范数 / Calculate p-norm of vector </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_value</td><td>p范数的p值 / The p value for norm calculation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>以double类型返回p范数 / p-norm as double </dd></dl>
+
+</div>
+</div>
+<a id="a059bc727620c0bb056e80658471e3768" name="a059bc727620c0bb056e80658471e3768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a059bc727620c0bb056e80658471e3768">&#9670;&#160;</a></span>p_normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::p_normalize </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>p_value</em></td><td>)</td>
+          <td> const -&gt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回p范数归一化向量 / Return p-normalized vector </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_value</td><td>归一化的p值 / The p value for normalization </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>以point_t&lt;double&gt;类型返回p范数归一化向量 / p-normalized vector as point_t&lt;double&gt; </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a171efb0a8686791dd6b042babab79ad4" name="a171efb0a8686791dd6b042babab79ad4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a171efb0a8686791dd6b042babab79ad4">&#9670;&#160;</a></span>x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>X坐标 / X coordinate. </p>
+
+</div>
+</div>
+<a id="ae84eeb1bacaf6f2aa28321f152f38624" name="ae84eeb1bacaf6f2aa28321f152f38624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84eeb1bacaf6f2aa28321f152f38624">&#9670;&#160;</a></span>y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::y</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Y坐标 / Y coordinate. </p>
+
+</div>
+</div>
+<a id="a5697097cf3fe9bed97c2ebc8e9544db6" name="a5697097cf3fe9bed97c2ebc8e9544db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5697097cf3fe9bed97c2ebc8e9544db6">&#9670;&#160;</a></span>z</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; T &gt;::z</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Z坐标 / Z coordinate. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/types/<a class="el" href="point_8hpp_source.html">point.hpp</a></li>
+<li>src/include/cpp-toolbox/types/impl/<a class="el" href="point__impl_8hpp_source.html">point_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1types.html">types</a></li><li class="navelem"><a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

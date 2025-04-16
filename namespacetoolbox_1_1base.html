@@ -1,0 +1,535 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::base Namespace Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespacetoolbox_1_1base.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::base Namespace Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.  
+<a href="namespacetoolbox_1_1base.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox_1_1base_1_1detail" id="r_namespacetoolbox_1_1base_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base_1_1detail.html">detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html">memory_pool_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html">thread_pool_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aaf4ba06e16ef767bd29d5b1c9fc760e6" id="r_aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name) -&gt; std::string</td></tr>
+<tr class="memdesc:aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of an environment variable.  <br /></td></tr>
+<tr class="separator:aaf4ba06e16ef767bd29d5b1c9fc760e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f1b6b2951fa719590c6a8483eaa17e" id="r_af8f1b6b2951fa719590c6a8483eaa17e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name, <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;value) -&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td></tr>
+<tr class="memdesc:af8f1b6b2951fa719590c6a8483eaa17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or updates an environment variable.  <br /></td></tr>
+<tr class="separator:af8f1b6b2951fa719590c6a8483eaa17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad492fe465930e627f40feec79b17eb8e" id="r_ad492fe465930e627f40feec79b17eb8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;name) -&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td></tr>
+<tr class="memdesc:ad492fe465930e627f40feec79b17eb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an environment variable from the current process environment.  <br /></td></tr>
+<tr class="separator:ad492fe465930e627f40feec79b17eb8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components. </p>
+<p>Base namespace for toolbox library.</p>
+<p>该命名空间包含了一系列用于 C++ 开发的核心基础功能，旨在提高开发效率和代码质量。 主要包括：</p><ul>
+<li><b>线程管理 (Thread Management):</b> 提供易于使用的线程池 (<code>ThreadPool</code>, <code>ThreadPoolSingleton</code>)，用于高效管理并发任务。</li>
+<li><b>资源管理 (Resource Management):</b> 提供对象池 (<code>ObjectPool</code>) 和可能的内存池 (<code>MemoryPool</code>) 实现，以优化资源的分配和回收。</li>
+<li><b>环境交互 (Environment Interaction):</b> 可能包含与运行时环境交互的工具，例如环境变量的读取 (<code><a class="el" href="env_8hpp.html">env.hpp</a></code>)。</li>
+</ul>
+<p>这些组件是构建更复杂应用程序的基础模块。</p>
+<p>This namespace contains a collection of core fundamental functionalities for C++ development, aiming to improve development efficiency and code quality. Key components include:</p><ul>
+<li><b>Thread Management:</b> Provides easy-to-use thread pools (<code>ThreadPool</code>, <code>ThreadPoolSingleton</code>) for efficient management of concurrent tasks.</li>
+<li><b>Resource Management:</b> Offers implementations for object pools (<code>ObjectPool</code>) and potentially memory pools (<code>MemoryPool</code>) to optimize resource allocation and recycling.</li>
+<li><b>Environment Interaction:</b> May include utilities for interacting with the runtime environment, such as reading environment variables (<code><a class="el" href="env_8hpp.html">env.hpp</a></code>).</li>
+</ul>
+<p>These components serve as foundational building blocks for constructing more complex applications.</p>
+<h1><a class="anchor" id="base_examples"></a>
+示例 (Examples)</h1>
+<h2><a class="anchor" id="base_example_thread_pool"></a>
+线程池使用示例 (ThreadPool Usage</h2>
+<p>Example) </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="thread__pool_8hpp.html">cpp-toolbox/base/thread_pool.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;future&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">main</a>() {</div>
+<div class="line">    <span class="comment">// 创建一个拥有 4 个工作线程的线程池</span></div>
+<div class="line">    <span class="comment">// Create a thread pool with 4 worker threads</span></div>
+<div class="line">    <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::ThreadPool</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>(4);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 准备提交的任务</span></div>
+<div class="line">    <span class="comment">// Prepare tasks to submit</span></div>
+<div class="line">    std::vector&lt;std::future&lt;int&gt;&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">results</a>;</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a> = 0; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a> &lt; 8; ++<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a>) {</div>
+<div class="line">        <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">results</a>.emplace_back(</div>
+<div class="line">            <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.enqueue([<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">i</a>] { <span class="comment">// 提交 Lambda 函数作为任务 (Submit a lambda</span></div>
+<div class="line">function as a task) std::cout &lt;&lt; <span class="stringliteral">&quot;Processing task &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; on thread &quot;</span> &lt;&lt;</div>
+<div class="line">std::this_thread::get_id() &lt;&lt; std::endl;</div>
+<div class="line">                std::this_thread::sleep_for(std::chrono::milliseconds(100));</div>
+<div class="line"><span class="comment">// 模拟工作 (Simulate work) std::cout &lt;&lt; &quot;Finished task &quot; &lt;&lt; i &lt;&lt; std::endl;</span></div>
+<div class="line">                return i * i; <span class="comment">// 返回结果 (Return a result)</span></div>
+<div class="line">            })</div>
+<div class="line">        );</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 等待所有任务完成并获取结果</span></div>
+<div class="line">    <span class="comment">// Wait for all tasks to complete and retrieve results</span></div>
+<div class="line">    <span class="keywordtype">int</span> sum = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp; result : results) {</div>
+<div class="line">        <span class="keywordflow">try</span> {</div>
+<div class="line">            sum += result.get(); <span class="comment">// 获取任务的返回值 (Get the return value of</span></div>
+<div class="line">the task) } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) { std::cerr &lt;&lt; <span class="stringliteral">&quot;Exception caught:</span></div>
+<div class="line"><span class="stringliteral">&quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;All tasks finished. Sum of squares: &quot;</span> &lt;&lt; sum &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 线程池会在析构时自动停止并加入所有线程</span></div>
+<div class="line">    <span class="comment">// The thread pool will automatically stop and join all threads upon</span></div>
+<div class="line">    <span class="comment">// destruction</span></div>
+<div class="line">  <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a></div><div class="ttdef"><b>Definition</b> object_pool.hpp:100</div></div>
+<div class="ttc" id="athread__pool_8hpp_html"><div class="ttname"><a href="thread__pool_8hpp.html">thread_pool.hpp</a></div></div>
+</div><!-- fragment --><h2><a class="anchor" id="base_example_object_pool"></a>
+对象池使用示例 (ObjectPool Usage</h2>
+<p>Example) </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="object__pool_8hpp.html">cpp-toolbox/base/object_pool.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span> <span class="comment">// for std::shared_ptr</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">MyObject</a> {</div>
+<div class="line">    <span class="keywordtype">int</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">id</a>;</div>
+<div class="line">    <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">MyObject</a>() : <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">id</a>(-1) { std::cout &lt;&lt; <span class="stringliteral">&quot;MyObject Default constructing.&quot;</span> &lt;&lt;</div>
+<div class="line">std::endl; } MyObject(<span class="keywordtype">int</span> i) : id(i) { std::cout &lt;&lt; <span class="stringliteral">&quot;MyObject constructing</span></div>
+<div class="line"><span class="stringliteral">with id &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::endl; } ~MyObject() { std::cout &lt;&lt; <span class="stringliteral">&quot;MyObject</span></div>
+<div class="line"><span class="stringliteral">destructing with id &quot;</span> &lt;&lt; <span class="keywordtype">id</span> &lt;&lt; <span class="stringliteral">&quot;.&quot;</span> &lt;&lt; std::endl; }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 对象池可能会调用 reset 来重置状态 (Object pool might call reset to</span></div>
+<div class="line">    <span class="comment">// reset state)</span></div>
+<div class="line">    <span class="keywordtype">void</span> reset() {</div>
+<div class="line">       <span class="keywordtype">id</span> = -1;</div>
+<div class="line">       std::cout &lt;&lt; <span class="stringliteral">&quot;MyObject resetting.&quot;</span> &lt;&lt; sstd::endl;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="comment">// 创建一个 MyObject 对象池，初始大小为 2，最大可扩展到 10</span></div>
+<div class="line">    <span class="comment">// Create an ObjectPool for MyObject, initial size 2, max size 10</span></div>
+<div class="line">    <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::ObjectPool&lt;MyObject&gt;</a> pool(2, 10);</div>
+<div class="line"> </div>
+<div class="line">    std::vector&lt;std::shared_ptr&lt;MyObject&gt;&gt; objects;</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Acquiring objects...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i) {</div>
+<div class="line">        <span class="comment">// 从池中获取对象 (Acquire an object from the pool)</span></div>
+<div class="line">        <span class="comment">// 使用 acquire 获取带有关联释放器的智能指针 (Use acquire to get a</span></div>
+<div class="line">smart pointer with associated releaser)</div>
+<div class="line">        <span class="comment">// 或者如果 ObjectPool 提供构造函数参数传递，则使用 allocate</span></div>
+<div class="line">        <span class="comment">// Or use allocate if the ObjectPool supports constructor argument</span></div>
+<div class="line">forwarding</div>
+<div class="line">        <span class="comment">// auto obj = pool.allocate(i); // 假设 allocate 可以传递构造函数参数</span></div>
+<div class="line">        <span class="keyword">auto</span> obj = pool.acquire(); <span class="comment">// 使用 acquire 获取对象，然后手动设置</span></div>
+<div class="line">        <span class="keywordflow">if</span> (obj) {</div>
+<div class="line">           obj-&gt;id = i; <span class="comment">// 手动设置 ID (Manually set ID)</span></div>
+<div class="line">           std::cout &lt;&lt; <span class="stringliteral">&quot;Acquired object with id: &quot;</span> &lt;&lt; obj-&gt;id &lt;&lt; std::endl;</div>
+<div class="line">           objects.push_back(obj);</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">           std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to acquire object &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot; (Pool likely</span></div>
+<div class="line"><span class="stringliteral">reached max size)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">           <span class="keywordflow">break</span>;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\nUsing objects...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; obj : objects) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;Using object with id: &quot;</span> &lt;&lt; obj-&gt;id &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\nReleasing objects...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    objects.clear(); <span class="comment">// 当 shared_ptr 引用计数归零时，对象会自动释放回池中</span></div>
+<div class="line">                     <span class="comment">// When the shared_ptr reference count drops to zero,</span></div>
+<div class="line">the <span class="keywordtype">object</span> is automatically released back to the pool</div>
+<div class="line"> </div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;\nAcquiring again...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    <span class="comment">// 再次获取对象，应该会复用之前释放的对象</span></div>
+<div class="line">    <span class="comment">// Acquire objects again, should reuse previously released objects</span></div>
+<div class="line">     <span class="keyword">auto</span> reused_obj1 = pool.acquire();</div>
+<div class="line">     <span class="keywordflow">if</span>(reused_obj1) std::cout &lt;&lt; <span class="stringliteral">&quot;Acquired reused object with id: &quot;</span> &lt;&lt;</div>
+<div class="line">reused_obj1-&gt;id &lt;&lt; std::endl;</div>
+<div class="line">     <span class="comment">// ID 应该是被 reset 后的值 (ID should be the reset value)</span></div>
+<div class="line"> </div>
+<div class="line">     <span class="keyword">auto</span> reused_obj2 = pool.acquire();</div>
+<div class="line">     <span class="keywordflow">if</span>(reused_obj2) std::cout &lt;&lt; <span class="stringliteral">&quot;Acquired reused object with id: &quot;</span> &lt;&lt;</div>
+<div class="line">reused_obj2-&gt;id &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">     std::cout &lt;&lt; <span class="stringliteral">&quot;\nExiting...&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">     <span class="comment">// 对象池析构时，会销毁其管理的所有对象</span></div>
+<div class="line">     <span class="comment">// When the object pool is destructed, it destroys all the objects it</span></div>
+<div class="line">     <span class="comment">// manages</span></div>
+<div class="line">     <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aobject__pool_8hpp_html"><div class="ttname"><a href="object__pool_8hpp.html">object_pool.hpp</a></div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
+<a id="aaf4ba06e16ef767bd29d5b1c9fc760e6" name="aaf4ba06e16ef767bd29d5b1c9fc760e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4ba06e16ef767bd29d5b1c9fc760e6">&#9670;&#160;</a></span>get_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a> toolbox::base::get_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> -&gt;  std::string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of an environment variable. </p>
+<p>This function queries the system environment variables and returns the value associated with the specified name. If the environment variable does not exist, an empty string is returned.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the environment variable to retrieve. Must be non-empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the environment variable as a string. Returns an empty string if the variable is not found.</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// Get the PATH environment variable</span></div>
+<div class="line"><span class="keyword">auto</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">path</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><span class="comment">// path will contain the PATH environment variable value</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Get a non-existent variable</span></div>
+<div class="line"><span class="keyword">auto</span> value = <a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;NON_EXISTENT_VAR&quot;</span>);</div>
+<div class="line"><span class="comment">// value will be an empty string</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_aaf4ba06e16ef767bd29d5b1c9fc760e6"><div class="ttname"><a href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">toolbox::base::get_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_environment_variable(const std::string &amp;name) -&gt; std::string</div><div class="ttdoc">Retrieves the value of an environment variable.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ad492fe465930e627f40feec79b17eb8e" name="ad492fe465930e627f40feec79b17eb8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad492fe465930e627f40feec79b17eb8e">&#9670;&#160;</a></span>remove_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a> toolbox::base::remove_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an environment variable from the current process environment. </p>
+<p>This function deletes the specified environment variable from the current process's environment. The change affects the current process and any child processes spawned after the change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the environment variable to remove. Must be non-empty. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the environment variable was successfully removed, false otherwise. Returns false if the variable did not exist or could not be removed.</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// Remove a temporary environment variable</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">removed</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;TEMP_VAR&quot;</span>);</div>
+<div class="line"><span class="comment">// removed will be true if the variable existed and was removed</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Attempt to remove a non-existent variable</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">result</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">remove_environment_variable</a>(<span class="stringliteral">&quot;NON_EXISTENT_VAR&quot;</span>);</div>
+<div class="line"><span class="comment">// result will be false</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_ad492fe465930e627f40feec79b17eb8e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#ad492fe465930e627f40feec79b17eb8e">toolbox::base::remove_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto remove_environment_variable(const std::string &amp;name) -&gt; bool</div><div class="ttdoc">Removes an environment variable from the current process environment.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="af8f1b6b2951fa719590c6a8483eaa17e" name="af8f1b6b2951fa719590c6a8483eaa17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f1b6b2951fa719590c6a8483eaa17e">&#9670;&#160;</a></span>set_environment_variable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">CPP_TOOLBOX_EXPORT</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a> toolbox::base::set_environment_variable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">bool</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets or updates an environment variable. </p>
+<p>This function creates or modifies an environment variable with the specified name and value. The change affects the current process and any child processes spawned after the change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the environment variable to set. Must be non-empty. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to assign to the environment variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the environment variable was successfully set, false otherwise. Failure can occur due to invalid input or system limitations.</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// Set a new environment variable</span></div>
+<div class="line"><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">success</a> = <a class="code hl_function" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a>(<span class="stringliteral">&quot;MY_VAR&quot;</span>, <span class="stringliteral">&quot;12345&quot;</span>);</div>
+<div class="line"><span class="comment">// success will be true if the variable was set</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Update an existing variable</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">set_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>, <span class="stringliteral">&quot;/new/path:&quot;</span> +</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6">get_environment_variable</a>(<span class="stringliteral">&quot;PATH&quot;</span>));</div>
+<div class="ttc" id="anamespacetoolbox_1_1base_html_af8f1b6b2951fa719590c6a8483eaa17e"><div class="ttname"><a href="namespacetoolbox_1_1base.html#af8f1b6b2951fa719590c6a8483eaa17e">toolbox::base::set_environment_variable</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto set_environment_variable(const std::string &amp;name, const std::string &amp;value) -&gt; bool</div><div class="ttdoc">Sets or updates an environment variable.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1base.html">base</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

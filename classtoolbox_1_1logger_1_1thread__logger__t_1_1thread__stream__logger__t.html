@@ -1,0 +1,1028 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::logger::thread_logger_t::thread_stream_logger_t Class Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::logger::thread_logger_t::thread_stream_logger_t Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output  
+ <a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">thread_logger.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac09791a964a6219aac08a4a1dafcb47b" id="r_ac09791a964a6219aac08a4a1dafcb47b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ac09791a964a6219aac08a4a1dafcb47b">thread_stream_logger_t</a> (<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html">thread_logger_t</a> &amp;logger, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1">Level</a> <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#a8f822fcbcee8aadd60583d97d2aa45b8">level</a>, <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; std::stringstream &gt; &amp;pool)</td></tr>
+<tr class="memdesc:ac09791a964a6219aac08a4a1dafcb47b"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用池构造新的线程流日志记录器对象 / Construct a new thread stream logger object using the pool  <br /></td></tr>
+<tr class="separator:ac09791a964a6219aac08a4a1dafcb47b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a0e9c2bfaeed2b9d3a327523fdd9bac" id="r_a3a0e9c2bfaeed2b9d3a327523fdd9bac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a3a0e9c2bfaeed2b9d3a327523fdd9bac">~thread_stream_logger_t</a> ()</td></tr>
+<tr class="memdesc:a3a0e9c2bfaeed2b9d3a327523fdd9bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">销毁线程流日志记录器对象 / Destroy the thread stream logger object  <br /></td></tr>
+<tr class="separator:a3a0e9c2bfaeed2b9d3a327523fdd9bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a967d76e5cfb393aab55705a1ba2f8d8a" id="r_a967d76e5cfb393aab55705a1ba2f8d8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a967d76e5cfb393aab55705a1ba2f8d8a">thread_stream_logger_t</a> (const <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a967d76e5cfb393aab55705a1ba2f8d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d0027bbf2164b119c9c16b2a4b43da" id="r_a48d0027bbf2164b119c9c16b2a4b43da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a48d0027bbf2164b119c9c16b2a4b43da">operator=</a> (const <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a48d0027bbf2164b119c9c16b2a4b43da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410cba7b9c421e7b81817579c2d86800" id="r_a410cba7b9c421e7b81817579c2d86800"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a410cba7b9c421e7b81817579c2d86800">thread_stream_logger_t</a> (<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a410cba7b9c421e7b81817579c2d86800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac843eb73f913aaefcbfa74e0bd0f231c" id="r_ac843eb73f913aaefcbfa74e0bd0f231c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ac843eb73f913aaefcbfa74e0bd0f231c">operator=</a> (<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:ac843eb73f913aaefcbfa74e0bd0f231c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeac33666839401af2bd2bb5bff656b0f" id="r_aeac33666839401af2bd2bb5bff656b0f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#aeac33666839401af2bd2bb5bff656b0f">str</a> () -&gt; std::string</td></tr>
+<tr class="memdesc:aeac33666839401af2bd2bb5bff656b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">将记录的消息作为字符串获取 / Get the logged message as a string  <br /></td></tr>
+<tr class="separator:aeac33666839401af2bd2bb5bff656b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8beb7c8cdf06081cdc0273c48524a5c" id="r_ab8beb7c8cdf06081cdc0273c48524a5c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ab8beb7c8cdf06081cdc0273c48524a5c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c">operator&lt;&lt;</a> (const T &amp;container) -&gt; std::enable_if_t&lt; <a class="el" href="namespacetoolbox_1_1logger.html#ae92163dce5c70e6094943043c3c76b49">is_container_v</a>&lt; T &gt; &amp;&amp;!<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
+<tr class="memdesc:ab8beb7c8cdf06081cdc0273c48524a5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载容器的operator&lt;&lt; / Overload operator&lt;&lt; for containers  <br /></td></tr>
+<tr class="separator:ab8beb7c8cdf06081cdc0273c48524a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2e773bb7c208849b9444e00dc209b0" id="r_a6b2e773bb7c208849b9444e00dc209b0"><td class="memTemplParams" colspan="2">template&lt;typename... Args&gt; </td></tr>
+<tr class="memitem:a6b2e773bb7c208849b9444e00dc209b0"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a6b2e773bb7c208849b9444e00dc209b0">operator&lt;&lt;</a> (const std::tuple&lt; Args... &gt; &amp;t) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a6b2e773bb7c208849b9444e00dc209b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载元组的operator&lt;&lt; / Overload operator&lt;&lt; for tuples  <br /></td></tr>
+<tr class="separator:a6b2e773bb7c208849b9444e00dc209b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2269dea461b207e1924a6c938271f03f" id="r_a2269dea461b207e1924a6c938271f03f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a2269dea461b207e1924a6c938271f03f">red</a> (const std::string &amp;text) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a2269dea461b207e1924a6c938271f03f"><td class="mdescLeft">&#160;</td><td class="mdescRight">以红色格式化文本 / Format text in red color  <br /></td></tr>
+<tr class="separator:a2269dea461b207e1924a6c938271f03f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a997d5382bd8456b2764ca15eec6c8993" id="r_a997d5382bd8456b2764ca15eec6c8993"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a997d5382bd8456b2764ca15eec6c8993">green</a> (const std::string &amp;text) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a997d5382bd8456b2764ca15eec6c8993"><td class="mdescLeft">&#160;</td><td class="mdescRight">以绿色格式化文本 / Format text in green color  <br /></td></tr>
+<tr class="separator:a997d5382bd8456b2764ca15eec6c8993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19f229133a4d635f26db2c57e126a00e" id="r_a19f229133a4d635f26db2c57e126a00e"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a19f229133a4d635f26db2c57e126a00e">yellow</a> (const std::string &amp;text) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a19f229133a4d635f26db2c57e126a00e"><td class="mdescLeft">&#160;</td><td class="mdescRight">以黄色格式化文本 / Format text in yellow color  <br /></td></tr>
+<tr class="separator:a19f229133a4d635f26db2c57e126a00e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dabbc117f69a5241f1d58c6db2eca0c" id="r_a3dabbc117f69a5241f1d58c6db2eca0c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a3dabbc117f69a5241f1d58c6db2eca0c">bold</a> (const std::string &amp;text) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a3dabbc117f69a5241f1d58c6db2eca0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">以粗体格式化文本 / Format text in bold style  <br /></td></tr>
+<tr class="separator:a3dabbc117f69a5241f1d58c6db2eca0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7b0c288f07c785387655dc0c6126055" id="r_af7b0c288f07c785387655dc0c6126055"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#af7b0c288f07c785387655dc0c6126055">operator&lt;&lt;</a> (const char *value) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:af7b0c288f07c785387655dc0c6126055"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载C风格字符串的operator&lt;&lt; / Overload operator&lt;&lt; for C-style strings  <br /></td></tr>
+<tr class="separator:af7b0c288f07c785387655dc0c6126055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e10c5cd09173cb92ae140ed1706b4e8" id="r_a4e10c5cd09173cb92ae140ed1706b4e8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a4e10c5cd09173cb92ae140ed1706b4e8">operator&lt;&lt;</a> (const T &amp;value) -&gt; std::enable_if_t&lt; <a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
+<tr class="memdesc:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载具有ostream operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types that have an operator&lt;&lt; with an ostream  <br /></td></tr>
+<tr class="separator:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5820a4c7b6b776da403bdad817e5f500" id="r_a5820a4c7b6b776da403bdad817e5f500"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5820a4c7b6b776da403bdad817e5f500"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a5820a4c7b6b776da403bdad817e5f500">operator&lt;&lt;</a> (T &amp;&amp;value) -&gt; std::enable_if_t&lt; !<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt; &amp;&amp;<a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
+<tr class="memdesc:a5820a4c7b6b776da403bdad817e5f500"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载具有成员operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types with member operator&lt;&lt;  <br /></td></tr>
+<tr class="separator:a5820a4c7b6b776da403bdad817e5f500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc1e3cde55775af3d534d9d3defd103" id="r_a7bc1e3cde55775af3d534d9d3defd103"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a7bc1e3cde55775af3d534d9d3defd103">operator&lt;&lt;</a> (<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;logger) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a7bc1e3cde55775af3d534d9d3defd103"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载用于组合日志记录器的operator&lt;&lt; / Overload operator&lt;&lt; for combining loggers  <br /></td></tr>
+<tr class="separator:a7bc1e3cde55775af3d534d9d3defd103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afabe26dba003c7f70ad34e628454ecff" id="r_afabe26dba003c7f70ad34e628454ecff"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V &gt; </td></tr>
+<tr class="memitem:afabe26dba003c7f70ad34e628454ecff"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#afabe26dba003c7f70ad34e628454ecff">operator&lt;&lt;</a> (const std::map&lt; K, V &gt; &amp;map) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:afabe26dba003c7f70ad34e628454ecff"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载std::map容器的operator&lt;&lt; / Overload operator&lt;&lt; for std::map containers  <br /></td></tr>
+<tr class="separator:afabe26dba003c7f70ad34e628454ecff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0778d036f44c3dbcb5ea7752fe1cce38" id="r_a0778d036f44c3dbcb5ea7752fe1cce38"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V &gt; </td></tr>
+<tr class="memitem:a0778d036f44c3dbcb5ea7752fe1cce38"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a0778d036f44c3dbcb5ea7752fe1cce38">operator&lt;&lt;</a> (const std::unordered_map&lt; K, V &gt; &amp;map) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
+<tr class="memdesc:a0778d036f44c3dbcb5ea7752fe1cce38"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载std::unordered_map容器的operator&lt;&lt; / Overload operator&lt;&lt; for std::unordered_map containers  <br /></td></tr>
+<tr class="separator:a0778d036f44c3dbcb5ea7752fe1cce38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output </p>
+<p>thread_stream_logger_t类提供了一个使用流运算符记录消息的线程安全机制。它支持各种数据类型,包括容器、元组和C风格字符串。日志记录器自动处理消息格式化并确保日志操作期间的线程安全。/ The <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" title="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output">thread_stream_logger_t</a> class provides a thread-safe mechanism for logging messages using stream operators. It supports various data types including containers, tuples, and C-style strings. The logger automatically handles message formatting and ensures thread safety during logging operations.</p>
+<dl class="section note"><dt>Note</dt><dd>此类通常通过thread_logger_t接口及其相关宏使用。不建议直接实例化。/ This class is typically used through the <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html" title="具有多个日志级别和格式的线程安全日志类 / Thread-safe logging class with multiple logging levels and formats">thread_logger_t</a> interface and its associated macros. Direct instantiation is not recommended.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html" title="具有多个日志级别和格式的线程安全日志类 / Thread-safe logging class with multiple logging levels and formats">thread_logger_t</a></dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用流式日志记录器的基本用法 / Basic usage with stream logger</span></div>
+<div class="line"><span class="keyword">auto</span>&amp; logger = <a class="code hl_function" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>();</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;Processing &quot;</span> &lt;&lt; items.size() &lt;&lt; <span class="stringliteral">&quot; items&quot;</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 记录容器 / Logging containers</span></div>
+<div class="line">std::vector&lt;int&gt; values = {1, 2, 3};</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;Values: &quot;</span> &lt;&lt; values;  <span class="comment">// 输出: Values: [1, 2, 3] / Output:</span></div>
+<div class="line">Values: [1, 2, 3]</div>
+<div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_acc6c92f4fe66ee6d17852eb6b6f393bb"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a></div><div class="ttdeci">static auto instance() -&gt; thread_logger_t &amp;</div><div class="ttdoc">获取日志记录器的单例实例 / Get the singleton instance of the logger</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1351</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1352</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac09791a964a6219aac08a4a1dafcb47b" name="ac09791a964a6219aac08a4a1dafcb47b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac09791a964a6219aac08a4a1dafcb47b">&#9670;&#160;</a></span>thread_stream_logger_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::logger::thread_logger_t::thread_stream_logger_t::thread_stream_logger_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html">thread_logger_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1">Level</a>&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; std::stringstream &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pool</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用池构造新的线程流日志记录器对象 / Construct a new thread stream logger object using the pool </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>对父线程日志记录器的引用 / Reference to the parent thread logger </td></tr>
+    <tr><td class="paramname">level</td><td>此流日志记录器的日志级别 / Logging level for this stream logger </td></tr>
+    <tr><td class="paramname">pool</td><td>对stringstream对象池的引用 / Reference to the stringstream object pool </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3a0e9c2bfaeed2b9d3a327523fdd9bac" name="a3a0e9c2bfaeed2b9d3a327523fdd9bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a0e9c2bfaeed2b9d3a327523fdd9bac">&#9670;&#160;</a></span>~thread_stream_logger_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::logger::thread_logger_t::thread_stream_logger_t::~thread_stream_logger_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>销毁线程流日志记录器对象 / Destroy the thread stream logger object </p>
+<p>将最终消息入队。ss_ptr_析构函数自动将stringstream返回到池中。/ Enqueues the final message. The stringstream is automatically returned to the pool by the ss_ptr_ destructor. </p>
+
+</div>
+</div>
+<a id="a967d76e5cfb393aab55705a1ba2f8d8a" name="a967d76e5cfb393aab55705a1ba2f8d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a967d76e5cfb393aab55705a1ba2f8d8a">&#9670;&#160;</a></span>thread_stream_logger_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::logger::thread_logger_t::thread_stream_logger_t::thread_stream_logger_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a410cba7b9c421e7b81817579c2d86800" name="a410cba7b9c421e7b81817579c2d86800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410cba7b9c421e7b81817579c2d86800">&#9670;&#160;</a></span>thread_stream_logger_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::logger::thread_logger_t::thread_stream_logger_t::thread_stream_logger_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a3dabbc117f69a5241f1d58c6db2eca0c" name="a3dabbc117f69a5241f1d58c6db2eca0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dabbc117f69a5241f1d58c6db2eca0c">&#9670;&#160;</a></span>bold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::bold </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>以粗体格式化文本 / Format text in bold style </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要格式化的文本 / The text to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining </dd></dl>
+
+</div>
+</div>
+<a id="a997d5382bd8456b2764ca15eec6c8993" name="a997d5382bd8456b2764ca15eec6c8993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a997d5382bd8456b2764ca15eec6c8993">&#9670;&#160;</a></span>green()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::green </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>以绿色格式化文本 / Format text in green color </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要格式化的文本 / The text to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining </dd></dl>
+
+</div>
+</div>
+<a id="af7b0c288f07c785387655dc0c6126055" name="af7b0c288f07c785387655dc0c6126055"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7b0c288f07c785387655dc0c6126055">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[1/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载C风格字符串的operator&lt;&lt; / Overload operator&lt;&lt; for C-style strings </p>
+<p>此运算符允许记录C风格字符串(const
+char*)。字符串直接写入日志流。/ This operator allows logging of C-style strings (const char*). The string is directly written to the log stream.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>要记录的C风格字符串 / The C-style string to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;C-style string: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;Hello World&quot;</span>;</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="afabe26dba003c7f70ad34e628454ecff" name="afabe26dba003c7f70ad34e628454ecff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afabe26dba003c7f70ad34e628454ecff">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[2/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const std::map&lt; K, V &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载std::map容器的operator&lt;&lt; / Overload operator&lt;&lt; for std::map containers </p>
+<p>此运算符为std::map容器提供格式化输出,以可读格式显示键值对。输出类似于Python的字典表示。/ This operator provides formatted output for std::map containers, displaying key-value pairs in a readable format. The output is similar to Python's dictionary representation.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>map的键类型 / The key type of the map </td></tr>
+    <tr><td class="paramname">V</td><td>map的值类型 / The value type of the map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>要打印到日志流的map / The map to print to the log stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line">std::map&lt;std::string, int&gt; scores = {{<span class="stringliteral">&quot;张三&quot;</span>, 95}, {<span class="stringliteral">&quot;李四&quot;</span>, 88}};</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;考试成绩: &quot;</span> &lt;&lt; scores;</div>
+<div class="line"><span class="comment">// 输出: 考试成绩: {张三: 95, 李四: 88} / Output: Exam scores: {张三: 95,</span></div>
+<div class="line">李四: 88}</div>
+<div class="line"> </div>
+<div class="line">std::map&lt;int, std::string&gt; ids = {{1001, <span class="stringliteral">&quot;项目A&quot;</span>}, {1002, <span class="stringliteral">&quot;项目B&quot;</span>}};</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;项目列表: &quot;</span> &lt;&lt; ids;</div>
+<div class="line"><span class="comment">// 输出: 项目列表: {1001: 项目A, 1002: 项目B} / Output: Project list:</span></div>
+<div class="line">{1001: Project A, 1002: Project B}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a6b2e773bb7c208849b9444e00dc209b0" name="a6b2e773bb7c208849b9444e00dc209b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b2e773bb7c208849b9444e00dc209b0">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[3/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const std::tuple&lt; Args... &gt; &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载元组的operator&lt;&lt; / Overload operator&lt;&lt; for tuples </p>
+<p>此运算符允许记录std::tuple对象。元组元素以逗号分隔的列表形式打印,用圆括号括起来。/ This operator allows logging of std::tuple objects. The tuple elements are printed in a comma-separated list enclosed in parentheses.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Args</td><td>元组元素的类型 / Types of tuple elements </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>要记录的元组 / The tuple to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> t = std::make_tuple(1, <span class="stringliteral">&quot;test&quot;</span>, 3.14);</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;Tuple: &quot;</span> &lt;&lt; t;  <span class="comment">// 输出: Tuple: (1, test, 3.14) / Output:</span></div>
+<div class="line">Tuple: (1, test, 3.14)</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a0778d036f44c3dbcb5ea7752fe1cce38" name="a0778d036f44c3dbcb5ea7752fe1cce38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0778d036f44c3dbcb5ea7752fe1cce38">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[4/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename K , typename V &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; K, V &gt; &amp;&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载std::unordered_map容器的operator&lt;&lt; / Overload operator&lt;&lt; for std::unordered_map containers </p>
+<p>此运算符为std::unordered_map容器提供格式化输出。输出格式类似于std::map,但由于容器的无序性质,元素顺序可能会变化。/ This operator provides formatted output for std::unordered_map containers. The output format is similar to std::map, but the order of elements may vary due to the unordered nature of the container.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">K</td><td>map的键类型 / The key type of the map </td></tr>
+    <tr><td class="paramname">V</td><td>map的值类型 / The value type of the map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>要打印到日志流的map / The map to print to the log stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line">std::unordered_map&lt;std::string, double&gt; prices = {{<span class="stringliteral">&quot;苹果&quot;</span>, 5.5},</div>
+<div class="line">{<span class="stringliteral">&quot;香蕉&quot;</span>, 3.8}}; <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;水果价格: &quot;</span> &lt;&lt; prices;</div>
+<div class="line"><span class="comment">// 输出: 水果价格: {苹果: 5.5, 香蕉: 3.8} (顺序可能变化) / Output: Fruit</span></div>
+<div class="line">prices: {苹果: 5.5, 香蕉: 3.8} (order may vary)</div>
+<div class="line"> </div>
+<div class="line">std::unordered_map&lt;int, std::string&gt; status = {{200, <span class="stringliteral">&quot;成功&quot;</span>}, {404,</div>
+<div class="line"><span class="stringliteral">&quot;未找到&quot;</span>}}; <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;状态码: &quot;</span> &lt;&lt; status;</div>
+<div class="line"><span class="comment">// 输出: 状态码: {200: 成功, 404: 未找到} (顺序可能变化) / Output: Status</span></div>
+<div class="line">codes: {200: Success, 404: Not Found} (order may vary)</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab8beb7c8cdf06081cdc0273c48524a5c" name="ab8beb7c8cdf06081cdc0273c48524a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8beb7c8cdf06081cdc0273c48524a5c">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[5/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td> -&gt; std::enable_if_t&lt;<a class="el" href="namespacetoolbox_1_1logger.html#ae92163dce5c70e6094943043c3c76b49">is_container_v</a>&lt;T&gt; &amp;&amp; !<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt;T&gt;,
+                            <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;&gt;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载容器的operator&lt;&lt; / Overload operator&lt;&lt; for containers </p>
+<p>此运算符允许记录没有自己的流运算符的容器类型(如向量、列表)。容器元素以逗号分隔的列表形式打印,用方括号括起来。/ This operator allows logging of container types (e.g., vectors, lists) that don't have their own stream operator. The container elements are printed in a comma-separated list enclosed in square brackets.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>容器类型(必须满足is_container_v) / Container type (must satisfy is_container_v) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>要记录的容器 / The container to log </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; vec = {1, 2, 3};</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;Vector: &quot;</span> &lt;&lt; vec;  <span class="comment">// 输出: Vector: [1, 2, 3] / Output:</span></div>
+<div class="line">Vector: [1, 2, 3]</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a4e10c5cd09173cb92ae140ed1706b4e8" name="a4e10c5cd09173cb92ae140ed1706b4e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e10c5cd09173cb92ae140ed1706b4e8">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[6/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> -&gt; std::enable_if_t&lt;<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt;T&gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;&gt;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载具有ostream operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types that have an operator&lt;&lt; with an ostream </p>
+<p>此运算符允许记录任何支持标准流插入运算符(operator&lt;&lt;)的类型。它在执行操作前检查日志级别,只有当当前级别足够时才记录。/ This operator allows logging of any type that supports the standard stream insertion operator (operator&lt;&lt;). It checks the logging level before performing the operation and only logs if the current level is sufficient.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>要记录的值的类型,必须定义了operator&lt;&lt; / The type of value to log, must have operator&lt;&lt; defined </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>要打印到日志流的值 / The value to print to the log stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 记录基本类型 / Logging basic types</span></div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; 42 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; 3.14 &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; <span class="keyword">true</span>;</div>
+<div class="line"><span class="comment">// 输出: 42 3.14 true / Output: 42 3.14 true</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 记录自定义类型 / Logging custom types</span></div>
+<div class="line"><span class="keyword">struct </span>Point { <span class="keywordtype">int</span> x, y; };</div>
+<div class="line">std::ostream&amp; <a class="code hl_function" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> Point&amp; p) {</div>
+<div class="line">    <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(&quot;</span> &lt;&lt; p.x &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; p.y &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
+<div class="line">}</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; Point{1, 2};</div>
+<div class="line"><span class="comment">// 输出: (1,2) / Output: (1,2)</span></div>
+<div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t_html_ab8beb7c8cdf06081cdc0273c48524a5c"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c">toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(const T &amp;container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</div><div class="ttdoc">重载容器的operator&lt;&lt; / Overload operator&lt;&lt; for containers</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:538</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a5820a4c7b6b776da403bdad817e5f500" name="a5820a4c7b6b776da403bdad817e5f500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5820a4c7b6b776da403bdad817e5f500">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> -&gt; std::enable_if_t&lt;
+        !<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt;T&gt; &amp;&amp; <a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt;T&gt;,
+        <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;&gt;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载具有成员operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types with member operator&lt;&lt; </p>
+<p>此运算符处理将operator&lt;&lt;实现为成员函数而不是自由函数的类型。对于不能修改全局命名空间来添加流运算符的类型特别有用。/ This operator handles types that implement operator&lt;&lt; as a member function rather than a free function. It's particularly useful for types that can't modify the global namespace to add stream operators.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>要记录的值的类型,必须有成员operator&lt;&lt; / The type of value to log, must have member operator&lt;&lt; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>要打印到日志流的值 / The value to print to the log stream </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">struct </span>CustomLogger {</div>
+<div class="line">    std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os)<span class="keyword"> const </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;Custom logger output&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="line"><a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; CustomLogger();</div>
+<div class="line"><span class="comment">// 输出: Custom logger output / Output: Custom logger output</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a7bc1e3cde55775af3d534d9d3defd103" name="a7bc1e3cde55775af3d534d9d3defd103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc1e3cde55775af3d534d9d3defd103">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[8/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>logger</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重载用于组合日志记录器的operator&lt;&lt; / Overload operator&lt;&lt; for combining loggers </p>
+<p>此运算符允许将一个日志记录器的内容组合到另一个中。在保持相同日志级别的同时从多个来源构建复杂日志消息时很有用。/ This operator allows combining the contents of one logger into another. It's useful for building complex log messages from multiple sources while maintaining the same logging level.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">logger</td><td>要追加其内容的其他日志记录器 / The other logger whose contents to append </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span>&amp; logger1 = <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;状态: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;正常&quot;</span>;</div>
+<div class="line"><span class="keyword">auto</span>&amp; logger2 = <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot; 详细信息: &quot;</span> &lt;&lt; <span class="stringliteral">&quot;所有系统运行中&quot;</span>;</div>
+<div class="line">logger1 &lt;&lt; logger2;  <span class="comment">// 仅在INFO级别启用时记录 / Only logs if INFO level</span></div>
+<div class="line">is enabled</div>
+<div class="line"><span class="comment">// 输出: 状态: 正常 详细信息: 所有系统运行中 / Output: Status: Normal</span></div>
+<div class="line">Details: All systems running</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a48d0027bbf2164b119c9c16b2a4b43da" name="a48d0027bbf2164b119c9c16b2a4b43da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d0027bbf2164b119c9c16b2a4b43da">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; toolbox::logger::thread_logger_t::thread_stream_logger_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac843eb73f913aaefcbfa74e0bd0f231c" name="ac843eb73f913aaefcbfa74e0bd0f231c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac843eb73f913aaefcbfa74e0bd0f231c">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; toolbox::logger::thread_logger_t::thread_stream_logger_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2269dea461b207e1924a6c938271f03f" name="a2269dea461b207e1924a6c938271f03f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2269dea461b207e1924a6c938271f03f">&#9670;&#160;</a></span>red()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::red </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>以红色格式化文本 / Format text in red color </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要格式化的文本 / The text to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining </dd></dl>
+
+</div>
+</div>
+<a id="aeac33666839401af2bd2bb5bff656b0f" name="aeac33666839401af2bd2bb5bff656b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeac33666839401af2bd2bb5bff656b0f">&#9670;&#160;</a></span>str()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::str </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> -&gt; std::string
+    </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将记录的消息作为字符串获取 / Get the logged message as a string </p>
+<dl class="section return"><dt>Returns</dt><dd>记录的消息作为字符串 / The logged message as a string </dd></dl>
+
+</div>
+</div>
+<a id="a19f229133a4d635f26db2c57e126a00e" name="a19f229133a4d635f26db2c57e126a00e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19f229133a4d635f26db2c57e126a00e">&#9670;&#160;</a></span>yellow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::logger::thread_logger_t::thread_stream_logger_t::yellow </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td> -&gt;  <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>以黄色格式化文本 / Format text in yellow color </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>要格式化的文本 / The text to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对此日志记录器的引用,用于链式调用 / Reference to this logger for chaining </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/logger/<a class="el" href="thread__logger_8hpp_source.html">thread_logger.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1logger.html">logger</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html">thread_logger_t</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
