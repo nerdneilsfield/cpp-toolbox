@@ -130,8 +130,8 @@ var NAVTREEINDEX =
 "classtoolbox_1_1utils_1_1set__printer__t.html#a7cc8b83021b61e15e1a5b52b13feeae5",
 "functional__impl_8hpp.html#a48db12c30c97eddfdbe5bb80179b94f4",
 "namespacetoolbox_1_1base.html#aaf4ba06e16ef767bd29d5b1c9fc760e6",
-"parallel_8hpp.html#aab4fda981d54019a30712394d7747cc4",
-"structtoolbox_1_1traits_1_1type__list.html"
+"parallel_8hpp.html#a778ee00b731c893ba86f150deae148b4",
+"structtoolbox_1_1traits_1_1remove__all__qualifiers.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
