@@ -25,6 +25,7 @@ if example_files and #example_files > 0 then
                         add_syslinks("pthread")
                 elseif is_plat("windows") then
                         add_syslinks("kernel32")
+                        add_cxflags("/utf-8")
                 else
                         add_syslinks("pthread")
                 end

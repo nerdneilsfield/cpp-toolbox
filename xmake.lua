@@ -46,7 +46,8 @@ target("cpp-toolbox")
 
         -- Set symbol visibility on non-Windows platforms
         if not is_plat("windows") then
-        add_cxflags("-fvisibility=hidden")
+          add_cxflags("-fvisibility=hidden")
+          add_cxflags("/utf-8")
         end
 
 -- Define the static library target
@@ -66,7 +67,8 @@ target("cpp-toolbox_static")
 
         -- Set symbol visibility on non-Windows platforms
         if not is_plat("windows") then
-        add_cxflags("-fvisibility=hidden")
+          add_cxflags("-fvisibility=hidden")
+          add_cxflags("/utf-8")
         end
 
 -- Define tests if enabled

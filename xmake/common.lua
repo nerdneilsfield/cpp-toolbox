@@ -18,7 +18,8 @@ on_config(function(target)
 #    ifdef CPP_TOOLBOX_EXPORTS
 #      define CPP_TOOLBOX_EXPORT __declspec(dllexport)
 #    else
-#      define CPP_TOOLBOX_EXPORT __declspec(dllimport)
+       // For MSVC when consuming the DLL, don't mark templates as dllimport
+#      define CPP_TOOLBOX_EXPORT
 #    endif
 #    define CPP_TOOLBOX_NO_EXPORT
 #  else

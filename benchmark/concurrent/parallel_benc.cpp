@@ -1,5 +1,6 @@
 #include <algorithm>  // For std::for_each, std::transform
-#include <execution>  // For std::execution::par (requires C++17 and potentially TBB)
+// #include <execution>  // For std::execution::par (requires C++17 and
+// potentially TBB)
 #include <iostream>  // For potential error output
 #include <numeric>  // For std::accumulate, std::iota
 #include <vector>
