@@ -1,5 +1,7 @@
 #include <cmath>
+#include <cstddef>  // For std::byte
 #include <limits>
+#include <stdexcept>  // For std::invalid_argument
 #include <string>
 #include <string_view>
 #include <vector>
@@ -633,4 +635,131 @@ TEST_CASE("Slugify Function", "[string][slugify]")
           == "hello-world");  // Leading/trailing/multiple hyphens removed
   REQUIRE(slugify("a") == "a");
   REQUIRE(slugify("-a-") == "a");
+}
+
+TEST_CASE("Hex Functions", "[string][hex]")
+{
+  SECTION("hexview(const char*)")
+  {
+    const char data[] = {0x12, char(0xAB), char(0xFF), 0x00};
+    REQUIRE(hexview(data, 0) == "0x");
+    REQUIRE(hexview(data, 0, false) == "");
+    REQUIRE(hexview(data, 1) == "0x12");
+    REQUIRE(hexview(data, 1, false) == "12");
+    REQUIRE(hexview(data, 3) == "0x12ABFF");
+    REQUIRE(hexview(data, 3, false) == "12ABFF");
+    REQUIRE(hexview(data, 4) == "0x12ABFF00");
+    REQUIRE(hexview(data, 4, false) == "12ABFF00");
+  }
+
+  SECTION("hexview(const std::string&)")
+  {
+    std::string str = "Hello";  // 48 65 6C 6C 6F
+    REQUIRE(hexview(str) == "0x48656C6C6F");
+    REQUIRE(hexview(str, false) == "48656C6C6F");
+    std::string str2 = "A\n\t";  // 41 0A 09
+    REQUIRE(hexview(str2) == "0x410A09");
+    REQUIRE(hexview(str2, false) == "410A09");
+    REQUIRE(hexview(std::string("")) == "0x");
+    REQUIRE(hexview(std::string(""), false) == "");
+  }
+
+  SECTION("hexview(const std::vector<char>&)")
+  {
+    std::vector<char> vec = {0x12, char(0xAB), char(0xFF), 0x00};
+    REQUIRE(hexview(vec) == "0x12ABFF00");
+    REQUIRE(hexview(vec, false) == "12ABFF00");
+    std::vector<char> empty_vec;
+    REQUIRE(hexview(empty_vec) == "0x");
+    REQUIRE(hexview(empty_vec, false) == "");
+    std::vector<char> vec_single = {0x0A};
+    REQUIRE(hexview(vec_single) == "0x0A");
+    REQUIRE(hexview(vec_single, false) == "0A");
+  }
+
+  SECTION("hexview(const std::vector<std::byte>&)")
+  {
+    std::vector<std::byte> bytes = {
+        std::byte {0x12}, std::byte {0xAB}, std::byte {0xFF}, std::byte {0x00}};
+    REQUIRE(hexview(bytes) == "0x12ABFF00");
+    REQUIRE(hexview(bytes, false) == "12ABFF00");
+    std::vector<std::byte> empty_bytes;
+    REQUIRE(hexview(empty_bytes) == "0x");
+    REQUIRE(hexview(empty_bytes, false) == "");
+    std::vector<std::byte> bytes_single = {std::byte {0x0A}};
+    REQUIRE(hexview(bytes_single) == "0x0A");
+    REQUIRE(hexview(bytes_single, false) == "0A");
+  }
+
+  SECTION("hex_to_integral")
+  {
+    REQUIRE(hex_to_integral<uint8_t>("0xFF") == 255);
+    REQUIRE(hex_to_integral<uint8_t>("FF", false) == 255);
+    REQUIRE(hex_to_integral<int>("0x1A") == 26);
+    REQUIRE(hex_to_integral<int>("1a", false) == 26);  // case insensitive
+    REQUIRE(hex_to_integral<unsigned long long>("0xDEADBEEFCAFEBABE")
+            == 0xDEADBEEFCAFEBABEULL);
+    REQUIRE(hex_to_integral<unsigned long long>("deadbeefcafebabe", false)
+            == 0xDEADBEEFCAFEBABEULL);
+    REQUIRE(hex_to_integral<int>("0x0") == 0);
+    REQUIRE(hex_to_integral<int>("0", false) == 0);
+
+    // Error cases
+    REQUIRE_THROWS_AS(hex_to_integral<int>("0x"),
+                      std::invalid_argument);  // Empty after prefix
+    REQUIRE_THROWS_AS(hex_to_integral<int>("", false),
+                      std::invalid_argument);  // Empty
+    REQUIRE_THROWS_AS(hex_to_integral<unsigned int>("1", false),
+                      std::invalid_argument);  // Odd length (for unsigned)
+    REQUIRE_THROWS_AS(hex_to_integral<unsigned int>("0x1"),
+                      std::invalid_argument);  // Odd length (for unsigned)
+    REQUIRE_THROWS_AS(hex_to_integral<int>("0xG"),
+                      std::invalid_argument);  // Invalid char
+    REQUIRE_THROWS_AS(hex_to_integral<int>("GG", false),
+                      std::invalid_argument);  // Invalid char
+    REQUIRE_THROWS_AS(
+        hex_to_integral<int>("0x12G"),
+        std::invalid_argument);  // Invalid char
+                                 // stoull throws std::out_of_range for overflow
+    REQUIRE_THROWS_AS(hex_to_integral<uint8_t>("0x100"), std::invalid_argument);
+    REQUIRE_THROWS_AS(hex_to_integral<uint8_t>("100", false),
+                      std::invalid_argument);
+    // Test case for actual out_of_range with even length
+    REQUIRE_THROWS_AS(hex_to_integral<uint8_t>("0x0100"), std::out_of_range);
+    REQUIRE_THROWS_AS(hex_to_integral<uint8_t>("0100", false),
+                      std::out_of_range);
+  }
+
+  SECTION("hex_to_bytes")
+  {
+    std::vector<std::byte> expected_bytes = {
+        std::byte {0xDE}, std::byte {0xAD}, std::byte {0xBE}, std::byte {0xEF}};
+    REQUIRE_THAT(hex_to_bytes<std::vector<std::byte>>("0xDEADBEEF"),
+                 Equals(expected_bytes));
+    REQUIRE_THAT(hex_to_bytes<std::vector<std::byte>>("deadbeef", false),
+                 Equals(expected_bytes));
+
+    std::vector<char> expected_chars = {'\x12', '\x34', '\xAB'};
+    REQUIRE_THAT(hex_to_bytes<std::vector<char>>("0x1234AB"),
+                 Equals(expected_chars));
+    REQUIRE_THAT(hex_to_bytes<std::vector<char>>("1234ab", false),
+                 Equals(expected_chars));
+
+    std::string expected_string = "\x01\xFF";
+    REQUIRE(hex_to_bytes<std::string>("0x01FF") == expected_string);
+    REQUIRE(hex_to_bytes<std::string>("01ff", false) == expected_string);
+
+    REQUIRE(hex_to_bytes<std::vector<std::byte>>("0x").empty());
+    REQUIRE(hex_to_bytes<std::vector<char>>("", false).empty());
+
+    // Error cases
+    REQUIRE_THROWS_AS(hex_to_bytes<std::vector<std::byte>>("0x1"),
+                      std::invalid_argument);  // Odd length
+    REQUIRE_THROWS_AS(hex_to_bytes<std::vector<std::byte>>("1", false),
+                      std::invalid_argument);  // Odd length
+    REQUIRE_THROWS_AS(hex_to_bytes<std::vector<char>>("0xGG"),
+                      std::invalid_argument);  // Invalid char
+    REQUIRE_THROWS_AS(hex_to_bytes<std::vector<char>>("12G4", false),
+                      std::invalid_argument);  // Invalid char
+  }
 }

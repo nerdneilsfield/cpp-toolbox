@@ -1,5 +1,5 @@
 -- Find all .cpp files in example directory (including subdirectories)
-local example_files = os.files("example/**.cpp")
+local example_files = os.files("./**.cpp")
 
 -- If files are found
 if example_files and #example_files > 0 then
@@ -18,7 +18,7 @@ if example_files and #example_files > 0 then
                 add_files(filepath)
                 add_deps("cpp-toolbox")
                 add_rules("generate_export_header")
-                set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+                set_pcxxheader("../src/impl/cpp-toolbox/pch.hpp")
                 set_policy("build.optimization.lto", true)
                 -- Add platform specific system libraries
                 if is_plat("linux", "macosx", "bsd") then

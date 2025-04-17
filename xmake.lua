@@ -29,20 +29,6 @@ local source_files = {"src/impl/cpp-toolbox/base/**.cpp",
                       "src/impl/cpp-toolbox/file/**.cpp", 
                       "src/impl/cpp-toolbox/logger/**.cpp"}
 
--- Define test files
-local test_files = {"test/base/**.cpp", 
-                    "test/container/**.cpp",
-                    "test/concurrent/**.cpp",
-                    "test/file/**.cpp",
-                    "test/logger/**.cpp", 
-                    "test/utils/**.cpp", 
-                    "test/types/**.cpp", 
-                    "test/functional/**.cpp",
-                    "test/my_catch2_main.cpp"}
-
--- Define benchmark files
-local benchmark_files = {"benchmark/**.cpp"}
-
 -- Define the shared library target
 target("cpp-toolbox")
         add_rules("generate_export_header")

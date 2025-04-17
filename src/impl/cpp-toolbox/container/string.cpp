@@ -1036,4 +1036,104 @@ auto slugify(std::string_view s) -> std::string
   return result;
 }
 
+static const std::array<char, 16> HEX_CHARS = {'0',
+                                               '1',
+                                               '2',
+                                               '3',
+                                               '4',
+                                               '5',
+                                               '6',
+                                               '7',
+                                               '8',
+                                               '9',
+                                               'A',
+                                               'B',
+                                               'C',
+                                               'D',
+                                               'E',
+                                               'F'};
+
+auto hexview(const char* data, std::size_t size, bool with_prefix)
+    -> std::string
+{
+  std::string result;
+  if (with_prefix) {
+    result.reserve(size * 2 + 2);
+    result += "0x";
+  } else {
+    result.reserve(size * 2);
+  }
+  for (std::size_t i = 0; i < size; ++i) {
+    unsigned char byte = static_cast<unsigned char>(data[i]);
+    result += HEX_CHARS[byte >> 4];
+    result += HEX_CHARS[byte & 0x0F];
+  }
+  return result;
+}
+
+auto hexview(const std::string& data, bool with_prefix) -> std::string
+{
+  return hexview(data.data(), data.size(), with_prefix);
+}
+
+auto hexview(const std::vector<char>& data, bool with_prefix) -> std::string
+{
+  return hexview(data.data(), data.size(), with_prefix);
+}
+
+auto hexview(const std::vector<std::byte>& data, bool with_prefix)
+    -> std::string
+{
+  return hexview(
+      reinterpret_cast<const char*>(data.data()), data.size(), with_prefix);
+}
+
+template auto hex_to_integral<std::uint8_t>(const std::string& hex_str,
+                                            bool with_prefix = true)
+    -> std::uint8_t;
+
+template auto hex_to_integral<std::uint16_t>(const std::string& hex_str,
+                                             bool with_prefix = true)
+    -> std::uint16_t;
+
+template auto hex_to_integral<std::uint32_t>(const std::string& hex_str,
+                                             bool with_prefix = true)
+    -> std::uint32_t;
+
+template auto hex_to_integral<std::uint64_t>(const std::string& hex_str,
+                                             bool with_prefix = true)
+    -> std::uint64_t;
+
+template auto hex_to_integral<std::int8_t>(const std::string& hex_str,
+                                           bool with_prefix = true)
+    -> std::int8_t;
+
+template auto hex_to_integral<std::int16_t>(const std::string& hex_str,
+                                            bool with_prefix = true)
+    -> std::int16_t;
+
+template auto hex_to_integral<std::int32_t>(const std::string& hex_str,
+                                            bool with_prefix = true)
+    -> std::int32_t;
+
+template auto hex_to_integral<std::int64_t>(const std::string& hex_str,
+                                            bool with_prefix = true)
+    -> std::int64_t;
+
+template auto hex_to_bytes<std::vector<std::uint8_t>>(
+    const std::string& hex_str, bool with_prefix = true)
+    -> std::vector<std::uint8_t>;
+
+template auto hex_to_bytes<std::vector<char>>(const std::string& hex_str,
+                                              bool with_prefix = true)
+    -> std::vector<char>;
+
+template auto hex_to_bytes<std::vector<std::uint16_t>>(
+    const std::string& hex_str, bool with_prefix = true)
+    -> std::vector<std::uint16_t>;
+
+template auto hex_to_bytes<std::vector<std::uint32_t>>(
+    const std::string& hex_str, bool with_prefix = true)
+    -> std::vector<std::uint32_t>;
+
 }  // namespace toolbox::container::string

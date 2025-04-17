@@ -1152,5 +1152,254 @@ CPP_TOOLBOX_EXPORT auto base64_decode(std::string_view encoded_data)
  */
 CPP_TOOLBOX_EXPORT auto slugify(std::string_view s) -> std::string;
 
+/**
+ * @brief 将二进制数据转换为十六进制字符串表示/Convert binary data to
+ * hexadecimal string representation
+ *
+ * @param data 指向二进制数据的指针/Pointer to binary data
+ * @param size 数据大小/Size of data
+ * @param with_prefix 是否添加0x前缀/Whether to add 0x prefix
+ * @return 十六进制字符串/Hexadecimal string
+ *
+ * @code{.cpp}
+ * // 基本用法/Basic usage
+ * const char data[] = {0x12, 0xAB, 0xFF};
+ * auto hex = hexview(data, 3);
+ * // hex 将是 "0x12ABFF"/hex will be "0x12ABFF"
+ *
+ * // 不带前缀/Without prefix
+ * auto hex2 = hexview(data, 3, false);
+ * // hex2 将是 "12ABFF"/hex2 will be "12ABFF"
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto hexview(const char* data,
+                                std::size_t size,
+                                bool with_prefix = true) -> std::string;
+
+/**
+ * @brief 将字符串转换为十六进制表示/Convert string to hexadecimal
+ * representation
+ *
+ * @param data 输入字符串/Input string
+ * @param with_prefix 是否添加0x前缀/Whether to add 0x prefix
+ * @return 十六进制字符串/Hexadecimal string
+ *
+ * @code{.cpp}
+ * // 基本用法/Basic usage
+ * std::string str = "Hello";
+ * auto hex = hexview(str);
+ * // hex 将是 "0x48656C6C6F"/hex will be "0x48656C6C6F"
+ *
+ * // 包含特殊字符/With special characters
+ * auto hex2 = hexview("ABC\n\t");
+ * // hex2 将是 "0x4142430A09"/hex2 will be "0x4142430A09"
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto hexview(const std::string& data,
+                                bool with_prefix = true) -> std::string;
+
+/**
+ * @brief 将字符向量转换为十六进制表示/Convert vector of chars to hexadecimal
+ * representation
+ *
+ * @param data 字符向量/Vector of chars
+ * @param with_prefix 是否添加0x前缀/Whether to add 0x prefix
+ * @return 十六进制字符串/Hexadecimal string
+ *
+ * @code{.cpp}
+ * // 基本用法/Basic usage
+ * std::vector<char> vec{0x00, 0xFF};
+ * auto hex = hexview(vec);
+ * // hex 将是 "0x00FF"/hex will be "0x00FF"
+ *
+ * // 更复杂的例子/More complex example
+ * std::vector<char> data{0x12, 0x34, 0xAB, 0xCD};
+ * auto hex2 = hexview(data, false);
+ * // hex2 将是 "1234ABCD"/hex2 will be "1234ABCD"
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto hexview(const std::vector<char>& data,
+                                bool with_prefix = true) -> std::string;
+
+/**
+ * @brief 将字节向量转换为十六进制表示/Convert vector of bytes to hexadecimal
+ * representation
+ *
+ * @param data 字节向量/Vector of bytes
+ * @param with_prefix 是否添加0x前缀/Whether to add 0x prefix
+ * @return 十六进制字符串/Hexadecimal string
+ *
+ * @code{.cpp}
+ * // 基本用法/Basic usage
+ * std::vector<std::byte> bytes{std::byte{0xAA}, std::byte{0xBB}};
+ * auto hex = hexview(bytes);
+ * // hex 将是 "0xAABB"/hex will be "0xAABB"
+ *
+ * // 混合数据/Mixed data
+ * std::vector<std::byte> data{std::byte{0x00}, std::byte{0xFF},
+ * std::byte{0x80}}; auto hex2 = hexview(data, false);
+ * // hex2 将是 "00FF80"/hex2 will be "00FF80"
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto hexview(const std::vector<std::byte>& data,
+                                bool with_prefix = true) -> std::string;
+
+/**
+ * @brief 将十六进制字符串转换为整数类型/Convert hexadecimal string to integral
+ * type
+ *
+ * @tparam T 目标整数类型/Target integral type
+ * @param hex_str 十六进制字符串/Hexadecimal string
+ * @param with_prefix 输入是否包含0x前缀/Whether input contains 0x prefix
+ * @return 转换后的整数值/Converted integral value
+ * @throw std::invalid_argument 当输入字符串格式无效时抛出/Thrown when input
+ * string format is invalid
+ *
+ * @code{.cpp}
+ * // 基本用法/Basic usage
+ * auto val = hex_to_integral<uint32_t>("0xFF");
+ * // val 将是 255/val will be 255
+ *
+ * // 不带前缀/Without prefix
+ * auto val2 = hex_to_integral<int16_t>("8080", false);
+ * // val2 将是 32896/val2 will be 32896
+ * @endcode
+ */
+template<typename T>
+auto hex_to_integral(const std::string& hex_str, bool with_prefix = true) -> T
+{
+  static_assert(std::is_integral_v<T>,
+                "T 必须是整型/T must be an integral type");
+  std::string_view s(hex_str);
+  // 跳过可选的 "0x" 或 "0X" 前缀/Skip optional "0x" or "0X" prefix
+  if (with_prefix && s.size() >= 2 && s[0] == '0'
+      && (s[1] == 'x' || s[1] == 'X'))
+  {
+    s.remove_prefix(2);
+  }
+  if (s.empty()) {  // Simplified empty check after prefix removal
+    throw std::invalid_argument(
+        "非法的十六进制字符串: 空字符串或只有前缀/Invalid hex string: empty or "
+        "only prefix");
+  }
+  // 十六进制字符串长度必须是偶数，除非它是单个 '0' / Hex string length must be
+  // even, unless it's a single '0'
+  if (s.size() % 2 != 0 && s != "0") {  // 允许单个 "0" / Allow single "0"
+    throw std::invalid_argument(
+        "非法的十六进制字符串长度 (必须是偶数，除非是'0')/Invalid hex string "
+        "length (must be even, unless it's '0')");
+  }
+
+  // 使用 std::stoull 自动处理 base 参数/Use std::stoull to handle base
+  // parameter automatically
+  size_t pos = 0;  // To check how many characters were consumed
+  unsigned long long tmp = 0;
+  try {
+    tmp = std::stoull(std::string(s), &pos, 16);
+  } catch (const std::invalid_argument& e) {
+    // Re-throw with a potentially more informative message if needed, or just
+    // let it propagate
+    throw std::invalid_argument("非法的十六进制字符/Invalid hex character(s)");
+  } catch (const std::out_of_range& e) {
+    // Let std::out_of_range propagate
+    throw;
+  }
+
+  // 检查是否所有字符都被消耗/Check if all characters were consumed
+  if (pos != s.length()) {
+    throw std::invalid_argument(
+        "包含非法十六进制字符或尾随字符/Contains invalid hex or trailing "
+        "characters");
+  }
+
+  // Check for potential overflow when casting back to T (stoull checks against
+  // ULLONG_MAX) This is a bit tricky, especially for signed types. A simple
+  // check for unsigned types:
+  if constexpr (std::is_unsigned_v<T>) {
+    if (tmp > static_cast<unsigned long long>(std::numeric_limits<T>::max())) {
+      throw std::out_of_range(
+          "值超出目标类型范围/Value out of range for target type");
+    }
+  } else {  // For signed types
+    // This comparison logic needs careful consideration of T's range
+    // For simplicity, we might rely on the static_cast behavior or add more
+    // complex checks if needed. E.g., check if tmp fits within both min and max
+    // of T if (tmp > static_cast<unsigned long
+    // long>(std::numeric_limits<T>::max()) &&
+    //     (tmp > -static_cast<long long>(std::numeric_limits<T>::min()) ) ) {
+    //     ... }
+    // Simpler check: If the original string wasn't negative and result is >
+    // max, it's overflow
+    if (tmp > static_cast<unsigned long long>(std::numeric_limits<T>::max())) {
+      // Check if it could represent a negative number within range if T is
+      // signed This might require more robust two's complement handling
+      // depending on exact needs. For now, let's assume stoull parsed correctly
+      // and cast might overflow. A safer approach might involve parsing
+      // differently for signed types. Let's keep the basic check for now.
+      if (tmp > static_cast<unsigned long long>(std::numeric_limits<T>::max()))
+      {
+        throw std::out_of_range(
+            "值超出目标类型范围/Value out of range for target type");
+      }
+    }
+  }
+
+  return static_cast<T>(tmp);
+}
+
+/**
+ * @brief 将十六进制字符串转换为字节容器/Convert hexadecimal string to byte
+ * container
+ *
+ * @tparam Container 目标容器类型/Target container type
+ * @param hex_str 十六进制字符串/Hexadecimal string
+ * @param with_prefix 输入是否包含0x前缀/Whether input contains 0x prefix
+ * @return 包含转换后字节的容器/Container with converted bytes
+ * @throw std::invalid_argument 当输入字符串格式无效时抛出/Thrown when input
+ * string format is invalid
+ *
+ * @code{.cpp}
+ * // 转换为字节向量/Convert to byte vector
+ * auto bytes = hex_to_bytes<std::vector<std::byte>>("0xAABBCC");
+ * // bytes 将包含 {0xAA, 0xBB, 0xCC}/bytes will contain {0xAA, 0xBB, 0xCC}
+ *
+ * // 转换为字符向量/Convert to char vector
+ * auto chars = hex_to_bytes<std::vector<char>>("010203", false);
+ * // chars 将包含 {0x01, 0x02, 0x03}/chars will contain {0x01, 0x02, 0x03}
+ * @endcode
+ */
+template<typename Container>
+auto hex_to_bytes(const std::string& hex_str, bool with_prefix = true)
+    -> Container
+{
+  using Byte = typename Container::value_type;
+  std::string_view s(hex_str);
+  if (with_prefix && s.size() >= 2 && s[0] == '0'
+      && (s[1] == 'x' || s[1] == 'X'))
+  {
+    s.remove_prefix(2);
+  }
+  if (s.size() % 2 != 0) {
+    throw std::invalid_argument(
+        "十六进制字符串长度必须是偶数/Hex string length must be even");
+  }
+  Container output;
+  output.clear();
+  output.reserve(s.size() / 2);
+  for (size_t i = 0; i < s.size(); i += 2) {
+    auto hi = s[i];
+    auto lo = s[i + 1];
+    if (!std::isxdigit(hi) || !std::isxdigit(lo)) {
+      throw std::invalid_argument(
+          "包含非法十六进制字符/Contains invalid hex characters");
+    }
+    Byte byte = static_cast<Byte>(
+        ((std::isdigit(hi) ? hi - '0' : std::toupper(hi) - 'A' + 10) * 16)
+        + (std::isdigit(lo) ? lo - '0' : std::toupper(lo) - 'A' + 10));
+    output.push_back(byte);
+  }
+  return output;
+}
+
 }  // namespace toolbox::container::string
 #endif  // CPP_TOOLBOX_CONTAINER_STRING_HPP

@@ -88,7 +88,7 @@ struct CPP_TOOLBOX_EXPORT print_style_t
  * @brief 获取默认打印风格/Get default print style
  * @return const print_style_t& 默认风格引用/Reference to default style
  * @code
- * const auto& style = cpp_toolbox::utils::get_default_style();
+ * const auto& style = toolbox::utils::get_default_style();
  * @endcode
  */
 inline auto get_default_style() -> const print_style_t&
