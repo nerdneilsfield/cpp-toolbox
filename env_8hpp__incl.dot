@@ -11,4 +11,14 @@ digraph "src/include/cpp-toolbox/base/env.hpp"
   Node3 [id="Node000003",label="cpp-toolbox/cpp-toolbox\l_export.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="cpp-toolbox/macro.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$macro_8hpp.html",tooltip="通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro..."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="cpp-toolbox/macro/class.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_8hpp.html",tooltip=" "];
+  Node4 -> Node6 [id="edge5_Node000004_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="cpp-toolbox/macro/endian.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$endian_8hpp.html",tooltip=" "];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node6 -> Node8 [id="edge7_Node000006_Node000008",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="endian.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node4 -> Node9 [id="edge8_Node000004_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
 }

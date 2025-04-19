@@ -7,6 +7,7 @@ var dir_09c6140c2956544491238e129f11fd9f =
     [ "functional", "dir_42d4fada0fd69cb4cfebc8e2df038324.html", "dir_42d4fada0fd69cb4cfebc8e2df038324" ],
     [ "io", "dir_0525589dda1abc1cfa65fd0da343267e.html", "dir_0525589dda1abc1cfa65fd0da343267e" ],
     [ "logger", "dir_40d9b6a4c321e73b85093107dc465522.html", "dir_40d9b6a4c321e73b85093107dc465522" ],
+    [ "macro", "dir_5a67e91a1465d0f547b2b0b801205bed.html", "dir_5a67e91a1465d0f547b2b0b801205bed" ],
     [ "math", "dir_456e3efa1700f2e372aa6b9f2b6f70ca.html", "dir_456e3efa1700f2e372aa6b9f2b6f70ca" ],
     [ "types", "dir_d073c017754f5bdb7e8e1de8ad13b99a.html", "dir_d073c017754f5bdb7e8e1de8ad13b99a" ],
     [ "utils", "dir_f67a023f401e335084376ee616e38b67.html", "dir_f67a023f401e335084376ee616e38b67" ],

@@ -216,63 +216,31 @@ $(document).ready(function(){initNavTree('macro_8hpp.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">macro.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macros  
 <a href="#details">More...</a></p>
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &lt;<a class="el" href="class_8hpp_source.html">cpp-toolbox/macro/class.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="endian_8hpp_source.html">cpp-toolbox/macro/endian.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="platforms_8hpp_source.html">cpp-toolbox/macro/platforms.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for macro.hpp:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 0 --></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
 </div>
 </div>
 <p><a href="macro_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a2337ee1912889babdb32b9f06bfe9753" id="r_a2337ee1912889babdb32b9f06bfe9753"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a2337ee1912889babdb32b9f06bfe9753">CPP_VERSION_STR</a>(year,  month)&#160;&#160;&#160;#year #month &quot;L&quot;</td></tr>
-<tr class="memdesc:a2337ee1912889babdb32b9f06bfe9753"><td class="mdescLeft">&#160;</td><td class="mdescRight">编译器检测宏 / Compiler detection macros  <br /></td></tr>
-<tr class="separator:a2337ee1912889babdb32b9f06bfe9753"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6cc83217a072b02280fddea5cdeb6ec" id="r_ab6cc83217a072b02280fddea5cdeb6ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(year,  month)&#160;&#160;&#160;year##month##L</td></tr>
-<tr class="memdesc:ab6cc83217a072b02280fddea5cdeb6ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">将C++版本转换为整数 / Convert C++ version to integer  <br /></td></tr>
-<tr class="separator:ab6cc83217a072b02280fddea5cdeb6ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa66072fd34bc1b7e07b68c362c51ec77" id="r_aa66072fd34bc1b7e07b68c362c51ec77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#aa66072fd34bc1b7e07b68c362c51ec77">CPP_11</a>&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 103)</td></tr>
-<tr class="memdesc:aa66072fd34bc1b7e07b68c362c51ec77"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++标准检测 / C++ standard detection.  <br /></td></tr>
-<tr class="separator:aa66072fd34bc1b7e07b68c362c51ec77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bf1fb838aec0dacee3a689e55bc3ce7" id="r_a1bf1fb838aec0dacee3a689e55bc3ce7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a1bf1fb838aec0dacee3a689e55bc3ce7">CPP_14</a>&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 402)</td></tr>
-<tr class="separator:a1bf1fb838aec0dacee3a689e55bc3ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b78a25a0c887ed4960c4e346f5cbb9e" id="r_a2b78a25a0c887ed4960c4e346f5cbb9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a2b78a25a0c887ed4960c4e346f5cbb9e">CPP_17</a>&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 703)</td></tr>
-<tr class="separator:a2b78a25a0c887ed4960c4e346f5cbb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97bb0231779cfb2ea2cb3da0eaa83207" id="r_a97bb0231779cfb2ea2cb3da0eaa83207"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a97bb0231779cfb2ea2cb3da0eaa83207">CPP_20</a>&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(202, 002)</td></tr>
-<tr class="separator:a97bb0231779cfb2ea2cb3da0eaa83207"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bc7c68b2b225846c20f71930729fe30" id="r_a7bc7c68b2b225846c20f71930729fe30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a7bc7c68b2b225846c20f71930729fe30">CPP_TOOLBOX_CXX_LARGE_THAN_17</a>(Content)&#160;&#160;&#160;  static_assert(__cplusplus &gt;= <a class="el" href="macro_8hpp.html#a2b78a25a0c887ed4960c4e346f5cbb9e">CPP_17</a>, Content)</td></tr>
-<tr class="memdesc:a7bc7c68b2b225846c20f71930729fe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++17要求的静态断言 / Static assert for C++17 requirement.  <br /></td></tr>
-<tr class="separator:a7bc7c68b2b225846c20f71930729fe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ea85e1fa8e67520bf3aff86c29e747e" id="r_a8ea85e1fa8e67520bf3aff86c29e747e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a8ea85e1fa8e67520bf3aff86c29e747e">CPP_TOOLBOX_CXX_VERSION</a>&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec">get_cpp_version</a>()</td></tr>
-<tr class="memdesc:a8ea85e1fa8e67520bf3aff86c29e747e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取C++版本字符串 / Get C++ version string  <br /></td></tr>
-<tr class="separator:a8ea85e1fa8e67520bf3aff86c29e747e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1de779914dcded178fdd741367d0bcd" id="r_af1de779914dcded178fdd741367d0bcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a>(ClassType)</td></tr>
-<tr class="memdesc:af1de779914dcded178fdd741367d0bcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用类的拷贝操作 / Disable copy operations for a class  <br /></td></tr>
-<tr class="separator:af1de779914dcded178fdd741367d0bcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdec75c7ea0e64620c5b13546ab3a0a2" id="r_afdec75c7ea0e64620c5b13546ab3a0a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a>(ClassType)</td></tr>
-<tr class="memdesc:afdec75c7ea0e64620c5b13546ab3a0a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用类的移动操作 / Disable move operations for a class  <br /></td></tr>
-<tr class="separator:afdec75c7ea0e64620c5b13546ab3a0a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6497f847f85135e611cfce9aed2b051c" id="r_a6497f847f85135e611cfce9aed2b051c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a6497f847f85135e611cfce9aed2b051c">CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</a>(ClassType)</td></tr>
-<tr class="memdesc:a6497f847f85135e611cfce9aed2b051c"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用类的拷贝和移动操作 / Disable both copy and move operations  <br /></td></tr>
-<tr class="separator:a6497f847f85135e611cfce9aed2b051c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a889194aa6d2dfc2637918a28833dd472" id="r_a889194aa6d2dfc2637918a28833dd472"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a889194aa6d2dfc2637918a28833dd472">CPP_TOOLBOX_DEFAULT_CONSTRUCTOR</a>(ClassType)&#160;&#160;&#160;ClassType() = default;</td></tr>
-<tr class="memdesc:a889194aa6d2dfc2637918a28833dd472"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数宏 / Default constructor macro  <br /></td></tr>
-<tr class="separator:a889194aa6d2dfc2637918a28833dd472"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9531237c7e39a8932c326b76e8fa836" id="r_ab9531237c7e39a8932c326b76e8fa836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#ab9531237c7e39a8932c326b76e8fa836">CPP_TOOLBOX_DELETE_CONSTRUCTOR</a>(ClassType)</td></tr>
-<tr class="memdesc:ab9531237c7e39a8932c326b76e8fa836"><td class="mdescLeft">&#160;</td><td class="mdescRight">删除拷贝和移动构造函数 / Delete copy and move constructors  <br /></td></tr>
-<tr class="separator:ab9531237c7e39a8932c326b76e8fa836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae96fe8cc69010f510fec50602c56b466" id="r_ae96fe8cc69010f510fec50602c56b466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#ae96fe8cc69010f510fec50602c56b466">CPP_TOOLBOX_SINGLETON</a>(ClassType)</td></tr>
-<tr class="memdesc:ae96fe8cc69010f510fec50602c56b466"><td class="mdescLeft">&#160;</td><td class="mdescRight">单例模式宏 / Singleton pattern macro  <br /></td></tr>
-<tr class="separator:ae96fe8cc69010f510fec50602c56b466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeee8264ff582ee75d54d3ad07d099e62" id="r_aeee8264ff582ee75d54d3ad07d099e62"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#aeee8264ff582ee75d54d3ad07d099e62">CPP_TOOLBOX_STATIC_ASSERT</a>(Condition,  Message)&#160;&#160;&#160;  static_assert(Condition, Message)</td></tr>
 <tr class="memdesc:aeee8264ff582ee75d54d3ad07d099e62"><td class="mdescLeft">&#160;</td><td class="mdescRight">静态断言宏 / Static assertion macro  <br /></td></tr>
 <tr class="separator:aeee8264ff582ee75d54d3ad07d099e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,12 +303,6 @@ Macros</h2></td></tr>
 <tr class="memitem:a5436a8cb969eaf89c020539b27d28976" id="r_a5436a8cb969eaf89c020539b27d28976"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">__CURRENT_FUNCTION__</a>&#160;&#160;&#160;__PRETTY_FUNCTION__</td></tr>
 <tr class="memdesc:a5436a8cb969eaf89c020539b27d28976"><td class="mdescLeft">&#160;</td><td class="mdescRight">当前函数名宏 / Current function name macro  <br /></td></tr>
 <tr class="separator:a5436a8cb969eaf89c020539b27d28976"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a5703178ca0406694e4a7d1ce966220ec" id="r_a5703178ca0406694e4a7d1ce966220ec"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec">get_cpp_version</a> ()</td></tr>
-<tr class="memdesc:a5703178ca0406694e4a7d1ce966220ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取C++版本字符串 / Get C++ version as string  <br /></td></tr>
-<tr class="separator:a5703178ca0406694e4a7d1ce966220ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macros </p>
@@ -358,65 +320,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>当前函数名宏 / Current function name macro </p>
-
-</div>
-</div>
-<a id="aa66072fd34bc1b7e07b68c362c51ec77" name="aa66072fd34bc1b7e07b68c362c51ec77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa66072fd34bc1b7e07b68c362c51ec77">&#9670;&#160;</a></span>CPP_11</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_11&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 103)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>C++标准检测 / C++ standard detection. </p>
-<p>C++版本宏定义 / C++ version macros </p>
-
-</div>
-</div>
-<a id="a1bf1fb838aec0dacee3a689e55bc3ce7" name="a1bf1fb838aec0dacee3a689e55bc3ce7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bf1fb838aec0dacee3a689e55bc3ce7">&#9670;&#160;</a></span>CPP_14</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_14&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 402)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2b78a25a0c887ed4960c4e346f5cbb9e" name="a2b78a25a0c887ed4960c4e346f5cbb9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b78a25a0c887ed4960c4e346f5cbb9e">&#9670;&#160;</a></span>CPP_17</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_17&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 703)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a97bb0231779cfb2ea2cb3da0eaa83207" name="a97bb0231779cfb2ea2cb3da0eaa83207"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97bb0231779cfb2ea2cb3da0eaa83207">&#9670;&#160;</a></span>CPP_20</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_20&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(202, 002)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -444,7 +347,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#ae8ab5f666fb0fcd7484e839c0a3913ba">CPP_TOOLBOX_ALIGNAS</a>(16) float matrix[4][4];</div>
-<div class="ttc" id="amacro_8hpp_html_ae8ab5f666fb0fcd7484e839c0a3913ba"><div class="ttname"><a href="macro_8hpp.html#ae8ab5f666fb0fcd7484e839c0a3913ba">CPP_TOOLBOX_ALIGNAS</a></div><div class="ttdeci">#define CPP_TOOLBOX_ALIGNAS(Alignment)</div><div class="ttdoc">函数名宏 / Function name macro</div><div class="ttdef"><b>Definition</b> macro.hpp:373</div></div>
+<div class="ttc" id="amacro_8hpp_html_ae8ab5f666fb0fcd7484e839c0a3913ba"><div class="ttname"><a href="macro_8hpp.html#ae8ab5f666fb0fcd7484e839c0a3913ba">CPP_TOOLBOX_ALIGNAS</a></div><div class="ttdeci">#define CPP_TOOLBOX_ALIGNAS(Alignment)</div><div class="ttdoc">函数名宏 / Function name macro</div><div class="ttdef"><b>Definition</b> macro.hpp:114</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -486,7 +389,7 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code hl_define" href="macro_8hpp.html#a07b73c50ffd2db423e667d4d9320f9a5">CPP_TOOLBOX_ASSERT</a>(ptr != <span class="keyword">nullptr</span>, <span class="stringliteral">&quot;Null pointer not allowed&quot;</span>);</div>
 <div class="line">  <span class="comment">// 处理指针 / Process pointer</span></div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a07b73c50ffd2db423e667d4d9320f9a5"><div class="ttname"><a href="macro_8hpp.html#a07b73c50ffd2db423e667d4d9320f9a5">CPP_TOOLBOX_ASSERT</a></div><div class="ttdeci">#define CPP_TOOLBOX_ASSERT(Condition, Message)</div><div class="ttdoc">运行时断言宏(仅在调试模式下) / Runtime assertion macro (debug only)</div><div class="ttdef"><b>Definition</b> macro.hpp:305</div></div>
+<div class="ttc" id="amacro_8hpp_html_a07b73c50ffd2db423e667d4d9320f9a5"><div class="ttname"><a href="macro_8hpp.html#a07b73c50ffd2db423e667d4d9320f9a5">CPP_TOOLBOX_ASSERT</a></div><div class="ttdeci">#define CPP_TOOLBOX_ASSERT(Condition, Message)</div><div class="ttdoc">运行时断言宏(仅在调试模式下) / Runtime assertion macro (debug only)</div><div class="ttdef"><b>Definition</b> macro.hpp:46</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -508,7 +411,7 @@ Functions</h2></td></tr>
 
 <p>计算参数数量 / Count number of arguments </p>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> count = <a class="code hl_define" href="macro_8hpp.html#aab3ac1f988e0c757f741e2ba3ce912f4">CPP_TOOLBOX_COUNT_ARGS</a>(a, b, c); <span class="comment">// count = 3</span></div>
-<div class="ttc" id="amacro_8hpp_html_aab3ac1f988e0c757f741e2ba3ce912f4"><div class="ttname"><a href="macro_8hpp.html#aab3ac1f988e0c757f741e2ba3ce912f4">CPP_TOOLBOX_COUNT_ARGS</a></div><div class="ttdeci">#define CPP_TOOLBOX_COUNT_ARGS(...)</div><div class="ttdoc">计算参数数量 / Count number of arguments</div><div class="ttdef"><b>Definition</b> macro.hpp:436</div></div>
+<div class="ttc" id="amacro_8hpp_html_aab3ac1f988e0c757f741e2ba3ce912f4"><div class="ttname"><a href="macro_8hpp.html#aab3ac1f988e0c757f741e2ba3ce912f4">CPP_TOOLBOX_COUNT_ARGS</a></div><div class="ttdeci">#define CPP_TOOLBOX_COUNT_ARGS(...)</div><div class="ttdoc">计算参数数量 / Count number of arguments</div><div class="ttdef"><b>Definition</b> macro.hpp:177</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -600,222 +503,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7bc7c68b2b225846c20f71930729fe30" name="a7bc7c68b2b225846c20f71930729fe30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bc7c68b2b225846c20f71930729fe30">&#9670;&#160;</a></span>CPP_TOOLBOX_CXX_LARGE_THAN_17</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_CXX_LARGE_THAN_17</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">Content</td><td>)</td>
-          <td>&#160;&#160;&#160;  static_assert(__cplusplus &gt;= <a class="el" href="macro_8hpp.html#a2b78a25a0c887ed4960c4e346f5cbb9e">CPP_17</a>, Content)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>C++17要求的静态断言 / Static assert for C++17 requirement. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Content</td><td>断言消息 / Assert message</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#a7bc7c68b2b225846c20f71930729fe30">CPP_TOOLBOX_CXX_LARGE_THAN_17</a>(<span class="stringliteral">&quot;This feature requires C++17 or later&quot;</span>);</div>
-<div class="ttc" id="amacro_8hpp_html_a7bc7c68b2b225846c20f71930729fe30"><div class="ttname"><a href="macro_8hpp.html#a7bc7c68b2b225846c20f71930729fe30">CPP_TOOLBOX_CXX_LARGE_THAN_17</a></div><div class="ttdeci">#define CPP_TOOLBOX_CXX_LARGE_THAN_17(Content)</div><div class="ttdoc">C++17要求的静态断言 / Static assert for C++17 requirement.</div><div class="ttdef"><b>Definition</b> macro.hpp:160</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a8ea85e1fa8e67520bf3aff86c29e747e" name="a8ea85e1fa8e67520bf3aff86c29e747e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ea85e1fa8e67520bf3aff86c29e747e">&#9670;&#160;</a></span>CPP_TOOLBOX_CXX_VERSION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_CXX_VERSION&#160;&#160;&#160;<a class="el" href="macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec">get_cpp_version</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>获取C++版本字符串 / Get C++ version string </p>
-
-</div>
-</div>
-<a id="a889194aa6d2dfc2637918a28833dd472" name="a889194aa6d2dfc2637918a28833dd472"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a889194aa6d2dfc2637918a28833dd472">&#9670;&#160;</a></span>CPP_TOOLBOX_DEFAULT_CONSTRUCTOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_DEFAULT_CONSTRUCTOR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td>&#160;&#160;&#160;ClassType() = default;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>默认构造函数宏 / Default constructor macro </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MyClass {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#a889194aa6d2dfc2637918a28833dd472">CPP_TOOLBOX_DEFAULT_CONSTRUCTOR</a>(MyClass)</div>
-<div class="line">};</div>
-<div class="ttc" id="amacro_8hpp_html_a889194aa6d2dfc2637918a28833dd472"><div class="ttname"><a href="macro_8hpp.html#a889194aa6d2dfc2637918a28833dd472">CPP_TOOLBOX_DEFAULT_CONSTRUCTOR</a></div><div class="ttdeci">#define CPP_TOOLBOX_DEFAULT_CONSTRUCTOR(ClassType)</div><div class="ttdoc">默认构造函数宏 / Default constructor macro</div><div class="ttdef"><b>Definition</b> macro.hpp:227</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ab9531237c7e39a8932c326b76e8fa836" name="ab9531237c7e39a8932c326b76e8fa836"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9531237c7e39a8932c326b76e8fa836">&#9670;&#160;</a></span>CPP_TOOLBOX_DELETE_CONSTRUCTOR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_DELETE_CONSTRUCTOR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  ClassType(<span class="keyword">const</span> ClassType&amp;) = <span class="keyword">delete</span>; \</div>
-<div class="line">  ClassType(ClassType&amp;&amp;) = <span class="keyword">delete</span>;</div>
-</div><!-- fragment -->
-<p>删除拷贝和移动构造函数 / Delete copy and move constructors </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MyClass {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#ab9531237c7e39a8932c326b76e8fa836">CPP_TOOLBOX_DELETE_CONSTRUCTOR</a>(MyClass)</div>
-<div class="line">};</div>
-<div class="ttc" id="amacro_8hpp_html_ab9531237c7e39a8932c326b76e8fa836"><div class="ttname"><a href="macro_8hpp.html#ab9531237c7e39a8932c326b76e8fa836">CPP_TOOLBOX_DELETE_CONSTRUCTOR</a></div><div class="ttdeci">#define CPP_TOOLBOX_DELETE_CONSTRUCTOR(ClassType)</div><div class="ttdoc">删除拷贝和移动构造函数 / Delete copy and move constructors</div><div class="ttdef"><b>Definition</b> macro.hpp:240</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="af1de779914dcded178fdd741367d0bcd" name="af1de779914dcded178fdd741367d0bcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1de779914dcded178fdd741367d0bcd">&#9670;&#160;</a></span>CPP_TOOLBOX_DISABLE_COPY</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_DISABLE_COPY</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  ClassType(<span class="keyword">const</span> ClassType&amp;) = <span class="keyword">delete</span>; \</div>
-<div class="line">  ClassType&amp; operator=(<span class="keyword">const</span> ClassType&amp;) = <span class="keyword">delete</span>;</div>
-</div><!-- fragment -->
-<p>禁用类的拷贝操作 / Disable copy operations for a class </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MyClass {</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a>(MyClass)</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  MyClass() = <span class="keywordflow">default</span>;</div>
-<div class="line">};</div>
-<div class="ttc" id="amacro_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> macro.hpp:180</div></div>
-</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_8hpp-example.html#a0">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</a>.</dd>
-</dl>
-
-</div>
-</div>
-<a id="a6497f847f85135e611cfce9aed2b051c" name="a6497f847f85135e611cfce9aed2b051c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6497f847f85135e611cfce9aed2b051c">&#9670;&#160;</a></span>CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a>(ClassType) \</div>
-<div class="line">  CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div>
-</div><!-- fragment -->
-<p>禁用类的拷贝和移动操作 / Disable both copy and move operations </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MyClass {</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#a6497f847f85135e611cfce9aed2b051c">CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</a>(MyClass)</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  MyClass() = <span class="keywordflow">default</span>;</div>
-<div class="line">};</div>
-<div class="ttc" id="amacro_8hpp_html_a6497f847f85135e611cfce9aed2b051c"><div class="ttname"><a href="macro_8hpp.html#a6497f847f85135e611cfce9aed2b051c">CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY_AND_MOVE(ClassType)</div><div class="ttdoc">禁用类的拷贝和移动操作 / Disable both copy and move operations</div><div class="ttdef"><b>Definition</b> macro.hpp:212</div></div>
-</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2container_2lock_free_queue_8hpp-example.html#a18">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/container/lock_free_queue.hpp</a>.</dd>
-</dl>
-
-</div>
-</div>
-<a id="afdec75c7ea0e64620c5b13546ab3a0a2" name="afdec75c7ea0e64620c5b13546ab3a0a2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdec75c7ea0e64620c5b13546ab3a0a2">&#9670;&#160;</a></span>CPP_TOOLBOX_DISABLE_MOVE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_DISABLE_MOVE</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  ClassType(ClassType&amp;&amp;) = <span class="keyword">delete</span>; \</div>
-<div class="line">  ClassType&amp; operator=(ClassType&amp;&amp;) = <span class="keyword">delete</span>;</div>
-</div><!-- fragment -->
-<p>禁用类的移动操作 / Disable move operations for a class </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MyClass {</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a>(MyClass)</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  MyClass() = <span class="keywordflow">default</span>;</div>
-<div class="line">};</div>
-<div class="ttc" id="amacro_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> macro.hpp:196</div></div>
-</div><!-- fragment --> <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_8hpp-example.html#a1">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</a>.</dd>
-</dl>
-
-</div>
-</div>
 <a id="a3cb08ff0ec1356360c27432f9a2b2088" name="a3cb08ff0ec1356360c27432f9a2b2088"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3cb08ff0ec1356360c27432f9a2b2088">&#9670;&#160;</a></span>CPP_TOOLBOX_FALLTHROUGH</h2>
 
@@ -837,7 +524,7 @@ Functions</h2></td></tr>
 <div class="line">    doMore();</div>
 <div class="line">    <span class="keywordflow">break</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a3cb08ff0ec1356360c27432f9a2b2088"><div class="ttname"><a href="macro_8hpp.html#a3cb08ff0ec1356360c27432f9a2b2088">CPP_TOOLBOX_FALLTHROUGH</a></div><div class="ttdeci">#define CPP_TOOLBOX_FALLTHROUGH</div><div class="ttdoc">贯穿属性 / Fallthrough attribute</div><div class="ttdef"><b>Definition</b> macro.hpp:412</div></div>
+<div class="ttc" id="amacro_8hpp_html_a3cb08ff0ec1356360c27432f9a2b2088"><div class="ttname"><a href="macro_8hpp.html#a3cb08ff0ec1356360c27432f9a2b2088">CPP_TOOLBOX_FALLTHROUGH</a></div><div class="ttdeci">#define CPP_TOOLBOX_FALLTHROUGH</div><div class="ttdoc">贯穿属性 / Fallthrough attribute</div><div class="ttdef"><b>Definition</b> macro.hpp:153</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -857,7 +544,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#a3ed967026f61635681019d68eaceb786">CPP_TOOLBOX_FORCE_INLINE</a> <span class="keywordtype">int</span> add(<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) {</div>
 <div class="line">  <span class="keywordflow">return</span> a + b;</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a3ed967026f61635681019d68eaceb786"><div class="ttname"><a href="macro_8hpp.html#a3ed967026f61635681019d68eaceb786">CPP_TOOLBOX_FORCE_INLINE</a></div><div class="ttdeci">#define CPP_TOOLBOX_FORCE_INLINE</div><div class="ttdoc">强制内联宏 / Force inline macro</div><div class="ttdef"><b>Definition</b> macro.hpp:353</div></div>
+<div class="ttc" id="amacro_8hpp_html_a3ed967026f61635681019d68eaceb786"><div class="ttname"><a href="macro_8hpp.html#a3ed967026f61635681019d68eaceb786">CPP_TOOLBOX_FORCE_INLINE</a></div><div class="ttdeci">#define CPP_TOOLBOX_FORCE_INLINE</div><div class="ttdoc">强制内联宏 / Force inline macro</div><div class="ttdef"><b>Definition</b> macro.hpp:94</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -883,7 +570,7 @@ Functions</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">  <span class="comment">// 罕见情况 / Rare case</span></div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a09effedcef20be6c3991ea6fb2f1bf39"><div class="ttname"><a href="macro_8hpp.html#a09effedcef20be6c3991ea6fb2f1bf39">CPP_TOOLBOX_LIKELY</a></div><div class="ttdeci">#define CPP_TOOLBOX_LIKELY(Condition)</div><div class="ttdoc">分支预测优化宏 / Branch prediction optimization macros</div><div class="ttdef"><b>Definition</b> macro.hpp:336</div></div>
+<div class="ttc" id="amacro_8hpp_html_a09effedcef20be6c3991ea6fb2f1bf39"><div class="ttname"><a href="macro_8hpp.html#a09effedcef20be6c3991ea6fb2f1bf39">CPP_TOOLBOX_LIKELY</a></div><div class="ttdeci">#define CPP_TOOLBOX_LIKELY(Condition)</div><div class="ttdoc">分支预测优化宏 / Branch prediction optimization macros</div><div class="ttdef"><b>Definition</b> macro.hpp:77</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -915,7 +602,7 @@ Functions</h2></td></tr>
 
 <p>调试日志宏 / Debug logging macro </p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#a58988cbb122cf968db2fe5c7be7a929d">CPP_TOOLBOX_LOG_DEBUG</a>(<span class="stringliteral">&quot;Processing item %d&quot;</span>, itemId);</div>
-<div class="ttc" id="amacro_8hpp_html_a58988cbb122cf968db2fe5c7be7a929d"><div class="ttname"><a href="macro_8hpp.html#a58988cbb122cf968db2fe5c7be7a929d">CPP_TOOLBOX_LOG_DEBUG</a></div><div class="ttdeci">#define CPP_TOOLBOX_LOG_DEBUG(fmt,...)</div><div class="ttdoc">调试日志宏 / Debug logging macro</div><div class="ttdef"><b>Definition</b> macro.hpp:426</div></div>
+<div class="ttc" id="amacro_8hpp_html_a58988cbb122cf968db2fe5c7be7a929d"><div class="ttname"><a href="macro_8hpp.html#a58988cbb122cf968db2fe5c7be7a929d">CPP_TOOLBOX_LOG_DEBUG</a></div><div class="ttdeci">#define CPP_TOOLBOX_LOG_DEBUG(fmt,...)</div><div class="ttdoc">调试日志宏 / Debug logging macro</div><div class="ttdef"><b>Definition</b> macro.hpp:167</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -935,7 +622,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#ab22050c00281c86d4ff32c97a8c3fa97">CPP_TOOLBOX_NODISCARD</a> <span class="keywordtype">int</span> getValue() {</div>
 <div class="line">  <span class="keywordflow">return</span> 42;</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_ab22050c00281c86d4ff32c97a8c3fa97"><div class="ttname"><a href="macro_8hpp.html#ab22050c00281c86d4ff32c97a8c3fa97">CPP_TOOLBOX_NODISCARD</a></div><div class="ttdeci">#define CPP_TOOLBOX_NODISCARD</div><div class="ttdoc">不可丢弃属性 / No discard attribute</div><div class="ttdef"><b>Definition</b> macro.hpp:396</div></div>
+<div class="ttc" id="amacro_8hpp_html_ab22050c00281c86d4ff32c97a8c3fa97"><div class="ttname"><a href="macro_8hpp.html#ab22050c00281c86d4ff32c97a8c3fa97">CPP_TOOLBOX_NODISCARD</a></div><div class="ttdeci">#define CPP_TOOLBOX_NODISCARD</div><div class="ttdoc">不可丢弃属性 / No discard attribute</div><div class="ttdef"><b>Definition</b> macro.hpp:137</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -986,7 +673,7 @@ Functions</h2></td></tr>
 <p>重复宏 / Repeat macros </p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#a8a46eee71dcd68738cf5987934e5b297">CPP_TOOLBOX_REPEAT</a>(3, <span class="stringliteral">&quot;Hello &quot;</span>) <span class="comment">// 输出: &quot;Hello Hello Hello &quot; / Outputs:</span></div>
 <div class="line"><span class="stringliteral">&quot;Hello Hello Hello &quot;</span></div>
-<div class="ttc" id="amacro_8hpp_html_a8a46eee71dcd68738cf5987934e5b297"><div class="ttname"><a href="macro_8hpp.html#a8a46eee71dcd68738cf5987934e5b297">CPP_TOOLBOX_REPEAT</a></div><div class="ttdeci">#define CPP_TOOLBOX_REPEAT(n, x)</div><div class="ttdef"><b>Definition</b> macro.hpp:454</div></div>
+<div class="ttc" id="amacro_8hpp_html_a8a46eee71dcd68738cf5987934e5b297"><div class="ttname"><a href="macro_8hpp.html#a8a46eee71dcd68738cf5987934e5b297">CPP_TOOLBOX_REPEAT</a></div><div class="ttdeci">#define CPP_TOOLBOX_REPEAT(n, x)</div><div class="ttdef"><b>Definition</b> macro.hpp:195</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1081,53 +768,7 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Error&quot;</span>);</div>
 <div class="line">  });</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a2d4fba42ce9373d96d76575f9baad4be"><div class="ttname"><a href="macro_8hpp.html#a2d4fba42ce9373d96d76575f9baad4be">CPP_TOOLBOX_SAFE_CALL</a></div><div class="ttdeci">#define CPP_TOOLBOX_SAFE_CALL(Func)</div><div class="ttdoc">带异常处理的安全函数调用 / Safe function call with exception handling</div><div class="ttdef"><b>Definition</b> macro.hpp:491</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ae96fe8cc69010f510fec50602c56b466" name="ae96fe8cc69010f510fec50602c56b466"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae96fe8cc69010f510fec50602c56b466">&#9670;&#160;</a></span>CPP_TOOLBOX_SINGLETON</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_SINGLETON</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">ClassType</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">public</span>: \</div>
-<div class="line">  <span class="keyword">static</span> ClassType&amp; instance() \</div>
-<div class="line">  { \</div>
-<div class="line">    <span class="keyword">static</span> ClassType instance; \</div>
-<div class="line">    <span class="keywordflow">return</span> instance; \</div>
-<div class="line">  } \</div>
-<div class="line">\</div>
-<div class="line"><span class="keyword">private</span>: \</div>
-<div class="line">  ClassType() = <span class="keywordflow">default</span>; \</div>
-<div class="line">  CPP_TOOLBOX_DISABLE_COPY(ClassType) \</div>
-<div class="line">  CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div>
-</div><!-- fragment -->
-<p>单例模式宏 / Singleton pattern macro </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ClassType</td><td>类名 / Class name</td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="fragment"><div class="line"><span class="keyword">class </span>MySingleton {</div>
-<div class="line">  <a class="code hl_define" href="macro_8hpp.html#ae96fe8cc69010f510fec50602c56b466">CPP_TOOLBOX_SINGLETON</a>(MySingleton)</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> doSomething() {}</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// 使用单例 / Using singleton</span></div>
-<div class="line">MySingleton::instance().doSomething();</div>
-<div class="ttc" id="amacro_8hpp_html_ae96fe8cc69010f510fec50602c56b466"><div class="ttname"><a href="macro_8hpp.html#ae96fe8cc69010f510fec50602c56b466">CPP_TOOLBOX_SINGLETON</a></div><div class="ttdeci">#define CPP_TOOLBOX_SINGLETON(ClassType)</div><div class="ttdoc">单例模式宏 / Singleton pattern macro</div><div class="ttdef"><b>Definition</b> macro.hpp:259</div></div>
+<div class="ttc" id="amacro_8hpp_html_a2d4fba42ce9373d96d76575f9baad4be"><div class="ttname"><a href="macro_8hpp.html#a2d4fba42ce9373d96d76575f9baad4be">CPP_TOOLBOX_SAFE_CALL</a></div><div class="ttdeci">#define CPP_TOOLBOX_SAFE_CALL(Func)</div><div class="ttdoc">带异常处理的安全函数调用 / Safe function call with exception handling</div><div class="ttdef"><b>Definition</b> macro.hpp:232</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1166,7 +807,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <div class="fragment"><div class="line"><a class="code hl_define" href="macro_8hpp.html#aeee8264ff582ee75d54d3ad07d099e62">CPP_TOOLBOX_STATIC_ASSERT</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>) == 4, <span class="stringliteral">&quot;Int must be 32 bits&quot;</span>);</div>
-<div class="ttc" id="amacro_8hpp_html_aeee8264ff582ee75d54d3ad07d099e62"><div class="ttname"><a href="macro_8hpp.html#aeee8264ff582ee75d54d3ad07d099e62">CPP_TOOLBOX_STATIC_ASSERT</a></div><div class="ttdeci">#define CPP_TOOLBOX_STATIC_ASSERT(Condition, Message)</div><div class="ttdoc">静态断言宏 / Static assertion macro</div><div class="ttdef"><b>Definition</b> macro.hpp:281</div></div>
+<div class="ttc" id="amacro_8hpp_html_aeee8264ff582ee75d54d3ad07d099e62"><div class="ttname"><a href="macro_8hpp.html#aeee8264ff582ee75d54d3ad07d099e62">CPP_TOOLBOX_STATIC_ASSERT</a></div><div class="ttdeci">#define CPP_TOOLBOX_STATIC_ASSERT(Condition, Message)</div><div class="ttdoc">静态断言宏 / Static assertion macro</div><div class="ttdef"><b>Definition</b> macro.hpp:22</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1200,7 +841,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="preprocessor">#define PREFIX &quot;my_&quot;</span></div>
 <div class="line"><span class="preprocessor">#define NAME &quot;variable&quot;</span></div>
 <div class="line"><span class="keywordtype">char</span>* full_name = <a class="code hl_define" href="macro_8hpp.html#aa9292500bbfdba3794ba681d678afe77">CPP_TOOLBOX_STRING_CONCAT</a>(PREFIX, NAME); <span class="comment">// &quot;my_variable&quot;</span></div>
-<div class="ttc" id="amacro_8hpp_html_aa9292500bbfdba3794ba681d678afe77"><div class="ttname"><a href="macro_8hpp.html#aa9292500bbfdba3794ba681d678afe77">CPP_TOOLBOX_STRING_CONCAT</a></div><div class="ttdeci">#define CPP_TOOLBOX_STRING_CONCAT(a, b)</div><div class="ttdoc">字符串连接 / String concatenation</div><div class="ttdef"><b>Definition</b> macro.hpp:465</div></div>
+<div class="ttc" id="amacro_8hpp_html_aa9292500bbfdba3794ba681d678afe77"><div class="ttname"><a href="macro_8hpp.html#aa9292500bbfdba3794ba681d678afe77">CPP_TOOLBOX_STRING_CONCAT</a></div><div class="ttdeci">#define CPP_TOOLBOX_STRING_CONCAT(a, b)</div><div class="ttdoc">字符串连接 / String concatenation</div><div class="ttdef"><b>Definition</b> macro.hpp:206</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1223,7 +864,7 @@ Functions</h2></td></tr>
 <p>字符串化宏 / Stringize macro </p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define VERSION 1.0</span></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* version = <a class="code hl_define" href="macro_8hpp.html#aa0fd3bf42fc798fc571f2e6ce57f0b63">CPP_TOOLBOX_STRINGIZE</a>(VERSION); <span class="comment">// &quot;1.0&quot;</span></div>
-<div class="ttc" id="amacro_8hpp_html_aa0fd3bf42fc798fc571f2e6ce57f0b63"><div class="ttname"><a href="macro_8hpp.html#aa0fd3bf42fc798fc571f2e6ce57f0b63">CPP_TOOLBOX_STRINGIZE</a></div><div class="ttdeci">#define CPP_TOOLBOX_STRINGIZE(x)</div><div class="ttdoc">字符串化宏 / Stringize macro</div><div class="ttdef"><b>Definition</b> macro.hpp:475</div></div>
+<div class="ttc" id="amacro_8hpp_html_aa0fd3bf42fc798fc571f2e6ce57f0b63"><div class="ttname"><a href="macro_8hpp.html#aa0fd3bf42fc798fc571f2e6ce57f0b63">CPP_TOOLBOX_STRINGIZE</a></div><div class="ttdeci">#define CPP_TOOLBOX_STRINGIZE(x)</div><div class="ttdoc">字符串化宏 / Stringize macro</div><div class="ttdef"><b>Definition</b> macro.hpp:216</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1288,7 +929,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">case</span> 2: <span class="keywordflow">return</span> <span class="stringliteral">&quot;two&quot;</span>;</div>
 <div class="line">  <span class="keywordflow">default</span>: <a class="code hl_define" href="macro_8hpp.html#a7c2a3ecd73816f08ca3c5026bbb3f2e7">CPP_TOOLBOX_UNREACHABLE</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_a7c2a3ecd73816f08ca3c5026bbb3f2e7"><div class="ttname"><a href="macro_8hpp.html#a7c2a3ecd73816f08ca3c5026bbb3f2e7">CPP_TOOLBOX_UNREACHABLE</a></div><div class="ttdeci">#define CPP_TOOLBOX_UNREACHABLE()</div><div class="ttdoc">不可达代码标记 / Unreachable code marker</div><div class="ttdef"><b>Definition</b> macro.hpp:319</div></div>
+<div class="ttc" id="amacro_8hpp_html_a7c2a3ecd73816f08ca3c5026bbb3f2e7"><div class="ttname"><a href="macro_8hpp.html#a7c2a3ecd73816f08ca3c5026bbb3f2e7">CPP_TOOLBOX_UNREACHABLE</a></div><div class="ttdeci">#define CPP_TOOLBOX_UNREACHABLE()</div><div class="ttdoc">不可达代码标记 / Unreachable code marker</div><div class="ttdef"><b>Definition</b> macro.hpp:60</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1318,150 +959,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> callback(<span class="keywordtype">int</span> unused_param) {</div>
 <div class="line">  <a class="code hl_define" href="macro_8hpp.html#af8c06a20283c12abe6586da7762a8ae5">CPP_TOOLBOX_UNUSED</a>(unused_param);</div>
 <div class="line">}</div>
-<div class="ttc" id="amacro_8hpp_html_af8c06a20283c12abe6586da7762a8ae5"><div class="ttname"><a href="macro_8hpp.html#af8c06a20283c12abe6586da7762a8ae5">CPP_TOOLBOX_UNUSED</a></div><div class="ttdeci">#define CPP_TOOLBOX_UNUSED(Variable)</div><div class="ttdoc">标记变量为未使用 / Mark variable as unused</div><div class="ttdef"><b>Definition</b> macro.hpp:385</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="a2337ee1912889babdb32b9f06bfe9753" name="a2337ee1912889babdb32b9f06bfe9753"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2337ee1912889babdb32b9f06bfe9753">&#9670;&#160;</a></span>CPP_VERSION_STR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_VERSION_STR</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">year, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">month&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;#year #month &quot;L&quot;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>编译器检测宏 / Compiler detection macros </p>
-<p>用于检测当前使用的编译器类型 / Used to detect the current compiler type:</p><ul>
-<li>MSVC: Microsoft Visual C++ 编译器 / Microsoft Visual C++ Compiler</li>
-<li>Clang: LLVM Clang 编译器 / LLVM Clang Compiler</li>
-<li>GCC: GNU C++ 编译器 / GNU C++ Compiler</li>
-</ul>
-<p>平台检测宏 / Platform detection macros</p>
-<p>用于检测当前运行平台 / Used to detect the current platform:</p><ul>
-<li>Windows: Windows 操作系统 / Windows Operating System</li>
-<li>Linux: Linux 操作系统 / Linux Operating System</li>
-<li>macOS: Apple macOS 操作系统 / Apple macOS Operating System</li>
-<li>FreeBSD: FreeBSD 操作系统 / FreeBSD Operating System</li>
-<li>NetBSD: NetBSD 操作系统 / NetBSD Operating System</li>
-<li>Android: Android 操作系统 / Android Operating System</li>
-<li>QNX: QNX 实时操作系统 / QNX Real-time Operating System</li>
-</ul>
-<p>架构检测宏 / Architecture detection macros</p>
-<p>用于检测当前CPU架构 / Used to detect the current CPU architecture:</p><ul>
-<li>x86_64: 64位x86架构 / 64-bit x86 architecture</li>
-<li>x86: 32位x86架构 / 32-bit x86 architecture</li>
-<li>ARM64: 64位ARM架构 / 64-bit ARM architecture</li>
-<li>ARM: 32位ARM架构 / 32-bit ARM architecture</li>
-<li>RISC-V: RISC-V架构 / RISC-V architecture</li>
-<li>LoongArch: 龙芯架构 / LoongArch architecture</li>
-</ul>
-<p>将C++版本转换为字符串 / Convert C++ version to string </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">year</td><td>版本号中的年份部分 / Year part of version number </td></tr>
-    <tr><td class="paramname">month</td><td>版本号中的月份部分 / Month part of version number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>版本的字符串表示 / String representation of version</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// 将C++17版本号转换为字符串</span></div>
-<div class="line"><span class="comment">// Convert C++17 version to string</span></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* version = <a class="code hl_define" href="macro_8hpp.html#a2337ee1912889babdb32b9f06bfe9753">CPP_VERSION_STR</a>(201, 703);</div>
-<div class="line">std::cout &lt;&lt; version &lt;&lt; std::endl; <span class="comment">// 输出: &quot;201703L&quot; / Outputs: &quot;201703L&quot;</span></div>
-<div class="ttc" id="amacro_8hpp_html_a2337ee1912889babdb32b9f06bfe9753"><div class="ttname"><a href="macro_8hpp.html#a2337ee1912889babdb32b9f06bfe9753">CPP_VERSION_STR</a></div><div class="ttdeci">#define CPP_VERSION_STR(year, month)</div><div class="ttdoc">编译器检测宏 / Compiler detection macros</div><div class="ttdef"><b>Definition</b> macro.hpp:95</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ab6cc83217a072b02280fddea5cdeb6ec" name="ab6cc83217a072b02280fddea5cdeb6ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6cc83217a072b02280fddea5cdeb6ec">&#9670;&#160;</a></span>CPP_VERSION_TO_INT</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_VERSION_TO_INT</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">year, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">month&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;year##month##L</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>将C++版本转换为整数 / Convert C++ version to integer </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">year</td><td>版本号中的年份部分 / Year part of version number </td></tr>
-    <tr><td class="paramname">month</td><td>版本号中的月份部分 / Month part of version number </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>版本的整数表示 / Integer representation of version</dd></dl>
-<div class="fragment"><div class="line"><span class="comment">// 将C++17版本号转换为整数</span></div>
-<div class="line"><span class="comment">// Convert C++17 version to integer</span></div>
-<div class="line"><span class="keyword">constexpr</span> <span class="keyword">auto</span> version = <a class="code hl_define" href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a>(201, 703);</div>
-<div class="line"><span class="keyword">static_assert</span>(version == 201703L);</div>
-<div class="ttc" id="amacro_8hpp_html_ab6cc83217a072b02280fddea5cdeb6ec"><div class="ttname"><a href="macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec">CPP_VERSION_TO_INT</a></div><div class="ttdeci">#define CPP_VERSION_TO_INT(year, month)</div><div class="ttdoc">将C++版本转换为整数 / Convert C++ version to integer</div><div class="ttdef"><b>Definition</b> macro.hpp:110</div></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a5703178ca0406694e4a7d1ce966220ec" name="a5703178ca0406694e4a7d1ce966220ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5703178ca0406694e4a7d1ce966220ec">&#9670;&#160;</a></span>get_cpp_version()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">constexpr const char * get_cpp_version </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>获取C++版本字符串 / Get C++ version as string </p>
-<dl class="section return"><dt>Returns</dt><dd>C++版本的字符串表示 / String representation of C++ version</dd></dl>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span>* version = <a class="code hl_function" href="macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec">get_cpp_version</a>();</div>
-<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;Using &quot;</span> &lt;&lt; version &lt;&lt; std::endl; <span class="comment">// 输出当前C++版本 / Outputs</span></div>
-<div class="line">current C++ version</div>
-<div class="ttc" id="amacro_8hpp_html_a5703178ca0406694e4a7d1ce966220ec"><div class="ttname"><a href="macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec">get_cpp_version</a></div><div class="ttdeci">constexpr const char * get_cpp_version()</div><div class="ttdoc">获取C++版本字符串 / Get C++ version as string</div><div class="ttdef"><b>Definition</b> macro.hpp:137</div></div>
+<div class="ttc" id="amacro_8hpp_html_af8c06a20283c12abe6586da7762a8ae5"><div class="ttname"><a href="macro_8hpp.html#af8c06a20283c12abe6586da7762a8ae5">CPP_TOOLBOX_UNUSED</a></div><div class="ttdeci">#define CPP_TOOLBOX_UNUSED(Variable)</div><div class="ttdoc">标记变量为未使用 / Mark variable as unused</div><div class="ttdef"><b>Definition</b> macro.hpp:126</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

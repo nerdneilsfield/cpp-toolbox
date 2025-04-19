@@ -277,10 +277,10 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 删除拷贝构造函数和拷贝赋值运算符以防止意外复制/Delete copy constructor and</span></div>
 <div class="line">  <span class="comment">// copy assignment operator to prevent accidental copying</span></div>
-<div class="line">  <a id="a0" name="a0"></a><a class="code hl_define" href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a>(thread_pool_t)</div>
+<div class="line">  <a id="a0" name="a0"></a><a class="code hl_define" href="class_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a>(thread_pool_t)</div>
 <div class="line">  <span class="comment">// 删除移动构造函数和移动赋值运算符以简化生命周期管理/Delete move constructor</span></div>
 <div class="line">  <span class="comment">// and move assignment operator to simplify lifecycle management</span></div>
-<div class="line">  <a id="a1" name="a1"></a><a class="code hl_define" href="macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a>(thread_pool_t)</div>
+<div class="line">  <a id="a1" name="a1"></a><a class="code hl_define" href="class_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a>(thread_pool_t)</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="comment">// 工作线程列表/List of worker threads</span></div>
@@ -362,12 +362,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">  <span class="keywordflow">return</span> future;</div>
 <div class="line">}</div>
 <div class="line">}  <span class="comment">// namespace toolbox::base</span></div>
+<div class="ttc" id="aclass_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="class_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:15</div></div>
+<div class="ttc" id="aclass_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="class_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:31</div></div>
 <div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__t_html_a16f45b3fbf2f8c5799bb405be002ac15"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">toolbox::base::thread_pool_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:156</div></div>
 <div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a></div><div class="ttdoc">高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue</div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:57</div></div>
 <div class="ttc" id="aconcurrent__queue_8hpp_html"><div class="ttname"><a href="concurrent__queue_8hpp.html">concurrent_queue.hpp</a></div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
-<div class="ttc" id="amacro_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="macro_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> macro.hpp:180</div></div>
-<div class="ttc" id="amacro_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> macro.hpp:196</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1base_html"><div class="ttname"><a href="namespacetoolbox_1_1base.html">toolbox::base</a></div><div class="ttdoc">提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.</div></div>
 <div class="ttc" id="atask__base_8hpp_html"><div class="ttname"><a href="task__base_8hpp.html">task_base.hpp</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->

@@ -216,7 +216,8 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1io_1_1formats.html
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">toolbox::io::formats Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -226,7 +227,130 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.  <a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a40ac4dd0f10fa09db4b8b7ee7f449916" id="r_a40ac4dd0f10fa09db4b8b7ee7f449916"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a40ac4dd0f10fa09db4b8b7ee7f449916"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io_1_1formats.html#a40ac4dd0f10fa09db4b8b7ee7f449916">read_pcd</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:a40ac4dd0f10fa09db4b8b7ee7f449916"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件中读取 PCD 点云数据的独立函数。/Standalone function to read PCD point cloud data from a file.  <br /></td></tr>
+<tr class="separator:a40ac4dd0f10fa09db4b8b7ee7f449916"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3ef16dc4409d547fcb8170f713e040" id="r_afa3ef16dc4409d547fcb8170f713e040"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afa3ef16dc4409d547fcb8170f713e040"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io_1_1formats.html#afa3ef16dc4409d547fcb8170f713e040">write_pcd</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud, bool binary)</td></tr>
+<tr class="memdesc:afa3ef16dc4409d547fcb8170f713e040"><td class="mdescLeft">&#160;</td><td class="mdescRight">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.  <br /></td></tr>
+<tr class="separator:afa3ef16dc4409d547fcb8170f713e040"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a40ac4dd0f10fa09db4b8b7ee7f449916" name="a40ac4dd0f10fa09db4b8b7ee7f449916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ac4dd0f10fa09db4b8b7ee7f449916">&#9670;&#160;</a></span>read_pcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; toolbox::io::formats::read_pcd </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从文件中读取 PCD 点云数据的独立函数。/Standalone function to read PCD point cloud data from a file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>PCD 文件的路径/Path to the PCD file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>包含读取点云的唯一指针，如果读取失败则返回 nullptr/Unique pointer containing the read point cloud, or nullptr if reading fails</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 读取 float 类型的点云/Read a point cloud with float precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_float = toolbox::io::formats::read_pcd&lt;float&gt;(<span class="stringliteral">&quot;cloud.pcd&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (cloud_float) {</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;读取了 &quot;</span> &lt;&lt; cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; 个点/Read &quot;</span> &lt;&lt;</div>
+<div class="line">cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 读取 double 类型的点云/Read a point cloud with double precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_double = toolbox::io::formats::read_pcd&lt;double&gt;(<span class="stringliteral">&quot;cloud.pcd&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="afa3ef16dc4409d547fcb8170f713e040" name="afa3ef16dc4409d547fcb8170f713e040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3ef16dc4409d547fcb8170f713e040">&#9670;&#160;</a></span>write_pcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT bool toolbox::io::formats::write_pcd </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>binary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要写入的 PCD 文件路径/Path to the PCD file to write </td></tr>
+    <tr><td class="paramname">cloud</td><td>要保存的点云数据/The point cloud data to save </td></tr>
+    <tr><td class="paramname">binary</td><td>如果为 true，则以二进制格式写入；如果为 false，则以 ASCII 格式写入/If true, writes in binary format; if false, writes in ASCII format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>写入成功返回 true，失败返回 false/Returns true if writing was successful, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建一个点云并添加一些点/Create a point cloud and add some points</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a> cloud;</div>
+<div class="line">cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a> = {{1.0f, 2.0f, 3.0f}, {4.0f, 5.0f, 6.0f}};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 以 ASCII 格式保存/Save in ASCII format</span></div>
+<div class="line"><span class="keywordtype">bool</span> ascii_success = <a class="code hl_function" href="namespacetoolbox_1_1io_1_1formats.html#afa3ef16dc4409d547fcb8170f713e040">toolbox::io::formats::write_pcd</a>(<span class="stringliteral">&quot;cloud_ascii.pcd&quot;</span>,</div>
+<div class="line">cloud, <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 以二进制格式保存/Save in binary format</span></div>
+<div class="line"><span class="keywordtype">bool</span> binary_success = <a class="code hl_function" href="namespacetoolbox_1_1io_1_1formats.html#afa3ef16dc4409d547fcb8170f713e040">toolbox::io::formats::write_pcd</a>(<span class="stringliteral">&quot;cloud_binary.pcd&quot;</span>,</div>
+<div class="line">cloud, <span class="keyword">true</span>);</div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html_afa3ef16dc4409d547fcb8170f713e040"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html#afa3ef16dc4409d547fcb8170f713e040">toolbox::io::formats::write_pcd</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_pcd(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud, bool binary)</div><div class="ttdoc">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.</div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:833</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

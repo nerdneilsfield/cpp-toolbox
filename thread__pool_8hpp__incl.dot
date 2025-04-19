@@ -43,6 +43,16 @@ digraph "src/include/cpp-toolbox/base/thread_pool.hpp"
   Node17 [id="Node000017",label="cpp-toolbox/cpp-toolbox\l_export.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node13 -> Node18 [id="edge21_Node000013_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="cpp-toolbox/macro.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$macro_8hpp.html",tooltip="通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro..."];
-  Node1 -> Node17 [id="edge22_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node18 [id="edge23_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
+  Node18 -> Node19 [id="edge22_Node000018_Node000019",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="cpp-toolbox/macro/class.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_8hpp.html",tooltip=" "];
+  Node18 -> Node20 [id="edge23_Node000018_Node000020",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="cpp-toolbox/macro/endian.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$endian_8hpp.html",tooltip=" "];
+  Node20 -> Node21 [id="edge24_Node000020_Node000021",color="steelblue1",style="solid",tooltip=" "];
+  Node21 [id="Node000021",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node20 -> Node22 [id="edge25_Node000020_Node000022",color="steelblue1",style="solid",tooltip=" "];
+  Node22 [id="Node000022",label="endian.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node18 -> Node23 [id="edge26_Node000018_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
+  Node1 -> Node17 [id="edge27_Node000001_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node18 [id="edge28_Node000001_Node000018",color="steelblue1",style="solid",tooltip=" "];
 }

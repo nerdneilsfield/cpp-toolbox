@@ -8,7 +8,7 @@ var searchData=
   ['get_5fabsolute_5fpath_5',['get_absolute_path',['../namespacetoolbox_1_1file.html#a85dd8c020456e11f9e8217aa3941216e',1,'toolbox::file']]],
   ['get_5fbg_5fcode_6',['get_bg_code',['../classtoolbox_1_1utils_1_1color__handler__t.html#a4c1cb78c379510fa1a5090a549227847',1,'toolbox::utils::color_handler_t']]],
   ['get_5fcontainer_7',['get_container',['../classtoolbox_1_1utils_1_1container__printer__t.html#ad6e213883dd04a4708e1e191a9578499',1,'toolbox::utils::container_printer_t']]],
-  ['get_5fcpp_5fversion_8',['get_cpp_version',['../macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec',1,'macro.hpp']]],
+  ['get_5fcpp_5fversion_8',['get_cpp_version',['../platforms_8hpp.html#a5703178ca0406694e4a7d1ce966220ec',1,'platforms.hpp']]],
   ['get_5fcreation_5ftime_9',['get_creation_time',['../namespacetoolbox_1_1file.html#ad3979fb549eb4b46b46c71b829bab0c1',1,'toolbox::file']]],
   ['get_5fcurrent_5fdirectory_10',['get_current_directory',['../namespacetoolbox_1_1file.html#a18c5527a6ca0799d2bf7141f88fdf8ce',1,'toolbox::file']]],
   ['get_5fcurrent_5fworking_5fdirectory_11',['get_current_working_directory',['../namespacetoolbox_1_1file.html#ab446410f8d2e28ef4709e79c6f3192c9',1,'toolbox::file']]],

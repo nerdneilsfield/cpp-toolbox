@@ -1,21 +1,10 @@
 var macro_8hpp =
 [
     [ "__CURRENT_FUNCTION__", "macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976", null ],
-    [ "CPP_11", "macro_8hpp.html#aa66072fd34bc1b7e07b68c362c51ec77", null ],
-    [ "CPP_14", "macro_8hpp.html#a1bf1fb838aec0dacee3a689e55bc3ce7", null ],
-    [ "CPP_17", "macro_8hpp.html#a2b78a25a0c887ed4960c4e346f5cbb9e", null ],
-    [ "CPP_20", "macro_8hpp.html#a97bb0231779cfb2ea2cb3da0eaa83207", null ],
     [ "CPP_TOOLBOX_ALIGNAS", "macro_8hpp.html#ae8ab5f666fb0fcd7484e839c0a3913ba", null ],
     [ "CPP_TOOLBOX_ASSERT", "macro_8hpp.html#a07b73c50ffd2db423e667d4d9320f9a5", null ],
     [ "CPP_TOOLBOX_COUNT_ARGS", "macro_8hpp.html#aab3ac1f988e0c757f741e2ba3ce912f4", null ],
     [ "CPP_TOOLBOX_COUNT_ARGS_IMPL", "macro_8hpp.html#a28c982752d4e852cb067f8f0568c78c1", null ],
-    [ "CPP_TOOLBOX_CXX_LARGE_THAN_17", "macro_8hpp.html#a7bc7c68b2b225846c20f71930729fe30", null ],
-    [ "CPP_TOOLBOX_CXX_VERSION", "macro_8hpp.html#a8ea85e1fa8e67520bf3aff86c29e747e", null ],
-    [ "CPP_TOOLBOX_DEFAULT_CONSTRUCTOR", "macro_8hpp.html#a889194aa6d2dfc2637918a28833dd472", null ],
-    [ "CPP_TOOLBOX_DELETE_CONSTRUCTOR", "macro_8hpp.html#ab9531237c7e39a8932c326b76e8fa836", null ],
-    [ "CPP_TOOLBOX_DISABLE_COPY", "macro_8hpp.html#af1de779914dcded178fdd741367d0bcd", null ],
-    [ "CPP_TOOLBOX_DISABLE_COPY_AND_MOVE", "macro_8hpp.html#a6497f847f85135e611cfce9aed2b051c", null ],
-    [ "CPP_TOOLBOX_DISABLE_MOVE", "macro_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2", null ],
     [ "CPP_TOOLBOX_FALLTHROUGH", "macro_8hpp.html#a3cb08ff0ec1356360c27432f9a2b2088", null ],
     [ "CPP_TOOLBOX_FORCE_INLINE", "macro_8hpp.html#a3ed967026f61635681019d68eaceb786", null ],
     [ "CPP_TOOLBOX_LIKELY", "macro_8hpp.html#a09effedcef20be6c3991ea6fb2f1bf39", null ],
@@ -27,15 +16,11 @@ var macro_8hpp =
     [ "CPP_TOOLBOX_REPEAT_4", "macro_8hpp.html#acd42d6a2a5a616451e8572a5e11b7b0a", null ],
     [ "CPP_TOOLBOX_REPEAT_5", "macro_8hpp.html#a238a16e6d704923cfbb16a4f0a346a1c", null ],
     [ "CPP_TOOLBOX_SAFE_CALL", "macro_8hpp.html#a2d4fba42ce9373d96d76575f9baad4be", null ],
-    [ "CPP_TOOLBOX_SINGLETON", "macro_8hpp.html#ae96fe8cc69010f510fec50602c56b466", null ],
     [ "CPP_TOOLBOX_STATIC_ASSERT", "macro_8hpp.html#aeee8264ff582ee75d54d3ad07d099e62", null ],
     [ "CPP_TOOLBOX_STRING_CONCAT", "macro_8hpp.html#aa9292500bbfdba3794ba681d678afe77", null ],
     [ "CPP_TOOLBOX_STRINGIZE", "macro_8hpp.html#aa0fd3bf42fc798fc571f2e6ce57f0b63", null ],
     [ "CPP_TOOLBOX_STRINGIZE_IMPL", "macro_8hpp.html#aecfa9d77154e10a63552197d8164459e", null ],
     [ "CPP_TOOLBOX_UNLIKELY", "macro_8hpp.html#aecb14a8e5e6ec5bb9525c65b1706eb5d", null ],
     [ "CPP_TOOLBOX_UNREACHABLE", "macro_8hpp.html#a7c2a3ecd73816f08ca3c5026bbb3f2e7", null ],
-    [ "CPP_TOOLBOX_UNUSED", "macro_8hpp.html#af8c06a20283c12abe6586da7762a8ae5", null ],
-    [ "CPP_VERSION_STR", "macro_8hpp.html#a2337ee1912889babdb32b9f06bfe9753", null ],
-    [ "CPP_VERSION_TO_INT", "macro_8hpp.html#ab6cc83217a072b02280fddea5cdeb6ec", null ],
-    [ "get_cpp_version", "macro_8hpp.html#a5703178ca0406694e4a7d1ce966220ec", null ]
+    [ "CPP_TOOLBOX_UNUSED", "macro_8hpp.html#af8c06a20283c12abe6586da7762a8ae5", null ]
 ];

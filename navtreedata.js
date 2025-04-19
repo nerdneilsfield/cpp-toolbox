@@ -94,7 +94,8 @@ var NAVTREE =
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
-        [ "Typedefs", "namespacemembers_type.html", null ]
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
     ] ],
     [ "Classes", "annotated.html", [
@@ -115,6 +116,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
@@ -126,13 +128,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html",
-"classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html#a96d0edcf890c16cc5b28d230f0ac9d6f",
-"classtoolbox_1_1utils_1_1parameter__t.html#a68091176259a3811efa190bf6158d4a7",
-"functional_8hpp.html#a470b06977505a96a3ee4ca05e6ca9907",
-"minmax_8hpp_source.html",
-"namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190",
-"structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html#ac1e5d57d1b1e20d04954cee3a7c13044",
-"timer_8hpp.html#a9b2dac75b55638fac7dd7cc828857be1"
+"classtoolbox_1_1logger_1_1thread__logger__t.html#ae2fb595ab6a1b85aae88e387550eaaf9",
+"classtoolbox_1_1utils_1_1parameter__t.html#a01d024edc8d73ed0bf1dbc415f3154ff",
+"file_8hpp.html#aac210d89b1411dada1371a94f0b64ebd",
+"minmax_8hpp.html#a05a19c2ed2f36212d9e33ed6a313eed5",
+"namespacetoolbox_1_1types.html#aa02da12c8007de0cf7fa00eaece77ff6",
+"structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#a586f3942e8568eef056525a07f751f3f",
+"structtoolbox_1_1utils_1_1print__style__t.html#ab5eebb690e8c41705d3577495bafb9ab"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

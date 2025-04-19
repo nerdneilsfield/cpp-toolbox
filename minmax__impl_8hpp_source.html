@@ -518,7 +518,7 @@ $(document).ready(function(){initNavTree('minmax__impl_8hpp_source.html',''); in
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  <span class="keywordtype">size_t</span> num_tasks = (total_size == 0)</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      ? 0</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      : static_cast&lt;<a class="code hl_typedef" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&gt;(</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            std::ceil(static_cast&lt;double&gt;(total_size) / chunk_size));</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>            <a class="code hl_namespace" href="namespacestd.html">std</a>::ceil(static_cast&lt;double&gt;(total_size) / chunk_size));</div>
 <div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="keywordflow">if</span> (num_tasks == 0 &amp;&amp; total_size &gt; 0)</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    num_tasks = 1;  <span class="comment">// Ensure at least one task if not empty</span></div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
@@ -596,6 +596,7 @@ $(document).ready(function(){initNavTree('minmax__impl_8hpp_source.html',''); in
 </div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
 <div class="ttc" id="aminmax_8hpp_html"><div class="ttname"><a href="minmax_8hpp.html">minmax.hpp</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> endian.hpp:42</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1concurrent_html_ae4723fd2aab9fd17bfd539364bd3d924"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#ae4723fd2aab9fd17bfd539364bd3d924">toolbox::concurrent::default_pool</a></div><div class="ttdeci">base::thread_pool_singleton_t &amp; default_pool()</div><div class="ttdoc">获取默认线程池实例/Get the default thread pool instance</div><div class="ttdef"><b>Definition</b> parallel.hpp:22</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_html"><div class="ttname"><a href="namespacetoolbox_1_1types.html">toolbox::types</a></div><div class="ttdef"><b>Definition</b> minmax_impl.hpp:21</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_html_a0b4639d45a66f1a844a629bf98d5ed88"><div class="ttname"><a href="namespacetoolbox_1_1types.html#a0b4639d45a66f1a844a629bf98d5ed88">toolbox::types::calculate_minmax</a></div><div class="ttdeci">auto calculate_minmax(const InputType &amp;input) -&gt; std::enable_if_t&lt;!detail::is_calculable_container_v&lt; InputType &gt;, minmax_t&lt; std::decay_t&lt; InputType &gt; &gt; &gt;</div><div class="ttdoc">计算非容器类型的最小最大值 / Calculate minmax for non-container type</div><div class="ttdef"><b>Definition</b> minmax_impl.hpp:173</div></div>

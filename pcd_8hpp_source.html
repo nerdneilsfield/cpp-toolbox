@@ -324,39 +324,39 @@ $(document).ready(function(){initNavTree('pcd_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">  216</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">can_read</a>(<span class="keyword">const</span> std::string&amp; path) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">  231</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">get_supported_extensions</a>() const</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      -&gt; std::vector&lt;std::<span class="keywordtype">string</span>&gt; override;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      -&gt; <a class="code hl_namespace" href="namespacestd.html">std</a>::vector&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&gt; override;</div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">  264</a></span>  auto read(const std::<span class="keywordtype">string</span>&amp; path, std::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data)</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">  264</a></span>  auto read(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path, <a class="code hl_namespace" href="namespacestd.html">std</a>::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data)</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      -&gt; <span class="keywordtype">bool</span> override;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">  312</a></span>  [[nodiscard]] auto write(const std::<span class="keywordtype">string</span>&amp; path,</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                           const std::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data,</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">  312</a></span>  [[nodiscard]] auto write(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                           const <a class="code hl_namespace" href="namespacestd.html">std</a>::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data,</div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                           <span class="keywordtype">bool</span> binary) const -&gt; <span class="keywordtype">bool</span> override;</div>
 <div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>private:</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="comment">// --- Internal Helper Functions ---</span></div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  template&lt;typename T&gt;</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordtype">bool</span> write_internal(const std::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordtype">bool</span> write_internal(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path,</div>
 <div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                      const <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud,</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                      <span class="keywordtype">bool</span> binary) const;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  static <span class="keywordtype">bool</span> parse_header_stream(std::istream&amp; stream,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  static <span class="keywordtype">bool</span> parse_header_stream(<a class="code hl_namespace" href="namespacestd.html">std</a>::istream&amp; stream,</div>
 <div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                  pcd_header_t&amp; header,</div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                  <span class="keywordtype">size_t</span>&amp; header_end_pos);</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  template&lt;typename T&gt;</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  static <span class="keywordtype">bool</span> read_ascii_data(std::istream&amp; stream,</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  static <span class="keywordtype">bool</span> read_ascii_data(<a class="code hl_namespace" href="namespacestd.html">std</a>::istream&amp; stream,</div>
 <div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                              const pcd_header_t&amp; header,</div>
 <div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                              <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud);</div>
 <div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  template&lt;typename T&gt;</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  static <span class="keywordtype">bool</span> read_binary_data(const std::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  static <span class="keywordtype">bool</span> read_binary_data(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path,</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                               const pcd_header_t&amp; header,</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                               <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud);</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  template&lt;typename PointStorageT&gt;</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  static <span class="keywordtype">bool</span> parse_ascii_point_line(const std::<span class="keywordtype">string</span>&amp; line,</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  static <span class="keywordtype">bool</span> parse_ascii_point_line(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; line,</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                                     const pcd_header_t&amp; header,</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                                     <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;PointStorageT&gt;&amp; point,</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                                     <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;PointStorageT&gt;* normal = <span class="keywordtype">nullptr</span>,</div>
@@ -370,9 +370,18 @@ $(document).ready(function(){initNavTree('pcd_8hpp_source.html',''); initResizab
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>};  <span class="comment">// class pcd_format_t</span></div>
 </div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}  <span class="comment">// namespace toolbox::io::formats</span></div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="preprocessor">#include &lt;cpp-toolbox/io/formats/detail/pcd_impl.hpp&gt;</span></div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>template&lt;typename T&gt;</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>CPP_TOOLBOX_EXPORT <a class="code hl_namespace" href="namespacestd.html">std</a>::unique_ptr&lt;<a class="code hl_namespace" href="namespacetoolbox.html">toolbox</a>::types::<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&gt; read_pcd(</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path);</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span> </div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>template&lt;typename T&gt;</div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>CPP_TOOLBOX_EXPORT <span class="keywordtype">bool</span> write_pcd(const <a class="code hl_namespace" href="namespacestd.html">std</a>::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>                                  const <a class="code hl_namespace" href="namespacetoolbox.html">toolbox</a>::types::<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud,</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>                                  <span class="keywordtype">bool</span> binary);</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span> </div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>}  <span class="comment">// namespace toolbox::io::formats</span></div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span> </div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="preprocessor">#include &lt;cpp-toolbox/io/formats/detail/pcd_impl.hpp&gt;</span></div>
 <div class="ttc" id="aclasstoolbox_1_1io_1_1base__file__data__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1base__file__data__t.html">toolbox::io::base_file_data_t</a></div><div class="ttdoc">文件数据的基类 / Base class for data loaded from files</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
 <div class="ttc" id="aclasstoolbox_1_1io_1_1base__file__format__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1base__file__format__t.html">toolbox::io::base_file_format_t</a></div><div class="ttdoc">文件格式读写器的基类 / Base class for file format readers/writers</div><div class="ttdef"><b>Definition</b> base.hpp:85</div></div>
 <div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a></div><div class="ttdoc">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.</div><div class="ttdef"><b>Definition</b> pcd.hpp:72</div></div>
@@ -387,7 +396,9 @@ $(document).ready(function(){initNavTree('pcd_8hpp_source.html',''); initResizab
 <div class="ttc" id="aio_2formats_2base_8hpp_html"><div class="ttname"><a href="io_2formats_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
 <div class="ttc" id="amemory__mapped__file_8hpp_html"><div class="ttname"><a href="memory__mapped__file_8hpp.html">memory_mapped_file.hpp</a></div></div>
-<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:32</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> endian.hpp:42</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:33</div></div>
+<div class="ttc" id="anamespacetoolbox_html"><div class="ttname"><a href="namespacetoolbox.html">toolbox</a></div></div>
 <div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
 <div class="ttc" id="astring_8hpp_html"><div class="ttname"><a href="string_8hpp.html">string.hpp</a></div></div>
 <div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t</a></div><div class="ttdoc">包含偏移量的字段详细信息结构体。/Helper struct for field details including offset.</div><div class="ttdef"><b>Definition</b> pcd.hpp:136</div></div>

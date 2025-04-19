@@ -258,7 +258,7 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="};">
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html">   47</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1types_1_1detail_1_1is__calculable__container.html">is_calculable_container</a>&lt;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    T,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::void_t&lt;decltype(std::begin(std::declval&lt;const T&amp;&gt;())),</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_namespace" href="namespacestd.html">std</a>::void_t&lt;decltype(std::begin(std::declval&lt;const T&amp;&gt;())),</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                decltype(std::end(std::declval&lt;const T&amp;&gt;())),</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                typename T::value_type&gt;&gt;</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    : std::bool_constant&lt;</div>
@@ -307,8 +307,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00133" data-start="{" data-end="}">
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a71591d15ef0f3fe4f2e441d56d3ba225">  133</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;int&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    : min(std::numeric_limits&lt;int&gt;::max())</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    , max(std::numeric_limits&lt;int&gt;::min())</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;int&gt;::max())</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;int&gt;::min())</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    , initialized_(false)</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>{</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
@@ -317,8 +317,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a634d4f2685a477d374a620df0ee305a6">  144</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;float&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    : min(std::numeric_limits&lt;float&gt;::max())</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    , max(std::numeric_limits&lt;float&gt;::lowest())</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;float&gt;::max())</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;float&gt;::lowest())</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    , initialized_(false)</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>{</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
@@ -327,8 +327,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a7ddfe77698049a667fbb091f6a29d9e3">  155</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;double&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    : min(std::numeric_limits&lt;double&gt;::max())</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    , max(std::numeric_limits&lt;double&gt;::lowest())</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;double&gt;::max())</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;double&gt;::lowest())</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    , initialized_(false)</div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>{</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}</div>
@@ -337,8 +337,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#af5f405a434b6e629230bf306a2325646">  166</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;long&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    : min(std::numeric_limits&lt;long&gt;::max())</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    , max(std::numeric_limits&lt;long&gt;::min())</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;long&gt;::max())</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;long&gt;::min())</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    , initialized_(false)</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>{</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>}</div>
@@ -347,8 +347,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00178" data-start="{" data-end="}">
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a09dd05ee02c8829047fa58580bc0bee7">  178</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;unsigned int&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    : min(std::numeric_limits&lt;unsigned int&gt;::max())</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    , max(std::numeric_limits&lt;unsigned int&gt;::min())</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned int&gt;::max())</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned int&gt;::min())</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    , initialized_(false)</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>{</div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>}</div>
@@ -357,8 +357,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00190" data-start="{" data-end="}">
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#aea014445e96e8c40ed2741578fa60ce3">  190</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;unsigned long&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    : min(std::numeric_limits&lt;unsigned long&gt;::max())</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    , max(std::numeric_limits&lt;unsigned long&gt;::min())</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned long&gt;::max())</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned long&gt;::min())</div>
 <div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    , initialized_(false)</div>
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>{</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
@@ -367,8 +367,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a0a2bbaa0901c27bc1f9faa5be74caff8">  202</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;unsigned long long&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    : min(std::numeric_limits&lt;unsigned long long&gt;::max())</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    , max(std::numeric_limits&lt;unsigned long long&gt;::min())</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned long long&gt;::max())</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned long long&gt;::min())</div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    , initialized_(false)</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>{</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
@@ -377,8 +377,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00214" data-start="{" data-end="}">
 <div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a550e958a46609e6e8bbf738b5cb30b17">  214</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;unsigned char&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    : min(std::numeric_limits&lt;unsigned char&gt;::max())</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    , max(std::numeric_limits&lt;unsigned char&gt;::min())</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned char&gt;::max())</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned char&gt;::min())</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    , initialized_(false)</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>{</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>}</div>
@@ -387,8 +387,8 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">template</span>&lt;&gt;</div>
 <div class="foldopen" id="foldopen00226" data-start="{" data-end="}">
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="structtoolbox_1_1types_1_1minmax__t.html#a5dc49fbf60a7b960cbb3475aaaff8e7e">  226</a></span><span class="keyword">inline</span> <a class="code hl_function" href="structtoolbox_1_1types_1_1minmax__t.html#a4d00569e74a3057cb147ef2720268b69">minmax_t&lt;unsigned short&gt;::minmax_t</a>()</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    : min(std::numeric_limits&lt;unsigned short&gt;::max())</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    , max(std::numeric_limits&lt;unsigned short&gt;::min())</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    : min(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned short&gt;::max())</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    , max(<a class="code hl_namespace" href="namespacestd.html">std</a>::numeric_limits&lt;unsigned short&gt;::min())</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    , initialized_(false)</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>{</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>}</div>
@@ -426,12 +426,12 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>template&lt;typename InputType&gt;</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>[[nodiscard]] auto calculate_minmax(const InputType&amp; input)</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    -&gt; std::enable_if_t&lt;!detail::is_calculable_container_v&lt;InputType&gt;,</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;std::decay_t&lt;InputType&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    -&gt; <a class="code hl_namespace" href="namespacestd.html">std</a>::enable_if_t&lt;!detail::is_calculable_container_v&lt;InputType&gt;,</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::decay_t&lt;InputType&gt;&gt;&gt;;</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>template&lt;typename InputType&gt;</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>[[nodiscard]] auto calculate_minmax(const InputType&amp; input)</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    -&gt; std::enable_if_t&lt;detail::is_calculable_container_v&lt;InputType&gt;,</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    -&gt; <a class="code hl_namespace" href="namespacestd.html">std</a>::enable_if_t&lt;detail::is_calculable_container_v&lt;InputType&gt;,</div>
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;typename InputType::value_type&gt;&gt;;</div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>template&lt;typename T&gt;</div>
@@ -440,12 +440,12 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
 <div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>template&lt;typename InputType&gt;</div>
 <div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>[[nodiscard]] auto calculate_minmax_parallel(const InputType&amp; input)</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    -&gt; std::enable_if_t&lt;!detail::is_calculable_container_v&lt;InputType&gt;,</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;std::decay_t&lt;InputType&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    -&gt; <a class="code hl_namespace" href="namespacestd.html">std</a>::enable_if_t&lt;!detail::is_calculable_container_v&lt;InputType&gt;,</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::decay_t&lt;InputType&gt;&gt;&gt;;</div>
 <div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>template&lt;typename InputType&gt;</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>[[nodiscard]] auto calculate_minmax_parallel(const InputType&amp; input)</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    -&gt; std::enable_if_t&lt;detail::is_calculable_container_v&lt;InputType&gt;,</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    -&gt; <a class="code hl_namespace" href="namespacestd.html">std</a>::enable_if_t&lt;detail::is_calculable_container_v&lt;InputType&gt;,</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>                        <a class="code hl_struct" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt;typename InputType::value_type&gt;&gt;;</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span> </div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>template&lt;typename T&gt;</div>
@@ -458,6 +458,7 @@ $(document).ready(function(){initNavTree('minmax_8hpp_source.html',''); initResi
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">#include &quot;cpp-toolbox/types/impl/minmax_impl.hpp&quot;</span></div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
 <div class="ttc" id="aio_2formats_2base_8hpp_html"><div class="ttname"><a href="io_2formats_2base_8hpp.html">base.hpp</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> endian.hpp:42</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_1_1detail_html"><div class="ttname"><a href="namespacetoolbox_1_1types_1_1detail.html">toolbox::types::detail</a></div><div class="ttdef"><b>Definition</b> minmax.hpp:22</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_1_1detail_html_a3739405c0c768be67c2783b27681faf2"><div class="ttname"><a href="namespacetoolbox_1_1types_1_1detail.html#a3739405c0c768be67c2783b27681faf2">toolbox::types::detail::is_calculable_container_v</a></div><div class="ttdeci">constexpr bool is_calculable_container_v</div><div class="ttdoc">辅助变量模板,用于快速检查类型是否为可计算容器 / Helper variable template for quick checking if type is calculable container</div><div class="ttdef"><b>Definition</b> minmax.hpp:66</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_html"><div class="ttname"><a href="namespacetoolbox_1_1types.html">toolbox::types</a></div><div class="ttdef"><b>Definition</b> minmax_impl.hpp:21</div></div>
