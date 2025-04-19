@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "123456789_abcdefghijklmnopqrstuvwxyz~中代函变命备宏对常开总成日枚模特示类线许贡",
   1: "abcdefhilmopqrstuv",
   2: "ct",
-  3: "abcefhlmoprst",
+  3: "abcefhlmoprstv",
   4: "abcdefghijlmnoprstuwyz~",
   5: "abcdfghimnoprstuvwxyz",
   6: "acfikoprstuv",
