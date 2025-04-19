@@ -1,7 +1,10 @@
 #include <algorithm>  // For trim, contains, etc.
 #include <array>  // For array
 #include <cctype>  // For isspace
+#include <cerrno>  // For errno (macOS fallback)
 #include <charconv>  // For std::from_chars (C++17)
+#include <cstdlib>  // For std::strtod, std::strtof (macOS fallback)
+#include <iomanip>
 #include <iterator>  // For join
 #include <limits>  // For numeric_limits
 #include <numeric>  // For join with reservation
@@ -628,6 +631,22 @@ auto try_parse_int(std::string_view s, int& out) -> bool
 // Implementation for trying to parse a double
 auto try_parse_double(std::string_view s, double& out) -> bool
 {
+#if defined(__APPLE__)  // Use strtod as fallback on macOS
+  if (s.empty()) {
+    return false;
+  }
+  // Create a null-terminated string for strtod
+  std::string temp(s);
+  char* end;
+  errno = 0;  // Reset errno before calling strtod
+  out = std::strtod(temp.c_str(), &end);
+  // Check for errors reported by strtod (range errors, etc.)
+  if (errno != 0) {
+    return false;
+  }
+  // Check if the entire string was consumed
+  return end == temp.c_str() + temp.size();
+#else  // Use standard std::from_chars otherwise
   if (s.empty()) {
     return false;
   }
@@ -635,11 +654,28 @@ auto try_parse_double(std::string_view s, double& out) -> bool
   const char* last = s.data() + s.size();
   auto result = std::from_chars(first, last, out);
   return result.ec == std::errc() && result.ptr == last;
+#endif
 }
 
 // Implementation for trying to parse a float
 auto try_parse_float(std::string_view s, float& out) -> bool
 {
+#if defined(__APPLE__)  // Use strtof as fallback on macOS
+  if (s.empty()) {
+    return false;
+  }
+  // Create a null-terminated string for strtof
+  std::string temp(s);
+  char* end;
+  errno = 0;  // Reset errno before calling strtof
+  out = std::strtof(temp.c_str(), &end);
+  // Check for errors reported by strtof (range errors, etc.)
+  if (errno != 0) {
+    return false;
+  }
+  // Check if the entire string was consumed
+  return end == temp.c_str() + temp.size();
+#else  // Use standard std::from_chars otherwise
   if (s.empty()) {
     return false;
   }
@@ -647,6 +683,7 @@ auto try_parse_float(std::string_view s, float& out) -> bool
   const char* last = s.data() + s.size();
   auto result = std::from_chars(first, last, out);
   return result.ec == std::errc() && result.ptr == last;
+#endif
 }
 
 auto levenshtein_distance(std::string_view s1, std::string_view s2)
