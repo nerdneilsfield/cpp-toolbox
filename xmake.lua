@@ -36,7 +36,9 @@ target("cpp-toolbox")
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
         set_kind("shared")
-        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        if not is_plat("macosx") then
+          set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        end
         add_defines("CPP_TOOLBOX_EXPORTS")
         set_policy("build.optimization.lto", true)
 
@@ -47,6 +49,7 @@ target("cpp-toolbox")
         -- Set symbol visibility on non-Windows platforms
         if not is_plat("windows") then
           add_cxflags("-fvisibility=hidden")
+        else
           add_cxflags("/utf-8")
         end
 
@@ -57,7 +60,9 @@ target("cpp-toolbox_static")
         add_headerfiles("src/include/(**.hpp)")
         add_packages("concurrentqueue")
         set_kind("static")
-        set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        if not is_plat("macosx") then
+          set_pcxxheader("src/impl/cpp-toolbox/pch.hpp")
+        end
         add_defines("CPP_TOOLBOX_STATIC_DEFINE")
         set_policy("build.optimization.lto", true)
 
@@ -68,6 +73,7 @@ target("cpp-toolbox_static")
         -- Set symbol visibility on non-Windows platforms
         if not is_plat("windows") then
           add_cxflags("-fvisibility=hidden")
+        else
           add_cxflags("/utf-8")
         end
 

@@ -18,7 +18,9 @@ if example_files and #example_files > 0 then
                 add_files(filepath)
                 add_deps("cpp-toolbox")
                 add_rules("generate_export_header")
-                set_pcxxheader("../src/impl/cpp-toolbox/pch.hpp")
+                if not is_plat("macosx") then
+                  set_pcxxheader("../src/impl/cpp-toolbox/pch.hpp")
+                end
                 set_policy("build.optimization.lto", true)
                 -- Add platform specific system libraries
                 if is_plat("linux", "macosx", "bsd") then

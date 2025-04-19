@@ -17,7 +17,9 @@ target("cpp-toolbox-tests")
         add_deps("cpp-toolbox_static")
         add_packages("catch2")
         add_rules("generate_export_header")
-        set_pcxxheader("../src/impl/cpp-toolbox/pch.hpp")
+        if not is_plat("macosx") then
+          set_pcxxheader("../src/impl/cpp-toolbox/pch.hpp")
+        end
         set_policy("build.optimization.lto", true)
         if is_plat("windows") then
                 add_cxflags("/utf-8")
