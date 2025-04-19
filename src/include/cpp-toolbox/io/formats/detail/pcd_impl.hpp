@@ -18,6 +18,7 @@
 #include <iomanip>  // setprecision, fixed
 #include <limits>  // numeric_limits
 #include <map>
+#include <memory>
 #include <sstream>  // stringstream
 #include <stdexcept>  // exceptions for parsing
 #include <type_traits>  // is_same_v, decay_t
@@ -791,6 +792,59 @@ bool pcd_format_t::read_binary_field_value(const unsigned char* point_ptr,
   std::memcpy(&pcd_val, point_ptr + offset, sizeof(PCDT));
   out_val = static_cast<DestT>(pcd_val);
   return true;
+}
+
+template<typename T>
+CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_pcd(
+    const std::string& path)
+{
+  auto pcd = std::make_unique<toolbox::io::formats::pcd_format_t>();
+  std::unique_ptr<base_file_data_t> base_data =
+      nullptr;  // Create ptr of the type expected by read()
+
+  // Call read, passing the base class unique_ptr reference
+  bool success = pcd->read(path, base_data);
+
+  if (success && base_data) {
+    // Read succeeded, now check if the actual data type matches T
+    auto* typed_ptr = dynamic_cast<point_cloud_t<T>*>(base_data.get());
+    if (typed_ptr) {
+      // Type matches T, transfer ownership to a new
+      // unique_ptr<point_cloud_t<T>>
+      base_data.release();  // Prevent base_data from deleting the object
+      return std::unique_ptr<point_cloud_t<T>>(typed_ptr);
+    } else {
+      // Read succeeded, but the resulting type is not point_cloud_t<T>
+      // (e.g., read always returns float, but T was double)
+      LOG_WARN_S << "read_pcd: read data type does not match requested type T="
+                 << typeid(T).name() << ". Path: " << path;
+      // Return nullptr as the requested type couldn't be provided.
+      // The base_data unique_ptr will delete the object when it goes out of
+      // scope.
+      return nullptr;
+    }
+  }
+
+  // Read failed or returned null data
+  return nullptr;
+}
+
+template<typename T>
+CPP_TOOLBOX_EXPORT bool write_pcd(const std::string& path,
+                                  const toolbox::types::point_cloud_t<T>& cloud,
+                                  bool binary)
+{
+  auto pcd = std::make_unique<toolbox::io::formats::pcd_format_t>();
+
+  // Create a copy of the input cloud to satisfy the unique_ptr interface
+  auto cloud_copy_ptr =
+      std::make_unique<toolbox::types::point_cloud_t<T>>(cloud);
+
+  // Cast the unique_ptr holding the copy to the base class type unique_ptr
+  std::unique_ptr<base_file_data_t> base_data_ptr = std::move(cloud_copy_ptr);
+
+  // Pass the unique_ptr (as const reference) to the write method
+  return pcd->write(path, base_data_ptr, binary);
 }
 
 }  // namespace toolbox::io::formats

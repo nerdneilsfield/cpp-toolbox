@@ -411,4 +411,22 @@ template bool pcd_format_t::parse_ascii_point_line(const std::string& line,
                                                    point_t<double>* normal,
                                                    point_t<double>* color);
 
+// Explicit instantiations for standalone helper functions
+// Temporarily comment out to check for duplicate instantiation issues
+template CPP_TOOLBOX_EXPORT
+    std::unique_ptr<toolbox::types::point_cloud_t<float>>
+    read_pcd<float>(const std::string& path);
+template CPP_TOOLBOX_EXPORT
+    std::unique_ptr<toolbox::types::point_cloud_t<double>>
+    read_pcd<double>(const std::string& path);
+
+template CPP_TOOLBOX_EXPORT bool write_pcd<float>(
+    const std::string& path,
+    const toolbox::types::point_cloud_t<float>& cloud,
+    bool binary);  // No default argument here
+template CPP_TOOLBOX_EXPORT bool write_pcd<double>(
+    const std::string& path,
+    const toolbox::types::point_cloud_t<double>& cloud,
+    bool binary);  // No default argument here
+
 }  // namespace toolbox::io::formats

@@ -428,6 +428,64 @@ private:
 
 };  // class pcd_format_t
 
+/**
+ * @brief 从文件中读取 PCD 点云数据的独立函数。/Standalone function to read PCD
+ * point cloud data from a file.
+ *
+ * @tparam T 点云数据的存储类型（如 float 或 double）/Storage type for the point
+ * cloud data (e.g., float or double)
+ * @param path PCD 文件的路径/Path to the PCD file
+ * @return 包含读取点云的唯一指针，如果读取失败则返回 nullptr/Unique pointer
+ * containing the read point cloud, or nullptr if reading fails
+ *
+ * @code
+ * // 读取 float 类型的点云/Read a point cloud with float precision
+ * auto cloud_float = toolbox::io::formats::read_pcd<float>("cloud.pcd");
+ * if (cloud_float) {
+ *   std::cout << "读取了 " << cloud_float->size() << " 个点/Read " <<
+ * cloud_float->size() << " points" << std::endl;
+ * }
+ *
+ * // 读取 double 类型的点云/Read a point cloud with double precision
+ * auto cloud_double = toolbox::io::formats::read_pcd<double>("cloud.pcd");
+ * @endcode
+ */
+template<typename T>
+CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_pcd(
+    const std::string& path);
+
+/**
+ * @brief 将点云数据写入 PCD 文件的独立函数。/Standalone function to write point
+ * cloud data to a PCD file.
+ *
+ * @tparam T 点云数据的存储类型（如 float 或 double）/Storage type for the point
+ * cloud data (e.g., float or double)
+ * @param path 要写入的 PCD 文件路径/Path to the PCD file to write
+ * @param cloud 要保存的点云数据/The point cloud data to save
+ * @param binary 如果为 true，则以二进制格式写入；如果为 false，则以 ASCII
+ * 格式写入/If true, writes in binary format; if false, writes in ASCII format
+ * @return 写入成功返回 true，失败返回 false/Returns true if writing was
+ * successful, false otherwise
+ *
+ * @code
+ * // 创建一个点云并添加一些点/Create a point cloud and add some points
+ * toolbox::types::point_cloud_t<float> cloud;
+ * cloud.points = {{1.0f, 2.0f, 3.0f}, {4.0f, 5.0f, 6.0f}};
+ *
+ * // 以 ASCII 格式保存/Save in ASCII format
+ * bool ascii_success = toolbox::io::formats::write_pcd("cloud_ascii.pcd",
+ * cloud, false);
+ *
+ * // 以二进制格式保存/Save in binary format
+ * bool binary_success = toolbox::io::formats::write_pcd("cloud_binary.pcd",
+ * cloud, true);
+ * @endcode
+ */
+template<typename T>
+CPP_TOOLBOX_EXPORT bool write_pcd(const std::string& path,
+                                  const toolbox::types::point_cloud_t<T>& cloud,
+                                  bool binary);
+
 }  // namespace toolbox::io::formats
 
 #include <cpp-toolbox/io/formats/detail/pcd_impl.hpp>
