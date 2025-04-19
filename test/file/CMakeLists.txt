@@ -1,5 +1,6 @@
 set(BASE_TEST_FILES 
         ${CMAKE_CURRENT_SOURCE_DIR}/file_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/memory_mapped_file_test.cpp
 )
 
 list(APPEND TEST_FILES ${BASE_TEST_FILES})

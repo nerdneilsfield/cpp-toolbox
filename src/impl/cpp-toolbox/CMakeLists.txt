@@ -10,6 +10,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool_singleton.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/thread_logger.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/file/file.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/file/memory_mapped_file.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/string.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/concurrent_queue.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp

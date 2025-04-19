@@ -4,6 +4,7 @@ list(APPEND BENCHMARK_FILES
 #     ${CMAKE_SOURCE_DIR}/test/my_catch2_main.cpp
     concurrent/parallel_benc.cpp
     types/types_benc.cpp
+    file/memory_mapped_file_benc.cpp
 )
 
 
