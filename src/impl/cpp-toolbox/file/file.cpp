@@ -215,13 +215,13 @@ auto get_creation_time(const std::filesystem::path& path) -> file_time_type
 #elif defined(CPP_TOOLBOX_PLATFORM_MACOS)
     struct stat statbuf;
     if (stat(path.c_str(), &statbuf) == 0) {
-      return file_time_type(
-          std::chrono::system_clock::from_time_t(statbuf.st_birthtime));
+      auto system_time =
+          std::chrono::system_clock::from_time_t(statbuf.st_birthtime);
+      return std::chrono::clock_cast<std::filesystem::file_time_type::clock>(
+          system_time);
     }
 #else
-    struct stat statbuf
-    {
-    };
+    struct stat statbuf {};
     if (stat(path.c_str(), &statbuf) == 0) {
       auto sctp = std::chrono::system_clock::from_time_t(statbuf.st_ctime);
       auto duration = sctp.time_since_epoch();
