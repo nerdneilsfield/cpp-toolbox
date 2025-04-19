@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "123456789_abcdefghijklmnopqrstuvwxyz~中代函变命备宏对常开总成日枚模特示类线许贡",
   1: "abcdefhilmopqrstuv",
-  2: "ct",
+  2: "t",
   3: "abcefhlmoprstv",
   4: "abcdefghijlmnoprstuwyz~",
   5: "abcdfghimnoprstuvwxyz",
@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "l",
   8: "cdeitw",
   9: "op",
-  10: "_c",
+  10: "_cr",
   11: "lm日",
   12: "abcghinostw命"
 };

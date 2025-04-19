@@ -1,0 +1,656 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::io::formats::pcd_format_t Class Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::io::formats::pcd_format_t Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.  
+ <a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="pcd_8hpp_source.html">pcd.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::io::formats::pcd_format_t:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a9ec3336b1edfa5ba3772457e120628d2" id="r_a9ec3336b1edfa5ba3772457e120628d2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a9ec3336b1edfa5ba3772457e120628d2">pcd_format_t</a> ()=default</td></tr>
+<tr class="memdesc:a9ec3336b1edfa5ba3772457e120628d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数。/Constructor.  <br /></td></tr>
+<tr class="separator:a9ec3336b1edfa5ba3772457e120628d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e3b7f8a67f43b12da654dabd13aa068" id="r_a4e3b7f8a67f43b12da654dabd13aa068"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a4e3b7f8a67f43b12da654dabd13aa068">~pcd_format_t</a> () override=default</td></tr>
+<tr class="memdesc:a4e3b7f8a67f43b12da654dabd13aa068"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数。/Destructor.  <br /></td></tr>
+<tr class="separator:a4e3b7f8a67f43b12da654dabd13aa068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7abbcd23d5011a9e7e0a3bc96c0456b9" id="r_a7abbcd23d5011a9e7e0a3bc96c0456b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a7abbcd23d5011a9e7e0a3bc96c0456b9">pcd_format_t</a> (const <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a7abbcd23d5011a9e7e0a3bc96c0456b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae299add294068f2cd72446a0d7616df0" id="r_ae299add294068f2cd72446a0d7616df0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ae299add294068f2cd72446a0d7616df0">operator=</a> (const <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp;)=delete</td></tr>
+<tr class="separator:ae299add294068f2cd72446a0d7616df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d61de4c3ec91f9c4bf411d94447502" id="r_aa1d61de4c3ec91f9c4bf411d94447502"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">can_read</a> (const std::string &amp;path) const -&gt; bool override</td></tr>
+<tr class="memdesc:aa1d61de4c3ec91f9c4bf411d94447502"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查文件扩展名是否为".pcd"。/Checks if the file extension is ".pcd".  <br /></td></tr>
+<tr class="separator:aa1d61de4c3ec91f9c4bf411d94447502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446eab8f5f58caa0de2505673dde89c6" id="r_a446eab8f5f58caa0de2505673dde89c6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">get_supported_extensions</a> () const -&gt; std::vector&lt; std::string &gt; override</td></tr>
+<tr class="memdesc:a446eab8f5f58caa0de2505673dde89c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回支持的文件扩展名。/Returns the supported file extension.  <br /></td></tr>
+<tr class="separator:a446eab8f5f58caa0de2505673dde89c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa04889ef4c014a4cbe6456449b3a2593" id="r_aa04889ef4c014a4cbe6456449b3a2593"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">read</a> (const std::string &amp;path, std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;data) -&gt; bool override</td></tr>
+<tr class="memdesc:aa04889ef4c014a4cbe6456449b3a2593"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 PCD 文件（ASCII 或 BINARY）读入 point_cloud_t&lt;float&gt;。/Reads a PCD file (ASCII or BINARY) into a point_cloud_t&lt;float&gt;.  <br /></td></tr>
+<tr class="separator:aa04889ef4c014a4cbe6456449b3a2593"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9aef277cee09f8dc503ebaa53bc6d38" id="r_ab9aef277cee09f8dc503ebaa53bc6d38"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">write</a> (const std::string &amp;path, const std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;data, bool binary) const -&gt; bool override</td></tr>
+<tr class="memdesc:ab9aef277cee09f8dc503ebaa53bc6d38"><td class="mdescLeft">&#160;</td><td class="mdescRight">将 point_cloud_t&lt;float&gt; 或 point_cloud_t&lt;double&gt; 中的数据写入 PCD 文件。/Writes data from a point_cloud_t&lt;float&gt; or point_cloud_t&lt;double&gt; to a PCD file.  <br /></td></tr>
+<tr class="separator:ab9aef277cee09f8dc503ebaa53bc6d38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1io_1_1base__file__format__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">toolbox::io::base_file_format_t</a></td></tr>
+<tr class="memitem:a8b54328057f4f11cee8dc66aed628a25 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_a8b54328057f4f11cee8dc66aed628a25"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a8b54328057f4f11cee8dc66aed628a25">~base_file_format_t</a> ()=default</td></tr>
+<tr class="separator:a8b54328057f4f11cee8dc66aed628a25 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52281ea5be78a8ff977ad15813aa162 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_af52281ea5be78a8ff977ad15813aa162"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#af52281ea5be78a8ff977ad15813aa162">base_file_format_t</a> (const <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;)=delete</td></tr>
+<tr class="separator:af52281ea5be78a8ff977ad15813aa162 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7235b23ae0f30fdf73fa9721d7bbaa06 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_a7235b23ae0f30fdf73fa9721d7bbaa06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a7235b23ae0f30fdf73fa9721d7bbaa06">operator=</a> (const <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a7235b23ae0f30fdf73fa9721d7bbaa06 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446aa5f85ed14c0d5b6d3b3c3da87769 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_a446aa5f85ed14c0d5b6d3b3c3da87769"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a446aa5f85ed14c0d5b6d3b3c3da87769">base_file_format_t</a> (<a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a446aa5f85ed14c0d5b6d3b3c3da87769 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5924697fa75f1b6e1d4c5d0a7cdc61 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_a0f5924697fa75f1b6e1d4c5d0a7cdc61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a0f5924697fa75f1b6e1d4c5d0a7cdc61">operator=</a> (<a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a0f5924697fa75f1b6e1d4c5d0a7cdc61 inherit pub_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1io_1_1base__file__format__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1io_1_1base__file__format__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">toolbox::io::base_file_format_t</a></td></tr>
+<tr class="memitem:ab495e6e2cdc4802c6b7e015b145c1ac4 inherit pro_methods_classtoolbox_1_1io_1_1base__file__format__t" id="r_ab495e6e2cdc4802c6b7e015b145c1ac4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#ab495e6e2cdc4802c6b7e015b145c1ac4">base_file_format_t</a> ()=default</td></tr>
+<tr class="separator:ab495e6e2cdc4802c6b7e015b145c1ac4 inherit pro_methods_classtoolbox_1_1io_1_1base__file__format__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files. </p>
+<p>实现了 PCD 文件的 <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html" title="文件格式读写器的基类 / Base class for file format readers/writers">base_file_format_t</a> 接口。/Implements the <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html" title="文件格式读写器的基类 / Base class for file format readers/writers">base_file_format_t</a> interface for PCD files. 支持读取 ASCII 和 BINARY 格式。/Supports reading ASCII and BINARY formats. 支持写入 ASCII 和 BINARY 格式（可通过构造函数配置）。/Supports writing ASCII and BINARY formats (configurable via constructor). 使用内存映射加速 BINARY 文件的读取。/Uses memory mapping for accelerated reading of BINARY files. 默认将数据读入 point_cloud_t&lt;float&gt;。/Reads data into point_cloud_t&lt;float&gt; by default. 可以写入 point_cloud_t&lt;float&gt; 或 point_cloud_t&lt;double&gt;。/Can write point_cloud_t&lt;float&gt; or point_cloud_t&lt;double&gt;.</p>
+<div class="fragment"><div class="line"><span class="comment">// 读取 PCD 文件/Reading a PCD file</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a> pcd_reader;</div>
+<div class="line">std::unique_ptr&lt;toolbox::io::formats::base_file_data_t&gt; data;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (pcd_reader.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">can_read</a>(<span class="stringliteral">&quot;pointcloud.pcd&quot;</span>)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (pcd_reader.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">read</a>(<span class="stringliteral">&quot;pointcloud.pcd&quot;</span>, data)) {</div>
+<div class="line">        <span class="keyword">auto</span>* cloud =</div>
+<div class="line"><span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a>*<span class="keyword">&gt;</span>(data.get()); <span class="keywordflow">if</span> (cloud) {</div>
+<div class="line">            std::cout &lt;&lt; <span class="stringliteral">&quot;读取了 &quot;</span> &lt;&lt; cloud-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() &lt;&lt; <span class="stringliteral">&quot; 个点/Read &quot;</span> &lt;&lt;</div>
+<div class="line">cloud-&gt;size() &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 写入 PCD 文件/Writing a PCD file</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a> cloud;</div>
+<div class="line"><span class="comment">// 填充点云数据/Fill point cloud data</span></div>
+<div class="line">cloud.push_back({1.0f, 2.0f, 3.0f});</div>
+<div class="line">cloud.push_back({4.0f, 5.0f, 6.0f});</div>
+<div class="line"> </div>
+<div class="line">std::unique_ptr&lt;toolbox::io::formats::base_file_data_t&gt; write_data =</div>
+<div class="line">    std::make_unique&lt;toolbox::types::point_cloud_t&lt;float&gt;&gt;(std::move(cloud));</div>
+<div class="line"> </div>
+<div class="line">pcd_reader.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">write</a>(<span class="stringliteral">&quot;output.pcd&quot;</span>, write_data, <span class="keyword">true</span>); <span class="comment">// 以二进制格式写入/Write</span></div>
+<div class="line">in binary format</div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a></div><div class="ttdoc">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.</div><div class="ttdef"><b>Definition</b> pcd.hpp:72</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_aa04889ef4c014a4cbe6456449b3a2593"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">toolbox::io::formats::pcd_format_t::read</a></div><div class="ttdeci">auto read(const std::string &amp;path, std::unique_ptr&lt; base_file_data_t &gt; &amp;data) -&gt; bool override</div><div class="ttdoc">将 PCD 文件（ASCII 或 BINARY）读入 point_cloud_t&lt;float&gt;。/Reads a PCD file (ASCII or BINARY) into a point_clou...</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_aa1d61de4c3ec91f9c4bf411d94447502"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">toolbox::io::formats::pcd_format_t::can_read</a></div><div class="ttdeci">auto can_read(const std::string &amp;path) const -&gt; bool override</div><div class="ttdoc">检查文件扩展名是否为&quot;.pcd&quot;。/Checks if the file extension is &quot;.pcd&quot;.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_ab9aef277cee09f8dc503ebaa53bc6d38"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">toolbox::io::formats::pcd_format_t::write</a></div><div class="ttdeci">auto write(const std::string &amp;path, const std::unique_ptr&lt; base_file_data_t &gt; &amp;data, bool binary) const -&gt; bool override</div><div class="ttdoc">将 point_cloud_t&lt;float&gt; 或 point_cloud_t&lt;double&gt; 中的数据写入 PCD 文件。/Writes data from a point_cloud_t&lt;float&gt;...</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a929bfd294a28a1f344bf4a6183ccb664"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">toolbox::types::point_cloud_t::size</a></div><div class="ttdeci">auto size() const -&gt; std::size_t</div><div class="ttdoc">获取点云中的点数 / Get number of points in cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:293</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a9ec3336b1edfa5ba3772457e120628d2" name="a9ec3336b1edfa5ba3772457e120628d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ec3336b1edfa5ba3772457e120628d2">&#9670;&#160;</a></span>pcd_format_t() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::io::formats::pcd_format_t::pcd_format_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数。/Constructor. </p>
+
+</div>
+</div>
+<a id="a4e3b7f8a67f43b12da654dabd13aa068" name="a4e3b7f8a67f43b12da654dabd13aa068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e3b7f8a67f43b12da654dabd13aa068">&#9670;&#160;</a></span>~pcd_format_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::io::formats::pcd_format_t::~pcd_format_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数。/Destructor. </p>
+
+</div>
+</div>
+<a id="a7abbcd23d5011a9e7e0a3bc96c0456b9" name="a7abbcd23d5011a9e7e0a3bc96c0456b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7abbcd23d5011a9e7e0a3bc96c0456b9">&#9670;&#160;</a></span>pcd_format_t() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::io::formats::pcd_format_t::pcd_format_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1d61de4c3ec91f9c4bf411d94447502" name="aa1d61de4c3ec91f9c4bf411d94447502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d61de4c3ec91f9c4bf411d94447502">&#9670;&#160;</a></span>can_read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::io::formats::pcd_format_t::can_read </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查文件扩展名是否为".pcd"。/Checks if the file extension is ".pcd". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>文件路径/Path to the file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>如果扩展名匹配则为 true，否则为 false/True if the extension matches, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a> pcd_format;</div>
+<div class="line"><span class="keywordflow">if</span> (pcd_format.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">can_read</a>(<span class="stringliteral">&quot;cloud.pcd&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;这是一个 PCD 文件/This is a PCD file&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;这不是一个 PCD 文件/This is not a PCD file&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#ad43d755601268004591b811e6cdc340b">toolbox::io::base_file_format_t</a>.</p>
+
+</div>
+</div>
+<a id="a446eab8f5f58caa0de2505673dde89c6" name="a446eab8f5f58caa0de2505673dde89c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a446eab8f5f58caa0de2505673dde89c6">&#9670;&#160;</a></span>get_supported_extensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::io::formats::pcd_format_t::get_supported_extensions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const -&gt;  std::vector&lt; std::string &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>返回支持的文件扩展名。/Returns the supported file extension. </p>
+<dl class="section return"><dt>Returns</dt><dd>仅包含".pcd"的向量/A vector containing only ".pcd"</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a> pcd_format;</div>
+<div class="line"><span class="keyword">auto</span> extensions = pcd_format.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">get_supported_extensions</a>();</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; ext : extensions) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;支持的扩展名/Supported extension: &quot;</span> &lt;&lt; ext &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_a446eab8f5f58caa0de2505673dde89c6"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">toolbox::io::formats::pcd_format_t::get_supported_extensions</a></div><div class="ttdeci">auto get_supported_extensions() const -&gt; std::vector&lt; std::string &gt; override</div><div class="ttdoc">返回支持的文件扩展名。/Returns the supported file extension.</div></div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#aa2a7dd3795a2d988923c3e18719feb46">toolbox::io::base_file_format_t</a>.</p>
+
+</div>
+</div>
+<a id="ae299add294068f2cd72446a0d7616df0" name="ae299add294068f2cd72446a0d7616df0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae299add294068f2cd72446a0d7616df0">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp; toolbox::io::formats::pcd_format_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa04889ef4c014a4cbe6456449b3a2593" name="aa04889ef4c014a4cbe6456449b3a2593"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa04889ef4c014a4cbe6456449b3a2593">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::io::formats::pcd_format_t::read </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 PCD 文件（ASCII 或 BINARY）读入 point_cloud_t&lt;float&gt;。/Reads a PCD file (ASCII or BINARY) into a point_cloud_t&lt;float&gt;. </p>
+<p>选择 T=float 作为常见默认值。/The specific type T=float is chosen as a common default.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>PCD 文件的路径/Path to the PCD file </td></tr>
+    <tr><td class="paramname">data</td><td>输出 unique_ptr，成功时将持有创建的 point_cloud_t&lt;float&gt;/Output unique_ptr that will hold the created point_cloud_t&lt;float&gt; on success </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>读取成功则为 true，否则为 false/True on successful read, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a> pcd_format;</div>
+<div class="line">std::unique_ptr&lt;toolbox::io::formats::base_file_data_t&gt; cloud_data;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (pcd_format.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">read</a>(<span class="stringliteral">&quot;scan.pcd&quot;</span>, cloud_data)) {</div>
+<div class="line">    <span class="comment">// 转换为具体类型/Convert to concrete type</span></div>
+<div class="line">    <span class="keyword">auto</span>* point_cloud =</div>
+<div class="line"><span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a>*<span class="keyword">&gt;</span>(cloud_data.get()); <span class="keywordflow">if</span></div>
+<div class="line">(point_cloud) { std::cout &lt;&lt; <span class="stringliteral">&quot;读取了 &quot;</span> &lt;&lt; point_cloud-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() &lt;&lt; <span class="stringliteral">&quot;</span></div>
+<div class="line"><span class="stringliteral">个点/Read &quot;</span></div>
+<div class="line">                  &lt;&lt; point_cloud-&gt;size() &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;读取失败/Read failed&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#afb34b2c84b1006dcdd095f997b852491">toolbox::io::base_file_format_t</a>.</p>
+
+</div>
+</div>
+<a id="ab9aef277cee09f8dc503ebaa53bc6d38" name="ab9aef277cee09f8dc503ebaa53bc6d38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9aef277cee09f8dc503ebaa53bc6d38">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::io::formats::pcd_format_t::write </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>binary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将 point_cloud_t&lt;float&gt; 或 point_cloud_t&lt;double&gt; 中的数据写入 PCD 文件。/Writes data from a point_cloud_t&lt;float&gt; or point_cloud_t&lt;double&gt; to a PCD file. </p>
+<p>格式（ASCII 或 BINARY）由 binary 参数决定。/The format (ASCII or BINARY) is determined by the <code>binary</code> parameter.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>输出 PCD 文件的路径/Path to the output PCD file </td></tr>
+    <tr><td class="paramname">data</td><td>输入 unique_ptr，持有 point_cloud_t&lt;float&gt; 或 point_cloud_t&lt;double&gt;/Input unique_ptr holding a point_cloud_t&lt;float&gt; or point_cloud_t&lt;double&gt; </td></tr>
+    <tr><td class="paramname">binary</td><td>是否以二进制模式写入/Whether to write in binary mode </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>写入成功则为 true；如果输入数据为空、不是支持的点云类型或发生文件错误则为 false/True on successful write, false if input data is null, not a supported point cloud type, or if a file error occurs</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建点云/Create a point cloud</span></div>
+<div class="line"><span class="keyword">auto</span> cloud = std::make_unique&lt;toolbox::types::point_cloud_t&lt;float&gt;&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 添加一些点/Add some points</span></div>
+<div class="line">cloud-&gt;push_back({1.0f, 2.0f, 3.0f});</div>
+<div class="line">cloud-&gt;push_back({4.0f, 5.0f, 6.0f});</div>
+<div class="line">cloud-&gt;push_back({7.0f, 8.0f, 9.0f});</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 转换为基类指针/Convert to base class pointer</span></div>
+<div class="line">std::unique_ptr&lt;toolbox::io::formats::base_file_data_t&gt;</div>
+<div class="line">data_ptr(cloud.release());</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 写入文件/Write to file</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a> pcd_format;</div>
+<div class="line"><span class="keywordtype">bool</span> ascii_result = pcd_format.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">write</a>(<span class="stringliteral">&quot;cloud_ascii.pcd&quot;</span>, data_ptr, <span class="keyword">false</span>);</div>
+<div class="line"><span class="comment">// ASCII 格式/ASCII format bool binary_result =</span></div>
+<div class="line">pcd_format.<a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">write</a>(<span class="stringliteral">&quot;cloud_binary.pcd&quot;</span>, data_ptr, <span class="keyword">true</span>); <span class="comment">// 二进制格式/Binary</span></div>
+<div class="line">format</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;ASCII 写入&quot;</span> &lt;&lt; (ascii_result ? <span class="stringliteral">&quot;成功&quot;</span> : <span class="stringliteral">&quot;失败&quot;</span>)</div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot;/ASCII write &quot;</span> &lt;&lt; (ascii_result ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>) &lt;&lt;</div>
+<div class="line">std::endl; std::cout &lt;&lt; <span class="stringliteral">&quot;二进制写入&quot;</span> &lt;&lt; (binary_result ? <span class="stringliteral">&quot;成功&quot;</span> : <span class="stringliteral">&quot;失败&quot;</span>)</div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot;/Binary write &quot;</span> &lt;&lt; (binary_result ? <span class="stringliteral">&quot;succeeded&quot;</span> : <span class="stringliteral">&quot;failed&quot;</span>)</div>
+<div class="line">&lt;&lt; std::endl;</div>
+</div><!-- fragment --> 
+<p>Implements <a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a52c2513d9e4cf68bc4f7577b4860fbf6">toolbox::io::base_file_format_t</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/io/formats/<a class="el" href="pcd_8hpp_source.html">pcd.hpp</a></li>
+<li>src/include/cpp-toolbox/io/formats/detail/<a class="el" href="pcd__impl_8hpp_source.html">pcd_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1io.html">io</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1io_1_1formats.html">formats</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

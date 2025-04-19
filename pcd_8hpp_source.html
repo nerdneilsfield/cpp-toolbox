@@ -225,30 +225,178 @@ $(document).ready(function(){initNavTree('pcd_8hpp_source.html',''); initResizab
 <div class="contents">
 <a href="pcd_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="io_2formats_2base_8hpp.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="}">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="namespacecpp__toolbox.html">    5</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecpp__toolbox_1_1io.html">cpp_toolbox::io</a></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html">pcd_file_data_t</a> : <span class="keyword">public</span> base_file_data_t</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#a6fa5bb1a50b39ded1128849fdd89f33d">   11</a></span>  std::vector&lt;Eigen::Vector3d&gt; <a class="code hl_variable" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#a6fa5bb1a50b39ded1128849fdd89f33d">points</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#abe15a31a94099f19f14ac28491dc39d1">   12</a></span>  std::vector&lt;Eigen::Vector3d&gt; <a class="code hl_variable" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#abe15a31a94099f19f14ac28491dc39d1">normals</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#acbeb17ac81ebd61cf2c993094ed60919">   13</a></span>  std::vector&lt;Eigen::Vector3d&gt; <a class="code hl_variable" href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#acbeb17ac81ebd61cf2c993094ed60919">colors</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>};</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstdint&gt;</span>  <span class="comment">// For fixed-width integers</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstring&gt;</span>  <span class="comment">// For memcpy</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iosfwd&gt;</span>  <span class="comment">// Forward declare std::istream</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// unique_ptr</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="string_8hpp.html">cpp-toolbox/container/string.hpp</a>&gt;</span>  <span class="comment">// For string utilities like ends_with</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="file_8hpp.html">cpp-toolbox/file/file.hpp</a>&gt;</span>  <span class="comment">// Assuming MemoryMappedFile is here</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="memory__mapped__file_8hpp.html">cpp-toolbox/file/memory_mapped_file.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="io_2formats_2base_8hpp.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</span>  <span class="comment">// base_file_format_t, base_file_data_t</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="macro_8hpp.html">cpp-toolbox/macro.hpp</a>&gt;</span>  <span class="comment">// For platform checks if needed directly</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span>  <span class="comment">// point_cloud_t (inherits base_file_data_t)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// Forward declare the concrete data type we&#39;ll work with</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">using </span><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>;  <span class="comment">// Assuming point_t is also in types namespace</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">   71</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// --- Internal Helper Structs/Enums ---</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">struct </span>pcd_header_t</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    std::string version; </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    std::vector&lt;std::string&gt; fields; </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    std::vector&lt;char&gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        types; </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    std::vector&lt;size_t&gt; sizes; </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    std::vector&lt;size_t&gt; counts; </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">size_t</span> width =</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        0; </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">size_t</span> height =</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        0; </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    std::array&lt;double, 7&gt; viewpoint {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        0,</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        0,</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        0,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        1,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        0,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        0,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        0};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordtype">size_t</span> points = 0; </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">enum class</span> data_type_t : uint8_t</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      ASCII, </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      BINARY, </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      BINARY_COMPRESSED, </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      UNKNOWN </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    } data_type = data_type_t::UNKNOWN; </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">size_t</span> point_step = 0; </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordtype">size_t</span> header_length = 0; </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    std::map&lt;std::string, size_t&gt; m_field_indices;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="};">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html">  135</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html">field_info_t</a></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a9988b118ded59632e306a298d3c9834a">  137</a></span>      <span class="keywordtype">char</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a9988b118ded59632e306a298d3c9834a">type</a>; </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#abde67382b51760aab18a3b09daa0a59a">  138</a></span>      <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#abde67382b51760aab18a3b09daa0a59a">size</a>; </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a4cb7a11fcbba036a9becdc2889067054">  139</a></span>      <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a4cb7a11fcbba036a9becdc2889067054">count</a>; </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a277bca3222009fd5dcde6794fe09d20f">  140</a></span>      <span class="keywordtype">size_t</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a277bca3222009fd5dcde6794fe09d20f">offset</a>; </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    };</div>
 </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}  <span class="comment">// namespace cpp_toolbox::io</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordtype">bool</span> parse_line(<span class="keyword">const</span> std::string&amp; line);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordtype">void</span> calculate_point_step_and_indices();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    [[nodiscard]] std::optional&lt;field_info_t&gt; get_field_info(</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">const</span> std::string&amp; field_name) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    [[nodiscard]] <span class="keywordtype">bool</span> validate(<span class="keywordtype">size_t</span> file_size_bytes) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  };</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a9ec3336b1edfa5ba3772457e120628d2">  186</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a9ec3336b1edfa5ba3772457e120628d2">pcd_format_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a4e3b7f8a67f43b12da654dabd13aa068">  191</a></span>  <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a4e3b7f8a67f43b12da654dabd13aa068">~pcd_format_t</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="comment">// 禁用复制，继承移动操作/Disable copy, inherit move operations</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a7abbcd23d5011a9e7e0a3bc96c0456b9">  194</a></span>  <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a7abbcd23d5011a9e7e0a3bc96c0456b9">pcd_format_t</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ae299add294068f2cd72446a0d7616df0">  195</a></span>  <a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ae299add294068f2cd72446a0d7616df0">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">pcd_format_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="comment">// pcd_format_t(pcd_format_t&amp;&amp;) = default; // 继承的足够了/Inherited is fine</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="comment">// pcd_format_t&amp; operator=(pcd_format_t&amp;&amp;) = default; //</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="comment">// 继承的足够了/Inherited is fine</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">  216</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">can_read</a>(<span class="keyword">const</span> std::string&amp; path) <span class="keyword">const</span> -&gt; <span class="keywordtype">bool</span> <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">  231</a></span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">get_supported_extensions</a>() const</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      -&gt; std::vector&lt;std::<span class="keywordtype">string</span>&gt; override;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">  264</a></span>  auto read(const std::<span class="keywordtype">string</span>&amp; path, std::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">  312</a></span>  [[nodiscard]] auto write(const std::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                           const std::unique_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a>&gt;&amp; data,</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>                           <span class="keywordtype">bool</span> binary) const -&gt; <span class="keywordtype">bool</span> override;</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>private:</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="comment">// --- Internal Helper Functions ---</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  template&lt;typename T&gt;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordtype">bool</span> write_internal(const std::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                      const <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud,</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                      <span class="keywordtype">bool</span> binary) const;</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  static <span class="keywordtype">bool</span> parse_header_stream(std::istream&amp; stream,</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                  pcd_header_t&amp; header,</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>                                  <span class="keywordtype">size_t</span>&amp; header_end_pos);</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  template&lt;typename T&gt;</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  static <span class="keywordtype">bool</span> read_ascii_data(std::istream&amp; stream,</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>                              const pcd_header_t&amp; header,</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>                              <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud);</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span> </div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  template&lt;typename T&gt;</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  static <span class="keywordtype">bool</span> read_binary_data(const std::<span class="keywordtype">string</span>&amp; path,</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>                               const pcd_header_t&amp; header,</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>                               <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;&amp; cloud);</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span> </div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>  template&lt;typename PointStorageT&gt;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  static <span class="keywordtype">bool</span> parse_ascii_point_line(const std::<span class="keywordtype">string</span>&amp; line,</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>                                     const pcd_header_t&amp; header,</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>                                     <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;PointStorageT&gt;&amp; point,</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                                     <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;PointStorageT&gt;* normal = <span class="keywordtype">nullptr</span>,</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>                                     <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt;PointStorageT&gt;* color = <span class="keywordtype">nullptr</span>);</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  template&lt;typename DestT, typename PCDT&gt;</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  static <span class="keywordtype">bool</span> read_binary_field_value(const <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* point_ptr,</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>                                      <span class="keywordtype">size_t</span> offset,</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>                                      DestT&amp; out_val);</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>};  <span class="comment">// class pcd_format_t</span></div>
 </div>
-<div class="ttc" id="aclasscpp__toolbox_1_1io_1_1pcd__file__data__t_html"><div class="ttname"><a href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html">cpp_toolbox::io::pcd_file_data_t</a></div><div class="ttdef"><b>Definition</b> pcd.hpp:9</div></div>
-<div class="ttc" id="aclasscpp__toolbox_1_1io_1_1pcd__file__data__t_html_a6fa5bb1a50b39ded1128849fdd89f33d"><div class="ttname"><a href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#a6fa5bb1a50b39ded1128849fdd89f33d">cpp_toolbox::io::pcd_file_data_t::points</a></div><div class="ttdeci">std::vector&lt; Eigen::Vector3d &gt; points</div><div class="ttdef"><b>Definition</b> pcd.hpp:11</div></div>
-<div class="ttc" id="aclasscpp__toolbox_1_1io_1_1pcd__file__data__t_html_abe15a31a94099f19f14ac28491dc39d1"><div class="ttname"><a href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#abe15a31a94099f19f14ac28491dc39d1">cpp_toolbox::io::pcd_file_data_t::normals</a></div><div class="ttdeci">std::vector&lt; Eigen::Vector3d &gt; normals</div><div class="ttdef"><b>Definition</b> pcd.hpp:12</div></div>
-<div class="ttc" id="aclasscpp__toolbox_1_1io_1_1pcd__file__data__t_html_acbeb17ac81ebd61cf2c993094ed60919"><div class="ttname"><a href="classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#acbeb17ac81ebd61cf2c993094ed60919">cpp_toolbox::io::pcd_file_data_t::colors</a></div><div class="ttdeci">std::vector&lt; Eigen::Vector3d &gt; colors</div><div class="ttdef"><b>Definition</b> pcd.hpp:13</div></div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>}  <span class="comment">// namespace toolbox::io::formats</span></div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span><span class="preprocessor">#include &lt;cpp-toolbox/io/formats/detail/pcd_impl.hpp&gt;</span></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1base__file__data__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1base__file__data__t.html">toolbox::io::base_file_data_t</a></div><div class="ttdoc">文件数据的基类 / Base class for data loaded from files</div><div class="ttdef"><b>Definition</b> base.hpp:33</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1base__file__format__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1base__file__format__t.html">toolbox::io::base_file_format_t</a></div><div class="ttdoc">文件格式读写器的基类 / Base class for file format readers/writers</div><div class="ttdef"><b>Definition</b> base.hpp:85</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html">toolbox::io::formats::pcd_format_t</a></div><div class="ttdoc">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.</div><div class="ttdef"><b>Definition</b> pcd.hpp:72</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_a446eab8f5f58caa0de2505673dde89c6"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">toolbox::io::formats::pcd_format_t::get_supported_extensions</a></div><div class="ttdeci">auto get_supported_extensions() const -&gt; std::vector&lt; std::string &gt; override</div><div class="ttdoc">返回支持的文件扩展名。/Returns the supported file extension.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_a4e3b7f8a67f43b12da654dabd13aa068"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a4e3b7f8a67f43b12da654dabd13aa068">toolbox::io::formats::pcd_format_t::~pcd_format_t</a></div><div class="ttdeci">~pcd_format_t() override=default</div><div class="ttdoc">析构函数。/Destructor.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_a7abbcd23d5011a9e7e0a3bc96c0456b9"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a7abbcd23d5011a9e7e0a3bc96c0456b9">toolbox::io::formats::pcd_format_t::pcd_format_t</a></div><div class="ttdeci">pcd_format_t(const pcd_format_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_a9ec3336b1edfa5ba3772457e120628d2"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a9ec3336b1edfa5ba3772457e120628d2">toolbox::io::formats::pcd_format_t::pcd_format_t</a></div><div class="ttdeci">pcd_format_t()=default</div><div class="ttdoc">构造函数。/Constructor.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_aa1d61de4c3ec91f9c4bf411d94447502"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">toolbox::io::formats::pcd_format_t::can_read</a></div><div class="ttdeci">auto can_read(const std::string &amp;path) const -&gt; bool override</div><div class="ttdoc">检查文件扩展名是否为&quot;.pcd&quot;。/Checks if the file extension is &quot;.pcd&quot;.</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1formats_1_1pcd__format__t_html_ae299add294068f2cd72446a0d7616df0"><div class="ttname"><a href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ae299add294068f2cd72446a0d7616df0">toolbox::io::formats::pcd_format_t::operator=</a></div><div class="ttdeci">pcd_format_t &amp; operator=(const pcd_format_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="afile_8hpp_html"><div class="ttname"><a href="file_8hpp.html">file.hpp</a></div></div>
 <div class="ttc" id="aio_2formats_2base_8hpp_html"><div class="ttname"><a href="io_2formats_2base_8hpp.html">base.hpp</a></div></div>
-<div class="ttc" id="anamespacecpp__toolbox_1_1io_html"><div class="ttname"><a href="namespacecpp__toolbox_1_1io.html">cpp_toolbox::io</a></div><div class="ttdef"><b>Definition</b> pcd.hpp:6</div></div>
+<div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
+<div class="ttc" id="amemory__mapped__file_8hpp_html"><div class="ttname"><a href="memory__mapped__file_8hpp.html">memory_mapped_file.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:32</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astring_8hpp_html"><div class="ttname"><a href="string_8hpp.html">string.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t</a></div><div class="ttdoc">包含偏移量的字段详细信息结构体。/Helper struct for field details including offset.</div><div class="ttdef"><b>Definition</b> pcd.hpp:136</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html_a277bca3222009fd5dcde6794fe09d20f"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a277bca3222009fd5dcde6794fe09d20f">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t::offset</a></div><div class="ttdeci">size_t offset</div><div class="ttdef"><b>Definition</b> pcd.hpp:140</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html_a4cb7a11fcbba036a9becdc2889067054"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a4cb7a11fcbba036a9becdc2889067054">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t::count</a></div><div class="ttdeci">size_t count</div><div class="ttdef"><b>Definition</b> pcd.hpp:139</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html_a9988b118ded59632e306a298d3c9834a"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#a9988b118ded59632e306a298d3c9834a">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t::type</a></div><div class="ttdeci">char type</div><div class="ttdef"><b>Definition</b> pcd.hpp:137</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t_html_abde67382b51760aab18a3b09daa0a59a"><div class="ttname"><a href="structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#abde67382b51760aab18a3b09daa0a59a">toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> pcd.hpp:138</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+<div class="ttc" id="athread__logger_8hpp_html"><div class="ttname"><a href="thread__logger_8hpp.html">thread_logger.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

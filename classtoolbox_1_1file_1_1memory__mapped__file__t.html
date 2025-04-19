@@ -1,0 +1,669 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::file::memory_mapped_file_t Class Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1file_1_1memory__mapped__file__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1file_1_1memory__mapped__file__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::file::memory_mapped_file_t Class Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>RAII wrapper for memory-mapped files. / 内存映射文件的 RAII 封装。  
+ <a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="memory__mapped__file_8hpp_source.html">memory_mapped_file.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a3450a1a3fd22bda16ca6bbe9869b5875" id="r_a3450a1a3fd22bda16ca6bbe9869b5875"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a3450a1a3fd22bda16ca6bbe9869b5875">memory_mapped_file_t</a> ()=default</td></tr>
+<tr class="memdesc:a3450a1a3fd22bda16ca6bbe9869b5875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. / 默认构造函数。  <br /></td></tr>
+<tr class="separator:a3450a1a3fd22bda16ca6bbe9869b5875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ba9d014114ddf9b62b57cf6f5f4d09" id="r_a03ba9d014114ddf9b62b57cf6f5f4d09"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a03ba9d014114ddf9b62b57cf6f5f4d09">~memory_mapped_file_t</a> ()</td></tr>
+<tr class="memdesc:a03ba9d014114ddf9b62b57cf6f5f4d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. Automatically closes the mapped file. / 析构函数。自动关闭映射的文件。  <br /></td></tr>
+<tr class="separator:a03ba9d014114ddf9b62b57cf6f5f4d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bd5410820047bd45bbdb7961790295c" id="r_a7bd5410820047bd45bbdb7961790295c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a7bd5410820047bd45bbdb7961790295c">memory_mapped_file_t</a> (const <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a7bd5410820047bd45bbdb7961790295c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor (deleted). / 拷贝构造函数（已删除）。  <br /></td></tr>
+<tr class="separator:a7bd5410820047bd45bbdb7961790295c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b92c335707aa71316b073bd798b91b" id="r_ab5b92c335707aa71316b073bd798b91b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#ab5b92c335707aa71316b073bd798b91b">operator=</a> (const <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;)=delete</td></tr>
+<tr class="memdesc:ab5b92c335707aa71316b073bd798b91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator (deleted). / 拷贝赋值运算符（已删除）。  <br /></td></tr>
+<tr class="separator:ab5b92c335707aa71316b073bd798b91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6869a1151bd55e4e0930390c16304062" id="r_a6869a1151bd55e4e0930390c16304062"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6869a1151bd55e4e0930390c16304062">memory_mapped_file_t</a> (<a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a6869a1151bd55e4e0930390c16304062"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor (deleted). / 移动构造函数（已删除）。  <br /></td></tr>
+<tr class="separator:a6869a1151bd55e4e0930390c16304062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0261c8a75070a648848ceb145f213db3" id="r_a0261c8a75070a648848ceb145f213db3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0261c8a75070a648848ceb145f213db3">operator=</a> (<a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a0261c8a75070a648848ceb145f213db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator (deleted). / 移动赋值运算符（已删除）。  <br /></td></tr>
+<tr class="separator:a0261c8a75070a648848ceb145f213db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bdd4ddabd7138437bf4b3182cf04760" id="r_a6bdd4ddabd7138437bf4b3182cf04760"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a> (const std::filesystem::path &amp;path)</td></tr>
+<tr class="memdesc:a6bdd4ddabd7138437bf4b3182cf04760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens and memory-maps the specified file. / 打开并内存映射指定的文件。  <br /></td></tr>
+<tr class="separator:a6bdd4ddabd7138437bf4b3182cf04760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5c940ff4bcb08028196faba7351445" id="r_a9d5c940ff4bcb08028196faba7351445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a9d5c940ff4bcb08028196faba7351445">close</a> ()</td></tr>
+<tr class="memdesc:a9d5c940ff4bcb08028196faba7351445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the memory-mapped file and releases resources. / 关闭内存映射文件并释放资源。  <br /></td></tr>
+<tr class="separator:a9d5c940ff4bcb08028196faba7351445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc49fd4412723096ffc7e83c540cc976" id="r_adc49fd4412723096ffc7e83c540cc976"><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a> () const</td></tr>
+<tr class="memdesc:adc49fd4412723096ffc7e83c540cc976"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pointer to the mapped memory region. / 获取指向映射内存区域的指针。  <br /></td></tr>
+<tr class="separator:adc49fd4412723096ffc7e83c540cc976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bd3594b0c4718fe5ac700bb986ce624" id="r_a0bd3594b0c4718fe5ac700bb986ce624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a> () const</td></tr>
+<tr class="memdesc:a0bd3594b0c4718fe5ac700bb986ce624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the mapped file. / 获取映射文件的大小。  <br /></td></tr>
+<tr class="separator:a0bd3594b0c4718fe5ac700bb986ce624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a846257c441699e1acac8221918eb091c" id="r_a846257c441699e1acac8221918eb091c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a846257c441699e1acac8221918eb091c">is_open</a> () const</td></tr>
+<tr class="memdesc:a846257c441699e1acac8221918eb091c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a file is currently mapped. / 检查文件当前是否已映射。  <br /></td></tr>
+<tr class="separator:a846257c441699e1acac8221918eb091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>RAII wrapper for memory-mapped files. / 内存映射文件的 RAII 封装。 </p>
+<p>This class provides a cross-platform way to map a file into memory for read-only access. It handles the opening, mapping, and closing of the file automatically using RAII.</p>
+<p>这个类提供了一种跨平台的方式将文件映射到内存中进行只读访问。 它使用 RAII 自动处理文件的打开、映射和关闭。</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="memory__mapped__file_8hpp.html">cpp-toolbox/file/memory_mapped_file.hpp</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main() {</div>
+<div class="line">    <span class="keyword">const</span> std::filesystem::path test_file = <span class="stringliteral">&quot;test_mmap.txt&quot;</span>;</div>
+<div class="line">    <span class="comment">// Create a dummy file</span></div>
+<div class="line">    {</div>
+<div class="line">        std::ofstream ofs(test_file);</div>
+<div class="line">        ofs &lt;&lt; <span class="stringliteral">&quot;Hello, Memory Map!&quot;</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mapped_file;</div>
+<div class="line">    <span class="keywordflow">if</span> (mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(test_file)) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;File mapped successfully. Size: &quot;</span> &lt;&lt; mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>()</div>
+<div class="line">&lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// Access data (example: print first 5 chars)</span></div>
+<div class="line">        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a> = mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a>();</div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a> &amp;&amp; mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() &gt;= 5) {</div>
+<div class="line">             std::cout &lt;&lt; <span class="stringliteral">&quot;First 5 chars: &quot;</span>;</div>
+<div class="line">             <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; 5; ++i) {</div>
+<div class="line">                 std::cout &lt;&lt; <a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a>[i];</div>
+<div class="line">             }</div>
+<div class="line">             std::cout &lt;&lt; std::endl;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="comment">// File is automatically unmapped and closed when mapped_file goes</span></div>
+<div class="line">out of scope } <span class="keywordflow">else</span> { std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to map file: &quot;</span> &lt;&lt; test_file &lt;&lt;</div>
+<div class="line">std::endl;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    std::filesystem::remove(test_file); <span class="comment">// Clean up</span></div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a></div><div class="ttdoc">RAII wrapper for memory-mapped files. / 内存映射文件的 RAII 封装。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:70</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a0bd3594b0c4718fe5ac700bb986ce624"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">toolbox::file::memory_mapped_file_t::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Gets the size of the mapped file. / 获取映射文件的大小。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:233</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a6bdd4ddabd7138437bf4b3182cf04760"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">toolbox::file::memory_mapped_file_t::open</a></div><div class="ttdeci">bool open(const std::filesystem::path &amp;path)</div><div class="ttdoc">Opens and memory-maps the specified file. / 打开并内存映射指定的文件。</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_adc49fd4412723096ffc7e83c540cc976"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">toolbox::file::memory_mapped_file_t::data</a></div><div class="ttdeci">const unsigned char * data() const</div><div class="ttdoc">Gets a pointer to the mapped memory region. / 获取指向映射内存区域的指针。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:210</div></div>
+<div class="ttc" id="amemory__mapped__file_8hpp_html"><div class="ttname"><a href="memory__mapped__file_8hpp.html">memory_mapped_file.hpp</a></div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3450a1a3fd22bda16ca6bbe9869b5875" name="a3450a1a3fd22bda16ca6bbe9869b5875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3450a1a3fd22bda16ca6bbe9869b5875">&#9670;&#160;</a></span>memory_mapped_file_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::file::memory_mapped_file_t::memory_mapped_file_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor. / 默认构造函数。 </p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mmap_file;</div>
+<div class="line"><span class="comment">// Now you can call open() to map a file</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a03ba9d014114ddf9b62b57cf6f5f4d09" name="a03ba9d014114ddf9b62b57cf6f5f4d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ba9d014114ddf9b62b57cf6f5f4d09">&#9670;&#160;</a></span>~memory_mapped_file_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::file::memory_mapped_file_t::~memory_mapped_file_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destructor. Automatically closes the mapped file. / 析构函数。自动关闭映射的文件。 </p>
+<p>Calls <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a9d5c940ff4bcb08028196faba7351445" title="Closes the memory-mapped file and releases resources. / 关闭内存映射文件并释放资源。">close()</a> to ensure all resources are properly released. / 调用 <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a9d5c940ff4bcb08028196faba7351445" title="Closes the memory-mapped file and releases resources. / 关闭内存映射文件并释放资源。">close()</a> 确保所有资源被正确释放。 </p>
+
+</div>
+</div>
+<a id="a7bd5410820047bd45bbdb7961790295c" name="a7bd5410820047bd45bbdb7961790295c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bd5410820047bd45bbdb7961790295c">&#9670;&#160;</a></span>memory_mapped_file_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::file::memory_mapped_file_t::memory_mapped_file_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor (deleted). / 拷贝构造函数（已删除）。 </p>
+
+</div>
+</div>
+<a id="a6869a1151bd55e4e0930390c16304062" name="a6869a1151bd55e4e0930390c16304062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6869a1151bd55e4e0930390c16304062">&#9670;&#160;</a></span>memory_mapped_file_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::file::memory_mapped_file_t::memory_mapped_file_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor (deleted). / 移动构造函数（已删除）。 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9d5c940ff4bcb08028196faba7351445" name="a9d5c940ff4bcb08028196faba7351445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5c940ff4bcb08028196faba7351445">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::file::memory_mapped_file_t::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the memory-mapped file and releases resources. / 关闭内存映射文件并释放资源。 </p>
+<p>This is called automatically by the destructor, but can be called manually. / 这个函数由析构函数自动调用，但也可以手动调用。</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mf;</div>
+<div class="line"><span class="keywordflow">if</span> (mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;data.bin&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// Process the file</span></div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Explicitly close when done</span></div>
+<div class="line">    mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a9d5c940ff4bcb08028196faba7351445">close</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Can now open another file</span></div>
+<div class="line">    mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;another_file.bin&quot;</span>);</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a9d5c940ff4bcb08028196faba7351445"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a9d5c940ff4bcb08028196faba7351445">toolbox::file::memory_mapped_file_t::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Closes the memory-mapped file and releases resources. / 关闭内存映射文件并释放资源。</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="adc49fd4412723096ffc7e83c540cc976" name="adc49fd4412723096ffc7e83c540cc976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc49fd4412723096ffc7e83c540cc976">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned char * toolbox::file::memory_mapped_file_t::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a pointer to the mapped memory region. / 获取指向映射内存区域的指针。 </p>
+<dl class="section return"><dt>Returns</dt><dd>A const pointer to the start of the mapped data, or nullptr if not open. / 指向映射数据起始位置的 const 指针，如果未打开则为 nullptr。</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mf;</div>
+<div class="line"><span class="keywordflow">if</span> (mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;image.dat&quot;</span>) &amp;&amp; mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() &gt;= 1024) {</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* img_data = mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a>();</div>
+<div class="line">    <span class="comment">// Now you can read the image data without loading it all into memory</span></div>
+<div class="line">    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> header_value = img_data[0] | (img_data[1] &lt;&lt; 8) |</div>
+<div class="line">(img_data[2] &lt;&lt; 16) | (img_data[3] &lt;&lt; 24);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a846257c441699e1acac8221918eb091c" name="a846257c441699e1acac8221918eb091c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a846257c441699e1acac8221918eb091c">&#9670;&#160;</a></span>is_open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::file::memory_mapped_file_t::is_open </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if a file is currently mapped. / 检查文件当前是否已映射。 </p>
+<dl class="section return"><dt>Returns</dt><dd>True if a file is mapped, false otherwise. / 如果文件已映射，返回 true，否则返回 false。</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mf;</div>
+<div class="line"><span class="comment">// Check before using</span></div>
+<div class="line"><span class="keywordflow">if</span> (!mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a846257c441699e1acac8221918eb091c">is_open</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;config.dat&quot;</span>)) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to open config file&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span> -1;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Now safe to use mf.data() and mf.size()</span></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a846257c441699e1acac8221918eb091c"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a846257c441699e1acac8221918eb091c">toolbox::file::memory_mapped_file_t::is_open</a></div><div class="ttdeci">bool is_open() const</div><div class="ttdoc">Checks if a file is currently mapped. / 检查文件当前是否已映射。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:254</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a6bdd4ddabd7138437bf4b3182cf04760" name="a6bdd4ddabd7138437bf4b3182cf04760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bdd4ddabd7138437bf4b3182cf04760">&#9670;&#160;</a></span>open()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::file::memory_mapped_file_t::open </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Opens and memory-maps the specified file. / 打开并内存映射指定的文件。 </p>
+<p>If a file is already open, it will be closed first. / 如果已有文件打开，会先关闭。</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>The path to the file to map. / 要映射的文件的路径。 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the file was successfully opened and mapped, false otherwise. / 如果文件成功打开并映射，返回 true，否则返回 false。</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mf;</div>
+<div class="line"><span class="keywordflow">if</span> (mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;my_data.bin&quot;</span>)) {</div>
+<div class="line">    <span class="comment">// Use mf.data() and mf.size()</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer = mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a>();</div>
+<div class="line">    <span class="keywordtype">size_t</span> file_size = mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Process the data</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; file_size; ++i) {</div>
+<div class="line">        <span class="comment">// Do something with buffer[i]</span></div>
+<div class="line">    }</div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    <span class="comment">// Handle error</span></div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;Failed to open file&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab5b92c335707aa71316b073bd798b91b" name="ab5b92c335707aa71316b073bd798b91b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b92c335707aa71316b073bd798b91b">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp; toolbox::file::memory_mapped_file_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator (deleted). / 拷贝赋值运算符（已删除）。 </p>
+
+</div>
+</div>
+<a id="a0261c8a75070a648848ceb145f213db3" name="a0261c8a75070a648848ceb145f213db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0261c8a75070a648848ceb145f213db3">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp; toolbox::file::memory_mapped_file_t::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a> &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move assignment operator (deleted). / 移动赋值运算符（已删除）。 </p>
+
+</div>
+</div>
+<a id="a0bd3594b0c4718fe5ac700bb986ce624" name="a0bd3594b0c4718fe5ac700bb986ce624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bd3594b0c4718fe5ac700bb986ce624">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> toolbox::file::memory_mapped_file_t::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the size of the mapped file. / 获取映射文件的大小。 </p>
+<dl class="section return"><dt>Returns</dt><dd>The size of the mapped region in bytes, or 0 if not open. / 映射区域的大小（字节），如果未打开则为 0。</dd></dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mf;</div>
+<div class="line"><span class="keywordflow">if</span> (mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(<span class="stringliteral">&quot;data.bin&quot;</span>)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;File size: &quot;</span> &lt;&lt; mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() &lt;&lt; <span class="stringliteral">&quot; bytes&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Check if file is large enough for our needs</span></div>
+<div class="line">    <span class="keywordflow">if</span> (mf.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() &lt; required_size) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;File is too small&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/file/<a class="el" href="memory__mapped__file_8hpp_source.html">memory_mapped_file.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1file.html">file</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">memory_mapped_file_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

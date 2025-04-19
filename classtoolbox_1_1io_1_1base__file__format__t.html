@@ -227,6 +227,11 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1io_1_1base__file__form
  <a href="classtoolbox_1_1io_1_1base__file__format__t.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="io_2formats_2base_8hpp_source.html">base.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::io::base_file_format_t:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -249,9 +254,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb34b2c84b1006dcdd095f997b852491" id="r_afb34b2c84b1006dcdd095f997b852491"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#afb34b2c84b1006dcdd095f997b852491">read</a> (const std::string &amp;path, std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;data) -&gt; bool=0</td></tr>
 <tr class="memdesc:afb34b2c84b1006dcdd095f997b852491"><td class="mdescLeft">&#160;</td><td class="mdescRight">读取文件内容到数据对象 / Read file contents into data object  <br /></td></tr>
 <tr class="separator:afb34b2c84b1006dcdd095f997b852491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac32ebb3ec2dfa64ebf5ed9aaf71a17ff" id="r_ac32ebb3ec2dfa64ebf5ed9aaf71a17ff"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#ac32ebb3ec2dfa64ebf5ed9aaf71a17ff">write</a> (const std::string &amp;path, const std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;data) const -&gt; bool=0</td></tr>
-<tr class="memdesc:ac32ebb3ec2dfa64ebf5ed9aaf71a17ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数据写入文件 / Write data to file  <br /></td></tr>
-<tr class="separator:ac32ebb3ec2dfa64ebf5ed9aaf71a17ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c2513d9e4cf68bc4f7577b4860fbf6" id="r_a52c2513d9e4cf68bc4f7577b4860fbf6"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html#a52c2513d9e4cf68bc4f7577b4860fbf6">write</a> (const std::string &amp;path, const std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;data, bool binary) const -&gt; bool=0</td></tr>
+<tr class="memdesc:a52c2513d9e4cf68bc4f7577b4860fbf6"><td class="mdescLeft">&#160;</td><td class="mdescRight">将数据写入文件 / Write data to file  <br /></td></tr>
+<tr class="separator:a52c2513d9e4cf68bc4f7577b4860fbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -421,6 +426,8 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>如果文件可以读取则返回true / Returns true if file can be read </dd></dl>
 
+<p>Implemented in <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa1d61de4c3ec91f9c4bf411d94447502">toolbox::io::formats::pcd_format_t</a>.</p>
+
 </div>
 </div>
 <a id="aa2a7dd3795a2d988923c3e18719feb46" name="aa2a7dd3795a2d988923c3e18719feb46"></a>
@@ -448,6 +455,8 @@ Protected Member Functions</h2></td></tr>
 
 <p>获取支持的文件扩展名列表 / Get list of supported file extensions </p>
 <dl class="section return"><dt>Returns</dt><dd>支持的扩展名字符串向量 / Vector of supported extension strings </dd></dl>
+
+<p>Implemented in <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#a446eab8f5f58caa0de2505673dde89c6">toolbox::io::formats::pcd_format_t</a>.</p>
 
 </div>
 </div>
@@ -547,10 +556,12 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>读取成功返回true / Returns true if read successful </dd></dl>
 
+<p>Implemented in <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#aa04889ef4c014a4cbe6456449b3a2593">toolbox::io::formats::pcd_format_t</a>.</p>
+
 </div>
 </div>
-<a id="ac32ebb3ec2dfa64ebf5ed9aaf71a17ff" name="ac32ebb3ec2dfa64ebf5ed9aaf71a17ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac32ebb3ec2dfa64ebf5ed9aaf71a17ff">&#9670;&#160;</a></span>write()</h2>
+<a id="a52c2513d9e4cf68bc4f7577b4860fbf6" name="a52c2513d9e4cf68bc4f7577b4860fbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c2513d9e4cf68bc4f7577b4860fbf6">&#9670;&#160;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,7 +579,13 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>binary</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -588,10 +605,13 @@ Protected Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">path</td><td>要写入的文件路径 / Path to file to write </td></tr>
     <tr><td class="paramname">data</td><td>要写入的数据 / Data to write </td></tr>
+    <tr><td class="paramname">binary</td><td>是否以二进制模式写入 / Whether to write in binary mode </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>写入成功返回true / Returns true if write successful </dd></dl>
+
+<p>Implemented in <a class="el" href="classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html#ab9aef277cee09f8dc503ebaa53bc6d38">toolbox::io::formats::pcd_format_t</a>.</p>
 
 </div>
 </div>

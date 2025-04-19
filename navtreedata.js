@@ -126,12 +126,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html",
-"classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ac843eb73f913aaefcbfa74e0bd0f231c",
-"classtoolbox_1_1utils_1_1set__printer__t.html#a7cc8b83021b61e15e1a5b52b13feeae5",
-"functional__impl_8hpp.html#a424450bf0ce67fb53903b20dee8b1765",
-"namespaces.html",
-"parallel_8hpp.html",
-"structtoolbox_1_1traits_1_1is__stack__allocated.html"
+"classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html#a96d0edcf890c16cc5b28d230f0ac9d6f",
+"classtoolbox_1_1utils_1_1parameter__t.html#a68091176259a3811efa190bf6158d4a7",
+"functional_8hpp.html#a470b06977505a96a3ee4ca05e6ca9907",
+"minmax_8hpp_source.html",
+"namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190",
+"structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html#ac1e5d57d1b1e20d04954cee3a7c13044",
+"timer_8hpp.html#a9b2dac75b55638fac7dd7cc828857be1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

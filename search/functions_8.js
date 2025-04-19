@@ -15,11 +15,12 @@ var searchData=
   ['is_5ffloat_12',['is_float',['../namespacetoolbox_1_1container_1_1string.html#a02c094d493d2e3469b7dd1f908e1779a',1,'toolbox::container::string']]],
   ['is_5finteger_13',['is_integer',['../namespacetoolbox_1_1container_1_1string.html#a598ab7a0c4cdb7dd64b5f7beca650874',1,'toolbox::container::string']]],
   ['is_5fnumeric_14',['is_numeric',['../namespacetoolbox_1_1container_1_1string.html#a298d9ca66bdcb1f33cfc7cf5a0a9408d',1,'toolbox::container::string']]],
-  ['is_5foption_15',['is_option',['../classtoolbox_1_1utils_1_1flag__t.html#a1ec4ecf081e7bda898467f534f9cf7ea',1,'toolbox::utils::flag_t::is_option()'],['../classtoolbox_1_1utils_1_1parameter__t.html#a9ddf9fd9104e7ae26fcac73499a1b453',1,'toolbox::utils::parameter_t::is_option()'],['../classtoolbox_1_1utils_1_1option__t.html#aed2676dcaa4e469230bf28040dda2456',1,'toolbox::utils::option_t::is_option()']]],
-  ['is_5fother_16',['is_other',['../namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d',1,'toolbox::file']]],
-  ['is_5fregular_5ffile_17',['is_regular_file',['../namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa',1,'toolbox::file']]],
-  ['is_5frequired_18',['is_required',['../classtoolbox_1_1utils_1_1parameter__t.html#ad2604d826c76ce17f0abda5a09ed8c69',1,'toolbox::utils::parameter_t']]],
-  ['is_5fset_19',['is_set',['../classtoolbox_1_1utils_1_1parameter__t.html#a218823735f8a81af7bf2cbb00c7f1f1e',1,'toolbox::utils::parameter_t']]],
-  ['is_5fsocket_20',['is_socket',['../namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4',1,'toolbox::file']]],
-  ['is_5fsymlink_21',['is_symlink',['../namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8',1,'toolbox::file']]]
+  ['is_5fopen_15',['is_open',['../classtoolbox_1_1file_1_1memory__mapped__file__t.html#a846257c441699e1acac8221918eb091c',1,'toolbox::file::memory_mapped_file_t']]],
+  ['is_5foption_16',['is_option',['../classtoolbox_1_1utils_1_1parameter__t.html#a9ddf9fd9104e7ae26fcac73499a1b453',1,'toolbox::utils::parameter_t::is_option()'],['../classtoolbox_1_1utils_1_1flag__t.html#a1ec4ecf081e7bda898467f534f9cf7ea',1,'toolbox::utils::flag_t::is_option()'],['../classtoolbox_1_1utils_1_1option__t.html#aed2676dcaa4e469230bf28040dda2456',1,'toolbox::utils::option_t::is_option()']]],
+  ['is_5fother_17',['is_other',['../namespacetoolbox_1_1file.html#a5baf94bae1c814008785e16d5925a93d',1,'toolbox::file']]],
+  ['is_5fregular_5ffile_18',['is_regular_file',['../namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa',1,'toolbox::file']]],
+  ['is_5frequired_19',['is_required',['../classtoolbox_1_1utils_1_1parameter__t.html#ad2604d826c76ce17f0abda5a09ed8c69',1,'toolbox::utils::parameter_t']]],
+  ['is_5fset_20',['is_set',['../classtoolbox_1_1utils_1_1parameter__t.html#a218823735f8a81af7bf2cbb00c7f1f1e',1,'toolbox::utils::parameter_t']]],
+  ['is_5fsocket_21',['is_socket',['../namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4',1,'toolbox::file']]],
+  ['is_5fsymlink_22',['is_symlink',['../namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8',1,'toolbox::file']]]
 ];

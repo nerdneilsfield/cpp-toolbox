@@ -8,7 +8,7 @@ var searchData=
   ['next_5',['next',['../structtoolbox_1_1container_1_1detail_1_1_h_p_rec.html#a5b22c1279122a0099c553b583b3878d5',1,'toolbox::container::detail::HPRec']]],
   ['norm_6',['norm',['../structtoolbox_1_1types_1_1point__t.html#a58a06ce4deffa10cbad6747095360c2a',1,'toolbox::types::point_t']]],
   ['normalize_7',['normalize',['../structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71',1,'toolbox::types::point_t']]],
-  ['normals_8',['normals',['../classcpp__toolbox_1_1io_1_1pcd__file__data__t.html#abe15a31a94099f19f14ac28491dc39d1',1,'cpp_toolbox::io::pcd_file_data_t::normals'],['../classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a',1,'toolbox::types::point_cloud_t::normals']]],
+  ['normals_8',['normals',['../classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a',1,'toolbox::types::point_cloud_t']]],
   ['note_20to_20packagers_9',['Note to packagers',['../md__b_u_i_l_d_i_n_g.html#autotoc_md23',1,'']]],
   ['notes_10',['11. 备注 / Notes',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md63',1,'']]]
 ];

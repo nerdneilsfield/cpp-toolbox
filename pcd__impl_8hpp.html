@@ -31,7 +31,7 @@
       content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
     />
     <!-- END twitter metadata -->
-    <title>cpp-toolbox: src/include/cpp-toolbox/types -&gt; base Relation</title>
+    <title>cpp-toolbox: src/include/cpp-toolbox/io/formats/detail/pcd_impl.hpp File Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -189,7 +189,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_d073c017754f5bdb7e8e1de8ad13b99a.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('pcd__impl_8hpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -214,13 +214,96 @@ $(document).ready(function(){initNavTree('dir_d073c017754f5bdb7e8e1de8ad13b99a.h
 </div>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">pcd_impl.hpp File Reference</div></div>
+</div><!--header-->
 <div class="contents">
-<h3>types &rarr; base Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in src/include/cpp-toolbox/types</th><th class="dirtab">Includes file in src/include/cpp-toolbox/base</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="minmax_8hpp.html">minmax.hpp</a></td><td class="dirtab"><a class="el" href="thread__pool__singleton_8hpp.html">thread_pool_singleton.hpp</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_42f5095b4e6c17bde0f6ae6fdfd7bf2f.html">impl</a>&#160;/&#160;<a class="el" href="minmax__impl_8hpp.html">minmax_impl.hpp</a></td><td class="dirtab"><a class="el" href="thread__pool__singleton_8hpp.html">thread_pool_singleton.hpp</a></td></tr></table></div><!-- contents -->
+
+<p>此文件包含 pcd_format_t 的模板实现/This file contains the template implementations for pcd_format_t  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="pcd_8hpp_source.html">cpp-toolbox/io/formats/pcd.hpp</a>&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;variant&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;<a class="el" href="memory__mapped__file_8hpp_source.html">cpp-toolbox/file/memory_mapped_file.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for pcd_impl.hpp:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
+</div>
+<p><a href="pcd__impl_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox" id="r_namespacetoolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox.html">toolbox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1io" id="r_namespacetoolbox_1_1io"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html">toolbox::io</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1io_1_1formats" id="r_namespacetoolbox_1_1io_1_1formats"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a3c5b4e5061b14f0fb033b48b23ad82a3" id="r_a3c5b4e5061b14f0fb033b48b23ad82a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pcd__impl_8hpp.html#a3c5b4e5061b14f0fb033b48b23ad82a3">READ_BINARY_CASE</a>(PCDType)</td></tr>
+<tr class="separator:a3c5b4e5061b14f0fb033b48b23ad82a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>此文件包含 pcd_format_t 的模板实现/This file contains the template implementations for pcd_format_t </p>
+<p>该文件应该只被 <a class="el" href="pcd_8hpp.html">pcd.hpp</a> 包含/It should only be included by <a class="el" href="pcd_8hpp.html">pcd.hpp</a> </p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a3c5b4e5061b14f0fb033b48b23ad82a3" name="a3c5b4e5061b14f0fb033b48b23ad82a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c5b4e5061b14f0fb033b48b23ad82a3">&#9670;&#160;</a></span>READ_BINARY_CASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define READ_BINARY_CASE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">PCDType</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">case</span> <span class="keyword">sizeof</span>(PCDType): \</div>
+<div class="line">    if (!read_binary_field_value&lt;T, PCDType&gt;(point_ptr, info.offset, out_val)) \</div>
+<div class="line">    { \</div>
+<div class="line">      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;pcd_format_t: Failed binary read (offset &quot;</span> \</div>
+<div class="line">                  &lt;&lt; info.offset &lt;&lt; <span class="stringliteral">&quot;, size &quot;</span> &lt;&lt; <span class="keyword">sizeof</span>(PCDType) &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>; \</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>; \</div>
+<div class="line">    } \</div>
+<div class="line">    <span class="keywordflow">break</span></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1354</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_d073c017754f5bdb7e8e1de8ad13b99a.html">types</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_0525589dda1abc1cfa65fd0da343267e.html">io</a></li><li class="navelem"><a class="el" href="dir_1d45bcc800627d18cbc66f5a2df2fc7a.html">formats</a></li><li class="navelem"><a class="el" href="dir_715b7c3501a082002d2982bd6d109cb8.html">detail</a></li><li class="navelem"><a class="el" href="pcd__impl_8hpp.html">pcd_impl.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

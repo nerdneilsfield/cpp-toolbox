@@ -1,0 +1,11 @@
+digraph "src/include/cpp-toolbox/io/formats/detail/pcd_impl.hpp"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/include/cpp-toolbox\l/io/formats/detail/pcd\l_impl.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="此文件包含 pcd_format_t 的模板实现/This file contains the template implementations for pcd_format_t"];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/include/cpp-toolbox\l/io/formats/pcd.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$pcd_8hpp.html",tooltip=" "];
+  Node2 -> Node1 [id="edge2_Node000002_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

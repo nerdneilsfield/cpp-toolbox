@@ -1,10 +1,5 @@
 var annotated_dup =
 [
-    [ "cpp_toolbox", "namespacecpp__toolbox.html", [
-      [ "io", "namespacecpp__toolbox_1_1io.html", [
-        [ "pcd_file_data_t", "classcpp__toolbox_1_1io_1_1pcd__file__data__t.html", "classcpp__toolbox_1_1io_1_1pcd__file__data__t" ]
-      ] ]
-    ] ],
     [ "toolbox", "namespacetoolbox.html", [
       [ "base", "namespacetoolbox_1_1base.html", [
         [ "detail", "namespacetoolbox_1_1base_1_1detail.html", [
@@ -25,6 +20,9 @@ var annotated_dup =
         [ "concurrent_queue_t", "classtoolbox_1_1container_1_1concurrent__queue__t.html", "classtoolbox_1_1container_1_1concurrent__queue__t" ],
         [ "lock_free_queue_t", "classtoolbox_1_1container_1_1lock__free__queue__t.html", "classtoolbox_1_1container_1_1lock__free__queue__t" ]
       ] ],
+      [ "file", "namespacetoolbox_1_1file.html", [
+        [ "memory_mapped_file_t", "classtoolbox_1_1file_1_1memory__mapped__file__t.html", "classtoolbox_1_1file_1_1memory__mapped__file__t" ]
+      ] ],
       [ "functional", "namespacetoolbox_1_1functional.html", [
         [ "detail", "namespacetoolbox_1_1functional_1_1detail.html", [
           [ "has_size", "structtoolbox_1_1functional_1_1detail_1_1has__size.html", null ],
@@ -40,6 +38,9 @@ var annotated_dup =
         [ "MemoizedFunction< R(Args...)>", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4" ]
       ] ],
       [ "io", "namespacetoolbox_1_1io.html", [
+        [ "formats", "namespacetoolbox_1_1io_1_1formats.html", [
+          [ "pcd_format_t", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t" ]
+        ] ],
         [ "base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", "classtoolbox_1_1io_1_1base__file__data__t" ],
         [ "base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", "classtoolbox_1_1io_1_1base__file__format__t" ]
       ] ],

@@ -9,5 +9,5 @@ var classtoolbox_1_1io_1_1base__file__format__t =
     [ "operator=", "classtoolbox_1_1io_1_1base__file__format__t.html#a0f5924697fa75f1b6e1d4c5d0a7cdc61", null ],
     [ "operator=", "classtoolbox_1_1io_1_1base__file__format__t.html#a7235b23ae0f30fdf73fa9721d7bbaa06", null ],
     [ "read", "classtoolbox_1_1io_1_1base__file__format__t.html#afb34b2c84b1006dcdd095f997b852491", null ],
-    [ "write", "classtoolbox_1_1io_1_1base__file__format__t.html#ac32ebb3ec2dfa64ebf5ed9aaf71a17ff", null ]
+    [ "write", "classtoolbox_1_1io_1_1base__file__format__t.html#a52c2513d9e4cf68bc4f7577b4860fbf6", null ]
 ];
