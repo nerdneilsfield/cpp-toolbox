@@ -38,6 +38,7 @@ var namespacetoolbox_1_1utils =
     [ "get_timer_elapsed_ms", "namespacetoolbox_1_1utils.html#a0535e571ea6c9132f893b2596af4d020", null ],
     [ "operator<<", "namespacetoolbox_1_1utils.html#a2184930783c2534ba0f5f25677a33f1c", null ],
     [ "operator<<", "namespacetoolbox_1_1utils.html#aba9890804c595ec5fe632ac01b4bcd6a", null ],
+    [ "parse_optional_value", "namespacetoolbox_1_1utils.html#a54586048e39aa688395a3d1d986ed77d", null ],
     [ "print_array", "namespacetoolbox_1_1utils.html#a3e53a7b2980639f621aadc15bbcc4168", null ],
     [ "print_deque", "namespacetoolbox_1_1utils.html#acf1618d441c32d74708f0f6a51ef4987", null ],
     [ "print_list", "namespacetoolbox_1_1utils.html#a656ece98192362133373ddd4cacc2ca6", null ],

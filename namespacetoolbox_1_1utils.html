@@ -302,6 +302,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a54586048e39aa688395a3d1d986ed77d" id="r_a54586048e39aa688395a3d1d986ed77d"><td class="memTemplParams" colspan="2">template&lt;typename T_Optional &gt; </td></tr>
+<tr class="memitem:a54586048e39aa688395a3d1d986ed77d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a54586048e39aa688395a3d1d986ed77d">parse_optional_value</a> (const std::string &amp;input, T_Optional &amp;output)</td></tr>
+<tr class="separator:a54586048e39aa688395a3d1d986ed77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5572a2b37d2d75af67443c063834b190" id="r_a5572a2b37d2d75af67443c063834b190"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190">get_default_style</a> () -&gt; const <a class="el" href="structtoolbox_1_1utils_1_1print__style__t.html">print_style_t</a> &amp;</td></tr>
 <tr class="memdesc:a5572a2b37d2d75af67443c063834b190"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取默认打印风格/Get default print style  <br /></td></tr>
 <tr class="separator:a5572a2b37d2d75af67443c063834b190"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,7 +488,7 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string 对齐后的文本/Aligned text <div class="fragment"><div class="line">std::string s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805">align_text</a>(<span class="stringliteral">&quot;abc&quot;</span>, 6, align_t::RIGHT); <span class="comment">// &quot;   abc&quot;</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_a68622dfebab9e4c8dddcabce3cc25805"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805">toolbox::utils::align_text</a></div><div class="ttdeci">auto align_text(const std::string &amp;text, size_t width, align_t align, const std::string &amp;padding=&quot; &quot;) -&gt; std::string</div><div class="ttdoc">处理对齐功能/Handle text alignment</div><div class="ttdef"><b>Definition</b> print.hpp:325</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a68622dfebab9e4c8dddcabce3cc25805"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805">toolbox::utils::align_text</a></div><div class="ttdeci">auto align_text(const std::string &amp;text, size_t width, align_t align, const std::string &amp;padding=&quot; &quot;) -&gt; std::string</div><div class="ttdoc">处理对齐功能/Handle text alignment</div><div class="ttdef"><b>Definition</b> print.hpp:327</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -753,7 +756,7 @@ Variables</h2></td></tr>
 
 <p>获取默认打印风格/Get default print style </p>
 <dl class="section return"><dt>Returns</dt><dd>const <a class="el" href="structtoolbox_1_1utils_1_1print__style__t.html" title="打印风格设置/Print style settings">print_style_t</a>&amp; 默认风格引用/Reference to default style <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span>&amp; style = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190">toolbox::utils::get_default_style</a>();</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_a5572a2b37d2d75af67443c063834b190"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190">toolbox::utils::get_default_style</a></div><div class="ttdeci">auto get_default_style() -&gt; const print_style_t &amp;</div><div class="ttdoc">获取默认打印风格/Get default print style</div><div class="ttdef"><b>Definition</b> print.hpp:94</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a5572a2b37d2d75af67443c063834b190"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190">toolbox::utils::get_default_style</a></div><div class="ttdeci">auto get_default_style() -&gt; const print_style_t &amp;</div><div class="ttdoc">获取默认打印风格/Get default print style</div><div class="ttdef"><b>Definition</b> print.hpp:96</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -924,7 +927,7 @@ template&lt;typename Container &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; 输出流引用 / Reference to output stream <div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#ae3954fecdf6f41473afb536a8f559169">print_vector</a>(vec);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_ae3954fecdf6f41473afb536a8f559169"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#ae3954fecdf6f41473afb536a8f559169">toolbox::utils::print_vector</a></div><div class="ttdeci">auto print_vector(const std::vector&lt; T &gt; &amp;vec, const std::string &amp;name=&quot;Vector&quot;, const print_style_t &amp;style=get_default_style()) -&gt; vector_printer_t&lt; T &gt;</div><div class="ttdoc">打印vector的工厂函数/Factory function to print vector</div><div class="ttdef"><b>Definition</b> print.hpp:1295</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_ae3954fecdf6f41473afb536a8f559169"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#ae3954fecdf6f41473afb536a8f559169">toolbox::utils::print_vector</a></div><div class="ttdeci">auto print_vector(const std::vector&lt; T &gt; &amp;vec, const std::string &amp;name=&quot;Vector&quot;, const print_style_t &amp;style=get_default_style()) -&gt; vector_printer_t&lt; T &gt;</div><div class="ttdoc">打印vector的工厂函数/Factory function to print vector</div><div class="ttdef"><b>Definition</b> print.hpp:1297</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -962,6 +965,36 @@ template&lt;typename Container &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ostream&amp; 输出流引用 / Reference to output stream </dd></dl>
+
+</div>
+</div>
+<a id="a54586048e39aa688395a3d1d986ed77d" name="a54586048e39aa688395a3d1d986ed77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54586048e39aa688395a3d1d986ed77d">&#9670;&#160;</a></span>parse_optional_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T_Optional &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::utils::parse_optional_value </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T_Optional &amp;&#160;</td>
+          <td class="paramname"><em>output</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1018,7 +1051,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>array_printer_t&lt;T,N&gt; 打印器/Printer <div class="fragment"><div class="line">std::array&lt;int,2&gt; arr{{1,2}};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a3e53a7b2980639f621aadc15bbcc4168">print_array</a>(arr);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_a3e53a7b2980639f621aadc15bbcc4168"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a3e53a7b2980639f621aadc15bbcc4168">toolbox::utils::print_array</a></div><div class="ttdeci">auto print_array(const std::array&lt; T, N &gt; &amp;arr, const std::string &amp;name=&quot;Array&quot;, const print_style_t &amp;style=get_default_style()) -&gt; array_printer_t&lt; T, N &gt;</div><div class="ttdoc">打印array的工厂函数/Factory function to print array</div><div class="ttdef"><b>Definition</b> print.hpp:1445</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a3e53a7b2980639f621aadc15bbcc4168"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a3e53a7b2980639f621aadc15bbcc4168">toolbox::utils::print_array</a></div><div class="ttdeci">auto print_array(const std::array&lt; T, N &gt; &amp;arr, const std::string &amp;name=&quot;Array&quot;, const print_style_t &amp;style=get_default_style()) -&gt; array_printer_t&lt; T, N &gt;</div><div class="ttdoc">打印array的工厂函数/Factory function to print array</div><div class="ttdef"><b>Definition</b> print.hpp:1447</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1075,7 +1108,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>deque_printer_t&lt;T&gt; 打印器/Printer <div class="fragment"><div class="line">std::deque&lt;int&gt; d{1,2};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#acf1618d441c32d74708f0f6a51ef4987">print_deque</a>(d);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_acf1618d441c32d74708f0f6a51ef4987"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#acf1618d441c32d74708f0f6a51ef4987">toolbox::utils::print_deque</a></div><div class="ttdeci">auto print_deque(const std::deque&lt; T &gt; &amp;d, const std::string &amp;name=&quot;Deque&quot;, const print_style_t &amp;style=get_default_style()) -&gt; deque_printer_t&lt; T &gt;</div><div class="ttdoc">打印deque的工厂函数/Factory function to print deque</div><div class="ttdef"><b>Definition</b> print.hpp:1402</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_acf1618d441c32d74708f0f6a51ef4987"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#acf1618d441c32d74708f0f6a51ef4987">toolbox::utils::print_deque</a></div><div class="ttdeci">auto print_deque(const std::deque&lt; T &gt; &amp;d, const std::string &amp;name=&quot;Deque&quot;, const print_style_t &amp;style=get_default_style()) -&gt; deque_printer_t&lt; T &gt;</div><div class="ttdoc">打印deque的工厂函数/Factory function to print deque</div><div class="ttdef"><b>Definition</b> print.hpp:1404</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1132,7 +1165,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>list_printer_t&lt;T&gt; 打印器/Printer <div class="fragment"><div class="line">std::list&lt;int&gt; l{1,2};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a656ece98192362133373ddd4cacc2ca6">print_list</a>(l);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_a656ece98192362133373ddd4cacc2ca6"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a656ece98192362133373ddd4cacc2ca6">toolbox::utils::print_list</a></div><div class="ttdeci">auto print_list(const std::list&lt; T &gt; &amp;l, const std::string &amp;name=&quot;List&quot;, const print_style_t &amp;style=get_default_style()) -&gt; list_printer_t&lt; T &gt;</div><div class="ttdoc">打印list的工厂函数/Factory function to print list</div><div class="ttdef"><b>Definition</b> print.hpp:1423</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a656ece98192362133373ddd4cacc2ca6"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a656ece98192362133373ddd4cacc2ca6">toolbox::utils::print_list</a></div><div class="ttdeci">auto print_list(const std::list&lt; T &gt; &amp;l, const std::string &amp;name=&quot;List&quot;, const print_style_t &amp;style=get_default_style()) -&gt; list_printer_t&lt; T &gt;</div><div class="ttdoc">打印list的工厂函数/Factory function to print list</div><div class="ttdef"><b>Definition</b> print.hpp:1425</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1190,7 +1223,7 @@ template&lt;typename K , typename V &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>map_printer_t&lt;K,V&gt; 打印器/Printer <div class="fragment"><div class="line">std::map&lt;int,int&gt; m{{1,2}};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a79453bce859830e40c708eabd6376c28">print_map</a>(m);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_a79453bce859830e40c708eabd6376c28"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a79453bce859830e40c708eabd6376c28">toolbox::utils::print_map</a></div><div class="ttdeci">auto print_map(const std::map&lt; K, V &gt; &amp;m, const std::string &amp;name=&quot;Map&quot;, const print_style_t &amp;style=get_default_style()) -&gt; map_printer_t&lt; K, V &gt;</div><div class="ttdoc">打印map的工厂函数/Factory function to print map</div><div class="ttdef"><b>Definition</b> print.hpp:1317</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a79453bce859830e40c708eabd6376c28"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a79453bce859830e40c708eabd6376c28">toolbox::utils::print_map</a></div><div class="ttdeci">auto print_map(const std::map&lt; K, V &gt; &amp;m, const std::string &amp;name=&quot;Map&quot;, const print_style_t &amp;style=get_default_style()) -&gt; map_printer_t&lt; K, V &gt;</div><div class="ttdoc">打印map的工厂函数/Factory function to print map</div><div class="ttdef"><b>Definition</b> print.hpp:1319</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1248,7 +1281,7 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>queue_printer_t&lt;T&gt; 打印器/Printer <div class="fragment"><div class="line">std::queue&lt;int&gt; q;</div>
 <div class="line">q.push(10); q.push(20); q.push(30);</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#ae613aaa9a0c3b0eda00dc51c94763b06">print_queue</a>(q, <span class="stringliteral">&quot;MyQueue&quot;</span>);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_ae613aaa9a0c3b0eda00dc51c94763b06"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#ae613aaa9a0c3b0eda00dc51c94763b06">toolbox::utils::print_queue</a></div><div class="ttdeci">auto print_queue(const std::queue&lt; T &gt; &amp;q, const std::string &amp;name=&quot;Queue&quot;, const print_style_t &amp;style=get_default_style()) -&gt; queue_printer_t&lt; T &gt;</div><div class="ttdoc">打印queue的工厂函数/Factory function to print queue</div><div class="ttdef"><b>Definition</b> print.hpp:1467</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_ae613aaa9a0c3b0eda00dc51c94763b06"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#ae613aaa9a0c3b0eda00dc51c94763b06">toolbox::utils::print_queue</a></div><div class="ttdeci">auto print_queue(const std::queue&lt; T &gt; &amp;q, const std::string &amp;name=&quot;Queue&quot;, const print_style_t &amp;style=get_default_style()) -&gt; queue_printer_t&lt; T &gt;</div><div class="ttdoc">打印queue的工厂函数/Factory function to print queue</div><div class="ttdef"><b>Definition</b> print.hpp:1469</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1305,7 +1338,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>set_printer_t&lt;T&gt; 打印器/Printer <div class="fragment"><div class="line">std::set&lt;int&gt; s{1,2};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#aee74ffee88f3c1c2e15633530c319028">print_set</a>(s);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_aee74ffee88f3c1c2e15633530c319028"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#aee74ffee88f3c1c2e15633530c319028">toolbox::utils::print_set</a></div><div class="ttdeci">auto print_set(const std::set&lt; T &gt; &amp;s, const std::string &amp;name=&quot;Set&quot;, const print_style_t &amp;style=get_default_style()) -&gt; set_printer_t&lt; T &gt;</div><div class="ttdoc">打印set的工厂函数/Factory function to print set</div><div class="ttdef"><b>Definition</b> print.hpp:1360</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_aee74ffee88f3c1c2e15633530c319028"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#aee74ffee88f3c1c2e15633530c319028">toolbox::utils::print_set</a></div><div class="ttdeci">auto print_set(const std::set&lt; T &gt; &amp;s, const std::string &amp;name=&quot;Set&quot;, const print_style_t &amp;style=get_default_style()) -&gt; set_printer_t&lt; T &gt;</div><div class="ttdoc">打印set的工厂函数/Factory function to print set</div><div class="ttdef"><b>Definition</b> print.hpp:1362</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1363,7 +1396,7 @@ template&lt;typename K , typename V &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unorderedmap_printer_t&lt;K,V&gt; 打印器/Printer <div class="fragment"><div class="line">std::unordered_map&lt;int,int&gt; m{{1,2}};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#afa6658195fce5f23b5aebe60141d4bab">print_unordered_map</a>(m);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_afa6658195fce5f23b5aebe60141d4bab"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#afa6658195fce5f23b5aebe60141d4bab">toolbox::utils::print_unordered_map</a></div><div class="ttdeci">auto print_unordered_map(const std::unordered_map&lt; K, V &gt; &amp;m, const std::string &amp;name=&quot;Unordered Map&quot;, const print_style_t &amp;style=get_default_style()) -&gt; unorderedmap_printer_t&lt; K, V &gt;</div><div class="ttdoc">打印unordered_map的工厂函数/Factory function to print unordered_map</div><div class="ttdef"><b>Definition</b> print.hpp:1339</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_afa6658195fce5f23b5aebe60141d4bab"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#afa6658195fce5f23b5aebe60141d4bab">toolbox::utils::print_unordered_map</a></div><div class="ttdeci">auto print_unordered_map(const std::unordered_map&lt; K, V &gt; &amp;m, const std::string &amp;name=&quot;Unordered Map&quot;, const print_style_t &amp;style=get_default_style()) -&gt; unorderedmap_printer_t&lt; K, V &gt;</div><div class="ttdoc">打印unordered_map的工厂函数/Factory function to print unordered_map</div><div class="ttdef"><b>Definition</b> print.hpp:1341</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1420,7 +1453,7 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>unorderedset_printer_t&lt;T&gt; 打印器/Printer <div class="fragment"><div class="line">std::unordered_set&lt;int&gt; s{1,2};</div>
 <div class="line">std::cout &lt;&lt; <a class="code hl_function" href="namespacetoolbox_1_1utils.html#acdf5fe9fd0cba128538def48d6dbefd3">print_unordered_set</a>(s);</div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_acdf5fe9fd0cba128538def48d6dbefd3"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#acdf5fe9fd0cba128538def48d6dbefd3">toolbox::utils::print_unordered_set</a></div><div class="ttdeci">auto print_unordered_set(const std::unordered_set&lt; T &gt; &amp;s, const std::string &amp;name=&quot;Unordered Set&quot;, const print_style_t &amp;style=get_default_style()) -&gt; unorderedset_printer_t&lt; T &gt;</div><div class="ttdoc">打印unordered_set的工厂函数/Factory function to print unordered_set</div><div class="ttdef"><b>Definition</b> print.hpp:1381</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_acdf5fe9fd0cba128538def48d6dbefd3"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#acdf5fe9fd0cba128538def48d6dbefd3">toolbox::utils::print_unordered_set</a></div><div class="ttdeci">auto print_unordered_set(const std::unordered_set&lt; T &gt; &amp;s, const std::string &amp;name=&quot;Unordered Set&quot;, const print_style_t &amp;style=get_default_style()) -&gt; unorderedset_printer_t&lt; T &gt;</div><div class="ttdoc">打印unordered_set的工厂函数/Factory function to print unordered_set</div><div class="ttdef"><b>Definition</b> print.hpp:1383</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1669,7 +1702,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string 字符串/String <div class="fragment"><div class="line">std::string s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#aec943113bda69af48d647bf0723e7649">to_string_value</a>(123); <span class="comment">// &quot;123&quot;</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1utils_html_aec943113bda69af48d647bf0723e7649"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#aec943113bda69af48d647bf0723e7649">toolbox::utils::to_string_value</a></div><div class="ttdeci">auto to_string_value(const T &amp;value) -&gt; std::string</div><div class="ttdoc">获取字符串表示形式的通用函数/Generic function to get string representation</div><div class="ttdef"><b>Definition</b> print.hpp:283</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_aec943113bda69af48d647bf0723e7649"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#aec943113bda69af48d647bf0723e7649">toolbox::utils::to_string_value</a></div><div class="ttdeci">auto to_string_value(const T &amp;value) -&gt; std::string</div><div class="ttdoc">获取字符串表示形式的通用函数/Generic function to get string representation</div><div class="ttdef"><b>Definition</b> print.hpp:285</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

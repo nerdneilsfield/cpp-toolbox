@@ -6,7 +6,7 @@ var searchData=
   ['levenshtein_5fdistance_3',['levenshtein_distance',['../namespacetoolbox_1_1container_1_1string.html#adf00945757752e93f4592917811033c5',1,'toolbox::container::string']]],
   ['license_4',['License',['../index.html#autotoc_md15',1,'']]],
   ['list_5fprinter_5ft_5',['list_printer_t',['../classtoolbox_1_1utils_1_1list__printer__t.html',1,'toolbox::utils']]],
-  ['little_6',['little',['../namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4aaae6635e044ac56046b2893a529b5114',1,'std']]],
+  ['little_6',['little',['../namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64aaae6635e044ac56046b2893a529b5114',1,'cpp_toolbox::detail']]],
   ['lock_5ffree_5fqueue_2ehpp_7',['lock_free_queue.hpp',['../lock__free__queue_8hpp.html',1,'']]],
   ['lock_5ffree_5fqueue_5ft_8',['lock_free_queue_t',['../classtoolbox_1_1container_1_1lock__free__queue__t.html',1,'toolbox::container::lock_free_queue_t&lt; T &gt;'],['../classtoolbox_1_1container_1_1lock__free__queue__t.html#afbab1bb4328e09dd97b5f28ae0c1ea39',1,'toolbox::container::lock_free_queue_t::lock_free_queue_t()']]],
   ['log_5fcritical_5fd_9',['LOG_CRITICAL_D',['../group___logging_macros.html#ga227b917e88f64d9f90c06c54e04c648e',1,'thread_logger.hpp']]],

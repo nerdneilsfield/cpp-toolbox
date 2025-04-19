@@ -247,7 +247,7 @@ Public Types</h2></td></tr>
 , <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a551b723eafd6a31d444fcb2f5920fbd3">INFO</a>
 , <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a32bd8a1db2275458673903bdb84cb277">WARN</a>
 , <br />
-&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1abb1ca97ec761fc37101737ba0aa2e7c5">ERROR</a>
+&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1acd22bad976363fdd1bfbf6759fede482">ERR</a>
 , <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a99cd1c61610c76a57cb8d10d6df6b870">CRITICAL</a>
 <br />
  }</td></tr>
@@ -314,8 +314,8 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>具有多个日志级别和格式的线程安全日志类 / Thread-safe logging class with multiple logging levels and formats </p>
 <p>thread_logger_t类提供了一个线程安全的日志机制,支持不同的日志级别(TRACE,
-DEBUG, INFO, WARN, ERROR,
-CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t提供基于流和格式的日志功能。/ The <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html" title="具有多个日志级别和格式的线程安全日志类 / Thread-safe logging class with multiple logging levels and formats">thread_logger_t</a> class provides a thread-safe logging mechanism with support for different logging levels (TRACE, DEBUG, INFO, WARN, ERROR, CRITICAL). It offers both stream-based and format-based logging capabilities through its nested classes <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" title="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output">thread_stream_logger_t</a> and <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" title="基于格式的日志记录器,用于printf风格的消息格式化 / Format-based logger for printf-style message formatting">thread_format_logger_t</a>.</p>
+DEBUG, INFO, WARN, ERR,
+CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t提供基于流和格式的日志功能。/ The <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html" title="具有多个日志级别和格式的线程安全日志类 / Thread-safe logging class with multiple logging levels and formats">thread_logger_t</a> class provides a thread-safe logging mechanism with support for different logging levels (TRACE, DEBUG, INFO, WARN, ERR, CRITICAL). It offers both stream-based and format-based logging capabilities through its nested classes <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" title="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output">thread_stream_logger_t</a> and <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" title="基于格式的日志记录器,用于printf风格的消息格式化 / Format-based logger for printf-style message formatting">thread_format_logger_t</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>此类实现了单例模式,并且对于来自多个线程的并发日志操作是线程安全的 / This class implements the singleton pattern and is thread-safe for concurrent logging operations from multiple threads</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" title="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output">thread_stream_logger_t</a> </dd>
 <dd>
@@ -366,7 +366,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 </td></tr>
 <tr><td class="fieldname"><a id="aac8a891f00498ff98550a300d99f3fa1a32bd8a1db2275458673903bdb84cb277" name="aac8a891f00498ff98550a300d99f3fa1a32bd8a1db2275458673903bdb84cb277"></a>WARN&#160;</td><td class="fielddoc"><p>需要注意的警告条件 / Warning conditions that might need attention </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aac8a891f00498ff98550a300d99f3fa1abb1ca97ec761fc37101737ba0aa2e7c5" name="aac8a891f00498ff98550a300d99f3fa1abb1ca97ec761fc37101737ba0aa2e7c5"></a>ERROR&#160;</td><td class="fielddoc"><p>需要调查的错误条件 / Error conditions that need investigation </p>
+<tr><td class="fieldname"><a id="aac8a891f00498ff98550a300d99f3fa1acd22bad976363fdd1bfbf6759fede482" name="aac8a891f00498ff98550a300d99f3fa1acd22bad976363fdd1bfbf6759fede482"></a>ERR&#160;</td><td class="fielddoc"><p>需要调查的错误条件 / Error conditions that need investigation (Renamed from ERROR) </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aac8a891f00498ff98550a300d99f3fa1a99cd1c61610c76a57cb8d10d6df6b870" name="aac8a891f00498ff98550a300d99f3fa1a99cd1c61610c76a57cb8d10d6df6b870"></a>CRITICAL&#160;</td><td class="fielddoc"><p>需要立即采取行动的关键条件 / Critical conditions requiring immediate action </p>
 </td></tr>

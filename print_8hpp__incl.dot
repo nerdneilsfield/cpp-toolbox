@@ -58,17 +58,15 @@ digraph "src/include/cpp-toolbox/utils/print.hpp"
   Node26 [id="Node000026",label="cpp-toolbox/macro/endian.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$endian_8hpp.html",tooltip=" "];
   Node26 -> Node27 [id="edge27_Node000026_Node000027",color="steelblue1",style="solid",tooltip=" "];
   Node27 [id="Node000027",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node26 -> Node28 [id="edge28_Node000026_Node000028",color="steelblue1",style="solid",tooltip=" "];
-  Node28 [id="Node000028",label="endian.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node24 -> Node29 [id="edge29_Node000024_Node000029",color="steelblue1",style="solid",tooltip=" "];
-  Node29 [id="Node000029",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
-  Node1 -> Node23 [id="edge30_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node24 [id="edge31_Node000001_Node000024",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node30 [id="edge32_Node000001_Node000030",color="steelblue1",style="solid",tooltip=" "];
-  Node30 [id="Node000030",label="cpp-toolbox/type_traits.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$type__traits_8hpp.html",tooltip="类型特征工具集合/Type traits utilities collection"];
-  Node30 -> Node31 [id="edge33_Node000030_Node000031",color="steelblue1",style="solid",tooltip=" "];
-  Node31 [id="Node000031",label="cstddef",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node30 -> Node32 [id="edge34_Node000030_Node000032",color="steelblue1",style="solid",tooltip=" "];
-  Node32 [id="Node000032",label="ostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node30 -> Node17 [id="edge35_Node000030_Node000017",color="steelblue1",style="solid",tooltip=" "];
+  Node24 -> Node28 [id="edge28_Node000024_Node000028",color="steelblue1",style="solid",tooltip=" "];
+  Node28 [id="Node000028",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
+  Node1 -> Node23 [id="edge29_Node000001_Node000023",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node24 [id="edge30_Node000001_Node000024",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node29 [id="edge31_Node000001_Node000029",color="steelblue1",style="solid",tooltip=" "];
+  Node29 [id="Node000029",label="cpp-toolbox/type_traits.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$type__traits_8hpp.html",tooltip="类型特征工具集合/Type traits utilities collection"];
+  Node29 -> Node30 [id="edge32_Node000029_Node000030",color="steelblue1",style="solid",tooltip=" "];
+  Node30 [id="Node000030",label="cstddef",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node29 -> Node31 [id="edge33_Node000029_Node000031",color="steelblue1",style="solid",tooltip=" "];
+  Node31 [id="Node000031",label="ostream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node29 -> Node17 [id="edge34_Node000029_Node000017",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -28,8 +28,6 @@ digraph "src/include/cpp-toolbox/container/concurrent_queue.hpp"
   Node11 [id="Node000011",label="cpp-toolbox/macro/endian.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$endian_8hpp.html",tooltip=" "];
   Node11 -> Node12 [id="edge12_Node000011_Node000012",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="cstdio",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node11 -> Node13 [id="edge13_Node000011_Node000013",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="endian.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node9 -> Node14 [id="edge14_Node000009_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node14 [id="Node000014",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
+  Node9 -> Node13 [id="edge13_Node000009_Node000013",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="cpp-toolbox/macro/platforms.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$platforms_8hpp.html",tooltip=" "];
 }

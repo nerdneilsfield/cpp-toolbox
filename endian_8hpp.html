@@ -219,13 +219,11 @@ $(document).ready(function(){initNavTree('endian_8hpp.html',''); initResizable()
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">endian.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdio&gt;</code><br />
-<code>#include &lt;endian.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for endian.hpp:</div>
 <div class="dyncontent">
@@ -241,98 +239,64 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:namespacestd" id="r_namespacestd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="memitem:namespacecpp__toolbox" id="r_namespacecpp__toolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecpp__toolbox.html">cpp_toolbox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacecpp__toolbox_1_1detail" id="r_namespacecpp__toolbox_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecpp__toolbox_1_1detail.html">cpp_toolbox::detail</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ae302bed3fc2a0f701d16c71740598a1f" id="r_ae302bed3fc2a0f701d16c71740598a1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#ae302bed3fc2a0f701d16c71740598a1f">CPP_TOOLBOX_NATIVE_ENDIAN</a>&#160;&#160;&#160;    (__BYTE_ORDER == __LITTLE_ENDIAN ? 1 : 0)</td></tr>
-<tr class="separator:ae302bed3fc2a0f701d16c71740598a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d0bdacde24708ed34001127515199ae" id="r_a7d0bdacde24708ed34001127515199ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a7d0bdacde24708ed34001127515199ae">CPP_TOOLBOX_LITTLE_ENDIAN</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a7d0bdacde24708ed34001127515199ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adca718f369fec6872fc61111a89ccfe8" id="r_adca718f369fec6872fc61111a89ccfe8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#adca718f369fec6872fc61111a89ccfe8">CPP_TOOLBOX_BIG_ENDIAN</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:adca718f369fec6872fc61111a89ccfe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae302bed3fc2a0f701d16c71740598a1f" id="r_ae302bed3fc2a0f701d16c71740598a1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#ae302bed3fc2a0f701d16c71740598a1f">CPP_TOOLBOX_NATIVE_ENDIAN</a>&#160;&#160;&#160;<a class="el" href="endian_8hpp.html#aa17dec9faa9d1294e29544e10d6a626f">native_endian_value</a></td></tr>
-<tr class="separator:ae302bed3fc2a0f701d16c71740598a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a697337d23f3318a1808c29ae683e034c" id="r_a697337d23f3318a1808c29ae683e034c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a697337d23f3318a1808c29ae683e034c">CPP_TOOLBOX_ENDIAN_NAMESPACE</a>&#160;&#160;&#160;cpp_toolbox::detail</td></tr>
+<tr class="separator:a697337d23f3318a1808c29ae683e034c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f8ebab249a93119b33b02ab40b982e5" id="r_a3f8ebab249a93119b33b02ab40b982e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a3f8ebab249a93119b33b02ab40b982e5">CPP_TOOLBOX_NATIVE_ENDIAN_ENUM</a>&#160;&#160;&#160;<a class="el" href="namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64aaae6635e044ac56046b2893a529b5114">cpp_toolbox::detail::endian::little</a></td></tr>
+<tr class="separator:a3f8ebab249a93119b33b02ab40b982e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:aea2f4cbe7ac47c1b6be6c2494c218ac4" id="r_aea2f4cbe7ac47c1b6be6c2494c218ac4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4">std::endian</a> { <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4aaae6635e044ac56046b2893a529b5114">std::little</a>
-, <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4ad861877da56b8b4ceb35c8cbfdf65bb4">std::big</a>
-, <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4a8e5f3adee38c8fccc13c1f3be0143796">std::native</a>
+<tr class="memitem:ab9efc0e1cb3db237189928cbc8de1f64" id="r_ab9efc0e1cb3db237189928cbc8de1f64"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64">cpp_toolbox::detail::endian</a> { <a class="el" href="namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64aaae6635e044ac56046b2893a529b5114">cpp_toolbox::detail::little</a>
+, <a class="el" href="namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64ad861877da56b8b4ceb35c8cbfdf65bb4">cpp_toolbox::detail::big</a>
  }</td></tr>
-<tr class="separator:aea2f4cbe7ac47c1b6be6c2494c218ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aeeb91d8290ad92c601b225e30ea6e968" id="r_aeeb91d8290ad92c601b225e30ea6e968"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4">std::endian</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#aeeb91d8290ad92c601b225e30ea6e968">determine_native_endian</a> ()</td></tr>
-<tr class="separator:aeeb91d8290ad92c601b225e30ea6e968"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:ab9efc0e1cb3db237189928cbc8de1f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:aa17dec9faa9d1294e29544e10d6a626f" id="r_aa17dec9faa9d1294e29544e10d6a626f"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4">std::endian</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#aa17dec9faa9d1294e29544e10d6a626f">native_endian_value</a> = <a class="el" href="endian_8hpp.html#aeeb91d8290ad92c601b225e30ea6e968">determine_native_endian</a>()</td></tr>
-<tr class="separator:aa17dec9faa9d1294e29544e10d6a626f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01974835382ea50075b89f071ef58c2e" id="r_a01974835382ea50075b89f071ef58c2e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a01974835382ea50075b89f071ef58c2e">CPP_TOOLBOX_NATIVE_IS_LITTLE</a> = true</td></tr>
+<tr class="separator:a01974835382ea50075b89f071ef58c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5436b1a37cf754e5a3070e2e2750c12e" id="r_a5436b1a37cf754e5a3070e2e2750c12e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="endian_8hpp.html#a5436b1a37cf754e5a3070e2e2750c12e">CPP_TOOLBOX_NATIVE_IS_BIG</a> = false</td></tr>
+<tr class="separator:a5436b1a37cf754e5a3070e2e2750c12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="adca718f369fec6872fc61111a89ccfe8" name="adca718f369fec6872fc61111a89ccfe8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adca718f369fec6872fc61111a89ccfe8">&#9670;&#160;</a></span>CPP_TOOLBOX_BIG_ENDIAN</h2>
+<a id="a697337d23f3318a1808c29ae683e034c" name="a697337d23f3318a1808c29ae683e034c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a697337d23f3318a1808c29ae683e034c">&#9670;&#160;</a></span>CPP_TOOLBOX_ENDIAN_NAMESPACE</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CPP_TOOLBOX_BIG_ENDIAN&#160;&#160;&#160;0</td>
+          <td class="memname">#define CPP_TOOLBOX_ENDIAN_NAMESPACE&#160;&#160;&#160;cpp_toolbox::detail</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7d0bdacde24708ed34001127515199ae" name="a7d0bdacde24708ed34001127515199ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d0bdacde24708ed34001127515199ae">&#9670;&#160;</a></span>CPP_TOOLBOX_LITTLE_ENDIAN</h2>
+<a id="a3f8ebab249a93119b33b02ab40b982e5" name="a3f8ebab249a93119b33b02ab40b982e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f8ebab249a93119b33b02ab40b982e5">&#9670;&#160;</a></span>CPP_TOOLBOX_NATIVE_ENDIAN_ENUM</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define CPP_TOOLBOX_LITTLE_ENDIAN&#160;&#160;&#160;1</td>
+          <td class="memname">#define CPP_TOOLBOX_NATIVE_ENDIAN_ENUM&#160;&#160;&#160;<a class="el" href="namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64aaae6635e044ac56046b2893a529b5114">cpp_toolbox::detail::endian::little</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae302bed3fc2a0f701d16c71740598a1f" name="ae302bed3fc2a0f701d16c71740598a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae302bed3fc2a0f701d16c71740598a1f">&#9670;&#160;</a></span>CPP_TOOLBOX_NATIVE_ENDIAN <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_NATIVE_ENDIAN&#160;&#160;&#160;    (__BYTE_ORDER == __LITTLE_ENDIAN ? 1 : 0)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae302bed3fc2a0f701d16c71740598a1f" name="ae302bed3fc2a0f701d16c71740598a1f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae302bed3fc2a0f701d16c71740598a1f">&#9670;&#160;</a></span>CPP_TOOLBOX_NATIVE_ENDIAN <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPP_TOOLBOX_NATIVE_ENDIAN&#160;&#160;&#160;<a class="el" href="endian_8hpp.html#aa17dec9faa9d1294e29544e10d6a626f">native_endian_value</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aeeb91d8290ad92c601b225e30ea6e968" name="aeeb91d8290ad92c601b225e30ea6e968"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb91d8290ad92c601b225e30ea6e968">&#9670;&#160;</a></span>determine_native_endian()</h2>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a5436b1a37cf754e5a3070e2e2750c12e" name="a5436b1a37cf754e5a3070e2e2750c12e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5436b1a37cf754e5a3070e2e2750c12e">&#9670;&#160;</a></span>CPP_TOOLBOX_NATIVE_IS_BIG</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,10 +305,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4">std::endian</a> determine_native_endian </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td class="memname">constexpr bool CPP_TOOLBOX_NATIVE_IS_BIG = false</td>
         </tr>
       </table>
   </td>
@@ -356,9 +317,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="aa17dec9faa9d1294e29544e10d6a626f" name="aa17dec9faa9d1294e29544e10d6a626f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa17dec9faa9d1294e29544e10d6a626f">&#9670;&#160;</a></span>native_endian_value</h2>
+<a id="a01974835382ea50075b89f071ef58c2e" name="a01974835382ea50075b89f071ef58c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01974835382ea50075b89f071ef58c2e">&#9670;&#160;</a></span>CPP_TOOLBOX_NATIVE_IS_LITTLE</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +327,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4">std::endian</a> native_endian_value = <a class="el" href="endian_8hpp.html#aeeb91d8290ad92c601b225e30ea6e968">determine_native_endian</a>()</td>
+          <td class="memname">constexpr bool CPP_TOOLBOX_NATIVE_IS_LITTLE = true</td>
         </tr>
       </table>
   </td>

@@ -1,6 +1,13 @@
 var NAVTREEINDEX7 =
 {
+"structtoolbox_1_1utils_1_1print__style__t.html#a9a1bff22142af50ba9d2d3278b1685d2":[12,0,1,10,16,8],
+"structtoolbox_1_1utils_1_1print__style__t.html#a9a1bff22142af50ba9d2d3278b1685d2":[13,0,0,8,15,8],
+"structtoolbox_1_1utils_1_1print__style__t.html#aa367283d14691e29e021e8be6db51cc3":[12,0,1,10,16,9],
+"structtoolbox_1_1utils_1_1print__style__t.html#aa367283d14691e29e021e8be6db51cc3":[13,0,0,8,15,9],
+"structtoolbox_1_1utils_1_1print__style__t.html#aabd78ed4d94343e8afcc0e5f2b089304":[13,0,0,8,15,0],
+"structtoolbox_1_1utils_1_1print__style__t.html#aabd78ed4d94343e8afcc0e5f2b089304":[12,0,1,10,16,0],
 "structtoolbox_1_1utils_1_1print__style__t.html#ab5eebb690e8c41705d3577495bafb9ab":[13,0,0,8,15,3],
+"structtoolbox_1_1utils_1_1print__style__t.html#ab5eebb690e8c41705d3577495bafb9ab":[12,0,1,10,16,3],
 "structtoolbox_1_1utils_1_1print__style__t.html#abbf2d8a5f1dc7432b873949778ea7084":[12,0,1,10,16,11],
 "structtoolbox_1_1utils_1_1print__style__t.html#abbf2d8a5f1dc7432b873949778ea7084":[13,0,0,8,15,11],
 "structtoolbox_1_1utils_1_1print__style__t.html#ad4a55e168ccc5b579cfba3f06fc9fcfe":[13,0,0,8,15,13],

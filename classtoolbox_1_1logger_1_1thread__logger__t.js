@@ -7,7 +7,7 @@ var classtoolbox_1_1logger_1_1thread__logger__t =
       [ "DEBUG", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1adc30ec20708ef7b0f641ef78b7880a15", null ],
       [ "INFO", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a551b723eafd6a31d444fcb2f5920fbd3", null ],
       [ "WARN", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a32bd8a1db2275458673903bdb84cb277", null ],
-      [ "ERROR", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1abb1ca97ec761fc37101737ba0aa2e7c5", null ],
+      [ "ERR", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1acd22bad976363fdd1bfbf6759fede482", null ],
       [ "CRITICAL", "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a99cd1c61610c76a57cb8d10d6df6b870", null ]
     ] ],
     [ "critical_f", "classtoolbox_1_1logger_1_1thread__logger__t.html#ae330bc70bd65bf2105c63cde91684385", null ],

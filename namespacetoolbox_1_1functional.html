@@ -1169,10 +1169,9 @@ template&lt;typename T , typename F &gt; </div>
 <div class="fragment"><div class="line"><span class="comment">// 在optional上平面映射的示例 / Example of flat mapping over optional</span></div>
 <div class="line">std::optional&lt;int&gt; opt(5);</div>
 <div class="line"><span class="keyword">auto</span> maybe_double = [](<span class="keywordtype">int</span> x) -&gt; std::optional&lt;int&gt; {</div>
-<div class="line">  <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : <a class="code hl_namespace" href="namespacestd.html">std</a>::nullopt;</div>
+<div class="line">  <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : std::nullopt;</div>
 <div class="line">};</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="namespacetoolbox_1_1functional.html#abea94163fa9d90b3c3a81a6f82fd31cd">flatMap</a>(opt, maybe_double); <span class="comment">// 包含10 / Contains 10</span></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> endian.hpp:42</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1functional_html_abea94163fa9d90b3c3a81a6f82fd31cd"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#abea94163fa9d90b3c3a81a6f82fd31cd">toolbox::functional::flatMap</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto flatMap(const std::optional&lt; T &gt; &amp;opt, F &amp;&amp;f) -&gt; std::invoke_result_t&lt; F, const T &amp; &gt;</div><div class="ttdoc">在optional值上平面映射函数 / Flat maps a function over an optional value</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:182</div></div>
 </div><!-- fragment --> 
 </div>
@@ -1224,7 +1223,7 @@ template&lt;typename T , typename F &gt; </div>
 <div class="fragment"><div class="line"><span class="comment">// 在optional上平面映射的示例 / Example of flat mapping over optional</span></div>
 <div class="line">std::optional&lt;int&gt; opt(5);</div>
 <div class="line"><span class="keyword">auto</span> maybe_double = [](<span class="keywordtype">int</span> x) -&gt; std::optional&lt;int&gt; {</div>
-<div class="line">  <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : <a class="code hl_namespace" href="namespacestd.html">std</a>::nullopt;</div>
+<div class="line">  <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : std::nullopt;</div>
 <div class="line">};</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="namespacetoolbox_1_1functional.html#abea94163fa9d90b3c3a81a6f82fd31cd">flatMap</a>(opt, maybe_double); <span class="comment">// 包含10 / Contains 10</span></div>
 </div><!-- fragment --> 
@@ -1277,7 +1276,7 @@ template&lt;typename T , typename F &gt; </div>
 <div class="fragment"><div class="line"><span class="comment">// 在optional右值上平面映射的示例 / Example of flat mapping over optional</span></div>
 <div class="line">rvalue <span class="keyword">auto</span> result = <a class="code hl_function" href="namespacetoolbox_1_1functional.html#abea94163fa9d90b3c3a81a6f82fd31cd">flatMap</a>(std::optional&lt;int&gt;(5),</div>
 <div class="line">                     [](<span class="keywordtype">int</span> x) -&gt; std::optional&lt;int&gt; {</div>
-<div class="line">                       <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : <a class="code hl_namespace" href="namespacestd.html">std</a>::nullopt;</div>
+<div class="line">                       <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : std::nullopt;</div>
 <div class="line">                     }); <span class="comment">// 包含10 / Contains 10</span></div>
 </div><!-- fragment --> 
 </div>
@@ -1329,7 +1328,7 @@ template&lt;typename T , typename F &gt; </div>
 <div class="fragment"><div class="line"><span class="comment">// 在optional右值上平面映射的示例 / Example of flat mapping over optional</span></div>
 <div class="line">rvalue <span class="keyword">auto</span> result = <a class="code hl_function" href="namespacetoolbox_1_1functional.html#abea94163fa9d90b3c3a81a6f82fd31cd">flatMap</a>(std::optional&lt;int&gt;(5),</div>
 <div class="line">                     [](<span class="keywordtype">int</span> x) -&gt; std::optional&lt;int&gt; {</div>
-<div class="line">                       <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : <a class="code hl_namespace" href="namespacestd.html">std</a>::nullopt;</div>
+<div class="line">                       <span class="keywordflow">return</span> x &lt; 10 ? std::optional(x * 2) : std::nullopt;</div>
 <div class="line">                     }); <span class="comment">// 包含10 / Contains 10</span></div>
 </div><!-- fragment --> 
 </div>

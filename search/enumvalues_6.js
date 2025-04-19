@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['native_0',['native',['../namespacestd.html#aea2f4cbe7ac47c1b6be6c2494c218ac4a8e5f3adee38c8fccc13c1f3be0143796',1,'std']]]
+  ['trace_0',['TRACE',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a2d3e4144aa384b18849ab9a8abad74d6',1,'toolbox::logger::thread_logger_t']]]
 ];

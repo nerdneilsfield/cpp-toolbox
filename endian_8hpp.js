@@ -1,14 +1,11 @@
 var endian_8hpp =
 [
-    [ "CPP_TOOLBOX_BIG_ENDIAN", "endian_8hpp.html#adca718f369fec6872fc61111a89ccfe8", null ],
-    [ "CPP_TOOLBOX_LITTLE_ENDIAN", "endian_8hpp.html#a7d0bdacde24708ed34001127515199ae", null ],
-    [ "CPP_TOOLBOX_NATIVE_ENDIAN", "endian_8hpp.html#ae302bed3fc2a0f701d16c71740598a1f", null ],
-    [ "CPP_TOOLBOX_NATIVE_ENDIAN", "endian_8hpp.html#ae302bed3fc2a0f701d16c71740598a1f", null ],
-    [ "endian", "endian_8hpp.html#aea2f4cbe7ac47c1b6be6c2494c218ac4", [
-      [ "little", "endian_8hpp.html#aea2f4cbe7ac47c1b6be6c2494c218ac4aaae6635e044ac56046b2893a529b5114", null ],
-      [ "big", "endian_8hpp.html#aea2f4cbe7ac47c1b6be6c2494c218ac4ad861877da56b8b4ceb35c8cbfdf65bb4", null ],
-      [ "native", "endian_8hpp.html#aea2f4cbe7ac47c1b6be6c2494c218ac4a8e5f3adee38c8fccc13c1f3be0143796", null ]
+    [ "CPP_TOOLBOX_ENDIAN_NAMESPACE", "endian_8hpp.html#a697337d23f3318a1808c29ae683e034c", null ],
+    [ "CPP_TOOLBOX_NATIVE_ENDIAN_ENUM", "endian_8hpp.html#a3f8ebab249a93119b33b02ab40b982e5", null ],
+    [ "endian", "endian_8hpp.html#ab9efc0e1cb3db237189928cbc8de1f64", [
+      [ "little", "endian_8hpp.html#ab9efc0e1cb3db237189928cbc8de1f64aaae6635e044ac56046b2893a529b5114", null ],
+      [ "big", "endian_8hpp.html#ab9efc0e1cb3db237189928cbc8de1f64ad861877da56b8b4ceb35c8cbfdf65bb4", null ]
     ] ],
-    [ "determine_native_endian", "endian_8hpp.html#aeeb91d8290ad92c601b225e30ea6e968", null ],
-    [ "native_endian_value", "endian_8hpp.html#aa17dec9faa9d1294e29544e10d6a626f", null ]
+    [ "CPP_TOOLBOX_NATIVE_IS_BIG", "endian_8hpp.html#a5436b1a37cf754e5a3070e2e2750c12e", null ],
+    [ "CPP_TOOLBOX_NATIVE_IS_LITTLE", "endian_8hpp.html#a01974835382ea50075b89f071ef58c2e", null ]
 ];

@@ -269,7 +269,7 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="foldopen" id="foldopen00063" data-start="{" data-end="};">
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structtoolbox_1_1logger_1_1is__container_3_01_t_00_01std_1_1void__t_3_01_t_1_1value__type_00_01_1041f7af6953dcde600448a7d1be57a1.html">   63</a></span><span class="keyword">struct </span>CPP_TOOLBOX_EXPORT</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structtoolbox_1_1logger_1_1is__container.html">is_container</a>&lt;T,</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                 <a class="code hl_namespace" href="namespacestd.html">std</a>::void_t&lt;typename T::value_type,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                 std::void_t&lt;typename T::value_type,</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                             typename T::iterator,</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                             decltype(std::declval&lt;T&gt;().begin()),</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                             decltype(std::declval&lt;T&gt;().end())&gt;&gt;</div>
@@ -330,7 +330,7 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    DEBUG,  </div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    INFO,  </div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    WARN,  </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    ERROR,  </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    ERR,    </div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    CRITICAL  </div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  };</div>
 </div>
@@ -385,7 +385,7 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        error_message += <span class="stringliteral">&quot; | Original format: &#39;&quot;</span>;</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        error_message += format;</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        error_message += <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        logger_.enqueue(Level::ERROR, std::move(error_message));</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        logger_.enqueue(Level::ERR, std::move(error_message));</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      }</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>      <span class="comment">// Pre-C++20: 使用现有的自定义format_message实现 / Use the existing custom</span></div>
@@ -633,7 +633,7 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="foldopen" id="foldopen00976" data-start="{" data-end="}">
 <div class="line"><a id="l00976" name="l00976"></a><span class="lineno"><a class="line" href="classtoolbox_1_1logger_1_1thread__logger__t.html#ad4846b51ece6ae120a580d0db0fb1942">  976</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1logger_1_1thread__logger__t.html#ad4846b51ece6ae120a580d0db0fb1942">error_f</a>() -&gt; <a class="code hl_class" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a></div>
 <div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>  {</div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>    <span class="keywordflow">return</span> {*<span class="keyword">this</span>, Level::ERROR};</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>    <span class="keywordflow">return</span> {*<span class="keyword">this</span>, Level::ERR};</div>
 <div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>  }</div>
 </div>
 <div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span> </div>
@@ -675,7 +675,7 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="foldopen" id="foldopen01086" data-start="{" data-end="}">
 <div class="line"><a id="l01086" name="l01086"></a><span class="lineno"><a class="line" href="classtoolbox_1_1logger_1_1thread__logger__t.html#a3c9390804f6e71bfa4e071392ae46fad"> 1086</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1logger_1_1thread__logger__t.html#a3c9390804f6e71bfa4e071392ae46fad">error_s</a>() -&gt; <a class="code hl_class" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a></div>
 <div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>  {</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    <span class="keywordflow">return</span> {*<span class="keyword">this</span>, Level::ERROR, stringstream_pool_};</div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>    <span class="keywordflow">return</span> {*<span class="keyword">this</span>, Level::ERR, stringstream_pool_};</div>
 <div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>  }</div>
 </div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span> </div>
@@ -810,7 +810,6 @@ $(document).ready(function(){initNavTree('thread__logger_8hpp_source.html',''); 
 <div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_ae330bc70bd65bf2105c63cde91684385"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#ae330bc70bd65bf2105c63cde91684385">toolbox::logger::thread_logger_t::critical_f</a></div><div class="ttdeci">auto critical_f() -&gt; thread_format_logger_t</div><div class="ttdoc">获取用于CRITICAL级别消息的格式化日志记录器 / Get a format logger for CRITICAL level messages</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:994</div></div>
 <div class="ttc" id="aconcurrent__queue_8hpp_html"><div class="ttname"><a href="concurrent__queue_8hpp.html">concurrent_queue.hpp</a></div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> endian.hpp:42</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1logger_html"><div class="ttname"><a href="namespacetoolbox_1_1logger.html">toolbox::logger</a></div><div class="ttdef"><b>Definition</b> thread_logger.hpp:33</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1logger_html_a69ac1b9f2684929bd3b9f229e15fb322"><div class="ttname"><a href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">toolbox::logger::has_ostream_method_v</a></div><div class="ttdeci">constexpr bool has_ostream_method_v</div><div class="ttdoc">has_ostream_method特征的辅助变量模板 / Helper variable template for has_ostream_method trait</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:190</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1logger_html_aaf82a52d321593496c80328501f31622"><div class="ttname"><a href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">toolbox::logger::has_stream_operator_v</a></div><div class="ttdeci">constexpr bool has_stream_operator_v</div><div class="ttdoc">has_stream_operator特征的辅助变量模板 / Helper variable template for has_stream_operator trait</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:141</div></div>
