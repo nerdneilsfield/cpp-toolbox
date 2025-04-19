@@ -217,8 +217,10 @@ auto get_creation_time(const std::filesystem::path& path) -> file_time_type
     if (stat(path.c_str(), &statbuf) == 0) {
       auto system_time =
           std::chrono::system_clock::from_time_t(statbuf.st_birthtime);
-      return std::chrono::clock_cast<std::filesystem::file_time_type::clock>(
-          system_time);
+      auto file_system_duration =
+          std::chrono::duration_cast<std::filesystem::file_time_type::duration>(
+              system_time.time_since_epoch());
+      return std::filesystem::file_time_type(file_system_duration);
     }
 #else
     struct stat statbuf {};
