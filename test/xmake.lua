@@ -9,6 +9,7 @@ local test_files = {"./base/**.cpp",
                     "./utils/**.cpp", 
                     "./types/**.cpp", 
                     "./functional/**.cpp",
+                    "./io/**.cpp",
                     "./my_catch2_main.cpp"}
 
 target("cpp-toolbox-tests")
@@ -24,3 +25,17 @@ target("cpp-toolbox-tests")
         if is_plat("windows") then
                 add_cxflags("/utf-8")
         end
+
+        local script_dir = os.scriptdir()
+        local test_data_dir_path = script_dir .. "/data"
+
+        print(test_data_dir_path)
+
+        set_configdir("$(buildir)/generated")
+        add_configfiles("./test_data_dir.xmake.hpp.in", {
+                variables = {
+                        TEST_DATA_DIR = test_data_dir_path
+                },
+                filename = "test_data_dir.hpp"
+        })
+        add_includedirs("$(buildir)/generated")

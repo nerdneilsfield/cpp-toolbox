@@ -126,11 +126,13 @@ public:
    * @brief 将数据写入文件 / Write data to file
    * @param path 要写入的文件路径 / Path to file to write
    * @param data 要写入的数据 / Data to write
+   * @param binary 是否以二进制模式写入 / Whether to write in binary mode
    * @return 写入成功返回true / Returns true if write successful
    */
   [[nodiscard]] virtual auto write(
       const std::string& path,
-      const std::unique_ptr<base_file_data_t>& data) const -> bool = 0;
+      const std::unique_ptr<base_file_data_t>& data,
+      bool binary) const -> bool = 0;
 
 protected:
   base_file_format_t() = default;

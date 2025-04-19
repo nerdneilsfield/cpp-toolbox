@@ -27,7 +27,8 @@ local source_files = {"src/impl/cpp-toolbox/base/**.cpp",
                       -- "src/impl/cpp-toolbox/concurrent/**.cpp",
                       "src/impl/cpp-toolbox/utils/**.cpp",
                       "src/impl/cpp-toolbox/file/**.cpp", 
-                      "src/impl/cpp-toolbox/logger/**.cpp"}
+                      "src/impl/cpp-toolbox/logger/**.cpp",
+                      "src/impl/cpp-toolbox/io/**.cpp"}
 
 -- Define the shared library target
 target("cpp-toolbox")

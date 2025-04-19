@@ -1,0 +1,5 @@
+#pragma once
+
+#include <string>
+
+const std::string test_data_dir = "${TEST_DATA_DIR}";

@@ -12,6 +12,13 @@ if(PROJECT_IS_TOP_LEVEL)
   enable_testing()
 endif()
 
+
+set(TEST_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
+get_filename_component(TEST_DATA_DIR ${TEST_DATA_DIR} ABSOLUTE)
+
+configure_file(test_data_dir.hpp.in ${CMAKE_CURRENT_BINARY_DIR}/test_data_dir.hpp)
+
+
 # # ---- Tests ----
 
 # add_executable(cpp-toolbox_test source/cpp-toolbox_test.cpp)
@@ -22,6 +29,7 @@ endif()
 
 add_library(cpp-toolbox_test_lib INTERFACE)
 target_compile_features(cpp-toolbox_test_lib INTERFACE cxx_std_17)
+target_include_directories(cpp-toolbox_test_lib INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
 if(WIN32)
   target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox_static)
   target_compile_options(cpp-toolbox_test_lib INTERFACE /std:c++17 /Zc:__cplusplus)
@@ -43,7 +51,7 @@ add_subdirectory(concurrent)
 add_subdirectory(utils)
 add_subdirectory(functional)
 add_subdirectory(types)
-
+add_subdirectory(io)
 list(APPEND TEST_FILES my_catch2_main.cpp)
 
 add_executable(cpp-toolbox_test ${TEST_FILES})
