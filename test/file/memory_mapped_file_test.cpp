@@ -119,9 +119,16 @@ TEST_CASE("MemoryMappedFile Tests", "[file][memory_mapped]")
     REQUIRE(std::equal(
         mapped_data, mapped_data + mapped_file.size(), content_vec.begin()));
 
+    // Explicitly close the file before removing it
+    mapped_file.close();
+    REQUIRE_FALSE(mapped_file.is_open()); // Optional check
+
     // Clean up second file
     std::filesystem::remove(another_file_path);
   }
+
+  // Explicitly close the main mapped_file object before final cleanup
+  mapped_file.close();
 
   // Cleanup test files
   std::filesystem::remove(empty_file_path);

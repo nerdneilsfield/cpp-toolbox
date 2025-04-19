@@ -195,10 +195,10 @@ inline constexpr bool has_ostream_method_v = has_ostream_method<T>::value;
  *
  * @details
  * thread_logger_t类提供了一个线程安全的日志机制,支持不同的日志级别(TRACE,
- * DEBUG, INFO, WARN, ERROR,
+ * DEBUG, INFO, WARN, ERR,
  * CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t提供基于流和格式的日志功能。/
  * The thread_logger_t class provides a thread-safe logging mechanism with
- * support for different logging levels (TRACE, DEBUG, INFO, WARN, ERROR,
+ * support for different logging levels (TRACE, DEBUG, INFO, WARN, ERR,
  * CRITICAL). It offers both stream-based and format-based logging capabilities
  * through its nested classes thread_stream_logger_t and thread_format_logger_t.
  *
@@ -242,7 +242,7 @@ public:
     INFO,  ///< 一般操作消息 / General operational messages
     WARN,  ///< 需要注意的警告条件 / Warning conditions that might need
            ///< attention
-    ERROR,  ///< 需要调查的错误条件 / Error conditions that need investigation
+    ERR,    ///< 需要调查的错误条件 / Error conditions that need investigation (Renamed from ERROR)
     CRITICAL  ///< 需要立即采取行动的关键条件 / Critical conditions requiring
               ///< immediate action
   };
@@ -378,7 +378,7 @@ public:
         error_message += " | Original format: '";
         error_message += format;
         error_message += "'";
-        logger_.enqueue(Level::ERROR, std::move(error_message));
+        logger_.enqueue(Level::ERR, std::move(error_message));
       }
 #else
       // Pre-C++20: 使用现有的自定义format_message实现 / Use the existing custom
@@ -975,7 +975,7 @@ public:
    */
   auto error_f() -> thread_format_logger_t
   {
-    return {*this, Level::ERROR};
+    return {*this, Level::ERR};
   }
 
   /**
@@ -1085,7 +1085,7 @@ public:
    */
   auto error_s() -> thread_stream_logger_t
   {
-    return {*this, Level::ERROR, stringstream_pool_};
+    return {*this, Level::ERR, stringstream_pool_};
   }
 
   /**

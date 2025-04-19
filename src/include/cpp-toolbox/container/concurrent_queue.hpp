@@ -142,9 +142,9 @@ private:
   std::unique_ptr<Impl> impl_;
 };
 
-extern template class CPP_TOOLBOX_EXPORT
+extern template class /* CPP_TOOLBOX_EXPORT */
     concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
-extern template class CPP_TOOLBOX_EXPORT
+extern template class /* CPP_TOOLBOX_EXPORT */
     concurrent_queue_t<std::function<void()>>;
 
 }  // namespace toolbox::container

@@ -25,7 +25,8 @@ bool create_large_random_file(const std::filesystem::path& path,
   // Use a random number generator
   std::random_device rd;
   std::mt19937 gen(rd());
-  std::uniform_int_distribution<unsigned char> distrib(
+  // Use unsigned int for distribution, then cast to char
+  std::uniform_int_distribution<unsigned int> distrib(
       0, std::numeric_limits<unsigned char>::max());
 
   // Write random data in chunks
@@ -35,6 +36,7 @@ bool create_large_random_file(const std::filesystem::path& path,
   while (bytes_written < size_bytes) {
     size_t chunk_size = std::min(buffer_size, size_bytes - bytes_written);
     for (size_t i = 0; i < chunk_size; ++i) {
+      // Cast the generated unsigned int back to char for the buffer
       buffer[i] = static_cast<char>(distrib(gen));
     }
     ofs.write(buffer.data(), chunk_size);

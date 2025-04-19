@@ -91,6 +91,7 @@ TEST_CASE("PCD Format Reading", "[io][pcd][read]")
     {
       std::filesystem::path file_path =
           std::filesystem::path(test_data_dir) / filename;
+      LOG_INFO_F("Reading file: {}", file_path.string());
       REQUIRE(std::filesystem::exists(file_path));  // Pre-check
 
       data = nullptr;  // Reset data ptr

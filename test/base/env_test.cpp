@@ -2,7 +2,7 @@
 
 #include <catch2/catch_test_macros.hpp>
 
-TEST_CASE("set_environment_variable")
+TEST_CASE("set_environment_variable", "[base][env]")
 {
   auto value =
       toolbox::base::set_environment_variable("TEST_ENV", "test_value");
@@ -12,7 +12,7 @@ TEST_CASE("set_environment_variable")
   REQUIRE(value2 == "test_value");
 }
 
-TEST_CASE("remove_environment_variable")
+TEST_CASE("remove_environment_variable", "[base][env]")
 {
   auto value = toolbox::base::remove_environment_variable("TEST_ENV");
   REQUIRE(value);

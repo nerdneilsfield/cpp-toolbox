@@ -29,3 +29,11 @@ set_showmenu(true)
 set_category("Development")
 set_description("Build examples")
 option_end()
+
+-- Benchmark build option
+option("benchmark")
+set_default(false)
+set_showmenu(true)
+set_category("Development")
+set_description("Build benchmarks")
+option_end()

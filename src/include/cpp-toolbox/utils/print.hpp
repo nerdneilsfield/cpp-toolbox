@@ -26,6 +26,8 @@
 #include "cpp-toolbox/macro.hpp"
 #include "cpp-toolbox/type_traits.hpp"
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+#  define NOMINMAX
+#  define WIN32_LEAN_AND_MEAN
 #  include <windows.h>
 #endif
 

@@ -235,9 +235,11 @@ TEST_CASE("Parallel Reduce Tests", "[concurrent][parallel_reduce]")
 
     std::string str_identity = "";
     std::string str_expected = "";
+    // Create a single named empty vector to get compatible iterators
+    std::vector<std::string> empty_str_vec;
     std::string str_result =
-        parallel_reduce(std::vector<std::string> {}.begin(),
-                        std::vector<std::string> {}.end(),
+        parallel_reduce(empty_str_vec.begin(), // Use begin() from the named vector
+                        empty_str_vec.end(),   // Use end() from the same named vector
                         str_identity,
                         std::plus<std::string>());
     REQUIRE(str_result == str_expected);

@@ -131,6 +131,12 @@ private:
 public:
   command_t(const std::string& name, const std::string& description);
 
+  // 显式删除拷贝操作，允许移动操作
+  command_t(const command_t&) = delete;
+  command_t& operator=(const command_t&) = delete;
+  command_t(command_t&&) = default;
+  command_t& operator=(command_t&&) = default;
+
   std::string get_name() const;
   std::string get_description() const;
 

@@ -842,7 +842,7 @@ TEST_CASE("Functional Memoize Tests", "[functional][memoize]")
     // All threads call with same arguments (5, "test")
     for (int i = 0; i < num_threads; ++i) {
       threads.emplace_back(
-          [&memoized_func]()
+          [&memoized_func, calls_per_thread]()
           {
             [[maybe_unused]] int res;
             for (int j = 0; j < calls_per_thread; ++j) {

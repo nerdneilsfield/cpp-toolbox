@@ -220,7 +220,7 @@ TEST_CASE("ThreadLogger log level filter test", "[ThreadLogger]")
 
   SECTION("log level filter")
   {
-    logger.set_level(thread_logger_t::Level::ERROR);
+    logger.set_level(thread_logger_t::Level::ERR);
 
     REQUIRE_NOTHROW(LOG_ERROR_S << "should be recorded");
 

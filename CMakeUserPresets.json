@@ -52,7 +52,10 @@
       "inherits": ["dev-common", "ci-win64"],
       "environment": {
         "UseMultiToolTask": "true",
-        "EnforceProcessCountAcrossBuilds": "true"
+        "EnforceProcessCountAcrossBuilds": "true",
+        "BUILD_TESTING": "ON",
+        "BUILD_EXAMPLES": "ON",
+        "BUILD_BENCHMARKS": "ON"
       }
     },
     {

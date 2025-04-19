@@ -198,13 +198,17 @@ inline void scan_retired_nodes()
 
   // 2. 检查线程本地退休列表中的每个节点/Check each node in the thread-local
   // retired list
-  auto it = t_retired_list.begin();
-  while (it != t_retired_list.end()) {
+  // Use erase idiom for safe removal during iteration
+  for (auto it = t_retired_list.begin(); it != t_retired_list.end(); /* no increment here */ ) {
     void* node_to_check = it->first;
     const auto& deleter = it->second;  // 获取删除器/Get the deleter
     bool is_hazardous = false;
     // 检查收集的危险指针/Check against collected HPs
-    for (void* active_hp : active_hps) {
+    // Optimization: Sort active_hps first for faster lookup if needed
+    // std::sort(active_hps.begin(), active_hps.end());
+    // if (std::binary_search(active_hps.begin(), active_hps.end(), node_to_check))
+    // Requires sorting active_hps first
+    for (void* active_hp : active_hps) { // Simple linear scan
       if (node_to_check == active_hp) {
         is_hazardous = true;
         break;
@@ -216,15 +220,10 @@ inline void scan_retired_nodes()
     if (!is_hazardous) {
       // 使用存储的删除器安全删除/Safely delete using the stored deleter
       deleter(node_to_check);
-
-      // 通过与最后一个元素交换并弹出来高效移除元素/Efficiently remove the
-      // element by swapping with the last and popping
-      if (it != t_retired_list.end() - 1) {
-        *it = std::move(t_retired_list.back());
-      }
-      t_retired_list.pop_back();
+      // Erase the current element and get iterator to the next
+      it = t_retired_list.erase(it);
     } else {
-      ++it;  // 保留到下次扫描/Keep for next scan
+      ++it;  // 保留到下次扫描, 移动到下一个 / Keep for next scan, move to next
     }
   }
 }

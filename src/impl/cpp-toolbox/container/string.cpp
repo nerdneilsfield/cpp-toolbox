@@ -1126,51 +1126,51 @@ auto hexview(const std::vector<std::byte>& data, bool with_prefix)
 }
 
 template auto hex_to_integral<std::uint8_t>(const std::string& hex_str,
-                                            bool with_prefix = true)
+                                            bool with_prefix)
     -> std::uint8_t;
 
 template auto hex_to_integral<std::uint16_t>(const std::string& hex_str,
-                                             bool with_prefix = true)
+                                             bool with_prefix)
     -> std::uint16_t;
 
 template auto hex_to_integral<std::uint32_t>(const std::string& hex_str,
-                                             bool with_prefix = true)
+                                             bool with_prefix)
     -> std::uint32_t;
 
 template auto hex_to_integral<std::uint64_t>(const std::string& hex_str,
-                                             bool with_prefix = true)
+                                             bool with_prefix)
     -> std::uint64_t;
 
 template auto hex_to_integral<std::int8_t>(const std::string& hex_str,
-                                           bool with_prefix = true)
+                                           bool with_prefix)
     -> std::int8_t;
 
 template auto hex_to_integral<std::int16_t>(const std::string& hex_str,
-                                            bool with_prefix = true)
+                                            bool with_prefix)
     -> std::int16_t;
 
 template auto hex_to_integral<std::int32_t>(const std::string& hex_str,
-                                            bool with_prefix = true)
+                                            bool with_prefix)
     -> std::int32_t;
 
 template auto hex_to_integral<std::int64_t>(const std::string& hex_str,
-                                            bool with_prefix = true)
+                                            bool with_prefix)
     -> std::int64_t;
 
 template auto hex_to_bytes<std::vector<std::uint8_t>>(
-    const std::string& hex_str, bool with_prefix = true)
+    const std::string& hex_str, bool with_prefix)
     -> std::vector<std::uint8_t>;
 
 template auto hex_to_bytes<std::vector<char>>(const std::string& hex_str,
-                                              bool with_prefix = true)
+                                              bool with_prefix)
     -> std::vector<char>;
 
 template auto hex_to_bytes<std::vector<std::uint16_t>>(
-    const std::string& hex_str, bool with_prefix = true)
+    const std::string& hex_str, bool with_prefix)
     -> std::vector<std::uint16_t>;
 
 template auto hex_to_bytes<std::vector<std::uint32_t>>(
-    const std::string& hex_str, bool with_prefix = true)
+    const std::string& hex_str, bool with_prefix)
     -> std::vector<std::uint32_t>;
 
 }  // namespace toolbox::container::string

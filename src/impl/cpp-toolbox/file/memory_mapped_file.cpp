@@ -9,6 +9,8 @@
 
 // Platform-specific includes might be needed again if not pulled by hpp
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+// Define NOMINMAX before including windows.h to prevent min/max macro definitions
+#define NOMINMAX
 #  define WIN32_LEAN_AND_MEAN
 #  include <windows.h>
 #else

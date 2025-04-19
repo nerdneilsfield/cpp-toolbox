@@ -10,6 +10,8 @@
 #include "cpp-toolbox/macro.hpp"
 
 #if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
+// Define NOMINMAX before including windows.h to prevent min/max macro definitions
+#define NOMINMAX
 #  include <windows.h>
 #elif defined(CPP_TOOLBOX_PLATFORM_MACOS)
 #  include <sys/stat.h>

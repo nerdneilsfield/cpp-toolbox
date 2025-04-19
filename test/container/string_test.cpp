@@ -15,7 +15,7 @@
 using namespace toolbox::container::string;
 using Catch::Matchers::Equals;
 
-TEST_CASE("String Splitting Functions", "[string][split]")
+TEST_CASE("String Splitting Functions", "[container][string][split]")
 {
   SECTION("Split by string delimiter")
   {

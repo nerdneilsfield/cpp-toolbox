@@ -27,7 +27,15 @@ target("cpp-toolbox-tests")
         end
 
         local script_dir = os.scriptdir()
-        local test_data_dir_path = script_dir .. "/data"
+        if is_plat("windows") then
+                script_dir = string.gsub(script_dir, "\\", "\\\\")
+        end
+        print(script_dir)
+        local test_data_dir_path = path.join(script_dir, "data")
+
+        if is_plat("windows") then
+                test_data_dir_path = string.gsub(test_data_dir_path, "\\", "\\\\")
+        end
 
         print(test_data_dir_path)
 

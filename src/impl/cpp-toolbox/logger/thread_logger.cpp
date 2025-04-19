@@ -103,7 +103,7 @@ auto thread_logger_t::level_to_string(Level level) -> std::string
       return "[INFO]";
     case Level::WARN:
       return "[WARN]";
-    case Level::ERROR:
+    case Level::ERR:
       return "[ERROR]";
     case Level::CRITICAL:
       return "[CRITICAL]";
@@ -177,7 +177,7 @@ void thread_logger_t::processLogs()
         case Level::WARN:
           level_str = "\033[33m[WARN]\033[0m";
           break;
-        case Level::ERROR:
+        case Level::ERR:
           level_str = "\033[31m[ERROR]\033[0m";
           break;
         case Level::CRITICAL:
