@@ -66,7 +66,7 @@ namespace toolbox::file
  * }
  * @endcode
  */
-class memory_mapped_file_t
+class CPP_TOOLBOX_EXPORT memory_mapped_file_t
 {
   /**
    * @brief Pointer to the mapped memory region. / 指向映射内存区域的指针。
