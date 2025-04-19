@@ -31,7 +31,18 @@
     {
       "name": "dev-darwin",
       "binaryDir": "${sourceDir}/build/dev-darwin",
-      "inherits": ["dev-common", "ci-darwin"]
+      "inherits": ["dev-common", "ci-darwin"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "BUILD_TESTING": "ON",
+        "BUILD_EXAMPLES": "ON",
+        "BUILD_BENCHMARKS": "ON",
+        "CMAKE_OSX_ARCHITECTURES": "arm64",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "13.0",
+        "CMAKE_OSX_SYSROOT": "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.1.sdk"
+      },
+      "generator": "Xcode"
     },
     {
       "name": "dev-win64",
