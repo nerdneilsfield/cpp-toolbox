@@ -44,6 +44,18 @@
       }
     },
     {
+      "name": "build-mode",
+      "hidden": true,
+      "inherits": "cmake-pedantic",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_BUILD_TYPE": "Release",
+        "BUILD_TESTING": "ON",
+        "BUILD_BENCHMARKS": "ON",
+        "BUILD_EXAMPLES": "ON"
+      }
+    },
+    {
       "name": "ci-std",
       "description": "This preset makes sure the project actually builds with at least the specified standard",
       "hidden": true,

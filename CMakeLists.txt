@@ -29,8 +29,6 @@ endif()
 
 add_subdirectory(deps)
 
-
-
 add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 
 # ---- Install rules ----
@@ -42,6 +40,12 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 # ---- Developer mode ----
 
 if(NOT cpp-toolbox_DEVELOPER_MODE)
+  if(BUILD_TESTING)
+    add_subdirectory(test)
+  endif()
+  if(BUILD_BENCHMARKS)
+    add_subdirectory(benchmark)
+  endif()
   return()
 elseif(NOT PROJECT_IS_TOP_LEVEL)
   message(

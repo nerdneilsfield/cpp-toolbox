@@ -12,6 +12,8 @@ if(PROJECT_IS_TOP_LEVEL)
   enable_testing()
 endif()
 
+include(CTest)
+
 
 set(TEST_DATA_DIR ${CMAKE_CURRENT_SOURCE_DIR}/data)
 get_filename_component(TEST_DATA_DIR ${TEST_DATA_DIR} ABSOLUTE)

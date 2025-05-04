@@ -95,6 +95,52 @@
         "BUILD_EXAMPLES": "ON",
         "BUILD_BENCHMARKS": "ON"
       }
+    },
+    {
+      "name": "build-linux",
+      "binaryDir": "${sourceDir}/build/build-linux",
+      "inherits": ["build-mode", "flags-gcc-clang"],
+      "generator": "Ninja"
+    },
+    {
+      "name": "build-linux-clang-21",
+      "binaryDir": "${sourceDir}/build/build-linux-clang",
+      "inherits": ["build-linux"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++-21",
+        "CMAKE_C_COMPILER": "clang-21",
+        "CMAKE_LINKER": "lld-21",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++"
+      }
+    },
+    {
+      "name": "build-linux-gcc-13",
+      "binaryDir": "${sourceDir}/build/build-linux-gcc-13",
+      "inherits": ["build-linux"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "g++-13",
+        "CMAKE_C_COMPILER": "gcc-13"
+      }
+    },
+    {
+      "name": "build-win64",
+      "binaryDir": "${sourceDir}/build/build-win64",
+      "inherits": ["build-mode", "flags-msvc"],
+      "generator": "Visual Studio 17 2022",
+      "architecture": "x64"
+    },
+    {
+      "name": "build-win64-clang",
+      "binaryDir": "${sourceDir}/build/build-win64-clang",
+      "inherits": ["build-win64"],
+      "generator": "ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang-cl",
+        "CMAKE_C_COMPILER": "clang-cl",
+        "CMAKE_LINKER": "lld-link"
+      }
     }
   ],
   "buildPresets": [

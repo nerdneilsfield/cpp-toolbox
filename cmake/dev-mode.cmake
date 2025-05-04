@@ -2,8 +2,8 @@ include(cmake/folders.cmake)
 
 set(CMAKE_BUILD_TYPE Debug)
 
-include(CTest)
 if(BUILD_TESTING)
+  include(CTest)
   add_subdirectory(test)
 endif()
 
