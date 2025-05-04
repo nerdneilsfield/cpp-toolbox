@@ -284,12 +284,23 @@ $(document).ready(function(){initNavTree('concurrent__queue_8hpp_source.html',''
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>};</div>
 </div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><span class="comment">/* CPP_TOOLBOX_EXPORT */</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t&lt;std::unique_ptr&lt;toolbox::base::detail::task_base&gt;</a>&gt;;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><span class="comment">/* CPP_TOOLBOX_EXPORT */</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a>&lt;std::function&lt;void()&gt;&gt;;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}  <span class="comment">// namespace toolbox::container</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#if defined(CPP_TOOLBOX_COMPILER_MSVC)</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a>&lt;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    std::unique_ptr&lt;<a class="code hl_struct" href="structtoolbox_1_1base_1_1detail_1_1task__base.html">toolbox::base::detail::task_base</a>,</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    std::default_delete&lt;toolbox::base::detail::task_base&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a>&lt;std::function&lt;void()&gt;&gt;;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a>&lt;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    std::unique_ptr&lt;<a class="code hl_struct" href="structtoolbox_1_1base_1_1detail_1_1task__base.html">toolbox::base::detail::task_base</a>,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                    std::default_delete&lt;toolbox::base::detail::task_base&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="keyword">extern</span> <span class="keyword">template</span> <span class="keyword">class </span>CPP_TOOLBOX_EXPORT</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">concurrent_queue_t</a>&lt;std::function&lt;void()&gt;&gt;;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="comment">// extern template class /* CPP_TOOLBOX_EXPORT */</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment">//     concurrent_queue_t&lt;</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment">//         std::pair&lt;toolbox::logger::thread_logger_t::Level, std::string&gt;&gt;;</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>}  <span class="comment">// namespace toolbox::container</span></div>
 </div>
 <div class="ttc" id="aclass_8hpp_html_a6497f847f85135e611cfce9aed2b051c"><div class="ttname"><a href="class_8hpp.html#a6497f847f85135e611cfce9aed2b051c">CPP_TOOLBOX_DISABLE_COPY_AND_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY_AND_MOVE(ClassType)</div><div class="ttdoc">禁用类的拷贝和移动操作 / Disable both copy and move operations</div><div class="ttdef"><b>Definition</b> class.hpp:47</div></div>
 <div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a></div><div class="ttdoc">高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue</div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:57</div></div>
@@ -302,6 +313,7 @@ $(document).ready(function(){initNavTree('concurrent__queue_8hpp_source.html',''
 <div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html_ad8b857daac08b48651621c00feff4a3d"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html#ad8b857daac08b48651621c00feff4a3d">toolbox::container::concurrent_queue_t::enqueue</a></div><div class="ttdeci">void enqueue(T &amp;&amp;value)</div><div class="ttdoc">将元素入队/Enqueues an item into the queue</div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1container_html"><div class="ttname"><a href="namespacetoolbox_1_1container.html">toolbox::container</a></div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:16</div></div>
+<div class="ttc" id="astructtoolbox_1_1base_1_1detail_1_1task__base_html"><div class="ttname"><a href="structtoolbox_1_1base_1_1detail_1_1task__base.html">toolbox::base::detail::task_base</a></div><div class="ttdef"><b>Definition</b> task_base.hpp:9</div></div>
 <div class="ttc" id="atask__base_8hpp_html"><div class="ttname"><a href="task__base_8hpp.html">task_base.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
