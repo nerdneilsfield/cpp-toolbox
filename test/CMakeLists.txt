@@ -36,12 +36,14 @@ if(WIN32)
 else()
   target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox)
 endif()
-target_compile_options(cpp-toolbox_test_lib INTERFACE "/sdl" "/guard:cf" "/utf-8" "/diagnostics:caret" "/w14165" "/w44242" "/w44254" "/w44263"
+
+if(MSVC AND CMAKE_SYSTEM_NAME STREQUAL "Windows")
+  target_compile_options(cpp-toolbox_test_lib INTERFACE "/sdl" "/guard:cf" "/utf-8" "/diagnostics:caret" "/w14165" "/w44242" "/w44254" "/w44263"
     "/w34265" "/w34287" "/w44296" "/w44365" "/w44388" "/w44464" "/w14545" "/w14546" "/w14547" "/w14549"
     "/w14555" "/w34619" "/w34640" "/w24826" "/w14905" "/w14906" "/w14928" "/w45038" "/W4" "/permissive-"
     "/volatile:iso" "/Zc:inline" "/Zc:preprocessor" "/Zc:enumTypes" "/Zc:lambda" "/Zc:__cplusplus"
     "/Zc:externConstexpr" "/Zc:throwingNew" "/EHsc")
-
+endif()
 
 # add a list to contain files
 set(TEST_FILES)

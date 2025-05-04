@@ -24,7 +24,7 @@ foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
 
     # (Optional) Group all examples into a folder for organization
     # set_target_properties(${FINAL_TARGET_NAME} PROPERTIES FOLDER "Examples")
-    if(MSVC)
+    if(MSVC AND CMAKE_SYSTEM_NAME STREQUAL "Windows")
         target_compile_options(${FINAL_TARGET_NAME} PRIVATE "/Zc:inline" "/Zc:preprocessor" "/Zc:enumTypes" "/Zc:lambda"
             "/Zc:__cplusplus" "/Zc:externConstexpr" "/Zc:throwingNew" "/EHsc")
     endif()

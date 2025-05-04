@@ -22,6 +22,11 @@ include(cmake/example.cmake)
 include(cmake/optimization.cmake)
 # ---- Dependencies ----
 
+# check if the system is linux or macos
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  add_subdirectory(tools)
+endif()
+
 add_subdirectory(deps)
 
 
