@@ -152,8 +152,8 @@
       }
     },
     {
-      "name": "build-macos",
-      "binaryDir": "${sourceDir}/build/build-macos",
+      "name": "build-macos-appleclang",
+      "binaryDir": "${sourceDir}/build/build-macos-appleclang",
       "inherits": ["build-mode", "flags-appleclang"],
       "generator": "Ninja"
     }
