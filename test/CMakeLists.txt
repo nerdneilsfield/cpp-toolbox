@@ -30,7 +30,7 @@ configure_file(test_data_dir.hpp.in ${CMAKE_CURRENT_BINARY_DIR}/test_data_dir.hp
 add_library(cpp-toolbox_test_lib INTERFACE)
 target_compile_features(cpp-toolbox_test_lib INTERFACE cxx_std_17)
 target_include_directories(cpp-toolbox_test_lib INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
-if(WIN32)
+if(WIN32 AND NOT CMAKE_SYSTEM_NAME STREQUAL "Windows")
   target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox_static)
   target_compile_options(cpp-toolbox_test_lib INTERFACE /std:c++17 /Zc:__cplusplus)
 else()

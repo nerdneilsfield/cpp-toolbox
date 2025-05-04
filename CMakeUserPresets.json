@@ -74,7 +74,26 @@
       "inherits": ["dev-linux"],
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "clang++-21",
-        "CMAKE_C_COMPILER": "clang-21"
+        "CMAKE_C_COMPILER": "clang-21",
+        "CMAKE_LINKER": "lld"
+      }
+    },
+    {
+      "name": "dev-linux-musl",
+      "binaryDir": "${sourceDir}/build/dev-linux-musl",
+      "inherits": ["ci-linux", "flags-gcc-clang"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_CXX_COMPILER": "clang++-21",
+        "CMAKE_C_COMPILER": "clang-21",
+        "CMAKE_LINKER": "musl-lld",
+        "CMAKE_C_COMPILER_TARGET": "x86_64-linux-musl",
+        "CMAKE_CXX_COMPILER_TARGET": "x86_64-linux-musl",
+        "CMAKE_CXX_FLAGS": "-stdlib=libstdc++",
+        "BUILD_TESTING": "ON",
+        "BUILD_EXAMPLES": "ON",
+        "BUILD_BENCHMARKS": "ON"
       }
     }
   ],

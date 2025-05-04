@@ -142,9 +142,20 @@ private:
   std::unique_ptr<Impl> impl_;
 };
 
-extern template class /* CPP_TOOLBOX_EXPORT */
-    concurrent_queue_t<std::unique_ptr<toolbox::base::detail::task_base>>;
-extern template class /* CPP_TOOLBOX_EXPORT */
-    concurrent_queue_t<std::function<void()>>;
+#if defined(CPP_TOOLBOX_COMPILER_MSVC)
+extern template class concurrent_queue_t<
+    std::unique_ptr<toolbox::base::detail::task_base,
+                    std::default_delete<toolbox::base::detail::task_base>>>;
+extern template class concurrent_queue_t<std::function<void()>>;
 
+#else
+extern template class CPP_TOOLBOX_EXPORT concurrent_queue_t<
+    std::unique_ptr<toolbox::base::detail::task_base,
+                    std::default_delete<toolbox::base::detail::task_base>>>;
+extern template class CPP_TOOLBOX_EXPORT
+    concurrent_queue_t<std::function<void()>>;
+// extern template class /* CPP_TOOLBOX_EXPORT */
+//     concurrent_queue_t<
+//         std::pair<toolbox::logger::thread_logger_t::Level, std::string>>;
+#endif
 }  // namespace toolbox::container

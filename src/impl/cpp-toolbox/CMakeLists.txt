@@ -9,13 +9,13 @@ set(CMAKE_CXX_EXTENSIONS OFF) # 通常推荐关闭编译器特定扩展
 
 set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/base/env.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/container/concurrent_queue.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/base/thread_pool_singleton.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/logger/thread_logger.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/file/file.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/file/memory_mapped_file.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/container/string.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/container/concurrent_queue.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/timer.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/types/point.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/click.cpp

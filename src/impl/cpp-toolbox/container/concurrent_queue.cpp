@@ -91,13 +91,36 @@ bool concurrent_queue_t<T>::wait_dequeue_timed(
 // Define explicit instantiations requested in the header.
 // Do NOT repeat CPP_TOOLBOX_EXPORT here, it's on the class definition.
 
-using TaskPtr = std::unique_ptr<toolbox::base::detail::task_base>;
+using TaskPtr =
+    std::unique_ptr<toolbox::base::detail::task_base,
+                    std::default_delete<toolbox::base::detail::task_base>>;
 using VoidFunc = std::function<void()>;
 using LogEntry =
     std::pair<toolbox::logger::thread_logger_t::Level, std::string>;
 
-template class toolbox::container::concurrent_queue_t<TaskPtr>;
-template class toolbox::container::concurrent_queue_t<VoidFunc>;
-template class toolbox::container::concurrent_queue_t<LogEntry>;
+template CPP_TOOLBOX_EXPORT class toolbox::container::concurrent_queue_t<
+    TaskPtr>;
+template CPP_TOOLBOX_EXPORT class toolbox::container::concurrent_queue_t<
+    VoidFunc>;
+template CPP_TOOLBOX_EXPORT class toolbox::container::concurrent_queue_t<
+    LogEntry>;
+
+// template void toolbox::container::concurrent_queue_t<TaskPtr>::enqueue(
+//     TaskPtr&&);
+
+// template void toolbox::container::concurrent_queue_t<TaskPtr>::try_dequeue(
+//     TaskPtr&);
+
+// template void toolbox::container::concurrent_queue_t<VoidFunc>::enqueue(
+//     VoidFunc&&);
+
+// template void toolbox::container::concurrent_queue_t<VoidFunc>::try_dequeue(
+//     VoidFunc&);
+
+// template void toolbox::container::concurrent_queue_t<LogEntry>::enqueue(
+//     LogEntry&&);
+
+// template void toolbox::container::concurrent_queue_t<LogEntry>::try_dequeue(
+//     LogEntry&);
 
 }  // namespace toolbox::container
