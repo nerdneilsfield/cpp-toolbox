@@ -134,13 +134,28 @@
     {
       "name": "build-win64-clang",
       "binaryDir": "${sourceDir}/build/build-win64-clang",
-      "inherits": ["build-win64"],
-      "generator": "ninja",
+      "inherits": ["build-mode", "flags-msvc"],
+      "generator": "Ninja",
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "clang-cl",
-        "CMAKE_C_COMPILER": "clang-cl",
-        "CMAKE_LINKER": "lld-link"
+        "CMAKE_C_COMPILER": "clang-cl"
       }
+    },
+    {
+      "name": "build-mingw-w64",
+      "binaryDir": "${sourceDir}/build/build-mingw-w64",
+      "inherits": ["build-mode", "flags-msvc"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "x86_64-w64-mingw32-g++",
+        "CMAKE_C_COMPILER": "x86_64-w64-mingw32-gcc"
+      }
+    },
+    {
+      "name": "build-macos",
+      "binaryDir": "${sourceDir}/build/build-macos",
+      "inherits": ["build-mode", "flags-appleclang"],
+      "generator": "Ninja"
     }
   ],
   "buildPresets": [
