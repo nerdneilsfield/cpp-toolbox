@@ -1,5 +1,6 @@
 set(BASE_TEST_FILES 
         ${CMAKE_CURRENT_SOURCE_DIR}/pcd_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/kitti_test.cpp
 )
 
 list(APPEND TEST_FILES ${BASE_TEST_FILES})

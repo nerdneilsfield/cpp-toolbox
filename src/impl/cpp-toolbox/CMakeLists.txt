@@ -21,6 +21,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/click.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/print.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/pcd.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})
