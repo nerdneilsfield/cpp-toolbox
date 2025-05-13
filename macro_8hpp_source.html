@@ -319,7 +319,7 @@ $(document).ready(function(){initNavTree('macro_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">  }</span></div>
 </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS) &amp;&amp; defined(CPP_TOOLBOX_COMPILER_MSVC)</span></div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#  define __CURRENT_FUNCTION__ __FUNCSIG__</span></div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="macro_8hpp.html#a5436a8cb969eaf89c020539b27d28976">  247</a></span><span class="preprocessor">#  define __CURRENT_FUNCTION__ __PRETTY_FUNCTION__</span></div>

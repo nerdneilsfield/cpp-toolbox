@@ -4,6 +4,7 @@ var hierarchy =
       [ "toolbox::types::point_cloud_t< T >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", [
+      [ "toolbox::io::formats::kitti_format_t", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t.html", null ],
       [ "toolbox::io::formats::pcd_format_t", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html", null ]
     ] ],
     [ "std::bool_constant", null, [

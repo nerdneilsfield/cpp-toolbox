@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['parameter_5ft_0',['parameter_t',['../classtoolbox_1_1utils_1_1parameter__t.html',1,'toolbox::utils']]],
-  ['parametererror_1',['ParameterError',['../classtoolbox_1_1utils_1_1_parameter_error.html',1,'toolbox::utils']]],
-  ['pcd_5fformat_5ft_2',['pcd_format_t',['../classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html',1,'toolbox::io::formats']]],
-  ['point_5fcloud_5ft_3',['point_cloud_t',['../classtoolbox_1_1types_1_1point__cloud__t.html',1,'toolbox::types']]],
-  ['point_5ft_4',['point_t',['../structtoolbox_1_1types_1_1point__t.html',1,'toolbox::types']]],
-  ['pooldeleter_5',['PoolDeleter',['../classtoolbox_1_1base_1_1_pool_deleter.html',1,'toolbox::base']]],
-  ['print_5fstyle_5ft_6',['print_style_t',['../structtoolbox_1_1utils_1_1print__style__t.html',1,'toolbox::utils']]]
+  ['object_5fpool_5ft_0',['object_pool_t',['../classtoolbox_1_1base_1_1object__pool__t.html',1,'toolbox::base']]],
+  ['object_5fpool_5ft_3c_20std_3a_3astringstream_20_3e_1',['object_pool_t&lt; std::stringstream &gt;',['../classtoolbox_1_1base_1_1object__pool__t.html',1,'toolbox::base']]],
+  ['option_5ft_2',['option_t',['../classtoolbox_1_1utils_1_1option__t.html',1,'toolbox::utils']]],
+  ['option_5ft_3c_20bool_20_3e_3',['option_t&lt; bool &gt;',['../classtoolbox_1_1utils_1_1option__t.html',1,'toolbox::utils']]],
+  ['optional_5fvalue_5ftype_4',['optional_value_type',['../structtoolbox_1_1utils_1_1detail_1_1optional__value__type.html',1,'toolbox::utils::detail']]],
+  ['optional_5fvalue_5ftype_3c_20std_3a_3aoptional_3c_20u_20_3e_20_3e_5',['optional_value_type&lt; std::optional&lt; U &gt; &gt;',['../structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html',1,'toolbox::utils::detail']]],
+  ['overloaded_6',['overloaded',['../structtoolbox_1_1functional_1_1detail_1_1overloaded.html',1,'toolbox::functional::detail']]]
 ];

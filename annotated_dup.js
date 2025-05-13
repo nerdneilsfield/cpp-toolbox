@@ -39,6 +39,7 @@ var annotated_dup =
       ] ],
       [ "io", "namespacetoolbox_1_1io.html", [
         [ "formats", "namespacetoolbox_1_1io_1_1formats.html", [
+          [ "kitti_format_t", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t.html", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t" ],
           [ "pcd_format_t", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t" ]
         ] ],
         [ "base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", "classtoolbox_1_1io_1_1base__file__data__t" ],

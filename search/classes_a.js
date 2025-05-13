@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['object_5fpool_5ft_0',['object_pool_t',['../classtoolbox_1_1base_1_1object__pool__t.html',1,'toolbox::base']]],
-  ['object_5fpool_5ft_3c_20std_3a_3astringstream_20_3e_1',['object_pool_t&lt; std::stringstream &gt;',['../classtoolbox_1_1base_1_1object__pool__t.html',1,'toolbox::base']]],
-  ['option_5ft_2',['option_t',['../classtoolbox_1_1utils_1_1option__t.html',1,'toolbox::utils']]],
-  ['option_5ft_3c_20bool_20_3e_3',['option_t&lt; bool &gt;',['../classtoolbox_1_1utils_1_1option__t.html',1,'toolbox::utils']]],
-  ['optional_5fvalue_5ftype_4',['optional_value_type',['../structtoolbox_1_1utils_1_1detail_1_1optional__value__type.html',1,'toolbox::utils::detail']]],
-  ['optional_5fvalue_5ftype_3c_20std_3a_3aoptional_3c_20u_20_3e_20_3e_5',['optional_value_type&lt; std::optional&lt; U &gt; &gt;',['../structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html',1,'toolbox::utils::detail']]],
-  ['overloaded_6',['overloaded',['../structtoolbox_1_1functional_1_1detail_1_1overloaded.html',1,'toolbox::functional::detail']]]
+  ['map_5fprinter_5ft_0',['map_printer_t',['../classtoolbox_1_1utils_1_1map__printer__t.html',1,'toolbox::utils']]],
+  ['memoizedfunction_3c_20r_28args_2e_2e_2e_29_3e_1',['MemoizedFunction&lt; R(Args...)&gt;',['../classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html',1,'toolbox::functional']]],
+  ['memoizehelperstate_2',['MemoizeHelperState',['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html',1,'toolbox::functional::detail_impl']]],
+  ['memoizestate_3',['MemoizeState',['../structtoolbox_1_1functional_1_1detail_1_1_memoize_state.html',1,'toolbox::functional::detail']]],
+  ['memory_5fmapped_5ffile_5ft_4',['memory_mapped_file_t',['../classtoolbox_1_1file_1_1memory__mapped__file__t.html',1,'toolbox::file']]],
+  ['memory_5fpool_5ft_5',['memory_pool_t',['../classtoolbox_1_1base_1_1memory__pool__t.html',1,'toolbox::base']]],
+  ['minmax_5ft_6',['minmax_t',['../structtoolbox_1_1types_1_1minmax__t.html',1,'toolbox::types']]],
+  ['minmax_5ft_3c_20point_5ft_3c_20t_20_3e_20_3e_7',['minmax_t&lt; point_t&lt; T &gt; &gt;',['../structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html',1,'toolbox::types']]]
 ];

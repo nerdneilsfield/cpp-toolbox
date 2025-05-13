@@ -7,5 +7,7 @@ digraph "Graphical Class Hierarchy"
   rankdir="LR";
   Node0 [id="Node000000",label="toolbox::io::base_file\l_format_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1base__file__format__t.html",tooltip="文件格式读写器的基类 / Base class for file format readers/writers"];
   Node0 -> Node1 [id="edge27_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::io::formats\l::pcd_format_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html",tooltip="点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files."];
+  Node1 [id="Node000001",label="toolbox::io::formats\l::kitti_format_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1formats_1_1kitti__format__t.html",tooltip="KITTI 点云数据（.bin）文件格式处理器。/File format handler for KITTI Point Cloud Data (.bin) files."];
+  Node0 -> Node2 [id="edge28_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::io::formats\l::pcd_format_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html",tooltip="点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files."];
 }

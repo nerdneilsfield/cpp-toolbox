@@ -1,13 +1,9 @@
 var searchData=
 [
-  ['table_5ft_0',['table_t',['../classtoolbox_1_1utils_1_1table__t.html',1,'toolbox::utils']]],
-  ['task_5fbase_1',['task_base',['../structtoolbox_1_1base_1_1detail_1_1task__base.html',1,'toolbox::base::detail']]],
-  ['task_5fderived_2',['task_derived',['../structtoolbox_1_1base_1_1detail_1_1task__derived.html',1,'toolbox::base::detail']]],
-  ['thread_5fformat_5flogger_5ft_3',['thread_format_logger_t',['../classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html',1,'toolbox::logger::thread_logger_t']]],
-  ['thread_5flogger_5ft_4',['thread_logger_t',['../classtoolbox_1_1logger_1_1thread__logger__t.html',1,'toolbox::logger']]],
-  ['thread_5fpool_5fsingleton_5ft_5',['thread_pool_singleton_t',['../classtoolbox_1_1base_1_1thread__pool__singleton__t.html',1,'toolbox::base']]],
-  ['thread_5fpool_5ft_6',['thread_pool_t',['../classtoolbox_1_1base_1_1thread__pool__t.html',1,'toolbox::base']]],
-  ['thread_5fstream_5flogger_5ft_7',['thread_stream_logger_t',['../classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html',1,'toolbox::logger::thread_logger_t']]],
-  ['type_5fidentity_8',['type_identity',['../structtoolbox_1_1traits_1_1type__identity.html',1,'toolbox::traits']]],
-  ['type_5flist_9',['type_list',['../structtoolbox_1_1traits_1_1type__list.html',1,'toolbox::traits']]]
+  ['set_5fprinter_5ft_0',['set_printer_t',['../classtoolbox_1_1utils_1_1set__printer__t.html',1,'toolbox::utils']]],
+  ['simple_5ftimer_5farray_5ft_1',['simple_timer_array_t',['../classtoolbox_1_1utils_1_1simple__timer__array__t.html',1,'toolbox::utils']]],
+  ['simple_5ftimer_5finterface_5ft_2',['simple_timer_interface_t',['../classtoolbox_1_1utils_1_1simple__timer__interface__t.html',1,'toolbox::utils']]],
+  ['state_3',['State',['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;']]],
+  ['stop_5fwatch_5ftimer_5ft_4',['stop_watch_timer_t',['../classtoolbox_1_1utils_1_1stop__watch__timer__t.html',1,'toolbox::utils']]],
+  ['storage_5ftraits_5',['storage_traits',['../structtoolbox_1_1traits_1_1detail_1_1storage__traits.html',1,'toolbox::traits::detail']]]
 ];
