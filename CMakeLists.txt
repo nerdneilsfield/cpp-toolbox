@@ -15,6 +15,7 @@ set(CPP_TOOLBOX_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/src/include)
 set(CPP_TOOLBOX_PCH_FILE ${CMAKE_SOURCE_DIR}/src/impl/cpp-toolbox/pch.hpp)
 
 include(cmake/project-is-top-level.cmake)
+include(cmake/zig.cmake)
 include(cmake/variables.cmake)
 include(cmake/cache.cmake)
 include(cmake/output.cmake)
@@ -37,21 +38,40 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/src)
 #   include(cmake/install-rules.cmake)
 # endif()
 
-# ---- Developer mode ----
+
+# if(NOT cpp-toolbox_DEVELOPER_MODE)
+#   if(BUILD_TESTING)
+#     add_subdirectory(test)
+#   endif()
+#   if(BUILD_BENCHMARKS)
+#     add_subdirectory(benchmark)
+#   endif()
+#   return()
+# elseif(NOT PROJECT_IS_TOP_LEVEL)
+#   message(
+#     AUTHOR_WARNING
+#     "Developer mode is intended for developers of cpp-toolbox"
+#   )
+# endif()
 
 if(NOT cpp-toolbox_DEVELOPER_MODE)
-  if(BUILD_TESTING)
-    add_subdirectory(test)
+  if(PROJECT_IS_TOP_LEVEL)
+    if(BUILD_TESTING)
+     message(STATUS "BUILDING TESTS")
+     add_subdirectory(test)
+    endif()
+    if(BUILD_BENCHMARKS)
+     message(STATUS "BUILDING BENCHMARKS")
+     add_subdirectory(benchmark)
+    endif()
+    return()
+  else()
+    message(
+      AUTHOR_WARNING
+      "Developer mode is intended for developers of cpp-toolbox"
+    )
+    return()
   endif()
-  if(BUILD_BENCHMARKS)
-    add_subdirectory(benchmark)
-  endif()
-  return()
-elseif(NOT PROJECT_IS_TOP_LEVEL)
-  message(
-    AUTHOR_WARNING
-    "Developer mode is intended for developers of cpp-toolbox"
-  )
 endif()
 
 include(cmake/dev-mode.cmake)

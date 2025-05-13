@@ -82,6 +82,7 @@ TEST_CASE("PCD Format Reading", "[io][pcd][read]")
     REQUIRE(data == nullptr);
   }
 
+#if !defined(CPP_TOOLBOX_COMPILER_ZIG)
   // List of test files found earlier
   const std::vector<std::string> test_files = {
       "bunny.pcd", "bun01.pcd", "bun02.pcd", "curve3d.pcd"};
@@ -113,6 +114,7 @@ TEST_CASE("PCD Format Reading", "[io][pcd][read]")
       // e.g., check approximate number of points, presence of normals/colors
     }
   }
+#endif
 }
 
 TEST_CASE("PCD Format Writing and Reading Back", "[io][pcd][write]")

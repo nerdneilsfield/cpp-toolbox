@@ -32,7 +32,7 @@ configure_file(test_data_dir.hpp.in ${CMAKE_CURRENT_BINARY_DIR}/test_data_dir.hp
 add_library(cpp-toolbox_test_lib INTERFACE)
 target_compile_features(cpp-toolbox_test_lib INTERFACE cxx_std_17)
 target_include_directories(cpp-toolbox_test_lib INTERFACE ${CMAKE_CURRENT_BINARY_DIR})
-if(WIN32 OR MSVC)
+if(WIN32 OR MSVC OR USE_ZIG)
   target_link_libraries(cpp-toolbox_test_lib INTERFACE cpp-toolbox::cpp-toolbox_static)
   # target_compile_options(cpp-toolbox_test_lib INTERFACE /std:c++17 /Zc:__cplusplus)
 else()
@@ -45,6 +45,9 @@ if(MSVC)
     "/w14555" "/w34619" "/w34640" "/w24826" "/w14905" "/w14906" "/w14928" "/w45038" "/W4" "/permissive-"
     "/volatile:iso" "/Zc:inline" "/Zc:preprocessor" "/Zc:enumTypes" "/Zc:lambda" "/Zc:__cplusplus"
     "/Zc:externConstexpr" "/Zc:throwingNew" "/EHsc")
+endif()
+if(USE_ZIG)
+  target_compile_definitions(cpp-toolbox_test_lib INTERFACE CPP_TOOLBOX_COMPILER_ZIG)
 endif()
 
 # add a list to contain files

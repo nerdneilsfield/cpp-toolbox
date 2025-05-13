@@ -241,7 +241,7 @@
 /**
  * @brief 当前函数名宏 / Current function name macro
  */
-#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS) && defined(CPP_TOOLBOX_COMPILER_MSVC)
 #  define __CURRENT_FUNCTION__ __FUNCSIG__
 #else
 #  define __CURRENT_FUNCTION__ __PRETTY_FUNCTION__

@@ -96,5 +96,6 @@
   "cmake.generator": "Ninja",
   "cmake.buildDirectory": "${workspaceFolder}/build/${presetName}",
   "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
-  "cmake.sourceDirectory": "/home/dengqi/Source/langs/cpp/cpp-toolbox"
+  "cmake.sourceDirectory": "/home/dengqi/Source/langs/cpp/cpp-toolbox",
+  "makefile.configureOnOpen": true
 }

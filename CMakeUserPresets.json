@@ -156,6 +156,61 @@
       "binaryDir": "${sourceDir}/build/build-macos-appleclang",
       "inherits": ["build-mode", "flags-appleclang"],
       "generator": "Ninja"
+    },
+    {
+      "name": "build-zig-linux-amd64-musl",
+      "binaryDir": "${sourceDir}/build/build-zig-linux-amd64",
+      "inherits": ["build-mode", "flags-zig", "zig-base"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZIG_TARGET": "x86_64-linux-musl",
+        "CMAKE_CXX_COMPILER_ARG1": "c++ -target x86_64-linux-musl",
+        "CMAKE_C_COMPILER_ARG1": "cc -target x86_64-linux-musl"
+      }
+    },
+    {
+      "name": "build-zig-linux-arm64-musl",
+      "binaryDir": "${sourceDir}/build/build-zig-linux-arm64",
+      "inherits": ["build-mode", "flags-zig", "zig-base"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZIG_TARGET": "aarch64-linux-musl",
+        "CMAKE_CXX_COMPILER_ARG1": "c++ -target aarch64-linux-musl",
+        "CMAKE_C_COMPILER_ARG1": "cc -target aarch64-linux-musl"
+      }
+    },
+    {
+      "name": "build-zig-linux-amd64-gnu",
+      "binaryDir": "${sourceDir}/build/build-zig-linux-amd64-gnu",
+      "inherits": ["build-mode", "flags-zig", "zig-base"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZIG_TARGET": "x86_64-linux-gnu",
+        "CMAKE_CXX_COMPILER_ARG1": "c++ -target x86_64-linux-gnu",
+        "CMAKE_C_COMPILER_ARG1": "cc -target x86_64-linux-gnu"
+      }
+    },
+    {
+      "name": "build-zig-linux-arm64-gnu",
+      "binaryDir": "${sourceDir}/build/build-zig-linux-arm64-gnu",
+      "inherits": ["build-mode", "flags-zig", "zig-base"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZIG_TARGET": "aarch64-linux-gnu",
+        "CMAKE_CXX_COMPILER_ARG1": "c++ -target aarch64-linux-gnu",
+        "CMAKE_C_COMPILER_ARG1": "cc -target aarch64-linux-gnu"
+      }
+    },
+    {
+      "name": "build-zig-windows-amd64-gnu",
+      "binaryDir": "${sourceDir}/build/build-zig-windows-amd64-gnu",
+      "inherits": ["build-mode", "flags-zig", "zig-base"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "ZIG_TARGET": "x86_64-windows-gnu",
+        "CMAKE_CXX_COMPILER_ARG1": "c++ -target x86_64-windows-gnu",
+        "CMAKE_C_COMPILER_ARG1": "cc -target x86_64-windows-gnu"
+      }
     }
   ],
   "buildPresets": [

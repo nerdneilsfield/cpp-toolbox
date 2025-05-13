@@ -15,8 +15,11 @@ foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
     add_executable(${FINAL_TARGET_NAME} ${EXAMPLE_SOURCE})
 
     # Link against cpp-toolbox library
-    # Assumes library target name is cpp-toolbox, modify if different
-    target_link_libraries(${FINAL_TARGET_NAME} PRIVATE cpp-toolbox)
+    if(WIN32 OR MSVC OR USE_ZIG)
+        target_link_libraries(${FINAL_TARGET_NAME} PRIVATE cpp-toolbox::cpp-toolbox_static)
+    else()
+        target_link_libraries(${FINAL_TARGET_NAME} PRIVATE cpp-toolbox::cpp-toolbox)
+    endif()
     target_precompile_headers(${FINAL_TARGET_NAME} PRIVATE ${CPP_TOOLBOX_PCH_FILE})
     # (Optional) Add example-specific compile definitions or include directories if needed
     # target_compile_definitions(${FINAL_TARGET_NAME} PRIVATE ...)
