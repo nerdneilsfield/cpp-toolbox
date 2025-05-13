@@ -225,23 +225,248 @@ $(document).ready(function(){initNavTree('kitti__impl_8hpp_source.html',''); ini
 <div class="contents">
 <a href="kitti__impl_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="file_8hpp.html">cpp-toolbox/file/file.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="memory__mapped__file_8hpp.html">cpp-toolbox/file/memory_mapped_file.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1formats.html">    9</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span>  <span class="comment">// Include the header declaring the class</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// Add necessary includes for the implementations below</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;algorithm&gt;</span>  <span class="comment">// std::clamp</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cmath&gt;</span>  <span class="comment">// std::is_floating_point_v, std::is_integral_v</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;cstdint&gt;</span>  <span class="comment">// INT64_C</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;cstring&gt;</span>  <span class="comment">// memcpy</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;fstream&gt;</span>  <span class="comment">// ofstream (for writing), istream</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;iomanip&gt;</span>  <span class="comment">// setprecision, fixed</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;limits&gt;</span>  <span class="comment">// numeric_limits</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// exceptions for parsing</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;type_traits&gt;</span>  <span class="comment">// is_same_v, decay_t</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="memory__mapped__file_8hpp.html">cpp-toolbox/file/memory_mapped_file.hpp</a>&gt;</span>  <span class="comment">// For reading binary</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span>  <span class="comment">// For LOG_*</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// #include &lt;cpp-toolbox/types/point.hpp&gt; // Should be included via kitti.hpp</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1formats.html">   29</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Assuming kitti.hpp includes this file *after* the full class definition.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">bool</span> kitti_format_t::write_internal(<span class="keyword">const</span> std::string&amp; path,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                  <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;T&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                                  <span class="keywordtype">bool</span> binary)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="comment">// KITTI格式总是二进制，忽略binary参数</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="comment">// KITTI format is always binary, ignore binary parameter</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t::write_internal processing &quot;</span> &lt;&lt; cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>()</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>              &lt;&lt; <span class="stringliteral">&quot; points for &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  std::ofstream file;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  std::ios_base::openmode mode = std::ios::trunc | std::ios::binary;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  file.open(path, mode);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="keywordflow">if</span> (!file.is_open()) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Failed to open file for writing: &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="comment">// 检查点云是否为空</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="comment">// Check if point cloud is empty</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordflow">if</span> (cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#ac8ea56dc4d88223facc3a0fc77e51f0d">empty</a>()) {</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Writing empty point cloud to &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> file.good();  <span class="comment">// 成功写入空文件/Successfully wrote empty file</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="comment">// KITTI格式：每个点由4个float组成 (x, y, z, intensity)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="comment">// KITTI format: each point consists of 4 floats (x, y, z, intensity)</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> point_step = 4 * <span class="keyword">sizeof</span>(float);  <span class="comment">// 每个点16字节/16 bytes per point</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  std::vector&lt;unsigned char&gt; point_buffer(point_step);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>(); ++i) {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* current_ptr = point_buffer.data();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// 写入XYZ坐标/Write XYZ coordinates</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">float</span> x_val = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[i].x);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">float</span> y_val = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[i].y);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">float</span> z_val = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[i].z);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="comment">// 写入强度值（如果没有，使用默认值0.0f）</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Write intensity value (use default 0.0f if not available)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">float</span> intensity_val = 0.0f;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    std::memcpy(current_ptr, &amp;x_val, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    current_ptr += <span class="keyword">sizeof</span>(float);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    std::memcpy(current_ptr, &amp;y_val, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    current_ptr += <span class="keyword">sizeof</span>(float);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    std::memcpy(current_ptr, &amp;z_val, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    current_ptr += <span class="keyword">sizeof</span>(float);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    std::memcpy(current_ptr, &amp;intensity_val, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    file.write(<span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(point_buffer.data()),</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>               point_buffer.size());</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (!file) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Error writing binary data point &quot;</span> &lt;&lt; i</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                  &lt;&lt; <span class="stringliteral">&quot; to &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">return</span> file.good();</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keywordtype">bool</span> kitti_format_t::read_binary_data(<span class="keyword">const</span> std::string&amp; path,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>                                    <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;T&gt;</a>&amp; cloud)</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <a class="code hl_class" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a> mapped_file;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordflow">if</span> (!mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">open</a>(path)) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Failed to memory map file: &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer_start = mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">data</a>();</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordflow">if</span> (!buffer_start) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Memory mapped buffer is null for: &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* buffer_end = buffer_start + mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>();</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="comment">// 计算点的数量：文件大小除以每个点的大小（4个float = 16字节）</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="comment">// Calculate number of points: file size divided by size per point (4 floats = 16 bytes)</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> point_step = 4 * <span class="keyword">sizeof</span>(float);  <span class="comment">// 每个点16字节/16 bytes per point</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> num_points = mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() / point_step;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="keywordflow">if</span> (mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>() % point_step != 0) {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: File size &quot;</span> &lt;&lt; mapped_file.<a class="code hl_function" href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">size</a>()</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>               &lt;&lt; <span class="stringliteral">&quot; is not a multiple of point size &quot;</span> &lt;&lt; point_step</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>               &lt;&lt; <span class="stringliteral">&quot;. Some data may be truncated.&quot;</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keywordflow">if</span> (num_points == 0) {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: No points found in file: &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// 成功读取了空文件/Successfully read empty file</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="comment">// 预分配内存</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="comment">// Pre-allocate memory</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.reserve(num_points);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="comment">// 读取每个点的数据</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="comment">// Read data for each point</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_points; ++i) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* current_point_ptr = buffer_start + i * point_step;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="comment">// 确保不会读取超出缓冲区的数据</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="comment">// Ensure we don&#39;t read past the buffer boundary</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <span class="keywordflow">if</span> (current_point_ptr + point_step &gt; buffer_end) {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Attempt to read past mapped buffer &quot;</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                  &lt;&lt; <span class="stringliteral">&quot;boundary at point index &quot;</span> &lt;&lt; i;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="comment">// 读取XYZ和强度值</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="comment">// Read XYZ and intensity values</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordtype">float</span> x_val, y_val, z_val, intensity_val;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    std::memcpy(&amp;x_val, current_point_ptr, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    std::memcpy(&amp;y_val, current_point_ptr + <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>), <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    std::memcpy(&amp;z_val, current_point_ptr + 2 * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>), <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    std::memcpy(&amp;intensity_val, current_point_ptr + 3 * <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>), <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>));</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// 添加点到点云</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="comment">// Add point to point cloud</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;T&gt;</a> current_point;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    current_point.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(x_val);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    current_point.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(y_val);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    current_point.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(z_val);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.push_back(current_point);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="comment">// 设置强度值（如果需要）</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="comment">// Set intensity value (if needed)</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a705226af021f0d079adc4669de37f073">intensity</a> = <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(intensity_val);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  }</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;kitti_format_t: Successfully read &quot;</span> &lt;&lt; cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>()</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>              &lt;&lt; <span class="stringliteral">&quot; points from &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>}</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00214" data-start="{" data-end="}">
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1formats.html#ae62f510d5d14d63442a6df652e03dbf8">  214</a></span>CPP_TOOLBOX_EXPORT std::unique_ptr&lt;toolbox::types::point_cloud_t&lt;T&gt;&gt; <a class="code hl_function" href="namespacetoolbox_1_1io_1_1formats.html#ae62f510d5d14d63442a6df652e03dbf8">read_kitti_bin</a>(</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">const</span> std::string&amp; path)</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>{</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keyword">auto</span> kitti = std::make_unique&lt;toolbox::io::formats::kitti_format_t&gt;();</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  std::unique_ptr&lt;base_file_data_t&gt; base_data = <span class="keyword">nullptr</span>;  <span class="comment">// Create ptr of the type expected by read()</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  <span class="comment">// Call read, passing the base class unique_ptr reference</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordtype">bool</span> success = kitti-&gt;read(path, base_data);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordflow">if</span> (success &amp;&amp; base_data) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// Read succeeded, now check if the actual data type matches T</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keyword">auto</span>* typed_ptr = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;T&gt;</a>*<span class="keyword">&gt;</span>(base_data.get());</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">if</span> (typed_ptr) {</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      <span class="comment">// Type matches T, transfer ownership to a new unique_ptr&lt;point_cloud_t&lt;T&gt;&gt;</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      base_data.release();  <span class="comment">// Prevent base_data from deleting the object</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      <span class="keywordflow">return</span> std::unique_ptr&lt;point_cloud_t&lt;T&gt;&gt;(typed_ptr);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      <span class="comment">// Read succeeded, but the resulting type is not point_cloud_t&lt;T&gt;</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>      <span class="comment">// (e.g., read always returns float, but T was double)</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;read_kitti_bin: read data type does not match requested type T=&quot;</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                 &lt;&lt; <span class="keyword">typeid</span>(T).name() &lt;&lt; <span class="stringliteral">&quot;. Path: &quot;</span> &lt;&lt; path;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      <span class="comment">// Return nullptr as the requested type couldn&#39;t be provided.</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="comment">// The base_data unique_ptr will delete the object when it goes out of scope.</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="comment">// Read failed or returned null data</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>}</div>
 </div>
-<div class="ttc" id="afile_8hpp_html"><div class="ttname"><a href="file_8hpp.html">file.hpp</a></div></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00246" data-start="{" data-end="}">
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1formats.html#aed45a137c6b6a11408169d97b3bbb1e7">  246</a></span>CPP_TOOLBOX_EXPORT <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io_1_1formats.html#aed45a137c6b6a11408169d97b3bbb1e7">write_kitti_bin</a>(<span class="keyword">const</span> std::string&amp; path,</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                                      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;T&gt;</a>&amp; cloud)</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>{</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  <span class="keyword">auto</span> kitti = std::make_unique&lt;toolbox::io::formats::kitti_format_t&gt;();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="comment">// Create a copy of the input cloud to satisfy the unique_ptr interface</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="keyword">auto</span> cloud_copy_ptr = std::make_unique&lt;toolbox::types::point_cloud_t&lt;T&gt;&gt;(cloud);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <span class="comment">// Cast the unique_ptr holding the copy to the base class type unique_ptr</span></div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  std::unique_ptr&lt;base_file_data_t&gt; base_data_ptr = std::move(cloud_copy_ptr);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="comment">// Pass the unique_ptr (as const reference) to the write method</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="comment">// KITTI格式总是二进制/KITTI format is always binary</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  <span class="keywordflow">return</span> kitti-&gt;write(path, base_data_ptr, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
+</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>}  <span class="comment">// namespace toolbox::io::formats</span></div>
+</div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html">toolbox::file::memory_mapped_file_t</a></div><div class="ttdoc">RAII wrapper for memory-mapped files. / 内存映射文件的 RAII 封装。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:74</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a0bd3594b0c4718fe5ac700bb986ce624"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a0bd3594b0c4718fe5ac700bb986ce624">toolbox::file::memory_mapped_file_t::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Gets the size of the mapped file. / 获取映射文件的大小。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:237</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_a6bdd4ddabd7138437bf4b3182cf04760"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#a6bdd4ddabd7138437bf4b3182cf04760">toolbox::file::memory_mapped_file_t::open</a></div><div class="ttdeci">bool open(const std::filesystem::path &amp;path)</div><div class="ttdoc">Opens and memory-maps the specified file. / 打开并内存映射指定的文件。</div></div>
+<div class="ttc" id="aclasstoolbox_1_1file_1_1memory__mapped__file__t_html_adc49fd4412723096ffc7e83c540cc976"><div class="ttname"><a href="classtoolbox_1_1file_1_1memory__mapped__file__t.html#adc49fd4412723096ffc7e83c540cc976">toolbox::file::memory_mapped_file_t::data</a></div><div class="ttdeci">const unsigned char * data() const</div><div class="ttdoc">Gets a pointer to the mapped memory region. / 获取指向映射内存区域的指针。</div><div class="ttdef"><b>Definition</b> memory_mapped_file.hpp:214</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a705226af021f0d079adc4669de37f073"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a705226af021f0d079adc4669de37f073">toolbox::types::point_cloud_t::intensity</a></div><div class="ttdeci">T intensity</div><div class="ttdoc">全局强度值 / Global intensity value</div><div class="ttdef"><b>Definition</b> point.hpp:271</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a929bfd294a28a1f344bf4a6183ccb664"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">toolbox::types::point_cloud_t::size</a></div><div class="ttdeci">auto size() const -&gt; std::size_t</div><div class="ttdoc">获取点云中的点数 / Get number of points in cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:293</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_ac8ea56dc4d88223facc3a0fc77e51f0d"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#ac8ea56dc4d88223facc3a0fc77e51f0d">toolbox::types::point_cloud_t::empty</a></div><div class="ttdeci">auto empty() const -&gt; bool</div><div class="ttdoc">检查点云是否为空 / Check if cloud is empty</div><div class="ttdef"><b>Definition</b> point_impl.hpp:299</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1351</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1354</div></div>
+<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1353</div></div>
 <div class="ttc" id="akitti_8hpp_html"><div class="ttname"><a href="kitti_8hpp.html">kitti.hpp</a></div></div>
 <div class="ttc" id="amemory__mapped__file_8hpp_html"><div class="ttname"><a href="memory__mapped__file_8hpp.html">memory_mapped_file.hpp</a></div></div>
-<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:10</div></div>
-<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html">toolbox::io::formats</a></div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:30</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html_ae62f510d5d14d63442a6df652e03dbf8"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html#ae62f510d5d14d63442a6df652e03dbf8">toolbox::io::formats::read_kitti_bin</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; toolbox::types::point_cloud_t&lt; T &gt; &gt; read_kitti_bin(const std::string &amp;path)</div><div class="ttdoc">从文件中读取 KITTI 点云数据的独立函数。/Standalone function to read KITTI point cloud data from a file.</div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:214</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1formats_html_aed45a137c6b6a11408169d97b3bbb1e7"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1formats.html#aed45a137c6b6a11408169d97b3bbb1e7">toolbox::io::formats::write_kitti_bin</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdoc">将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file.</div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:246</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a171efb0a8686791dd6b042babab79ad4"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">toolbox::types::point_t::x</a></div><div class="ttdeci">T x</div><div class="ttdoc">X坐标 / X coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:49</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a5697097cf3fe9bed97c2ebc8e9544db6"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">toolbox::types::point_t::z</a></div><div class="ttdeci">T z</div><div class="ttdoc">Z坐标 / Z coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:51</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_ae84eeb1bacaf6f2aa28321f152f38624"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">toolbox::types::point_t::y</a></div><div class="ttdeci">T y</div><div class="ttdoc">Y坐标 / Y coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:50</div></div>
 <div class="ttc" id="athread__logger_8hpp_html"><div class="ttname"><a href="thread__logger_8hpp.html">thread_logger.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

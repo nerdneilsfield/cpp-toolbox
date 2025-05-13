@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"md__c_o_d_e___o_f___c_o_n_d_u_c_t.html":[6],
+"md__c_o_n_t_r_i_b_u_t_i_n_g.html":[7],
 "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md26":[7,0],
 "md__c_o_n_t_r_i_b_u_t_i_n_g.html#autotoc_md27":[7,1],
 "md__h_a_c_k_i_n_g.html":[8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "namespacetoolbox_1_1functional.html#ae451cc75b6a39fd16d3c1c680988706e":[12,0,1,4,40],
 "namespacetoolbox_1_1functional.html#ae72a328600ef1342629b7fe3bab4d88b":[12,0,1,4,54],
 "namespacetoolbox_1_1functional.html#ae876add04e6a887f8b62c69d6d6c798b":[12,0,1,4,26],
-"namespacetoolbox_1_1functional.html#aea3f2ee7ec3d87022b31c2f07743c4e6":[12,0,1,4,49],
-"namespacetoolbox_1_1functional.html#aecc9e3b337e5a7e2d3d9eaac80939002":[12,0,1,4,3],
-"namespacetoolbox_1_1functional.html#af1e716e0651b55b72aadf0561117a6bb":[12,0,1,4,51]
+"namespacetoolbox_1_1functional.html#aea3f2ee7ec3d87022b31c2f07743c4e6":[12,0,1,4,49]
 };
