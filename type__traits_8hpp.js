@@ -29,7 +29,13 @@ var type__traits_8hpp =
     [ "toolbox::traits::is_null_pointer< T >", "structtoolbox_1_1traits_1_1is__null__pointer.html", null ],
     [ "toolbox::traits::is_iterable< T, typename >", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
     [ "toolbox::traits::is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
+    [ "toolbox::traits::is_less_than_comparable< T, U, typename >", "structtoolbox_1_1traits_1_1is__less__than__comparable.html", null ],
+    [ "toolbox::traits::is_less_than_comparable< T, U, std::void_t< decltype(std::declval< T >()< std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__less__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01decfcd281f6f40dc9ba8bdb84058aecabad.html", null ],
+    [ "toolbox::traits::is_greater_than_comparable< T, U, typename >", "structtoolbox_1_1traits_1_1is__greater__than__comparable.html", null ],
+    [ "toolbox::traits::is_greater_than_comparable< T, U, std::void_t< decltype(std::declval< T >() > std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__greater__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01e12039f554bf02a65bcf2c70b4be1eb1.html", null ],
     [ "void_t", "type__traits_8hpp.html#af947ecd84c1315e86403e59d3508e4f3", null ],
     [ "void_t", "type__traits_8hpp.html#ab78b03f232f72f2deeb66f99ef3d4802", null ],
-    [ "is_iterable_v", "type__traits_8hpp.html#aff9226c5f441dc4babdc37c493939f40", null ]
+    [ "is_greater_than_comparable_v", "type__traits_8hpp.html#a597b15e39f8bb17d0a49f8aef59e08ea", null ],
+    [ "is_iterable_v", "type__traits_8hpp.html#aff9226c5f441dc4babdc37c493939f40", null ],
+    [ "is_less_than_comparable_v", "type__traits_8hpp.html#a9be5bf95dea61ffd682fa0cbdf9a6e3c", null ]
 ];

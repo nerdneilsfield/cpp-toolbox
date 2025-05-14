@@ -19,11 +19,15 @@ digraph "Graphical Class Hierarchy"
   Node0 -> Node6 [id="edge7_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node6 [id="Node000006",label="toolbox::traits::is\l_callable\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__callable.html",tooltip="检查类型是否可调用/Check if type is callable"];
   Node0 -> Node7 [id="edge8_Node000000_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node7 [id="Node000007",label="toolbox::traits::is\l_iterable\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__iterable.html",tooltip=" "];
+  Node7 [id="Node000007",label="toolbox::traits::is\l_greater_than_comparable\l\< T, U, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__greater__than__comparable.html",tooltip="检查类型T和U是否支持大于运算符（>）/Check if types T and U support the greater-than operator (>)"];
   Node0 -> Node8 [id="edge9_Node000000_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node8 [id="Node000008",label="toolbox::types::detail\l::is_calculable_container\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1detail_1_1is__calculable__container.html",tooltip="辅助类型特征,用于检查类型是否为可计算容器 / Helper type trait to check if a type is a calculable container"];
+  Node8 [id="Node000008",label="toolbox::traits::is\l_iterable\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__iterable.html",tooltip=" "];
   Node0 -> Node9 [id="edge10_Node000000_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="toolbox::utils::detail\l::has_istream_operator\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html",tooltip=" "];
+  Node9 [id="Node000009",label="toolbox::traits::is\l_less_than_comparable\l\< T, U, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__less__than__comparable.html",tooltip="检查类型T和U是否支持小于运算符（<）/Check if types T and U support the less-than operator (<)"];
   Node0 -> Node10 [id="edge11_Node000000_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="toolbox::utils::detail\l::is_optional\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1is__optional.html",tooltip=" "];
+  Node10 [id="Node000010",label="toolbox::types::detail\l::is_calculable_container\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1detail_1_1is__calculable__container.html",tooltip="辅助类型特征,用于检查类型是否为可计算容器 / Helper type trait to check if a type is a calculable container"];
+  Node0 -> Node11 [id="edge12_Node000000_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="toolbox::utils::detail\l::has_istream_operator\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html",tooltip=" "];
+  Node0 -> Node12 [id="edge13_Node000000_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="toolbox::utils::detail\l::is_optional\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1is__optional.html",tooltip=" "];
 }

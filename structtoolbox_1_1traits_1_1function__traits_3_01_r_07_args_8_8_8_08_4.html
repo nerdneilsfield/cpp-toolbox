@@ -259,9 +259,9 @@ struct toolbox::traits::function_traits&lt; R(Args...)&gt;</div><p>普通函数�
 <div class="fragment"><div class="line"><span class="comment">// 分析普通函数/Analyze regular function</span></div>
 <div class="line"><span class="keywordtype">int</span> func(<span class="keywordtype">float</span> x, <span class="keywordtype">double</span> y) { <span class="keywordflow">return</span> 0; }</div>
 <div class="line"><span class="keyword">using </span>traits = <a class="code hl_struct" href="structtoolbox_1_1traits_1_1function__traits.html">function_traits</a>&lt;<span class="keyword">decltype</span>(func)&gt;;</div>
-<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;traits::return_type, int&gt;);</div>
-<div class="line"><span class="keyword">static_assert</span>(traits::arity == 2);</div>
-<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;traits::arg_type&lt;0&gt;, <span class="keywordtype">float</span>&gt;);</div>
+<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;toolbox::traitsreturn_type, int&gt;);</div>
+<div class="line"><span class="keyword">static_assert</span>(toolbox::traitsarity == 2);</div>
+<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;toolbox::traitsarg_type&lt;0&gt;, <span class="keywordtype">float</span>&gt;);</div>
 <div class="ttc" id="astructtoolbox_1_1traits_1_1function__traits_html"><div class="ttname"><a href="structtoolbox_1_1traits_1_1function__traits.html">toolbox::traits::function_traits</a></div><div class="ttdoc">函数特征基础模板/Function traits base template</div><div class="ttdef"><b>Definition</b> type_traits.hpp:311</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac1e5d57d1b1e20d04954cee3a7c13044" name="ac1e5d57d1b1e20d04954cee3a7c13044"></a>

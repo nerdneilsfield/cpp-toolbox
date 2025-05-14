@@ -24,7 +24,22 @@ var namespacetoolbox =
     [ "functional", "namespacetoolbox_1_1functional.html", "namespacetoolbox_1_1functional" ],
     [ "io", "namespacetoolbox_1_1io.html", "namespacetoolbox_1_1io" ],
     [ "logger", "namespacetoolbox_1_1logger.html", "namespacetoolbox_1_1logger" ],
-    [ "math", "namespacetoolbox_1_1math.html", null ],
+    [ "math", "namespacetoolbox_1_1math.html", [
+      [ "check_empty", "namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2", null ],
+      [ "max", "namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d", null ],
+      [ "max_k", "namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a", null ],
+      [ "mean", "namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae", null ],
+      [ "median", "namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed", null ],
+      [ "min", "namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921", null ],
+      [ "min_k", "namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf", null ],
+      [ "mode", "namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1", null ],
+      [ "percentile", "namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09", null ],
+      [ "range", "namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d", null ],
+      [ "stdev", "namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33", null ],
+      [ "sum", "namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f", null ],
+      [ "sum_d", "namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21", null ],
+      [ "variance", "namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b", null ]
+    ] ],
     [ "traits", "namespacetoolbox_1_1traits.html", "namespacetoolbox_1_1traits" ],
     [ "types", "namespacetoolbox_1_1types.html", "namespacetoolbox_1_1types" ],
     [ "utils", "namespacetoolbox_1_1utils.html", "namespacetoolbox_1_1utils" ]

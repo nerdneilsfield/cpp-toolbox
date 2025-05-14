@@ -215,9 +215,747 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1math.html',''); in
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">toolbox::math Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>&lt; 用于动态数组/For dynamic arrays  
+<a href="namespacetoolbox_1_1math.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a93ed2dd1bb63b92b21ac29a1d85b60e2" id="r_a93ed2dd1bb63b92b21ac29a1d85b60e2"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a93ed2dd1bb63b92b21ac29a1d85b60e2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">check_empty</a> (const TContainer &amp;data, const char *func_name)</td></tr>
+<tr class="memdesc:a93ed2dd1bb63b92b21ac29a1d85b60e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查容器是否为空并抛出异常/Check if the container is empty and throw an exception  <br /></td></tr>
+<tr class="separator:a93ed2dd1bb63b92b21ac29a1d85b60e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb02bf50f67bf4d18f0f7f580c63b5ae" id="r_afb02bf50f67bf4d18f0f7f580c63b5ae"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:afb02bf50f67bf4d18f0f7f580c63b5ae"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">mean</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:afb02bf50f67bf4d18f0f7f580c63b5ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的平均值/Compute the mean (average) of elements in a container  <br /></td></tr>
+<tr class="separator:afb02bf50f67bf4d18f0f7f580c63b5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac23a5577ab5cd849ca58b98810b4a9ed" id="r_ac23a5577ab5cd849ca58b98810b4a9ed"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:ac23a5577ab5cd849ca58b98810b4a9ed"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">median</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:ac23a5577ab5cd849ca58b98810b4a9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的中位数/Compute the median of elements in a container  <br /></td></tr>
+<tr class="separator:ac23a5577ab5cd849ca58b98810b4a9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3249f65b05ed4e3ced4eb532512da1" id="r_a6d3249f65b05ed4e3ced4eb532512da1"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a6d3249f65b05ed4e3ced4eb532512da1"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename TContainer::value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">mode</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:a6d3249f65b05ed4e3ced4eb532512da1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的众数（可能有多个）/Compute the mode(s) of elements in a container (may be multiple)  <br /></td></tr>
+<tr class="separator:a6d3249f65b05ed4e3ced4eb532512da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca65cedd95bb211ff49cd0861b91563b" id="r_aca65cedd95bb211ff49cd0861b91563b"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:aca65cedd95bb211ff49cd0861b91563b"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">variance</a> (const TContainer &amp;data, bool sample_variance=true)</td></tr>
+<tr class="memdesc:aca65cedd95bb211ff49cd0861b91563b"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算方差（默认样本方差 N-1）/Compute the variance (default is sample variance N-1)  <br /></td></tr>
+<tr class="separator:aca65cedd95bb211ff49cd0861b91563b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afba61c5d0cac2f1c186a678ed0094b33" id="r_afba61c5d0cac2f1c186a678ed0094b33"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:afba61c5d0cac2f1c186a678ed0094b33"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">stdev</a> (const TContainer &amp;data, bool sample_stdev=true)</td></tr>
+<tr class="memdesc:afba61c5d0cac2f1c186a678ed0094b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算标准差（默认样本标准差）/Compute the standard deviation (default is sample standard deviation)  <br /></td></tr>
+<tr class="separator:afba61c5d0cac2f1c186a678ed0094b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24535793540418131a0fe60ea75b648f" id="r_a24535793540418131a0fe60ea75b648f"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a24535793540418131a0fe60ea75b648f"><td class="memTemplItemLeft" align="right" valign="top">TContainer::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:a24535793540418131a0fe60ea75b648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)  <br /></td></tr>
+<tr class="separator:a24535793540418131a0fe60ea75b648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0efde6deb9583d31f8ad0f1cd9d5b21" id="r_ab0efde6deb9583d31f8ad0f1cd9d5b21"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:ab0efde6deb9583d31f8ad0f1cd9d5b21"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">sum_d</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:ab0efde6deb9583d31f8ad0f1cd9d5b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的总和（返回 double 类型以保证精度和范围）/Compute the sum of elements in the container (returns double for precision and range)  <br /></td></tr>
+<tr class="separator:ab0efde6deb9583d31f8ad0f1cd9d5b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c4f861381d5a2980837fee5c35e8921" id="r_a5c4f861381d5a2980837fee5c35e8921"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a5c4f861381d5a2980837fee5c35e8921"><td class="memTemplItemLeft" align="right" valign="top">TContainer::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">min</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:a5c4f861381d5a2980837fee5c35e8921"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找容器中的最小值/Find the minimum value in the container  <br /></td></tr>
+<tr class="separator:a5c4f861381d5a2980837fee5c35e8921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04161963e0041ce5ec7ed078aed83e9d" id="r_a04161963e0041ce5ec7ed078aed83e9d"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a04161963e0041ce5ec7ed078aed83e9d"><td class="memTemplItemLeft" align="right" valign="top">TContainer::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">max</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:a04161963e0041ce5ec7ed078aed83e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找容器中的最大值/Find the maximum value in the container  <br /></td></tr>
+<tr class="separator:a04161963e0041ce5ec7ed078aed83e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a7bdd411598d364266045298d9ed7d" id="r_a82a7bdd411598d364266045298d9ed7d"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a82a7bdd411598d364266045298d9ed7d"><td class="memTemplItemLeft" align="right" valign="top">TContainer::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">range</a> (const TContainer &amp;data)</td></tr>
+<tr class="memdesc:a82a7bdd411598d364266045298d9ed7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算容器中元素的全距（最大值-最小值）/Compute the range (max - min) of elements in the container  <br /></td></tr>
+<tr class="separator:a82a7bdd411598d364266045298d9ed7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a897cb3de8e07732d393840e8d6f09" id="r_a97a897cb3de8e07732d393840e8d6f09"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a97a897cb3de8e07732d393840e8d6f09"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">percentile</a> (const TContainer &amp;data, double p)</td></tr>
+<tr class="memdesc:a97a897cb3de8e07732d393840e8d6f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算百分位数（使用最近邻等级法和线性插值）/Compute the percentile (using nearest-rank and linear interpolation)  <br /></td></tr>
+<tr class="separator:a97a897cb3de8e07732d393840e8d6f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e9d753a4d9fa63c14b61b9bd9e27cf" id="r_a75e9d753a4d9fa63c14b61b9bd9e27cf"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a75e9d753a4d9fa63c14b61b9bd9e27cf"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename TContainer::value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">min_k</a> (const TContainer &amp;data, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> k)</td></tr>
+<tr class="memdesc:a75e9d753a4d9fa63c14b61b9bd9e27cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回容器中k个最小的元素，升序排列/Return the k smallest elements in the container, sorted ascending  <br /></td></tr>
+<tr class="separator:a75e9d753a4d9fa63c14b61b9bd9e27cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1aba6cc9ff7c1c7a8733bf4c46739a" id="r_a0e1aba6cc9ff7c1c7a8733bf4c46739a"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a0e1aba6cc9ff7c1c7a8733bf4c46739a"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename TContainer::value_type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">max_k</a> (const TContainer &amp;data, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> k)</td></tr>
+<tr class="memdesc:a0e1aba6cc9ff7c1c7a8733bf4c46739a"><td class="mdescLeft">&#160;</td><td class="mdescRight">返回容器中k个最大的元素，降序排列/Return the k largest elements in the container, sorted descending  <br /></td></tr>
+<tr class="separator:a0e1aba6cc9ff7c1c7a8733bf4c46739a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>&lt; 用于动态数组/For dynamic arrays </p>
+<p>&lt; 用于排序和查找最值/For sorting and finding min/max &lt; 用于数学运算/For mathematical operations &lt; 用于函数对象/For function objects &lt; 用于迭代器操作/For iterator operations &lt; 用于映射统计/For map statistics &lt; 用于累加/For accumulation &lt; 用于异常处理/For exception handling &lt; 用于字符串处理/For string handling &lt; 用于类型特性/For type traits &lt; 用于通用工具/For general utilities </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a93ed2dd1bb63b92b21ac29a1d85b60e2" name="a93ed2dd1bb63b92b21ac29a1d85b60e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ed2dd1bb63b92b21ac29a1d85b60e2">&#9670;&#160;</a></span>check_empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::math::check_empty </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>func_name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>检查容器是否为空并抛出异常/Check if the container is empty and throw an exception </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">func_name</td><td>函数名（用于错误信息）/Function name (for error message)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>若容器为空则抛出 std::invalid_argument 异常/Throws std::invalid_argument if container is empty</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v;</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">check_empty</a>(v, <span class="stringliteral">&quot;mean&quot;</span>); <span class="comment">// 抛出异常/Throws exception</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a93ed2dd1bb63b92b21ac29a1d85b60e2"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">toolbox::math::check_empty</a></div><div class="ttdeci">void check_empty(const TContainer &amp;data, const char *func_name)</div><div class="ttdoc">检查容器是否为空并抛出异常/Check if the container is empty and throw an exception</div><div class="ttdef"><b>Definition</b> statistics.hpp:35</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a04161963e0041ce5ec7ed078aed83e9d" name="a04161963e0041ce5ec7ed078aed83e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04161963e0041ce5ec7ed078aed83e9d">&#9670;&#160;</a></span>max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer::value_type toolbox::math::max </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查找容器中的最大值/Find the maximum value in the container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需可比较/Container type, elements must be comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ValueType 最大值/Maximum value</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
+<div class="line"><span class="keywordtype">int</span> mx = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">toolbox::math::max</a>(v); <span class="comment">// mx == 3</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a04161963e0041ce5ec7ed078aed83e9d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">toolbox::math::max</a></div><div class="ttdeci">TContainer::value_type max(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最大值/Find the maximum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:341</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a0e1aba6cc9ff7c1c7a8733bf4c46739a" name="a0e1aba6cc9ff7c1c7a8733bf4c46739a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e1aba6cc9ff7c1c7a8733bf4c46739a">&#9670;&#160;</a></span>max_k()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; typename TContainer::value_type &gt; toolbox::math::max_k </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回容器中k个最大的元素，降序排列/Return the k largest elements in the container, sorted descending </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需可比较/Container type, elements must be comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">k</td><td>需要返回的最大元素个数/Number of largest elements to return </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ValueType&gt; k个最大元素/k largest elements</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果k&gt;0且容器为空/If k&gt;0 and container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>若k为0返回空集合，若k&gt;=容器大小则返回所有元素降序排序/Returns empty if k==0, returns all sorted descending if k&gt;=container size</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{5, 1, 3, 2, 4};</div>
+<div class="line"><span class="keyword">auto</span> maxs = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">toolbox::math::max_k</a>(v, 2); <span class="comment">// maxs == {5, 4}</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a0e1aba6cc9ff7c1c7a8733bf4c46739a"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">toolbox::math::max_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; max_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最大的元素，降序排列/Return the k largest elements in the container, sorted descending</div><div class="ttdef"><b>Definition</b> statistics.hpp:500</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="afb02bf50f67bf4d18f0f7f580c63b5ae" name="afb02bf50f67bf4d18f0f7f580c63b5ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb02bf50f67bf4d18f0f7f580c63b5ae">&#9670;&#160;</a></span>mean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::mean </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的平均值/Compute the mean (average) of elements in a container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型/Container type, elements must be arithmetic </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 平均值/Mean value</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3, 4};</div>
+<div class="line"><span class="keywordtype">double</span> m = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">toolbox::math::mean</a>(v); <span class="comment">// m == 2.5</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_afb02bf50f67bf4d18f0f7f580c63b5ae"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">toolbox::math::mean</a></div><div class="ttdeci">double mean(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的平均值/Compute the mean (average) of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:60</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ac23a5577ab5cd849ca58b98810b4a9ed" name="ac23a5577ab5cd849ca58b98810b4a9ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac23a5577ab5cd849ca58b98810b4a9ed">&#9670;&#160;</a></span>median()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::median </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的中位数/Compute the median of elements in a container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型且可比较/Container type, elements must be arithmetic and comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 中位数/Median value</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 3, 2};</div>
+<div class="line"><span class="keywordtype">double</span> med = <a class="code hl_function" href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">toolbox::math::median</a>(v); <span class="comment">// med == 2</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_ac23a5577ab5cd849ca58b98810b4a9ed"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">toolbox::math::median</a></div><div class="ttdeci">double median(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的中位数/Compute the median of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:89</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a5c4f861381d5a2980837fee5c35e8921" name="a5c4f861381d5a2980837fee5c35e8921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c4f861381d5a2980837fee5c35e8921">&#9670;&#160;</a></span>min()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer::value_type toolbox::math::min </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>查找容器中的最小值/Find the minimum value in the container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需可比较/Container type, elements must be comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ValueType 最小值/Minimum value</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
+<div class="line"><span class="keywordtype">int</span> mn = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">toolbox::math::min</a>(v); <span class="comment">// mn == 1</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a5c4f861381d5a2980837fee5c35e8921"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">toolbox::math::min</a></div><div class="ttdeci">TContainer::value_type min(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最小值/Find the minimum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:317</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a75e9d753a4d9fa63c14b61b9bd9e27cf" name="a75e9d753a4d9fa63c14b61b9bd9e27cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e9d753a4d9fa63c14b61b9bd9e27cf">&#9670;&#160;</a></span>min_k()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; typename TContainer::value_type &gt; toolbox::math::min_k </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>返回容器中k个最小的元素，升序排列/Return the k smallest elements in the container, sorted ascending </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需可比较/Container type, elements must be comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">k</td><td>需要返回的最小元素个数/Number of smallest elements to return </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;ValueType&gt; k个最小元素/k smallest elements</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果k&gt;0且容器为空/If k&gt;0 and container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>若k为0返回空集合，若k&gt;=容器大小则返回所有元素排序/Returns empty if k==0, returns all sorted if k&gt;=container size</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{5, 1, 3, 2, 4};</div>
+<div class="line"><span class="keyword">auto</span> mins = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">toolbox::math::min_k</a>(v, 3); <span class="comment">// mins == {1, 2, 3}</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a75e9d753a4d9fa63c14b61b9bd9e27cf"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">toolbox::math::min_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; min_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最小的元素，升序排列/Return the k smallest elements in the container, sorted ascending</div><div class="ttdef"><b>Definition</b> statistics.hpp:454</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a6d3249f65b05ed4e3ced4eb532512da1" name="a6d3249f65b05ed4e3ced4eb532512da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3249f65b05ed4e3ced4eb532512da1">&#9670;&#160;</a></span>mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; typename TContainer::value_type &gt; toolbox::math::mode </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的众数（可能有多个）/Compute the mode(s) of elements in a container (may be multiple) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需可比较/Container type, elements must be comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;typename TContainer::value_type&gt; 众数集合/Vector of mode(s)</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>若容器为空，返回空集合/Returns empty vector if container is empty</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 2, 3, 3};</div>
+<div class="line"><span class="keyword">auto</span> modes = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">toolbox::math::mode</a>(v); <span class="comment">// modes == {2, 3}</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a6d3249f65b05ed4e3ced4eb532512da1"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">toolbox::math::mode</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; mode(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的众数（可能有多个）/Compute the mode(s) of elements in a container (may be multiple)</div><div class="ttdef"><b>Definition</b> statistics.hpp:128</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a97a897cb3de8e07732d393840e8d6f09" name="a97a897cb3de8e07732d393840e8d6f09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a897cb3de8e07732d393840e8d6f09">&#9670;&#160;</a></span>percentile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::percentile </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算百分位数（使用最近邻等级法和线性插值）/Compute the percentile (using nearest-rank and linear interpolation) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型且可比较/Container type, elements must be arithmetic and comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">p</td><td>百分位，范围[0.0, 1.0]/Percentile, in [0.0, 1.0] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 百分位数/Percentile value</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty </td></tr>
+    <tr><td class="paramname">std::out_of_range</td><td>如果p不在[0.0, 1.0]范围/If p is not in [0.0, 1.0]</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3, 4, 5};</div>
+<div class="line"><span class="keywordtype">double</span> p50 = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a>(v, 0.5); <span class="comment">// p50 == 3</span></div>
+<div class="line"><span class="keywordtype">double</span> p90 = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a>(v, 0.9); <span class="comment">// p90 == 4.6</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a97a897cb3de8e07732d393840e8d6f09"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a></div><div class="ttdeci">double percentile(const TContainer &amp;data, double p)</div><div class="ttdoc">计算百分位数（使用最近邻等级法和线性插值）/Compute the percentile (using nearest-rank and linear interpolation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:398</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a82a7bdd411598d364266045298d9ed7d" name="a82a7bdd411598d364266045298d9ed7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a7bdd411598d364266045298d9ed7d">&#9670;&#160;</a></span>range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer::value_type toolbox::math::range </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的全距（最大值-最小值）/Compute the range (max - min) of elements in the container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型且可比较/Container type, elements must be arithmetic and comparable </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ValueType 全距/Range</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果容器为空/If the container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
+<div class="line"><span class="keywordtype">int</span> r = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">toolbox::math::range</a>(v); <span class="comment">// r == 2</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a82a7bdd411598d364266045298d9ed7d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">toolbox::math::range</a></div><div class="ttdeci">TContainer::value_type range(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的全距（最大值-最小值）/Compute the range (max - min) of elements in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:366</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="afba61c5d0cac2f1c186a678ed0094b33" name="afba61c5d0cac2f1c186a678ed0094b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba61c5d0cac2f1c186a678ed0094b33">&#9670;&#160;</a></span>stdev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::stdev </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>sample_stdev</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算标准差（默认样本标准差）/Compute the standard deviation (default is sample standard deviation) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型/Container type, elements must be arithmetic </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">sample_stdev</td><td>是否计算样本标准差（true）或总体标准差（false）/Whether to compute sample stdev (true) or population stdev (false) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 标准差/Standard deviation</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果样本标准差且元素少于2/If sample stdev and less than 2 elements </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>如果总体标准差且容器为空/If population stdev and container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;double&gt; v{1.0, 2.0, 3.0};</div>
+<div class="line"><span class="keywordtype">double</span> sd = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a>(v); <span class="comment">// 样本标准差/sample stdev</span></div>
+<div class="line"><span class="keywordtype">double</span> sd_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体标准差/population stdev</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_afba61c5d0cac2f1c186a678ed0094b33"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a></div><div class="ttdeci">double stdev(const TContainer &amp;data, bool sample_stdev=true)</div><div class="ttdoc">计算标准差（默认样本标准差）/Compute the standard deviation (default is sample standard deviation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:236</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a24535793540418131a0fe60ea75b648f" name="a24535793540418131a0fe60ea75b648f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24535793540418131a0fe60ea75b648f">&#9670;&#160;</a></span>sum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer::value_type toolbox::math::sum </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型/Container type, elements must be arithmetic </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ValueType 总和/Sum</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>空容器返回0/Returns 0 for empty container</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3};</div>
+<div class="line"><span class="keywordtype">int</span> s = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a>(v); <span class="comment">// s == 6</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:260</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ab0efde6deb9583d31f8ad0f1cd9d5b21" name="ab0efde6deb9583d31f8ad0f1cd9d5b21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0efde6deb9583d31f8ad0f1cd9d5b21">&#9670;&#160;</a></span>sum_d()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::sum_d </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算容器中元素的总和（返回 double 类型以保证精度和范围）/Compute the sum of elements in the container (returns double for precision and range) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型/Container type, elements must be arithmetic </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 总和/Sum</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>空容器返回0.0/Returns 0.0 for empty container</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3};</div>
+<div class="line"><span class="keywordtype">double</span> s = <a class="code hl_function" href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">toolbox::math::sum_d</a>(v); <span class="comment">// s == 6.0</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_ab0efde6deb9583d31f8ad0f1cd9d5b21"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">toolbox::math::sum_d</a></div><div class="ttdeci">double sum_d(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回 double 类型以保证精度和范围）/Compute the sum of elements in the container (returns double for pre...</div><div class="ttdef"><b>Definition</b> statistics.hpp:287</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aca65cedd95bb211ff49cd0861b91563b" name="aca65cedd95bb211ff49cd0861b91563b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca65cedd95bb211ff49cd0861b91563b">&#9670;&#160;</a></span>variance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::math::variance </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>sample_variance</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>计算方差（默认样本方差 N-1）/Compute the variance (default is sample variance N-1) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型，元素需为算术类型/Container type, elements must be arithmetic </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">sample_variance</td><td>是否计算样本方差（true）或总体方差（false）/Whether to compute sample variance (true) or population variance (false) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>double 方差/Variance</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>如果样本方差且元素少于2/If sample variance and less than 2 elements </td></tr>
+    <tr><td class="paramname">std::invalid_argument</td><td>如果总体方差且容器为空/If population variance and container is empty</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line">std::vector&lt;double&gt; v{1.0, 2.0, 3.0};</div>
+<div class="line"><span class="keywordtype">double</span> var = <a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a>(v); <span class="comment">// 样本方差/sample variance</span></div>
+<div class="line"><span class="keywordtype">double</span> var_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体方差/population variance</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_aca65cedd95bb211ff49cd0861b91563b"><div class="ttname"><a href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a></div><div class="ttdeci">double variance(const TContainer &amp;data, bool sample_variance=true)</div><div class="ttdoc">计算方差（默认样本方差 N-1）/Compute the variance (default is sample variance N-1)</div><div class="ttdef"><b>Definition</b> statistics.hpp:183</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

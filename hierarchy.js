@@ -55,7 +55,9 @@ var hierarchy =
       [ "toolbox::traits::detail::has_type_impl< T, typename >", "structtoolbox_1_1traits_1_1detail_1_1has__type__impl.html", null ],
       [ "toolbox::traits::has_size< T, typename >", "structtoolbox_1_1traits_1_1has__size.html", null ],
       [ "toolbox::traits::is_callable< T, typename >", "structtoolbox_1_1traits_1_1is__callable.html", null ],
+      [ "toolbox::traits::is_greater_than_comparable< T, U, typename >", "structtoolbox_1_1traits_1_1is__greater__than__comparable.html", null ],
       [ "toolbox::traits::is_iterable< T, typename >", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
+      [ "toolbox::traits::is_less_than_comparable< T, U, typename >", "structtoolbox_1_1traits_1_1is__less__than__comparable.html", null ],
       [ "toolbox::types::detail::is_calculable_container< T, typename >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container.html", null ],
       [ "toolbox::utils::detail::has_istream_operator< T, typename >", "structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html", null ],
       [ "toolbox::utils::detail::is_optional< T >", "structtoolbox_1_1utils_1_1detail_1_1is__optional.html", null ]
@@ -138,7 +140,9 @@ var hierarchy =
       [ "toolbox::traits::detail::has_type_impl< T, void_t< typename T::type > >", "structtoolbox_1_1traits_1_1detail_1_1has__type__impl_3_01_t_00_01void__t_3_01typename_01_t_1_1type_01_4_01_4.html", null ],
       [ "toolbox::traits::has_size< T, std::void_t< decltype(std::declval< T >().size())> >", "structtoolbox_1_1traits_1_1has__size_3_01_t_00_01std_1_1void__t_3_01decltype_07std_1_1declval_3_ae1b1d65497178907f8aa92c18c8ee7d.html", null ],
       [ "toolbox::traits::is_callable< T, std::void_t< decltype(&T::operator())> >", "structtoolbox_1_1traits_1_1is__callable_3_01_t_00_01std_1_1void__t_3_01decltype_07_6_t_1_1operator_07_08_08_4_01_4.html", null ],
+      [ "toolbox::traits::is_greater_than_comparable< T, U, std::void_t< decltype(std::declval< T >() > std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__greater__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01e12039f554bf02a65bcf2c70b4be1eb1.html", null ],
       [ "toolbox::traits::is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
+      [ "toolbox::traits::is_less_than_comparable< T, U, std::void_t< decltype(std::declval< T >()< std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__less__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01decfcd281f6f40dc9ba8bdb84058aecabad.html", null ],
       [ "toolbox::utils::detail::is_optional< std::optional< U > >", "structtoolbox_1_1utils_1_1detail_1_1is__optional_3_01std_1_1optional_3_01_u_01_4_01_4.html", null ]
     ] ],
     [ "toolbox::traits::type_identity< T >", "structtoolbox_1_1traits_1_1type__identity.html", null ],

@@ -233,11 +233,12 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"> </div>
 <div class="line"><span class="comment">// 提交一个复杂任务/Submit a complex task</span></div>
 <div class="line"><span class="keyword">auto</span> future3 = pool.submit([](std::vector&lt;int&gt; v) {</div>
-<div class="line">    <span class="keywordtype">int</span> sum = 0;</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : v) sum += i;</div>
-<div class="line">    <span class="keywordflow">return</span> sum;</div>
+<div class="line">    <span class="keywordtype">int</span> <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> = 0;</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> i : v) <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> += i;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a>;</div>
 <div class="line">}, std::vector&lt;int&gt;{1,2,3,4,5});</div>
 <div class="line"><span class="keywordtype">int</span> result3 = future3.get(); <span class="comment">// result3 = 15</span></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:260</div></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;atomic&gt;</span>  <span class="comment">// 用于原子布尔标志/For atomic boolean flag</span></div>

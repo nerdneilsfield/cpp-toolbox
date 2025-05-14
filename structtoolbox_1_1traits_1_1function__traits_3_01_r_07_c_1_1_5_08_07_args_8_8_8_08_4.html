@@ -266,9 +266,9 @@ struct toolbox::traits::function_traits&lt; R(C::*)(Args...)&gt;</div><p>成员�
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using </span>traits = function_traits&lt;<span class="keyword">decltype</span>(&amp;MyClass::method)&gt;;</div>
-<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;traits::class_type, MyClass&gt;);</div>
-<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;traits::return_type, double&gt;);</div>
-<div class="line"><span class="keyword">static_assert</span>(traits::arity == 2);</div>
+<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;toolbox::traitsclass_type, MyClass&gt;);</div>
+<div class="line"><span class="keyword">static_assert</span>(std::is_same_v&lt;toolbox::traitsreturn_type, double&gt;);</div>
+<div class="line"><span class="keyword">static_assert</span>(toolbox::traitsarity == 2);</div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a4d8fb29fc2d916ec04ff4c834074dba9" name="a4d8fb29fc2d916ec04ff4c834074dba9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4d8fb29fc2d916ec04ff4c834074dba9">&#9670;&#160;</a></span>class_type</h2>

@@ -14,9 +14,13 @@ var namespacetoolbox_1_1traits =
     [ "is_const", "structtoolbox_1_1traits_1_1is__const.html", null ],
     [ "is_const_volatile", "structtoolbox_1_1traits_1_1is__const__volatile.html", null ],
     [ "is_function", "structtoolbox_1_1traits_1_1is__function.html", null ],
+    [ "is_greater_than_comparable", "structtoolbox_1_1traits_1_1is__greater__than__comparable.html", null ],
+    [ "is_greater_than_comparable< T, U, std::void_t< decltype(std::declval< T >() > std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__greater__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01e12039f554bf02a65bcf2c70b4be1eb1.html", null ],
     [ "is_heap_allocated", "structtoolbox_1_1traits_1_1is__heap__allocated.html", null ],
     [ "is_iterable", "structtoolbox_1_1traits_1_1is__iterable.html", null ],
     [ "is_iterable< T, void_t< decltype(std::begin(std::declval< T >())), decltype(std::end(std::declval< T >()))> >", "structtoolbox_1_1traits_1_1is__iterable_3_01_t_00_01void__t_3_01decltype_07std_1_1begin_07std_1_7117ff6ec554ee2c38ff708913db827f.html", null ],
+    [ "is_less_than_comparable", "structtoolbox_1_1traits_1_1is__less__than__comparable.html", null ],
+    [ "is_less_than_comparable< T, U, std::void_t< decltype(std::declval< T >()< std::declval< U >())> >", "structtoolbox_1_1traits_1_1is__less__than__comparable_3_01_t_00_01_u_00_01std_1_1void__t_3_01decfcd281f6f40dc9ba8bdb84058aecabad.html", null ],
     [ "is_member_pointer", "structtoolbox_1_1traits_1_1is__member__pointer.html", null ],
     [ "is_null_pointer", "structtoolbox_1_1traits_1_1is__null__pointer.html", null ],
     [ "is_pointer", "structtoolbox_1_1traits_1_1is__pointer.html", null ],
@@ -29,5 +33,7 @@ var namespacetoolbox_1_1traits =
     [ "type_identity", "structtoolbox_1_1traits_1_1type__identity.html", "structtoolbox_1_1traits_1_1type__identity" ],
     [ "type_list", "structtoolbox_1_1traits_1_1type__list.html", null ],
     [ "void_t", "namespacetoolbox_1_1traits.html#ab78b03f232f72f2deeb66f99ef3d4802", null ],
-    [ "is_iterable_v", "namespacetoolbox_1_1traits.html#aff9226c5f441dc4babdc37c493939f40", null ]
+    [ "is_greater_than_comparable_v", "namespacetoolbox_1_1traits.html#a597b15e39f8bb17d0a49f8aef59e08ea", null ],
+    [ "is_iterable_v", "namespacetoolbox_1_1traits.html#aff9226c5f441dc4babdc37c493939f40", null ],
+    [ "is_less_than_comparable_v", "namespacetoolbox_1_1traits.html#a9be5bf95dea61ffd682fa0cbdf9a6e3c", null ]
 ];
