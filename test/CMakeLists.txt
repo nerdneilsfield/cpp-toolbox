@@ -63,6 +63,7 @@ add_subdirectory(utils)
 add_subdirectory(functional)
 add_subdirectory(types)
 add_subdirectory(io)
+add_subdirectory(math)
 list(APPEND TEST_FILES my_catch2_main.cpp)
 
 add_executable(cpp-toolbox_test ${TEST_FILES})

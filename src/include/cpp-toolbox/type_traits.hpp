@@ -319,9 +319,9 @@ struct function_traits;
  * // 分析普通函数/Analyze regular function
  * int func(float x, double y) { return 0; }
  * using traits = function_traits<decltype(func)>;
- * static_assert(std::is_same_v<traits::return_type, int>);
- * static_assert(traits::arity == 2);
- * static_assert(std::is_same_v<traits::arg_type<0>, float>);
+ * static_assert(std::is_same_v<toolbox::traitsreturn_type, int>);
+ * static_assert(toolbox::traitsarity == 2);
+ * static_assert(std::is_same_v<toolbox::traitsarg_type<0>, float>);
  * @endcode
  */
 template<typename R, typename... Args>
@@ -347,9 +347,9 @@ struct function_traits<R(Args...)>
  * };
  *
  * using traits = function_traits<decltype(&MyClass::method)>;
- * static_assert(std::is_same_v<traits::class_type, MyClass>);
- * static_assert(std::is_same_v<traits::return_type, double>);
- * static_assert(traits::arity == 2);
+ * static_assert(std::is_same_v<toolbox::traitsclass_type, MyClass>);
+ * static_assert(std::is_same_v<toolbox::traitsreturn_type, double>);
+ * static_assert(toolbox::traitsarity == 2);
  * @endcode
  */
 template<typename C, typename R, typename... Args>
@@ -374,9 +374,7 @@ struct function_traits<R (C::*)(Args...)> : function_traits<R(Args...)>
  */
 template<typename T>
 concept HasSize = requires(T t) {
-  {
-    t.size()
-  } -> std::convertible_to<std::size_t>;
+  { t.size() } -> std::convertible_to<std::size_t>;
 };
 
 /**
@@ -396,9 +394,7 @@ concept HasSize = requires(T t) {
  */
 template<typename T>
 concept Printable = requires(T t, std::ostream& os) {
-  {
-    os << t
-  } -> std::same_as<std::ostream&>;
+  { os << t } -> std::same_as<std::ostream&>;
 };
 #else
 /**
@@ -799,6 +795,130 @@ struct is_iterable<T,
 
 template<typename T>
 inline constexpr bool is_iterable_v = is_iterable<T>::value;
+
+/**
+ * @brief 检查类型T和U是否支持小于运算符（<）/Check if types T and U support the
+ * less-than operator (<)
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型，默认为T/Second type to compare, defaults to T
+ * @tparam void SFINAE参数/SFINAE parameter
+ *
+ * @code
+ * static_assert(toolbox::traits::is_less_than_comparable<int>::value); // true
+ * static_assert(toolbox::traits::is_less_than_comparable<int, double>::value);
+ * // true struct Foo {};
+ * static_assert(!toolbox::traits::is_less_than_comparable<Foo>::value); //
+ * false
+ * @endcode
+ */
+template<typename T, typename U = T, typename = void>
+struct is_less_than_comparable : std::false_type
+{
+  // 空实现，表示不可比较/Empty implementation, indicates not comparable
+};
+
+/**
+ * @brief is_less_than_comparable
+ * 的特化：当T和U支持<运算符时为true_type/Specialization of
+ * is_less_than_comparable: true_type if T and U support < operator
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型/Second type to compare
+ *
+ * @code
+ * static_assert(toolbox::traits::is_less_than_comparable<int, double>::value);
+ * // true
+ * @endcode
+ */
+template<typename T, typename U>
+struct is_less_than_comparable<
+    T,
+    U,
+    std::void_t<decltype(std::declval<T>() < std::declval<U>())>>
+    : std::true_type
+{
+  // 当T和U支持<时为true/True if T and U support <
+};
+
+/**
+ * @brief is_less_than_comparable 的变量模板/Variable template for
+ * is_less_than_comparable
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型/Second type to compare, defaults to T
+ *
+ * @code
+ * if constexpr (toolbox::traits::is_less_than_comparable_v<int, double>) {
+ *   // 可以安全使用 < 运算符/Can safely use < operator
+ * }
+ * @endcode
+ */
+template<typename T, typename U = T>
+inline constexpr bool is_less_than_comparable_v =
+    is_less_than_comparable<T, U>::value;
+
+/**
+ * @brief 检查类型T和U是否支持大于运算符（>）/Check if types T and U support the
+ * greater-than operator (>)
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型，默认为T/Second type to compare, defaults to T
+ * @tparam void SFINAE参数/SFINAE parameter
+ *
+ * @code
+ * static_assert(toolbox::traits::is_greater_than_comparable<int>::value); //
+ * true static_assert(toolbox::traits::is_greater_than_comparable<int,
+ * double>::value); // true struct Bar {};
+ * static_assert(!toolbox::traits::is_greater_than_comparable<Bar>::value); //
+ * false
+ * @endcode
+ */
+template<typename T, typename U = T, typename = void>
+struct is_greater_than_comparable : std::false_type
+{
+  // 空实现，表示不可比较/Empty implementation, indicates not comparable
+};
+
+/**
+ * @brief is_greater_than_comparable
+ * 的特化：当T和U支持>运算符时为true_type/Specialization of
+ * is_greater_than_comparable: true_type if T and U support > operator
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型/Second type to compare
+ *
+ * @code
+ * static_assert(toolbox::traits::is_greater_than_comparable<int,
+ * double>::value); // true
+ * @endcode
+ */
+template<typename T, typename U>
+struct is_greater_than_comparable<
+    T,
+    U,
+    std::void_t<decltype(std::declval<T>() > std::declval<U>())>>
+    : std::true_type
+{
+  // 当T和U支持>时为true/True if T and U support >
+};
+
+/**
+ * @brief is_greater_than_comparable 的变量模板/Variable template for
+ * is_greater_than_comparable
+ *
+ * @tparam T 第一个要比较的类型/First type to compare
+ * @tparam U 第二个要比较的类型/Second type to compare, defaults to T
+ *
+ * @code
+ * if constexpr (toolbox::traits::is_greater_than_comparable_v<int, double>) {
+ *   // 可以安全使用 > 运算符/Can safely use > operator
+ * }
+ * @endcode
+ */
+template<typename T, typename U = T>
+inline constexpr bool is_greater_than_comparable_v =
+    is_greater_than_comparable<T, U>::value;
 
 }  // namespace traits
 }  // namespace toolbox
