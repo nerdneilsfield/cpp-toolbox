@@ -223,6 +223,9 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1utils.html',''); i
   <div class="headertitle"><div class="title">toolbox::utils Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>&lt; 用于 std::numeric_limits/For std::numeric_limits  
+<a href="namespacetoolbox_1_1utils.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -272,6 +275,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1queue__printer__t.html">queue_printer_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">队列打印器/Queue printer  <a href="classtoolbox_1_1utils_1_1queue__printer__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1random__t.html">random_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机数工具类/Random number utility class  <a href="classtoolbox_1_1utils_1_1random__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1set__printer__t.html">set_printer_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 打印器/Set printer.  <a href="classtoolbox_1_1utils_1_1set__printer__t.html#details">More...</a><br /></td></tr>
@@ -357,6 +363,53 @@ Functions</h2></td></tr>
 <tr class="memitem:ae613aaa9a0c3b0eda00dc51c94763b06"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#ae613aaa9a0c3b0eda00dc51c94763b06">print_queue</a> (const std::queue&lt; T &gt; &amp;q, const std::string &amp;name=&quot;Queue&quot;, const <a class="el" href="structtoolbox_1_1utils_1_1print__style__t.html">print_style_t</a> &amp;style=<a class="el" href="namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190">get_default_style</a>()) -&gt; <a class="el" href="classtoolbox_1_1utils_1_1queue__printer__t.html">queue_printer_t</a>&lt; T &gt;</td></tr>
 <tr class="memdesc:ae613aaa9a0c3b0eda00dc51c94763b06"><td class="mdescLeft">&#160;</td><td class="mdescRight">打印queue的工厂函数/Factory function to print queue  <br /></td></tr>
 <tr class="separator:ae613aaa9a0c3b0eda00dc51c94763b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21c87346f8796fbdc55b7c27fefec4d6" id="r_a21c87346f8796fbdc55b7c27fefec4d6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a21c87346f8796fbdc55b7c27fefec4d6">randint</a> (int a, int b)</td></tr>
+<tr class="memdesc:a21c87346f8796fbdc55b7c27fefec4d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成[a, b]范围内的随机整数/Generate random integer in [a, b]  <br /></td></tr>
+<tr class="separator:a21c87346f8796fbdc55b7c27fefec4d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ed08affa07b3822791362de8ba2c47d" id="r_a8ed08affa07b3822791362de8ba2c47d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8ed08affa07b3822791362de8ba2c47d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a8ed08affa07b3822791362de8ba2c47d">random</a> (T a, T b)</td></tr>
+<tr class="memdesc:a8ed08affa07b3822791362de8ba2c47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用随机数生成函数/General random number generator  <br /></td></tr>
+<tr class="separator:a8ed08affa07b3822791362de8ba2c47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa005803f5356b572366e8cc35f6cfd5c" id="r_aa005803f5356b572366e8cc35f6cfd5c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa005803f5356b572366e8cc35f6cfd5c"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#aa005803f5356b572366e8cc35f6cfd5c">random</a> ()</td></tr>
+<tr class="memdesc:aa005803f5356b572366e8cc35f6cfd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">无参数版本的随机数生成函数/Random number generator without parameters  <br /></td></tr>
+<tr class="separator:aa005803f5356b572366e8cc35f6cfd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fbaeda726b1d19e13b58ac742a54cf7" id="r_a9fbaeda726b1d19e13b58ac742a54cf7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a9fbaeda726b1d19e13b58ac742a54cf7"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a9fbaeda726b1d19e13b58ac742a54cf7">uniform</a> (T a, T b)</td></tr>
+<tr class="memdesc:a9fbaeda726b1d19e13b58ac742a54cf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in [a, b]  <br /></td></tr>
+<tr class="separator:a9fbaeda726b1d19e13b58ac742a54cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791ce71e30ffbf8dd7ae1d23eb40c717" id="r_a791ce71e30ffbf8dd7ae1d23eb40c717"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a791ce71e30ffbf8dd7ae1d23eb40c717"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a791ce71e30ffbf8dd7ae1d23eb40c717">gauss</a> (T mu, T sigma)</td></tr>
+<tr class="memdesc:a791ce71e30ffbf8dd7ae1d23eb40c717"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成高斯分布（正态分布）随机数/Generate Gaussian (normal) distributed random number  <br /></td></tr>
+<tr class="separator:a791ce71e30ffbf8dd7ae1d23eb40c717"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3086769cd3b97c816bc883074f1404ca" id="r_a3086769cd3b97c816bc883074f1404ca"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a3086769cd3b97c816bc883074f1404ca"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a3086769cd3b97c816bc883074f1404ca">choice</a> (const std::vector&lt; T &gt; &amp;vec)</td></tr>
+<tr class="memdesc:a3086769cd3b97c816bc883074f1404ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">从vector中随机选择一个元素/Randomly choose one element from vector  <br /></td></tr>
+<tr class="separator:a3086769cd3b97c816bc883074f1404ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a935de9e93cce289a3625617027aadcf2" id="r_a935de9e93cce289a3625617027aadcf2"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a935de9e93cce289a3625617027aadcf2"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a935de9e93cce289a3625617027aadcf2">choice_n</a> (const std::vector&lt; T &gt; &amp;vec, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> n)</td></tr>
+<tr class="memdesc:a935de9e93cce289a3625617027aadcf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">从vector中随机选择n个元素/Randomly choose n elements from vector  <br /></td></tr>
+<tr class="separator:a935de9e93cce289a3625617027aadcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdfdc999b60d97c4879c46890ca00b20" id="r_abdfdc999b60d97c4879c46890ca00b20"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:abdfdc999b60d97c4879c46890ca00b20"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#abdfdc999b60d97c4879c46890ca00b20">sample</a> (const std::vector&lt; T &gt; &amp;population, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> k)</td></tr>
+<tr class="memdesc:abdfdc999b60d97c4879c46890ca00b20"><td class="mdescLeft">&#160;</td><td class="mdescRight">从vector中随机采样k个元素/Randomly sample k elements from vector  <br /></td></tr>
+<tr class="separator:abdfdc999b60d97c4879c46890ca00b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cc1f0e1a200cc9b6f988af077737d1" id="r_a32cc1f0e1a200cc9b6f988af077737d1"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a32cc1f0e1a200cc9b6f988af077737d1"><td class="memTemplItemLeft" align="right" valign="top">TContainer::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a32cc1f0e1a200cc9b6f988af077737d1">choice</a> (const TContainer &amp;container)</td></tr>
+<tr class="memdesc:a32cc1f0e1a200cc9b6f988af077737d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用容器的随机选择/Randomly choose one element from general container  <br /></td></tr>
+<tr class="separator:a32cc1f0e1a200cc9b6f988af077737d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a8e625e8e86bf33df3f0b83570b4809" id="r_a3a8e625e8e86bf33df3f0b83570b4809"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a3a8e625e8e86bf33df3f0b83570b4809"><td class="memTemplItemLeft" align="right" valign="top">TContainer&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a3a8e625e8e86bf33df3f0b83570b4809">choice_n</a> (const TContainer &amp;container, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> n)</td></tr>
+<tr class="memdesc:a3a8e625e8e86bf33df3f0b83570b4809"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用容器的随机选择n个元素/Randomly choose n elements from general container  <br /></td></tr>
+<tr class="separator:a3a8e625e8e86bf33df3f0b83570b4809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831254840e19a1b06ce2623674a5e64e" id="r_a831254840e19a1b06ce2623674a5e64e"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a831254840e19a1b06ce2623674a5e64e"><td class="memTemplItemLeft" align="right" valign="top">TContainer&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#a831254840e19a1b06ce2623674a5e64e">sample</a> (const TContainer &amp;container, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> n)</td></tr>
+<tr class="memdesc:a831254840e19a1b06ce2623674a5e64e"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用容器的随机采样n个元素/Randomly sample n elements from general container  <br /></td></tr>
+<tr class="separator:a831254840e19a1b06ce2623674a5e64e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac23178051a20908e9abea2410f50c1" id="r_acac23178051a20908e9abea2410f50c1"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:acac23178051a20908e9abea2410f50c1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#acac23178051a20908e9abea2410f50c1">shuffle</a> (TContainer &amp;container)</td></tr>
+<tr class="memdesc:acac23178051a20908e9abea2410f50c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机打乱容器/Shuffle the container randomly  <br /></td></tr>
+<tr class="separator:acac23178051a20908e9abea2410f50c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabc758146e0a0ede00b635fec794f38c" id="r_aabc758146e0a0ede00b635fec794f38c"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#aabc758146e0a0ede00b635fec794f38c">create_timer</a> (<a class="el" href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html">simple_timer_interface_t</a> **timer_interface, int size) -&gt; bool</td></tr>
 <tr class="memdesc:aabc758146e0a0ede00b635fec794f38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a timer collection with specified size.  <br /></td></tr>
 <tr class="separator:aabc758146e0a0ede00b635fec794f38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -429,7 +482,10 @@ Variables</h2></td></tr>
 <tr class="memitem:afceb88707641c93260512ed743d61900" id="r_afceb88707641c93260512ed743d61900"><td class="memItemLeft" align="right" valign="top">class CPP_TOOLBOX_EXPORT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1utils.html#afceb88707641c93260512ed743d61900">table_t</a></td></tr>
 <tr class="separator:afceb88707641c93260512ed743d61900"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>&lt; 用于 std::numeric_limits/For std::numeric_limits </p>
+<p>&lt; 用于 std::shuffle, std::sample/For std::shuffle, std::sample &lt; 用于种子生成/For seeding if not using random_device for every construction &lt; 用于 std::back_inserter/For std::back_inserter &lt; 用于 std::out_of_range/For std::out_of_range </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a68622dfebab9e4c8dddcabce3cc25805" name="a68622dfebab9e4c8dddcabce3cc25805"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68622dfebab9e4c8dddcabce3cc25805">&#9670;&#160;</a></span>align_text()</h2>
 
@@ -489,6 +545,210 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string 对齐后的文本/Aligned text <div class="fragment"><div class="line">std::string s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805">align_text</a>(<span class="stringliteral">&quot;abc&quot;</span>, 6, align_t::RIGHT); <span class="comment">// &quot;   abc&quot;</span></div>
 <div class="ttc" id="anamespacetoolbox_1_1utils_html_a68622dfebab9e4c8dddcabce3cc25805"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a68622dfebab9e4c8dddcabce3cc25805">toolbox::utils::align_text</a></div><div class="ttdeci">auto align_text(const std::string &amp;text, size_t width, align_t align, const std::string &amp;padding=&quot; &quot;) -&gt; std::string</div><div class="ttdoc">处理对齐功能/Handle text alignment</div><div class="ttdef"><b>Definition</b> print.hpp:327</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a3086769cd3b97c816bc883074f1404ca" name="a3086769cd3b97c816bc883074f1404ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3086769cd3b97c816bc883074f1404ca">&#9670;&#160;</a></span>choice() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::utils::choice </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从vector中随机选择一个元素/Randomly choose one element from vector </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型/Element type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>输入vector/Input vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T 随机元素/Random element <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {1,2,3};</div>
+<div class="line"><span class="keywordtype">int</span> c = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a3086769cd3b97c816bc883074f1404ca">toolbox::utils::choice</a>(v);</div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a3086769cd3b97c816bc883074f1404ca"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a3086769cd3b97c816bc883074f1404ca">toolbox::utils::choice</a></div><div class="ttdeci">T choice(const std::vector&lt; T &gt; &amp;vec)</div><div class="ttdoc">从vector中随机选择一个元素/Randomly choose one element from vector</div><div class="ttdef"><b>Definition</b> random.hpp:437</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a32cc1f0e1a200cc9b6f988af077737d1" name="a32cc1f0e1a200cc9b6f988af077737d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32cc1f0e1a200cc9b6f988af077737d1">&#9670;&#160;</a></span>choice() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer::value_type toolbox::utils::choice </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>通用容器的随机选择/Randomly choose one element from general container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>输入容器/Input container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>typename TContainer::value_type 随机元素/Random element <div class="fragment"><div class="line">std::list&lt;int&gt; l = {1,2,3};</div>
+<div class="line"><span class="keywordtype">int</span> c = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a3086769cd3b97c816bc883074f1404ca">toolbox::utils::choice</a>(l);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a935de9e93cce289a3625617027aadcf2" name="a935de9e93cce289a3625617027aadcf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a935de9e93cce289a3625617027aadcf2">&#9670;&#160;</a></span>choice_n() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T &gt; toolbox::utils::choice_n </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从vector中随机选择n个元素/Randomly choose n elements from vector </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型/Element type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>输入vector/Input vector </td></tr>
+    <tr><td class="paramname">n</td><td>选择数量/Number of elements to choose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; 结果/Result vector <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {1,2,3,4,5};</div>
+<div class="line"><span class="keyword">auto</span> s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a935de9e93cce289a3625617027aadcf2">toolbox::utils::choice_n</a>(v, 3);</div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a935de9e93cce289a3625617027aadcf2"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a935de9e93cce289a3625617027aadcf2">toolbox::utils::choice_n</a></div><div class="ttdeci">std::vector&lt; T &gt; choice_n(const std::vector&lt; T &gt; &amp;vec, size_t n)</div><div class="ttdoc">从vector中随机选择n个元素/Randomly choose n elements from vector</div><div class="ttdef"><b>Definition</b> random.hpp:454</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a3a8e625e8e86bf33df3f0b83570b4809" name="a3a8e625e8e86bf33df3f0b83570b4809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a8e625e8e86bf33df3f0b83570b4809">&#9670;&#160;</a></span>choice_n() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer toolbox::utils::choice_n </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>通用容器的随机选择n个元素/Randomly choose n elements from general container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">n</td><td>选择数量/Number of elements to choose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TContainer 结果/Result container <div class="fragment"><div class="line">std::set&lt;int&gt; s = {1,2,3,4,5};</div>
+<div class="line"><span class="keyword">auto</span> r = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a935de9e93cce289a3625617027aadcf2">toolbox::utils::choice_n</a>(s, 2);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -728,6 +988,61 @@ Variables</h2></td></tr>
 <div class="line"><a class="code hl_function" href="namespacetoolbox_1_1utils.html#a68025dd39e5b997d8f135daf943b63d5">display_timer</a>(&amp;timers, 0);</div>
 <div class="ttc" id="anamespacetoolbox_1_1utils_html_a68025dd39e5b997d8f135daf943b63d5"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a68025dd39e5b997d8f135daf943b63d5">toolbox::utils::display_timer</a></div><div class="ttdeci">auto display_timer(simple_timer_interface_t **timer_interface, int id) -&gt; bool</div><div class="ttdoc">Display statistics for a specific timer.</div><div class="ttdef"><b>Definition</b> timer.hpp:391</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a791ce71e30ffbf8dd7ae1d23eb40c717" name="a791ce71e30ffbf8dd7ae1d23eb40c717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a791ce71e30ffbf8dd7ae1d23eb40c717">&#9670;&#160;</a></span>gauss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::utils::gauss </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>mu</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>sigma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成高斯分布（正态分布）随机数/Generate Gaussian (normal) distributed random number </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>浮点类型/Floating point type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mu</td><td>均值/Mean </td></tr>
+    <tr><td class="paramname">sigma</td><td>标准差/Standard deviation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T 随机数/Random value <div class="fragment"><div class="line"><span class="keywordtype">float</span> g = toolbox::utils::gauss&lt;float&gt;(0.0f, 1.0f);</div>
+</div><!-- fragment --> </dd></dl>
+
 </div>
 </div>
 <a id="a5572a2b37d2d75af67443c063834b190" name="a5572a2b37d2d75af67443c063834b190"></a>
@@ -1514,6 +1829,148 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a21c87346f8796fbdc55b7c27fefec4d6" name="a21c87346f8796fbdc55b7c27fefec4d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21c87346f8796fbdc55b7c27fefec4d6">&#9670;&#160;</a></span>randint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int toolbox::utils::randint </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成[a, b]范围内的随机整数/Generate random integer in [a, b] </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>下界/Lower bound </td></tr>
+    <tr><td class="paramname">b</td><td>上界/Upper bound </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int 随机整数/Random integer <div class="fragment"><div class="line"><span class="keywordtype">int</span> r = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#a21c87346f8796fbdc55b7c27fefec4d6">toolbox::utils::randint</a>(1, 10);</div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_a21c87346f8796fbdc55b7c27fefec4d6"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a21c87346f8796fbdc55b7c27fefec4d6">toolbox::utils::randint</a></div><div class="ttdeci">int randint(int a, int b)</div><div class="ttdoc">生成[a, b]范围内的随机整数/Generate random integer in [a, b]</div><div class="ttdef"><b>Definition</b> random.hpp:348</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aa005803f5356b572366e8cc35f6cfd5c" name="aa005803f5356b572366e8cc35f6cfd5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa005803f5356b572366e8cc35f6cfd5c">&#9670;&#160;</a></span>random() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::utils::random </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>无参数版本的随机数生成函数/Random number generator without parameters </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>类型/Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T 随机数/Random value <div class="fragment"><div class="line"><span class="keywordtype">int</span> r = toolbox::utils::random&lt;int&gt;();</div>
+<div class="line"><span class="keywordtype">float</span> f = toolbox::utils::random&lt;float&gt;();</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a8ed08affa07b3822791362de8ba2c47d" name="a8ed08affa07b3822791362de8ba2c47d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed08affa07b3822791362de8ba2c47d">&#9670;&#160;</a></span>random() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::utils::random </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>通用随机数生成函数/General random number generator </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>类型/Type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>下界/Lower bound </td></tr>
+    <tr><td class="paramname">b</td><td>上界/Upper bound </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T 随机数/Random value <div class="fragment"><div class="line"><span class="keyword">auto</span> r = toolbox::utils::random&lt;int&gt;(1, 10);</div>
+<div class="line"><span class="keyword">auto</span> f = toolbox::utils::random&lt;float&gt;(0.0f, 1.0f);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a9b2dac75b55638fac7dd7cc828857be1" name="a9b2dac75b55638fac7dd7cc828857be1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b2dac75b55638fac7dd7cc828857be1">&#9670;&#160;</a></span>reset_timer()</h2>
 
@@ -1565,6 +2022,164 @@ template&lt;typename T &gt; </div>
 <div class="line"><a class="code hl_function" href="namespacetoolbox_1_1utils.html#a9b2dac75b55638fac7dd7cc828857be1">reset_timer</a>(&amp;timers, 0);</div>
 <div class="ttc" id="anamespacetoolbox_1_1utils_html_a9b2dac75b55638fac7dd7cc828857be1"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#a9b2dac75b55638fac7dd7cc828857be1">toolbox::utils::reset_timer</a></div><div class="ttdeci">auto reset_timer(simple_timer_interface_t **timer_interface, int id) -&gt; bool</div><div class="ttdoc">Reset a specific timer.</div><div class="ttdef"><b>Definition</b> timer.hpp:368</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="abdfdc999b60d97c4879c46890ca00b20" name="abdfdc999b60d97c4879c46890ca00b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdfdc999b60d97c4879c46890ca00b20">&#9670;&#160;</a></span>sample() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; T &gt; toolbox::utils::sample </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>population</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>从vector中随机采样k个元素/Randomly sample k elements from vector </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>元素类型/Element type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">population</td><td>输入vector/Input vector </td></tr>
+    <tr><td class="paramname">k</td><td>采样数量/Number of samples </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;T&gt; 采样结果/Sampled vector <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {1,2,3,4,5};</div>
+<div class="line"><span class="keyword">auto</span> s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#abdfdc999b60d97c4879c46890ca00b20">toolbox::utils::sample</a>(v, 2);</div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_abdfdc999b60d97c4879c46890ca00b20"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#abdfdc999b60d97c4879c46890ca00b20">toolbox::utils::sample</a></div><div class="ttdeci">std::vector&lt; T &gt; sample(const std::vector&lt; T &gt; &amp;population, size_t k)</div><div class="ttdoc">从vector中随机采样k个元素/Randomly sample k elements from vector</div><div class="ttdef"><b>Definition</b> random.hpp:471</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a831254840e19a1b06ce2623674a5e64e" name="a831254840e19a1b06ce2623674a5e64e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a831254840e19a1b06ce2623674a5e64e">&#9670;&#160;</a></span>sample() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer toolbox::utils::sample </td>
+          <td>(</td>
+          <td class="paramtype">const TContainer &amp;&#160;</td>
+          <td class="paramname"><em>container</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>通用容器的随机采样n个元素/Randomly sample n elements from general container </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>输入容器/Input container </td></tr>
+    <tr><td class="paramname">n</td><td>采样数量/Number of samples </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TContainer 采样结果/Sampled container <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {1,2,3,4,5};</div>
+<div class="line"><span class="keyword">auto</span> s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#abdfdc999b60d97c4879c46890ca00b20">toolbox::utils::sample</a>(v, 3);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="acac23178051a20908e9abea2410f50c1" name="acac23178051a20908e9abea2410f50c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac23178051a20908e9abea2410f50c1">&#9670;&#160;</a></span>shuffle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::shuffle </td>
+          <td>(</td>
+          <td class="paramtype">TContainer &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>随机打乱容器/Shuffle the container randomly </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td>输入容器/Input container <div class="fragment"><div class="line">std::vector&lt;int&gt; v = {1,2,3};</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1utils.html#acac23178051a20908e9abea2410f50c1">toolbox::utils::shuffle</a>(v);</div>
+<div class="ttc" id="anamespacetoolbox_1_1utils_html_acac23178051a20908e9abea2410f50c1"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#acac23178051a20908e9abea2410f50c1">toolbox::utils::shuffle</a></div><div class="ttdeci">void shuffle(TContainer &amp;container)</div><div class="ttdoc">随机打乱容器/Shuffle the container randomly</div><div class="ttdef"><b>Definition</b> random.hpp:542</div></div>
+</div><!-- fragment --> </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9a3f35e20084e76ec978b7e4382f32da" name="a9a3f35e20084e76ec978b7e4382f32da"></a>
@@ -1703,6 +2318,61 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::string 字符串/String <div class="fragment"><div class="line">std::string s = <a class="code hl_function" href="namespacetoolbox_1_1utils.html#aec943113bda69af48d647bf0723e7649">to_string_value</a>(123); <span class="comment">// &quot;123&quot;</span></div>
 <div class="ttc" id="anamespacetoolbox_1_1utils_html_aec943113bda69af48d647bf0723e7649"><div class="ttname"><a href="namespacetoolbox_1_1utils.html#aec943113bda69af48d647bf0723e7649">toolbox::utils::to_string_value</a></div><div class="ttdeci">auto to_string_value(const T &amp;value) -&gt; std::string</div><div class="ttdoc">获取字符串表示形式的通用函数/Generic function to get string representation</div><div class="ttdef"><b>Definition</b> print.hpp:285</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a9fbaeda726b1d19e13b58ac742a54cf7" name="a9fbaeda726b1d19e13b58ac742a54cf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fbaeda726b1d19e13b58ac742a54cf7">&#9670;&#160;</a></span>uniform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::utils::uniform </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in [a, b] </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>浮点类型/Floating point type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>下界/Lower bound </td></tr>
+    <tr><td class="paramname">b</td><td>上界/Upper bound </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>T 随机浮点数/Random float <div class="fragment"><div class="line"><span class="keywordtype">double</span> f = toolbox::utils::uniform&lt;double&gt;(0.0, 10.0);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

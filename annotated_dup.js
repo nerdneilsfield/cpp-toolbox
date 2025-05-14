@@ -121,6 +121,7 @@ var annotated_dup =
         [ "ParameterError", "classtoolbox_1_1utils_1_1_parameter_error.html", "classtoolbox_1_1utils_1_1_parameter_error" ],
         [ "print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", "structtoolbox_1_1utils_1_1print__style__t" ],
         [ "queue_printer_t", "classtoolbox_1_1utils_1_1queue__printer__t.html", "classtoolbox_1_1utils_1_1queue__printer__t" ],
+        [ "random_t", "classtoolbox_1_1utils_1_1random__t.html", "classtoolbox_1_1utils_1_1random__t" ],
         [ "set_printer_t", "classtoolbox_1_1utils_1_1set__printer__t.html", "classtoolbox_1_1utils_1_1set__printer__t" ],
         [ "simple_timer_array_t", "classtoolbox_1_1utils_1_1simple__timer__array__t.html", "classtoolbox_1_1utils_1_1simple__timer__array__t" ],
         [ "simple_timer_interface_t", "classtoolbox_1_1utils_1_1simple__timer__interface__t.html", "classtoolbox_1_1utils_1_1simple__timer__interface__t" ],

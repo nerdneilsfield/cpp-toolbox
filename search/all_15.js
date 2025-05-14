@@ -1,7 +1,7 @@
 var searchData=
 [
   ['left_5fpad_0',['left_pad',['../namespacetoolbox_1_1container_1_1string.html#a048891f47e89fbd9e898ad8fb1f196c7',1,'toolbox::container::string']]],
-  ['level_1',['level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#a8f822fcbcee8aadd60583d97d2aa45b8',1,'toolbox::logger::thread_logger_t::level() -&gt; Level'],['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t::Level']]],
+  ['level_1',['level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t::Level'],['../classtoolbox_1_1logger_1_1thread__logger__t.html#a8f822fcbcee8aadd60583d97d2aa45b8',1,'toolbox::logger::thread_logger_t::level() -&gt; Level']]],
   ['level_5fstr_2',['level_str',['../classtoolbox_1_1logger_1_1thread__logger__t.html#a767cfaa33472f68fd9536dfc210aec6b',1,'toolbox::logger::thread_logger_t']]],
   ['levenshtein_5fdistance_3',['levenshtein_distance',['../namespacetoolbox_1_1container_1_1string.html#adf00945757752e93f4592917811033c5',1,'toolbox::container::string']]],
   ['license_4',['License',['../index.html#autotoc_md15',1,'']]],

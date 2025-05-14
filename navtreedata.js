@@ -92,7 +92,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", "namespacemembers_dup" ],
-        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Functions", "namespacemembers_func.html", "namespacemembers_func" ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
@@ -130,11 +130,11 @@ var NAVTREEINDEX =
 "_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html",
 "classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a32bd8a1db2275458673903bdb84cb277",
 "classtoolbox_1_1utils_1_1map__printer__t.html",
-"file_8hpp.html#a18c5527a6ca0799d2bf7141f88fdf8ce",
-"md__c_o_d_e___o_f___c_o_n_d_u_c_t.html",
-"namespacetoolbox_1_1functional.html#aecc9e3b337e5a7e2d3d9eaac80939002",
-"structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a79c13186c583c6358ea8b5a39a7cd020",
-"structtoolbox_1_1types_1_1point__t.html#ae688a2e416a93fb2e9c5bd51b21ec37e"
+"dir_456e3efa1700f2e372aa6b9f2b6f70ca.html",
+"macro_8hpp.html#a07b73c50ffd2db423e667d4d9320f9a5",
+"namespacetoolbox_1_1file.html#ac6e643e4658fd230eced397b5b6adeb0",
+"string_8hpp.html#a0b7d1d7d53c01978d757929bb13b204f",
+"structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html#a29ded401c2f780514d71d457039ce0fa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

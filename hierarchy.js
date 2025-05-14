@@ -107,6 +107,7 @@ var hierarchy =
     [ "toolbox::types::point_t< T >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::base::PoolDeleter< T >", "classtoolbox_1_1base_1_1_pool_deleter.html", null ],
     [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", null ],
+    [ "toolbox::utils::random_t", "classtoolbox_1_1utils_1_1random__t.html", null ],
     [ "toolbox::traits::remove_all_qualifiers< T >", "structtoolbox_1_1traits_1_1remove__all__qualifiers.html", null ],
     [ "toolbox::traits::remove_reference< T >", "structtoolbox_1_1traits_1_1remove__reference.html", null ],
     [ "std::runtime_error", null, [
