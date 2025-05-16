@@ -26,5 +26,6 @@ var searchData=
   ['is_5fprintable_23',['is_printable',['../structtoolbox_1_1traits_1_1is__printable.html',1,'toolbox::traits']]],
   ['is_5freference_24',['is_reference',['../structtoolbox_1_1traits_1_1is__reference.html',1,'toolbox::traits']]],
   ['is_5fstack_5fallocated_25',['is_stack_allocated',['../structtoolbox_1_1traits_1_1is__stack__allocated.html',1,'toolbox::traits']]],
-  ['is_5fvolatile_26',['is_volatile',['../structtoolbox_1_1traits_1_1is__volatile.html',1,'toolbox::traits']]]
+  ['is_5fvolatile_26',['is_volatile',['../structtoolbox_1_1traits_1_1is__volatile.html',1,'toolbox::traits']]],
+  ['iterator_27',['iterator',['../classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html',1,'toolbox::io::dataloader_t']]]
 ];

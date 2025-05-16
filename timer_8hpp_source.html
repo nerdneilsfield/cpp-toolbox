@@ -328,8 +328,8 @@ $(document).ready(function(){initNavTree('timer_8hpp_source.html',''); initResiz
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1utils.html#aabc758146e0a0ede00b635fec794f38c">  260</a></span>inline auto create_timer(<a class="code hl_class" href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html">simple_timer_interface_t</a>** timer_interface, <span class="keywordtype">int</span> size)</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    -&gt; <span class="keywordtype">bool</span></div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>{</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  *timer_interface = <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html">simple_timer_interface_t</a>*<span class="keyword">&gt;</span>(</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keyword">new</span> <a class="code hl_class" href="classtoolbox_1_1utils_1_1simple__timer__array__t.html">simple_timer_array_t</a>(size));</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  *timer_interface =</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keyword">static_cast&lt;</span><a class="code hl_class" href="classtoolbox_1_1utils_1_1simple__timer__interface__t.html">simple_timer_interface_t</a>*<span class="keyword">&gt;</span>(<span class="keyword">new</span> <a class="code hl_class" href="classtoolbox_1_1utils_1_1simple__timer__array__t.html">simple_timer_array_t</a>(size));</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <span class="keywordflow">return</span> (*timer_interface != <span class="keyword">nullptr</span>) ? true : <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
 </div>

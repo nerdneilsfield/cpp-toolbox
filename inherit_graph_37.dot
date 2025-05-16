@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::detail\l::storage_traits\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1detail_1_1storage__traits.html",tooltip="类型存储特征/Storage traits for types"];
+  Node0 [id="Node000000",label="toolbox::logger::has\l_ostream_method\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1logger_1_1has__ostream__method.html",tooltip="检查类型是否具有ostream方法的类型特征 / Type trait to check if a type has an ostream method"];
 }

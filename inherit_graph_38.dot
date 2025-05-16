@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::enum\l_wrapper\< EnumType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1traits_1_1enum__wrapper.html",tooltip="类型安全的枚举包装器/Type-safe enum wrapper"];
+  Node0 [id="Node000000",label="toolbox::logger::has\l_stream_operator\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1logger_1_1has__stream__operator.html",tooltip="检查类型是否具有流插入运算符(<<)的类型特征 / Type trait to check if a type has stream insertion operator (<<)"];
 }

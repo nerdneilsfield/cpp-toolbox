@@ -46,6 +46,7 @@ var hierarchy =
     [ "toolbox::utils::container_printer_t< std::vector< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
       [ "toolbox::utils::vector_printer_t< T >", "classtoolbox_1_1utils_1_1vector__printer__t.html", null ]
     ] ],
+    [ "toolbox::io::dataloader_t< DatasetT, SamplerT >", "classtoolbox_1_1io_1_1dataloader__t.html", null ],
     [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
     [ "toolbox::io::dataset_t< kitti_pcd_dataset_t, std::unique_ptr< toolbox::types::point_cloud_t< float > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
       [ "toolbox::io::kitti_pcd_dataset_t", "classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html", null ]
@@ -94,6 +95,7 @@ var hierarchy =
     [ "toolbox::traits::is_reference< T >", "structtoolbox_1_1traits_1_1is__reference.html", null ],
     [ "toolbox::traits::is_stack_allocated< T >", "structtoolbox_1_1traits_1_1is__stack__allocated.html", null ],
     [ "toolbox::traits::is_volatile< T >", "structtoolbox_1_1traits_1_1is__volatile.html", null ],
+    [ "toolbox::io::dataloader_t< DatasetT, SamplerT >::iterator", "classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html", null ],
     [ "toolbox::container::lock_free_queue_t< T >", "classtoolbox_1_1container_1_1lock__free__queue__t.html", null ],
     [ "toolbox::functional::MemoizedFunction< R(Args...)>", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html", null ],
     [ "toolbox::functional::detail_impl::MemoizeHelperState< R, Args >", "structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html", null ],
@@ -125,6 +127,9 @@ var hierarchy =
         [ "toolbox::utils::UsageError", "classtoolbox_1_1utils_1_1_usage_error.html", null ]
       ] ]
     ] ],
+    [ "toolbox::io::sampler_t< PolicyT >", "classtoolbox_1_1io_1_1sampler__t.html", null ],
+    [ "toolbox::io::sequential_policy_t", "structtoolbox_1_1io_1_1sequential__policy__t.html", null ],
+    [ "toolbox::io::shuffle_policy_t", "classtoolbox_1_1io_1_1shuffle__policy__t.html", null ],
     [ "toolbox::utils::simple_timer_interface_t", "classtoolbox_1_1utils_1_1simple__timer__interface__t.html", [
       [ "toolbox::utils::simple_timer_array_t", "classtoolbox_1_1utils_1_1simple__timer__array__t.html", null ]
     ] ],

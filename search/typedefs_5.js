@@ -1,4 +1,8 @@
 var searchData=
 [
-  ['keytype_0',['keytype',['../structtoolbox_1_1functional_1_1detail_1_1_memoize_state.html#ad6ad3485a98e162c328816616145caa5',1,'toolbox::functional::detail::MemoizeState::KeyType'],['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#ad462de8b02cd8c504cf4ed92fecf8bae',1,'toolbox::functional::detail_impl::MemoizeHelperState::KeyType'],['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a93a053ab87b4e47889c39a8fa943d211',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;::State::KeyType']]]
+  ['i16_0',['i16',['../types_8hpp.html#a977685259fe8059c48e92450967d46a8',1,'types.hpp']]],
+  ['i32_1',['i32',['../types_8hpp.html#aec41e5f8e4b7aef2540e84268692fa84',1,'types.hpp']]],
+  ['i64_2',['i64',['../types_8hpp.html#a86025ec3a0bc201ca893caac2cb2acbd',1,'types.hpp']]],
+  ['i8_3',['i8',['../types_8hpp.html#a196513547113c3f96a078ee3e658a6ef',1,'types.hpp']]],
+  ['index_5ftype_4',['index_type',['../classtoolbox_1_1io_1_1dataloader__t.html#a3c5c6c3757cfe4dcab39a3cdcc532562',1,'toolbox::io::dataloader_t::index_type'],['../classtoolbox_1_1io_1_1sampler__t.html#aecd9c59701212f43af15cc89ddf92b86',1,'toolbox::io::sampler_t::index_type']]]
 ];

@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::io::dataset\l_t\< kitti_pcd_pair_t,\l std::pair\< std::unique\l_ptr\< toolbox::types::point\l_cloud_t\< float \> \>, std::unique\l_ptr\< toolbox::types::point_cloud\l_t\< float \> \> \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1dataset__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge34_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::io::kitti\l_pcd_pair_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1kitti__pcd__pair__t.html",tooltip="KITTI点云对数据集类/KITTI point cloud pair dataset class."];
+  Node0 [id="Node000000",label="toolbox::io::dataset\l_t\< Derived, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1dataset__t.html",tooltip="数据集基类/Abstract base class for datasets"];
 }
