@@ -260,8 +260,8 @@ private:
 inline auto create_timer(simple_timer_interface_t** timer_interface, int size)
     -> bool
 {
-  *timer_interface = reinterpret_cast<simple_timer_interface_t*>(
-      new simple_timer_array_t(size));
+  *timer_interface =
+      static_cast<simple_timer_interface_t*>(new simple_timer_array_t(size));
   return (*timer_interface != nullptr) ? true : false;
 }
 

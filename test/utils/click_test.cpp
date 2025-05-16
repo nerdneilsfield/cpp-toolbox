@@ -661,9 +661,87 @@ TEST_CASE("Click Library Custom Parser Tests", "[click][parser]")
   }
 }
 
-// TODO: Add tests for:
-// - Short option bundling (-abc)
-// - Short option with attached value (-ovalue)
-// - Custom parsers
-// - More complex subcommand nesting
-// - Interaction between arguments and -- separator
+TEST_CASE("Click Library Short Option Parsing", "[click][short]")
+{
+  SECTION("Short option with attached value")
+  {
+    CommandLineApp app("short_app", "");
+    auto& out_opt = app.add_option<std::string>("output", "o", "Output file");
+
+    std::vector<std::string> args = {"-oresult.txt"};
+    REQUIRE(app.parse_and_execute(args) == 0);
+    REQUIRE(out_opt.is_set());
+    REQUIRE(out_opt.get() == "result.txt");
+  }
+
+  SECTION("Bundled short flags produce error")
+  {
+    CommandLineApp app("bundle_app", "");
+    app.add_flag("alpha", "a", "");
+    app.add_flag("beta", "b", "");
+    app.add_flag("gamma", "c", "");
+
+    std::vector<std::string> args = {"-abc"};
+    REQUIRE(app.parse_and_execute(args) == 1);
+  }
+}
+
+TEST_CASE("Click Library Nested Subcommands", "[click][subcommand][nested]")
+{
+  int main_called = 0;
+  int a_called = 0;
+  int b_called = 0;
+  int c_called = 0;
+
+  CommandLineApp app("main", "");
+  app.set_callback(
+      [&]()
+      {
+        main_called++;
+        return 0;
+      });
+
+  auto& a = app.add_command("a", "level1");
+  auto& a_opt = a.add_option<int>("num", "n", "", true);
+  a.set_callback(
+      [&]()
+      {
+        REQUIRE(a_opt.is_set());
+        a_called++;
+        return 0;
+      });
+
+  auto& b = a.add_command("b", "level2");
+  auto& b_flag = b.add_flag("flag", "f", "");
+  b.set_callback(
+      [&]()
+      {
+        REQUIRE(b_flag.is_set());
+        b_called++;
+        return 0;
+      });
+
+  auto& c = b.add_command("c", "level3");
+  auto& c_opt = c.add_option<std::string>("name", "o", "");
+  c.set_callback(
+      [&]()
+      {
+        REQUIRE(c_opt.is_set());
+        c_called++;
+        return 0;
+      });
+
+  std::vector<std::string> args = {
+      "a", "-n", "5", "b", "-f", "c", "-o", "file"};
+  REQUIRE(app.parse_and_execute(args) == 0);
+  REQUIRE(main_called == 0);
+  REQUIRE(a_called == 0);
+  REQUIRE(b_called == 0);
+  REQUIRE(c_called == 1);
+  REQUIRE(a_opt.is_set());
+  REQUIRE(a_opt.get() == 5);
+  REQUIRE(b_flag.is_set());
+  REQUIRE(b_flag.get() == true);
+  REQUIRE(c_opt.is_set());
+  REQUIRE(c_opt.get() == "file");
+}
