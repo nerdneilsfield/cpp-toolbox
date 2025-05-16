@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::io::formats\l::pcd_format_t::pcd_header\l_t::field_info_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html",tooltip="包含偏移量的字段详细信息结构体。/Helper struct for field details including offset."];
+  Node0 [id="Node000000",label="toolbox::io::dataset\l_t\< Derived, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1dataset__t.html",tooltip="数据集基类/Abstract base class for datasets"];
 }

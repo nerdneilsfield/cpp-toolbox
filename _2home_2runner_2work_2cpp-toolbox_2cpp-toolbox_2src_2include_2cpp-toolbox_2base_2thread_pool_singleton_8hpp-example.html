@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a>;</div>
 <div class="line">}, std::vector&lt;int&gt;{1,2,3,4,5});</div>
 <div class="line"><span class="keywordtype">int</span> result3 = future3.get(); <span class="comment">// result3 = 15</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:260</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:288</div></div>
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;atomic&gt;</span>  <span class="comment">// 用于原子布尔标志/For atomic boolean flag</span></div>
@@ -283,10 +283,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">  <span class="keyword">auto</span> submit(F&amp;&amp; f, Args&amp;&amp;... args)</div>
 <div class="line">      -&gt; std::future&lt;<span class="keyword">typename</span> std::invoke_result_t&lt;F, Args...&gt;&gt;;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">size_t</span> get_thread_count()<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword">  </span>{</div>
-<div class="line">    <span class="keywordflow">return</span> workers_.size();</div>
-<div class="line">  }</div>
+<div class="line">  <span class="keywordtype">size_t</span> get_thread_count()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> workers_.size(); }</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  thread_pool_singleton_t();</div>
@@ -342,10 +339,10 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"> </div>
 <div class="line">}  <span class="comment">// namespace toolbox::base</span></div>
 <div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html_a82c2e1d372a903ddb13ec40aec526c1b"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html#a82c2e1d372a903ddb13ec40aec526c1b">toolbox::base::object_pool_t::operator=</a></div><div class="ttdeci">object_pool_t &amp; operator=(const object_pool_t &amp;)=delete</div></div>
-<div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__singleton__t_html_a933be4bf4a42667aed7679ec5cd0d8d5"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a933be4bf4a42667aed7679ec5cd0d8d5">toolbox::base::thread_pool_singleton_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool_singleton.hpp:164</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__singleton__t_html_a933be4bf4a42667aed7679ec5cd0d8d5"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a933be4bf4a42667aed7679ec5cd0d8d5">toolbox::base::thread_pool_singleton_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool_singleton.hpp:161</div></div>
 <div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a></div><div class="ttdoc">高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue</div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:57</div></div>
 <div class="ttc" id="aconcurrent__queue_8hpp_html"><div class="ttname"><a href="concurrent__queue_8hpp.html">concurrent_queue.hpp</a></div></div>
-<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1354</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1base_html"><div class="ttname"><a href="namespacetoolbox_1_1base.html">toolbox::base</a></div><div class="ttdoc">提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.</div></div>
 <div class="ttc" id="athread__logger_8hpp_html"><div class="ttname"><a href="thread__logger_8hpp.html">thread_logger.hpp</a></div></div>

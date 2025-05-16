@@ -332,8 +332,8 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_aac8a891f00498ff98550a300d99f3fa1a551b723eafd6a31d444fcb2f5920fbd3"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a551b723eafd6a31d444fcb2f5920fbd3">toolbox::logger::thread_logger_t::Level::INFO</a></div><div class="ttdeci">@ INFO</div><div class="ttdoc">一般操作消息 / General operational messages</div></div>
 <div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_aac8a891f00498ff98550a300d99f3fa1adc30ec20708ef7b0f641ef78b7880a15"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1adc30ec20708ef7b0f641ef78b7880a15">toolbox::logger::thread_logger_t::Level::DEBUG</a></div><div class="ttdeci">@ DEBUG</div></div>
 <div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_acc6c92f4fe66ee6d17852eb6b6f393bb"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a></div><div class="ttdeci">static auto instance() -&gt; thread_logger_t &amp;</div><div class="ttdoc">获取日志记录器的单例实例 / Get the singleton instance of the logger</div></div>
-<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1352</div></div>
-<div class="ttc" id="agroup___logging_macros_html_ga2eff2cba0a7856857be1df094bebf834"><div class="ttname"><a href="group___logging_macros.html#ga2eff2cba0a7856857be1df094bebf834">LOG_DEBUG_F</a></div><div class="ttdeci">#define LOG_DEBUG_F</div><div class="ttdoc">DEBUG级别格式化日志的宏 / Macro for DEBUG level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1344</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1330</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga2eff2cba0a7856857be1df094bebf834"><div class="ttname"><a href="group___logging_macros.html#ga2eff2cba0a7856857be1df094bebf834">LOG_DEBUG_F</a></div><div class="ttdeci">#define LOG_DEBUG_F</div><div class="ttdoc">DEBUG级别格式化日志的宏 / Macro for DEBUG level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1322</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="aac8a891f00498ff98550a300d99f3fa1" name="aac8a891f00498ff98550a300d99f3fa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac8a891f00498ff98550a300d99f3fa1">&#9670;&#160;</a></span>Level</h2>
@@ -404,7 +404,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a>(<span class="stringliteral">&quot;系统因严重错误关闭: {}&quot;</span>, error);</div>
 <div class="line"><span class="comment">// 输出: 系统因严重错误关闭: 内存耗尽 / Output: System shutdown due to</span></div>
 <div class="line">critical error: Out of memory</div>
-<div class="ttc" id="agroup___logging_macros_html_gaaa6f7679d883afb22171314099518ee1"><div class="ttname"><a href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a></div><div class="ttdeci">#define LOG_CRITICAL_F</div><div class="ttdoc">CRITICAL级别格式化日志的宏 / Macro for CRITICAL level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1348</div></div>
+<div class="ttc" id="agroup___logging_macros_html_gaaa6f7679d883afb22171314099518ee1"><div class="ttname"><a href="group___logging_macros.html#gaaa6f7679d883afb22171314099518ee1">LOG_CRITICAL_F</a></div><div class="ttdeci">#define LOG_CRITICAL_F</div><div class="ttdoc">CRITICAL级别格式化日志的宏 / Macro for CRITICAL level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1326</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -440,7 +440,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="line"><span class="comment">// 记录资源耗尽 / Log resource exhaustion</span></div>
 <div class="line"><a class="code hl_define" href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a> &lt;&lt; <span class="stringliteral">&quot;内存耗尽: 已用&quot;</span> &lt;&lt; used_mem &lt;&lt; <span class="stringliteral">&quot;MB, 总计&quot;</span> &lt;&lt; total_mem</div>
 <div class="line">&lt;&lt; <span class="stringliteral">&quot;MB&quot;</span>;</div>
-<div class="ttc" id="agroup___logging_macros_html_ga00b710fb8e78bfaa73323b9deb1c43cc"><div class="ttname"><a href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a></div><div class="ttdeci">#define LOG_CRITICAL_S</div><div class="ttdoc">CRITICAL级别流式日志的宏 / Macro for CRITICAL level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1355</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga00b710fb8e78bfaa73323b9deb1c43cc"><div class="ttname"><a href="group___logging_macros.html#ga00b710fb8e78bfaa73323b9deb1c43cc">LOG_CRITICAL_S</a></div><div class="ttdeci">#define LOG_CRITICAL_S</div><div class="ttdoc">CRITICAL级别流式日志的宏 / Macro for CRITICAL level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1333</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -457,8 +457,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::debug_f </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a> </td>
         </tr>
       </table>
   </td>
@@ -503,7 +502,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <dl class="section return"><dt>Returns</dt><dd>配置为DEBUG级别的thread_stream_logger_t实例 / A <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html" title="用于格式化输出的线程安全流式日志记录器类 / Thread-safe stream logger class for formatted output">thread_stream_logger_t</a> instance configured for DEBUG level</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;正在处理 &quot;</span> &lt;&lt; items.size() &lt;&lt; <span class="stringliteral">&quot; 个项目&quot;</span>;</div>
 <div class="line"><span class="comment">// 输出: 正在处理 5 个项目 / Output: Processing 5 items</span></div>
-<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1351</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1329</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -520,8 +519,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::error_f </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a> </td>
         </tr>
       </table>
   </td>
@@ -536,7 +534,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a>(<span class="stringliteral">&quot;请求处理失败: {}&quot;</span>, error_message);</div>
 <div class="line"><span class="comment">// 输出: 请求处理失败: 连接超时 / Output: Failed to process request:</span></div>
 <div class="line">Connection timeout</div>
-<div class="ttc" id="agroup___logging_macros_html_ga4e4e99c3796c36ea1d541844fb955cd8"><div class="ttname"><a href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a></div><div class="ttdeci">#define LOG_ERROR_F</div><div class="ttdoc">ERROR级别格式化日志的宏 / Macro for ERROR level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1347</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga4e4e99c3796c36ea1d541844fb955cd8"><div class="ttname"><a href="group___logging_macros.html#ga4e4e99c3796c36ea1d541844fb955cd8">LOG_ERROR_F</a></div><div class="ttdeci">#define LOG_ERROR_F</div><div class="ttdoc">ERROR级别格式化日志的宏 / Macro for ERROR level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1325</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -572,7 +570,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="line"><span class="comment">// 记录数据库错误 / Log database error</span></div>
 <div class="line"><a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;数据库查询失败: &quot;</span> &lt;&lt; sql &lt;&lt; <span class="stringliteral">&quot;, 错误信息: &quot;</span> &lt;&lt;</div>
 <div class="line">db.lastError();</div>
-<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1354</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -589,8 +587,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::info_f </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a> </td>
         </tr>
       </table>
   </td>
@@ -605,7 +602,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a>(<span class="stringliteral">&quot;应用程序启动成功,版本: {}&quot;</span>, version);</div>
 <div class="line"><span class="comment">// 输出: 应用程序启动成功,版本: 1.0.0 / Output: Application started</span></div>
 <div class="line">successfully, version: 1.0.0</div>
-<div class="ttc" id="agroup___logging_macros_html_ga0d7123d7bfdf773f24ed68b102c7f7c7"><div class="ttname"><a href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a></div><div class="ttdeci">#define LOG_INFO_F</div><div class="ttdoc">INFO级别格式化日志的宏 / Macro for INFO level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1345</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga0d7123d7bfdf773f24ed68b102c7f7c7"><div class="ttname"><a href="group___logging_macros.html#ga0d7123d7bfdf773f24ed68b102c7f7c7">LOG_INFO_F</a></div><div class="ttdeci">#define LOG_INFO_F</div><div class="ttdoc">INFO级别格式化日志的宏 / Macro for INFO level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1323</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -683,8 +680,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::level </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1">Level</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1">Level</a> </td>
         </tr>
       </table>
   </td>
@@ -715,8 +711,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::level_str </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; std::string
-  </td>
+          <td> -&gt; std::string </td>
         </tr>
       </table>
   </td>
@@ -746,8 +741,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td>(</td>
           <td class="paramtype"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1">Level</a>&#160;</td>
           <td class="paramname"><em>level</em></td><td>)</td>
-          <td> -&gt; void
-  </td>
+          <td> -&gt; void </td>
         </tr>
       </table>
   </td>
@@ -819,8 +813,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::trace_f </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a> </td>
         </tr>
       </table>
   </td>
@@ -834,7 +827,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <dl class="section return"><dt>Returns</dt><dd>配置为TRACE级别的thread_format_logger_t实例 / A <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html" title="基于格式的日志记录器,用于printf风格的消息格式化 / Format-based logger for printf-style message formatting">thread_format_logger_t</a> instance configured for TRACE level</dd></dl>
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a>(<span class="stringliteral">&quot;正在处理项目 {}&quot;</span>, item_id);</div>
 <div class="line"><span class="comment">// 输出: 正在处理项目 123 / Output: Processing item 123</span></div>
-<div class="ttc" id="agroup___logging_macros_html_ga9909fc8f33cb3e2c2d88d50e3088a0c2"><div class="ttname"><a href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a></div><div class="ttdeci">#define LOG_TRACE_F</div><div class="ttdoc">TRACE级别格式化日志的宏 / Macro for TRACE level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1343</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga9909fc8f33cb3e2c2d88d50e3088a0c2"><div class="ttname"><a href="group___logging_macros.html#ga9909fc8f33cb3e2c2d88d50e3088a0c2">LOG_TRACE_F</a></div><div class="ttdeci">#define LOG_TRACE_F</div><div class="ttdoc">TRACE级别格式化日志的宏 / Macro for TRACE level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1321</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -867,7 +860,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a> &lt;&lt; <span class="stringliteral">&quot;进入函数 &quot;</span> &lt;&lt; __func__ &lt;&lt; <span class="stringliteral">&quot; 参数: &quot;</span> &lt;&lt; param;</div>
 <div class="line"><span class="comment">// 输出: 进入函数 process_data 参数: 42 / Output: Entering function</span></div>
 <div class="line">process_data param: 42</div>
-<div class="ttc" id="agroup___logging_macros_html_ga583ca116ff9e9817f4fde393c79d1b6a"><div class="ttname"><a href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a></div><div class="ttdeci">#define LOG_TRACE_S</div><div class="ttdoc">TRACE级别流式日志的宏 / Macro for TRACE level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1350</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga583ca116ff9e9817f4fde393c79d1b6a"><div class="ttname"><a href="group___logging_macros.html#ga583ca116ff9e9817f4fde393c79d1b6a">LOG_TRACE_S</a></div><div class="ttdeci">#define LOG_TRACE_S</div><div class="ttdoc">TRACE级别流式日志的宏 / Macro for TRACE level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1328</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -884,8 +877,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
           <td class="memname">auto toolbox::logger::thread_logger_t::warn_f </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a>
-  </td>
+          <td> -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html">thread_format_logger_t</a> </td>
         </tr>
       </table>
   </td>
@@ -900,7 +892,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a>(<span class="stringliteral">&quot;磁盘空间不足: 剩余{}MB&quot;</span>, free_space);</div>
 <div class="line"><span class="comment">// 输出: 磁盘空间不足: 剩余100MB / Output: Disk space is low: 100MB</span></div>
 <div class="line">remaining</div>
-<div class="ttc" id="agroup___logging_macros_html_ga7ce06e64838465cc3c438e9d99f201b0"><div class="ttname"><a href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a></div><div class="ttdeci">#define LOG_WARN_F</div><div class="ttdoc">WARN级别格式化日志的宏 / Macro for WARN level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1346</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga7ce06e64838465cc3c438e9d99f201b0"><div class="ttname"><a href="group___logging_macros.html#ga7ce06e64838465cc3c438e9d99f201b0">LOG_WARN_F</a></div><div class="ttdeci">#define LOG_WARN_F</div><div class="ttdoc">WARN级别格式化日志的宏 / Macro for WARN level format logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1324</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -933,7 +925,7 @@ CRITICAL)。它通过其嵌套类thread_stream_logger_t和thread_format_logger_t
 <div class="fragment"><div class="line"><a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;意外的值: &quot;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot; (预期: &quot;</span> &lt;&lt; expected &lt;&lt; <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line"><span class="comment">// 输出: 意外的值: 404 (预期: 200) / Output: Unexpected value: 404</span></div>
 <div class="line">(expected: 200)</div>
-<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1353</div></div>
+<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1331</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

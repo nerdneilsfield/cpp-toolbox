@@ -4,8 +4,8 @@ var hierarchy =
       [ "toolbox::types::point_cloud_t< T >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", [
-      [ "toolbox::io::formats::kitti_format_t", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t.html", null ],
-      [ "toolbox::io::formats::pcd_format_t", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html", null ]
+      [ "toolbox::io::kitti_format_t", "classtoolbox_1_1io_1_1kitti__format__t.html", null ],
+      [ "toolbox::io::pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", null ]
     ] ],
     [ "std::bool_constant", null, [
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
@@ -46,6 +46,13 @@ var hierarchy =
     [ "toolbox::utils::container_printer_t< std::vector< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
       [ "toolbox::utils::vector_printer_t< T >", "classtoolbox_1_1utils_1_1vector__printer__t.html", null ]
     ] ],
+    [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
+    [ "toolbox::io::dataset_t< kitti_pcd_dataset_t, std::unique_ptr< toolbox::types::point_cloud_t< float > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
+      [ "toolbox::io::kitti_pcd_dataset_t", "classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html", null ]
+    ] ],
+    [ "toolbox::io::dataset_t< kitti_pcd_pair_t, std::pair< std::unique_ptr< toolbox::types::point_cloud_t< float > >, std::unique_ptr< toolbox::types::point_cloud_t< float > > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
+      [ "toolbox::io::kitti_pcd_pair_t", "classtoolbox_1_1io_1_1kitti__pcd__pair__t.html", null ]
+    ] ],
     [ "toolbox::traits::enum_wrapper< EnumType >", "classtoolbox_1_1traits_1_1enum__wrapper.html", null ],
     [ "exported_class", "classexported__class.html", null ],
     [ "std::false_type", null, [
@@ -62,7 +69,7 @@ var hierarchy =
       [ "toolbox::utils::detail::has_istream_operator< T, typename >", "structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html", null ],
       [ "toolbox::utils::detail::is_optional< T >", "structtoolbox_1_1utils_1_1detail_1_1is__optional.html", null ]
     ] ],
-    [ "toolbox::io::formats::pcd_format_t::pcd_header_t::field_info_t", "structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html", null ],
+    [ "toolbox::io::pcd_format_t::pcd_header_t::field_info_t", "structtoolbox_1_1io_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html", null ],
     [ "toolbox::traits::function_traits< T >", "structtoolbox_1_1traits_1_1function__traits.html", null ],
     [ "toolbox::traits::function_traits< R(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html", [
       [ "toolbox::traits::function_traits< R(C::*)(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html", null ]

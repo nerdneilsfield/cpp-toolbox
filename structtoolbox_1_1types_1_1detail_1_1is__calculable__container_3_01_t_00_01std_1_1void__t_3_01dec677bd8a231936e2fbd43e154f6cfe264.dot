@@ -7,5 +7,5 @@ digraph "toolbox::types::detail::is_calculable_container&lt; T, std::void_t&lt; 
   rankdir="LR";
   Node1 [id="Node000001",label="toolbox::types::detail\l::is_calculable_container\l\< T, std::void_t\< decltype\l(std::begin(std::declval\< const\l T & \>())), decltype(std::end\l(std::declval\< const T & \>())),\l typename T::value_type \> \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="辅助类型特征的特化版本,用于检查容器类型 / Specialization of helper type trait for container types"];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="std::bool_constant\l\< !std::is_same_v\< std\l::decay_t\< T \>, std::string\l \> &&!std::is_same_v\< std\l::decay_t\< T \>, std::wstring \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
+  Node2 [id="Node000002",label="std::bool_constant\l\<!std::is_same_v\< std\l::decay_t\< T \>, std::string\l \> &&!std::is_same_v\< std\l::decay_t\< T \>, std::wstring \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

@@ -38,12 +38,13 @@ var annotated_dup =
         [ "MemoizedFunction< R(Args...)>", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4" ]
       ] ],
       [ "io", "namespacetoolbox_1_1io.html", [
-        [ "formats", "namespacetoolbox_1_1io_1_1formats.html", [
-          [ "kitti_format_t", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t.html", "classtoolbox_1_1io_1_1formats_1_1kitti__format__t" ],
-          [ "pcd_format_t", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t.html", "classtoolbox_1_1io_1_1formats_1_1pcd__format__t" ]
-        ] ],
         [ "base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", "classtoolbox_1_1io_1_1base__file__data__t" ],
-        [ "base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", "classtoolbox_1_1io_1_1base__file__format__t" ]
+        [ "base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", "classtoolbox_1_1io_1_1base__file__format__t" ],
+        [ "dataset_t", "classtoolbox_1_1io_1_1dataset__t.html", "classtoolbox_1_1io_1_1dataset__t" ],
+        [ "kitti_format_t", "classtoolbox_1_1io_1_1kitti__format__t.html", "classtoolbox_1_1io_1_1kitti__format__t" ],
+        [ "kitti_pcd_dataset_t", "classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html", "classtoolbox_1_1io_1_1kitti__pcd__dataset__t" ],
+        [ "kitti_pcd_pair_t", "classtoolbox_1_1io_1_1kitti__pcd__pair__t.html", "classtoolbox_1_1io_1_1kitti__pcd__pair__t" ],
+        [ "pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", "classtoolbox_1_1io_1_1pcd__format__t" ]
       ] ],
       [ "logger", "namespacetoolbox_1_1logger.html", [
         [ "has_ostream_method", "structtoolbox_1_1logger_1_1has__ostream__method.html", null ],

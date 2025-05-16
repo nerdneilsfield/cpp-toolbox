@@ -278,43 +278,44 @@ $(document).ready(function(){initNavTree('thread__pool__old_8hpp_source.html',''
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">using </span>return_type = <span class="keyword">typename</span> std::invoke_result_t&lt;F, Args...&gt;;</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">if</span> (stop_.load(std::memory_order_relaxed))</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  {  <span class="comment">// 使用 relaxed 因为后续 enqueue 有自己的同步/Use relaxed since enqueue has</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>     <span class="comment">// its own synchronization</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">throw</span> std::runtime_error(</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="stringliteral">&quot;在已停止的线程池上提交任务/Submitting task to stopped thread pool&quot;</span>);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keyword">auto</span> task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  tasks_.enqueue(</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      [task <span class="comment">/* Capture shared_ptr */</span>]()</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      {</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          (*task)();</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp; fe) {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught future_error for task &quot;</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>                    &lt;&lt; task.get() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; fe.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught unexpected exception during &quot;</span></div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                       <span class="stringliteral">&quot;packaged_task invocation for task &quot;</span></div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                    &lt;&lt; task.get() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        } <span class="keywordflow">catch</span> (...) {</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught unknown exception during &quot;</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                       <span class="stringliteral">&quot;packaged_task invocation for task &quot;</span></div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                    &lt;&lt; task.get() &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      });</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}  <span class="comment">// namespace toolbox::base</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif  </span><span class="comment">// CPP_TOOLBOX_OLD_THREAD_POOL</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">if</span> (stop_.load(</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>          std::memory_order_relaxed)) {  <span class="comment">// 使用 relaxed 因为后续 enqueue</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>                                         <span class="comment">// 有自己的同步/Use relaxed since</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>                                         <span class="comment">// enqueue has its own synchronization</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">throw</span> std::runtime_error(</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="stringliteral">&quot;在已停止的线程池上提交任务/Submitting task to stopped thread pool&quot;</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">auto</span> task = std::make_shared&lt;std::packaged_task&lt;return_type()&gt;&gt;(</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      std::bind(std::forward&lt;F&gt;(f), std::forward&lt;Args&gt;(args)...));</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  std::future&lt;return_type&gt; res = task-&gt;get_future();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  tasks_.enqueue(</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      [task <span class="comment">/* Capture shared_ptr */</span>]()</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          (*task)();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::future_error&amp; fe) {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught future_error for task &quot;</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>                    &lt;&lt; task.get() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; fe.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught unexpected exception during &quot;</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                       <span class="stringliteral">&quot;packaged_task invocation for task &quot;</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                    &lt;&lt; task.get() &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>          std::cerr &lt;&lt; <span class="stringliteral">&quot;Worker lambda caught unknown exception during &quot;</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                       <span class="stringliteral">&quot;packaged_task invocation for task &quot;</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    &lt;&lt; task.get() &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        }</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      });</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>}</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>}  <span class="comment">// namespace toolbox::base</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif  </span><span class="comment">// CPP_TOOLBOX_OLD_THREAD_POOL</span></div>
 <div class="ttc" id="aclass_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="class_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:15</div></div>
 <div class="ttc" id="aclass_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="class_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:31</div></div>
 <div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__t_html_a16f45b3fbf2f8c5799bb405be002ac15"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">toolbox::base::thread_pool_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:156</div></div>

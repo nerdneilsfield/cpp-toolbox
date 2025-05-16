@@ -3,7 +3,7 @@ var searchData=
   ['f32_0',['f32',['../types_8hpp.html#ad34d88453d37b65a09797bad37f2f527',1,'types.hpp']]],
   ['f64_1',['f64',['../types_8hpp.html#abc2f107791bd7c1d49ecf0f168c085a3',1,'types.hpp']]],
   ['features_2',['Features',['../index.html#autotoc_md3',1,'']]],
-  ['field_5finfo_5ft_3',['field_info_t',['../structtoolbox_1_1io_1_1formats_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html',1,'toolbox::io::formats::pcd_format_t::pcd_header_t']]],
+  ['field_5finfo_5ft_3',['field_info_t',['../structtoolbox_1_1io_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html',1,'toolbox::io::pcd_format_t::pcd_header_t']]],
   ['file_2ehpp_4',['file.hpp',['../file_8hpp.html',1,'']]],
   ['file_5fexists_5',['file_exists',['../namespacetoolbox_1_1file.html#a46034cf680e496550ad944f62ba49a64',1,'toolbox::file']]],
   ['file_5ftime_5ftype_6',['file_time_type',['../namespacetoolbox_1_1file.html#a9d370d4f448be574533574f643bc1298',1,'toolbox::file']]],

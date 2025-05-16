@@ -220,9 +220,6 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1math.html',''); in
   <div class="headertitle"><div class="title">toolbox::math Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>&lt; 用于动态数组/For dynamic arrays  
-<a href="namespacetoolbox_1_1math.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -284,8 +281,7 @@ Functions</h2></td></tr>
 <tr class="separator:a0e1aba6cc9ff7c1c7a8733bf4c46739a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>&lt; 用于动态数组/For dynamic arrays </p>
-<p>&lt; 用于排序和查找最值/For sorting and finding min/max &lt; 用于数学运算/For mathematical operations &lt; 用于函数对象/For function objects &lt; 用于迭代器操作/For iterator operations &lt; 用于映射统计/For map statistics &lt; 用于累加/For accumulation &lt; 用于异常处理/For exception handling &lt; 用于字符串处理/For string handling &lt; 用于类型特性/For type traits &lt; 用于通用工具/For general utilities </p>
+<div class="textblock"><p>&lt; 用于排序和查找最值/For sorting and finding min/max 用于数学运算/For mathematical operations 用于函数对象/For function objects 用于迭代器操作/For iterator operations 用于映射统计/For map statistics 用于累加/For accumulation 用于异常处理/For exception handling 用于字符串处理/For string handling 用于类型特性/For type traits 用于通用工具/For general utilities 用于动态数组/For dynamic arrays </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a93ed2dd1bb63b92b21ac29a1d85b60e2" name="a93ed2dd1bb63b92b21ac29a1d85b60e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a93ed2dd1bb63b92b21ac29a1d85b60e2">&#9670;&#160;</a></span>check_empty()</h2>
@@ -332,7 +328,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>若容器为空则抛出 std::invalid_argument 异常/Throws std::invalid_argument if container is empty</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v;</div>
 <div class="line"><a class="code hl_function" href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">check_empty</a>(v, <span class="stringliteral">&quot;mean&quot;</span>); <span class="comment">// 抛出异常/Throws exception</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a93ed2dd1bb63b92b21ac29a1d85b60e2"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">toolbox::math::check_empty</a></div><div class="ttdeci">void check_empty(const TContainer &amp;data, const char *func_name)</div><div class="ttdoc">检查容器是否为空并抛出异常/Check if the container is empty and throw an exception</div><div class="ttdef"><b>Definition</b> statistics.hpp:35</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a93ed2dd1bb63b92b21ac29a1d85b60e2"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a93ed2dd1bb63b92b21ac29a1d85b60e2">toolbox::math::check_empty</a></div><div class="ttdeci">void check_empty(const TContainer &amp;data, const char *func_name)</div><div class="ttdoc">检查容器是否为空并抛出异常/Check if the container is empty and throw an exception</div><div class="ttdef"><b>Definition</b> statistics.hpp:37</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -376,7 +372,7 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
 <div class="line"><span class="keywordtype">int</span> mx = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">toolbox::math::max</a>(v); <span class="comment">// mx == 3</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a04161963e0041ce5ec7ed078aed83e9d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">toolbox::math::max</a></div><div class="ttdeci">TContainer::value_type max(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最大值/Find the maximum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:341</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a04161963e0041ce5ec7ed078aed83e9d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a04161963e0041ce5ec7ed078aed83e9d">toolbox::math::max</a></div><div class="ttdeci">TContainer::value_type max(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最大值/Find the maximum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:374</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -432,7 +428,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>若k为0返回空集合，若k&gt;=容器大小则返回所有元素降序排序/Returns empty if k==0, returns all sorted descending if k&gt;=container size</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{5, 1, 3, 2, 4};</div>
 <div class="line"><span class="keyword">auto</span> maxs = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">toolbox::math::max_k</a>(v, 2); <span class="comment">// maxs == {5, 4}</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a0e1aba6cc9ff7c1c7a8733bf4c46739a"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">toolbox::math::max_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; max_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最大的元素，降序排列/Return the k largest elements in the container, sorted descending</div><div class="ttdef"><b>Definition</b> statistics.hpp:500</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a0e1aba6cc9ff7c1c7a8733bf4c46739a"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a0e1aba6cc9ff7c1c7a8733bf4c46739a">toolbox::math::max_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; max_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最大的元素，降序排列/Return the k largest elements in the container, sorted descending</div><div class="ttdef"><b>Definition</b> statistics.hpp:554</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -476,7 +472,7 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3, 4};</div>
 <div class="line"><span class="keywordtype">double</span> m = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">toolbox::math::mean</a>(v); <span class="comment">// m == 2.5</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_afb02bf50f67bf4d18f0f7f580c63b5ae"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">toolbox::math::mean</a></div><div class="ttdeci">double mean(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的平均值/Compute the mean (average) of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:60</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_afb02bf50f67bf4d18f0f7f580c63b5ae"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae">toolbox::math::mean</a></div><div class="ttdeci">double mean(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的平均值/Compute the mean (average) of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:64</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -520,7 +516,7 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 3, 2};</div>
 <div class="line"><span class="keywordtype">double</span> med = <a class="code hl_function" href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">toolbox::math::median</a>(v); <span class="comment">// med == 2</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_ac23a5577ab5cd849ca58b98810b4a9ed"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">toolbox::math::median</a></div><div class="ttdeci">double median(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的中位数/Compute the median of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:89</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_ac23a5577ab5cd849ca58b98810b4a9ed"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ac23a5577ab5cd849ca58b98810b4a9ed">toolbox::math::median</a></div><div class="ttdeci">double median(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的中位数/Compute the median of elements in a container</div><div class="ttdef"><b>Definition</b> statistics.hpp:95</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -564,7 +560,7 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
 <div class="line"><span class="keywordtype">int</span> mn = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">toolbox::math::min</a>(v); <span class="comment">// mn == 1</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a5c4f861381d5a2980837fee5c35e8921"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">toolbox::math::min</a></div><div class="ttdeci">TContainer::value_type min(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最小值/Find the minimum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:317</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a5c4f861381d5a2980837fee5c35e8921"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a5c4f861381d5a2980837fee5c35e8921">toolbox::math::min</a></div><div class="ttdeci">TContainer::value_type min(const TContainer &amp;data)</div><div class="ttdoc">查找容器中的最小值/Find the minimum value in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:349</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -620,7 +616,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>若k为0返回空集合，若k&gt;=容器大小则返回所有元素排序/Returns empty if k==0, returns all sorted if k&gt;=container size</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{5, 1, 3, 2, 4};</div>
 <div class="line"><span class="keyword">auto</span> mins = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">toolbox::math::min_k</a>(v, 3); <span class="comment">// mins == {1, 2, 3}</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a75e9d753a4d9fa63c14b61b9bd9e27cf"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">toolbox::math::min_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; min_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最小的元素，升序排列/Return the k smallest elements in the container, sorted ascending</div><div class="ttdef"><b>Definition</b> statistics.hpp:454</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a75e9d753a4d9fa63c14b61b9bd9e27cf"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a75e9d753a4d9fa63c14b61b9bd9e27cf">toolbox::math::min_k</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; min_k(const TContainer &amp;data, size_t k)</div><div class="ttdoc">返回容器中k个最小的元素，升序排列/Return the k smallest elements in the container, sorted ascending</div><div class="ttdef"><b>Definition</b> statistics.hpp:501</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -659,7 +655,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>若容器为空，返回空集合/Returns empty vector if container is empty</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 2, 3, 3};</div>
 <div class="line"><span class="keyword">auto</span> modes = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">toolbox::math::mode</a>(v); <span class="comment">// modes == {2, 3}</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a6d3249f65b05ed4e3ced4eb532512da1"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">toolbox::math::mode</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; mode(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的众数（可能有多个）/Compute the mode(s) of elements in a container (may be multiple)</div><div class="ttdef"><b>Definition</b> statistics.hpp:128</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a6d3249f65b05ed4e3ced4eb532512da1"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a6d3249f65b05ed4e3ced4eb532512da1">toolbox::math::mode</a></div><div class="ttdeci">std::vector&lt; typename TContainer::value_type &gt; mode(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的众数（可能有多个）/Compute the mode(s) of elements in a container (may be multiple)</div><div class="ttdef"><b>Definition</b> statistics.hpp:138</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -716,7 +712,7 @@ template&lt;typename TContainer &gt; </div>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3, 4, 5};</div>
 <div class="line"><span class="keywordtype">double</span> p50 = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a>(v, 0.5); <span class="comment">// p50 == 3</span></div>
 <div class="line"><span class="keywordtype">double</span> p90 = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a>(v, 0.9); <span class="comment">// p90 == 4.6</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a97a897cb3de8e07732d393840e8d6f09"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a></div><div class="ttdeci">double percentile(const TContainer &amp;data, double p)</div><div class="ttdoc">计算百分位数（使用最近邻等级法和线性插值）/Compute the percentile (using nearest-rank and linear interpolation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:398</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a97a897cb3de8e07732d393840e8d6f09"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a97a897cb3de8e07732d393840e8d6f09">toolbox::math::percentile</a></div><div class="ttdeci">double percentile(const TContainer &amp;data, double p)</div><div class="ttdoc">计算百分位数（使用最近邻等级法和线性插值）/Compute the percentile (using nearest-rank and linear interpolation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:438</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -760,7 +756,7 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{3, 1, 2};</div>
 <div class="line"><span class="keywordtype">int</span> r = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">toolbox::math::range</a>(v); <span class="comment">// r == 2</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a82a7bdd411598d364266045298d9ed7d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">toolbox::math::range</a></div><div class="ttdeci">TContainer::value_type range(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的全距（最大值-最小值）/Compute the range (max - min) of elements in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:366</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a82a7bdd411598d364266045298d9ed7d"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a82a7bdd411598d364266045298d9ed7d">toolbox::math::range</a></div><div class="ttdeci">TContainer::value_type range(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的全距（最大值-最小值）/Compute the range (max - min) of elements in the container</div><div class="ttdef"><b>Definition</b> statistics.hpp:402</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -816,8 +812,9 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;double&gt; v{1.0, 2.0, 3.0};</div>
 <div class="line"><span class="keywordtype">double</span> sd = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a>(v); <span class="comment">// 样本标准差/sample stdev</span></div>
-<div class="line"><span class="keywordtype">double</span> sd_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体标准差/population stdev</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_afba61c5d0cac2f1c186a678ed0094b33"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a></div><div class="ttdeci">double stdev(const TContainer &amp;data, bool sample_stdev=true)</div><div class="ttdoc">计算标准差（默认样本标准差）/Compute the standard deviation (default is sample standard deviation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:236</div></div>
+<div class="line"><span class="keywordtype">double</span> sd_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体标准差/population</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">stdev</a></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_afba61c5d0cac2f1c186a678ed0094b33"><div class="ttname"><a href="namespacetoolbox_1_1math.html#afba61c5d0cac2f1c186a678ed0094b33">toolbox::math::stdev</a></div><div class="ttdeci">double stdev(const TContainer &amp;data, bool sample_stdev=true)</div><div class="ttdoc">计算标准差（默认样本标准差）/Compute the standard deviation (default is sample standard deviation)</div><div class="ttdef"><b>Definition</b> statistics.hpp:261</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -856,7 +853,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>空容器返回0/Returns 0 for empty container</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3};</div>
 <div class="line"><span class="keywordtype">int</span> s = <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a>(v); <span class="comment">// s == 6</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:260</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:288</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -895,7 +892,7 @@ template&lt;typename TContainer &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>空容器返回0.0/Returns 0.0 for empty container</dd></dl>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; v{1, 2, 3};</div>
 <div class="line"><span class="keywordtype">double</span> s = <a class="code hl_function" href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">toolbox::math::sum_d</a>(v); <span class="comment">// s == 6.0</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_ab0efde6deb9583d31f8ad0f1cd9d5b21"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">toolbox::math::sum_d</a></div><div class="ttdeci">double sum_d(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回 double 类型以保证精度和范围）/Compute the sum of elements in the container (returns double for pre...</div><div class="ttdef"><b>Definition</b> statistics.hpp:287</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_ab0efde6deb9583d31f8ad0f1cd9d5b21"><div class="ttname"><a href="namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21">toolbox::math::sum_d</a></div><div class="ttdeci">double sum_d(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回 double 类型以保证精度和范围）/Compute the sum of elements in the container (returns double for pre...</div><div class="ttdef"><b>Definition</b> statistics.hpp:318</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -951,8 +948,9 @@ template&lt;typename TContainer &gt; </div>
 </dl>
 <div class="fragment"><div class="line">std::vector&lt;double&gt; v{1.0, 2.0, 3.0};</div>
 <div class="line"><span class="keywordtype">double</span> var = <a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a>(v); <span class="comment">// 样本方差/sample variance</span></div>
-<div class="line"><span class="keywordtype">double</span> var_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体方差/population variance</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1math_html_aca65cedd95bb211ff49cd0861b91563b"><div class="ttname"><a href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a></div><div class="ttdeci">double variance(const TContainer &amp;data, bool sample_variance=true)</div><div class="ttdoc">计算方差（默认样本方差 N-1）/Compute the variance (default is sample variance N-1)</div><div class="ttdef"><b>Definition</b> statistics.hpp:183</div></div>
+<div class="line"><span class="keywordtype">double</span> var_pop = <a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a>(v, <span class="keyword">false</span>); <span class="comment">// 总体方差/population</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">variance</a></div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_aca65cedd95bb211ff49cd0861b91563b"><div class="ttname"><a href="namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b">toolbox::math::variance</a></div><div class="ttdeci">double variance(const TContainer &amp;data, bool sample_variance=true)</div><div class="ttdoc">计算方差（默认样本方差 N-1）/Compute the variance (default is sample variance N-1)</div><div class="ttdef"><b>Definition</b> statistics.hpp:201</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

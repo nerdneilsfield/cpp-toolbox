@@ -331,6 +331,12 @@ Functions</h2></td></tr>
 <tr class="memitem:aa4085a2e77b2b2c55e81b3161960c55d" id="r_aa4085a2e77b2b2c55e81b3161960c55d"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d">traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
 <tr class="memdesc:aa4085a2e77b2b2c55e81b3161960c55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">遍历目录 / Traverse a directory  <br /></td></tr>
 <tr class="separator:aa4085a2e77b2b2c55e81b3161960c55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26c5b5a405b27a719c43e8f3d95a9e3b" id="r_a26c5b5a405b27a719c43e8f3d95a9e3b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">list_files_in_directory</a> (const std::filesystem::path &amp;path, const std::string &amp;extension=&quot;&quot;) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:a26c5b5a405b27a719c43e8f3d95a9e3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">列出目录下指定扩展名的所有文件/Lists all files in a directory with the specified extension  <br /></td></tr>
+<tr class="separator:a26c5b5a405b27a719c43e8f3d95a9e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477abbc53843bddd85d0b199ecd640bb" id="r_a477abbc53843bddd85d0b199ecd640bb"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a477abbc53843bddd85d0b199ecd640bb">list_files_in_directory</a> (const std::filesystem::path &amp;path, const std::vector&lt; std::string &gt; &amp;extensions) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
+<tr class="memdesc:a477abbc53843bddd85d0b199ecd640bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">列出目录下指定多个扩展名的所有文件/Lists all files in a directory with the specified extensions  <br /></td></tr>
+<tr class="separator:a477abbc53843bddd85d0b199ecd640bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a131b4596d21d7af9c3a20625c2b84f7b" id="r_a131b4596d21d7af9c3a20625c2b84f7b"><td class="memItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1file.html#a131b4596d21d7af9c3a20625c2b84f7b">recursive_traverse_directory</a> (const std::filesystem::path &amp;path) -&gt; std::vector&lt; std::filesystem::path &gt;</td></tr>
 <tr class="memdesc:a131b4596d21d7af9c3a20625c2b84f7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">递归遍历目录 / Recursively traverse a directory  <br /></td></tr>
 <tr class="separator:a131b4596d21d7af9c3a20625c2b84f7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1498,6 +1504,107 @@ Functions</h2></td></tr>
 <div class="line">    <span class="comment">// 处理符号链接 / Handle symbolic link</span></div>
 <div class="line">}</div>
 <div class="ttc" id="anamespacetoolbox_1_1file_html_aebd2ce80a8b6a1e94b58b9b7ab0dc6a8"><div class="ttname"><a href="namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8">toolbox::file::is_symlink</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto is_symlink(const std::filesystem::path &amp;path) -&gt; bool</div><div class="ttdoc">检查路径是否为符号链接 / Check if a path is a symbolic link</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a26c5b5a405b27a719c43e8f3d95a9e3b" name="a26c5b5a405b27a719c43e8f3d95a9e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26c5b5a405b27a719c43e8f3d95a9e3b">&#9670;&#160;</a></span>list_files_in_directory() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::list_files_in_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>extension</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  std::vector&lt; std::filesystem::path &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>列出目录下指定扩展名的所有文件/Lists all files in a directory with the specified extension </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>目录路径/The directory path </td></tr>
+    <tr><td class="paramname">extension</td><td>文件扩展名（如".txt"，默认为空，表示所有文件）/File extension (e.g., ".txt", default is empty for all files) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>满足条件的文件路径向量/A vector of file paths that match the extension</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 列出所有txt文件/List all .txt files</span></div>
+<div class="line"><span class="keyword">auto</span> txt_files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">list_files_in_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>, <span class="stringliteral">&quot;.txt&quot;</span>);</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : txt_files) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;找到txt文件:/Found txt file: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 列出所有文件/List all files</span></div>
+<div class="line"><span class="keyword">auto</span> all_files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">list_files_in_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>);</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : all_files) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;找到文件:/Found file: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_a26c5b5a405b27a719c43e8f3d95a9e3b"><div class="ttname"><a href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">toolbox::file::list_files_in_directory</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto list_files_in_directory(const std::filesystem::path &amp;path, const std::string &amp;extension=&quot;&quot;) -&gt; std::vector&lt; std::filesystem::path &gt;</div><div class="ttdoc">列出目录下指定扩展名的所有文件/Lists all files in a directory with the specified extension</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a477abbc53843bddd85d0b199ecd640bb" name="a477abbc53843bddd85d0b199ecd640bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477abbc53843bddd85d0b199ecd640bb">&#9670;&#160;</a></span>list_files_in_directory() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::file::list_files_in_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::filesystem::path &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>extensions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt;  std::vector&lt; std::filesystem::path &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>列出目录下指定多个扩展名的所有文件/Lists all files in a directory with the specified extensions </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>目录路径/The directory path </td></tr>
+    <tr><td class="paramname">extensions</td><td>文件扩展名列表（如{".txt", ".bin"}）/A vector of file extensions (e.g., {".txt", ".bin"}) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>满足条件的文件路径向量/A vector of file paths that match any of the extensions</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 列出所有txt和bin文件/List all .txt and .bin files</span></div>
+<div class="line">std::vector&lt;std::string&gt; exts = {<span class="stringliteral">&quot;.txt&quot;</span>, <span class="stringliteral">&quot;.bin&quot;</span>};</div>
+<div class="line"><span class="keyword">auto</span> files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">list_files_in_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>, exts);</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : files) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;找到文件:/Found file: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 列出所有文件（扩展名为空时）/List all files (when extensions is empty)</span></div>
+<div class="line">std::vector&lt;std::string&gt; empty_exts;</div>
+<div class="line"><span class="keyword">auto</span> all_files = <a class="code hl_function" href="namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b">list_files_in_directory</a>(<span class="stringliteral">&quot;/path/to/dir&quot;</span>, empty_exts);</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; file : all_files) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;找到文件:/Found file: &quot;</span> &lt;&lt; file &lt;&lt; std::endl;</div>
+<div class="line">}</div>
 </div><!-- fragment --> 
 </div>
 </div>

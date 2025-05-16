@@ -29,6 +29,8 @@ var file_8hpp =
     [ "is_regular_file", "file_8hpp.html#a43823bbfcad90d86c042e3627791ffaa", null ],
     [ "is_socket", "file_8hpp.html#a9ac1ee2d33be226474ce83fb1d5df0c4", null ],
     [ "is_symlink", "file_8hpp.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8", null ],
+    [ "list_files_in_directory", "file_8hpp.html#a26c5b5a405b27a719c43e8f3d95a9e3b", null ],
+    [ "list_files_in_directory", "file_8hpp.html#a477abbc53843bddd85d0b199ecd640bb", null ],
     [ "move_file", "file_8hpp.html#a3f5444c60648ca97bfa4b21c0b7dc09b", null ],
     [ "path_to_string", "file_8hpp.html#aa5ae9f96e511dc7feafcb507ad1f6c31", null ],
     [ "path_type", "file_8hpp.html#ae9e38d49fe1aa7ebeef6139c908e5f15", null ],

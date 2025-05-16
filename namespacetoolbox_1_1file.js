@@ -30,6 +30,8 @@ var namespacetoolbox_1_1file =
     [ "is_regular_file", "namespacetoolbox_1_1file.html#a43823bbfcad90d86c042e3627791ffaa", null ],
     [ "is_socket", "namespacetoolbox_1_1file.html#a9ac1ee2d33be226474ce83fb1d5df0c4", null ],
     [ "is_symlink", "namespacetoolbox_1_1file.html#aebd2ce80a8b6a1e94b58b9b7ab0dc6a8", null ],
+    [ "list_files_in_directory", "namespacetoolbox_1_1file.html#a26c5b5a405b27a719c43e8f3d95a9e3b", null ],
+    [ "list_files_in_directory", "namespacetoolbox_1_1file.html#a477abbc53843bddd85d0b199ecd640bb", null ],
     [ "move_file", "namespacetoolbox_1_1file.html#a3f5444c60648ca97bfa4b21c0b7dc09b", null ],
     [ "path_to_string", "namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31", null ],
     [ "path_type", "namespacetoolbox_1_1file.html#ae9e38d49fe1aa7ebeef6139c908e5f15", null ],

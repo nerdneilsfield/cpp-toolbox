@@ -2046,7 +2046,7 @@ template&lt;typename... Ts, typename... Fs&gt; </div>
 <div class="line">  [](<span class="keywordtype">int</span> i) { <span class="keywordflow">return</span> i * 2; },</div>
 <div class="line">  [](<span class="keyword">const</span> std::string&amp; s) { <span class="keywordflow">return</span> s.length(); }</div>
 <div class="line">); <span class="comment">// 返回84 / Returns 84</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1functional_html_a76f1f065e91d8b2571f14cc350983a02"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a76f1f065e91d8b2571f14cc350983a02">toolbox::functional::match</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto match(const std::variant&lt; Ts... &gt; &amp;var, Fs &amp;&amp;... visitors) -&gt; decltype(auto)</div><div class="ttdoc">使用访问器函数对variant进行模式匹配 / Pattern matches on a variant using visitor functions</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:290</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1functional_html_a76f1f065e91d8b2571f14cc350983a02"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a76f1f065e91d8b2571f14cc350983a02">toolbox::functional::match</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto match(const std::variant&lt; Ts... &gt; &amp;var, Fs &amp;&amp;... visitors) -&gt; decltype(auto)</div><div class="ttdoc">使用访问器函数对variant进行模式匹配 / Pattern matches on a variant using visitor functions</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:286</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -2759,7 +2759,7 @@ template&lt;typename Container , typename BinaryOp &gt; </div>
 <div class="line">std::vector&lt;int&gt; empty;</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="namespacetoolbox_1_1functional.html#a28234663d88d2ee0d2a8fc72044235e3">reduce</a>(empty, std::plus&lt;int&gt;());</div>
 <div class="line"><span class="comment">// 抛出 std::invalid_argument / throws std::invalid_argument</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1functional_html_a28234663d88d2ee0d2a8fc72044235e3"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a28234663d88d2ee0d2a8fc72044235e3">toolbox::functional::reduce</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto reduce(const Container &amp;input, T identity, BinaryOp &amp;&amp;op) -&gt; T</div><div class="ttdoc">使用带初始值的二元操作归约容器元素 / Reduce container elements using a binary operation with initial value</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:428</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1functional_html_a28234663d88d2ee0d2a8fc72044235e3"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a28234663d88d2ee0d2a8fc72044235e3">toolbox::functional::reduce</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto reduce(const Container &amp;input, T identity, BinaryOp &amp;&amp;op) -&gt; T</div><div class="ttdoc">使用带初始值的二元操作归约容器元素 / Reduce container elements using a binary operation with initial value</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:424</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -3010,7 +3010,7 @@ template&lt;typename... Containers&gt; </div>
 <div class="line"><span class="comment">//   {2, &quot;b&quot;, 2.2},</span></div>
 <div class="line"><span class="comment">//   {3, &quot;c&quot;, 3.3}</span></div>
 <div class="line"><span class="comment">// }</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1functional_html_ac747cafdf73d872cb3827c20f3180ade"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#ac747cafdf73d872cb3827c20f3180ade">toolbox::functional::zip</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto zip(const Containers &amp;... containers) -&gt; std::vector&lt; std::tuple&lt; decltype(*std::cbegin(std::declval&lt; const Containers &amp; &gt;()))... &gt; &gt;</div><div class="ttdoc">将多个容器压缩成元组向量 / Zip multiple containers into a vector of tuples</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:456</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1functional_html_ac747cafdf73d872cb3827c20f3180ade"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#ac747cafdf73d872cb3827c20f3180ade">toolbox::functional::zip</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto zip(const Containers &amp;... containers) -&gt; std::vector&lt; std::tuple&lt; decltype(*std::cbegin(std::declval&lt; const Containers &amp; &gt;()))... &gt; &gt;</div><div class="ttdoc">将多个容器压缩成元组向量 / Zip multiple containers into a vector of tuples</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:452</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>结果长度由最短的输入容器决定 / The length of result is determined by the shortest input container </dd></dl>
 
 </div>
@@ -3123,7 +3123,7 @@ template&lt;typename ContainerKeys , typename ContainerValues , typename Key  = 
 <div class="line"><span class="comment">//   {&quot;b&quot;, 2},</span></div>
 <div class="line"><span class="comment">//   {&quot;c&quot;, 3}</span></div>
 <div class="line"><span class="comment">// }</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1functional_html_a4fb6acc3f4d90809e63e519440e55b7c"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a4fb6acc3f4d90809e63e519440e55b7c">toolbox::functional::zip_to_unordered_map</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys &amp;keys, const ContainerValues &amp;values) -&gt; std::unordered_map&lt; Key, Value, Hash, KeyEqual, Alloc &gt;</div><div class="ttdoc">将两个序列压缩成无序映射 / Zip two sequences into an unordered_map</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:494</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1functional_html_a4fb6acc3f4d90809e63e519440e55b7c"><div class="ttname"><a href="namespacetoolbox_1_1functional.html#a4fb6acc3f4d90809e63e519440e55b7c">toolbox::functional::zip_to_unordered_map</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto zip_to_unordered_map(const ContainerKeys &amp;keys, const ContainerValues &amp;values) -&gt; std::unordered_map&lt; Key, Value, Hash, KeyEqual, Alloc &gt;</div><div class="ttdoc">将两个序列压缩成无序映射 / Zip two sequences into an unordered_map</div><div class="ttdef"><b>Definition</b> functional_impl.hpp:490</div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>如果键容器有重复,只使用第一次出现的键 / If keys container has duplicates, only the first occurrence is used </dd>
 <dd>
 键值对数量由较短的容器决定 / The number of pairs is determined by the shorter container </dd></dl>

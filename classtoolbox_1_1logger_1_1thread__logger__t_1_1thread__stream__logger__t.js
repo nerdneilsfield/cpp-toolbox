@@ -12,7 +12,7 @@ var classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t =
     [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a0778d036f44c3dbcb5ea7752fe1cce38", null ],
     [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c", null ],
     [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a4e10c5cd09173cb92ae140ed1706b4e8", null ],
-    [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a5820a4c7b6b776da403bdad817e5f500", null ],
+    [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a487a7e3da24e3cd9f30a6ee068bd65bf", null ],
     [ "operator<<", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a7bc1e3cde55775af3d534d9d3defd103", null ],
     [ "operator=", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a48d0027bbf2164b119c9c16b2a4b43da", null ],
     [ "operator=", "classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ac843eb73f913aaefcbfa74e0bd0f231c", null ],

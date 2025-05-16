@@ -273,10 +273,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a4e10c5cd09173cb92ae140ed1706b4e8">operator&lt;&lt;</a> (const T &amp;value) -&gt; std::enable_if_t&lt; <a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
 <tr class="memdesc:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载具有ostream operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types that have an operator&lt;&lt; with an ostream  <br /></td></tr>
 <tr class="separator:a4e10c5cd09173cb92ae140ed1706b4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5820a4c7b6b776da403bdad817e5f500" id="r_a5820a4c7b6b776da403bdad817e5f500"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5820a4c7b6b776da403bdad817e5f500"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a5820a4c7b6b776da403bdad817e5f500">operator&lt;&lt;</a> (T &amp;&amp;value) -&gt; std::enable_if_t&lt; !<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt; &amp;&amp;<a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
-<tr class="memdesc:a5820a4c7b6b776da403bdad817e5f500"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载具有成员operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types with member operator&lt;&lt;  <br /></td></tr>
-<tr class="separator:a5820a4c7b6b776da403bdad817e5f500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a487a7e3da24e3cd9f30a6ee068bd65bf" id="r_a487a7e3da24e3cd9f30a6ee068bd65bf"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a487a7e3da24e3cd9f30a6ee068bd65bf"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a487a7e3da24e3cd9f30a6ee068bd65bf">operator&lt;&lt;</a> (T &amp;&amp;value) -&gt; std::enable_if_t&lt;!<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt; T &gt; &amp;&amp;<a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt; T &gt;, <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp; &gt;</td></tr>
+<tr class="memdesc:a487a7e3da24e3cd9f30a6ee068bd65bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载具有成员operator&lt;&lt;的类型的operator&lt;&lt; / Overload operator&lt;&lt; for types with member operator&lt;&lt;  <br /></td></tr>
+<tr class="separator:a487a7e3da24e3cd9f30a6ee068bd65bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc1e3cde55775af3d534d9d3defd103" id="r_a7bc1e3cde55775af3d534d9d3defd103"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a7bc1e3cde55775af3d534d9d3defd103">operator&lt;&lt;</a> (<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;logger) -&gt; <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a> &amp;</td></tr>
 <tr class="memdesc:a7bc1e3cde55775af3d534d9d3defd103"><td class="mdescLeft">&#160;</td><td class="mdescRight">重载用于组合日志记录器的operator&lt;&lt; / Overload operator&lt;&lt; for combining loggers  <br /></td></tr>
 <tr class="separator:a7bc1e3cde55775af3d534d9d3defd103"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -303,8 +303,8 @@ Public Member Functions</h2></td></tr>
 <div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;Values: &quot;</span> &lt;&lt; values;  <span class="comment">// 输出: Values: [1, 2, 3] / Output:</span></div>
 <div class="line">Values: [1, 2, 3]</div>
 <div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_html_acc6c92f4fe66ee6d17852eb6b6f393bb"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a></div><div class="ttdeci">static auto instance() -&gt; thread_logger_t &amp;</div><div class="ttdoc">获取日志记录器的单例实例 / Get the singleton instance of the logger</div></div>
-<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1351</div></div>
-<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1352</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1329</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1330</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac09791a964a6219aac08a4a1dafcb47b" name="ac09791a964a6219aac08a4a1dafcb47b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac09791a964a6219aac08a4a1dafcb47b">&#9670;&#160;</a></span>thread_stream_logger_t() <span class="overload">[1/3]</span></h2>
@@ -776,12 +776,12 @@ template&lt;typename T &gt; </div>
 <div class="line">}</div>
 <div class="line"><a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; Point{1, 2};</div>
 <div class="line"><span class="comment">// 输出: (1,2) / Output: (1,2)</span></div>
-<div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t_html_ab8beb7c8cdf06081cdc0273c48524a5c"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c">toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(const T &amp;container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</div><div class="ttdoc">重载容器的operator&lt;&lt; / Overload operator&lt;&lt; for containers</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:538</div></div>
+<div class="ttc" id="aclasstoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t_html_ab8beb7c8cdf06081cdc0273c48524a5c"><div class="ttname"><a href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#ab8beb7c8cdf06081cdc0273c48524a5c">toolbox::logger::thread_logger_t::thread_stream_logger_t::operator&lt;&lt;</a></div><div class="ttdeci">auto operator&lt;&lt;(const T &amp;container) -&gt; std::enable_if_t&lt; is_container_v&lt; T &gt; &amp;&amp;!has_stream_operator_v&lt; T &gt;, thread_stream_logger_t &amp; &gt;</div><div class="ttdoc">重载容器的operator&lt;&lt; / Overload operator&lt;&lt; for containers</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:530</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="a5820a4c7b6b776da403bdad817e5f500" name="a5820a4c7b6b776da403bdad817e5f500"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5820a4c7b6b776da403bdad817e5f500">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[7/8]</span></h2>
+<a id="a487a7e3da24e3cd9f30a6ee068bd65bf" name="a487a7e3da24e3cd9f30a6ee068bd65bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a487a7e3da24e3cd9f30a6ee068bd65bf">&#9670;&#160;</a></span>operator&lt;&lt;() <span class="overload">[7/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -796,9 +796,9 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">T &amp;&amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
-          <td> -&gt; std::enable_if_t&lt;
-        !<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt;T&gt; &amp;&amp; <a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt;T&gt;,
-        <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;&gt;
+          <td> -&gt; std::enable_if_t&lt;!<a class="el" href="namespacetoolbox_1_1logger.html#aaf82a52d321593496c80328501f31622">has_stream_operator_v</a>&lt;T&gt;
+                                &amp;&amp; <a class="el" href="namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322">has_ostream_method_v</a>&lt;T&gt;,
+                            <a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html">thread_stream_logger_t</a>&amp;&gt;
     </td>
         </tr>
       </table>

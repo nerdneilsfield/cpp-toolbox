@@ -216,17 +216,15 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1io.html',''); init
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">toolbox::io Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>&lt; 用于列出目录下的文件/For listing files in a directory  
+<a href="namespacetoolbox_1_1io.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacetoolbox_1_1io_1_1formats" id="r_namespacetoolbox_1_1io_1_1formats"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io_1_1formats.html">formats</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a></td></tr>
@@ -235,7 +233,255 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__format__t.html">base_file_format_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">文件格式读写器的基类 / Base class for file format readers/writers  <a href="classtoolbox_1_1io_1_1base__file__format__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataset__t.html">dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据集基类/Abstract base class for datasets  <a href="classtoolbox_1_1io_1_1dataset__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__format__t.html">kitti_format_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI 点云数据（.bin）文件格式处理器。/File format handler for KITTI Point Cloud Data (.bin) files.  <a href="classtoolbox_1_1io_1_1kitti__format__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html">kitti_pcd_dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI点云数据集类/KITTI point cloud dataset class.  <a href="classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__pcd__pair__t.html">kitti_pcd_pair_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI点云对数据集类/KITTI point cloud pair dataset class.  <a href="classtoolbox_1_1io_1_1kitti__pcd__pair__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1pcd__format__t.html">pcd_format_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.  <a href="classtoolbox_1_1io_1_1pcd__format__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af7ad61330bf7081cc56805e978c99e2d" id="r_af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#af7ad61330bf7081cc56805e978c99e2d">read_kitti_bin</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:af7ad61330bf7081cc56805e978c99e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件中读取 KITTI 点云数据的独立函数。/Standalone function to read KITTI point cloud data from a file.  <br /></td></tr>
+<tr class="separator:af7ad61330bf7081cc56805e978c99e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d952493b74495b0b872c5bbcee9332" id="r_aa6d952493b74495b0b872c5bbcee9332"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa6d952493b74495b0b872c5bbcee9332"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">write_kitti_bin</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
+<tr class="memdesc:aa6d952493b74495b0b872c5bbcee9332"><td class="mdescLeft">&#160;</td><td class="mdescRight">将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file.  <br /></td></tr>
+<tr class="separator:aa6d952493b74495b0b872c5bbcee9332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb238dd0524221508906155a7528f569" id="r_adb238dd0524221508906155a7528f569"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:adb238dd0524221508906155a7528f569"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#adb238dd0524221508906155a7528f569">read_pcd</a> (const std::string &amp;path)</td></tr>
+<tr class="memdesc:adb238dd0524221508906155a7528f569"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件中读取 PCD 点云数据的独立函数。/Standalone function to read PCD point cloud data from a file.  <br /></td></tr>
+<tr class="separator:adb238dd0524221508906155a7528f569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a74600f17ca80b238463d267b9fcbb" id="r_ae9a74600f17ca80b238463d267b9fcbb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ae9a74600f17ca80b238463d267b9fcbb"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">write_pcd</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud, bool binary)</td></tr>
+<tr class="memdesc:ae9a74600f17ca80b238463d267b9fcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.  <br /></td></tr>
+<tr class="separator:ae9a74600f17ca80b238463d267b9fcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>&lt; 用于列出目录下的文件/For listing files in a directory </p>
+<p>&lt; 用于读取KITTI点云/For reading KITTI </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="af7ad61330bf7081cc56805e978c99e2d" name="af7ad61330bf7081cc56805e978c99e2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7ad61330bf7081cc56805e978c99e2d">&#9670;&#160;</a></span>read_kitti_bin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; toolbox::io::read_kitti_bin </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从文件中读取 KITTI 点云数据的独立函数。/Standalone function to read KITTI point cloud data from a file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>KITTI 点云文件的路径/Path to the KITTI point cloud file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>包含读取点云的唯一指针，如果读取失败则返回 nullptr/Unique pointer containing the read point cloud, or nullptr if reading fails</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 读取 float 类型的点云/Read a point cloud with float precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_float = toolbox::io::read_kitti_bin&lt;float&gt;(<span class="stringliteral">&quot;cloud.bin&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (cloud_float) {</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;读取了 &quot;</span> &lt;&lt; cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; 个点/Read &quot;</span> &lt;&lt;</div>
+<div class="line">cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 读取 double 类型的点云/Read a point cloud with double precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_double =</div>
+<div class="line">toolbox::io::read_kitti_bin&lt;double&gt;(<span class="stringliteral">&quot;cloud.bin&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="adb238dd0524221508906155a7528f569" name="adb238dd0524221508906155a7528f569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb238dd0524221508906155a7528f569">&#9670;&#160;</a></span>read_pcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; toolbox::io::read_pcd </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>从文件中读取 PCD 点云数据的独立函数。/Standalone function to read PCD point cloud data from a file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>PCD 文件的路径/Path to the PCD file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>包含读取点云的唯一指针，如果读取失败则返回 nullptr/Unique pointer containing the read point cloud, or nullptr if reading fails</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 读取 float 类型的点云/Read a point cloud with float precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_float = toolbox::io::read_pcd&lt;float&gt;(<span class="stringliteral">&quot;cloud.pcd&quot;</span>);</div>
+<div class="line"><span class="keywordflow">if</span> (cloud_float) {</div>
+<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;读取了 &quot;</span> &lt;&lt; cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; 个点/Read &quot;</span> &lt;&lt;</div>
+<div class="line">cloud_float-&gt;size() &lt;&lt; <span class="stringliteral">&quot; points&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 读取 double 类型的点云/Read a point cloud with double precision</span></div>
+<div class="line"><span class="keyword">auto</span> cloud_double = toolbox::io::read_pcd&lt;double&gt;(<span class="stringliteral">&quot;cloud.pcd&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="aa6d952493b74495b0b872c5bbcee9332" name="aa6d952493b74495b0b872c5bbcee9332"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d952493b74495b0b872c5bbcee9332">&#9670;&#160;</a></span>write_kitti_bin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT bool toolbox::io::write_kitti_bin </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要写入的 KITTI 点云文件路径/Path to the KITTI point cloud file to write </td></tr>
+    <tr><td class="paramname">cloud</td><td>要保存的点云数据/The point cloud data to save </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>写入成功返回 true，失败返回 false/Returns true if writing was successful, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建一个点云并添加一些点/Create a point cloud and add some points</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a> cloud;</div>
+<div class="line">cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a> = {{1.0f, 2.0f, 3.0f}, {4.0f, 5.0f, 6.0f}};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 以二进制格式保存/Save in binary format</span></div>
+<div class="line"><span class="keywordtype">bool</span> binary_success =</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">toolbox::io::write_kitti_bin</a>(<span class="stringliteral">&quot;cloud_binary.bin&quot;</span>, cloud);</div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_aa6d952493b74495b0b872c5bbcee9332"><div class="ttname"><a href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">toolbox::io::write_kitti_bin</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdoc">将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file.</div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:258</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ae9a74600f17ca80b238463d267b9fcbb" name="ae9a74600f17ca80b238463d267b9fcbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9a74600f17ca80b238463d267b9fcbb">&#9670;&#160;</a></span>write_pcd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT bool toolbox::io::write_pcd </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>binary</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据的存储类型（如 float 或 double）/Storage type for the point cloud data (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>要写入的 PCD 文件路径/Path to the PCD file to write </td></tr>
+    <tr><td class="paramname">cloud</td><td>要保存的点云数据/The point cloud data to save </td></tr>
+    <tr><td class="paramname">binary</td><td>如果为 true，则以二进制格式写入；如果为 false，则以 ASCII 格式写入/If true, writes in binary format; if false, writes in ASCII format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>写入成功返回 true，失败返回 false/Returns true if writing was successful, false otherwise</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建一个点云并添加一些点/Create a point cloud and add some points</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;float&gt;</a> cloud;</div>
+<div class="line">cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a> = {{1.0f, 2.0f, 3.0f}, {4.0f, 5.0f, 6.0f}};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 以 ASCII 格式保存/Save in ASCII format</span></div>
+<div class="line"><span class="keywordtype">bool</span> ascii_success = <a class="code hl_function" href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">toolbox::io::write_pcd</a>(<span class="stringliteral">&quot;cloud_ascii.pcd&quot;</span>,</div>
+<div class="line">cloud, <span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 以二进制格式保存/Save in binary format</span></div>
+<div class="line"><span class="keywordtype">bool</span> binary_success = <a class="code hl_function" href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">toolbox::io::write_pcd</a>(<span class="stringliteral">&quot;cloud_binary.pcd&quot;</span>,</div>
+<div class="line">cloud, <span class="keyword">true</span>);</div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_ae9a74600f17ca80b238463d267b9fcbb"><div class="ttname"><a href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">toolbox::io::write_pcd</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_pcd(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud, bool binary)</div><div class="ttdoc">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.</div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:833</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
