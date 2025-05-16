@@ -72,61 +72,61 @@ inline constexpr bool has_istream_operator_v =
 
 // Helper function template to parse the underlying value for std::optional
 // Moved to toolbox::utils namespace to potentially help MSVC name lookup
-template<typename T_Optional> // T_Optional is std::optional<U>
+template<typename T_Optional>  // T_Optional is std::optional<U>
 bool parse_optional_value(const std::string& input, T_Optional& output)
 {
-    // This function is only instantiated when T_Optional is std::optional,
-    // so using detail::optional_value_type_t here is safe.
-    using optional_value_type = detail::optional_value_type_t<T_Optional>;
-    optional_value_type parsed_value;
-    std::stringstream ss(input);
-    bool parse_success = false;
+  // This function is only instantiated when T_Optional is std::optional,
+  // so using detail::optional_value_type_t here is safe.
+  using optional_value_type = detail::optional_value_type_t<T_Optional>;
+  optional_value_type parsed_value;
+  std::stringstream ss(input);
+  bool parse_success = false;
 
-    if constexpr (std::is_same_v<optional_value_type, bool>) {
-        std::string lower_input;
-        std::transform(input.begin(),
-                        input.end(),
-                        std::back_inserter(lower_input),
-                        ::tolower);
-        if (lower_input == "true" || lower_input == "1") {
-        parsed_value = true;
-        parse_success = true;
-        } else if (lower_input == "false" || lower_input == "0") {
-        parsed_value = false;
-        parse_success = true;
-        } else {
-        parse_success = false;
-        }
-    } else if constexpr (std::is_integral_v<optional_value_type>) {
-        if (input.size() > 2 && input[0] == '0'
-            && (input[1] == 'x' || input[1] == 'X')) {
-        ss >> std::hex >> parsed_value;
-        } else {
-        ss >> parsed_value;
-        }
-        parse_success = (ss.eof() && !ss.fail());
-    } else if constexpr (std::is_floating_point_v<optional_value_type>) {
-        ss >> parsed_value;
-        parse_success = (ss.eof() && !ss.fail());
-    } else if constexpr (std::is_same_v<optional_value_type, std::string>) {
-        parsed_value = input;
-        parse_success = true;
+  if constexpr (std::is_same_v<optional_value_type, bool>) {
+    std::string lower_input;
+    std::transform(
+        input.begin(), input.end(), std::back_inserter(lower_input), ::tolower);
+    if (lower_input == "true" || lower_input == "1") {
+      parsed_value = true;
+      parse_success = true;
+    } else if (lower_input == "false" || lower_input == "0") {
+      parsed_value = false;
+      parse_success = true;
     } else {
-        if constexpr (detail::has_istream_operator_v<optional_value_type>) {
-        ss >> parsed_value;
-        parse_success = (ss.eof() && !ss.fail());
-        } else {
-            LOG_WARN_S << "Unsupported type for default optional parser: " << typeid(optional_value_type).name();
-            parse_success = false;
-        }
+      parse_success = false;
     }
+  } else if constexpr (std::is_integral_v<optional_value_type>) {
+    if (input.size() > 2 && input[0] == '0'
+        && (input[1] == 'x' || input[1] == 'X'))
+    {
+      ss >> std::hex >> parsed_value;
+    } else {
+      ss >> parsed_value;
+    }
+    parse_success = (ss.eof() && !ss.fail());
+  } else if constexpr (std::is_floating_point_v<optional_value_type>) {
+    ss >> parsed_value;
+    parse_success = (ss.eof() && !ss.fail());
+  } else if constexpr (std::is_same_v<optional_value_type, std::string>) {
+    parsed_value = input;
+    parse_success = true;
+  } else {
+    if constexpr (detail::has_istream_operator_v<optional_value_type>) {
+      ss >> parsed_value;
+      parse_success = (ss.eof() && !ss.fail());
+    } else {
+      LOG_WARN_S << "Unsupported type for default optional parser: "
+                 << typeid(optional_value_type).name();
+      parse_success = false;
+    }
+  }
 
-    if (parse_success) {
-        output = parsed_value;
-    } else {
-         output = std::nullopt;
-    }
-    return parse_success;
+  if (parse_success) {
+    output = parsed_value;
+  } else {
+    output = std::nullopt;
+  }
+  return parse_success;
 }
 
 // option_t Implementation
@@ -136,7 +136,7 @@ option_t<T>::option_t(const std::string& name,
                       const std::string& description,
                       bool required)
     : parameter_t(
-        name, description, detail::is_optional_v<T> ? false : required)
+          name, description, detail::is_optional_v<T> ? false : required)
     , short_name_(short_name)
 {
   set_default_parser();  // Setup default parser based on type T
@@ -188,7 +188,8 @@ bool option_t<T>::parse(const std::string& value)
   }
 
   if constexpr (detail::is_optional_v<T>) {
-    is_set_ = true; // Mark as set even if value is empty or parsing fails (resulting in nullopt)
+    is_set_ = true;  // Mark as set even if value is empty or parsing fails
+                     // (resulting in nullopt)
     // Call the parser to potentially set the value (or nullopt on failure)
     /* bool underlying_parse_success = */ parser_(value, value_);
     // For optional options, always return true. Failure to parse the underlying
@@ -214,8 +215,8 @@ void option_t<T>::set_default_parser()
     parser_ = [](const std::string& input, T& output) -> bool
     {
       if (input.empty()) {
-          output = std::nullopt;
-          return true; // Successfully handled empty input
+        output = std::nullopt;
+        return true;  // Successfully handled empty input
       }
       // Delegate actual value parsing to the helper function
       return parse_optional_value(input, output);
@@ -224,43 +225,45 @@ void option_t<T>::set_default_parser()
     // Lambda specifically for non-optional types
     parser_ = [](const std::string& input, T& output) -> bool
     {
-        std::stringstream ss(input);
-        if constexpr (std::is_same_v<T, bool>) {
-            std::string lower_input;
-            std::transform(input.begin(),
-                           input.end(),
-                           std::back_inserter(lower_input),
-                           ::tolower);
-            if (lower_input == "true" || lower_input == "1") {
-                output = true;
-                return true;
-            } else if (lower_input == "false" || lower_input == "0") {
-                output = false;
-                return true;
-            } else {
-                return false; // Invalid boolean string
-            }
-        } else if constexpr (std::is_integral_v<T>) {
-            if (input.size() > 2 && input[0] == '0'
-                && (input[1] == 'x' || input[1] == 'X')) {
-                ss >> std::hex >> output;
-            } else {
-                ss >> output;
-            }
-        } else if constexpr (std::is_floating_point_v<T>) {
-            ss >> output;
-        } else if constexpr (std::is_same_v<T, std::string>) {
-            output = input;
-            return true;
+      std::stringstream ss(input);
+      if constexpr (std::is_same_v<T, bool>) {
+        std::string lower_input;
+        std::transform(input.begin(),
+                       input.end(),
+                       std::back_inserter(lower_input),
+                       ::tolower);
+        if (lower_input == "true" || lower_input == "1") {
+          output = true;
+          return true;
+        } else if (lower_input == "false" || lower_input == "0") {
+          output = false;
+          return true;
         } else {
-            if constexpr (detail::has_istream_operator_v<T>) {
-                ss >> output;
-            } else {
-                LOG_WARN_S << "Unsupported type for default parser (non-optional): " << typeid(T).name();
-                return false;
-            }
+          return false;  // Invalid boolean string
         }
-        return ss.eof() && !ss.fail();
+      } else if constexpr (std::is_integral_v<T>) {
+        if (input.size() > 2 && input[0] == '0'
+            && (input[1] == 'x' || input[1] == 'X'))
+        {
+          ss >> std::hex >> output;
+        } else {
+          ss >> output;
+        }
+      } else if constexpr (std::is_floating_point_v<T>) {
+        ss >> output;
+      } else if constexpr (std::is_same_v<T, std::string>) {
+        output = input;
+        return true;
+      } else {
+        if constexpr (detail::has_istream_operator_v<T>) {
+          ss >> output;
+        } else {
+          LOG_WARN_S << "Unsupported type for default parser (non-optional): "
+                     << typeid(T).name();
+          return false;
+        }
+      }
+      return ss.eof() && !ss.fail();
     };
   }
 }
@@ -283,7 +286,7 @@ argument_t<T>::argument_t(const std::string& name,
                           const std::string& description,
                           bool required)
     : parameter_t(
-        name, description, detail::is_optional_v<T> ? false : required)
+          name, description, detail::is_optional_v<T> ? false : required)
 {
   set_default_parser();  // Setup default parser based on type T
   if constexpr (detail::is_optional_v<T>) {
@@ -319,82 +322,90 @@ bool argument_t<T>::parse(const std::string& value)
     throw std::runtime_error("Parser function not set for argument: " + name_);
   }
 
-   if (value.empty()) {
-       // Generally treat empty as parse failure for arguments, let parser handle details.
-   }
+  if (value.empty()) {
+    // Generally treat empty as parse failure for arguments, let parser handle
+    // details.
+  }
 
   if constexpr (detail::is_optional_v<T>) {
-      // Call the parser to potentially set the value (or nullopt on failure)
-      /* bool underlying_parse_success = */ parser_(value, value_);
-      // Mark optional arguments as set even if parsing failed (resulting in nullopt)
-      is_set_ = true;
-      // For optional arguments, always return true. Failure to parse the underlying
-      // value results in nullopt, which is a valid state for an optional argument.
-      return true;
+    // Call the parser to potentially set the value (or nullopt on failure)
+    /* bool underlying_parse_success = */ parser_(value, value_);
+    // Mark optional arguments as set even if parsing failed (resulting in
+    // nullopt)
+    is_set_ = true;
+    // For optional arguments, always return true. Failure to parse the
+    // underlying value results in nullopt, which is a valid state for an
+    // optional argument.
+    return true;
   } else {
-      T parsed_value;
-      bool parse_success = parser_(value, parsed_value);
-      if (parse_success) {
-          value_ = parsed_value;
-          is_set_ = true;
-      }
-      return parse_success; // Return the success status of the underlying parse operation.
+    T parsed_value;
+    bool parse_success = parser_(value, parsed_value);
+    if (parse_success) {
+      value_ = parsed_value;
+      is_set_ = true;
+    }
+    return parse_success;  // Return the success status of the underlying parse
+                           // operation.
   }
 }
 
 template<typename T>
 void argument_t<T>::set_default_parser()
 {
-   if constexpr (detail::is_optional_v<T>) {
-       // Lambda specifically for std::optional arguments
-       parser_ = [](const std::string& input, T& output) -> bool
-       {
-           // Delegate actual value parsing to the helper function (no detail:: needed)
-           return parse_optional_value(input, output);
-       };
-   } else {
-       // Lambda specifically for non-optional arguments
-       parser_ = [](const std::string& input, T& output) -> bool
-       {
-           std::stringstream ss(input);
-           if constexpr (std::is_same_v<T, bool>) {
-               std::string lower_input;
-               std::transform(input.begin(),
-                              input.end(),
-                              std::back_inserter(lower_input),
-                              ::tolower);
-               if (lower_input == "true" || lower_input == "1") {
-                   output = true;
-                   return true;
-               } else if (lower_input == "false" || lower_input == "0") {
-                   output = false;
-                   return true;
-               } else {
-                   return false; // Invalid boolean string
-               }
-           } else if constexpr (std::is_integral_v<T>) {
-               if (input.size() > 2 && input[0] == '0'
-                   && (input[1] == 'x' || input[1] == 'X')) {
-                   ss >> std::hex >> output;
-               } else {
-                   ss >> output;
-               }
-           } else if constexpr (std::is_floating_point_v<T>) {
-               ss >> output;
-           } else if constexpr (std::is_same_v<T, std::string>) {
-               output = input;
-               return true;
-           } else {
-               if constexpr (detail::has_istream_operator_v<T>) {
-                   ss >> output;
-               } else {
-                   LOG_WARN_S << "Unsupported type for default parser (non-optional argument): " << typeid(T).name();
-                   return false;
-               }
-           }
-           return ss.eof() && !ss.fail();
-       };
-   }
+  if constexpr (detail::is_optional_v<T>) {
+    // Lambda specifically for std::optional arguments
+    parser_ = [](const std::string& input, T& output) -> bool
+    {
+      // Delegate actual value parsing to the helper function (no detail::
+      // needed)
+      return parse_optional_value(input, output);
+    };
+  } else {
+    // Lambda specifically for non-optional arguments
+    parser_ = [](const std::string& input, T& output) -> bool
+    {
+      std::stringstream ss(input);
+      if constexpr (std::is_same_v<T, bool>) {
+        std::string lower_input;
+        std::transform(input.begin(),
+                       input.end(),
+                       std::back_inserter(lower_input),
+                       ::tolower);
+        if (lower_input == "true" || lower_input == "1") {
+          output = true;
+          return true;
+        } else if (lower_input == "false" || lower_input == "0") {
+          output = false;
+          return true;
+        } else {
+          return false;  // Invalid boolean string
+        }
+      } else if constexpr (std::is_integral_v<T>) {
+        if (input.size() > 2 && input[0] == '0'
+            && (input[1] == 'x' || input[1] == 'X'))
+        {
+          ss >> std::hex >> output;
+        } else {
+          ss >> output;
+        }
+      } else if constexpr (std::is_floating_point_v<T>) {
+        ss >> output;
+      } else if constexpr (std::is_same_v<T, std::string>) {
+        output = input;
+        return true;
+      } else {
+        if constexpr (detail::has_istream_operator_v<T>) {
+          ss >> output;
+        } else {
+          LOG_WARN_S
+              << "Unsupported type for default parser (non-optional argument): "
+              << typeid(T).name();
+          return false;
+        }
+      }
+      return ss.eof() && !ss.fail();
+    };
+  }
 }
 
 template<typename T>

@@ -31,18 +31,9 @@ public:
 
   virtual bool parse(const std::string& value) = 0;
   virtual bool accepts_missing_value() const;
-  virtual bool is_option() const
-  {
-    return false;
-  }
-  virtual bool is_argument() const
-  {
-    return false;
-  }
-  virtual bool is_flag() const
-  {
-    return false;
-  }
+  virtual bool is_option() const { return false; }
+  virtual bool is_argument() const { return false; }
+  virtual bool is_flag() const { return false; }
   virtual std::string get_short_name() const;
 };
 
@@ -81,14 +72,8 @@ public:
          const std::string& description);
 
   bool parse(const std::string& value) override;
-  bool is_option() const override
-  {
-    return true;
-  }
-  bool is_flag() const override
-  {
-    return true;
-  }
+  bool is_option() const override { return true; }
+  bool is_flag() const override { return true; }
   std::string get_short_name() const override;
   bool get() const;
 };

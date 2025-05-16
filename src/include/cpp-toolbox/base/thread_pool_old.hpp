@@ -122,9 +122,10 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
 {
   using return_type = typename std::invoke_result_t<F, Args...>;
 
-  if (stop_.load(std::memory_order_relaxed))
-  {  // 使用 relaxed 因为后续 enqueue 有自己的同步/Use relaxed since enqueue has
-     // its own synchronization
+  if (stop_.load(
+          std::memory_order_relaxed)) {  // 使用 relaxed 因为后续 enqueue
+                                         // 有自己的同步/Use relaxed since
+                                         // enqueue has its own synchronization
     throw std::runtime_error(
         "在已停止的线程池上提交任务/Submitting task to stopped thread pool");
   }

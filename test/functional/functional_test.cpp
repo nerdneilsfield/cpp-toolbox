@@ -486,8 +486,8 @@ TEST_CASE("Functional Variant Map (Simplified)", "[functional][variant][map]")
         std::move(var_rv),
         [](auto&& x) -> std::variant<size_t>
         {
-          if constexpr (std::is_same_v<std::decay_t<decltype(x)>, std::string>)
-          {
+          if constexpr (std::is_same_v<std::decay_t<decltype(x)>,
+                                       std::string>) {
             return {x.length()};
           } else
             return {};  // Return empty variant if int

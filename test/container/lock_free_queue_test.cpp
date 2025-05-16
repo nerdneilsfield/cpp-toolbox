@@ -232,8 +232,8 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
     int value;
     // Cast consumer_id for indexing
     size_t consumer_idx = static_cast<size_t>(consumer_id);
-    while (consumed_count.load() < total_items)
-    {  // Check global consumed count
+    while (consumed_count.load()
+           < total_items) {  // Check global consumed count
       if (queue.try_dequeue(value)) {
         // Use casted index
         consumer_results[consumer_idx].push_back(value);  // Store locally
@@ -241,7 +241,8 @@ TEST_CASE("LockFreeQueue Single-Producer Multi-Consumer (SPMC)",
       } else {
         // If producer might be finished and queue is empty, break
         if (produced_count.load() == total_items
-            && queue.try_dequeue(value) == false) {
+            && queue.try_dequeue(value) == false)
+        {
           // Double check after producer is done
           if (!queue.try_dequeue(value))
             break;  // exit if still empty

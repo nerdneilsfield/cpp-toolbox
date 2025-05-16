@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <chrono>
 #include <cstddef>
 #include <filesystem>
@@ -10,8 +11,9 @@
 #include "cpp-toolbox/macro.hpp"
 
 #if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
-// Define NOMINMAX before including windows.h to prevent min/max macro definitions
-#define NOMINMAX
+// Define NOMINMAX before including windows.h to prevent min/max macro
+// definitions
+#  define NOMINMAX
 #  include <windows.h>
 #elif defined(CPP_TOOLBOX_PLATFORM_MACOS)
 #  include <sys/stat.h>
@@ -267,6 +269,37 @@ auto traverse_directory(const std::filesystem::path& path)
   std::vector<std::filesystem::path> result;
   for (const auto& entry : std::filesystem::directory_iterator(path)) {
     result.push_back(entry.path());
+  }
+  return result;
+}
+
+auto list_files_in_directory(const std::filesystem::path& path,
+                             const std::string& extension)
+    -> std::vector<std::filesystem::path>
+{
+  if (extension.empty()) {
+    return traverse_directory(path);
+  }
+  std::vector<std::filesystem::path> result;
+  for (const auto& entry : std::filesystem::directory_iterator(path)) {
+    if (entry.is_regular_file() && entry.path().extension() == extension) {
+      result.push_back(entry.path());
+    }
+  }
+  return result;
+}
+
+auto list_files_in_directory(const std::filesystem::path& path,
+                             const std::vector<std::string>& extensions)
+    -> std::vector<std::filesystem::path>
+{
+  if (extensions.empty()) {
+    return traverse_directory(path);
+  }
+  std::vector<std::filesystem::path> result;
+  for (const auto& extension : extensions) {
+    auto files = list_files_in_directory(path, extension);
+    result.insert(result.end(), files.begin(), files.end());
   }
   return result;
 }

@@ -759,6 +759,63 @@ CPP_TOOLBOX_EXPORT auto traverse_directory(const std::filesystem::path& path)
     -> std::vector<std::filesystem::path>;
 
 /**
+ * @brief 列出目录下指定扩展名的所有文件/Lists all files in a directory with the
+ * specified extension
+ * @param path 目录路径/The directory path
+ * @param extension 文件扩展名（如".txt"，默认为空，表示所有文件）/File
+ * extension (e.g., ".txt", default is empty for all files)
+ * @return 满足条件的文件路径向量/A vector of file paths that match the
+ * extension
+ *
+ * @code
+ * // 列出所有txt文件/List all .txt files
+ * auto txt_files = list_files_in_directory("/path/to/dir", ".txt");
+ * for (const auto& file : txt_files) {
+ *     std::cout << "找到txt文件:/Found txt file: " << file << std::endl;
+ * }
+ *
+ * // 列出所有文件/List all files
+ * auto all_files = list_files_in_directory("/path/to/dir");
+ * for (const auto& file : all_files) {
+ *     std::cout << "找到文件:/Found file: " << file << std::endl;
+ * }
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto list_files_in_directory(
+    const std::filesystem::path& path, const std::string& extension = "")
+    -> std::vector<std::filesystem::path>;
+
+/**
+ * @brief 列出目录下指定多个扩展名的所有文件/Lists all files in a directory with
+ * the specified extensions
+ * @param path 目录路径/The directory path
+ * @param extensions 文件扩展名列表（如{".txt", ".bin"}）/A vector of file
+ * extensions (e.g., {".txt", ".bin"})
+ * @return 满足条件的文件路径向量/A vector of file paths that match any of the
+ * extensions
+ *
+ * @code
+ * // 列出所有txt和bin文件/List all .txt and .bin files
+ * std::vector<std::string> exts = {".txt", ".bin"};
+ * auto files = list_files_in_directory("/path/to/dir", exts);
+ * for (const auto& file : files) {
+ *     std::cout << "找到文件:/Found file: " << file << std::endl;
+ * }
+ *
+ * // 列出所有文件（扩展名为空时）/List all files (when extensions is empty)
+ * std::vector<std::string> empty_exts;
+ * auto all_files = list_files_in_directory("/path/to/dir", empty_exts);
+ * for (const auto& file : all_files) {
+ *     std::cout << "找到文件:/Found file: " << file << std::endl;
+ * }
+ * @endcode
+ */
+CPP_TOOLBOX_EXPORT auto list_files_in_directory(
+    const std::filesystem::path& path,
+    const std::vector<std::string>& extensions)
+    -> std::vector<std::filesystem::path>;
+
+/**
  * @brief 递归遍历目录 / Recursively traverse a directory
  * @param path 要遍历的路径 / The path to traverse
  * @return 目录及其子目录中的路径向量 / A vector of paths in the directory and

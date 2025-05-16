@@ -29,7 +29,7 @@
 #include <cpp-toolbox/logger/thread_logger.hpp>  // For LOG_*
 // #include <cpp-toolbox/types/point.hpp> // Should be included via pcd.hpp
 
-namespace toolbox::io::formats
+namespace toolbox::io
 {
 
 // Assuming pcd.hpp includes this file *after* the full class definition.
@@ -471,8 +471,8 @@ bool pcd_format_t::read_binary_data(const std::string& path,
   {
 #define READ_BINARY_CASE(PCDType) \
   case sizeof(PCDType): \
-    if (!read_binary_field_value<T, PCDType>(point_ptr, info.offset, out_val)) \
-    { \
+    if (!read_binary_field_value<T, PCDType>( \
+            point_ptr, info.offset, out_val)) { \
       LOG_ERROR_S << "pcd_format_t: Failed binary read (offset " \
                   << info.offset << ", size " << sizeof(PCDType) << ")"; \
       return false; \
@@ -798,7 +798,7 @@ template<typename T>
 CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_pcd(
     const std::string& path)
 {
-  auto pcd = std::make_unique<toolbox::io::formats::pcd_format_t>();
+  auto pcd = std::make_unique<toolbox::io::pcd_format_t>();
   std::unique_ptr<base_file_data_t> base_data =
       nullptr;  // Create ptr of the type expected by read()
 
@@ -834,7 +834,7 @@ CPP_TOOLBOX_EXPORT bool write_pcd(const std::string& path,
                                   const toolbox::types::point_cloud_t<T>& cloud,
                                   bool binary)
 {
-  auto pcd = std::make_unique<toolbox::io::formats::pcd_format_t>();
+  auto pcd = std::make_unique<toolbox::io::pcd_format_t>();
 
   // Create a copy of the input cloud to satisfy the unique_ptr interface
   auto cloud_copy_ptr =
@@ -847,4 +847,4 @@ CPP_TOOLBOX_EXPORT bool write_pcd(const std::string& path,
   return pcd->write(path, base_data_ptr, binary);
 }
 
-}  // namespace toolbox::io::formats
+}  // namespace toolbox::io

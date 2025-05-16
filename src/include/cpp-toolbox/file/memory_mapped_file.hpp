@@ -3,14 +3,14 @@
 #include <cstring>  // For memcpy, memset
 #include <filesystem>  // For file size
 
-#include <cpp-toolbox/macro.hpp>  // For platform detection CPP_TOOLBOX_PLATFORM_*
-
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
+#include <cpp-toolbox/macro.hpp>  // For platform detection CPP_TOOLBOX_PLATFORM_*
 
 // Platform-specific includes for memory mapping / 内存映射的平台特定包含文件
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
-// Define NOMINMAX before including windows.h to prevent min/max macro definitions
-#define NOMINMAX
+// Define NOMINMAX before including windows.h to prevent min/max macro
+// definitions
+#  define NOMINMAX
 #  define WIN32_LEAN_AND_MEAN
 #  include <windows.h>
 #else  // Assuming POSIX-like systems (Linux, macOS) / 假设为类 POSIX

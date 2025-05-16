@@ -305,8 +305,7 @@ auto to_string_value(const T& value) -> std::string
     return oss.str();
   }
   // 否则尝试用 operator<< 打印
-  else
-  {
+  else {
     std::ostringstream oss;
     oss << value;  // 只有当 stream << T 可用才会编译
     return oss.str();

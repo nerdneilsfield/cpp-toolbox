@@ -4,7 +4,8 @@
  * @file kitti_impl.hpp
  * @brief 此文件包含 kitti_format_t 的模板实现/This file contains the template
  * implementations for kitti_format_t
- * @details 该文件应该只被 kitti.hpp 包含/It should only be included by kitti.hpp
+ * @details 该文件应该只被 kitti.hpp 包含/It should only be included by
+ * kitti.hpp
  */
 
 #include <cpp-toolbox/io/formats/kitti.hpp>  // Include the header declaring the class
@@ -26,7 +27,7 @@
 #include <cpp-toolbox/logger/thread_logger.hpp>  // For LOG_*
 // #include <cpp-toolbox/types/point.hpp> // Should be included via kitti.hpp
 
-namespace toolbox::io::formats
+namespace toolbox::io
 {
 
 // Assuming kitti.hpp includes this file *after* the full class definition.
@@ -38,7 +39,8 @@ namespace toolbox::io::formats
  * @tparam T 点云数据的数值类型/The numeric type of the point cloud data
  * @param path 输出文件路径/Output file path
  * @param cloud 要写入的点云数据/The point cloud to write
- * @param binary 是否以二进制格式写入（KITTI格式总是二进制）/Whether to write in binary format (KITTI format is always binary)
+ * @param binary 是否以二进制格式写入（KITTI格式总是二进制）/Whether to write in
+ * binary format (KITTI format is always binary)
  * @return bool 写入操作是否成功/Whether the write operation was successful
  *
  * @code
@@ -51,13 +53,14 @@ namespace toolbox::io::formats
  * // 写入双精度点云到KITTI格式文件
  * point_cloud_t<double> cloud_double;
  * // ... 填充点云数据 ...
- * bool binary_success = kitti.write_internal("output.bin", cloud_double, true); // 二进制格式
+ * bool binary_success = kitti.write_internal("output.bin", cloud_double, true);
+ * // 二进制格式
  * @endcode
  */
 template<typename T>
 bool kitti_format_t::write_internal(const std::string& path,
-                                  const point_cloud_t<T>& cloud,
-                                  bool binary) const
+                                    const point_cloud_t<T>& cloud,
+                                    bool binary) const
 {
   // KITTI格式总是二进制，忽略binary参数
   // KITTI format is always binary, ignore binary parameter
@@ -82,7 +85,8 @@ bool kitti_format_t::write_internal(const std::string& path,
 
   // KITTI格式：每个点由4个float组成 (x, y, z, intensity)
   // KITTI format: each point consists of 4 floats (x, y, z, intensity)
-  const size_t point_step = 4 * sizeof(float);  // 每个点16字节/16 bytes per point
+  const size_t point_step =
+      4 * sizeof(float);  // 每个点16字节/16 bytes per point
   std::vector<unsigned char> point_buffer(point_step);
 
   for (size_t i = 0; i < cloud.size(); ++i) {
@@ -118,7 +122,8 @@ bool kitti_format_t::write_internal(const std::string& path,
 }
 
 /**
- * @brief 从KITTI二进制文件读取点云数据/Read point cloud data from KITTI binary file
+ * @brief 从KITTI二进制文件读取点云数据/Read point cloud data from KITTI binary
+ * file
  *
  * @tparam T 点云数据的数值类型/The numeric type of the point cloud data
  * @param path 输入文件路径/Input file path
@@ -134,7 +139,7 @@ bool kitti_format_t::write_internal(const std::string& path,
  */
 template<typename T>
 bool kitti_format_t::read_binary_data(const std::string& path,
-                                    point_cloud_t<T>& cloud)
+                                      point_cloud_t<T>& cloud)
 {
   toolbox::file::memory_mapped_file_t mapped_file;
   if (!mapped_file.open(path)) {
@@ -151,8 +156,10 @@ bool kitti_format_t::read_binary_data(const std::string& path,
   const unsigned char* buffer_end = buffer_start + mapped_file.size();
 
   // 计算点的数量：文件大小除以每个点的大小（4个float = 16字节）
-  // Calculate number of points: file size divided by size per point (4 floats = 16 bytes)
-  const size_t point_step = 4 * sizeof(float);  // 每个点16字节/16 bytes per point
+  // Calculate number of points: file size divided by size per point (4 floats =
+  // 16 bytes)
+  const size_t point_step =
+      4 * sizeof(float);  // 每个点16字节/16 bytes per point
   const size_t num_points = mapped_file.size() / point_step;
 
   if (mapped_file.size() % point_step != 0) {
@@ -189,7 +196,8 @@ bool kitti_format_t::read_binary_data(const std::string& path,
     std::memcpy(&x_val, current_point_ptr, sizeof(float));
     std::memcpy(&y_val, current_point_ptr + sizeof(float), sizeof(float));
     std::memcpy(&z_val, current_point_ptr + 2 * sizeof(float), sizeof(float));
-    std::memcpy(&intensity_val, current_point_ptr + 3 * sizeof(float), sizeof(float));
+    std::memcpy(
+        &intensity_val, current_point_ptr + 3 * sizeof(float), sizeof(float));
 
     // 添加点到点云
     // Add point to point cloud
@@ -211,11 +219,12 @@ bool kitti_format_t::read_binary_data(const std::string& path,
 }
 
 template<typename T>
-CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_kitti_bin(
-    const std::string& path)
+CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>>
+read_kitti_bin(const std::string& path)
 {
-  auto kitti = std::make_unique<toolbox::io::formats::kitti_format_t>();
-  std::unique_ptr<base_file_data_t> base_data = nullptr;  // Create ptr of the type expected by read()
+  auto kitti = std::make_unique<toolbox::io::kitti_format_t>();
+  std::unique_ptr<base_file_data_t> base_data =
+      nullptr;  // Create ptr of the type expected by read()
 
   // Call read, passing the base class unique_ptr reference
   bool success = kitti->read(path, base_data);
@@ -224,16 +233,19 @@ CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_kitti_
     // Read succeeded, now check if the actual data type matches T
     auto* typed_ptr = dynamic_cast<point_cloud_t<T>*>(base_data.get());
     if (typed_ptr) {
-      // Type matches T, transfer ownership to a new unique_ptr<point_cloud_t<T>>
+      // Type matches T, transfer ownership to a new
+      // unique_ptr<point_cloud_t<T>>
       base_data.release();  // Prevent base_data from deleting the object
       return std::unique_ptr<point_cloud_t<T>>(typed_ptr);
     } else {
       // Read succeeded, but the resulting type is not point_cloud_t<T>
       // (e.g., read always returns float, but T was double)
-      LOG_WARN_S << "read_kitti_bin: read data type does not match requested type T="
-                 << typeid(T).name() << ". Path: " << path;
+      LOG_WARN_S
+          << "read_kitti_bin: read data type does not match requested type T="
+          << typeid(T).name() << ". Path: " << path;
       // Return nullptr as the requested type couldn't be provided.
-      // The base_data unique_ptr will delete the object when it goes out of scope.
+      // The base_data unique_ptr will delete the object when it goes out of
+      // scope.
       return nullptr;
     }
   }
@@ -243,13 +255,14 @@ CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_kitti_
 }
 
 template<typename T>
-CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string& path,
-                                      const toolbox::types::point_cloud_t<T>& cloud)
+CPP_TOOLBOX_EXPORT bool write_kitti_bin(
+    const std::string& path, const toolbox::types::point_cloud_t<T>& cloud)
 {
-  auto kitti = std::make_unique<toolbox::io::formats::kitti_format_t>();
+  auto kitti = std::make_unique<toolbox::io::kitti_format_t>();
 
   // Create a copy of the input cloud to satisfy the unique_ptr interface
-  auto cloud_copy_ptr = std::make_unique<toolbox::types::point_cloud_t<T>>(cloud);
+  auto cloud_copy_ptr =
+      std::make_unique<toolbox::types::point_cloud_t<T>>(cloud);
 
   // Cast the unique_ptr holding the copy to the base class type unique_ptr
   std::unique_ptr<base_file_data_t> base_data_ptr = std::move(cloud_copy_ptr);
@@ -259,4 +272,4 @@ CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string& path,
   return kitti->write(path, base_data_ptr, true);
 }
 
-}  // namespace toolbox::io::formats
+}  // namespace toolbox::io

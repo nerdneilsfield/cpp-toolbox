@@ -18,7 +18,7 @@
 #include <cpp-toolbox/io/formats/pcd.hpp>
 #include <cpp-toolbox/logger/thread_logger.hpp>
 
-namespace toolbox::io::formats
+namespace toolbox::io
 {
 
 using toolbox::file::memory_mapped_file_t;  // Use the correct class name
@@ -189,8 +189,8 @@ bool pcd_format_t::pcd_header_t::validate(size_t file_size_bytes) const
                   << ")";
       return false;
     } else if (actual_data_size > expected_data_size * 1.1
-               && actual_data_size > expected_data_size + 1024)
-    {  // Warn if much larger
+               && actual_data_size
+                   > expected_data_size + 1024) {  // Warn if much larger
       LOG_WARN_S << "PCD binary data size (" << actual_data_size
                  << " bytes) is significantly larger than expected ("
                  << expected_data_size << " bytes). Ignoring extra data.";
@@ -366,8 +366,8 @@ bool pcd_format_t::parse_header_stream(std::istream& stream,
                     "estimating position.";
     }
 
-    if (header.parse_line(line))
-    {  // parse_line returns true when DATA is found
+    if (header.parse_line(
+            line)) {  // parse_line returns true when DATA is found
       data_keyword_found = true;
       break;
     }
@@ -429,4 +429,4 @@ template CPP_TOOLBOX_EXPORT bool write_pcd<double>(
     const toolbox::types::point_cloud_t<double>& cloud,
     bool binary);  // No default argument here
 
-}  // namespace toolbox::io::formats
+}  // namespace toolbox::io

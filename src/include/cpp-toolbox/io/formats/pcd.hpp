@@ -19,7 +19,7 @@
 #include <cpp-toolbox/macro.hpp>  // For platform checks if needed directly
 #include <cpp-toolbox/types/point.hpp>  // point_cloud_t (inherits base_file_data_t)
 
-namespace toolbox::io::formats
+namespace toolbox::io
 {
 
 // Forward declare the concrete data type we'll work with
@@ -42,8 +42,8 @@ using toolbox::types::point_t;  // Assuming point_t is also in types namespace
  *
  * @code{.cpp}
  * // 读取 PCD 文件/Reading a PCD file
- * toolbox::io::formats::pcd_format_t pcd_reader;
- * std::unique_ptr<toolbox::io::formats::base_file_data_t> data;
+ * toolbox::io::pcd_format_t pcd_reader;
+ * std::unique_ptr<toolbox::io::base_file_data_t> data;
  *
  * if (pcd_reader.can_read("pointcloud.pcd")) {
  *     if (pcd_reader.read("pointcloud.pcd", data)) {
@@ -61,7 +61,7 @@ using toolbox::types::point_t;  // Assuming point_t is also in types namespace
  * cloud.push_back({1.0f, 2.0f, 3.0f});
  * cloud.push_back({4.0f, 5.0f, 6.0f});
  *
- * std::unique_ptr<toolbox::io::formats::base_file_data_t> write_data =
+ * std::unique_ptr<toolbox::io::base_file_data_t> write_data =
  *     std::make_unique<toolbox::types::point_cloud_t<float>>(std::move(cloud));
  *
  * pcd_reader.write("output.pcd", write_data, true); // 以二进制格式写入/Write
@@ -205,7 +205,7 @@ public:
    * matches, false otherwise
    *
    * @code{.cpp}
-   * toolbox::io::formats::pcd_format_t pcd_format;
+   * toolbox::io::pcd_format_t pcd_format;
    * if (pcd_format.can_read("cloud.pcd")) {
    *     std::cout << "这是一个 PCD 文件/This is a PCD file" << std::endl;
    * } else {
@@ -221,7 +221,7 @@ public:
    * @return 仅包含".pcd"的向量/A vector containing only ".pcd"
    *
    * @code{.cpp}
-   * toolbox::io::formats::pcd_format_t pcd_format;
+   * toolbox::io::pcd_format_t pcd_format;
    * auto extensions = pcd_format.get_supported_extensions();
    * for (const auto& ext : extensions) {
    *     std::cout << "支持的扩展名/Supported extension: " << ext << std::endl;
@@ -245,8 +245,8 @@ public:
    * otherwise
    *
    * @code{.cpp}
-   * toolbox::io::formats::pcd_format_t pcd_format;
-   * std::unique_ptr<toolbox::io::formats::base_file_data_t> cloud_data;
+   * toolbox::io::pcd_format_t pcd_format;
+   * std::unique_ptr<toolbox::io::base_file_data_t> cloud_data;
    *
    * if (pcd_format.read("scan.pcd", cloud_data)) {
    *     // 转换为具体类型/Convert to concrete type
@@ -292,11 +292,11 @@ public:
    * cloud->push_back({7.0f, 8.0f, 9.0f});
    *
    * // 转换为基类指针/Convert to base class pointer
-   * std::unique_ptr<toolbox::io::formats::base_file_data_t>
+   * std::unique_ptr<toolbox::io::base_file_data_t>
    * data_ptr(cloud.release());
    *
    * // 写入文件/Write to file
-   * toolbox::io::formats::pcd_format_t pcd_format;
+   * toolbox::io::pcd_format_t pcd_format;
    * bool ascii_result = pcd_format.write("cloud_ascii.pcd", data_ptr, false);
    * // ASCII 格式/ASCII format bool binary_result =
    * pcd_format.write("cloud_binary.pcd", data_ptr, true); // 二进制格式/Binary
@@ -440,14 +440,14 @@ private:
  *
  * @code
  * // 读取 float 类型的点云/Read a point cloud with float precision
- * auto cloud_float = toolbox::io::formats::read_pcd<float>("cloud.pcd");
+ * auto cloud_float = toolbox::io::read_pcd<float>("cloud.pcd");
  * if (cloud_float) {
  *   std::cout << "读取了 " << cloud_float->size() << " 个点/Read " <<
  * cloud_float->size() << " points" << std::endl;
  * }
  *
  * // 读取 double 类型的点云/Read a point cloud with double precision
- * auto cloud_double = toolbox::io::formats::read_pcd<double>("cloud.pcd");
+ * auto cloud_double = toolbox::io::read_pcd<double>("cloud.pcd");
  * @endcode
  */
 template<typename T>
@@ -473,11 +473,11 @@ CPP_TOOLBOX_EXPORT std::unique_ptr<toolbox::types::point_cloud_t<T>> read_pcd(
  * cloud.points = {{1.0f, 2.0f, 3.0f}, {4.0f, 5.0f, 6.0f}};
  *
  * // 以 ASCII 格式保存/Save in ASCII format
- * bool ascii_success = toolbox::io::formats::write_pcd("cloud_ascii.pcd",
+ * bool ascii_success = toolbox::io::write_pcd("cloud_ascii.pcd",
  * cloud, false);
  *
  * // 以二进制格式保存/Save in binary format
- * bool binary_success = toolbox::io::formats::write_pcd("cloud_binary.pcd",
+ * bool binary_success = toolbox::io::write_pcd("cloud_binary.pcd",
  * cloud, true);
  * @endcode
  */
@@ -486,6 +486,6 @@ CPP_TOOLBOX_EXPORT bool write_pcd(const std::string& path,
                                   const toolbox::types::point_cloud_t<T>& cloud,
                                   bool binary);
 
-}  // namespace toolbox::io::formats
+}  // namespace toolbox::io
 
 #include <cpp-toolbox/io/formats/detail/pcd_impl.hpp>

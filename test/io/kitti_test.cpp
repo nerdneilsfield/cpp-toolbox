@@ -14,7 +14,7 @@
 
 #include "test_data_dir.hpp"
 
-using namespace toolbox::io::formats;
+using namespace toolbox::io;
 using Catch::Matchers::Equals;
 using Catch::Matchers::WithinAbs;
 using toolbox::io::base_file_data_t;
@@ -100,11 +100,13 @@ TEST_CASE("KITTI Format Reading", "[io][kitti][read]")
     REQUIRE(success);
     REQUIRE(data != nullptr);
 
-    // 尝试转换为预期类型（默认为float）/Attempt to cast to the expected type (float by default)
+    // 尝试转换为预期类型（默认为float）/Attempt to cast to the expected type
+    // (float by default)
     auto* cloud_ptr = dynamic_cast<point_cloud_t<float>*>(data.get());
     REQUIRE(cloud_ptr != nullptr);
 
-    // 基本验证：检查是否读取了任何点/Basic validation: check if any points were read
+    // 基本验证：检查是否读取了任何点/Basic validation: check if any points were
+    // read
     CHECK_FALSE(cloud_ptr->points.empty());
     CHECK(cloud_ptr->size() > 0);
 
@@ -129,7 +131,8 @@ TEST_CASE("KITTI Format Writing and Reading Back", "[io][kitti][write]")
     original_cloud_f->points = {{1.1f, 2.2f, 3.3f}, {4.4f, 5.5f, 6.6f}};
 
     // KITTI格式不支持法线和颜色，只有点坐标和强度
-    // KITTI format doesn't support normals and colors, only point coordinates and intensity
+    // KITTI format doesn't support normals and colors, only point coordinates
+    // and intensity
 
     std::unique_ptr<base_file_data_t> original_data_f =
         std::move(original_cloud_f);
@@ -223,7 +226,7 @@ TEST_CASE("KITTI Format Large Point Cloud Handling", "[io][kitti][large]")
   // 生成大型点云数据/Generate large point cloud data
   auto large_cloud = std::make_unique<point_cloud_t<float>>();
   toolbox::types::minmax_t<point_t<float>> bounds({-10.0f, -10.0f, -10.0f},
-                                                {10.0f, 10.0f, 10.0f});
+                                                  {10.0f, 10.0f, 10.0f});
   // 使用并行生成提高效率/Use parallel generation for efficiency
   large_cloud->points = toolbox::types::generate_random_points_parallel<float>(
       num_large_points, bounds);
@@ -277,12 +280,12 @@ TEST_CASE("KITTI Standalone Helper Functions", "[io][kitti][standalone]")
     original_cloud.points = {{10.1f, 10.2f, 10.3f}, {-1.1f, -2.2f, -3.3f}};
 
     // 测试写入/Test write
-    REQUIRE(toolbox::io::formats::write_kitti_bin(
-        temp_standalone_float_path, original_cloud));
+    REQUIRE(toolbox::io::write_kitti_bin(temp_standalone_float_path,
+                                         original_cloud));
 
     // 测试读取/Test read
     std::unique_ptr<point_cloud_t<float>> read_cloud_ptr =
-        toolbox::io::formats::read_kitti_bin<float>(temp_standalone_float_path);
+        toolbox::io::read_kitti_bin<float>(temp_standalone_float_path);
 
     REQUIRE(read_cloud_ptr != nullptr);
     REQUIRE(read_cloud_ptr->size() == original_cloud.size());
@@ -303,12 +306,12 @@ TEST_CASE("KITTI Standalone Helper Functions", "[io][kitti][standalone]")
     original_cloud.points = {{20.1, 20.2, 20.3}, {-4.4, -5.5, -6.6}};
 
     // 测试写入/Test write
-    REQUIRE(toolbox::io::formats::write_kitti_bin(
-        temp_standalone_double_path, original_cloud));
+    REQUIRE(toolbox::io::write_kitti_bin(temp_standalone_double_path,
+                                         original_cloud));
 
     // 测试读取/Test read
     std::unique_ptr<point_cloud_t<float>> read_cloud_float_ptr =
-        toolbox::io::formats::read_kitti_bin<float>(temp_standalone_double_path);
+        toolbox::io::read_kitti_bin<float>(temp_standalone_double_path);
     REQUIRE(read_cloud_float_ptr != nullptr);
     REQUIRE(read_cloud_float_ptr->size() == original_cloud.size());
 

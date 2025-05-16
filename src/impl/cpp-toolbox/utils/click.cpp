@@ -130,11 +130,11 @@ void command_t::add_help()
 
 [[nodiscard]] bool command_t::handle_help_flag() const
 {
-  for (const auto& param : parameters_)
-  {  // Check if the parameter is a flag named "help"
-    if (auto* flag = dynamic_cast<flag_t*>(param.get());
-        flag && flag->get_name() == "help" && flag->is_set())
-    {  // If help flag is set, print help and return true
+  for (const auto& param :
+       parameters_) {  // Check if the parameter is a flag named "help"
+    if (auto* flag = dynamic_cast<flag_t*>(param.get()); flag
+        && flag->get_name() == "help"
+        && flag->is_set()) {  // If help flag is set, print help and return true
       LOG_INFO_S << format_help();
       return true;
     }
@@ -486,8 +486,8 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
             // accepts missing.
             if (current_param->accepts_missing_value()) {
               try {  // Catch exceptions from custom parsers
-                if (!current_param->parse(""))
-                {  // Or handle missing value case specifically
+                if (!current_param->parse(
+                        "")) {  // Or handle missing value case specifically
                   parsing_errors.push_back(
                       "Error parsing missing optional value for '"
                       + current_opt_name + "'.");
@@ -570,8 +570,8 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
               // Optional value missing
               if (current_param->accepts_missing_value()) {
                 try {  // Catch exceptions from custom parsers
-                  if (!current_param->parse(""))
-                  {  // Or handle missing value case specifically
+                  if (!current_param->parse(
+                          "")) {  // Or handle missing value case specifically
                     parsing_errors.push_back(
                         "Error parsing missing optional value for '"
                         + short_opt_name + "'.");

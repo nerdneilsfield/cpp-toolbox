@@ -49,10 +49,8 @@ struct is_calculable_container<
     std::void_t<decltype(std::begin(std::declval<const T&>())),
                 decltype(std::end(std::declval<const T&>())),
                 typename T::value_type>>
-    : std::bool_constant<
-          !std::is_same_v<
-              std::decay_t<T>,
-              std::string> && !std::is_same_v<std::decay_t<T>, std::wstring>>
+    : std::bool_constant<!std::is_same_v<std::decay_t<T>, std::string>
+                         && !std::is_same_v<std::decay_t<T>, std::wstring>>
 {
 };
 

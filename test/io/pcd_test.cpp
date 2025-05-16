@@ -14,7 +14,7 @@
 
 #include "test_data_dir.hpp"
 
-using namespace toolbox::io::formats;
+using namespace toolbox::io;
 using Catch::Matchers::Equals;
 using Catch::Matchers::WithinAbs;
 using toolbox::io::base_file_data_t;
@@ -382,12 +382,12 @@ TEST_CASE("PCD Standalone Helper Functions", "[io][pcd][standalone]")
     // Keep it simple, no normals or colors for this test
 
     // Test write (explicitly specify ASCII)
-    REQUIRE(toolbox::io::formats::write_pcd(
+    REQUIRE(toolbox::io::write_pcd(
         temp_standalone_float_path, original_cloud, false));
 
     // Test read
     std::unique_ptr<point_cloud_t<float>> read_cloud_ptr =
-        toolbox::io::formats::read_pcd<float>(temp_standalone_float_path);
+        toolbox::io::read_pcd<float>(temp_standalone_float_path);
 
     REQUIRE(read_cloud_ptr != nullptr);
     REQUIRE(read_cloud_ptr->size() == original_cloud.size());
@@ -411,14 +411,14 @@ TEST_CASE("PCD Standalone Helper Functions", "[io][pcd][standalone]")
     original_cloud.points = {{20.1, 20.2, 20.3}, {-4.4, -5.5, -6.6}};
 
     // Test write (explicitly binary)
-    REQUIRE(toolbox::io::formats::write_pcd(
+    REQUIRE(toolbox::io::write_pcd(
         temp_standalone_double_path, original_cloud, true));
 
     // Test read
     // Note: standalone read_pcd<double> should now correctly return double if
     // successful
     std::unique_ptr<point_cloud_t<double>> read_cloud_ptr =
-        toolbox::io::formats::read_pcd<double>(temp_standalone_double_path);
+        toolbox::io::read_pcd<double>(temp_standalone_double_path);
 
     // Since the PCD write function currently writes doubles as doubles
     // (SIZE=8), but the default read reads into float, the dynamic_cast in
@@ -427,7 +427,7 @@ TEST_CASE("PCD Standalone Helper Functions", "[io][pcd][standalone]")
     // TODO: Enhance read function to handle reading float/double based on PCD
     // header TYPE/SIZE?
     std::unique_ptr<point_cloud_t<float>> read_cloud_float_ptr =
-        toolbox::io::formats::read_pcd<float>(temp_standalone_double_path);
+        toolbox::io::read_pcd<float>(temp_standalone_double_path);
     REQUIRE(read_cloud_float_ptr != nullptr);
     REQUIRE(read_cloud_float_ptr->size() == original_cloud.size());
 

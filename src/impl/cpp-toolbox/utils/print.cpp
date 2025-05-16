@@ -345,8 +345,8 @@ void table_t::print_wrapped_row(std::ostream& os,
 
       // Determine alignment for this column
       align_t current_align = m_style.alignment;  // Default
-      if (c < m_col_aligns.size())
-      {  // Check if m_col_aligns has an entry for this column
+      if (c < m_col_aligns.size()) {  // Check if m_col_aligns has an entry for
+                                      // this column
         current_align = m_col_aligns[c];
       }
 

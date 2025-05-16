@@ -570,8 +570,8 @@ TEST_CASE("Click Library Custom Parser Tests", "[click][parser]")
         int y = std::stoi(value.substr(comma_pos + 1));
         result = {x, y};
         return true;
-      } catch (const std::invalid_argument&)
-      {  // Catch stoi errors specifically
+      } catch (
+          const std::invalid_argument&) {  // Catch stoi errors specifically
         return false;
       } catch (const std::out_of_range&) {  // Catch stoi errors specifically
         return false;

@@ -23,6 +23,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/random.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/pcd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti_pcd.cpp
 )
 
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})

@@ -246,8 +246,8 @@ auto is_numeric(std::string_view s) -> bool
       }
       has_decimal_point = true;
       pos++;
-    } else if ((c == 'e' || c == 'E') && has_digit)
-    {  // Exponent needs digits before it
+    } else if ((c == 'e' || c == 'E')
+               && has_digit) {  // Exponent needs digits before it
       has_exponent = true;
       pos++;
       break;  // Move to exponent part check
@@ -329,8 +329,8 @@ auto is_float(std::string_view s) -> bool
       }
       has_decimal_point = true;
       pos++;
-    } else if ((c == 'e' || c == 'E') && has_digit)
-    {  // Exponent needs digits before it
+    } else if ((c == 'e' || c == 'E')
+               && has_digit) {  // Exponent needs digits before it
       has_exponent = true;
       pos++;
       break;  // Move to exponent part check
@@ -1126,51 +1126,40 @@ auto hexview(const std::vector<std::byte>& data, bool with_prefix)
 }
 
 template auto hex_to_integral<std::uint8_t>(const std::string& hex_str,
-                                            bool with_prefix)
-    -> std::uint8_t;
+                                            bool with_prefix) -> std::uint8_t;
 
 template auto hex_to_integral<std::uint16_t>(const std::string& hex_str,
-                                             bool with_prefix)
-    -> std::uint16_t;
+                                             bool with_prefix) -> std::uint16_t;
 
 template auto hex_to_integral<std::uint32_t>(const std::string& hex_str,
-                                             bool with_prefix)
-    -> std::uint32_t;
+                                             bool with_prefix) -> std::uint32_t;
 
 template auto hex_to_integral<std::uint64_t>(const std::string& hex_str,
-                                             bool with_prefix)
-    -> std::uint64_t;
+                                             bool with_prefix) -> std::uint64_t;
 
 template auto hex_to_integral<std::int8_t>(const std::string& hex_str,
-                                           bool with_prefix)
-    -> std::int8_t;
+                                           bool with_prefix) -> std::int8_t;
 
 template auto hex_to_integral<std::int16_t>(const std::string& hex_str,
-                                            bool with_prefix)
-    -> std::int16_t;
+                                            bool with_prefix) -> std::int16_t;
 
 template auto hex_to_integral<std::int32_t>(const std::string& hex_str,
-                                            bool with_prefix)
-    -> std::int32_t;
+                                            bool with_prefix) -> std::int32_t;
 
 template auto hex_to_integral<std::int64_t>(const std::string& hex_str,
-                                            bool with_prefix)
-    -> std::int64_t;
+                                            bool with_prefix) -> std::int64_t;
 
 template auto hex_to_bytes<std::vector<std::uint8_t>>(
-    const std::string& hex_str, bool with_prefix)
-    -> std::vector<std::uint8_t>;
+    const std::string& hex_str, bool with_prefix) -> std::vector<std::uint8_t>;
 
 template auto hex_to_bytes<std::vector<char>>(const std::string& hex_str,
                                               bool with_prefix)
     -> std::vector<char>;
 
 template auto hex_to_bytes<std::vector<std::uint16_t>>(
-    const std::string& hex_str, bool with_prefix)
-    -> std::vector<std::uint16_t>;
+    const std::string& hex_str, bool with_prefix) -> std::vector<std::uint16_t>;
 
 template auto hex_to_bytes<std::vector<std::uint32_t>>(
-    const std::string& hex_str, bool with_prefix)
-    -> std::vector<std::uint32_t>;
+    const std::string& hex_str, bool with_prefix) -> std::vector<std::uint32_t>;
 
 }  // namespace toolbox::container::string

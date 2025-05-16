@@ -118,10 +118,7 @@ public:
    * pool
    * @return 工作线程数量/The number of worker threads
    */
-  size_t get_thread_count() const
-  {
-    return workers_.size();
-  }
+  size_t get_thread_count() const { return workers_.size(); }
 
 private:
   /**

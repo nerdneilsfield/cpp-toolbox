@@ -1,9 +1,9 @@
 #pragma once
 
 #include <algorithm>  ///< 用于 std::shuffle, std::sample/For std::shuffle, std::sample
-#include <chrono>     ///< 用于种子生成/For seeding if not using random_device for every construction
-#include <iterator>   ///< 用于 std::back_inserter/For std::back_inserter
-#include <limits>     ///< 用于 std::numeric_limits/For std::numeric_limits
+#include <chrono>  ///< 用于种子生成/For seeding if not using random_device for every construction
+#include <iterator>  ///< 用于 std::back_inserter/For std::back_inserter
+#include <limits>  ///< 用于 std::numeric_limits/For std::numeric_limits
 #include <random>
 #include <stdexcept>  ///< 用于 std::out_of_range/For std::out_of_range
 #include <vector>
@@ -16,22 +16,24 @@ namespace toolbox::utils
 /**
  * @brief 随机数工具类/Random number utility class
  *
- * 提供各种随机数生成、采样、洗牌等功能/Provides various random number generation, sampling, shuffling, etc.
+ * 提供各种随机数生成、采样、洗牌等功能/Provides various random number
+ * generation, sampling, shuffling, etc.
  *
  * @code
  * toolbox::utils::random_t rng;
- * int r = rng.randint(1, 10); // 生成1到10的随机整数/Generate random int in [1,10]
- * double f = rng.random<float>(0.0, 1.0); // 生成0到1的随机浮点数/Generate random float in [0,1]
- * std::vector<int> v = {1,2,3,4,5};
- * rng.shuffle(v); // 打乱向量/Shuffle vector
- * int c = rng.choice(v); // 随机选一个元素/Randomly choose one element
+ * int r = rng.randint(1, 10); // 生成1到10的随机整数/Generate random int in
+ * [1,10] double f = rng.random<float>(0.0, 1.0); //
+ * 生成0到1的随机浮点数/Generate random float in [0,1] std::vector<int> v =
+ * {1,2,3,4,5}; rng.shuffle(v); // 打乱向量/Shuffle vector int c =
+ * rng.choice(v); // 随机选一个元素/Randomly choose one element
  * @endcode
  */
 class random_t
 {
 public:
   /**
-   * @brief 构造函数，使用随机设备初始化种子/Constructor, seeds with a random_device by default
+   * @brief 构造函数，使用随机设备初始化种子/Constructor, seeds with a
+   * random_device by default
    *
    * @code
    * toolbox::utils::random_t rng;
@@ -120,8 +122,9 @@ public:
   template<typename T>
   T random_int(T a, T b)
   {
-    static_assert(std::is_integral_v<T>,
-                  "random_int<T>(T,T) 仅支持整数类型/only supports integral types");
+    static_assert(
+        std::is_integral_v<T>,
+        "random_int<T>(T,T) 仅支持整数类型/only supports integral types");
     if (a > b) {  // Python的randint行为/Python's randint behavior
       std::swap(a, b);
     }
@@ -130,7 +133,8 @@ public:
   }
 
   /**
-   * @brief 生成指定浮点类型的随机数/Generate random floating point number of given type
+   * @brief 生成指定浮点类型的随机数/Generate random floating point number of
+   * given type
    * @tparam T 浮点类型/Floating point type
    * @param a 下界/Lower bound
    * @param b 上界/Upper bound
@@ -143,7 +147,8 @@ public:
   T random_float(T a, T b)
   {
     static_assert(std::is_floating_point_v<T>,
-                  "random_float<T>(T,T) 仅支持浮点类型/only supports floating point types");
+                  "random_float<T>(T,T) 仅支持浮点类型/only supports floating "
+                  "point types");
     std::uniform_real_distribution<T> dist(a, b);
     return dist(engine_);
   }
@@ -167,15 +172,17 @@ public:
     } else if constexpr (std::is_floating_point_v<T>) {
       return random_float(a, b);
     } else {
-      static_assert(
-          std::is_integral_v<T> || std::is_floating_point_v<T>,
-          "random<T>(T,T) 仅支持整数和浮点类型/only supports integral and floating point types");
-      return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will never execute, just to avoid compile error
+      static_assert(std::is_integral_v<T> || std::is_floating_point_v<T>,
+                    "random<T>(T,T) 仅支持整数和浮点类型/only supports "
+                    "integral and floating point types");
+      return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will
+                    // never execute, just to avoid compile error
     }
   }
 
   /**
-   * @brief 无参数版本的随机数生成函数/Random number generator without parameters
+   * @brief 无参数版本的随机数生成函数/Random number generator without
+   * parameters
    * @tparam T 类型/Type (整数或浮点/integral or floating point)
    * @return T 随机数/Random value
    * @code
@@ -191,15 +198,17 @@ public:
     } else if constexpr (std::is_integral_v<T>) {
       return random_int<T>(0, std::numeric_limits<T>::max());
     } else {
-      static_assert(
-          std::is_floating_point_v<T> || std::is_integral_v<T>,
-          "random<T>() 仅支持浮点和整数类型/only supports floating point and integral types");
-      return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will never execute, just to avoid compile error
+      static_assert(std::is_floating_point_v<T> || std::is_integral_v<T>,
+                    "random<T>() 仅支持浮点和整数类型/only supports floating "
+                    "point and integral types");
+      return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will
+                    // never execute, just to avoid compile error
     }
   }
 
   /**
-   * @brief 生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in [a, b]
+   * @brief 生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in
+   * [a, b]
    * @tparam T 浮点类型/Floating point type
    * @param a 下界/Lower bound
    * @param b 上界/Upper bound
@@ -216,7 +225,8 @@ public:
   }
 
   /**
-   * @brief 生成高斯分布（正态分布）随机数/Generate Gaussian (normal) distributed random number
+   * @brief 生成高斯分布（正态分布）随机数/Generate Gaussian (normal)
+   * distributed random number
    * @tparam T 浮点类型/Floating point type
    * @param mu 均值/Mean
    * @param sigma 标准差/Standard deviation
@@ -228,8 +238,9 @@ public:
   template<typename T>
   T gauss(T mu, T sigma)
   {
-    static_assert(std::is_floating_point_v<T>,
-                  "gauss<T>(T,T) 仅支持浮点类型/only supports floating point types");
+    static_assert(
+        std::is_floating_point_v<T>,
+        "gauss<T>(T,T) 仅支持浮点类型/only supports floating point types");
     std::normal_distribution<T> dist(mu, sigma);
     return dist(engine_);
   }
@@ -249,14 +260,17 @@ public:
   T choice(const std::vector<T>& vec)
   {
     if (vec.empty()) {
-      throw std::out_of_range("无法从空vector中选择/Cannot choose from an empty vector");
+      throw std::out_of_range(
+          "无法从空vector中选择/Cannot choose from an empty vector");
     }
-    // randint是闭区间[a, b]，vector索引是[0, size-1]/randint is inclusive [a, b], vector index is [0, size-1]
+    // randint是闭区间[a, b]，vector索引是[0, size-1]/randint is inclusive [a,
+    // b], vector index is [0, size-1]
     return vec[randint(0, static_cast<int>(vec.size()) - 1)];
   }
 
   /**
-   * @brief 通用容器的随机选择/General random choice for containers supporting iterators and size()
+   * @brief 通用容器的随机选择/General random choice for containers supporting
+   * iterators and size()
    * @tparam TContainer 容器类型/Container type
    * @param container 输入容器/Input container
    * @return typename TContainer::value_type 随机元素/Random element
@@ -269,11 +283,12 @@ public:
   template<typename TContainer>
   typename TContainer::value_type choice_general(const TContainer& container)
   {
-    static_assert(
-        toolbox::traits::is_iterable_v<TContainer>,
-        "choice_general<TContainer> 仅支持可迭代容器/only supports iterable containers");
+    static_assert(toolbox::traits::is_iterable_v<TContainer>,
+                  "choice_general<TContainer> 仅支持可迭代容器/only supports "
+                  "iterable containers");
     if (container.empty()) {
-      throw std::out_of_range("无法从空容器中选择/Cannot choose from an empty container");
+      throw std::out_of_range(
+          "无法从空容器中选择/Cannot choose from an empty container");
     }
     std::uniform_int_distribution<size_t> dist(0, container.size() - 1);
     auto it = container.begin();
@@ -312,7 +327,8 @@ public:
   TContainer sample(const TContainer& population, size_t k)
   {
     if (k > population.size()) {
-      throw std::out_of_range("k不能大于容器大小/k cannot be greater than population size");
+      throw std::out_of_range(
+          "k不能大于容器大小/k cannot be greater than population size");
     }
     TContainer result;
 #if __cplusplus >= 201703L
@@ -323,7 +339,8 @@ public:
                 engine_);
 #else
     TContainer shuffled_population = population;
-    this->shuffle(shuffled_population);  // 使用自身的shuffle方法/Use own shuffle method
+    this->shuffle(
+        shuffled_population);  // 使用自身的shuffle方法/Use own shuffle method
     std::copy_n(shuffled_population.begin(), k, std::back_inserter(result));
 #endif
     return result;
@@ -384,15 +401,17 @@ inline T random()
   } else if constexpr (std::is_integral_v<T>) {
     return random_t::instance().random<T>(0, std::numeric_limits<T>::max());
   } else {
-    static_assert(
-        std::is_floating_point_v<T> || std::is_integral_v<T>,
-        "random<T>() 仅支持浮点和整数类型/only supports floating point and integral types");
-    return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will never execute, just to avoid compile error
+    static_assert(std::is_floating_point_v<T> || std::is_integral_v<T>,
+                  "random<T>() 仅支持浮点和整数类型/only supports floating "
+                  "point and integral types");
+    return T {};  // 这行代码永远不会执行，只是为了避免编译错误/This line will
+                  // never execute, just to avoid compile error
   }
 }
 
 /**
- * @brief 生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in [a, b]
+ * @brief 生成[a, b]范围内的均匀分布浮点数/Generate uniform random float in [a,
+ * b]
  * @tparam T 浮点类型/Floating point type
  * @param a 下界/Lower bound
  * @param b 上界/Upper bound
@@ -408,7 +427,8 @@ inline T uniform(T a, T b)
 }
 
 /**
- * @brief 生成高斯分布（正态分布）随机数/Generate Gaussian (normal) distributed random number
+ * @brief 生成高斯分布（正态分布）随机数/Generate Gaussian (normal) distributed
+ * random number
  * @tparam T 浮点类型/Floating point type
  * @param mu 均值/Mean
  * @param sigma 标准差/Standard deviation
@@ -486,13 +506,15 @@ inline std::vector<T> sample(const std::vector<T>& population, size_t k)
 template<typename TContainer>
 inline typename TContainer::value_type choice(const TContainer& container)
 {
-  static_assert(toolbox::traits::is_iterable_v<TContainer>,
-                "choice<TContainer> 仅支持可迭代容器/only supports iterable containers");
+  static_assert(
+      toolbox::traits::is_iterable_v<TContainer>,
+      "choice<TContainer> 仅支持可迭代容器/only supports iterable containers");
   return random_t::instance().choice_general(container);
 }
 
 /**
- * @brief 通用容器的随机选择n个元素/Randomly choose n elements from general container
+ * @brief 通用容器的随机选择n个元素/Randomly choose n elements from general
+ * container
  * @tparam TContainer 容器类型/Container type
  * @param container 输入容器/Input container
  * @param n 选择数量/Number of elements to choose
@@ -506,12 +528,14 @@ template<typename TContainer>
 inline TContainer choice_n(const TContainer& container, size_t n)
 {
   static_assert(toolbox::traits::is_iterable_v<TContainer>,
-                "choice_n<TContainer> 仅支持可迭代容器/only supports iterable containers");
+                "choice_n<TContainer> 仅支持可迭代容器/only supports iterable "
+                "containers");
   return random_t::instance().sample(container, n);
 }
 
 /**
- * @brief 通用容器的随机采样n个元素/Randomly sample n elements from general container
+ * @brief 通用容器的随机采样n个元素/Randomly sample n elements from general
+ * container
  * @tparam TContainer 容器类型/Container type
  * @param container 输入容器/Input container
  * @param n 采样数量/Number of samples
@@ -524,8 +548,9 @@ inline TContainer choice_n(const TContainer& container, size_t n)
 template<typename TContainer>
 inline TContainer sample(const TContainer& container, size_t n)
 {
-  static_assert(toolbox::traits::is_iterable_v<TContainer>,
-                "sample<TContainer> 仅支持可迭代容器/only supports iterable containers");
+  static_assert(
+      toolbox::traits::is_iterable_v<TContainer>,
+      "sample<TContainer> 仅支持可迭代容器/only supports iterable containers");
   return random_t::instance().sample(container, n);
 }
 

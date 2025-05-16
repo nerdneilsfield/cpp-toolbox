@@ -185,7 +185,8 @@ inline void scan_retired_nodes()
     for (const HPRec* rec : g_hp_list) {
       // 检查记录是否真的被占用/Check if record is actually owned
       if (rec->owner_thread_id.load(std::memory_order_acquire)
-          != std::thread::id()) {
+          != std::thread::id())
+      {
         for (size_t i = 0; i < MAX_HAZARD_POINTERS_PER_THREAD; ++i) {
           void* hp = rec->hazard_pointers[i].load(std::memory_order_acquire);
           if (hp) {
@@ -199,16 +200,18 @@ inline void scan_retired_nodes()
   // 2. 检查线程本地退休列表中的每个节点/Check each node in the thread-local
   // retired list
   // Use erase idiom for safe removal during iteration
-  for (auto it = t_retired_list.begin(); it != t_retired_list.end(); /* no increment here */ ) {
+  for (auto it = t_retired_list.begin(); it != t_retired_list.end();
+       /* no increment here */)
+  {
     void* node_to_check = it->first;
     const auto& deleter = it->second;  // 获取删除器/Get the deleter
     bool is_hazardous = false;
     // 检查收集的危险指针/Check against collected HPs
     // Optimization: Sort active_hps first for faster lookup if needed
     // std::sort(active_hps.begin(), active_hps.end());
-    // if (std::binary_search(active_hps.begin(), active_hps.end(), node_to_check))
-    // Requires sorting active_hps first
-    for (void* active_hp : active_hps) { // Simple linear scan
+    // if (std::binary_search(active_hps.begin(), active_hps.end(),
+    // node_to_check)) Requires sorting active_hps first
+    for (void* active_hp : active_hps) {  // Simple linear scan
       if (node_to_check == active_hp) {
         is_hazardous = true;
         break;
@@ -281,10 +284,7 @@ public:
   /**
    * @brief 析构函数 (Destructor)
    */
-  ~HazardPointerGuard()
-  {
-    detail::clear_hazard_pointer(index_);
-  }
+  ~HazardPointerGuard() { detail::clear_hazard_pointer(index_); }
 
   HazardPointerGuard(const HazardPointerGuard&) = delete;
   HazardPointerGuard& operator=(const HazardPointerGuard&) = delete;

@@ -242,7 +242,8 @@ public:
     INFO,  ///< 一般操作消息 / General operational messages
     WARN,  ///< 需要注意的警告条件 / Warning conditions that might need
            ///< attention
-    ERR,    ///< 需要调查的错误条件 / Error conditions that need investigation (Renamed from ERROR)
+    ERR,  ///< 需要调查的错误条件 / Error conditions that need investigation
+          ///< (Renamed from ERROR)
     CRITICAL  ///< 需要立即采取行动的关键条件 / Critical conditions requiring
               ///< immediate action
   };
@@ -273,10 +274,7 @@ public:
    * }
    * @endcode
    */
-  auto level() -> Level
-  {
-    return level_;
-  }
+  auto level() -> Level { return level_; }
 
   /**
    * @brief 获取当前日志级别的字符串表示 / Get the current logging level as a
@@ -289,10 +287,7 @@ public:
    * std::cout << "Current log level: " << logger.level_str() << std::endl;
    * @endcode
    */
-  auto level_str() -> std::string
-  {
-    return level_to_string(level_);
-  }
+  auto level_str() -> std::string { return level_to_string(level_); }
 
   /**
    * @brief 设置日志级别 / Set the logging level
@@ -303,10 +298,7 @@ public:
    * logger.set_level(thread_logger_t::Level::WARN);
    * @endcode
    */
-  auto set_level(Level level) -> void
-  {
-    level_ = level;
-  }
+  auto set_level(Level level) -> void { level_ = level; }
 
   /**
    * @brief 基于格式的日志记录器,用于printf风格的消息格式化 / Format-based
@@ -714,9 +706,10 @@ public:
      * @endcode
      */
     template<typename T>
-    auto operator<<(T&& value) -> std::enable_if_t<
-        !has_stream_operator_v<T> && has_ostream_method_v<T>,
-        thread_stream_logger_t&>
+    auto operator<<(T&& value)
+        -> std::enable_if_t<!has_stream_operator_v<T>
+                                && has_ostream_method_v<T>,
+                            thread_stream_logger_t&>
     {
       if (level_ < logger_.level()) {
         return *this;
@@ -902,10 +895,7 @@ public:
    * // 输出: 正在处理项目 123 / Output: Processing item 123
    * @endcode
    */
-  auto trace_f() -> thread_format_logger_t
-  {
-    return {*this, Level::TRACE};
-  }
+  auto trace_f() -> thread_format_logger_t { return {*this, Level::TRACE}; }
 
   /**
    * @brief 获取用于DEBUG级别消息的格式化日志记录器 / Get a format logger for
@@ -919,10 +909,7 @@ public:
    * // 输出: 已接收 1024 字节数据 / Output: Received 1024 bytes of data
    * @endcode
    */
-  auto debug_f() -> thread_format_logger_t
-  {
-    return {*this, Level::DEBUG};
-  }
+  auto debug_f() -> thread_format_logger_t { return {*this, Level::DEBUG}; }
 
   /**
    * @brief 获取用于INFO级别消息的格式化日志记录器 / Get a format logger for
@@ -937,10 +924,7 @@ public:
    * successfully, version: 1.0.0
    * @endcode
    */
-  auto info_f() -> thread_format_logger_t
-  {
-    return {*this, Level::INFO};
-  }
+  auto info_f() -> thread_format_logger_t { return {*this, Level::INFO}; }
 
   /**
    * @brief 获取用于WARN级别消息的格式化日志记录器 / Get a format logger for
@@ -955,10 +939,7 @@ public:
    * remaining
    * @endcode
    */
-  auto warn_f() -> thread_format_logger_t
-  {
-    return {*this, Level::WARN};
-  }
+  auto warn_f() -> thread_format_logger_t { return {*this, Level::WARN}; }
 
   /**
    * @brief 获取用于ERROR级别消息的格式化日志记录器 / Get a format logger for
@@ -973,10 +954,7 @@ public:
    * Connection timeout
    * @endcode
    */
-  auto error_f() -> thread_format_logger_t
-  {
-    return {*this, Level::ERR};
-  }
+  auto error_f() -> thread_format_logger_t { return {*this, Level::ERR}; }
 
   /**
    * @brief 获取用于CRITICAL级别消息的格式化日志记录器 / Get a format logger for

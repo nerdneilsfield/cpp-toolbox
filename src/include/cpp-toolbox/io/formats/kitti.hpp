@@ -19,7 +19,7 @@
 #include <cpp-toolbox/macro.hpp>  // For platform checks if needed directly
 #include <cpp-toolbox/types/point.hpp>  // point_cloud_t (inherits base_file_data_t)
 
-namespace toolbox::io::formats
+namespace toolbox::io
 {
 
 // Forward declare the concrete data type we'll work with
@@ -36,8 +36,8 @@ using toolbox::types::point_t;
  *
  * @code{.cpp}
  * // 读取 PCD 文件/Reading a PCD file
- * toolbox::io::formats::pcd_format_t kitti_reader;
- * std::unique_ptr<toolbox::io::formats::base_file_data_t> data;
+ * toolbox::io::pcd_format_t kitti_reader;
+ * std::unique_ptr<toolbox::io::base_file_data_t> data;
  *
  * if (kitti_reader.can_read("pointcloud.bin")) {
  *     if (kitti_reader.read("pointcloud.bin", data)) {
@@ -56,7 +56,7 @@ using toolbox::types::point_t;
  * cloud.push_back({1.0f, 2.0f, 3.0f});
  * cloud.push_back({4.0f, 5.0f, 6.0f});
  *
- * std::unique_ptr<toolbox::io::formats::base_file_data_t> write_data =
+ * std::unique_ptr<toolbox::io::base_file_data_t> write_data =
  *     std::make_unique<toolbox::types::point_cloud_t<float>>(std::move(cloud));
  *
  * kitti_reader.write("output.bin", write_data, true); // 以二进制格式写入/Write
@@ -91,7 +91,7 @@ public:
    * matches, false otherwise
    *
    * @code{.cpp}
-   * toolbox::io::formats::kitti_format_t kitti_format;
+   * toolbox::io::kitti_format_t kitti_format;
    * if (kitti_format.can_read("cloud.bin")) {
    *     std::cout << "这是一个 KITTI 点云文件/This is a KITTI point cloud file"
    * << std::endl;
@@ -109,7 +109,7 @@ public:
    * @return 仅包含".bin"的向量/A vector containing only ".bin"
    *
    * @code{.cpp}
-   * toolbox::io::formats::kitti_format_t kitti_format;
+   * toolbox::io::kitti_format_t kitti_format;
    * auto extensions = kitti_format.get_supported_extensions();
    * for (const auto& ext : extensions) {
    *     std::cout << "支持的扩展名/Supported extension: " << ext << std::endl;
@@ -133,8 +133,8 @@ public:
    * otherwise
    *
    * @code{.cpp}
-   * toolbox::io::formats::kitti_format_t kitti_format;
-   * std::unique_ptr<toolbox::io::formats::base_file_data_t> cloud_data;
+   * toolbox::io::kitti_format_t kitti_format;
+   * std::unique_ptr<toolbox::io::base_file_data_t> cloud_data;
    *
    * if (kitti_format.read("scan.bin", cloud_data)) {
    *     // 转换为具体类型/Convert to concrete type
@@ -183,11 +183,11 @@ public:
    * cloud->push_back({7.0f, 8.0f, 9.0f});
    *
    * // 转换为基类指针/Convert to base class pointer
-   * std::unique_ptr<toolbox::io::formats::base_file_data_t>
+   * std::unique_ptr<toolbox::io::base_file_data_t>
    * data_ptr(cloud.release());
    *
    * // 写入文件/Write to file
-   * toolbox::io::formats::kitti_format_t kitti_format;
+   * toolbox::io::kitti_format_t kitti_format;
    * bool binary_result = kitti_format.write("cloud_binary.bin", data_ptr,
    * true);
    * // ASCII 格式/ASCII format bool binary_result =
@@ -249,7 +249,7 @@ private:
  *
  * @code
  * // 读取 float 类型的点云/Read a point cloud with float precision
- * auto cloud_float = toolbox::io::formats::read_kitti_bin<float>("cloud.bin");
+ * auto cloud_float = toolbox::io::read_kitti_bin<float>("cloud.bin");
  * if (cloud_float) {
  *   std::cout << "读取了 " << cloud_float->size() << " 个点/Read " <<
  * cloud_float->size() << " points" << std::endl;
@@ -257,7 +257,7 @@ private:
  *
  * // 读取 double 类型的点云/Read a point cloud with double precision
  * auto cloud_double =
- * toolbox::io::formats::read_kitti_bin<double>("cloud.bin");
+ * toolbox::io::read_kitti_bin<double>("cloud.bin");
  * @endcode
  */
 template<typename T>
@@ -283,13 +283,13 @@ read_kitti_bin(const std::string& path);
  *
  * // 以二进制格式保存/Save in binary format
  * bool binary_success =
- * toolbox::io::formats::write_kitti_bin("cloud_binary.bin", cloud);
+ * toolbox::io::write_kitti_bin("cloud_binary.bin", cloud);
  * @endcode
  */
 template<typename T>
 CPP_TOOLBOX_EXPORT bool write_kitti_bin(
     const std::string& path, const toolbox::types::point_cloud_t<T>& cloud);
 
-}  // namespace toolbox::io::formats
+}  // namespace toolbox::io
 
 #include <cpp-toolbox/io/formats/detail/kitti_impl.hpp>
