@@ -4,6 +4,7 @@ set(BASE_TEST_FILES
         ${CMAKE_CURRENT_SOURCE_DIR}/env_test.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/thread_pool_test.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/thread_pool_singleton_test.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/memory_pool_test.cpp
 )
 
 list(APPEND TEST_FILES ${BASE_TEST_FILES})
