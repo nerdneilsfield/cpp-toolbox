@@ -21,6 +21,7 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/click.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/print.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/utils/random.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/utils/ini_config.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/pcd.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti_pcd.cpp

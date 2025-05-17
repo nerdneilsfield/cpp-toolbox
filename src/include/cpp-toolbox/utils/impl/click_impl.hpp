@@ -9,6 +9,7 @@
 
 #include <cpp-toolbox/logger/thread_logger.hpp>
 #include <cpp-toolbox/utils/click.hpp>
+#include <cpp-toolbox/utils/ini_config.hpp>
 
 namespace toolbox::utils::impl
 {
@@ -462,6 +463,24 @@ argument_t<T>& command_t::add_argument(const std::string& name,
   argument_t<T>* argument_ptr = argument.get();
   parameters_.push_back(std::move(argument));
   return *argument_ptr;
+}
+
+inline void command_t::apply_ini_config(const ini_config_t& config,
+                                        const std::string& section)
+{
+  std::string current_section = section.empty() ? name_ : section;
+  for (const auto& param_ptr : parameters_) {
+    if (param_ptr->is_option()) {
+      const std::string key = param_ptr->get_name();
+      if (config.has(current_section, key)) {
+        param_ptr->parse(config.get_string(current_section, key));
+      }
+    }
+  }
+
+  for (const auto& cmd : subcommands_) {
+    cmd->apply_ini_config(config, current_section + "." + cmd->get_name());
+  }
 }
 
 }  // namespace toolbox::utils
