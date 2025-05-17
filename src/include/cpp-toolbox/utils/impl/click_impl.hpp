@@ -470,11 +470,9 @@ inline void command_t::apply_ini_config(const ini_config_t& config,
 {
   std::string current_section = section.empty() ? name_ : section;
   for (const auto& param_ptr : parameters_) {
-    if (param_ptr->is_option()) {
-      const std::string key = param_ptr->get_name();
-      if (config.has(current_section, key)) {
-        param_ptr->parse(config.get_string(current_section, key));
-      }
+    const std::string key = param_ptr->get_name();
+    if (config.has(current_section, key)) {
+      param_ptr->parse(config.get_string(current_section, key));
     }
   }
 
