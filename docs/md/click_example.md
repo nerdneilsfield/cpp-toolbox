@@ -42,4 +42,18 @@ Run the `process` subcommand with arguments:
 build/bin/example_click process input.dat -n 10
 ```
 
-Options may also come from the INI file.
+Options may also come from the INI file. You can specify an alternate file for
+a command using `--ini`:
+
+```sh
+build/bin/example_click process --ini process.ini
+```
+
+## Using INI configuration
+
+The application loads `example.ini` by default and applies the values to
+matching options once all commands are defined. Command line arguments still
+take precedence. You may override the file per command with `--ini` as shown
+above. Internally this uses `apply_ini_file`, which can be called after the CLI
+setup. Calling it earlier would have no effect because the options would not be
+registered yet.

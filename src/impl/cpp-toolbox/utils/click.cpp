@@ -297,6 +297,36 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
   std::vector<std::string> parsing_errors;
   bool help_explicitly_requested = false;
 
+  // --- Pre-scan for --ini option -----------------------------------------
+  std::vector<std::string> filtered_args;
+  std::string ini_file;
+  for (size_t i = 0; i < args.size(); ++i) {
+    const std::string& a = args[i];
+    if (a.rfind("--ini=", 0) == 0) {
+      ini_file = a.substr(6);
+    } else if (a == "--ini") {
+      if (i + 1 < args.size()) {
+        ini_file = args[i + 1];
+        ++i;
+      } else {
+        parsing_errors.push_back("Option '--ini' requires a value.");
+      }
+    } else {
+      filtered_args.push_back(a);
+    }
+  }
+
+  if (!ini_file.empty()) {
+    ini_config_t cfg;
+    if (!cfg.load(ini_file)) {
+      parsing_errors.push_back("Failed to load ini file: " + ini_file);
+    } else {
+      apply_ini_config(cfg);
+    }
+  }
+
+  const auto& parse_args = filtered_args;
+
   // --- Revised Lookup Tables ---
   std::unordered_map<std::string, parameter_t*> long_option_map;
   std::unordered_map<std::string, parameter_t*> short_option_map;
@@ -351,8 +381,8 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
   bool subcommand_found = false;
   bool double_dash_encountered = false;
 
-  for (size_t i = 0; i < args.size(); ++i) {
-    const std::string& arg = args[i];
+  for (size_t i = 0; i < parse_args.size(); ++i) {
+    const std::string& arg = parse_args[i];
 
     // --- Check for Help Flag FIRST (but only set flag, don't exit yet) ---
     if (arg == "--help" || arg == "-h") {
@@ -414,7 +444,7 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
       for (auto& sub_cmd_ptr : subcommands_) {
         if (sub_cmd_ptr->get_name() == arg) {
           target_subcommand = &sub_cmd_ptr;
-          remaining_args.assign(args.begin() + i + 1, args.end());
+          remaining_args.assign(parse_args.begin() + i + 1, parse_args.end());
           subcommand_found = true;
           break;
         }
@@ -449,11 +479,11 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
             value_found = true;
           } else {
             // Check next argument using helper
-            if (i + 1 < args.size() && is_value_arg(args[i + 1])) {
+            if (i + 1 < parse_args.size() && is_value_arg(parse_args[i + 1])) {
               bool next_is_subcommand = false;  // Check if next is subcommand
               // ... (subcommand check logic) ...
               if (!next_is_subcommand) {
-                current_opt_value = args[i + 1];
+                current_opt_value = parse_args[i + 1];
                 i++;
                 value_found = true;
               }
@@ -534,12 +564,12 @@ int command_t::parse_and_execute(const std::vector<std::string>& args)
               j = arg.length();  // Consume rest of bundle as value
             } else {  // Value must be next argument
               // Check next argument using helper
-              if (i + 1 < args.size() && is_value_arg(args[i + 1])) {
+              if (i + 1 < parse_args.size() && is_value_arg(parse_args[i + 1])) {
                 bool next_is_subcommand = false;  // Check if next is subcommand
                 // ... (subcommand check logic should be added here if needed)
                 // ...
                 if (!next_is_subcommand) {
-                  current_opt_value = args[i + 1];
+                  current_opt_value = parse_args[i + 1];
                   i++;
                   value_found_short = true;
                 }
