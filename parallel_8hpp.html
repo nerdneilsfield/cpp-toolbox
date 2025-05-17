@@ -315,6 +315,18 @@ Functions</h2></td></tr>
 <tr class="memitem:abb403005ec151d5f1ce67d3986733d4d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#abb403005ec151d5f1ce67d3986733d4d">toolbox::concurrent::parallel_reduce</a> (const std::array&lt; T, N &gt; &amp;arr, T identity, BinaryOperation reduce_op)</td></tr>
 <tr class="memdesc:abb403005ec151d5f1ce67d3986733d4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">常量数组的便捷重载/Convenience overload for const arrays  <br /></td></tr>
 <tr class="separator:abb403005ec151d5f1ce67d3986733d4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0f6fb62a817e46d980f97838b8f293d" id="r_af0f6fb62a817e46d980f97838b8f293d"><td class="memTemplParams" colspan="2">template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:af0f6fb62a817e46d980f97838b8f293d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#af0f6fb62a817e46d980f97838b8f293d">toolbox::concurrent::parallel_inclusive_scan</a> (InputIt first, InputIt last, OutputIt d_first, T init, BinaryOperation binary_op, T identity=T {})</td></tr>
+<tr class="memdesc:af0f6fb62a817e46d980f97838b8f293d"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行前缀和(包含式)/Parallel inclusive scan (prefix sum)  <br /></td></tr>
+<tr class="separator:af0f6fb62a817e46d980f97838b8f293d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04be47ffd5feb552873c63fafa31d360" id="r_a04be47ffd5feb552873c63fafa31d360"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:a04be47ffd5feb552873c63fafa31d360"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a04be47ffd5feb552873c63fafa31d360">toolbox::concurrent::parallel_inclusive_scan</a> (const std::vector&lt; T, Alloc &gt; &amp;in, std::vector&lt; T, Alloc &gt; &amp;out, T init, BinaryOperation binary_op, T identity=T {})</td></tr>
+<tr class="memdesc:a04be47ffd5feb552873c63fafa31d360"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量便捷重载/Convenience overload for vector  <br /></td></tr>
+<tr class="separator:a04be47ffd5feb552873c63fafa31d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33db46784821a83231aea1960e53801a" id="r_a33db46784821a83231aea1960e53801a"><td class="memTemplParams" colspan="2">template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </td></tr>
+<tr class="memitem:a33db46784821a83231aea1960e53801a"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a33db46784821a83231aea1960e53801a">toolbox::concurrent::parallel_merge_sort</a> (RandomIt begin, RandomIt end, Compare comp=Compare())</td></tr>
+<tr class="memdesc:a33db46784821a83231aea1960e53801a"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行合并排序/Parallel merge sort (chunked)  <br /></td></tr>
+<tr class="separator:a33db46784821a83231aea1960e53801a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

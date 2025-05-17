@@ -138,9 +138,9 @@ var NAVTREEINDEX =
 "classtoolbox_1_1utils_1_1simple__timer__interface__t.html",
 "functional__impl_8hpp.html#adb40cb4be7d2e760e5cf545c558aa87f",
 "namespacemembers_func_m.html",
-"namespacetoolbox_1_1types.html#aabe0b3233ab03d68180625d5a9bd80cd",
-"structtoolbox_1_1container_1_1detail_1_1_h_p_rec.html#a5b22c1279122a0099c553b583b3878d5",
-"structtoolbox_1_1types_1_1point__t.html#a732ad3dcf6da0e98bbf54d65efdb8e56"
+"namespacetoolbox_1_1types.html#a2c58d1aea7ba1a4fd7e705b571791e50",
+"structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6",
+"structtoolbox_1_1types_1_1point__t.html#a562974be138dbf613f340cab7b6d37ac"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
