@@ -6,7 +6,7 @@ var annotated_dup =
           [ "task_base", "structtoolbox_1_1base_1_1detail_1_1task__base.html", "structtoolbox_1_1base_1_1detail_1_1task__base" ],
           [ "task_derived", "structtoolbox_1_1base_1_1detail_1_1task__derived.html", "structtoolbox_1_1base_1_1detail_1_1task__derived" ]
         ] ],
-        [ "memory_pool_t", "classtoolbox_1_1base_1_1memory__pool__t.html", null ],
+        [ "memory_pool_t", "classtoolbox_1_1base_1_1memory__pool__t.html", "classtoolbox_1_1base_1_1memory__pool__t" ],
         [ "object_pool_t", "classtoolbox_1_1base_1_1object__pool__t.html", "classtoolbox_1_1base_1_1object__pool__t" ],
         [ "PoolDeleter", "classtoolbox_1_1base_1_1_pool_deleter.html", "classtoolbox_1_1base_1_1_pool_deleter" ],
         [ "thread_pool_singleton_t", "classtoolbox_1_1base_1_1thread__pool__singleton__t.html", "classtoolbox_1_1base_1_1thread__pool__singleton__t" ],

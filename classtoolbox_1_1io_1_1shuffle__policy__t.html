@@ -230,15 +230,22 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1io_1_1shuffle__policy_
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8051a4a398003a5a2367831f380b5e4" id="r_ab8051a4a398003a5a2367831f380b5e4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1shuffle__policy__t.html#ab8051a4a398003a5a2367831f380b5e4">shuffle_policy_t</a> (unsigned seed=std::random_device {}())</td></tr>
+<tr class="memdesc:ab8051a4a398003a5a2367831f380b5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数/Constructor  <br /></td></tr>
 <tr class="separator:ab8051a4a398003a5a2367831f380b5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45954695c724b747dfdaef0c7abd42a2" id="r_a45954695c724b747dfdaef0c7abd42a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1shuffle__policy__t.html#a45954695c724b747dfdaef0c7abd42a2">operator()</a> (std::vector&lt; std::size_t &gt; &amp;indices)</td></tr>
+<tr class="memdesc:a45954695c724b747dfdaef0c7abd42a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">打乱索引/Shuffle indices  <br /></td></tr>
 <tr class="separator:a45954695c724b747dfdaef0c7abd42a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e2aaf840b158a481ef3a5a512cb3c3" id="r_aa8e2aaf840b158a481ef3a5a512cb3c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1shuffle__policy__t.html#aa8e2aaf840b158a481ef3a5a512cb3c3">set_seed</a> (unsigned seed)</td></tr>
+<tr class="memdesc:aa8e2aaf840b158a481ef3a5a512cb3c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置随机种子/Set random seed  <br /></td></tr>
 <tr class="separator:aa8e2aaf840b158a481ef3a5a512cb3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>随机打乱采样策略/Shuffle sampling policy </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<p>使用给定种子对索引进行随机打乱/Randomly shuffles indices with given seed </p><div class="fragment"><div class="line">std::vector&lt;std::size_t&gt; indices = {0, 1, 2, 3};</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1shuffle__policy__t.html">toolbox::io::shuffle_policy_t</a> policy(42);</div>
+<div class="line">policy(indices); <span class="comment">// indices 顺序被打乱/indices are shuffled</span></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1shuffle__policy__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1shuffle__policy__t.html">toolbox::io::shuffle_policy_t</a></div><div class="ttdoc">随机打乱采样策略/Shuffle sampling policy</div><div class="ttdef"><b>Definition</b> sampler.hpp:44</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab8051a4a398003a5a2367831f380b5e4" name="ab8051a4a398003a5a2367831f380b5e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab8051a4a398003a5a2367831f380b5e4">&#9670;&#160;</a></span>shuffle_policy_t()</h2>
 
@@ -262,6 +269,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>构造函数/Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>随机种子/Random seed </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -290,6 +305,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>打乱索引/Shuffle indices </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indices</td><td>待打乱的索引数组/Indices array to shuffle </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa8e2aaf840b158a481ef3a5a512cb3c3" name="aa8e2aaf840b158a481ef3a5a512cb3c3"></a>
@@ -315,6 +338,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>设置随机种子/Set random seed </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">seed</td><td>新的随机种子/New random seed </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

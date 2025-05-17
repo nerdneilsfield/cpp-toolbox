@@ -230,11 +230,16 @@ $(document).ready(function(){initNavTree('structtoolbox_1_1io_1_1sequential__pol
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70900edb715ae29d4c2da194ccb4ebd7" id="r_a70900edb715ae29d4c2da194ccb4ebd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1sequential__policy__t.html#a70900edb715ae29d4c2da194ccb4ebd7">operator()</a> (std::vector&lt; std::size_t &gt; &amp;) const noexcept</td></tr>
+<tr class="memdesc:a70900edb715ae29d4c2da194ccb4ebd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">顺序采样操作符/Sequential sampling operator  <br /></td></tr>
 <tr class="separator:a70900edb715ae29d4c2da194ccb4ebd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>顺序采样策略/Sequential sampling policy </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p>不对索引做任何变换，保持顺序/Does not modify indices, keeps them in order </p><div class="fragment"><div class="line">std::vector&lt;std::size_t&gt; indices = {0, 1, 2, 3};</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1io_1_1sequential__policy__t.html">toolbox::io::sequential_policy_t</a> policy;</div>
+<div class="line">policy(indices); <span class="comment">// indices 仍为 {0, 1, 2, 3}/indices remains {0, 1, 2, 3}</span></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1sequential__policy__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1sequential__policy__t.html">toolbox::io::sequential_policy_t</a></div><div class="ttdoc">顺序采样策略/Sequential sampling policy</div><div class="ttdef"><b>Definition</b> sampler.hpp:25</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a70900edb715ae29d4c2da194ccb4ebd7" name="a70900edb715ae29d4c2da194ccb4ebd7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70900edb715ae29d4c2da194ccb4ebd7">&#9670;&#160;</a></span>operator()()</h2>
 
@@ -258,6 +263,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>顺序采样操作符/Sequential sampling operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indices</td><td>索引数组/Indices array </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

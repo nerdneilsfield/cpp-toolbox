@@ -231,15 +231,19 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1io_1_1sampler__t.html'
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:aecd9c59701212f43af15cc89ddf92b86" id="r_aecd9c59701212f43af15cc89ddf92b86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html#aecd9c59701212f43af15cc89ddf92b86">index_type</a> = std::size_t</td></tr>
+<tr class="memdesc:aecd9c59701212f43af15cc89ddf92b86"><td class="mdescLeft">&#160;</td><td class="mdescRight">索引类型/Index type  <br /></td></tr>
 <tr class="separator:aecd9c59701212f43af15cc89ddf92b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab34868bf299977f31da080a085323508" id="r_ab34868bf299977f31da080a085323508"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html#ab34868bf299977f31da080a085323508">sampler_t</a> (const <a class="el" href="classtoolbox_1_1io_1_1sampler__t.html">sampler_t</a> &amp;other)</td></tr>
+<tr class="memdesc:ab34868bf299977f31da080a085323508"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝构造函数/Copy constructor  <br /></td></tr>
 <tr class="separator:ab34868bf299977f31da080a085323508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb50c842750df212195bc042b430aea2" id="r_adb50c842750df212195bc042b430aea2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html">sampler_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html#adb50c842750df212195bc042b430aea2">operator=</a> (const <a class="el" href="classtoolbox_1_1io_1_1sampler__t.html">sampler_t</a> &amp;other)</td></tr>
+<tr class="memdesc:adb50c842750df212195bc042b430aea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">拷贝赋值操作符/Copy assignment operator  <br /></td></tr>
 <tr class="separator:adb50c842750df212195bc042b430aea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af898bcc28a1dc4cf1995b6b95e20c269" id="r_af898bcc28a1dc4cf1995b6b95e20c269"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html#af898bcc28a1dc4cf1995b6b95e20c269">sampler_t</a> (std::size_t dataset_size, PolicyT policy=PolicyT {})</td></tr>
+<tr class="memdesc:af898bcc28a1dc4cf1995b6b95e20c269"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数/Constructor  <br /></td></tr>
 <tr class="separator:af898bcc28a1dc4cf1995b6b95e20c269"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2015dea84411f466437376bc9868441" id="r_ab2015dea84411f466437376bc9868441"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html#ab2015dea84411f466437376bc9868441">reset</a> ()</td></tr>
 <tr class="memdesc:ab2015dea84411f466437376bc9868441"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置索引并重新应用策略/Reset indices and reapply policy  <br /></td></tr>
@@ -257,9 +261,20 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename PolicyT = sequential_policy_t&gt;<br />
 class toolbox::io::sampler_t&lt; PolicyT &gt;</div><p>通用采样器/Generic sampler </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>支持顺序采样和随机采样等策略/Supports sequential and shuffle sampling policies </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PolicyT</td><td>采样策略类型/Sampling policy type </td></tr>
+    <tr><td class="paramname">PolicyT</td><td>采样策略类型/Sampling policy type <div class="fragment"><div class="line"><span class="comment">// 顺序采样/Sequential sampling</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1sampler__t.html">toolbox::io::sampler_t&lt;&gt;</a> sampler(5);</div>
+<div class="line"><span class="keywordflow">while</span> (sampler.has_next()) {</div>
+<div class="line">  <span class="keyword">auto</span> idx = sampler.next();</div>
+<div class="line">}</div>
+<div class="line"><span class="comment">// 随机采样/Shuffle sampling</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1sampler__t.html">toolbox::io::sampler_t&lt;toolbox::io::shuffle_policy_t&gt;</a> shuffle_sampler(5,</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1shuffle__policy__t.html">toolbox::io::shuffle_policy_t</a>(123)); shuffle_sampler.reset(); <span class="keyword">auto</span> batch =</div>
+<div class="line">shuffle_sampler.next_batch(2);</div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1sampler__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1sampler__t.html">toolbox::io::sampler_t</a></div><div class="ttdoc">通用采样器/Generic sampler</div><div class="ttdef"><b>Definition</b> sampler.hpp:96</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1shuffle__policy__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1shuffle__policy__t.html">toolbox::io::shuffle_policy_t</a></div><div class="ttdoc">随机打乱采样策略/Shuffle sampling policy</div><div class="ttdef"><b>Definition</b> sampler.hpp:44</div></div>
+</div><!-- fragment --> </td></tr>
   </table>
   </dd>
 </dl>
@@ -277,6 +292,8 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>索引类型/Index type </p>
 
 </div>
 </div>
@@ -306,6 +323,14 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>拷贝构造函数/Copy constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>另一个采样器/Other sampler </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -345,6 +370,15 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>构造函数/Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataset_size</td><td>数据集大小/Dataset size </td></tr>
+    <tr><td class="paramname">policy</td><td>采样策略/Sampling policy </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -374,6 +408,10 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </div><div class="memdoc">
 
 <p>是否还有下一个索引/Whether there are more indices </p>
+<dl class="section return"><dt>Returns</dt><dd>如果还有未采样索引则为true/True if there are more indices to sample <div class="fragment"><div class="line"><span class="keywordflow">while</span> (sampler.has_next()) {</div>
+<div class="line">  <span class="keyword">auto</span> idx = sampler.next();</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -403,6 +441,10 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </div><div class="memdoc">
 
 <p>获取下一个索引/Get the next index </p>
+<dl class="section return"><dt>Returns</dt><dd>下一个索引/Next index <div class="fragment"><div class="line"><span class="keywordflow">if</span> (sampler.has_next()) {</div>
+<div class="line">  <span class="keyword">auto</span> idx = sampler.next();</div>
+<div class="line">}</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -433,6 +475,14 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </div><div class="memdoc">
 
 <p>获取批量索引/Get a batch of indices </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">batch_size</td><td>批量大小/Batch size </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>批量索引数组/Batch of indices <div class="fragment"><div class="line"><span class="keyword">auto</span> batch = sampler.next_batch(4);</div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -462,6 +512,15 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>拷贝赋值操作符/Copy assignment operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>另一个采样器/Other sampler </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>当前采样器引用/Reference to this sampler </dd></dl>
+
 </div>
 </div>
 <a id="ab2015dea84411f466437376bc9868441" name="ab2015dea84411f466437376bc9868441"></a>
@@ -490,7 +549,9 @@ template&lt;typename PolicyT  = sequential_policy_t&gt; </div>
 </div><div class="memdoc">
 
 <p>重置索引并重新应用策略/Reset indices and reapply policy </p>
-
+<p>重新生成索引并应用采样策略/Regenerates indices and applies sampling policy </p><div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1io_1_1sampler__t.html">sampler_t&lt;&gt;</a> sampler(10);</div>
+<div class="line">sampler.reset(); <span class="comment">// 重新洗牌/Reshuffle or reorder</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>

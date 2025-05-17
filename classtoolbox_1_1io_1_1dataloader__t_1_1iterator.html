@@ -222,24 +222,37 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1io_1_1dataloader__t_1_
 </div><!--header-->
 <div class="contents">
 
+<p>数据加载器迭代器/Iterator for dataloader  
+ <a href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dataloader_8hpp_source.html">dataloader.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0a8349b363d53d6cd5f7f66b35503323" id="r_a0a8349b363d53d6cd5f7f66b35503323"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a0a8349b363d53d6cd5f7f66b35503323">iterator</a> ()</td></tr>
+<tr class="memdesc:a0a8349b363d53d6cd5f7f66b35503323"><td class="mdescLeft">&#160;</td><td class="mdescRight">默认构造函数/Default constructor  <br /></td></tr>
 <tr class="separator:a0a8349b363d53d6cd5f7f66b35503323"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a495f57bac8382a9116b3190013c5fbb5" id="r_a495f57bac8382a9116b3190013c5fbb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a495f57bac8382a9116b3190013c5fbb5">iterator</a> (DatasetT *dataset, SamplerT sampler, std::size_t batch_size, std::size_t prefetch_batches, <a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html">toolbox::base::thread_pool_t</a> *pool, bool drop_last)</td></tr>
+<tr class="memdesc:a495f57bac8382a9116b3190013c5fbb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数/Constructor  <br /></td></tr>
 <tr class="separator:a495f57bac8382a9116b3190013c5fbb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84584f607419fabec8b0453aabfbdc31" id="r_a84584f607419fabec8b0453aabfbdc31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html">iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a84584f607419fabec8b0453aabfbdc31">operator++</a> ()</td></tr>
+<tr class="memdesc:a84584f607419fabec8b0453aabfbdc31"><td class="mdescLeft">&#160;</td><td class="mdescRight">前置自增运算符/Prefix increment operator  <br /></td></tr>
 <tr class="separator:a84584f607419fabec8b0453aabfbdc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac45a78043726a796b1a477b2906ac095" id="r_ac45a78043726a796b1a477b2906ac095"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1io_1_1dataloader__t.html#ab57a766fee73e291f9ca90c0b92e904c">batch_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#ac45a78043726a796b1a477b2906ac095">operator*</a> () const</td></tr>
+<tr class="memdesc:ac45a78043726a796b1a477b2906ac095"><td class="mdescLeft">&#160;</td><td class="mdescRight">解引用运算符/Dereference operator  <br /></td></tr>
 <tr class="separator:ac45a78043726a796b1a477b2906ac095"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaeae3e06f7459f56bc956a79477673e2" id="r_aaeae3e06f7459f56bc956a79477673e2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1io_1_1dataloader__t.html#ab57a766fee73e291f9ca90c0b92e904c">batch_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#aaeae3e06f7459f56bc956a79477673e2">operator-&gt;</a> () const</td></tr>
+<tr class="memdesc:aaeae3e06f7459f56bc956a79477673e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">指针运算符/Pointer operator  <br /></td></tr>
 <tr class="separator:aaeae3e06f7459f56bc956a79477673e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf6dbd37c0efdb96c01cd05719f075d0" id="r_adf6dbd37c0efdb96c01cd05719f075d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#adf6dbd37c0efdb96c01cd05719f075d0">operator!=</a> (const <a class="el" href="classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html">iterator</a> &amp;other) const</td></tr>
+<tr class="memdesc:adf6dbd37c0efdb96c01cd05719f075d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">不等于运算符/Not-equal operator  <br /></td></tr>
 <tr class="separator:adf6dbd37c0efdb96c01cd05719f075d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DatasetT, typename SamplerT&gt;<br />
+class toolbox::io::dataloader_t&lt; DatasetT, SamplerT &gt;::iterator</div><p>数据加载器迭代器/Iterator for dataloader </p>
+<p>支持多线程预取和批量加载/Supports multi-threaded prefetch and batch loading </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0a8349b363d53d6cd5f7f66b35503323" name="a0a8349b363d53d6cd5f7f66b35503323"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a8349b363d53d6cd5f7f66b35503323">&#9670;&#160;</a></span>iterator() <span class="overload">[1/2]</span></h2>
 
@@ -264,6 +277,8 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>默认构造函数/Default constructor </p>
 
 </div>
 </div>
@@ -327,6 +342,19 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>构造函数/Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataset</td><td>数据集指针/Pointer to dataset </td></tr>
+    <tr><td class="paramname">sampler</td><td>采样器/Sampler </td></tr>
+    <tr><td class="paramname">batch_size</td><td>批次大小/Batch size </td></tr>
+    <tr><td class="paramname">prefetch_batches</td><td>预取批次数/Number of prefetch batches </td></tr>
+    <tr><td class="paramname">pool</td><td>线程池指针/Pointer to thread pool </td></tr>
+    <tr><td class="paramname">drop_last</td><td>是否丢弃最后不足batch的样本/Whether to drop last incomplete batch </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -356,6 +384,15 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>不等于运算符/Not-equal operator </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>另一个迭代器/Other iterator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否不等/Whether not equal </dd></dl>
+
 </div>
 </div>
 <a id="ac45a78043726a796b1a477b2906ac095" name="ac45a78043726a796b1a477b2906ac095"></a>
@@ -382,6 +419,9 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>解引用运算符/Dereference operator </p>
+<dl class="section return"><dt>Returns</dt><dd>当前批次的常量引用/Const reference to current batch </dd></dl>
 
 </div>
 </div>
@@ -410,6 +450,9 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>前置自增运算符/Prefix increment operator </p>
+<dl class="section return"><dt>Returns</dt><dd>迭代器引用/Reference to iterator </dd></dl>
+
 </div>
 </div>
 <a id="aaeae3e06f7459f56bc956a79477673e2" name="aaeae3e06f7459f56bc956a79477673e2"></a>
@@ -436,6 +479,9 @@ template&lt;typename DatasetT , typename SamplerT &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>指针运算符/Pointer operator </p>
+<dl class="section return"><dt>Returns</dt><dd>当前批次的常量指针/Const pointer to current batch </dd></dl>
 
 </div>
 </div>

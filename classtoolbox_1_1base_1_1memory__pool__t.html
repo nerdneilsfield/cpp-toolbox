@@ -215,11 +215,294 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1base_1_1memory__pool__
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1base_1_1memory__pool__t-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">toolbox::base::memory_pool_t Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
+<p>固定大小内存池类/Fixed-size memory pool class  
+ <a href="classtoolbox_1_1base_1_1memory__pool__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="memory__pool_8hpp_source.html">memory_pool.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af1f20278f5784a05d788cf5347385b19" id="r_af1f20278f5784a05d788cf5347385b19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#af1f20278f5784a05d788cf5347385b19">memory_pool_t</a> (std::size_t <a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a4aec26092aff0e446fd948a9a102d193">block_size</a>, std::size_t <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_blocks</a>=0, std::size_t <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">max_cached_blocks</a>=std::numeric_limits&lt; std::size_t &gt;::max(), std::size_t <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">growth</a>=1)</td></tr>
+<tr class="memdesc:af1f20278f5784a05d788cf5347385b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造内存池/Construct a memory pool  <br /></td></tr>
+<tr class="separator:af1f20278f5784a05d788cf5347385b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b961cfda6842e00ca053eb0575f9fa" id="r_a27b961cfda6842e00ca053eb0575f9fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a27b961cfda6842e00ca053eb0575f9fa">~memory_pool_t</a> ()</td></tr>
+<tr class="memdesc:a27b961cfda6842e00ca053eb0575f9fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数，释放所有缓存内存块/Destructor, frees all cached blocks  <br /></td></tr>
+<tr class="separator:a27b961cfda6842e00ca053eb0575f9fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61a8b5afd055c6174c255833541a3560" id="r_a61a8b5afd055c6174c255833541a3560"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a61a8b5afd055c6174c255833541a3560">allocate</a> ()</td></tr>
+<tr class="memdesc:a61a8b5afd055c6174c255833541a3560"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用拷贝构造和赋值/Disable copy constructor and assignment  <br /></td></tr>
+<tr class="separator:a61a8b5afd055c6174c255833541a3560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a622716b547f22a7ac8af50cb93c320a3" id="r_a622716b547f22a7ac8af50cb93c320a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a622716b547f22a7ac8af50cb93c320a3">deallocate</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> *<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</td></tr>
+<tr class="memdesc:a622716b547f22a7ac8af50cb93c320a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">归还内存块到池中/Return a block to the pool  <br /></td></tr>
+<tr class="separator:a622716b547f22a7ac8af50cb93c320a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aec26092aff0e446fd948a9a102d193" id="r_a4aec26092aff0e446fd948a9a102d193"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a4aec26092aff0e446fd948a9a102d193">block_size</a> () <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">noexcept</a></td></tr>
+<tr class="memdesc:a4aec26092aff0e446fd948a9a102d193"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取每个内存块的大小/Get the size of each memory block  <br /></td></tr>
+<tr class="separator:a4aec26092aff0e446fd948a9a102d193"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af021f4e1c95e2fb35ff708275cd9ca63" id="r_af021f4e1c95e2fb35ff708275cd9ca63"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#af021f4e1c95e2fb35ff708275cd9ca63">free_blocks</a> () <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a></td></tr>
+<tr class="memdesc:af021f4e1c95e2fb35ff708275cd9ca63"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前池中空闲块数量/Get the number of free blocks currently stored in the pool  <br /></td></tr>
+<tr class="separator:af021f4e1c95e2fb35ff708275cd9ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a146279621db36e3fc9f72d508d3c6c16" id="r_a146279621db36e3fc9f72d508d3c6c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a146279621db36e3fc9f72d508d3c6c16">release_unused</a> ()</td></tr>
+<tr class="memdesc:a146279621db36e3fc9f72d508d3c6c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">释放所有缓存的内存块到系统/Release all cached blocks back to the system  <br /></td></tr>
+<tr class="separator:a146279621db36e3fc9f72d508d3c6c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>固定大小内存池类/Fixed-size memory pool class </p>
+<p>提供高效的固定大小内存块分配与回收，支持线程安全和自动扩容/收缩。 Provides efficient allocation and deallocation of fixed-size memory blocks, supporting thread safety and automatic expansion/shrinking.</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1memory__pool__t.html">toolbox::base::memory_pool_t</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>(64, 4, 8, 2); <span class="comment">//</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">创建一个块大小为64字节，预分配4块，最大缓存8块，扩容步长2的内存池</a>/<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">Create</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">a</a></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">with</a> 64-<span class="keywordtype">byte</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">blocks</a>, 4 <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">preallocated</a>, max 8 <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">cached</a>, <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">growth</a> 2 <span class="keywordtype">void</span>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">p</a> =</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.allocate(); <span class="comment">// 分配内存块/Allocate a block pool.deallocate(p); //</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">归还内存块</a>/<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">Deallocate</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">a</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">block</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.release_unused(); <span class="comment">//</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">释放所有未用内存</a>/<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">Release</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">all</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">unused</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">memory</a></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1memory__pool__t_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1memory__pool__t.html">toolbox::base::memory_pool_t</a></div><div class="ttdoc">固定大小内存池类/Fixed-size memory pool class</div><div class="ttdef"><b>Definition</b> memory_pool.hpp:29</div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a></div><div class="ttdef"><b>Definition</b> object_pool.hpp:100</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af1f20278f5784a05d788cf5347385b19" name="af1f20278f5784a05d788cf5347385b19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f20278f5784a05d788cf5347385b19">&#9670;&#160;</a></span>memory_pool_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::base::memory_pool_t::memory_pool_t </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>block_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>initial_blocks</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>max_cached_blocks</em> = <code>std::numeric_limits&lt;std::size_t&gt;::max()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>growth</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造内存池/Construct a memory pool </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">block_size</td><td>每个内存块的字节数，必须大于0/Size of each memory block in bytes, must be &gt; 0 </td></tr>
+    <tr><td class="paramname">initial_blocks</td><td>预先分配的内存块数量/Number of blocks to preallocate </td></tr>
+    <tr><td class="paramname">max_cached_blocks</td><td>最大缓存空闲块数，超出则归还系统/Maximum number of freed blocks to keep cached, exceeding this returns memory to the system 使用 std::numeric_limits&lt;std::size_t&gt;::max() 表示无限制/Use std::numeric_limits&lt;std::size_t&gt;::max() for unlimited </td></tr>
+    <tr><td class="paramname">growth</td><td>池耗尽时每次扩容分配的块数/Number of blocks to allocate when the pool runs out</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>创建一个提供固定大小内存块的池。池耗尽时按 growth 分配新块，归还过多时自动释放多余内存。 Creates a pool that provides fixed-size memory blocks. If the pool is exhausted, additional blocks will be allocated in batches of <code>growth</code>. When too many blocks are returned, excess ones are released so the pool can shrink.</p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1memory__pool__t.html">memory_pool_t</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>(32, 2); <span class="comment">// 创建块大小32字节，预分配2块的内存池/Create a</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">with</a> 32-<span class="keywordtype">byte</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">blocks</a>, 2 <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">preallocated</a></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a27b961cfda6842e00ca053eb0575f9fa" name="a27b961cfda6842e00ca053eb0575f9fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b961cfda6842e00ca053eb0575f9fa">&#9670;&#160;</a></span>~memory_pool_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">toolbox::base::memory_pool_t::~memory_pool_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>析构函数，释放所有缓存内存块/Destructor, frees all cached blocks </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a61a8b5afd055c6174c255833541a3560" name="a61a8b5afd055c6174c255833541a3560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61a8b5afd055c6174c255833541a3560">&#9670;&#160;</a></span>allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> * toolbox::base::memory_pool_t::allocate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>禁用拷贝构造和赋值/Disable copy constructor and assignment </p>
+<p>禁用移动构造和赋值/Disable move constructor and assignment</p>
+<p>分配一个内存块/Allocate a memory block </p><dl class="section return"><dt>Returns</dt><dd>指向内存块的指针/Pointer to a block of size <a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a4aec26092aff0e446fd948a9a102d193" title="获取每个内存块的大小/Get the size of each memory block">block_size()</a></dd></dl>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">p</a> = <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.allocate(); <span class="comment">// 分配内存块/Allocate a block</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a4aec26092aff0e446fd948a9a102d193" name="a4aec26092aff0e446fd948a9a102d193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aec26092aff0e446fd948a9a102d193">&#9670;&#160;</a></span>block_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t toolbox::base::memory_pool_t::block_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取每个内存块的大小/Get the size of each memory block </p>
+<dl class="section return"><dt>Returns</dt><dd>内存块字节数/Size of each memory block in bytes </dd></dl>
+
+</div>
+</div>
+<a id="a622716b547f22a7ac8af50cb93c320a3" name="a622716b547f22a7ac8af50cb93c320a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a622716b547f22a7ac8af50cb93c320a3">&#9670;&#160;</a></span>deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> toolbox::base::memory_pool_t::deallocate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>归还内存块到池中/Return a block to the pool </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ptr</td><td>由 <a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a61a8b5afd055c6174c255833541a3560" title="禁用拷贝构造和赋值/Disable copy constructor and assignment">allocate()</a> 获得的指针/Pointer previously obtained from <a class="el" href="classtoolbox_1_1base_1_1memory__pool__t.html#a61a8b5afd055c6174c255833541a3560" title="禁用拷贝构造和赋值/Disable copy constructor and assignment">allocate()</a></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span>* <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">p</a> = <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.allocate();</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.deallocate(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">p</a>); <span class="comment">// 归还内存块/Return the block</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="af021f4e1c95e2fb35ff708275cd9ca63" name="af021f4e1c95e2fb35ff708275cd9ca63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af021f4e1c95e2fb35ff708275cd9ca63">&#9670;&#160;</a></span>free_blocks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t toolbox::base::memory_pool_t::free_blocks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取当前池中空闲块数量/Get the number of free blocks currently stored in the pool </p>
+<dl class="section return"><dt>Returns</dt><dd>空闲块数量/Number of free blocks </dd></dl>
+
+</div>
+</div>
+<a id="a146279621db36e3fc9f72d508d3c6c16" name="a146279621db36e3fc9f72d508d3c6c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146279621db36e3fc9f72d508d3c6c16">&#9670;&#160;</a></span>release_unused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> toolbox::base::memory_pool_t::release_unused </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>释放所有缓存的内存块到系统/Release all cached blocks back to the system </p>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">pool</a>.release_unused(); <span class="comment">// 释放所有未用内存/Release all unused memory</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/include/cpp-toolbox/base/<a class="el" href="memory__pool_8hpp_source.html">memory_pool.hpp</a></li>
 </ul>

@@ -15,12 +15,13 @@ var searchData=
   ['format_20check_20tt_20and_20tt_20format_20fix_20tt_12',['&lt;tt&gt;format-check&lt;/tt&gt; and &lt;tt&gt;format-fix&lt;/tt&gt;',['../md__h_a_c_k_i_n_g.html#autotoc_md35',1,'']]],
   ['format_5fhelp_13',['format_help',['../classtoolbox_1_1utils_1_1command__t.html#a5dfa0b0cd8add7049b092cb626e321ae',1,'toolbox::utils::command_t']]],
   ['formats_2ehpp_14',['formats.hpp',['../formats_8hpp.html',1,'']]],
-  ['func_15',['func',['../structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6',1,'toolbox::base::detail::task_derived']]],
-  ['function_5ftraits_16',['function_traits',['../structtoolbox_1_1traits_1_1function__traits.html',1,'toolbox::traits']]],
-  ['function_5ftraits_3c_20r_28args_2e_2e_2e_29_3e_17',['function_traits&lt; R(Args...)&gt;',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html',1,'toolbox::traits']]],
-  ['function_5ftraits_3c_20r_28c_3a_3a_2a_29_28args_2e_2e_2e_29_3e_18',['function_traits&lt; R(C::*)(Args...)&gt;',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html',1,'toolbox::traits']]],
-  ['functional_2ehpp_19',['functional.hpp',['../functional_8hpp.html',1,'']]],
-  ['functional_5fimpl_2ehpp_20',['functional_impl.hpp',['../functional__impl_8hpp.html',1,'']]],
-  ['functions_20parameters_21',['6. 函数与参数 / Functions &amp; Parameters',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md53',1,'']]],
-  ['functype_22',['functype',['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#a99e23b563ebf71980e6905a54227656a',1,'toolbox::functional::detail_impl::MemoizeHelperState::FuncType'],['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a68de85dd7b44f677d95bff1422745933',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;::State::FuncType']]]
+  ['free_5fblocks_15',['free_blocks',['../classtoolbox_1_1base_1_1memory__pool__t.html#af021f4e1c95e2fb35ff708275cd9ca63',1,'toolbox::base::memory_pool_t']]],
+  ['func_16',['func',['../structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6',1,'toolbox::base::detail::task_derived']]],
+  ['function_5ftraits_17',['function_traits',['../structtoolbox_1_1traits_1_1function__traits.html',1,'toolbox::traits']]],
+  ['function_5ftraits_3c_20r_28args_2e_2e_2e_29_3e_18',['function_traits&lt; R(Args...)&gt;',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html',1,'toolbox::traits']]],
+  ['function_5ftraits_3c_20r_28c_3a_3a_2a_29_28args_2e_2e_2e_29_3e_19',['function_traits&lt; R(C::*)(Args...)&gt;',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html',1,'toolbox::traits']]],
+  ['functional_2ehpp_20',['functional.hpp',['../functional_8hpp.html',1,'']]],
+  ['functional_5fimpl_2ehpp_21',['functional_impl.hpp',['../functional__impl_8hpp.html',1,'']]],
+  ['functions_20parameters_22',['6. 函数与参数 / Functions &amp; Parameters',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md53',1,'']]],
+  ['functype_23',['functype',['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#a99e23b563ebf71980e6905a54227656a',1,'toolbox::functional::detail_impl::MemoizeHelperState::FuncType'],['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a68de85dd7b44f677d95bff1422745933',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;::State::FuncType']]]
 ];
