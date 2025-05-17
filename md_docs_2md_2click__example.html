@@ -31,7 +31,7 @@
       content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
     />
     <!-- END twitter metadata -->
-    <title>cpp-toolbox: Related Pages</title>
+    <title>cpp-toolbox: click_example Usage</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -189,7 +189,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('md_docs_2md_2click__example.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -214,22 +214,38 @@ $(document).ready(function(){initNavTree('pages.html',''); initResizable(); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Related Pages</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">click_example Usage</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all related documentation pages:</div><div class="directory">
-<table class="directory">
-<tr id="row_0_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__b_u_i_l_d_i_n_g.html" target="_self">Building with CMake</a></td><td class="desc"></td></tr>
-<tr id="row_1_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__c_o_d_e___o_f___c_o_n_d_u_c_t.html" target="_self">Code of Conduct</a></td><td class="desc"></td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__c_o_n_t_r_i_b_u_t_i_n_g.html" target="_self">Contributing</a></td><td class="desc"></td></tr>
-<tr id="row_3_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md__h_a_c_k_i_n_g.html" target="_self">Hacking</a></td><td class="desc"></td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="about.html" target="_self">About</a></td><td class="desc"></td></tr>
-<tr id="row_5_" class="odd"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md_docs_2md_2click__example.html" target="_self">click_example Usage</a></td><td class="desc"></td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><a class="el" href="md_docs_2md_2_c_o_d_e___s_t_y_l_e.html" target="_self">C++ 命名风格规范 / C++ Identifier Naming Style Guide</a></td><td class="desc"></td></tr>
-</table>
-</div><!-- directory -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md39"></a> This example demonstrates how to build and run a CLI application using <code><a class="el" href="click_8hpp.html">click.hpp</a></code>. It also shows loading option values from an INI file.</p>
+<h1><a class="anchor" id="autotoc_md40"></a>
+Build</h1>
+<div class="fragment"><div class="line">cmake -S . -B build --preset build-linux</div>
+<div class="line">cmake --build build</div>
+</div><!-- fragment --><p>The resulting binary is <code>build/bin/example_click</code>.</p>
+<h1><a class="anchor" id="autotoc_md41"></a>
+Sample INI file</h1>
+<p>The example looks for <code>example/example.ini</code>. A minimal configuration:</p>
+<div class="fragment"><div class="line">[example_cli]</div>
+<div class="line">verbose=true</div>
+<div class="line">config=config.json</div>
+<div class="line"> </div>
+<div class="line">[example_cli.process]</div>
+<div class="line">output=output.dat</div>
+<div class="line">count=5</div>
+<div class="line">threshold=0.7</div>
+<div class="line">retries=2</div>
+<div class="line">coords=1,2</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md42"></a>
+Running</h1>
+<p>Show help:</p>
+<div class="fragment"><div class="line">build/bin/example_click --help</div>
+</div><!-- fragment --><p>Run the <code>process</code> subcommand with arguments:</p>
+<div class="fragment"><div class="line">build/bin/example_click process input.dat -n 10</div>
+</div><!-- fragment --><p>Options may also come from the INI file. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -12,7 +12,7 @@ var indexSectionsWithContent =
   9: "op",
   10: "_crt",
   11: "lm日",
-  12: "abcghinostw命"
+  12: "abcghinostuw命"
 };
 
 var indexSectionNames =

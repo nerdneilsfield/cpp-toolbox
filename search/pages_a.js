@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['with_20cmake_0',['Building with CMake',['../md__b_u_i_l_d_i_n_g.html',1,'']]]
+  ['usage_0',['click_example Usage',['../md_docs_2md_2click__example.html',1,'']]]
 ];
