@@ -151,6 +151,8 @@ public:
 
   void apply_ini_config(const class ini_config_t& config,
                         const std::string& section = "");
+  void apply_ini_file(const std::string& file_path,
+                      const std::string& section = "");
 
 private:
   void add_help();

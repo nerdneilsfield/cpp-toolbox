@@ -114,7 +114,7 @@ int main(int argc, char** argv)
   logger.set_level(thread_logger_t::Level::INFO);  // Set desired log level
 
   ini_config_t ini_cfg;
-  ini_cfg.load("example.ini");
+  ini_cfg.load("example/example.ini");
 
 
   basic_ini cfg_struct{};
@@ -125,7 +125,6 @@ int main(int argc, char** argv)
   CommandLineApp app(
       "example_cli",
       "An example CLI application demonstrating click.hpp features.");
-  app.apply_ini_config(ini_cfg, "example_cli");
 
   // --- Global Options ---
   /** @brief Verbosity flag */
@@ -236,6 +235,9 @@ int main(int argc, char** argv)
   /** @brief Info subcommand definition */
   auto& info_cmd = app.add_command("info", "Display application information.");
   info_cmd.set_callback(info_callback);
+
+  // Apply INI configuration after all options and commands are defined
+  app.apply_ini_file("example/example.ini");
 
   // --- Run the Application ---
   int exit_code = 0;
