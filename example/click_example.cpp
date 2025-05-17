@@ -133,6 +133,7 @@ int main(int argc, char** argv)
   ini_cfg.load(ini_path);
 
 
+
   basic_ini cfg_struct{};
   load_struct_from_ini(ini_cfg, cfg_struct);
   LOG_INFO_S << "INI struct key1=" << cfg_struct.key1

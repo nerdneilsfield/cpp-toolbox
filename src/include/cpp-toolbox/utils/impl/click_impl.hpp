@@ -481,4 +481,12 @@ inline void command_t::apply_ini_config(const ini_config_t& config,
   }
 }
 
+inline void command_t::apply_ini_file(const std::string& file_path,
+                                      const std::string& section)
+{
+  ini_config_t cfg;
+  if (cfg.load(file_path))
+    apply_ini_config(cfg, section);
+}
+
 }  // namespace toolbox::utils
