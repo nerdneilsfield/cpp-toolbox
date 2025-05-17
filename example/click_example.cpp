@@ -116,11 +116,11 @@ int main(int argc, char** argv)
   ini_config_t ini_cfg;
   ini_cfg.load("example.ini");
 
+
   basic_ini cfg_struct{};
   load_struct_from_ini(ini_cfg, cfg_struct);
   LOG_INFO_S << "INI struct key1=" << cfg_struct.key1
              << " key2=" << cfg_struct.key2;
-
   /** @brief Main application object */
   CommandLineApp app(
       "example_cli",
