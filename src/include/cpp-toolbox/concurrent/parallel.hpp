@@ -731,4 +731,62 @@ CPP_TOOLBOX_EXPORT void parallel_merge_sort(RandomIt begin,
   }
 }
 
+//--------------------------------------------------------------------------
+// parallel_tim_sort
+//--------------------------------------------------------------------------
+
+/**
+ * @brief A simplified parallel TimSort implementation
+ * @tparam RandomIt Random access iterator type
+ * @tparam Compare Comparator type
+ */
+template<typename RandomIt, typename Compare = std::less<>>
+CPP_TOOLBOX_EXPORT void parallel_tim_sort(RandomIt begin,
+                                          RandomIt end,
+                                          Compare comp = Compare())
+{
+  const auto total_size = std::distance(begin, end);
+  if (total_size <= 1) {
+    return;
+  }
+
+  constexpr size_t RUN = 32;
+  std::vector<std::pair<RandomIt, RandomIt>> ranges;
+  ranges.reserve(
+      static_cast<size_t>(std::ceil(static_cast<double>(total_size) / RUN)));
+
+  RandomIt run_begin = begin;
+  while (run_begin != end) {
+    RandomIt run_end = run_begin;
+    size_t len =
+        std::min(static_cast<size_t>(std::distance(run_begin, end)), RUN);
+    std::advance(run_end, len);
+    std::sort(run_begin, run_end, comp);  // small run sort
+    ranges.emplace_back(run_begin, run_end);
+    run_begin = run_end;
+  }
+
+  auto& pool = default_pool();
+  while (ranges.size() > 1) {
+    std::vector<std::pair<RandomIt, RandomIt>> new_ranges;
+    std::vector<std::future<void>> futures;
+    for (size_t i = 0; i + 1 < ranges.size(); i += 2) {
+      auto begin1 = ranges[i].first;
+      auto mid = ranges[i].second;
+      auto end2 = ranges[i + 1].second;
+      futures.emplace_back(
+          pool.submit([begin1, mid, end2, comp]()
+                      { std::inplace_merge(begin1, mid, end2, comp); }));
+      new_ranges.emplace_back(begin1, end2);
+    }
+    for (auto& fut : futures) {
+      fut.get();
+    }
+    if (ranges.size() % 2 == 1) {
+      new_ranges.push_back(ranges.back());
+    }
+    ranges.swap(new_ranges);
+  }
+}
+
 }  // namespace toolbox::concurrent

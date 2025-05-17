@@ -395,3 +395,21 @@ TEST_CASE("Parallel Merge Sort Tests", "[concurrent][parallel_merge_sort]")
     REQUIRE_THAT(data, Equals(expected));
   }
 }
+
+TEST_CASE("Parallel Tim Sort Tests", "[concurrent][parallel_tim_sort]")
+{
+  SECTION("Sort random integers stably")
+  {
+    std::mt19937 rng(43);
+    std::uniform_int_distribution<int> dist(0, 1000000);
+    std::vector<int> data(20000);
+    for (auto& v : data) {
+      v = dist(rng);
+    }
+    std::vector<int> expected = data;
+    std::stable_sort(expected.begin(), expected.end());
+
+    parallel_tim_sort(data.begin(), data.end());
+    REQUIRE_THAT(data, Equals(expected));
+  }
+}
