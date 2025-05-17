@@ -717,13 +717,21 @@ CPP_TOOLBOX_EXPORT void parallel_merge_sort(RandomIt begin,
 
   while (ranges.size() > 1) {
     std::vector<std::pair<RandomIt, RandomIt>> new_ranges;
+    std::vector<std::future<void>> merge_futs;
     for (size_t i = 0; i + 1 < ranges.size(); i += 2) {
       auto begin1 = ranges[i].first;
       auto mid = ranges[i].second;
       auto end2 = ranges[i + 1].second;
-      std::inplace_merge(begin1, mid, end2, comp);
+      merge_futs.emplace_back(pool.submit(
+          [begin1, mid, end2, comp]() mutable
+          { std::inplace_merge(begin1, mid, end2, comp); }));
       new_ranges.emplace_back(begin1, end2);
     }
+
+    for (auto& fut : merge_futs) {
+      fut.get();
+    }
+
     if (ranges.size() % 2 == 1) {
       new_ranges.push_back(ranges.back());
     }
