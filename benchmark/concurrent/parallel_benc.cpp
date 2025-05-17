@@ -83,6 +83,60 @@ TEST_CASE("Benchmark Parallel Algorithms")
   std::iota(data.begin(), data.end(), 1);  // Fill with 1, 2, 3, ...
 
   std::vector<int> output_data(data_size);  // For transform output
+  std::vector<long long> scan_output(data_size);  // For inclusive scan
+
+  // --- Correctness checks -------------------------------------------------
+  SECTION("Correctness")
+  {
+    long long expected_sum = serial_sum(data);
+    REQUIRE(toolbox_parallel_sum(data) == expected_sum);
+
+    std::vector<int> expected_for_each = data;
+    std::for_each(
+        expected_for_each.begin(), expected_for_each.end(), square_in_place_op);
+    std::vector<int> parallel_for_each_vec = data;
+    toolbox::concurrent::parallel_for_each(parallel_for_each_vec.begin(),
+                                           parallel_for_each_vec.end(),
+                                           square_in_place_op);
+    REQUIRE(parallel_for_each_vec == expected_for_each);
+
+    std::vector<int> expected_transform(data_size);
+    std::transform(
+        data.cbegin(), data.cend(), expected_transform.begin(), square_op);
+    std::vector<int> parallel_transform_out(data_size);
+    toolbox::concurrent::parallel_transform(
+        data.cbegin(), data.cend(), parallel_transform_out.begin(), square_op);
+    REQUIRE(parallel_transform_out == expected_transform);
+
+    std::vector<long long> expected_scan(data_size);
+    std::inclusive_scan(data.cbegin(),
+                        data.cend(),
+                        expected_scan.begin(),
+                        std::plus<long long>(),
+                        0LL);
+    std::vector<long long> parallel_scan_out(data_size);
+    toolbox::concurrent::parallel_inclusive_scan(data.cbegin(),
+                                                 data.cend(),
+                                                 parallel_scan_out.begin(),
+                                                 0LL,
+                                                 std::plus<long long>(),
+                                                 0LL);
+    REQUIRE(parallel_scan_out == expected_scan);
+
+    std::vector<int> expected_sort = data;
+    std::sort(expected_sort.begin(), expected_sort.end());
+    std::vector<int> parallel_sort = data;
+    toolbox::concurrent::parallel_merge_sort(parallel_sort.begin(),
+                                             parallel_sort.end());
+    REQUIRE(parallel_sort == expected_sort);
+
+    std::vector<int> expected_tim = data;
+    std::stable_sort(expected_tim.begin(), expected_tim.end());
+    std::vector<int> tim_sorted = data;
+    toolbox::concurrent::parallel_tim_sort(tim_sorted.begin(),
+                                           tim_sorted.end());
+    REQUIRE(tim_sorted == expected_tim);
+  }
 
   // --- Correctness checks -------------------------------------------------
   SECTION("Correctness")
@@ -134,6 +188,27 @@ TEST_CASE("Benchmark Parallel Algorithms")
     BENCHMARK("Parallel Sum (toolbox::parallel_reduce)")
     {
       return toolbox_parallel_sum(data);
+    };
+  }
+
+  // --- Benchmark Inclusive Scan ---
+  SECTION("Inclusive Scan Benchmarks")
+  {
+    BENCHMARK("Serial Inclusive Scan (std::inclusive_scan)")
+    {
+      std::inclusive_scan(data.begin(), data.end(), scan_output.begin());
+      return scan_output.back();
+    };
+
+    BENCHMARK("Parallel Inclusive Scan (toolbox::parallel_inclusive_scan)")
+    {
+      toolbox::concurrent::parallel_inclusive_scan(data.begin(),
+                                                   data.end(),
+                                                   scan_output.begin(),
+                                                   0LL,
+                                                   std::plus<long long>(),
+                                                   0LL);
+      return scan_output.back();
     };
   }
 
