@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::logger::has\l_stream_operator\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1logger_1_1has__stream__operator.html",tooltip="检查类型是否具有流插入运算符(<<)的类型特征 / Type trait to check if a type has stream insertion operator (<<)"];
+  Node0 [id="Node000000",label="toolbox::logger::thread\l_logger_t::thread_format\l_logger_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__format__logger__t.html",tooltip="基于格式的日志记录器,用于printf风格的消息格式化 / Format-based logger for printf-style message formatting"];
 }

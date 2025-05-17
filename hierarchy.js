@@ -15,9 +15,7 @@ var hierarchy =
       [ "toolbox::utils::CommandLineApp", "classtoolbox_1_1utils_1_1_command_line_app.html", null ]
     ] ],
     [ "toolbox::container::concurrent_queue_t< T >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
-    [ "toolbox::container::concurrent_queue_t< std::function< void()> >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
     [ "toolbox::container::concurrent_queue_t< std::pair< Level, std::string > >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
-    [ "toolbox::container::concurrent_queue_t< std::unique_ptr< toolbox::base::detail::task_base > >", "classtoolbox_1_1container_1_1concurrent__queue__t.html", null ],
     [ "toolbox::utils::container_printer_t< Container >", "classtoolbox_1_1utils_1_1container__printer__t.html", null ],
     [ "toolbox::utils::container_printer_t< std::array< T, N > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
       [ "toolbox::utils::array_printer_t< T, N >", "classtoolbox_1_1utils_1_1array__printer__t.html", null ]

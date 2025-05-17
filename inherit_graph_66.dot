@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::color\l_handler_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1color__handler__t.html",tooltip="平台无关的颜色处理类/Platform-independent color handler"];
+  Node0 [id="Node000000",label="toolbox::utils::container\l_printer_t\< Container \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1container__printer__t.html",tooltip="通用容器打印器基类/Generic container printer base class"];
 }

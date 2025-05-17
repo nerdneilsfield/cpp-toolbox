@@ -218,8 +218,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
   <div class="headertitle"><div class="title">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>一个使用 moodycamel::ConcurrentQueue 的高性能 C++17 线程池实现/A high-performance C++17 thread pool implementation using moodycamel::ConcurrentQueue</p>
-<p>一个使用 moodycamel::ConcurrentQueue 的高性能 C++17 线程池实现/A high-performance C++17 thread pool implementation using moodycamel::ConcurrentQueue该线程池允许提交任务并异步获取结果。它在构造时创建固定数量的工作线程,并在析构时优雅地停止它们。使用 <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html" title="高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue">toolbox::container::concurrent_queue_t</a> 作为底层任务队列。 /This thread pool allows submitting tasks and asynchronously retrieving results. It creates a fixed number of worker threads upon construction and gracefully stops them during destruction. Uses <a class="el" href="classtoolbox_1_1container_1_1concurrent__queue__t.html" title="高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue">toolbox::container::concurrent_queue_t</a> as the underlying task queue.</p>
+<p>支持任务窃取的简单 C++17 线程池实现/A simple C++17 thread pool implementation with basic work stealing</p>
+<p>支持任务窃取的简单 C++17 线程池实现/A simple C++17 thread pool implementation with basic work stealing该线程池允许提交任务并异步获取结果。构造时创建固定数量的工作线程并为每个线程分配本地双端队列。 当本地队列为空时,线程会尝试从其他线程窃取任务。/This thread pool allows submitting tasks and asynchronously retrieving results. Each worker has a local deque and will try to steal tasks from others when idle.</p>
 <div class="fragment"><div class="line"><span class="comment">// 创建一个默认线程数的线程池/Create a thread pool with default number of</span></div>
 <div class="line">threads thread_pool_t pool;</div>
 <div class="line"> </div>
@@ -249,13 +249,13 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// 用于智能指针/For std::make_shared</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// 用于运行时异常/For runtime exceptions</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span>  <span class="comment">// C++ 线程库/C++ thread library</span></div>
+<div class="line"><span class="preprocessor">#include &lt;deque&gt;</span>   <span class="comment">// 任务双端队列/For task deques</span></div>
+<div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span>   <span class="comment">// 互斥锁/For std::mutex</span></div>
 <div class="line"><span class="preprocessor">#include &lt;type_traits&gt;</span>  <span class="comment">// 用于类型特征/For std::invoke_result_t</span></div>
 <div class="line"><span class="preprocessor">#include &lt;utility&gt;</span>  <span class="comment">// 用于完美转发和移动语义/For std::forward, std::move</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span>  <span class="comment">// 用于存储工作线程/For storing worker threads</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="task__base_8hpp.html">cpp-toolbox/base/detail/task_base.hpp</a>&quot;</span></div>
-<div class="line"><span class="comment">// 包含并发队列/Include concurrent_queue</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="concurrent__queue_8hpp.html">cpp-toolbox/container/concurrent_queue.hpp</a>&quot;</span></div>
 <div class="line"><span class="comment">// 导出宏定义/Export macro definition</span></div>
 <div class="line"><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
 <div class="line"><span class="comment">// 宏定义/Macro definitions</span></div>
@@ -271,6 +271,8 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"> </div>
 <div class="line">  ~thread_pool_t();</div>
 <div class="line"> </div>
+<div class="line">  <span class="keywordtype">size_t</span> get_thread_count()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> workers_.size(); }</div>
+<div class="line"> </div>
 <div class="line">  <span class="keyword">template</span>&lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
 <div class="line">  <span class="keyword">auto</span> submit(F&amp;&amp; f, Args&amp;&amp;... args)</div>
 <div class="line">      -&gt; std::future&lt;<span class="keyword">typename</span> std::invoke_result_t&lt;F, Args...&gt;&gt;;</div>
@@ -285,18 +287,24 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="comment">// 工作线程列表/List of worker threads</span></div>
 <div class="line">  std::vector&lt;std::thread&gt; workers_;</div>
-<div class="line">  <span class="comment">// 任务并发队列/Concurrent queue for tasks</span></div>
-<div class="line">  <a id="_a2" name="_a2"></a><a class="code hl_class" href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t&lt;std::unique_ptr&lt;detail::task_base&gt;</a>&gt;</div>
-<div class="line">      tasks_;</div>
+<div class="line">  <span class="comment">// 每个工作线程的任务双端队列/Per worker task deque</span></div>
+<div class="line">  std::vector&lt;std::deque&lt;std::unique_ptr&lt;detail::task_base&gt;&gt;&gt; worker_queues_;</div>
+<div class="line">  <span class="comment">// 保护每个双端队列的互斥锁/Mutex protecting each deque</span></div>
+<div class="line">  std::vector&lt;std::unique_ptr&lt;std::mutex&gt;&gt; queue_mutexes_;</div>
+<div class="line">  <span class="comment">// 提交任务时下一个目标线程索引/Next worker index for task submission</span></div>
+<div class="line">  std::atomic&lt;size_t&gt; next_worker_{0};</div>
 <div class="line">  <span class="comment">// 指示线程池是否应该停止的原子标志/Atomic flag indicating whether the thread</span></div>
 <div class="line">  <span class="comment">// pool should stop</span></div>
 <div class="line">  std::atomic&lt;bool&gt; stop_;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 工作线程主循环/Worker loop implementing work stealing</span></div>
+<div class="line">  <span class="keywordtype">void</span> worker_loop(<span class="keywordtype">size_t</span> worker_id);</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// --- 模板成员函数实现/Template Member Function Implementation ---</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class </span>F, <span class="keyword">class</span>... Args&gt;</div>
-<div class="line"><span class="keyword">auto</span> <a id="a3" name="a3"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">thread_pool_t::submit</a>(F&amp;&amp; f, Args&amp;&amp;... args)</div>
+<div class="line"><span class="keyword">auto</span> <a id="a2" name="a2"></a><a class="code hl_function" href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">thread_pool_t::submit</a>(F&amp;&amp; f, Args&amp;&amp;... args)</div>
 <div class="line">    -&gt; std::future&lt;<span class="keyword">typename</span> std::invoke_result_t&lt;F, Args...&gt;&gt;</div>
 <div class="line">{</div>
 <div class="line">  <span class="keyword">using </span>return_type = <span class="keyword">typename</span> std::invoke_result_t&lt;F, Args...&gt;;</div>
@@ -355,8 +363,13 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">                               <span class="comment">// lambda into the wrapper</span></div>
 <div class="line">  );</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// 4. 将基类的 unique_ptr 入队/Enqueue the unique_ptr to the base class</span></div>
-<div class="line">  tasks_.enqueue(std::move(task_wrapper_ptr));</div>
+<div class="line">  <span class="comment">// 4. 将任务放入某个工作线程的本地队列/Push the task to a worker&#39;s local deque</span></div>
+<div class="line">  <span class="keywordtype">size_t</span> idx = next_worker_.fetch_add(1, std::memory_order_relaxed) %</div>
+<div class="line">               workers_.size();</div>
+<div class="line">  {</div>
+<div class="line">    std::lock_guard&lt;std::mutex&gt; lock(*queue_mutexes_[idx]);</div>
+<div class="line">    worker_queues_[idx].push_back(std::move(task_wrapper_ptr));</div>
+<div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 5. 返回 future/Return the future</span></div>
 <div class="line">  <span class="keywordflow">return</span> future;</div>
@@ -364,9 +377,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">}  <span class="comment">// namespace toolbox::base</span></div>
 <div class="ttc" id="aclass_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="class_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:15</div></div>
 <div class="ttc" id="aclass_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="class_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:31</div></div>
-<div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__t_html_a16f45b3fbf2f8c5799bb405be002ac15"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">toolbox::base::thread_pool_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:156</div></div>
-<div class="ttc" id="aclasstoolbox_1_1container_1_1concurrent__queue__t_html"><div class="ttname"><a href="classtoolbox_1_1container_1_1concurrent__queue__t.html">toolbox::container::concurrent_queue_t</a></div><div class="ttdoc">高性能MPMC并发队列的包装器/A wrapper around a high-performance MPMC concurrent queue</div><div class="ttdef"><b>Definition</b> concurrent_queue.hpp:57</div></div>
-<div class="ttc" id="aconcurrent__queue_8hpp_html"><div class="ttname"><a href="concurrent__queue_8hpp.html">concurrent_queue.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1base_1_1thread__pool__t_html_a16f45b3fbf2f8c5799bb405be002ac15"><div class="ttname"><a href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">toolbox::base::thread_pool_t::submit</a></div><div class="ttdeci">auto submit(F &amp;&amp;f, Args &amp;&amp;... args) -&gt; std::future&lt; typename std::invoke_result_t&lt; F, Args... &gt; &gt;</div><div class="ttdef"><b>Definition</b> thread_pool.hpp:165</div></div>
 <div class="ttc" id="amacro_8hpp_html"><div class="ttname"><a href="macro_8hpp.html">macro.hpp</a></div><div class="ttdoc">通用的编译器、平台、架构检测和实用宏定义 / Common macros for compiler, platform, architecture detection and utility macro...</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1base_html"><div class="ttname"><a href="namespacetoolbox_1_1base.html">toolbox::base</a></div><div class="ttdoc">提供基础 C++ 工具和组件。 Provides fundamental C++ utilities and components.</div></div>
 <div class="ttc" id="atask__base_8hpp_html"><div class="ttname"><a href="task__base_8hpp.html">task_base.hpp</a></div></div>

@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::functional\l::MemoizedFunction\<\l R(Args...)\>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html",tooltip="MemoizedFunction对特定函数签名的特化 / Specialization of MemoizedFunction for specific function signature 仅声明,..."];
+  Node0 [id="Node000000",label="toolbox::io::base_file\l_data_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1base__file__data__t.html",tooltip="文件数据的基类 / Base class for data loaded from files"];
+  Node0 -> Node1 [id="edge34_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::types::point\l_cloud_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1types_1_1point__cloud__t.html",tooltip="包含点和相关数据的点云类 / A point cloud class containing points and associated data"];
 }

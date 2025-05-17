@@ -223,107 +223,30 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1base_1_1thread__pool__
 </div><!--header-->
 <div class="contents">
 
+<p>简单的线程池单例封装/A simple singleton wrapper around <a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html">thread_pool_t</a>  
+ <a href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="thread__pool__singleton_8hpp_source.html">thread_pool_singleton.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa65e50131198b59c1840bca9dcbb8fb9" id="r_aa65e50131198b59c1840bca9dcbb8fb9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#aa65e50131198b59c1840bca9dcbb8fb9">thread_pool_singleton_t</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
-<tr class="separator:aa65e50131198b59c1840bca9dcbb8fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42b14565614bd01a9a3c3ef9028dab84" id="r_a42b14565614bd01a9a3c3ef9028dab84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a42b14565614bd01a9a3c3ef9028dab84">operator=</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
-<tr class="separator:a42b14565614bd01a9a3c3ef9028dab84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a797a6ce91fd3f9f9e2b32d14d218354b" id="r_a797a6ce91fd3f9f9e2b32d14d218354b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a797a6ce91fd3f9f9e2b32d14d218354b">thread_pool_singleton_t</a> (<a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
-<tr class="separator:a797a6ce91fd3f9f9e2b32d14d218354b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae80d62fde3a1e441a81f9b24f4a357a9" id="r_ae80d62fde3a1e441a81f9b24f4a357a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#ae80d62fde3a1e441a81f9b24f4a357a9">operator=</a> (<a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
-<tr class="separator:ae80d62fde3a1e441a81f9b24f4a357a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa5041f3e9ee0c6b6f982fa77c53a6ee1" id="r_aa5041f3e9ee0c6b6f982fa77c53a6ee1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#aa5041f3e9ee0c6b6f982fa77c53a6ee1">~thread_pool_singleton_t</a> ()</td></tr>
-<tr class="memdesc:aa5041f3e9ee0c6b6f982fa77c53a6ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数,停止线程池并等待所有工作线程完成/Destructor that stops the thread pool and waits for all worker threads to finish  <br /></td></tr>
-<tr class="separator:aa5041f3e9ee0c6b6f982fa77c53a6ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a933be4bf4a42667aed7679ec5cd0d8d5" id="r_a933be4bf4a42667aed7679ec5cd0d8d5"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a> , class... Args&gt; </td></tr>
 <tr class="memitem:a933be4bf4a42667aed7679ec5cd0d8d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a933be4bf4a42667aed7679ec5cd0d8d5">submit</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a> &amp;&amp;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">f</a>, <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">Args</a> &amp;&amp;... <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">args</a>) -&gt; std::future&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> std::invoke_result_t&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a>, Args... &gt; &gt;</td></tr>
+<tr class="memdesc:a933be4bf4a42667aed7679ec5cd0d8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">提交任务/Submit a task  <br /></td></tr>
 <tr class="separator:a933be4bf4a42667aed7679ec5cd0d8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad214d4edef3d6ed542c4b408a5969ab4" id="r_ad214d4edef3d6ed542c4b408a5969ab4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#ad214d4edef3d6ed542c4b408a5969ab4">get_thread_count</a> () <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a></td></tr>
-<tr class="memdesc:ad214d4edef3d6ed542c4b408a5969ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程池中的工作线程数量/Get the number of worker threads in the pool  <br /></td></tr>
+<tr class="memdesc:ad214d4edef3d6ed542c4b408a5969ab4"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程数量/Get underlying worker count  <br /></td></tr>
 <tr class="separator:ad214d4edef3d6ed542c4b408a5969ab4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0560d4fbc0389d8870a363733bb75fa7" id="r_a0560d4fbc0389d8870a363733bb75fa7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">static</a> <a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a0560d4fbc0389d8870a363733bb75fa7">instance</a> ()</td></tr>
-<tr class="memdesc:a0560d4fbc0389d8870a363733bb75fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程池的单例实例/Get the singleton instance of the thread pool  <br /></td></tr>
+<tr class="memdesc:a0560d4fbc0389d8870a363733bb75fa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取单例实例/Get the singleton instance  <br /></td></tr>
 <tr class="separator:a0560d4fbc0389d8870a363733bb75fa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aa65e50131198b59c1840bca9dcbb8fb9" name="aa65e50131198b59c1840bca9dcbb8fb9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa65e50131198b59c1840bca9dcbb8fb9">&#9670;&#160;</a></span>thread_pool_singleton_t() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">toolbox::base::thread_pool_singleton_t::thread_pool_singleton_t </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a797a6ce91fd3f9f9e2b32d14d218354b" name="a797a6ce91fd3f9f9e2b32d14d218354b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a797a6ce91fd3f9f9e2b32d14d218354b">&#9670;&#160;</a></span>thread_pool_singleton_t() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">toolbox::base::thread_pool_singleton_t::thread_pool_singleton_t </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa5041f3e9ee0c6b6f982fa77c53a6ee1" name="aa5041f3e9ee0c6b6f982fa77c53a6ee1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa5041f3e9ee0c6b6f982fa77c53a6ee1">&#9670;&#160;</a></span>~thread_pool_singleton_t()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">toolbox::base::thread_pool_singleton_t::~thread_pool_singleton_t </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>析构函数,停止线程池并等待所有工作线程完成/Destructor that stops the thread pool and waits for all worker threads to finish </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>简单的线程池单例封装/A simple singleton wrapper around <a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html">thread_pool_t</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ad214d4edef3d6ed542c4b408a5969ab4" name="ad214d4edef3d6ed542c4b408a5969ab4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad214d4edef3d6ed542c4b408a5969ab4">&#9670;&#160;</a></span>get_thread_count()</h2>
 
@@ -347,8 +270,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>获取线程池中的工作线程数量/Get the number of worker threads in the pool </p>
-<dl class="section return"><dt>Returns</dt><dd>工作线程数量/The number of worker threads </dd></dl>
+<p>获取线程数量/Get underlying worker count </p>
 
 </div>
 </div>
@@ -375,60 +297,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>获取线程池的单例实例/Get the singleton instance of the thread pool </p>
-<dl class="section return"><dt>Returns</dt><dd>返回单例线程池实例的引用/Reference to the singleton thread pool instance </dd></dl>
-
-</div>
-</div>
-<a id="a42b14565614bd01a9a3c3ef9028dab84" name="a42b14565614bd01a9a3c3ef9028dab84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42b14565614bd01a9a3c3ef9028dab84">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp; toolbox::base::thread_pool_singleton_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae80d62fde3a1e441a81f9b24f4a357a9" name="ae80d62fde3a1e441a81f9b24f4a357a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae80d62fde3a1e441a81f9b24f4a357a9">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp; toolbox::base::thread_pool_singleton_t::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">thread_pool_singleton_t</a> &amp;&amp;&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>获取单例实例/Get the singleton instance </p>
 
 </div>
 </div>
@@ -439,6 +308,9 @@ Static Public Member Functions</h2></td></tr>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a> , class... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a> toolbox::base::thread_pool_singleton_t::submit </td>
@@ -455,12 +327,18 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">cl
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> -&gt; std::future&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> std::invoke_result_t&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a>, Args...&gt;&gt;</td>
+          <td></td><td> -&gt; std::future&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> std::invoke_result_t&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a>, Args...&gt;&gt;
+  </td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_singleton_8hpp-example.html#a2">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool_singleton.hpp</a>.</dd>
-</dl>
+
+<p>提交任务/Submit a task </p>
 
 </div>
 </div>

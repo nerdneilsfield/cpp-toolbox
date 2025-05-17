@@ -231,6 +231,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a95a99126dbc2f85da807b08e7ab5566d" id="r_a95a99126dbc2f85da807b08e7ab5566d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html#a95a99126dbc2f85da807b08e7ab5566d">~thread_pool_t</a> ()</td></tr>
 <tr class="memdesc:a95a99126dbc2f85da807b08e7ab5566d"><td class="mdescLeft">&#160;</td><td class="mdescRight">析构函数,停止线程池并等待所有工作线程完成/Destructor that stops the thread pool and waits for all worker threads to finish  <br /></td></tr>
 <tr class="separator:a95a99126dbc2f85da807b08e7ab5566d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaeb5de72ad5d4d3adabdc1a95aa6ca9" id="r_aaaeb5de72ad5d4d3adabdc1a95aa6ca9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html#aaaeb5de72ad5d4d3adabdc1a95aa6ca9">get_thread_count</a> () <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a></td></tr>
+<tr class="memdesc:aaaeb5de72ad5d4d3adabdc1a95aa6ca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取线程池中的工作线程数量/Get the number of worker threads  <br /></td></tr>
+<tr class="separator:aaaeb5de72ad5d4d3adabdc1a95aa6ca9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16f45b3fbf2f8c5799bb405be002ac15" id="r_a16f45b3fbf2f8c5799bb405be002ac15"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a> , class... Args&gt; </td></tr>
 <tr class="memitem:a16f45b3fbf2f8c5799bb405be002ac15"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">auto</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15">submit</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a> &amp;&amp;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">f</a>, <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">Args</a> &amp;&amp;... <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">args</a>) -&gt; std::future&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> std::invoke_result_t&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">F</a>, Args... &gt; &gt;</td></tr>
 <tr class="separator:a16f45b3fbf2f8c5799bb405be002ac15"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +286,34 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aaaeb5de72ad5d4d3adabdc1a95aa6ca9" name="aaaeb5de72ad5d4d3adabdc1a95aa6ca9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaeb5de72ad5d4d3adabdc1a95aa6ca9">&#9670;&#160;</a></span>get_thread_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> toolbox::base::thread_pool_t::get_thread_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取线程池中的工作线程数量/Get the number of worker threads </p>
+<dl class="section return"><dt>Returns</dt><dd>当前工作线程数量/The current number of worker threads </dd></dl>
+
+</div>
+</div>
 <a id="a16f45b3fbf2f8c5799bb405be002ac15" name="a16f45b3fbf2f8c5799bb405be002ac15"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16f45b3fbf2f8c5799bb405be002ac15">&#9670;&#160;</a></span>submit()</h2>
 
@@ -310,7 +341,7 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">cl
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_8hpp-example.html#a3">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2thread_pool_8hpp-example.html#a2">/home/runner/work/cpp-toolbox/cpp-toolbox/src/include/cpp-toolbox/base/thread_pool.hpp</a>.</dd>
 </dl>
 
 </div>

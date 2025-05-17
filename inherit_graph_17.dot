@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::container\l::detail::HazardPointerGuard",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1container_1_1detail_1_1_hazard_pointer_guard.html",tooltip="危险指针设置/清除的RAII助手类 (RAII helper for setting/clearing hazard pointers)"];
+  Node0 [id="Node000000",label="toolbox::container\l::lock_free_queue_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1container_1_1lock__free__queue__t.html",tooltip=" "];
 }

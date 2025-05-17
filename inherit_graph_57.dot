@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::is\l_stack_allocated\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__stack__allocated.html",tooltip="检查类型是否可以栈分配/Check if type can be stack allocated"];
+  Node0 [id="Node000000",label="toolbox::traits::remove\l_all_qualifiers\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1remove__all__qualifiers.html",tooltip="移除类型的所有限定符/Remove all qualifiers from type"];
 }
