@@ -8,6 +8,7 @@
 
 #include <cpp-toolbox/logger/thread_logger.hpp>  // Include logger for output
 #include <cpp-toolbox/utils/click.hpp>
+#include <cpp-toolbox/utils/ini_config.hpp>
 
 // Use namespaces for brevity
 using namespace toolbox::utils;
@@ -101,10 +102,14 @@ int main(int argc, char** argv)
   auto& logger = thread_logger_t::instance();
   logger.set_level(thread_logger_t::Level::INFO);  // Set desired log level
 
+  ini_config_t ini_cfg;
+  ini_cfg.load("example.ini");
+
   /** @brief Main application object */
   CommandLineApp app(
       "example_cli",
       "An example CLI application demonstrating click.hpp features.");
+  app.apply_ini_config(ini_cfg, "example_cli");
 
   // --- Global Options ---
   /** @brief Verbosity flag */
