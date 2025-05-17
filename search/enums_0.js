@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['endian_0',['endian',['../namespacecpp__toolbox_1_1detail.html#ab9efc0e1cb3db237189928cbc8de1f64',1,'cpp_toolbox::detail']]]
+  ['axis_5fscale_5ft_0',['axis_scale_t',['../classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec',1,'toolbox::utils::plot_t']]]
 ];

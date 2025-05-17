@@ -136,12 +136,12 @@ var NAVTREEINDEX =
 "_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html",
 "classtoolbox_1_1io_1_1dataset__t.html#adf9b090ae4b3570320e385e8e42010bb",
 "classtoolbox_1_1utils_1_1argument__t.html",
-"classtoolbox_1_1utils_1_1simple__timer__array__t.html#aa55c1ca9b04efdd34d924d85b889d397",
-"functional__impl_8hpp.html#a48db12c30c97eddfdbe5bb80179b94f4",
-"namespacemembers_f.html",
-"namespacetoolbox_1_1math.html#afb02bf50f67bf4d18f0f7f580c63b5ae",
-"string_8hpp.html#af65f000fce00e0783423dd06feac6139",
-"structtoolbox_1_1types_1_1point__t.html#a0c8d73beda63939951ab7566c6f4e24a"
+"classtoolbox_1_1utils_1_1set__printer__t.html#a39b036a2962ded4dcf475bc270c080e3",
+"functional_8hpp.html#a8866f4d6dc615d3c2b237adea3cf0810",
+"minmax_8hpp.html#a2c58d1aea7ba1a4fd7e705b571791e50",
+"namespacetoolbox_1_1functional_1_1detail.html#a9f6a4fa1f113a7732b0938e9d173e5ca",
+"string_8hpp.html#a4267ad272a87495724c13bbb5b607ec5",
+"structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html#a2e8c3b25a9b0b40dc0d574931e6dff9c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -217,6 +217,7 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1utils_1_1plot__t.html'
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classtoolbox_1_1utils_1_1plot__t-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">toolbox::utils::plot_t Class Reference</div></div>
@@ -227,21 +228,106 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1utils_1_1plot__t.html'
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html">axis_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html">series_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab8f7adad9d80bf10858db171b51d9dec" id="r_ab8f7adad9d80bf10858db171b51d9dec"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a> { <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">LINEAR</a>
+, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9deca4b5ffcdaf38ce4d463171f5c977c5ab3">LOG</a>
+ }</td></tr>
+<tr class="separator:ab8f7adad9d80bf10858db171b51d9dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353d934f6c0645ef1cf5e181524572fe" id="r_a353d934f6c0645ef1cf5e181524572fe"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a> : char { <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483">STAR</a> = '*'
+, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782">DOT</a> = '.'
+, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea883acd43c77567e1c3baced84ccf6ed7">PLUS</a> = '+'
+, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea04dd53a8e6c2306e9bbf944c1d6047f2">CROSS</a> = 'x'
+ }</td></tr>
+<tr class="separator:a353d934f6c0645ef1cf5e181524572fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afeb38196c752fb30a019f07428a40a88" id="r_afeb38196c752fb30a019f07428a40a88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#afeb38196c752fb30a019f07428a40a88">add_line_series</a> (const std::vector&lt; double &gt; &amp;xs, const std::vector&lt; double &gt; &amp;ys, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::DEFAULT, char symbol=' *')</td></tr>
-<tr class="separator:afeb38196c752fb30a019f07428a40a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41a8d70a436cb80ae65c734b36cc86fc" id="r_a41a8d70a436cb80ae65c734b36cc86fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a41a8d70a436cb80ae65c734b36cc86fc">add_scatter_series</a> (const std::vector&lt; double &gt; &amp;xs, const std::vector&lt; double &gt; &amp;ys, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::DEFAULT, char symbol='o')</td></tr>
-<tr class="separator:a41a8d70a436cb80ae65c734b36cc86fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a346c391605b628ca2e73f99b77af4d76" id="r_a346c391605b628ca2e73f99b77af4d76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a346c391605b628ca2e73f99b77af4d76">add_line_series</a> (const std::vector&lt; double &gt; &amp;xs, const std::vector&lt; double &gt; &amp;ys, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::DEFAULT, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a> style=<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483">style_t::STAR</a>)</td></tr>
+<tr class="separator:a346c391605b628ca2e73f99b77af4d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f323bcf1a394855980d16ab3bbf893" id="r_aa8f323bcf1a394855980d16ab3bbf893"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#aa8f323bcf1a394855980d16ab3bbf893">add_scatter_series</a> (const std::vector&lt; double &gt; &amp;xs, const std::vector&lt; double &gt; &amp;ys, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::DEFAULT, <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a> style=<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782">style_t::DOT</a>)</td></tr>
+<tr class="separator:aa8f323bcf1a394855980d16ab3bbf893"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fbc13cd3146e9e54e056a80cfcdb159" id="r_a7fbc13cd3146e9e54e056a80cfcdb159"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a7fbc13cd3146e9e54e056a80cfcdb159">set_x_axis</a> (<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a> scale=<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a>, std::string label=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7fbc13cd3146e9e54e056a80cfcdb159"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 X 轴 / Configure the X axis  <br /></td></tr>
+<tr class="separator:a7fbc13cd3146e9e54e056a80cfcdb159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3dd47b9b2d780a44fb513f950b462b" id="r_a0b3dd47b9b2d780a44fb513f950b462b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a0b3dd47b9b2d780a44fb513f950b462b">set_y_axis</a> (<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a> scale=<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a>, std::string label=&quot;&quot;)</td></tr>
+<tr class="memdesc:a0b3dd47b9b2d780a44fb513f950b462b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置 Y 轴 / Configure the Y axis  <br /></td></tr>
+<tr class="separator:a0b3dd47b9b2d780a44fb513f950b462b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11238509ba3816eeef186f69e8f65f9a" id="r_a11238509ba3816eeef186f69e8f65f9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a11238509ba3816eeef186f69e8f65f9a">set_title</a> (std::string title)</td></tr>
+<tr class="memdesc:a11238509ba3816eeef186f69e8f65f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置标题 / Set plot title  <br /></td></tr>
+<tr class="separator:a11238509ba3816eeef186f69e8f65f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21c42cd229102bbc42c30970f0474dd" id="r_af21c42cd229102bbc42c30970f0474dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#af21c42cd229102bbc42c30970f0474dd">enable_axis_grid</a> (bool enable=true, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::WHITE)</td></tr>
+<tr class="memdesc:af21c42cd229102bbc42c30970f0474dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启或关闭轴网格 / Toggle axis grid  <br /></td></tr>
+<tr class="separator:af21c42cd229102bbc42c30970f0474dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279a97690e69d008e4e03adbfe4fe7a8" id="r_a279a97690e69d008e4e03adbfe4fe7a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a279a97690e69d008e4e03adbfe4fe7a8">enable_global_grid</a> (bool enable=true, <a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> color=color_t::CYAN)</td></tr>
+<tr class="memdesc:a279a97690e69d008e4e03adbfe4fe7a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">开启或关闭全局网格 / Toggle global grid  <br /></td></tr>
+<tr class="separator:a279a97690e69d008e4e03adbfe4fe7a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa821f46370249efb43203196159cd25b" id="r_aa821f46370249efb43203196159cd25b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#aa821f46370249efb43203196159cd25b">render</a> (<a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> width=60, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> height=20) const</td></tr>
 <tr class="separator:aa821f46370249efb43203196159cd25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ab8f7adad9d80bf10858db171b51d9dec" name="ab8f7adad9d80bf10858db171b51d9dec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f7adad9d80bf10858db171b51d9dec">&#9670;&#160;</a></span>axis_scale_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">toolbox::utils::plot_t::axis_scale_t</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046" name="ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046"></a>LINEAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab8f7adad9d80bf10858db171b51d9deca4b5ffcdaf38ce4d463171f5c977c5ab3" name="ab8f7adad9d80bf10858db171b51d9deca4b5ffcdaf38ce4d463171f5c977c5ab3"></a>LOG&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a353d934f6c0645ef1cf5e181524572fe" name="a353d934f6c0645ef1cf5e181524572fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a353d934f6c0645ef1cf5e181524572fe">&#9670;&#160;</a></span>style_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">toolbox::utils::plot_t::style_t</a> : char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483" name="a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483"></a>STAR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782" name="a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782"></a>DOT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a353d934f6c0645ef1cf5e181524572fea883acd43c77567e1c3baced84ccf6ed7" name="a353d934f6c0645ef1cf5e181524572fea883acd43c77567e1c3baced84ccf6ed7"></a>PLUS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a353d934f6c0645ef1cf5e181524572fea04dd53a8e6c2306e9bbf944c1d6047f2" name="a353d934f6c0645ef1cf5e181524572fea04dd53a8e6c2306e9bbf944c1d6047f2"></a>CROSS&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afeb38196c752fb30a019f07428a40a88" name="afeb38196c752fb30a019f07428a40a88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afeb38196c752fb30a019f07428a40a88">&#9670;&#160;</a></span>add_line_series()</h2>
+<a id="a346c391605b628ca2e73f99b77af4d76" name="a346c391605b628ca2e73f99b77af4d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a346c391605b628ca2e73f99b77af4d76">&#9670;&#160;</a></span>add_line_series()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -267,8 +353,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>symbol</em> = <code>'&#160;*'</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a>&#160;</td>
+          <td class="paramname"><em>style</em> = <code><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483">style_t::STAR</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -281,8 +367,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a41a8d70a436cb80ae65c734b36cc86fc" name="a41a8d70a436cb80ae65c734b36cc86fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41a8d70a436cb80ae65c734b36cc86fc">&#9670;&#160;</a></span>add_scatter_series()</h2>
+<a id="aa8f323bcf1a394855980d16ab3bbf893" name="aa8f323bcf1a394855980d16ab3bbf893"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f323bcf1a394855980d16ab3bbf893">&#9670;&#160;</a></span>add_scatter_series()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -308,8 +394,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>symbol</em> = <code>'o'</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a>&#160;</td>
+          <td class="paramname"><em>style</em> = <code><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782">style_t::DOT</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -319,6 +405,66 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>添加散点数据 / Add scatter series </p>
+
+</div>
+</div>
+<a id="af21c42cd229102bbc42c30970f0474dd" name="af21c42cd229102bbc42c30970f0474dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21c42cd229102bbc42c30970f0474dd">&#9670;&#160;</a></span>enable_axis_grid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::plot_t::enable_axis_grid </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a>&#160;</td>
+          <td class="paramname"><em>color</em> = <code>color_t::WHITE</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开启或关闭轴网格 / Toggle axis grid </p>
+
+</div>
+</div>
+<a id="a279a97690e69d008e4e03adbfe4fe7a8" name="a279a97690e69d008e4e03adbfe4fe7a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279a97690e69d008e4e03adbfe4fe7a8">&#9670;&#160;</a></span>enable_global_grid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::plot_t::enable_global_grid </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a>&#160;</td>
+          <td class="paramname"><em>color</em> = <code>color_t::CYAN</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>开启或关闭全局网格 / Toggle global grid </p>
 
 </div>
 </div>
@@ -348,6 +494,86 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>渲染为字符串 / Render as string </p>
+
+</div>
+</div>
+<a id="a11238509ba3816eeef186f69e8f65f9a" name="a11238509ba3816eeef186f69e8f65f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11238509ba3816eeef186f69e8f65f9a">&#9670;&#160;</a></span>set_title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::plot_t::set_title </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置标题 / Set plot title </p>
+
+</div>
+</div>
+<a id="a7fbc13cd3146e9e54e056a80cfcdb159" name="a7fbc13cd3146e9e54e056a80cfcdb159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fbc13cd3146e9e54e056a80cfcdb159">&#9670;&#160;</a></span>set_x_axis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::plot_t::set_x_axis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a>&#160;</td>
+          <td class="paramname"><em>scale</em> = <code><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 X 轴 / Configure the X axis </p>
+
+</div>
+</div>
+<a id="a0b3dd47b9b2d780a44fb513f950b462b" name="a0b3dd47b9b2d780a44fb513f950b462b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3dd47b9b2d780a44fb513f950b462b">&#9670;&#160;</a></span>set_y_axis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::utils::plot_t::set_y_axis </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a>&#160;</td>
+          <td class="paramname"><em>scale</em> = <code><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>label</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置 Y 轴 / Configure the Y axis </p>
 
 </div>
 </div>

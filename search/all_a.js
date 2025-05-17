@@ -9,10 +9,10 @@ var searchData=
   ['add_5fargument_6',['add_argument',['../classtoolbox_1_1utils_1_1command__t.html#a51b4b7380c98f978a19ce5f29cd5623c',1,'toolbox::utils::command_t']]],
   ['add_5fcommand_7',['add_command',['../classtoolbox_1_1utils_1_1command__t.html#ac094de2cfd77dfac6bc755526cb41ecc',1,'toolbox::utils::command_t']]],
   ['add_5fflag_8',['add_flag',['../classtoolbox_1_1utils_1_1command__t.html#a604225b2bad1940e51570b3e3f22ffae',1,'toolbox::utils::command_t']]],
-  ['add_5fline_5fseries_9',['add_line_series',['../classtoolbox_1_1utils_1_1plot__t.html#afeb38196c752fb30a019f07428a40a88',1,'toolbox::utils::plot_t']]],
+  ['add_5fline_5fseries_9',['add_line_series',['../classtoolbox_1_1utils_1_1plot__t.html#a346c391605b628ca2e73f99b77af4d76',1,'toolbox::utils::plot_t']]],
   ['add_5foption_10',['add_option',['../classtoolbox_1_1utils_1_1command__t.html#aec9f0c285f02c46a544245f83bb2bf65',1,'toolbox::utils::command_t']]],
-  ['add_5frow_11',['add_row',['../classtoolbox_1_1utils_1_1table__t.html#a33cd78523abc93e548623e81cd8fb303',1,'toolbox::utils::table_t::add_row(Args &amp;&amp;... args) -&gt; table_t &amp;'],['../classtoolbox_1_1utils_1_1table__t.html#a2cac2d56ba172c48d34b1e4f462accda',1,'toolbox::utils::table_t::add_row(const std::vector&lt; std::string &gt; &amp;row)']]],
-  ['add_5fscatter_5fseries_12',['add_scatter_series',['../classtoolbox_1_1utils_1_1plot__t.html#a41a8d70a436cb80ae65c734b36cc86fc',1,'toolbox::utils::plot_t']]],
+  ['add_5frow_11',['add_row',['../classtoolbox_1_1utils_1_1table__t.html#a2cac2d56ba172c48d34b1e4f462accda',1,'toolbox::utils::table_t::add_row(const std::vector&lt; std::string &gt; &amp;row)'],['../classtoolbox_1_1utils_1_1table__t.html#a33cd78523abc93e548623e81cd8fb303',1,'toolbox::utils::table_t::add_row(Args &amp;&amp;... args) -&gt; table_t &amp;']]],
+  ['add_5fscatter_5fseries_12',['add_scatter_series',['../classtoolbox_1_1utils_1_1plot__t.html#aa8f323bcf1a394855980d16ab3bbf893',1,'toolbox::utils::plot_t']]],
   ['af32_13',['af32',['../types_8hpp.html#a3999e3e60fa8b38b7a00e57826ae0516',1,'types.hpp']]],
   ['af64_14',['af64',['../types_8hpp.html#a1a7b2a9f8e0be7df7a27590be4d415fb',1,'types.hpp']]],
   ['ai16_15',['ai16',['../types_8hpp.html#ae7779e5100a922f202b2b4c42f711145',1,'types.hpp']]],
@@ -39,5 +39,7 @@ var searchData=
   ['au16_36',['au16',['../types_8hpp.html#a0d8b9aa12e17ab492e19748fcc2c2817',1,'types.hpp']]],
   ['au32_37',['au32',['../types_8hpp.html#ac3e47dd254dcab69c49f6aaa945b07d4',1,'types.hpp']]],
   ['au64_38',['au64',['../types_8hpp.html#a63384b8b0116f867bac4f2d58b57daf1',1,'types.hpp']]],
-  ['au8_39',['au8',['../types_8hpp.html#a47f04e2bdee5caf57560bec698794a34',1,'types.hpp']]]
+  ['au8_39',['au8',['../types_8hpp.html#a47f04e2bdee5caf57560bec698794a34',1,'types.hpp']]],
+  ['axis_5fscale_5ft_40',['axis_scale_t',['../classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec',1,'toolbox::utils::plot_t']]],
+  ['axis_5ft_41',['axis_t',['../structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html',1,'toolbox::utils::plot_t']]]
 ];

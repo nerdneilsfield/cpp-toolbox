@@ -31,7 +31,7 @@
       content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
     />
     <!-- END twitter metadata -->
-    <title>cpp-toolbox: toolbox::utils::plot_t::series_t Struct Reference</title>
+    <title>cpp-toolbox: toolbox::utils::plot_t::axis_t Struct Reference</title>
     <link href="tabs.css" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
     <script type="text/javascript" src="jquery.js"></script>
@@ -189,7 +189,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structtoolbox_1_1utils_1_1plot__t_1_1series__t.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -217,8 +217,8 @@ $(document).ready(function(){initNavTree('structtoolbox_1_1utils_1_1plot__t_1_1s
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="structtoolbox_1_1utils_1_1plot__t_1_1series__t-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">toolbox::utils::plot_t::series_t Struct Reference</div></div>
+<a href="structtoolbox_1_1utils_1_1plot__t_1_1axis__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::utils::plot_t::axis_t Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -226,82 +226,34 @@ $(document).ready(function(){initNavTree('structtoolbox_1_1utils_1_1plot__t_1_1s
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:ad5126c8d52889ea206169a1400be0303" id="r_ad5126c8d52889ea206169a1400be0303"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#ad5126c8d52889ea206169a1400be0303">xs</a></td></tr>
-<tr class="separator:ad5126c8d52889ea206169a1400be0303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7938ff9406590772a261a44de03b5b5b" id="r_a7938ff9406590772a261a44de03b5b5b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#a7938ff9406590772a261a44de03b5b5b">ys</a></td></tr>
-<tr class="separator:a7938ff9406590772a261a44de03b5b5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0c05235e4d685166298ac68bfd5c953" id="r_ad0c05235e4d685166298ac68bfd5c953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#ad0c05235e4d685166298ac68bfd5c953">color</a> {color_t::DEFAULT}</td></tr>
-<tr class="separator:ad0c05235e4d685166298ac68bfd5c953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad11db8f141e7b94f73be1f452c2c8cc1" id="r_ad11db8f141e7b94f73be1f452c2c8cc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#ad11db8f141e7b94f73be1f452c2c8cc1">line</a> {true}</td></tr>
-<tr class="separator:ad11db8f141e7b94f73be1f452c2c8cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b8f99382a7f99e8fa2996314ab8de5f" id="r_a4b8f99382a7f99e8fa2996314ab8de5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#a4b8f99382a7f99e8fa2996314ab8de5f">style</a> {<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483">style_t::STAR</a>}</td></tr>
-<tr class="separator:a4b8f99382a7f99e8fa2996314ab8de5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0abb3ad0333a1fdd97343dd6769bdd34" id="r_a0abb3ad0333a1fdd97343dd6769bdd34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html#a0abb3ad0333a1fdd97343dd6769bdd34">scale</a> {<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a>}</td></tr>
+<tr class="separator:a0abb3ad0333a1fdd97343dd6769bdd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ecb68748a1452b8262e76c393a34fb" id="r_a65ecb68748a1452b8262e76c393a34fb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html#a65ecb68748a1452b8262e76c393a34fb">label</a></td></tr>
+<tr class="separator:a65ecb68748a1452b8262e76c393a34fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ad0c05235e4d685166298ac68bfd5c953" name="ad0c05235e4d685166298ac68bfd5c953"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0c05235e4d685166298ac68bfd5c953">&#9670;&#160;</a></span>color</h2>
+<a id="a65ecb68748a1452b8262e76c393a34fb" name="a65ecb68748a1452b8262e76c393a34fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65ecb68748a1452b8262e76c393a34fb">&#9670;&#160;</a></span>label</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b">color_t</a> toolbox::utils::plot_t::series_t::color {color_t::DEFAULT}</td>
+          <td class="memname">std::string toolbox::utils::plot_t::axis_t::label</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad11db8f141e7b94f73be1f452c2c8cc1" name="ad11db8f141e7b94f73be1f452c2c8cc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad11db8f141e7b94f73be1f452c2c8cc1">&#9670;&#160;</a></span>line</h2>
+<a id="a0abb3ad0333a1fdd97343dd6769bdd34" name="a0abb3ad0333a1fdd97343dd6769bdd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0abb3ad0333a1fdd97343dd6769bdd34">&#9670;&#160;</a></span>scale</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool toolbox::utils::plot_t::series_t::line {true}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4b8f99382a7f99e8fa2996314ab8de5f" name="a4b8f99382a7f99e8fa2996314ab8de5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b8f99382a7f99e8fa2996314ab8de5f">&#9670;&#160;</a></span>style</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe">style_t</a> toolbox::utils::plot_t::series_t::style {<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea8ab2630ada18b94a005a0c5399d9d483">style_t::STAR</a>}</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad5126c8d52889ea206169a1400be0303" name="ad5126c8d52889ea206169a1400be0303"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5126c8d52889ea206169a1400be0303">&#9670;&#160;</a></span>xs</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; toolbox::utils::plot_t::series_t::xs</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7938ff9406590772a261a44de03b5b5b" name="a7938ff9406590772a261a44de03b5b5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7938ff9406590772a261a44de03b5b5b">&#9670;&#160;</a></span>ys</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;double&gt; toolbox::utils::plot_t::series_t::ys</td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9dec">axis_scale_t</a> toolbox::utils::plot_t::axis_t::scale {<a class="el" href="classtoolbox_1_1utils_1_1plot__t.html#ab8f7adad9d80bf10858db171b51d9decaaac544aacc3615aada24897a215f5046">axis_scale_t::LINEAR</a>}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -316,7 +268,7 @@ Public Attributes</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html">plot_t</a></li><li class="navelem"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1series__t.html">series_t</a></li>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1utils_1_1plot__t.html">plot_t</a></li><li class="navelem"><a class="el" href="structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html">axis_t</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
     [ "toolbox::io::base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", [
       [ "toolbox::types::point_cloud_t< T >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ]
     ] ],

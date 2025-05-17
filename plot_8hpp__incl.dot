@@ -6,9 +6,9 @@ digraph "src/include/cpp-toolbox/utils/plot.hpp"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="src/include/cpp-toolbox\l/utils/plot.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="vector",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node2 [id="Node000002",label="string",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="string",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node3 [id="Node000003",label="vector",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="cpp-toolbox/utils/print.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$print_8hpp.html",tooltip=" "];
   Node4 -> Node5 [id="edge4_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
@@ -39,7 +39,7 @@ digraph "src/include/cpp-toolbox/utils/plot.hpp"
   Node17 [id="Node000017",label="set",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node4 -> Node18 [id="edge17_Node000004_Node000018",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="sstream",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node4 -> Node3 [id="edge18_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node2 [id="edge18_Node000004_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node19 [id="edge19_Node000004_Node000019",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="type_traits",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node4 -> Node20 [id="edge20_Node000004_Node000020",color="steelblue1",style="solid",tooltip=" "];
@@ -48,10 +48,10 @@ digraph "src/include/cpp-toolbox/utils/plot.hpp"
   Node21 [id="Node000021",label="unordered_set",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node4 -> Node22 [id="edge22_Node000004_Node000022",color="steelblue1",style="solid",tooltip=" "];
   Node22 [id="Node000022",label="utility",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node4 -> Node2 [id="edge23_Node000004_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node4 -> Node3 [id="edge23_Node000004_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node23 [id="edge24_Node000004_Node000023",color="steelblue1",style="solid",tooltip=" "];
   Node23 [id="Node000023",label="cpp-toolbox/base/env.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$env_8hpp.html",tooltip=" "];
-  Node23 -> Node3 [id="edge25_Node000023_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node23 -> Node2 [id="edge25_Node000023_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node23 -> Node24 [id="edge26_Node000023_Node000024",color="steelblue1",style="solid",tooltip=" "];
   Node24 [id="Node000024",label="cpp-toolbox/cpp-toolbox\l_export.hpp",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node23 -> Node25 [id="edge27_Node000023_Node000025",color="steelblue1",style="solid",tooltip=" "];

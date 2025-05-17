@@ -30,6 +30,6 @@ var searchData=
   ['distance_5fp_27',['distance_p',['../structtoolbox_1_1types_1_1point__t.html#acdba49ccc737841c4daf5db008888b91',1,'toolbox::types::point_t']]],
   ['docs_20tt_28',['&lt;tt&gt;docs&lt;/tt&gt;',['../md__h_a_c_k_i_n_g.html#autotoc_md34',1,'']]],
   ['documentation_29',['Doxygen documentation',['../about.html#about-doxygen',1,'']]],
-  ['dot_30',['dot',['../structtoolbox_1_1types_1_1point__t.html#abfcdd416b11a3a2292184805782b768f',1,'toolbox::types::point_t']]],
+  ['dot_30',['dot',['../structtoolbox_1_1types_1_1point__t.html#abfcdd416b11a3a2292184805782b768f',1,'toolbox::types::point_t::dot()'],['../classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea40679521b5da0954b705341a2859f782',1,'toolbox::utils::plot_t::DOT']]],
   ['doxygen_20documentation_31',['Doxygen documentation',['../about.html#about-doxygen',1,'']]]
 ];
