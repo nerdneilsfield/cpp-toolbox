@@ -14,6 +14,7 @@ var parallel_8hpp =
     [ "parallel_reduce", "parallel_8hpp.html#a6ea1b3789d0e60da0d852d4d2b1b0587", null ],
     [ "parallel_reduce", "parallel_8hpp.html#aa11d099f6070651f3af1f243019118b8", null ],
     [ "parallel_reduce", "parallel_8hpp.html#a901bcfda7e90ddf49a34af8665b20564", null ],
+    [ "parallel_tim_sort", "parallel_8hpp.html#ad5dbeebaf31bb2cf9eb078b4412ed166", null ],
     [ "parallel_transform", "parallel_8hpp.html#aa1e6d8ab2286c5d96dd9e0de3fc13ad1", null ],
     [ "parallel_transform", "parallel_8hpp.html#a778ee00b731c893ba86f150deae148b4", null ],
     [ "parallel_transform", "parallel_8hpp.html#adc129cfed7d6ea2f9bd3cffde739ce9d", null ],

@@ -16,6 +16,7 @@ var namespacetoolbox =
       [ "parallel_reduce", "namespacetoolbox_1_1concurrent.html#a6ea1b3789d0e60da0d852d4d2b1b0587", null ],
       [ "parallel_reduce", "namespacetoolbox_1_1concurrent.html#aa11d099f6070651f3af1f243019118b8", null ],
       [ "parallel_reduce", "namespacetoolbox_1_1concurrent.html#a901bcfda7e90ddf49a34af8665b20564", null ],
+      [ "parallel_tim_sort", "namespacetoolbox_1_1concurrent.html#ad5dbeebaf31bb2cf9eb078b4412ed166", null ],
       [ "parallel_transform", "namespacetoolbox_1_1concurrent.html#aa1e6d8ab2286c5d96dd9e0de3fc13ad1", null ],
       [ "parallel_transform", "namespacetoolbox_1_1concurrent.html#a778ee00b731c893ba86f150deae148b4", null ],
       [ "parallel_transform", "namespacetoolbox_1_1concurrent.html#adc129cfed7d6ea2f9bd3cffde739ce9d", null ],
