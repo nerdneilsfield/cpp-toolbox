@@ -9,10 +9,21 @@
 #include <cpp-toolbox/logger/thread_logger.hpp>  // Include logger for output
 #include <cpp-toolbox/utils/click.hpp>
 #include <cpp-toolbox/utils/ini_config.hpp>
+#include <cpp-toolbox/utils/ini_struct.hpp>
 
 // Use namespaces for brevity
 using namespace toolbox::utils;
 using namespace toolbox::logger;
+
+struct basic_ini
+{
+  std::string key1;
+  int key2 = 0;
+};
+
+TOOLBOX_INI_STRUCT(basic_ini,
+    TOOLBOX_INI_FIELD(basic_ini, key1, "section1", "key1"),
+    TOOLBOX_INI_FIELD(basic_ini, key2, "section1", "key2"))
 
 /**
  * @brief Callback function for the 'process' subcommand.
@@ -105,6 +116,11 @@ int main(int argc, char** argv)
   ini_config_t ini_cfg;
   ini_cfg.load("example.ini");
 
+
+  basic_ini cfg_struct{};
+  load_struct_from_ini(ini_cfg, cfg_struct);
+  LOG_INFO_S << "INI struct key1=" << cfg_struct.key1
+             << " key2=" << cfg_struct.key2;
   /** @brief Main application object */
   CommandLineApp app(
       "example_cli",

@@ -7,13 +7,13 @@
 #include <memory>  // 用于智能指针/For std::make_shared
 #include <stdexcept>  // 用于运行时异常/For runtime exceptions
 #include <thread>  // C++ 线程库/C++ thread library
+#include <deque>   // 任务双端队列/For task deques
+#include <mutex>   // 互斥锁/For std::mutex
 #include <type_traits>  // 用于类型特征/For std::invoke_result_t
 #include <utility>  // 用于完美转发和移动语义/For std::forward, std::move
 #include <vector>  // 用于存储工作线程/For storing worker threads
 
 #include "cpp-toolbox/base/detail/task_base.hpp"
-// 包含并发队列/Include concurrent_queue
-#include "cpp-toolbox/container/concurrent_queue.hpp"
 // 导出宏定义/Export macro definition
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 // 宏定义/Macro definitions
@@ -23,17 +23,14 @@ namespace toolbox::base
 {
 
 /**
- * @brief 一个使用 moodycamel::ConcurrentQueue 的高性能 C++17 线程池实现/A
- * high-performance C++17 thread pool implementation using
- * moodycamel::ConcurrentQueue
+ * @brief 支持任务窃取的简单 C++17 线程池实现/A simple C++17 thread pool
+ * implementation with basic work stealing
  *
  * @details
- * 该线程池允许提交任务并异步获取结果。它在构造时创建固定数量的工作线程,并在析构时优雅地停止它们。使用
- * toolbox::container::concurrent_queue_t 作为底层任务队列。 /This thread pool
- * allows submitting tasks and asynchronously retrieving results. It creates a
- * fixed number of worker threads upon construction and gracefully stops them
- * during destruction. Uses toolbox::container::concurrent_queue_t as the
- * underlying task queue.
+ * 该线程池允许提交任务并异步获取结果。构造时创建固定数量的工作线程并为每个线程分配本地双端队列。
+ * 当本地队列为空时,线程会尝试从其他线程窃取任务。/This thread pool allows
+ * submitting tasks and asynchronously retrieving results. Each worker has a
+ * local deque and will try to steal tasks from others when idle.
  *
  * @example
  * @code{.cpp}
@@ -95,6 +92,12 @@ public:
   ~thread_pool_t();
 
   /**
+   * @brief 获取线程池中的工作线程数量/Get the number of worker threads
+   * @return 当前工作线程数量/The current number of worker threads
+   */
+  size_t get_thread_count() const { return workers_.size(); }
+
+  /**
    * @brief 向线程池提交任务以供执行/Submits a task to the thread pool for
    * execution
    *
@@ -142,12 +145,18 @@ public:
 private:
   // 工作线程列表/List of worker threads
   std::vector<std::thread> workers_;
-  // 任务并发队列/Concurrent queue for tasks
-  toolbox::container::concurrent_queue_t<std::unique_ptr<detail::task_base>>
-      tasks_;
+  // 每个工作线程的任务双端队列/Per worker task deque
+  std::vector<std::deque<std::unique_ptr<detail::task_base>>> worker_queues_;
+  // 保护每个双端队列的互斥锁/Mutex protecting each deque
+  std::vector<std::unique_ptr<std::mutex>> queue_mutexes_;
+  // 提交任务时下一个目标线程索引/Next worker index for task submission
+  std::atomic<size_t> next_worker_{0};
   // 指示线程池是否应该停止的原子标志/Atomic flag indicating whether the thread
   // pool should stop
   std::atomic<bool> stop_;
+
+  // 工作线程主循环/Worker loop implementing work stealing
+  void worker_loop(size_t worker_id);
 };
 
 // --- 模板成员函数实现/Template Member Function Implementation ---
@@ -212,8 +221,13 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
                                // lambda into the wrapper
   );
 
-  // 4. 将基类的 unique_ptr 入队/Enqueue the unique_ptr to the base class
-  tasks_.enqueue(std::move(task_wrapper_ptr));
+  // 4. 将任务放入某个工作线程的本地队列/Push the task to a worker's local deque
+  size_t idx = next_worker_.fetch_add(1, std::memory_order_relaxed) %
+               workers_.size();
+  {
+    std::lock_guard<std::mutex> lock(*queue_mutexes_[idx]);
+    worker_queues_[idx].push_back(std::move(task_wrapper_ptr));
+  }
 
   // 5. 返回 future/Return the future
   return future;
