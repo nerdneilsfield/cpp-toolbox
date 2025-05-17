@@ -113,8 +113,24 @@ int main(int argc, char** argv)
   auto& logger = thread_logger_t::instance();
   logger.set_level(thread_logger_t::Level::INFO);  // Set desired log level
 
+  // --- Pre scan for --ini to load configuration before CLI parsing ---
+  std::string ini_path = "example/example.ini";
+  std::vector<std::string> remaining_args;
+  for (int i = 1; i < argc; ++i) {
+    std::string arg = argv[i];
+    if (arg == "--ini") {
+      if (i + 1 < argc) {
+        ini_path = argv[++i];
+      } else {
+        LOG_WARN_S << "--ini option requires a file path";
+      }
+    } else {
+      remaining_args.push_back(arg);
+    }
+  }
+
   ini_config_t ini_cfg;
-  ini_cfg.load("example.ini");
+  ini_cfg.load(ini_path);
 
 
   basic_ini cfg_struct{};
@@ -125,7 +141,6 @@ int main(int argc, char** argv)
   CommandLineApp app(
       "example_cli",
       "An example CLI application demonstrating click.hpp features.");
-  app.apply_ini_config(ini_cfg, "example_cli");
 
   // --- Global Options ---
   /** @brief Verbosity flag */
@@ -237,12 +252,14 @@ int main(int argc, char** argv)
   auto& info_cmd = app.add_command("info", "Display application information.");
   info_cmd.set_callback(info_callback);
 
+  // Apply INI configuration after all options and commands are defined
+  app.apply_ini_config(ini_cfg, "example_cli");
+
   // --- Run the Application ---
   int exit_code = 0;
   try {
-    // CommandLineApp::run handles argument parsing, subcommand dispatch,
-    // exception handling (calling handle_exceptions), and returns exit code.
-    exit_code = app.run(argc, argv);
+    // Parse and execute using arguments with the optional --ini removed
+    exit_code = app.parse_and_execute(remaining_args);
   } catch (const std::exception& e) {
     // Catch potential errors during setup (e.g., invalid_argument from checks)
     // Note: ClickExceptions during run() are caught internally by app.run()

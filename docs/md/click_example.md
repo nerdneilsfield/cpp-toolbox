@@ -18,9 +18,9 @@ The example looks for `example/example.ini`. A minimal configuration:
 ```ini
 [example_cli]
 verbose=true
-config=config.json
 
 [example_cli.process]
+input_file=input.dat
 output=output.dat
 count=5
 threshold=0.7
@@ -43,3 +43,17 @@ build/bin/example_click process input.dat -n 10
 ```
 
 Options may also come from the INI file.
+
+## Using INI configuration
+
+The application loads `example/example.ini` by default. You can specify an
+alternative file with `--ini <file>`. Values from the file populate both options
+and arguments after the CLI is set up. Command line input still overrides the
+file. If `apply_ini_config` is called before options are added, the values will
+not be applied.
+
+Example using only the configuration values:
+
+```sh
+build/bin/example_click process --ini example/example.ini
+```
