@@ -1,12 +1,18 @@
-#include <algorithm>  // For std::for_each, std::transform
+#include <algorithm>  // For std::for_each, std::transform, std::sort
+#include <random>
+#include <iomanip>
+#include <sstream>
 // #include <execution>  // For std::execution::par (requires C++17 and
 // potentially TBB)
+#include <chrono>
 #include <iostream>  // For potential error output
 #include <numeric>  // For std::accumulate, std::iota
 #include <vector>
 
 #include <catch2/benchmark/catch_benchmark.hpp>
 #include <catch2/catch_test_macros.hpp>
+
+#include "cpp-toolbox/utils/plot.hpp"
 
 // Include your parallel header
 #include <cpp-toolbox/concurrent/parallel.hpp>  // Corrected include path
@@ -72,11 +78,35 @@ void square_in_place_op(int& x)
 TEST_CASE("Benchmark Parallel Algorithms")
 {
   // Prepare large test data
-  const size_t data_size = 1'000'000;  // One million elements
+  const size_t data_size = 5'000'000;  // Five million elements to stress parallelism
   std::vector<int> data(data_size);
   std::iota(data.begin(), data.end(), 1);  // Fill with 1, 2, 3, ...
 
   std::vector<int> output_data(data_size);  // For transform output
+
+  // --- Correctness checks -------------------------------------------------
+  SECTION("Correctness")
+  {
+    long long expected_sum = serial_sum(data);
+    REQUIRE(toolbox_parallel_sum(data) == expected_sum);
+
+    std::vector<int> expected_for_each = data;
+    std::for_each(
+        expected_for_each.begin(), expected_for_each.end(), square_in_place_op);
+    std::vector<int> parallel_for_each_vec = data;
+    toolbox::concurrent::parallel_for_each(parallel_for_each_vec.begin(),
+                                           parallel_for_each_vec.end(),
+                                           square_in_place_op);
+    REQUIRE(parallel_for_each_vec == expected_for_each);
+
+    std::vector<int> expected_transform(data_size);
+    std::transform(
+        data.cbegin(), data.cend(), expected_transform.begin(), square_op);
+    std::vector<int> parallel_transform_out(data_size);
+    toolbox::concurrent::parallel_transform(
+        data.cbegin(), data.cend(), parallel_transform_out.begin(), square_op);
+    REQUIRE(parallel_transform_out == expected_transform);
+  }
 
   // --- Benchmark Reduction (Summation) ---
   SECTION("Reduction Benchmarks")
@@ -202,6 +232,159 @@ TEST_CASE("Benchmark Parallel Algorithms")
       // benchmark is tricky
       return output_data.back();  // Return something to prevent optimization
     };
+  }
+
+  // --- Benchmark Inclusive Scan (Prefix Sum) ---
+  SECTION("Inclusive Scan Benchmarks")
+  {
+    std::vector<int> scan_out(data_size);
+
+    BENCHMARK("Serial Inclusive Scan (std::inclusive_scan)")
+    {
+      std::inclusive_scan(data.cbegin(), data.cend(), scan_out.begin());
+      return scan_out.back();
+    };
+
+    BENCHMARK("Parallel Inclusive Scan (toolbox::parallel_inclusive_scan)")
+    {
+      toolbox::concurrent::parallel_inclusive_scan(data.cbegin(),
+                                                   data.cend(),
+                                                   scan_out.begin(),
+                                                   0,
+                                                   std::plus<int>(),
+                                                   0);
+      return scan_out.back();
+    };
+  }
+
+  // --- Benchmark Merge Sort ---
+  SECTION("Merge Sort Benchmarks")
+  {
+    std::vector<int> sort_data(data_size);
+    std::mt19937 rng(42);
+    std::uniform_int_distribution<int> dist(0, 1'000'000);
+    for (auto& v : sort_data) {
+      v = dist(rng);
+    }
+
+    BENCHMARK("Serial Sort (std::sort)")
+    {
+      auto tmp = sort_data;
+      std::sort(tmp.begin(), tmp.end());
+      return tmp.back();
+    };
+
+    BENCHMARK("Parallel Merge Sort (toolbox::parallel_merge_sort)")
+    {
+      auto tmp = sort_data;
+      toolbox::concurrent::parallel_merge_sort(tmp.begin(), tmp.end());
+      return tmp.back();
+    };
+  }
+
+  // --- Timing Table and Plot ---------------------------------------------
+  SECTION("Timing Table")
+  {
+    using namespace std::chrono;
+    auto measure = [&](auto&& func)
+    {
+      const int iters = 3;
+      double total = 0.0;
+      for (int i = 0; i < iters; ++i) {
+        auto start = high_resolution_clock::now();
+        func();
+        auto end = high_resolution_clock::now();
+        total += duration<double>(end - start).count();
+      }
+      return total / static_cast<double>(iters);
+    };
+
+    // Measure all algorithms
+    double reduce_serial = measure([&]() { serial_sum(data); });
+    double reduce_parallel = measure([&]() { toolbox_parallel_sum(data); });
+
+    double for_each_serial = measure([&]() {
+      std::vector<int> tmp = data;
+      std::for_each(tmp.begin(), tmp.end(), square_in_place_op);
+    });
+    double for_each_parallel = measure([&]() {
+      std::vector<int> tmp = data;
+      toolbox::concurrent::parallel_for_each(tmp.begin(), tmp.end(),
+                                             square_in_place_op);
+    });
+
+    double transform_serial = measure([&]() {
+      std::transform(data.begin(), data.end(), output_data.begin(), square_op);
+    });
+    double transform_parallel = measure([&]() {
+      toolbox::concurrent::parallel_transform(data.begin(), data.end(),
+                                              output_data.begin(), square_op);
+    });
+
+    std::vector<int> scan_tmp(data_size);
+    double scan_serial = measure([&]() {
+      std::inclusive_scan(data.begin(), data.end(), scan_tmp.begin());
+    });
+    double scan_parallel = measure([&]() {
+      toolbox::concurrent::parallel_inclusive_scan(data.begin(), data.end(),
+                                                   scan_tmp.begin(), 0,
+                                                   std::plus<int>(), 0);
+    });
+
+    std::vector<int> sort_input(data_size);
+    {
+      std::mt19937 rng(123);
+      std::uniform_int_distribution<int> dist(0, 1'000'000);
+      for (auto& v : sort_input) {
+        v = dist(rng);
+      }
+    }
+    double sort_serial = measure([&]() {
+      auto tmp = sort_input;
+      std::sort(tmp.begin(), tmp.end());
+    });
+    double sort_parallel = measure([&]() {
+      auto tmp = sort_input;
+      toolbox::concurrent::parallel_merge_sort(tmp.begin(), tmp.end());
+    });
+
+    toolbox::utils::table_t table;
+    table.set_headers({"Benchmark", "Serial (s)", "Parallel (s)", "Speedup"});
+    auto add_row = [&](const std::string& name, double s, double p) {
+      std::ostringstream ss;
+      ss.setf(std::ios::fixed);
+      ss << std::setprecision(6) << s;
+      std::ostringstream sp;
+      sp.setf(std::ios::fixed);
+      sp << std::setprecision(6) << p;
+      double speedup = s / p;
+      std::ostringstream sd;
+      sd.setf(std::ios::fixed);
+      sd << std::setprecision(2) << speedup;
+      table.add_row(name, ss.str(), sp.str(), sd.str());
+    };
+
+    add_row("Reduce", reduce_serial, reduce_parallel);
+    add_row("For Each", for_each_serial, for_each_parallel);
+    add_row("Transform", transform_serial, transform_parallel);
+    add_row("Inclusive Scan", scan_serial, scan_parallel);
+    add_row("Merge Sort", sort_serial, sort_parallel);
+
+    std::cout << table << "\n";
+
+    toolbox::utils::plot_t plot;
+    plot.set_title("Sum Benchmark (sec)");
+    plot.set_x_axis();
+    plot.set_y_axis();
+    plot.enable_axis_grid();
+    plot.add_scatter_series({1.0, 2.0},
+                            {reduce_serial, reduce_parallel},
+                            toolbox::utils::color_t::GREEN,
+                            toolbox::utils::plot_t::style_t::CROSS);
+    std::cout << plot.render(40, 10) << "\n";
+
+    REQUIRE(reduce_serial > 0.0);
+    REQUIRE(reduce_parallel > 0.0);
   }
 }
 
