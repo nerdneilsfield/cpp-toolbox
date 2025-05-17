@@ -76,21 +76,22 @@ var NAVTREE =
     [ "click_example Usage", "md_docs_2md_2click__example.html", [
       [ "Build", "md_docs_2md_2click__example.html#autotoc_md40", null ],
       [ "Sample INI file", "md_docs_2md_2click__example.html#autotoc_md41", null ],
-      [ "Running", "md_docs_2md_2click__example.html#autotoc_md42", null ]
+      [ "Running", "md_docs_2md_2click__example.html#autotoc_md42", null ],
+      [ "Using INI configuration", "md_docs_2md_2click__example.html#autotoc_md43", null ]
     ] ],
     [ "C++ 命名风格规范 / C++ Identifier Naming Style Guide", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html", [
-      [ "总述 / Overview", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md45", null ],
-      [ "1. 类型命名 / Type Naming", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md47", null ],
-      [ "2. 枚举常量 / Enum Constants", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md49", null ],
-      [ "3. 成员变量与成员函数 / Members", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md51", null ],
-      [ "4. 常量 / Constants", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md53", null ],
-      [ "5. 变量 / Variables", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md55", null ],
-      [ "6. 函数与参数 / Functions & Parameters", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md57", null ],
-      [ "7. 模板参数 / Template Parameters", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md59", null ],
-      [ "8. 命名空间 / Namespace", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md61", null ],
-      [ "9. 宏定义 / Macros", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md63", null ],
-      [ "10. 代码风格示例 / Style Example", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md65", null ],
-      [ "11. 备注 / Notes", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md67", null ]
+      [ "总述 / Overview", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md46", null ],
+      [ "1. 类型命名 / Type Naming", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md48", null ],
+      [ "2. 枚举常量 / Enum Constants", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md50", null ],
+      [ "3. 成员变量与成员函数 / Members", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md52", null ],
+      [ "4. 常量 / Constants", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md54", null ],
+      [ "5. 变量 / Variables", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md56", null ],
+      [ "6. 函数与参数 / Functions & Parameters", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md58", null ],
+      [ "7. 模板参数 / Template Parameters", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md60", null ],
+      [ "8. 命名空间 / Namespace", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md62", null ],
+      [ "9. 宏定义 / Macros", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md64", null ],
+      [ "10. 代码风格示例 / Style Example", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md66", null ],
+      [ "11. 备注 / Notes", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md68", null ]
     ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
@@ -135,12 +136,12 @@ var NAVTREEINDEX =
 "_2home_2runner_2work_2cpp-toolbox_2cpp-toolbox_2src_2include_2cpp-toolbox_2base_2object_pool_8hpp-example.html",
 "classtoolbox_1_1io_1_1dataset__t.html#adf9b090ae4b3570320e385e8e42010bb",
 "classtoolbox_1_1utils_1_1argument__t.html",
-"classtoolbox_1_1utils_1_1simple__timer__interface__t.html",
-"functional__impl_8hpp.html#adb40cb4be7d2e760e5cf545c558aa87f",
-"namespacemembers_func_m.html",
-"namespacetoolbox_1_1types.html#a2c58d1aea7ba1a4fd7e705b571791e50",
-"structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6",
-"structtoolbox_1_1types_1_1point__t.html#a562974be138dbf613f340cab7b6d37ac"
+"classtoolbox_1_1utils_1_1simple__timer__array__t.html#af18d3dac5fd50aebf1f6611166dcfcaa",
+"functional__impl_8hpp.html#ac473d11cdff7b5498e4d4562534d6cd8",
+"namespacemembers_func_i.html",
+"namespacetoolbox_1_1types.html#a05a19c2ed2f36212d9e33ed6a313eed5",
+"structtoolbox_1_1base_1_1detail_1_1task__derived.html#a9841dd999b4ae77161fe62c3fb648e98",
+"structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

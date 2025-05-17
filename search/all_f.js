@@ -24,6 +24,6 @@ var searchData=
   ['function_5ftraits_3c_20r_28c_3a_3a_2a_29_28args_2e_2e_2e_29_3e_21',['function_traits&lt; R(C::*)(Args...)&gt;',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html',1,'toolbox::traits']]],
   ['functional_2ehpp_22',['functional.hpp',['../functional_8hpp.html',1,'']]],
   ['functional_5fimpl_2ehpp_23',['functional_impl.hpp',['../functional__impl_8hpp.html',1,'']]],
-  ['functions_20parameters_24',['6. 函数与参数 / Functions &amp; Parameters',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md57',1,'']]],
+  ['functions_20parameters_24',['6. 函数与参数 / Functions &amp; Parameters',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md58',1,'']]],
   ['functype_25',['functype',['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#a99e23b563ebf71980e6905a54227656a',1,'toolbox::functional::detail_impl::MemoizeHelperState::FuncType'],['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a68de85dd7b44f677d95bff1422745933',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;::State::FuncType']]]
 ];

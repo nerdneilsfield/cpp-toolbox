@@ -12,5 +12,6 @@ var searchData=
   ['url_5fencode_9',['url_encode',['../namespacetoolbox_1_1container_1_1string.html#a19556e830ae2bfbbbbe0905a454844f4',1,'toolbox::container::string']]],
   ['usage_10',['usage',['../namespacetoolbox_1_1base.html#base_example_object_pool',1,'对象池使用示例 (ObjectPool Usage'],['../namespacetoolbox_1_1base.html#base_example_thread_pool',1,'线程池使用示例 (ThreadPool Usage'],['../md_docs_2md_2click__example.html',1,'click_example Usage']]],
   ['usageerror_11',['usageerror',['../classtoolbox_1_1utils_1_1_usage_error.html#a53943c4775b8cdb972958c3ebd62a0ee',1,'toolbox::utils::UsageError::UsageError()'],['../classtoolbox_1_1utils_1_1_usage_error.html',1,'toolbox::utils::UsageError']]],
-  ['use_5fcolors_12',['use_colors',['../structtoolbox_1_1utils_1_1print__style__t.html#ad4a55e168ccc5b579cfba3f06fc9fcfe',1,'toolbox::utils::print_style_t']]]
+  ['use_5fcolors_12',['use_colors',['../structtoolbox_1_1utils_1_1print__style__t.html#ad4a55e168ccc5b579cfba3f06fc9fcfe',1,'toolbox::utils::print_style_t']]],
+  ['using_20ini_20configuration_13',['Using INI configuration',['../md_docs_2md_2click__example.html#autotoc_md43',1,'']]]
 ];

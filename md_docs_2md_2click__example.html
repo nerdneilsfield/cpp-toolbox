@@ -243,7 +243,11 @@ Running</h1>
 <div class="fragment"><div class="line">build/bin/example_click --help</div>
 </div><!-- fragment --><p>Run the <code>process</code> subcommand with arguments:</p>
 <div class="fragment"><div class="line">build/bin/example_click process input.dat -n 10</div>
-</div><!-- fragment --><p>Options may also come from the INI file. </p>
+</div><!-- fragment --><p>Options may also come from the INI file. You can specify an alternate file for a command using <code>--ini</code>:</p>
+<div class="fragment"><div class="line">build/bin/example_click process --ini process.ini</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md43"></a>
+Using INI configuration</h1>
+<p>The application loads <code>example.ini</code> by default and applies the values to matching options once all commands are defined. Command line arguments still take precedence. You may override the file per command with <code>--ini</code> as shown above. Internally this uses <code>apply_ini_file</code>, which can be called after the CLI setup. Calling it earlier would have no effect because the options would not be registered yet. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

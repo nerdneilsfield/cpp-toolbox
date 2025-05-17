@@ -58,7 +58,7 @@ var searchData=
   ['str_55',['str',['../classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#aeac33666839401af2bd2bb5bff656b0f',1,'toolbox::logger::thread_logger_t::thread_stream_logger_t']]],
   ['string_2ehpp_56',['string.hpp',['../string_8hpp.html',1,'']]],
   ['string_5fto_5fpath_57',['string_to_path',['../namespacetoolbox_1_1file.html#a60f6004279fd475e4d1951e177b46c69',1,'toolbox::file']]],
-  ['style_20example_58',['10. 代码风格示例 / Style Example',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md65',1,'']]],
+  ['style_20example_58',['10. 代码风格示例 / Style Example',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md66',1,'']]],
   ['style_20guide_59',['C++ 命名风格规范 / C++ Identifier Naming Style Guide',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html',1,'']]],
   ['submit_60',['submit',['../classtoolbox_1_1base_1_1thread__pool__t.html#a16f45b3fbf2f8c5799bb405be002ac15',1,'toolbox::base::thread_pool_t::submit()'],['../classtoolbox_1_1base_1_1thread__pool__singleton__t.html#a933be4bf4a42667aed7679ec5cd0d8d5',1,'toolbox::base::thread_pool_singleton_t::submit()']]],
   ['sum_61',['sum',['../namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f',1,'toolbox::math']]],
