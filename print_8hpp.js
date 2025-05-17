@@ -1,6 +1,7 @@
 var print_8hpp =
 [
     [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", "structtoolbox_1_1utils_1_1print__style__t" ],
+    [ "toolbox::utils::print_style_t::box_chars_t", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t" ],
     [ "toolbox::utils::color_handler_t", "classtoolbox_1_1utils_1_1color__handler__t.html", null ],
     [ "toolbox::utils::table_t", "classtoolbox_1_1utils_1_1table__t.html", "classtoolbox_1_1utils_1_1table__t" ],
     [ "toolbox::utils::container_printer_t< Container >", "classtoolbox_1_1utils_1_1container__printer__t.html", "classtoolbox_1_1utils_1_1container__printer__t" ],
@@ -15,6 +16,7 @@ var print_8hpp =
     [ "toolbox::utils::queue_printer_t< T >", "classtoolbox_1_1utils_1_1queue__printer__t.html", "classtoolbox_1_1utils_1_1queue__printer__t" ],
     [ "align_text", "print_8hpp.html#a68622dfebab9e4c8dddcabce3cc25805", null ],
     [ "get_default_style", "print_8hpp.html#a5572a2b37d2d75af67443c063834b190", null ],
+    [ "get_rounded_style", "print_8hpp.html#a889594a1965685eaa3c6a7c2e1558b1d", null ],
     [ "operator<<", "print_8hpp.html#a2184930783c2534ba0f5f25677a33f1c", null ],
     [ "operator<<", "print_8hpp.html#aba9890804c595ec5fe632ac01b4bcd6a", null ],
     [ "print_array", "print_8hpp.html#a3e53a7b2980639f621aadc15bbcc4168", null ],

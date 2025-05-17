@@ -17,5 +17,6 @@ var classtoolbox_1_1utils_1_1table__t =
     [ "set_wrap_ellipsis", "classtoolbox_1_1utils_1_1table__t.html#a34c8de72183657d3eb821734a803bd44", null ],
     [ "set_zebra_colors", "classtoolbox_1_1utils_1_1table__t.html#a1f94d4e8dda83b770ab7346f8e45eb99", null ],
     [ "span_cells", "classtoolbox_1_1utils_1_1table__t.html#ac1d360f96510b5e3e1d6920646f22a9f", null ],
+    [ "to_string", "classtoolbox_1_1utils_1_1table__t.html#af3ee5f6152496c2aafe13d4f536d42d0", null ],
     [ "operator<<", "classtoolbox_1_1utils_1_1table__t.html#a1f1cc7163cf879f8da1c268172682c62", null ]
 ];

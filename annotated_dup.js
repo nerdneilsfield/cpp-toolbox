@@ -139,6 +139,7 @@ var annotated_dup =
         [ "option_t", "classtoolbox_1_1utils_1_1option__t.html", "classtoolbox_1_1utils_1_1option__t" ],
         [ "parameter_t", "classtoolbox_1_1utils_1_1parameter__t.html", "classtoolbox_1_1utils_1_1parameter__t" ],
         [ "ParameterError", "classtoolbox_1_1utils_1_1_parameter_error.html", "classtoolbox_1_1utils_1_1_parameter_error" ],
+        [ "plot_t", "classtoolbox_1_1utils_1_1plot__t.html", "classtoolbox_1_1utils_1_1plot__t" ],
         [ "print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", "structtoolbox_1_1utils_1_1print__style__t" ],
         [ "queue_printer_t", "classtoolbox_1_1utils_1_1queue__printer__t.html", "classtoolbox_1_1utils_1_1queue__printer__t" ],
         [ "random_t", "classtoolbox_1_1utils_1_1random__t.html", "classtoolbox_1_1utils_1_1random__t" ],

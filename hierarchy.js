@@ -10,6 +10,7 @@ var hierarchy =
     [ "std::bool_constant", null, [
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
     ] ],
+    [ "toolbox::utils::print_style_t::box_chars_t", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html", null ],
     [ "toolbox::utils::color_handler_t", "classtoolbox_1_1utils_1_1color__handler__t.html", null ],
     [ "toolbox::utils::command_t", "classtoolbox_1_1utils_1_1command__t.html", [
       [ "toolbox::utils::CommandLineApp", "classtoolbox_1_1utils_1_1_command_line_app.html", null ]
@@ -120,6 +121,7 @@ var hierarchy =
       [ "toolbox::utils::argument_t< T >", "classtoolbox_1_1utils_1_1argument__t.html", null ],
       [ "toolbox::utils::option_t< T >", "classtoolbox_1_1utils_1_1option__t.html", null ]
     ] ],
+    [ "toolbox::utils::plot_t", "classtoolbox_1_1utils_1_1plot__t.html", null ],
     [ "toolbox::types::point_t< T >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::base::PoolDeleter< T >", "classtoolbox_1_1base_1_1_pool_deleter.html", null ],
     [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", null ],
@@ -134,6 +136,7 @@ var hierarchy =
     ] ],
     [ "toolbox::io::sampler_t< PolicyT >", "classtoolbox_1_1io_1_1sampler__t.html", null ],
     [ "toolbox::io::sequential_policy_t", "structtoolbox_1_1io_1_1sequential__policy__t.html", null ],
+    [ "toolbox::utils::plot_t::series_t", "structtoolbox_1_1utils_1_1plot__t_1_1series__t.html", null ],
     [ "toolbox::io::shuffle_policy_t", "classtoolbox_1_1io_1_1shuffle__policy__t.html", null ],
     [ "toolbox::utils::simple_timer_interface_t", "classtoolbox_1_1utils_1_1simple__timer__interface__t.html", [
       [ "toolbox::utils::simple_timer_array_t", "classtoolbox_1_1utils_1_1simple__timer__array__t.html", null ]

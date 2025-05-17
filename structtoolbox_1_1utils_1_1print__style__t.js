@@ -1,10 +1,11 @@
 var structtoolbox_1_1utils_1_1print__style__t =
 [
+    [ "box_chars_t", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t" ],
     [ "alignment", "structtoolbox_1_1utils_1_1print__style__t.html#aabd78ed4d94343e8afcc0e5f2b089304", null ],
     [ "border_color", "structtoolbox_1_1utils_1_1print__style__t.html#a5058ab758611c5de487375b5cb965fc9", null ],
     [ "border_h", "structtoolbox_1_1utils_1_1print__style__t.html#af1f3a0a84b04b11026cc306be5b568ba", null ],
     [ "border_v", "structtoolbox_1_1utils_1_1print__style__t.html#ab5eebb690e8c41705d3577495bafb9ab", null ],
-    [ "corner", "structtoolbox_1_1utils_1_1print__style__t.html#a51307600b3a33fed4442d5df9fa539c5", null ],
+    [ "box", "structtoolbox_1_1utils_1_1print__style__t.html#a5817cdc9b15e13e9e563e7cb3350b68d", null ],
     [ "data_bg", "structtoolbox_1_1utils_1_1print__style__t.html#ae5216dacd0693dd4239aac9fe831f5ce", null ],
     [ "data_fg", "structtoolbox_1_1utils_1_1print__style__t.html#a784225a1ffd497e2b1c31a886674818d", null ],
     [ "header_bg", "structtoolbox_1_1utils_1_1print__style__t.html#a1aae498ea4174ca418f03ffa0a9b7226", null ],

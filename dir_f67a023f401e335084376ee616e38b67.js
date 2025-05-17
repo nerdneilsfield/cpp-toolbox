@@ -4,6 +4,7 @@ var dir_f67a023f401e335084376ee616e38b67 =
     [ "click.hpp", "click_8hpp.html", "click_8hpp" ],
     [ "ini_config.hpp", "ini__config_8hpp.html", "ini__config_8hpp" ],
     [ "ini_struct.hpp", "ini__struct_8hpp.html", "ini__struct_8hpp" ],
+    [ "plot.hpp", "plot_8hpp.html", "plot_8hpp" ],
     [ "print.hpp", "print_8hpp.html", "print_8hpp" ],
     [ "random.hpp", "random_8hpp.html", "random_8hpp" ],
     [ "timer.hpp", "timer_8hpp.html", "timer_8hpp" ]

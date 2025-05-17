@@ -1,5 +1,6 @@
 var searchData=
 [
   ['y_0',['y',['../structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624',1,'toolbox::types::point_t']]],
-  ['yellow_1',['yellow',['../classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a19f229133a4d635f26db2c57e126a00e',1,'toolbox::logger::thread_logger_t::thread_stream_logger_t::yellow()'],['../namespacetoolbox_1_1utils.html#a770eb16158ed065c431e4b8e51d9e05a',1,'toolbox::utils::YELLOW']]]
+  ['yellow_1',['yellow',['../classtoolbox_1_1logger_1_1thread__logger__t_1_1thread__stream__logger__t.html#a19f229133a4d635f26db2c57e126a00e',1,'toolbox::logger::thread_logger_t::thread_stream_logger_t::yellow()'],['../namespacetoolbox_1_1utils.html#a770eb16158ed065c431e4b8e51d9e05a',1,'toolbox::utils::YELLOW']]],
+  ['ys_2',['ys',['../structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#a7938ff9406590772a261a44de03b5b5b',1,'toolbox::utils::plot_t::series_t']]]
 ];

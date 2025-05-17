@@ -9,4 +9,6 @@ digraph "src/include/cpp-toolbox/base/env.hpp"
   Node2 [id="Node000002",label="src/include/cpp-toolbox\l/base.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$base_8hpp.html",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="src/include/cpp-toolbox\l/utils/print.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$print_8hpp.html",tooltip=" "];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="src/include/cpp-toolbox\l/utils/plot.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$plot_8hpp.html",tooltip=" "];
 }
