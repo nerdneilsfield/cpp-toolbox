@@ -1,0 +1,4 @@
+var structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4 =
+[
+    [ "type", "structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html#a3950c27ef40492481ce2c2a750003d70", null ]
+];

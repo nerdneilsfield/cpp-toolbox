@@ -7,6 +7,7 @@ var classtoolbox_1_1utils_1_1command__t =
     [ "add_command", "classtoolbox_1_1utils_1_1command__t.html#ac094de2cfd77dfac6bc755526cb41ecc", null ],
     [ "add_flag", "classtoolbox_1_1utils_1_1command__t.html#a604225b2bad1940e51570b3e3f22ffae", null ],
     [ "add_option", "classtoolbox_1_1utils_1_1command__t.html#aec9f0c285f02c46a544245f83bb2bf65", null ],
+    [ "apply_ini_config", "classtoolbox_1_1utils_1_1command__t.html#a9df5d6b3be28b2ed0aff27a9274e5b90", null ],
     [ "format_help", "classtoolbox_1_1utils_1_1command__t.html#a5dfa0b0cd8add7049b092cb626e321ae", null ],
     [ "get_description", "classtoolbox_1_1utils_1_1command__t.html#ac5aed7d524d06c35f488155471d4eff7", null ],
     [ "get_name", "classtoolbox_1_1utils_1_1command__t.html#a16d7229223462d27a26d24b1ee64e0ef", null ],

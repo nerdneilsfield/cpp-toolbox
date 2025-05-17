@@ -44,4 +44,6 @@ digraph "src/include/cpp-toolbox/logger/thread_logger.hpp"
   Node14 -> Node15 [id="edge24_Node000014_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node15 [id="Node000015",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
   Node15 -> Node14 [id="edge25_Node000015_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node16 [id="edge26_Node000001_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node16 [id="Node000016",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

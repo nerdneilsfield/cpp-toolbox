@@ -55,4 +55,6 @@ digraph "src/include/cpp-toolbox/base/detail/task_base.hpp"
   Node18 -> Node19 [id="edge31_Node000018_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node19 [id="Node000019",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
   Node19 -> Node18 [id="edge32_Node000019_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node20 [id="edge33_Node000011_Node000020",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node20 [id="Node000020",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

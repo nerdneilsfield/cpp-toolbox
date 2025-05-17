@@ -114,6 +114,14 @@ var annotated_dup =
           [ "optional_value_type", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type.html", null ],
           [ "optional_value_type< std::optional< U > >", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4" ]
         ] ],
+        [ "ini_detail", "namespacetoolbox_1_1utils_1_1ini__detail.html", [
+          [ "has_istream_operator", "structtoolbox_1_1utils_1_1ini__detail_1_1has__istream__operator.html", null ],
+          [ "has_istream_operator< T, std::void_t< decltype(std::declval< std::istream & >() > > std::declval< T & >())> >", "structtoolbox_1_1utils_1_1ini__detail_1_1has__istream__operator_3_01_t_00_01std_1_1void__t_3_01d111b8d6ba70747b432a9bed870293f28.html", null ],
+          [ "is_optional", "structtoolbox_1_1utils_1_1ini__detail_1_1is__optional.html", null ],
+          [ "is_optional< std::optional< U > >", "structtoolbox_1_1utils_1_1ini__detail_1_1is__optional_3_01std_1_1optional_3_01_u_01_4_01_4.html", null ],
+          [ "optional_value_type", "structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type.html", null ],
+          [ "optional_value_type< std::optional< U > >", "structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html", "structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4" ]
+        ] ],
         [ "argument_t", "classtoolbox_1_1utils_1_1argument__t.html", "classtoolbox_1_1utils_1_1argument__t" ],
         [ "array_printer_t", "classtoolbox_1_1utils_1_1array__printer__t.html", "classtoolbox_1_1utils_1_1array__printer__t" ],
         [ "ClickException", "classtoolbox_1_1utils_1_1_click_exception.html", "classtoolbox_1_1utils_1_1_click_exception" ],
@@ -123,6 +131,9 @@ var annotated_dup =
         [ "container_printer_t", "classtoolbox_1_1utils_1_1container__printer__t.html", "classtoolbox_1_1utils_1_1container__printer__t" ],
         [ "deque_printer_t", "classtoolbox_1_1utils_1_1deque__printer__t.html", "classtoolbox_1_1utils_1_1deque__printer__t" ],
         [ "flag_t", "classtoolbox_1_1utils_1_1flag__t.html", "classtoolbox_1_1utils_1_1flag__t" ],
+        [ "ini_config_t", "classtoolbox_1_1utils_1_1ini__config__t.html", "classtoolbox_1_1utils_1_1ini__config__t" ],
+        [ "ini_field_desc", "structtoolbox_1_1utils_1_1ini__field__desc.html", "structtoolbox_1_1utils_1_1ini__field__desc" ],
+        [ "ini_struct_traits", "structtoolbox_1_1utils_1_1ini__struct__traits.html", null ],
         [ "list_printer_t", "classtoolbox_1_1utils_1_1list__printer__t.html", "classtoolbox_1_1utils_1_1list__printer__t" ],
         [ "map_printer_t", "classtoolbox_1_1utils_1_1map__printer__t.html", "classtoolbox_1_1utils_1_1map__printer__t" ],
         [ "option_t", "classtoolbox_1_1utils_1_1option__t.html", "classtoolbox_1_1utils_1_1option__t" ],

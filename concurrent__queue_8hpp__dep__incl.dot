@@ -52,4 +52,6 @@ digraph "src/include/cpp-toolbox/container/concurrent_queue.hpp"
   Node17 -> Node18 [id="edge29_Node000017_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node18 [id="Node000018",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
   Node18 -> Node17 [id="edge30_Node000018_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node19 [id="edge31_Node000010_Node000019",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node19 [id="Node000019",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

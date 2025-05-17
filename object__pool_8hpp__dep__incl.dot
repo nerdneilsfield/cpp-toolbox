@@ -47,4 +47,6 @@ digraph "src/include/cpp-toolbox/base/object_pool.hpp"
   Node15 -> Node16 [id="edge26_Node000015_Node000016",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node16 [id="Node000016",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
   Node16 -> Node15 [id="edge27_Node000016_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node17 [id="edge28_Node000003_Node000017",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node17 [id="Node000017",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

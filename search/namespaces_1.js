@@ -20,5 +20,6 @@ var searchData=
   ['toolbox_3a_3atypes_3a_3adetail_17',['detail',['../namespacetoolbox_1_1types_1_1detail.html',1,'toolbox::types']]],
   ['toolbox_3a_3autils_18',['utils',['../namespacetoolbox_1_1utils.html',1,'toolbox']]],
   ['toolbox_3a_3autils_3a_3adetail_19',['detail',['../namespacetoolbox_1_1utils_1_1detail.html',1,'toolbox::utils']]],
-  ['toolbox_3a_3autils_3a_3aimpl_20',['impl',['../namespacetoolbox_1_1utils_1_1impl.html',1,'toolbox::utils']]]
+  ['toolbox_3a_3autils_3a_3aimpl_20',['impl',['../namespacetoolbox_1_1utils_1_1impl.html',1,'toolbox::utils']]],
+  ['toolbox_3a_3autils_3a_3aini_5fdetail_21',['ini_detail',['../namespacetoolbox_1_1utils_1_1ini__detail.html',1,'toolbox::utils']]]
 ];

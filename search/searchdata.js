@@ -3,14 +3,14 @@ var indexSectionsWithContent =
   0: "123456789_abcdefghijklmnopqrstuvwxyz~中代函变命备宏对常开总成日枚模特示类线许贡",
   1: "abcdefhiklmopqrstuv",
   2: "ct",
-  3: "abcdefhklmoprstv",
+  3: "abcdefhiklmoprstv",
   4: "abcdefghijklmnoprstuvwyz~",
-  5: "abcdfghimnoprstuvwxyz",
+  5: "abcdfghikmnoprstuvwxyz",
   6: "abcdfikoprstuv",
   7: "el",
   8: "bcdeiltw",
   9: "op",
-  10: "_cr",
+  10: "_crt",
   11: "lm日",
   12: "abcghinostw命"
 };

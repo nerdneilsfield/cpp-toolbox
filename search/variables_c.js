@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['red_0',['RED',['../namespacetoolbox_1_1utils.html#a4a7fff40c337e38e0891ee1590a8777f',1,'toolbox::utils']]],
-  ['required_5f_1',['required_',['../classtoolbox_1_1utils_1_1parameter__t.html#aedd279b88390ca7fa43ffa307c32914c',1,'toolbox::utils::parameter_t']]],
-  ['retire_5fscan_5fthreshold_2',['RETIRE_SCAN_THRESHOLD',['../namespacetoolbox_1_1container_1_1detail.html#a0294c9b505f4827357db54e2fb25a3b1',1,'toolbox::container::detail']]],
-  ['right_3',['RIGHT',['../namespacetoolbox_1_1utils.html#ae3d7bfbf39b4dfff207bebb51c82c805',1,'toolbox::utils']]]
+  ['padding_0',['padding',['../structtoolbox_1_1utils_1_1print__style__t.html#a7ae1f52c92340065f0aac609f2a04391',1,'toolbox::utils::print_style_t']]],
+  ['points_1',['points',['../classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff',1,'toolbox::types::point_cloud_t']]]
 ];

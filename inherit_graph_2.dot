@@ -30,4 +30,8 @@ digraph "Graphical Class Hierarchy"
   Node11 [id="Node000011",label="toolbox::utils::detail\l::has_istream_operator\l\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1has__istream__operator.html",tooltip=" "];
   Node0 -> Node12 [id="edge13_Node000000_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="toolbox::utils::detail\l::is_optional\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1detail_1_1is__optional.html",tooltip=" "];
+  Node0 -> Node13 [id="edge14_Node000000_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="toolbox::utils::ini\l_detail::has_istream\l_operator\< T, typename \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1ini__detail_1_1has__istream__operator.html",tooltip=" "];
+  Node0 -> Node14 [id="edge15_Node000000_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="toolbox::utils::ini\l_detail::is_optional\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1utils_1_1ini__detail_1_1is__optional.html",tooltip=" "];
 }
