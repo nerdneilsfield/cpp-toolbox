@@ -20,7 +20,7 @@ int main()
 
   // --- 示例 1: 基本表格与对齐 / Basic table and alignment ---
   std::cout << "--- Example 1: Basic Table and Alignment ---" << "\n";
-  table_t t1;
+  table_t t1(get_rounded_style());
   t1.set_headers({"Name", "Age", "City"})
       .add_row("Alice", 30, "New York")
       .add_row("Bob", 24, "Los Angeles")
@@ -85,9 +85,9 @@ int main()
   // --- 示例 6: 写入文件，无颜色 / File output without ANSI colors ---
   std::cout << "--- Example 6: File Output (no colors) ---" << "\n";
   table_t t6 = t4;  // 复用之前的 t4
-  t6.set_file_output_color(false);
+  std::string plain = t6.to_string(false);
   std::ofstream ofs("table_output.txt");
-  ofs << t6;
+  ofs << plain;
   ofs.close();
   std::cout << "Written to table_output.txt" << "\n";
 
@@ -139,7 +139,7 @@ int main()
   print_style_t custom_style;
   custom_style.border_h = "=";
   custom_style.border_v = "*";
-  custom_style.corner = "#";
+  custom_style.box.center = "#";
   custom_style.padding = "";  // 无填充 (No padding)
   custom_style.show_header = false;
   custom_style.alignment = align_t::CENTER;

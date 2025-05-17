@@ -70,9 +70,21 @@ enum class CPP_TOOLBOX_EXPORT color_t : std::uint8_t
  */
 struct CPP_TOOLBOX_EXPORT print_style_t
 {
+  struct box_chars_t
+  {
+    std::string top_left = "+";
+    std::string top_right = "+";
+    std::string bottom_left = "+";
+    std::string bottom_right = "+";
+    std::string left_joint = "+";
+    std::string right_joint = "+";
+    std::string top_joint = "+";
+    std::string bottom_joint = "+";
+    std::string center = "+";
+  } box;
+
   std::string border_h = "-";  ///< 水平边框字符/Horizontal border character
   std::string border_v = "|";  ///< 垂直边框字符/Vertical border character
-  std::string corner = "+";  ///< 角字符/Corner character
   std::string padding = " ";  ///< 单元格填充/Cell padding
   bool show_header = true;  ///< 是否显示表头/Show header or not
   bool show_border = true;  ///< 是否显示边框/Show border or not
@@ -96,6 +108,29 @@ struct CPP_TOOLBOX_EXPORT print_style_t
 inline auto get_default_style() -> const print_style_t&
 {
   static const print_style_t style = print_style_t();
+  return style;
+}
+
+/**
+ * @brief 获取圆角边框风格/Style using Unicode box drawing characters
+ */
+inline auto get_rounded_style() -> const print_style_t&
+{
+  static const print_style_t style = [] {
+    print_style_t s;
+    s.border_h = "\xE2\x94\x80";      // "─"
+    s.border_v = "\xE2\x94\x82";      // "│"
+    s.box.top_left = "\xE2\x94\x8C";      // "┌"
+    s.box.top_right = "\xE2\x94\x90";     // "┐"
+    s.box.bottom_left = "\xE2\x94\x94";   // "└"
+    s.box.bottom_right = "\xE2\x94\x98";  // "┘"
+    s.box.left_joint = "\xE2\x94\x9C";    // "├"
+    s.box.right_joint = "\xE2\x94\xA4";   // "┤"
+    s.box.top_joint = "\xE2\x94\xAC";     // "┬"
+    s.box.bottom_joint = "\xE2\x94\xB4";  // "┴"
+    s.box.center = "\xE2\x94\xBC";       // "┼"
+    return s;
+  }();
   return style;
 }
 
@@ -553,6 +588,13 @@ public:
   table_t& set_file_output_color(bool enable);
 
   /**
+   * @brief 将表格渲染为字符串 / Render table as a string
+   * @param with_color 是否保留ANSI颜色 / true to keep ANSI colors
+   * @return std::string 渲染后的表格 / Rendered table string
+   */
+  [[nodiscard]] auto to_string(bool with_color = true) const -> std::string;
+
+  /**
    * @brief 打印表格 / Stream operator for printing table_t
    * @param os 输出流 / Output stream
    * @param tbl 要打印的table_t对象 / Table object to print
@@ -628,7 +670,14 @@ private:
    * @brief 打印水平边框 / Print horizontal border line
    * @param os 输出流 / Output stream
    */
-  void print_horizontal_border(std::ostream& os) const;
+  enum class border_pos_t
+  {
+    TOP,
+    MIDDLE,
+    BOTTOM
+  };
+
+  void print_horizontal_border(std::ostream& os, border_pos_t pos) const;
 
   /**
    * @brief 打印单行（支持换行/截断及合并） / Print a logical row with

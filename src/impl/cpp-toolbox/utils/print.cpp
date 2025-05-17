@@ -1,5 +1,6 @@
 #include <iomanip>  // std::setw
 #include <iostream>  // std::ostream
+#include <sstream>
 
 #include "cpp-toolbox/utils/print.hpp"
 
@@ -238,25 +239,48 @@ void table_t::calculate_col_widths() const
 }
 
 /** @brief 打印水平边框 / Print horizontal border */
-void table_t::print_horizontal_border(std::ostream& os) const
+void table_t::print_horizontal_border(std::ostream& os, table_t::border_pos_t pos) const
 {
   if (!m_style.show_border) {
     return;
   }
 
-  auto corner = m_style.corner;
-  auto border_h = m_style.border_h;
-  if (m_style.use_colors && m_out_color) {
-    corner = color_handler_t::colorize(
-        corner, m_style.border_color, color_t::DEFAULT);
-    border_h = color_handler_t::colorize(
-        border_h, m_style.border_color, color_t::DEFAULT);
+  auto left = m_style.box.top_left;
+  auto join = m_style.box.center;
+  auto right = m_style.box.top_right;
+
+  switch (pos) {
+    case table_t::border_pos_t::TOP:
+      left = m_style.box.top_left;
+      join = m_style.box.top_joint;
+      right = m_style.box.top_right;
+      break;
+    case table_t::border_pos_t::MIDDLE:
+      left = m_style.box.left_joint;
+      join = m_style.box.center;
+      right = m_style.box.right_joint;
+      break;
+    case table_t::border_pos_t::BOTTOM:
+      left = m_style.box.bottom_left;
+      join = m_style.box.bottom_joint;
+      right = m_style.box.bottom_right;
+      break;
   }
 
-  os << corner;
-  for (auto w : m_col_widths) {
-    os << std::string(w + (2 * m_style.padding.length()), border_h[0])
-       << corner;
+  auto border_h = m_style.border_h;
+  if (m_style.use_colors && m_out_color) {
+    left = color_handler_t::colorize(left, m_style.border_color, color_t::DEFAULT);
+    join = color_handler_t::colorize(join, m_style.border_color, color_t::DEFAULT);
+    right = color_handler_t::colorize(right, m_style.border_color, color_t::DEFAULT);
+    border_h = color_handler_t::colorize(border_h, m_style.border_color, color_t::DEFAULT);
+  }
+
+  os << left;
+  for (size_t i = 0; i < m_col_widths.size(); ++i) {
+    for (size_t j = 0; j < m_col_widths[i] + (2 * m_style.padding.length()); ++j) {
+      os << border_h;
+    }
+    os << (i == m_col_widths.size() - 1 ? right : join);
   }
   os << "\n";
 }
@@ -395,10 +419,10 @@ std::ostream& operator<<(std::ostream& os, const table_t& tbl)
     return os << "[Empty table]\n";
   }
   tbl.calculate_col_widths();
-  tbl.print_horizontal_border(os);
+  tbl.print_horizontal_border(os, table_t::border_pos_t::TOP);
   if (tbl.m_style.show_header) {
     tbl.print_wrapped_row(os, tbl.m_headers, /*is_header=*/true, 0);
-    tbl.print_horizontal_border(os);
+    tbl.print_horizontal_border(os, table_t::border_pos_t::MIDDLE);
   }
   for (size_t i = 0; i < tbl.m_data.size(); ++i) {
     tbl.print_wrapped_row(os,
@@ -406,8 +430,21 @@ std::ostream& operator<<(std::ostream& os, const table_t& tbl)
                           /*is_header=*/false,
                           i + (tbl.m_style.show_header ? 1 : 0));
   }
-  tbl.print_horizontal_border(os);
+  tbl.print_horizontal_border(os, table_t::border_pos_t::BOTTOM);
   return os;
+}
+
+/**
+ * @brief 将表格渲染为字符串 / Render table as a string
+ */
+auto table_t::to_string(bool with_color) const -> std::string
+{
+  table_t tmp = *this;
+  tmp.m_out_color = with_color;
+  tmp.m_style.use_colors = with_color;
+  std::ostringstream oss;
+  oss << tmp;
+  return oss.str();
 }
 
 /** @brief 设置指定列的对齐方式 / Set alignment for a specific column */
