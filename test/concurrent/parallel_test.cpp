@@ -7,6 +7,7 @@
 #include <iostream>  // For potential debug output
 #include <limits>  // std::numeric_limits
 #include <numeric>  // std::iota, std::accumulate
+#include <random>
 #include <stdexcept>  // std::runtime_error
 #include <string>
 #include <vector>
@@ -347,5 +348,50 @@ TEST_CASE("Parallel Reduce Tests", "[concurrent][parallel_reduce]")
     SUCCEED(
         "Skipping non-commutative test as implementation ensures sequential "
         "final merge");
+  }
+}
+
+TEST_CASE("Parallel Inclusive Scan Tests",
+          "[concurrent][parallel_inclusive_scan]")
+{
+  SECTION("Small integer prefix sum")
+  {
+    std::vector<int> input = {1, 2, 3, 4, 5};
+    std::vector<int> output(input.size());
+    std::vector<int> expected = {1, 3, 6, 10, 15};
+    parallel_inclusive_scan(
+        input.begin(), input.end(), output.begin(), 0, std::plus<int>(), 0);
+    REQUIRE_THAT(output, Equals(expected));
+  }
+
+  SECTION("Large prefix sum")
+  {
+    const size_t n = 1'000'000;
+    std::vector<i64> input(n);
+    std::iota(input.begin(), input.end(), 1);
+    std::vector<i64> output(n);
+    std::vector<i64> expected(n);
+    std::inclusive_scan(input.begin(), input.end(), expected.begin());
+    parallel_inclusive_scan(
+        input.begin(), input.end(), output.begin(), 0LL, std::plus<i64>(), 0LL);
+    REQUIRE_THAT(output, Equals(expected));
+  }
+}
+
+TEST_CASE("Parallel Merge Sort Tests", "[concurrent][parallel_merge_sort]")
+{
+  SECTION("Sort random integers")
+  {
+    std::mt19937 rng(42);
+    std::uniform_int_distribution<int> dist(0, 1000000);
+    std::vector<int> data(20000);
+    for (auto& v : data) {
+      v = dist(rng);
+    }
+    std::vector<int> expected = data;
+    std::sort(expected.begin(), expected.end());
+
+    parallel_merge_sort(data.begin(), data.end());
+    REQUIRE_THAT(data, Equals(expected));
   }
 }

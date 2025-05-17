@@ -76,14 +76,12 @@ CPP_TOOLBOX_EXPORT void parallel_for_each(Iterator begin,
   const size_t min_chunk_size = 1;
   const size_t hardware_threads =
       std::max(1u, std::thread::hardware_concurrency());
-  const size_t max_tasks = std::max(num_threads, hardware_threads) * 4;
+  const size_t num_tasks = std::max(num_threads, hardware_threads);
 
   size_t chunk_size =
       std::max(min_chunk_size,
                static_cast<size_t>(
-                   std::ceil(static_cast<double>(total_size) / max_tasks)));
-  size_t num_tasks = static_cast<size_t>(
-      std::ceil(static_cast<double>(total_size) / chunk_size));
+                   std::ceil(static_cast<double>(total_size) / num_tasks)));
 
   std::vector<std::future<void>> futures;
   futures.reserve(num_tasks);
@@ -233,14 +231,12 @@ CPP_TOOLBOX_EXPORT void parallel_transform(InputIt first1,
   const size_t min_chunk_size = 1;
   const size_t hardware_threads =
       std::max(1u, std::thread::hardware_concurrency());
-  const size_t max_tasks = std::max(num_threads, hardware_threads) * 4;
+  const size_t num_tasks = std::max(num_threads, hardware_threads);
 
   size_t chunk_size =
       std::max(min_chunk_size,
                static_cast<size_t>(
-                   std::ceil(static_cast<double>(total_size) / max_tasks)));
-  size_t num_tasks = static_cast<size_t>(
-      std::ceil(static_cast<double>(total_size) / chunk_size));
+                   std::ceil(static_cast<double>(total_size) / num_tasks)));
 
   std::vector<std::future<void>> futures;
   futures.reserve(num_tasks);
@@ -431,17 +427,44 @@ CPP_TOOLBOX_EXPORT T parallel_reduce(Iterator begin,
       break;
   }
 
-  T final_result = identity;
+  std::vector<T> partial_results;
+  partial_results.reserve(futures.size());
+
   try {
     for (auto& fut : futures) {
-      T partial_result = fut.get();
-      final_result = reduce_op(final_result, partial_result);
+      partial_results.push_back(fut.get());
+    }
+
+    if (partial_results.empty()) {
+      return identity;
+    }
+
+    while (partial_results.size() > 1) {
+      size_t pair_count = partial_results.size() / 2;
+      std::vector<std::future<T>> merge_futs;
+      merge_futs.reserve(pair_count);
+
+      for (size_t i = 0; i < pair_count; ++i) {
+        T lhs = partial_results[2 * i];
+        T rhs = partial_results[2 * i + 1];
+        merge_futs.emplace_back(pool.submit([lhs, rhs, reduce_op]()
+                                            { return reduce_op(lhs, rhs); }));
+      }
+
+      if (partial_results.size() % 2 == 1) {
+        partial_results[pair_count] = partial_results.back();
+      }
+      partial_results.resize(pair_count + (partial_results.size() % 2));
+
+      for (size_t i = 0; i < merge_futs.size(); ++i) {
+        partial_results[i] = merge_futs[i].get();
+      }
     }
   } catch (...) {
     throw;
   }
 
-  return final_result;
+  return reduce_op(identity, partial_results.front());
 }
 
 /**
@@ -490,6 +513,222 @@ CPP_TOOLBOX_EXPORT T parallel_reduce(const std::array<T, N>& arr,
 {
   return parallel_reduce(
       arr.cbegin(), arr.cend(), identity, std::move(reduce_op));
+}
+
+//--------------------------------------------------------------------------
+// parallel_inclusive_scan
+//--------------------------------------------------------------------------
+
+/**
+ * @brief 并行前缀和(包含式)/Parallel inclusive scan (prefix sum)
+ * @tparam InputIt 输入迭代器类型(随机访问)/Input iterator type
+ * @tparam OutputIt 输出迭代器类型(随机访问)/Output iterator type
+ * @tparam T 值类型/Value type
+ * @tparam BinaryOperation 二元操作类型/Binary operation type
+ * @param first 输入范围起始/Start of input range
+ * @param last 输入范围结束/End of input range
+ * @param d_first 输出范围起始/Start of output range
+ * @param init 起始值/Initial value
+ * @param binary_op 用于累加的二元操作/Binary operation for accumulation
+ * @param identity binary_op 的单位元素/Identity element for binary_op
+ */
+template<typename InputIt,
+         typename OutputIt,
+         typename T,
+         typename BinaryOperation>
+CPP_TOOLBOX_EXPORT void parallel_inclusive_scan(InputIt first,
+                                                InputIt last,
+                                                OutputIt d_first,
+                                                T init,
+                                                BinaryOperation binary_op,
+                                                T identity = T {})
+{
+  using traits = std::iterator_traits<InputIt>;
+  static_assert(std::is_base_of_v<std::random_access_iterator_tag,
+                                  typename traits::iterator_category>,
+                "parallel_inclusive_scan requires random access iterators.");
+
+  const auto total_size = std::distance(first, last);
+  if (total_size <= 0) {
+    return;
+  }
+
+  auto& pool = default_pool();
+  const size_t num_threads = pool.get_thread_count();
+  const size_t hardware_threads =
+      std::max(1u, std::thread::hardware_concurrency());
+  size_t num_tasks = std::max(num_threads, hardware_threads);
+
+  size_t chunk_size = static_cast<size_t>(
+      std::ceil(static_cast<double>(total_size) / num_tasks));
+  num_tasks = static_cast<size_t>(
+      std::ceil(static_cast<double>(total_size) / chunk_size));
+
+  std::vector<T> chunk_sums(num_tasks);
+  std::vector<std::pair<size_t, size_t>> ranges;
+  ranges.reserve(num_tasks);
+
+  std::vector<std::future<T>> sum_futures;
+  sum_futures.reserve(num_tasks);
+
+  InputIt chunk_begin = first;
+  for (size_t i = 0; i < num_tasks; ++i) {
+    InputIt chunk_end = chunk_begin;
+    size_t current_size = std::min(
+        chunk_size, static_cast<size_t>(std::distance(chunk_begin, last)));
+    if (current_size == 0)
+      break;
+    std::advance(chunk_end, current_size);
+    ranges.emplace_back(static_cast<size_t>(std::distance(first, chunk_begin)),
+                        current_size);
+
+    sum_futures.emplace_back(pool.submit(
+        [chunk_begin, chunk_end, identity, binary_op]()
+        {
+          T local_sum = identity;
+          for (auto it = chunk_begin; it != chunk_end; ++it) {
+            local_sum = binary_op(local_sum, *it);
+          }
+          return local_sum;
+        }));
+
+    chunk_begin = chunk_end;
+    if (chunk_begin == last)
+      break;
+  }
+
+  size_t actual_tasks = ranges.size();
+  for (size_t i = 0; i < actual_tasks; ++i) {
+    chunk_sums[i] = sum_futures[i].get();
+  }
+
+  std::vector<T> offsets(actual_tasks);
+  T running = init;
+  for (size_t i = 0; i < actual_tasks; ++i) {
+    offsets[i] = running;
+    running = binary_op(running, chunk_sums[i]);
+  }
+
+  std::vector<std::future<void>> futures;
+  futures.reserve(actual_tasks);
+  for (size_t i = 0; i < actual_tasks; ++i) {
+    size_t start_index = ranges[i].first;
+    size_t len = ranges[i].second;
+
+    InputIt cb =
+        first + static_cast<typename traits::difference_type>(start_index);
+    OutputIt db =
+        d_first + static_cast<typename traits::difference_type>(start_index);
+    T offset = offsets[i];
+
+    futures.emplace_back(pool.submit(
+        [cb, db, len, offset, binary_op]() mutable
+        {
+          T local = offset;
+          for (size_t j = 0; j < len; ++j) {
+            local = binary_op(
+                local,
+                *(cb + static_cast<typename traits::difference_type>(j)));
+            *(db + static_cast<typename traits::difference_type>(j)) = local;
+          }
+        }));
+  }
+
+  for (auto& fut : futures) {
+    fut.get();
+  }
+}
+
+/**
+ * @brief 向量便捷重载/Convenience overload for vector
+ */
+template<typename T, typename Alloc, typename BinaryOperation>
+CPP_TOOLBOX_EXPORT void parallel_inclusive_scan(const std::vector<T, Alloc>& in,
+                                                std::vector<T, Alloc>& out,
+                                                T init,
+                                                BinaryOperation binary_op,
+                                                T identity = T {})
+{
+  if (out.size() < in.size())
+    out.resize(in.size());
+  parallel_inclusive_scan(in.cbegin(),
+                          in.cend(),
+                          out.begin(),
+                          init,
+                          std::move(binary_op),
+                          identity);
+}
+
+//--------------------------------------------------------------------------
+// parallel_merge_sort
+//--------------------------------------------------------------------------
+
+/**
+ * @brief 并行合并排序/Parallel merge sort (chunked)
+ * @tparam RandomIt 随机访问迭代器类型/Random access iterator type
+ * @tparam Compare 比较器类型/Comparator type
+ */
+template<typename RandomIt, typename Compare = std::less<>>
+CPP_TOOLBOX_EXPORT void parallel_merge_sort(RandomIt begin,
+                                            RandomIt end,
+                                            Compare comp = Compare())
+{
+  const auto total_size = std::distance(begin, end);
+  if (total_size <= 1) {
+    return;
+  }
+
+  auto& pool = default_pool();
+  const size_t num_threads = pool.get_thread_count();
+  const size_t hardware_threads =
+      std::max(1u, std::thread::hardware_concurrency());
+  size_t num_tasks = std::max(num_threads, hardware_threads);
+
+  size_t chunk_size = static_cast<size_t>(
+      std::ceil(static_cast<double>(total_size) / num_tasks));
+  num_tasks = static_cast<size_t>(
+      std::ceil(static_cast<double>(total_size) / chunk_size));
+
+  std::vector<std::future<void>> futures;
+  futures.reserve(num_tasks);
+  std::vector<std::pair<RandomIt, RandomIt>> ranges;
+  ranges.reserve(num_tasks);
+
+  RandomIt chunk_begin = begin;
+  for (size_t i = 0; i < num_tasks; ++i) {
+    RandomIt chunk_end = chunk_begin;
+    size_t current_size = std::min(
+        chunk_size, static_cast<size_t>(std::distance(chunk_begin, end)));
+    if (current_size == 0)
+      break;
+    std::advance(chunk_end, current_size);
+    ranges.emplace_back(chunk_begin, chunk_end);
+    futures.emplace_back(
+        pool.submit([chunk_begin, chunk_end, comp]()
+                    { std::sort(chunk_begin, chunk_end, comp); }));
+    chunk_begin = chunk_end;
+    if (chunk_begin == end)
+      break;
+  }
+
+  for (auto& fut : futures) {
+    fut.get();
+  }
+
+  while (ranges.size() > 1) {
+    std::vector<std::pair<RandomIt, RandomIt>> new_ranges;
+    for (size_t i = 0; i + 1 < ranges.size(); i += 2) {
+      auto begin1 = ranges[i].first;
+      auto mid = ranges[i].second;
+      auto end2 = ranges[i + 1].second;
+      std::inplace_merge(begin1, mid, end2, comp);
+      new_ranges.emplace_back(begin1, end2);
+    }
+    if (ranges.size() % 2 == 1) {
+      new_ranges.push_back(ranges.back());
+    }
+    ranges.swap(new_ranges);
+  }
 }
 
 }  // namespace toolbox::concurrent
