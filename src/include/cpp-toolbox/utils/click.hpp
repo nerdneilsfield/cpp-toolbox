@@ -10,6 +10,8 @@
 namespace toolbox::utils
 {
 
+class ini_config_t;
+
 class CPP_TOOLBOX_EXPORT parameter_t
 {
 protected:
@@ -146,6 +148,9 @@ public:
 
   int parse_and_execute(const std::vector<std::string>& args);
   std::string format_help() const;
+
+  void apply_ini_config(const class ini_config_t& config,
+                        const std::string& section = "");
 
 private:
   void add_help();
