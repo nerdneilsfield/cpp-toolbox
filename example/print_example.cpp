@@ -167,6 +167,24 @@ int main()
   queue_data.push(300);
   std::cout << print_queue(queue_data, "IntQueue") << "\n";
 
+  // --- 部分打印示例 (Partial Container Printing) ---
+  std::cout << "--- Container Partial Head/Tail ---" << "\n";
+
+  std::vector<int> long_vec{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  auto long_vec_printer = print_vector(long_vec, "LongVec");
+  long_vec_printer.enable_partial(true)
+      .set_head_tail_count(2, 2)
+      .set_partial_ellipsis("...");
+  std::cout << long_vec_printer << "\n";
+
+  std::map<std::string, int> long_map{{"a", 1}, {"b", 2}, {"c", 3},
+                                       {"d", 4}, {"e", 5}, {"f", 6}};
+  auto long_map_printer = print_map(long_map, "LongMap");
+  long_map_printer.enable_partial(true)
+      .set_head_tail_count(1, 1)
+      .set_partial_ellipsis("...");
+  std::cout << long_map_printer << "\n";
+
   // --- 自定义样式示例 (Custom Style Example) ---
   std::cout << "--- Custom Style Examples ---" << "\n";
 
