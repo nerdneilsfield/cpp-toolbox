@@ -333,6 +333,10 @@ void table_t::print_wrapped_row(std::ostream& os,
     for (size_t j = c; j < c + span_cols && j < cols; ++j) {
       text_width += m_col_widths[j];
     }
+    // 若合并多个列，需补偿被省去的内部填充宽度
+    if (span_cols > 1) {
+      text_width += (span_cols - 1) * 2 * m_style.padding.length();
+    }
     // 获取单元格原始文本 / Original cell text
     std::string cell = (c < row_data.size() ? row_data[c] : "");
     // 执行换行/截断 / Wrap or truncate
@@ -378,6 +382,9 @@ void table_t::print_wrapped_row(std::ostream& os,
       size_t text_width = 0;
       for (size_t j = c; j < c + span_cols && j < cols; ++j) {
         text_width += m_col_widths[j];
+      }
+      if (span_cols > 1) {
+        text_width += (span_cols - 1) * 2 * m_style.padding.length();
       }
       // 取对应子行文本 / Get line or empty
       const auto& lines = cell_lines[c];
