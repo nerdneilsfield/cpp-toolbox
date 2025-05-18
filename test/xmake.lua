@@ -1,7 +1,7 @@
 add_requires("catch2")
 
 -- Define test files
-local test_files = {"./base/**.cpp", "./container/**.cpp", "./concurrent/**.cpp", "./file/**.cpp", "./logger/**.cpp",
+local test_files = {"./base/**.cpp", "./container/**.cpp", "./concurrent/**.cpp", "./file/**.cpp", "./logger/**.cpp", "pcl/**.cpp",
                     "./utils/**.cpp", "./types/**.cpp", "./functional/**.cpp", "./io/**.cpp", "./math/**.cpp",
                     "./my_catch2_main.cpp"}
 
