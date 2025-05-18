@@ -519,6 +519,20 @@ public:
   }
 
   /**
+   * @brief 设置表格标题 / Set table title text
+   * @param title 标题文本 / Title text
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_title(const std::string& title);
+
+  /**
+   * @brief 设置表格尾部文本 / Set table footer text
+   * @param footer 尾部文本 / Footer text
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_footer(const std::string& footer);
+
+  /**
    * @brief 设置指定列的对齐方式 / Set alignment for a specific column
    * @param column_index 列索引 / Column index
    * @param align 对齐方式 / Alignment
@@ -656,6 +670,12 @@ private:
   /** @brief 打印风格 / Base print style */
   print_style_t m_style;
 
+  /** @brief 表格标题文本 / Table title text */
+  std::string m_title;
+
+  /** @brief 表格尾部文本 / Table footer text */
+  std::string m_footer;
+
   /** @brief 列固定宽度映射 (col -> width) / Map of column to fixed width */
   std::unordered_map<size_t, size_t> m_col_fixed_width;
 
@@ -760,6 +780,10 @@ private:
   const Container& m_container;  ///< 容器引用/Container reference
   std::string m_name;  ///< 容器名称/Container name
   print_style_t m_style;  ///< 打印风格/Print style
+  bool m_partial{false};           ///< 是否启用首尾打印/Enable head-tail printing
+  size_t m_head_count{3};          ///< 头部元素数量/Number of head elements
+  size_t m_tail_count{3};          ///< 尾部元素数量/Number of tail elements
+  std::string m_partial_ellipsis{"..."};  ///< 省略符/Ellipsis when truncated
 
 protected:
   /**
@@ -805,6 +829,45 @@ public:
       , m_name(std::move(name))
       , m_style(std::move(style))
   {
+  }
+
+  /**
+   * @brief 启用或禁用首尾打印/Enable or disable head-tail printing
+   * @param enable 是否启用/Enable flag
+   * @return container_printer_t& 当前对象引用/Reference to this
+   */
+  container_printer_t& enable_partial(bool enable)
+  {
+    m_partial = enable;
+    return *this;
+  }
+
+  /**
+   * @brief 设置头尾元素数量/Set head and tail element counts
+   */
+  container_printer_t& set_head_tail_count(size_t head, size_t tail)
+  {
+    m_head_count = head;
+    m_tail_count = tail;
+    return *this;
+  }
+
+  /**
+   * @brief 设置省略符/Set ellipsis string for partial printing
+   */
+  container_printer_t& set_partial_ellipsis(const std::string& ellipsis)
+  {
+    m_partial_ellipsis = ellipsis;
+    return *this;
+  }
+
+protected:
+  [[nodiscard]] auto partial_enabled() const -> bool { return m_partial; }
+  [[nodiscard]] auto head_count() const -> size_t { return m_head_count; }
+  [[nodiscard]] auto tail_count() const -> size_t { return m_tail_count; }
+  [[nodiscard]] auto ellipsis() const -> const std::string&
+  {
+    return m_partial_ellipsis;
   }
 
   /**
@@ -884,7 +947,13 @@ protected:
    */
   void print_content(std::ostream& os) const override
   {
-    for (size_t i = 0; i < this->get_container().size(); ++i) {
+    size_t total = this->get_container().size();
+    bool partial = this->partial_enabled() &&
+                   total > (this->head_count() + this->tail_count());
+    size_t head = partial ? this->head_count() : total;
+    size_t tail_start = partial ? total - this->tail_count() : total;
+
+    for (size_t i = 0; i < head; ++i) {
       const std::string index = "[" + std::to_string(i) + "]: ";
       const std::string value = to_string_value(this->get_container()[i]);
 
@@ -898,7 +967,35 @@ protected:
           : value;
 
       os << "  " << colored_index << colored_value;
-      if (i < this->get_container().size() - 1) {
+      if (partial || i < total - 1) {
+        os << ",";
+      }
+      os << "\n";
+    }
+
+    if (partial) {
+      os << "  " << this->ellipsis();
+      if (tail_start < total) {
+        os << ",";
+      }
+      os << "\n";
+    }
+
+    for (size_t i = std::max(head, tail_start); i < total; ++i) {
+      const std::string index = "[" + std::to_string(i) + "]: ";
+      const std::string value = to_string_value(this->get_container()[i]);
+
+      const std::string colored_index = this->get_style().use_colors
+          ? color_handler_t::colorize(
+                index, this->get_style().header_fg, color_t::DEFAULT)
+          : index;
+      const std::string colored_value = this->get_style().use_colors
+          ? color_handler_t::colorize(
+                value, this->get_style().data_fg, color_t::DEFAULT)
+          : value;
+
+      os << "  " << colored_index << colored_value;
+      if (i < total - 1) {
         os << ",";
       }
       os << "\n";
@@ -939,8 +1036,17 @@ protected:
    */
   void print_content(std::ostream& os) const override
   {
-    size_t i = 0;
-    for (const auto& [key, value] : this->get_container()) {
+    size_t total = this->get_container().size();
+    bool partial = this->partial_enabled() &&
+                   total > (this->head_count() + this->tail_count());
+    size_t head = partial ? this->head_count() : total;
+    size_t tail_start = partial ? total - this->tail_count() : total;
+
+    size_t idx = 0;
+    for (auto it = this->get_container().begin();
+         it != this->get_container().end() && idx < head; ++it, ++idx)
+    {
+      const auto& [key, value] = *it;
       const std::string key_str = to_string_value(key);
       const std::string value_str = to_string_value(value);
       const std::string arrow = " => ";
@@ -955,11 +1061,42 @@ protected:
           : value_str;
 
       os << "  " << colored_key << arrow << colored_value;
-      if (i < this->get_container().size() - 1) {
+      if (partial || idx < total - 1) {
         os << ",";
       }
       os << "\n";
-      i++;
+    }
+
+    if (partial) {
+      os << "  " << this->ellipsis();
+      if (tail_start < total) {
+        os << ",";
+      }
+      os << "\n";
+
+      auto it = this->get_container().begin();
+      std::advance(it, tail_start);
+      for (; it != this->get_container().end(); ++it) {
+        const auto& [key, value] = *it;
+        const std::string key_str = to_string_value(key);
+        const std::string value_str = to_string_value(value);
+        const std::string arrow = " => ";
+
+        const std::string colored_key = this->get_style().use_colors
+            ? color_handler_t::colorize(
+                  key_str, this->get_style().header_fg, color_t::DEFAULT)
+            : key_str;
+        const std::string colored_value = this->get_style().use_colors
+            ? color_handler_t::colorize(
+                  value_str, this->get_style().data_fg, color_t::DEFAULT)
+            : value_str;
+
+        os << "  " << colored_key << arrow << colored_value;
+        if (std::next(it) != this->get_container().end()) {
+          os << ",";
+        }
+        os << "\n";
+      }
     }
   }
 
