@@ -87,5 +87,7 @@ digraph "src/include/cpp-toolbox/utils/click.hpp"
   Node32 [id="Node000032",label="cpp-toolbox/utils/ini\l_config.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__config_8hpp.html",tooltip=" "];
   Node32 -> Node5 [id="edge50_Node000032_Node000005",color="steelblue1",style="solid",tooltip=" "];
   Node32 -> Node20 [id="edge51_Node000032_Node000020",color="steelblue1",style="solid",tooltip=" "];
-  Node32 -> Node6 [id="edge52_Node000032_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node32 -> Node33 [id="edge52_Node000032_Node000033",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="filesystem",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node32 -> Node6 [id="edge53_Node000032_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

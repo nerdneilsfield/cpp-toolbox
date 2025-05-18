@@ -243,14 +243,14 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 </div><!-- fragment --><div class="fragment"><div class="line"><span class="preprocessor">#pragma once</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#include &lt;atomic&gt;</span>  <span class="comment">// 用于原子布尔标志/For atomic boolean flag</span></div>
+<div class="line"><span class="preprocessor">#include &lt;deque&gt;</span>  <span class="comment">// 任务双端队列/For task deques</span></div>
 <div class="line"><span class="preprocessor">#include &lt;functional&gt;</span>  <span class="comment">// 用于 std::function, std::bind/For std::function, std::bind</span></div>
 <div class="line"><span class="preprocessor">#include &lt;future&gt;</span>  <span class="comment">// 用于异步任务结果/For asynchronous task results (std::future, std::packaged_task)</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span>  <span class="comment">// 用于标准输入输出/For std::cout, std::cerr</span></div>
 <div class="line"><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// 用于智能指针/For std::make_shared</span></div>
+<div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span>  <span class="comment">// 互斥锁/For std::mutex</span></div>
 <div class="line"><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// 用于运行时异常/For runtime exceptions</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span>  <span class="comment">// C++ 线程库/C++ thread library</span></div>
-<div class="line"><span class="preprocessor">#include &lt;deque&gt;</span>   <span class="comment">// 任务双端队列/For task deques</span></div>
-<div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span>   <span class="comment">// 互斥锁/For std::mutex</span></div>
 <div class="line"><span class="preprocessor">#include &lt;type_traits&gt;</span>  <span class="comment">// 用于类型特征/For std::invoke_result_t</span></div>
 <div class="line"><span class="preprocessor">#include &lt;utility&gt;</span>  <span class="comment">// 用于完美转发和移动语义/For std::forward, std::move</span></div>
 <div class="line"><span class="preprocessor">#include &lt;vector&gt;</span>  <span class="comment">// 用于存储工作线程/For storing worker threads</span></div>
@@ -292,7 +292,7 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">  <span class="comment">// 保护每个双端队列的互斥锁/Mutex protecting each deque</span></div>
 <div class="line">  std::vector&lt;std::unique_ptr&lt;std::mutex&gt;&gt; queue_mutexes_;</div>
 <div class="line">  <span class="comment">// 提交任务时下一个目标线程索引/Next worker index for task submission</span></div>
-<div class="line">  std::atomic&lt;size_t&gt; next_worker_{0};</div>
+<div class="line">  std::atomic&lt;size_t&gt; next_worker_ {0};</div>
 <div class="line">  <span class="comment">// 指示线程池是否应该停止的原子标志/Atomic flag indicating whether the thread</span></div>
 <div class="line">  <span class="comment">// pool should stop</span></div>
 <div class="line">  std::atomic&lt;bool&gt; stop_;</div>
@@ -358,17 +358,18 @@ $(document).ready(function(){initNavTree('_2home_2runner_2work_2cpp-toolbox_2cpp
 <div class="line">  <span class="keyword">using </span>PayloadType = <span class="keyword">decltype</span>(task_payload);</div>
 <div class="line">  <span class="comment">//    创建持有 task_derived&lt;PayloadType&gt; 的 unique_ptr&lt;task_base&gt;/Create</span></div>
 <div class="line">  <span class="comment">//    unique_ptr&lt;task_base&gt; holding task_derived&lt;PayloadType&gt;</span></div>
-<div class="line">  <span class="keyword">auto</span> task_wrapper_ptr = std::make_unique&lt;detail::task_derived&lt;PayloadType&gt;&gt;(</div>
-<div class="line">      std::move(task_payload)  <span class="comment">// 将负载 lambda 移动到包装器中/Move the payload</span></div>
-<div class="line">                               <span class="comment">// lambda into the wrapper</span></div>
-<div class="line">  );</div>
+<div class="line">  std::unique_ptr&lt;detail::task_base&gt; task_wrapper_ptr =</div>
+<div class="line">      std::make_unique&lt;detail::task_derived&lt;PayloadType&gt;&gt;(</div>
+<div class="line">          std::move(task_payload)  <span class="comment">// 将负载 lambda 移动到包装器中/Move the</span></div>
+<div class="line">                                   <span class="comment">// payload lambda into the wrapper</span></div>
+<div class="line">      );</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 4. 将任务放入某个工作线程的本地队列/Push the task to a worker&#39;s local deque</span></div>
-<div class="line">  <span class="keywordtype">size_t</span> idx = next_worker_.fetch_add(1, std::memory_order_relaxed) %</div>
-<div class="line">               workers_.size();</div>
+<div class="line">  <span class="keywordtype">size_t</span> idx =</div>
+<div class="line">      next_worker_.fetch_add(1, std::memory_order_relaxed) % workers_.size();</div>
 <div class="line">  {</div>
 <div class="line">    std::lock_guard&lt;std::mutex&gt; lock(*queue_mutexes_[idx]);</div>
-<div class="line">    worker_queues_[idx].push_back(std::move(task_wrapper_ptr));</div>
+<div class="line">    worker_queues_[idx].emplace_back(std::move(task_wrapper_ptr));</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// 5. 返回 future/Return the future</span></div>

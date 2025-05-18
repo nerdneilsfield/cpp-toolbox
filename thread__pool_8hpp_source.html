@@ -226,14 +226,14 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <a href="thread__pool_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;atomic&gt;</span>  <span class="comment">// 用于原子布尔标志/For atomic boolean flag</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;functional&gt;</span>  <span class="comment">// 用于 std::function, std::bind/For std::function, std::bind</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;future&gt;</span>  <span class="comment">// 用于异步任务结果/For asynchronous task results (std::future, std::packaged_task)</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span>  <span class="comment">// 用于标准输入输出/For std::cout, std::cerr</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// 用于智能指针/For std::make_shared</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// 用于运行时异常/For runtime exceptions</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;thread&gt;</span>  <span class="comment">// C++ 线程库/C++ thread library</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;deque&gt;</span>   <span class="comment">// 任务双端队列/For task deques</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;mutex&gt;</span>   <span class="comment">// 互斥锁/For std::mutex</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;deque&gt;</span>  <span class="comment">// 任务双端队列/For task deques</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;functional&gt;</span>  <span class="comment">// 用于 std::function, std::bind/For std::function, std::bind</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;future&gt;</span>  <span class="comment">// 用于异步任务结果/For asynchronous task results (std::future, std::packaged_task)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;iostream&gt;</span>  <span class="comment">// 用于标准输入输出/For std::cout, std::cerr</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;memory&gt;</span>  <span class="comment">// 用于智能指针/For std::make_shared</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;mutex&gt;</span>  <span class="comment">// 互斥锁/For std::mutex</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;stdexcept&gt;</span>  <span class="comment">// 用于运行时异常/For runtime exceptions</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;thread&gt;</span>  <span class="comment">// C++ 线程库/C++ thread library</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;type_traits&gt;</span>  <span class="comment">// 用于类型特征/For std::invoke_result_t</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;utility&gt;</span>  <span class="comment">// 用于完美转发和移动语义/For std::forward, std::move</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span>  <span class="comment">// 用于存储工作线程/For storing worker threads</span></div>
@@ -276,7 +276,7 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="comment">// 保护每个双端队列的互斥锁/Mutex protecting each deque</span></div>
 <div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  std::vector&lt;std::unique_ptr&lt;std::mutex&gt;&gt; queue_mutexes_;</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="comment">// 提交任务时下一个目标线程索引/Next worker index for task submission</span></div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  std::atomic&lt;size_t&gt; next_worker_{0};</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  std::atomic&lt;size_t&gt; next_worker_ {0};</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="comment">// 指示线程池是否应该停止的原子标志/Atomic flag indicating whether the thread</span></div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="comment">// pool should stop</span></div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  std::atomic&lt;bool&gt; stop_;</div>
@@ -344,24 +344,25 @@ $(document).ready(function(){initNavTree('thread__pool_8hpp_source.html',''); in
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">PayloadType</a> = <span class="keyword">decltype</span>(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_payload</a>);</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="comment">//    创建持有 task_derived&lt;PayloadType&gt; 的 unique_ptr&lt;task_base&gt;/Create</span></div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="comment">//    unique_ptr&lt;task_base&gt; holding task_derived&lt;PayloadType&gt;</span></div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="keyword">auto</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_wrapper_ptr</a> = std::make_unique&lt;detail::task_derived&lt;PayloadType&gt;&gt;(</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      std::move(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_payload</a>)  <span class="comment">// 将负载 lambda 移动到包装器中/Move the payload</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>                               <span class="comment">// lambda into the wrapper</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  );</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <span class="comment">// 4. 将任务放入某个工作线程的本地队列/Push the task to a worker&#39;s local deque</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordtype">size_t</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a> = next_worker_.fetch_add(1, std::memory_order_relaxed) %</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>               workers_.size();</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    std::lock_guard&lt;std::mutex&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">lock</a>(*queue_mutexes_[<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a>]);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    worker_queues_[<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a>].push_back(std::move(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_wrapper_ptr</a>));</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  }</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <span class="comment">// 5. 返回 future/Return the future</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">future</a>;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>}</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  std::unique_ptr&lt;detail::task_base&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_wrapper_ptr</a> =</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      std::make_unique&lt;detail::task_derived&lt;PayloadType&gt;&gt;(</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>          std::move(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_payload</a>)  <span class="comment">// 将负载 lambda 移动到包装器中/Move the</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                                   <span class="comment">// payload lambda into the wrapper</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      );</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="comment">// 4. 将任务放入某个工作线程的本地队列/Push the task to a worker&#39;s local deque</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keywordtype">size_t</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a> =</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      next_worker_.fetch_add(1, std::memory_order_relaxed) % workers_.size();</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    std::lock_guard&lt;std::mutex&gt; <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">lock</a>(*queue_mutexes_[<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a>]);</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    worker_queues_[<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">idx</a>].emplace_back(std::move(<a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">task_wrapper_ptr</a>));</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <span class="comment">// 5. 返回 future/Return the future</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classtoolbox_1_1base_1_1object__pool__t.html">future</a>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}</div>
 </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}  <span class="comment">// namespace toolbox::base</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>}  <span class="comment">// namespace toolbox::base</span></div>
 <div class="ttc" id="aclass_8hpp_html_af1de779914dcded178fdd741367d0bcd"><div class="ttname"><a href="class_8hpp.html#af1de779914dcded178fdd741367d0bcd">CPP_TOOLBOX_DISABLE_COPY</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_COPY(ClassType)</div><div class="ttdoc">禁用类的拷贝操作 / Disable copy operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:15</div></div>
 <div class="ttc" id="aclass_8hpp_html_afdec75c7ea0e64620c5b13546ab3a0a2"><div class="ttname"><a href="class_8hpp.html#afdec75c7ea0e64620c5b13546ab3a0a2">CPP_TOOLBOX_DISABLE_MOVE</a></div><div class="ttdeci">#define CPP_TOOLBOX_DISABLE_MOVE(ClassType)</div><div class="ttdoc">禁用类的移动操作 / Disable move operations for a class</div><div class="ttdef"><b>Definition</b> class.hpp:31</div></div>
 <div class="ttc" id="aclasstoolbox_1_1base_1_1object__pool__t_html"><div class="ttname"><a href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a></div><div class="ttdef"><b>Definition</b> object_pool.hpp:100</div></div>

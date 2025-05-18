@@ -77,5 +77,7 @@ digraph "src/include/cpp-toolbox/utils/ini_struct.hpp"
   Node30 [id="Node000030",label="cpp-toolbox/utils/ini\l_config.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__config_8hpp.html",tooltip=" "];
   Node30 -> Node4 [id="edge42_Node000030_Node000004",color="steelblue1",style="solid",tooltip=" "];
   Node30 -> Node14 [id="edge43_Node000030_Node000014",color="steelblue1",style="solid",tooltip=" "];
-  Node30 -> Node15 [id="edge44_Node000030_Node000015",color="steelblue1",style="solid",tooltip=" "];
+  Node30 -> Node31 [id="edge44_Node000030_Node000031",color="steelblue1",style="solid",tooltip=" "];
+  Node31 [id="Node000031",label="filesystem",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node30 -> Node15 [id="edge45_Node000030_Node000015",color="steelblue1",style="solid",tooltip=" "];
 }
