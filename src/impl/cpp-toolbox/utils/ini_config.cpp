@@ -1,12 +1,13 @@
 #include <fstream>
 #include <sstream>
+#include <filesystem>
 
 #include <cpp-toolbox/logger/thread_logger.hpp>
 #include <cpp-toolbox/utils/ini_config.hpp>
 
 namespace toolbox::utils
 {
-bool ini_config_t::load(const std::string& file_path)
+bool ini_config_t::load(const std::filesystem::path& file_path)
 {
   std::ifstream ifs(file_path);
   if (!ifs.is_open()) {
