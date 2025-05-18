@@ -18,8 +18,8 @@ int main()
 {
   using namespace toolbox::utils;
 
-  // --- 示例 1: 基本表格与对齐 / Basic table and alignment ---
-  std::cout << "--- Example 1: Basic Table and Alignment ---" << "\n";
+  // --- 示例 1: 基本表格、标题与尾部 / Basic table with title and footer ---
+  std::cout << "--- Example 1: Basic Table with Title and Footer ---" << "\n";
 
 #ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
   // 在 Windows 上使用 ASCII 风格
@@ -33,6 +33,8 @@ int main()
       .add_row("Alice", 30, "New York")
       .add_row("Bob", 24, "Los Angeles")
       .add_row("Charlie", 35, "Chicago");
+  // 设置表格标题和尾部 / Set table title and footer
+  t1.set_title("Employee List").set_footer("End of List");
   // 第二列右对齐 / Right-align second column
   t1.set_column_align(1, align_t::RIGHT);
   std::cout << t1 << "\n";
