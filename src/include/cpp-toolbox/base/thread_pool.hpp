@@ -1,14 +1,14 @@
 #pragma once
 
 #include <atomic>  // 用于原子布尔标志/For atomic boolean flag
+#include <deque>  // 任务双端队列/For task deques
 #include <functional>  // 用于 std::function, std::bind/For std::function, std::bind
 #include <future>  // 用于异步任务结果/For asynchronous task results (std::future, std::packaged_task)
 #include <iostream>  // 用于标准输入输出/For std::cout, std::cerr
 #include <memory>  // 用于智能指针/For std::make_shared
+#include <mutex>  // 互斥锁/For std::mutex
 #include <stdexcept>  // 用于运行时异常/For runtime exceptions
 #include <thread>  // C++ 线程库/C++ thread library
-#include <deque>   // 任务双端队列/For task deques
-#include <mutex>   // 互斥锁/For std::mutex
 #include <type_traits>  // 用于类型特征/For std::invoke_result_t
 #include <utility>  // 用于完美转发和移动语义/For std::forward, std::move
 #include <vector>  // 用于存储工作线程/For storing worker threads
@@ -150,7 +150,7 @@ private:
   // 保护每个双端队列的互斥锁/Mutex protecting each deque
   std::vector<std::unique_ptr<std::mutex>> queue_mutexes_;
   // 提交任务时下一个目标线程索引/Next worker index for task submission
-  std::atomic<size_t> next_worker_{0};
+  std::atomic<size_t> next_worker_ {0};
   // 指示线程池是否应该停止的原子标志/Atomic flag indicating whether the thread
   // pool should stop
   std::atomic<bool> stop_;
@@ -216,17 +216,18 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
   using PayloadType = decltype(task_payload);
   //    创建持有 task_derived<PayloadType> 的 unique_ptr<task_base>/Create
   //    unique_ptr<task_base> holding task_derived<PayloadType>
-  auto task_wrapper_ptr = std::make_unique<detail::task_derived<PayloadType>>(
-      std::move(task_payload)  // 将负载 lambda 移动到包装器中/Move the payload
-                               // lambda into the wrapper
-  );
+  std::unique_ptr<detail::task_base> task_wrapper_ptr =
+      std::make_unique<detail::task_derived<PayloadType>>(
+          std::move(task_payload)  // 将负载 lambda 移动到包装器中/Move the
+                                   // payload lambda into the wrapper
+      );
 
   // 4. 将任务放入某个工作线程的本地队列/Push the task to a worker's local deque
-  size_t idx = next_worker_.fetch_add(1, std::memory_order_relaxed) %
-               workers_.size();
+  size_t idx =
+      next_worker_.fetch_add(1, std::memory_order_relaxed) % workers_.size();
   {
     std::lock_guard<std::mutex> lock(*queue_mutexes_[idx]);
-    worker_queues_[idx].push_back(std::move(task_wrapper_ptr));
+    worker_queues_[idx].emplace_back(std::move(task_wrapper_ptr));
   }
 
   // 5. 返回 future/Return the future
