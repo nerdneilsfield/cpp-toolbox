@@ -44,6 +44,7 @@ var namespacetoolbox =
       [ "sum_d", "namespacetoolbox_1_1math.html#ab0efde6deb9583d31f8ad0f1cd9d5b21", null ],
       [ "variance", "namespacetoolbox_1_1math.html#aca65cedd95bb211ff49cd0861b91563b", null ]
     ] ],
+    [ "pcl", "namespacetoolbox_1_1pcl.html", "namespacetoolbox_1_1pcl" ],
     [ "traits", "namespacetoolbox_1_1traits.html", "namespacetoolbox_1_1traits" ],
     [ "types", "namespacetoolbox_1_1types.html", "namespacetoolbox_1_1types" ],
     [ "utils", "namespacetoolbox_1_1utils.html", "namespacetoolbox_1_1utils" ]

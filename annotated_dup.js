@@ -57,6 +57,12 @@ var annotated_dup =
         [ "is_container< T, std::void_t< T::value_type, T::iterator, decltype(std::declval< T >().begin()), decltype(std::declval< T >().end())> >", "structtoolbox_1_1logger_1_1is__container_3_01_t_00_01std_1_1void__t_3_01_t_1_1value__type_00_01_1041f7af6953dcde600448a7d1be57a1.html", null ],
         [ "thread_logger_t", "classtoolbox_1_1logger_1_1thread__logger__t.html", "classtoolbox_1_1logger_1_1thread__logger__t" ]
       ] ],
+      [ "pcl", "namespacetoolbox_1_1pcl.html", [
+        [ "filter_t", "classtoolbox_1_1pcl_1_1filter__t.html", "classtoolbox_1_1pcl_1_1filter__t" ],
+        [ "random_downsampling_t", "classtoolbox_1_1pcl_1_1random__downsampling__t.html", "classtoolbox_1_1pcl_1_1random__downsampling__t" ],
+        [ "uniform_grid_subsampling_t", "classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html", "classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t" ],
+        [ "voxel_grid_downsampling_t", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t" ]
+      ] ],
       [ "traits", "namespacetoolbox_1_1traits.html", [
         [ "detail", "namespacetoolbox_1_1traits_1_1detail.html", [
           [ "has_type_impl", "structtoolbox_1_1traits_1_1detail_1_1has__type__impl.html", null ],

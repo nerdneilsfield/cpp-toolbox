@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_5ftype_0',['data_type',['../classtoolbox_1_1io_1_1dataloader__t.html#a2dcebcd1c5de11baf4bddb28515fbad9',1,'toolbox::io::dataloader_t::data_type'],['../classtoolbox_1_1io_1_1dataset__t.html#a16003c00f9f75e410f94a838cc66b8fe',1,'toolbox::io::dataset_t::data_type']]]
+  ['data_5ftype_0',['data_type',['../classtoolbox_1_1io_1_1dataloader__t.html#a2dcebcd1c5de11baf4bddb28515fbad9',1,'toolbox::io::dataloader_t::data_type'],['../classtoolbox_1_1io_1_1dataset__t.html#a16003c00f9f75e410f94a838cc66b8fe',1,'toolbox::io::dataset_t::data_type'],['../classtoolbox_1_1pcl_1_1filter__t.html#ade09badaf172ad41a2d64e1dd969df8d',1,'toolbox::pcl::filter_t::data_type'],['../classtoolbox_1_1pcl_1_1random__downsampling__t.html#a1714726deb67b3dcc0c0e0697d43d983',1,'toolbox::pcl::random_downsampling_t::data_type'],['../classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf',1,'toolbox::pcl::uniform_grid_subsampling_t::data_type'],['../classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#a9d80581d3db91b9fede361fc3bdc0d7f',1,'toolbox::pcl::voxel_grid_downsampling_t::data_type']]]
 ];

@@ -73,6 +73,16 @@ var hierarchy =
       [ "toolbox::utils::ini_detail::is_optional< T >", "structtoolbox_1_1utils_1_1ini__detail_1_1is__optional.html", null ]
     ] ],
     [ "toolbox::io::pcd_format_t::pcd_header_t::field_info_t", "structtoolbox_1_1io_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html", null ],
+    [ "toolbox::pcl::filter_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1filter__t.html", null ],
+    [ "toolbox::pcl::filter_t< random_downsampling_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1filter__t.html", [
+      [ "toolbox::pcl::random_downsampling_t< DataType >", "classtoolbox_1_1pcl_1_1random__downsampling__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::filter_t< uniform_grid_subsampling_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1filter__t.html", [
+      [ "toolbox::pcl::uniform_grid_subsampling_t< DataType >", "classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::filter_t< voxel_grid_downsampling_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1filter__t.html", [
+      [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html", null ]
+    ] ],
     [ "toolbox::traits::function_traits< T >", "structtoolbox_1_1traits_1_1function__traits.html", null ],
     [ "toolbox::traits::function_traits< R(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html", [
       [ "toolbox::traits::function_traits< R(C::*)(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html", null ]

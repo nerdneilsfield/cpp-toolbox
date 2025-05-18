@@ -1,0 +1,649 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::uniform_grid_subsampling_t&lt; DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::uniform_grid_subsampling_t&lt; DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="uniform__grid__subsampling_8hpp_source.html">uniform_grid_subsampling.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::uniform_grid_subsampling_t&lt; DataType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a8f4a84d1564d6eb418024b0d9cd40cbf" id="r_a8f4a84d1564d6eb418024b0d9cd40cbf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf">data_type</a> = DataType</td></tr>
+<tr class="separator:a8f4a84d1564d6eb418024b0d9cd40cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02417768822806591aa0213727b1480" id="r_ac02417768822806591aa0213727b1480"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac02417768822806591aa0213727b1480">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt; DataType &gt;, DataType &gt;</td></tr>
+<tr class="separator:ac02417768822806591aa0213727b1480"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269fafecc96a49bee27a121acce3a32f" id="r_a269fafecc96a49bee27a121acce3a32f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a269fafecc96a49bee27a121acce3a32f">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf">data_type</a> &gt;</td></tr>
+<tr class="separator:a269fafecc96a49bee27a121acce3a32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1bf631921704db62290d0d37981515f" id="r_ac1bf631921704db62290d0d37981515f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac1bf631921704db62290d0d37981515f">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf">data_type</a> &gt; &gt;</td></tr>
+<tr class="separator:ac1bf631921704db62290d0d37981515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1filter__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1filter__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">toolbox::pcl::filter_t&lt; uniform_grid_subsampling_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:ade09badaf172ad41a2d64e1dd969df8d inherit pub_types_classtoolbox_1_1pcl_1_1filter__t" id="r_ade09badaf172ad41a2d64e1dd969df8d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ade09badaf172ad41a2d64e1dd969df8d">data_type</a> = DataType</td></tr>
+<tr class="separator:ade09badaf172ad41a2d64e1dd969df8d inherit pub_types_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a115abdf01110aa4a7132418cd234d10f inherit pub_types_classtoolbox_1_1pcl_1_1filter__t" id="r_a115abdf01110aa4a7132418cd234d10f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a115abdf01110aa4a7132418cd234d10f">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ade09badaf172ad41a2d64e1dd969df8d">data_type</a> &gt;</td></tr>
+<tr class="separator:a115abdf01110aa4a7132418cd234d10f inherit pub_types_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2b6c9b7d97012838e987a7c73499a6 inherit pub_types_classtoolbox_1_1pcl_1_1filter__t" id="r_a0e2b6c9b7d97012838e987a7c73499a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a0e2b6c9b7d97012838e987a7c73499a6">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ade09badaf172ad41a2d64e1dd969df8d">data_type</a> &gt; &gt;</td></tr>
+<tr class="separator:a0e2b6c9b7d97012838e987a7c73499a6 inherit pub_types_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aabb34c8d691f5d37fc8ea81cbd505cbc" id="r_aabb34c8d691f5d37fc8ea81cbd505cbc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#aabb34c8d691f5d37fc8ea81cbd505cbc">uniform_grid_subsampling_t</a> (float grid_size)</td></tr>
+<tr class="separator:aabb34c8d691f5d37fc8ea81cbd505cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afeb9047da7d35f9f046ea1a63fc5d12d" id="r_afeb9047da7d35f9f046ea1a63fc5d12d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#afeb9047da7d35f9f046ea1a63fc5d12d">~uniform_grid_subsampling_t</a> ()=default</td></tr>
+<tr class="separator:afeb9047da7d35f9f046ea1a63fc5d12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc48dbaaf750c9956785c90fc5a56f84" id="r_abc48dbaaf750c9956785c90fc5a56f84"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#abc48dbaaf750c9956785c90fc5a56f84">uniform_grid_subsampling_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;)=delete</td></tr>
+<tr class="separator:abc48dbaaf750c9956785c90fc5a56f84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0687cff9f22ad5a6ac0584b8ff9f991" id="r_aa0687cff9f22ad5a6ac0584b8ff9f991"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#aa0687cff9f22ad5a6ac0584b8ff9f991">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;)=delete</td></tr>
+<tr class="separator:aa0687cff9f22ad5a6ac0584b8ff9f991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2899900862f536c89f366d465728472" id="r_ae2899900862f536c89f366d465728472"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ae2899900862f536c89f366d465728472">uniform_grid_subsampling_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:ae2899900862f536c89f366d465728472"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4c6494693a67bc507d87d25a32d986" id="r_aec4c6494693a67bc507d87d25a32d986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#aec4c6494693a67bc507d87d25a32d986">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:aec4c6494693a67bc507d87d25a32d986"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1181d9d657c6bab8daf1633aeca24924" id="r_a1181d9d657c6bab8daf1633aeca24924"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a1181d9d657c6bab8daf1633aeca24924">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a269fafecc96a49bee27a121acce3a32f">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="separator:a1181d9d657c6bab8daf1633aeca24924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e5de55311c01627e9ca5a0306aff3a7" id="r_a6e5de55311c01627e9ca5a0306aff3a7"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a6e5de55311c01627e9ca5a0306aff3a7">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac1bf631921704db62290d0d37981515f">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="separator:a6e5de55311c01627e9ca5a0306aff3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae691d8dc5be425d7e0b081d492fdefc2" id="r_ae691d8dc5be425d7e0b081d492fdefc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ae691d8dc5be425d7e0b081d492fdefc2">enable_parallel_impl</a> (bool enable)</td></tr>
+<tr class="separator:ae691d8dc5be425d7e0b081d492fdefc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126b1cd663dc7b31a1ce0caeca0835fd" id="r_a126b1cd663dc7b31a1ce0caeca0835fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a269fafecc96a49bee27a121acce3a32f">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a126b1cd663dc7b31a1ce0caeca0835fd">filter_impl</a> ()</td></tr>
+<tr class="separator:a126b1cd663dc7b31a1ce0caeca0835fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd35c10c3c52c6ae2e5c20966e697da5" id="r_acd35c10c3c52c6ae2e5c20966e697da5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#acd35c10c3c52c6ae2e5c20966e697da5">filter_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac1bf631921704db62290d0d37981515f">point_cloud_ptr</a> output)</td></tr>
+<tr class="separator:acd35c10c3c52c6ae2e5c20966e697da5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1filter__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">toolbox::pcl::filter_t&lt; uniform_grid_subsampling_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a06f86a8698c61f927b9e47930a71f158 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a06f86a8698c61f927b9e47930a71f158"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a06f86a8698c61f927b9e47930a71f158">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a115abdf01110aa4a7132418cd234d10f">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="separator:a06f86a8698c61f927b9e47930a71f158 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af448913ffa3f3b60f7fb2d9ed94c032e inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_af448913ffa3f3b60f7fb2d9ed94c032e"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#af448913ffa3f3b60f7fb2d9ed94c032e">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a0e2b6c9b7d97012838e987a7c73499a6">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="separator:af448913ffa3f3b60f7fb2d9ed94c032e inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a41438d4189a77f883138edd8433cec inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a6a41438d4189a77f883138edd8433cec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a6a41438d4189a77f883138edd8433cec">enable_parrallel</a> (bool enable)</td></tr>
+<tr class="separator:a6a41438d4189a77f883138edd8433cec inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ed763cb4d06ab2708e511f26014dea inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_ae6ed763cb4d06ab2708e511f26014dea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a115abdf01110aa4a7132418cd234d10f">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ae6ed763cb4d06ab2708e511f26014dea">filter</a> ()</td></tr>
+<tr class="separator:ae6ed763cb4d06ab2708e511f26014dea inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1c384458063dcfb458de9cb29daf388 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_ae1c384458063dcfb458de9cb29daf388"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ae1c384458063dcfb458de9cb29daf388">filter</a> (<a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a0e2b6c9b7d97012838e987a7c73499a6">point_cloud_ptr</a> output)</td></tr>
+<tr class="separator:ae1c384458063dcfb458de9cb29daf388 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7d7393948ce66b3a5b2ad686fa85fd7 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_ad7d7393948ce66b3a5b2ad686fa85fd7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#ad7d7393948ce66b3a5b2ad686fa85fd7">filter_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;)=delete</td></tr>
+<tr class="separator:ad7d7393948ce66b3a5b2ad686fa85fd7 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ebd29bc679603b6544642bd92454ec5 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a8ebd29bc679603b6544642bd92454ec5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a8ebd29bc679603b6544642bd92454ec5">filter_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a8ebd29bc679603b6544642bd92454ec5 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01549d9e59191b0e59563a5f3f700c06 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a01549d9e59191b0e59563a5f3f700c06"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a01549d9e59191b0e59563a5f3f700c06">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a01549d9e59191b0e59563a5f3f700c06 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd69ff8ddbe483dbbc9087891fa535c7 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_acd69ff8ddbe483dbbc9087891fa535c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#acd69ff8ddbe483dbbc9087891fa535c7">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:acd69ff8ddbe483dbbc9087891fa535c7 inherit pub_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1filter__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1filter__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">toolbox::pcl::filter_t&lt; uniform_grid_subsampling_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a1a70c1d69992700426b66d59b361cb6f inherit pro_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a1a70c1d69992700426b66d59b361cb6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a1a70c1d69992700426b66d59b361cb6f">filter_t</a> ()=default</td></tr>
+<tr class="separator:a1a70c1d69992700426b66d59b361cb6f inherit pro_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01609137dc75d89fec3c46faca917e19 inherit pro_methods_classtoolbox_1_1pcl_1_1filter__t" id="r_a01609137dc75d89fec3c46faca917e19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html#a01609137dc75d89fec3c46faca917e19">~filter_t</a> ()=default</td></tr>
+<tr class="separator:a01609137dc75d89fec3c46faca917e19 inherit pro_methods_classtoolbox_1_1pcl_1_1filter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ac02417768822806591aa0213727b1480" name="ac02417768822806591aa0213727b1480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02417768822806591aa0213727b1480">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1filter__t.html">filter_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt;DataType&gt;, DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f4a84d1564d6eb418024b0d9cd40cbf" name="a8f4a84d1564d6eb418024b0d9cd40cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f4a84d1564d6eb418024b0d9cd40cbf">&#9670;&#160;</a></span>data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::data_type =  DataType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a269fafecc96a49bee27a121acce3a32f" name="a269fafecc96a49bee27a121acce3a32f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269fafecc96a49bee27a121acce3a32f">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf">data_type</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac1bf631921704db62290d0d37981515f" name="ac1bf631921704db62290d0d37981515f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1bf631921704db62290d0d37981515f">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a8f4a84d1564d6eb418024b0d9cd40cbf">data_type</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aabb34c8d691f5d37fc8ea81cbd505cbc" name="aabb34c8d691f5d37fc8ea81cbd505cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabb34c8d691f5d37fc8ea81cbd505cbc">&#9670;&#160;</a></span>uniform_grid_subsampling_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::uniform_grid_subsampling_t </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>grid_size</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afeb9047da7d35f9f046ea1a63fc5d12d" name="afeb9047da7d35f9f046ea1a63fc5d12d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afeb9047da7d35f9f046ea1a63fc5d12d">&#9670;&#160;</a></span>~uniform_grid_subsampling_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc48dbaaf750c9956785c90fc5a56f84" name="abc48dbaaf750c9956785c90fc5a56f84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc48dbaaf750c9956785c90fc5a56f84">&#9670;&#160;</a></span>uniform_grid_subsampling_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::uniform_grid_subsampling_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2899900862f536c89f366d465728472" name="ae2899900862f536c89f366d465728472"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2899900862f536c89f366d465728472">&#9670;&#160;</a></span>uniform_grid_subsampling_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::uniform_grid_subsampling_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt; DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae691d8dc5be425d7e0b081d492fdefc2" name="ae691d8dc5be425d7e0b081d492fdefc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae691d8dc5be425d7e0b081d492fdefc2">&#9670;&#160;</a></span>enable_parallel_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::enable_parallel_impl </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a126b1cd663dc7b31a1ce0caeca0835fd" name="a126b1cd663dc7b31a1ce0caeca0835fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126b1cd663dc7b31a1ce0caeca0835fd">&#9670;&#160;</a></span>filter_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a269fafecc96a49bee27a121acce3a32f">point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::filter_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd35c10c3c52c6ae2e5c20966e697da5" name="acd35c10c3c52c6ae2e5c20966e697da5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd35c10c3c52c6ae2e5c20966e697da5">&#9670;&#160;</a></span>filter_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::filter_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac1bf631921704db62290d0d37981515f">point_cloud_ptr</a>&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0687cff9f22ad5a6ac0584b8ff9f991" name="aa0687cff9f22ad5a6ac0584b8ff9f991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0687cff9f22ad5a6ac0584b8ff9f991">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec4c6494693a67bc507d87d25a32d986" name="aec4c6494693a67bc507d87d25a32d986"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4c6494693a67bc507d87d25a32d986">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a>&lt; DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1181d9d657c6bab8daf1633aeca24924" name="a1181d9d657c6bab8daf1633aeca24924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1181d9d657c6bab8daf1633aeca24924">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a269fafecc96a49bee27a121acce3a32f">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6e5de55311c01627e9ca5a0306aff3a7" name="a6e5de55311c01627e9ca5a0306aff3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5de55311c01627e9ca5a0306aff3a7">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">toolbox::pcl::uniform_grid_subsampling_t</a>&lt; DataType &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#ac1bf631921704db62290d0d37981515f">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/pcl/filters/<a class="el" href="uniform__grid__subsampling_8hpp_source.html">uniform_grid_subsampling.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html">uniform_grid_subsampling_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
