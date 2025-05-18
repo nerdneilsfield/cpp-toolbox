@@ -244,6 +244,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33cd78523abc93e548623e81cd8fb303"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html#a33cd78523abc93e548623e81cd8fb303">add_row</a> (Args &amp;&amp;... args) -&gt; <a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp;</td></tr>
 <tr class="memdesc:a33cd78523abc93e548623e81cd8fb303"><td class="mdescLeft">&#160;</td><td class="mdescRight">添加一行数据（可变参数）/ Add a row with variadic arguments  <br /></td></tr>
 <tr class="separator:a33cd78523abc93e548623e81cd8fb303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c9ec20436e141a809bb1020ef2240a2" id="r_a1c9ec20436e141a809bb1020ef2240a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html#a1c9ec20436e141a809bb1020ef2240a2">set_title</a> (const std::string &amp;title)</td></tr>
+<tr class="memdesc:a1c9ec20436e141a809bb1020ef2240a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置表格标题 / Set table title text  <br /></td></tr>
+<tr class="separator:a1c9ec20436e141a809bb1020ef2240a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92cdea8fa1724b861434b0e8eb3f3c67" id="r_a92cdea8fa1724b861434b0e8eb3f3c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html#a92cdea8fa1724b861434b0e8eb3f3c67">set_footer</a> (const std::string &amp;footer)</td></tr>
+<tr class="memdesc:a92cdea8fa1724b861434b0e8eb3f3c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置表格尾部文本 / Set table footer text  <br /></td></tr>
+<tr class="separator:a92cdea8fa1724b861434b0e8eb3f3c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7a533ef956eb0dfa104a1260dada51d" id="r_af7a533ef956eb0dfa104a1260dada51d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html#af7a533ef956eb0dfa104a1260dada51d">set_column_align</a> (<a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> column_index, <a class="el" href="namespacetoolbox_1_1utils.html#a5d754f2336d5ef636eac45035b455873">align_t</a> align)</td></tr>
 <tr class="memdesc:af7a533ef956eb0dfa104a1260dada51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置指定列的对齐方式 / Set alignment for a specific column  <br /></td></tr>
 <tr class="separator:af7a533ef956eb0dfa104a1260dada51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -650,6 +656,33 @@ template&lt;typename... Args, std::enable_if_t&lt; !(sizeof...(Args)==1 &amp;&am
 
 </div>
 </div>
+<a id="a92cdea8fa1724b861434b0e8eb3f3c67" name="a92cdea8fa1724b861434b0e8eb3f3c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92cdea8fa1724b861434b0e8eb3f3c67">&#9670;&#160;</a></span>set_footer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp; toolbox::utils::table_t::set_footer </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>footer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置表格尾部文本 / Set table footer text </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">footer</td><td>尾部文本 / Footer text </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtoolbox_1_1utils_1_1table__t.html" title="格式化打印表格工具/Formatted table printing utility">table_t</a>&amp; 当前对象的引用 / Reference to this <a class="el" href="classtoolbox_1_1utils_1_1table__t.html" title="格式化打印表格工具/Formatted table printing utility">table_t</a> </dd></dl>
+
+</div>
+</div>
 <a id="ac7d9673ea573435cd6fcc664bd89251e" name="ac7d9673ea573435cd6fcc664bd89251e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7d9673ea573435cd6fcc664bd89251e">&#9670;&#160;</a></span>set_headers()</h2>
 
@@ -762,6 +795,33 @@ template&lt;typename... Args, std::enable_if_t&lt; !(sizeof...(Args)==1 &amp;&am
   <table class="params">
     <tr><td class="paramname">row</td><td>行索引，从0开始 / Row index (0-based) </td></tr>
     <tr><td class="paramname">height</td><td>固定行数 / Fixed number of printed lines </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classtoolbox_1_1utils_1_1table__t.html" title="格式化打印表格工具/Formatted table printing utility">table_t</a>&amp; 当前对象的引用 / Reference to this <a class="el" href="classtoolbox_1_1utils_1_1table__t.html" title="格式化打印表格工具/Formatted table printing utility">table_t</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1c9ec20436e141a809bb1020ef2240a2" name="a1c9ec20436e141a809bb1020ef2240a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c9ec20436e141a809bb1020ef2240a2">&#9670;&#160;</a></span>set_title()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1utils_1_1table__t.html">table_t</a> &amp; toolbox::utils::table_t::set_title </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>title</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>设置表格标题 / Set table title text </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>标题文本 / Title text </td></tr>
   </table>
   </dd>
 </dl>
