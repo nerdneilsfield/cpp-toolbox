@@ -20,7 +20,15 @@ int main()
 
   // --- 示例 1: 基本表格与对齐 / Basic table and alignment ---
   std::cout << "--- Example 1: Basic Table and Alignment ---" << "\n";
+
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+  // 在 Windows 上使用 ASCII 风格
+  table_t t1(get_ascii_style());
+#else
+  // 在其他平台上使用圆角风格
   table_t t1(get_rounded_style());
+#endif
+
   t1.set_headers({"Name", "Age", "City"})
       .add_row("Alice", 30, "New York")
       .add_row("Bob", 24, "Los Angeles")
@@ -31,7 +39,13 @@ int main()
 
   // --- 示例 2: 换行与截断 / Wrapping and Truncation ---
   std::cout << "--- Example 2: Wrapping and Truncation ---" << "\n";
+
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+  table_t t2(get_ascii_style());
+#else
   table_t t2;
+#endif
+
   t2.set_headers({"Description", "Value"});
   t2.enable_wrap(true)
       .set_wrap_ellipsis("...")
@@ -43,7 +57,13 @@ int main()
 
   // --- 示例 3: 单元格合并 / Cell Spanning ---
   std::cout << "--- Example 3: Cell Spanning ---" << "\n";
+
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+  table_t t3(get_ascii_style());
+#else
   table_t t3;
+#endif
+
   t3.set_headers({"Q1", "Q2", "Q3", "Q4"});
   // 合并第一行的Q1-Q3 / Span Q1 to Q3 horizontally
   t3.span_cells(0, 0, 1, 3);
@@ -53,7 +73,13 @@ int main()
 
   // --- 示例 4: 斑马纹与条件高亮 / Zebra Striping and Highlight ---
   std::cout << "--- Example 4: Zebra Striping and Highlight ---" << "\n";
+
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+  table_t t4(get_ascii_style());
+#else
   table_t t4;
+#endif
+
   t4.set_headers({"Item", "Price"});
   t4.enable_zebra(true)
       .set_zebra_colors(color_t::DEFAULT, color_t::BLUE)
@@ -73,7 +99,13 @@ int main()
 
   // --- 示例 5: 固定宽度与行高 / Fixed Width and Row Height ---
   std::cout << "--- Example 5: Fixed Width and Row Height ---" << "\n";
+
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+  table_t t5(get_ascii_style());
+#else
   table_t t5;
+#endif
+
   t5.set_headers({"Col A", "Col B"})
       // 固定第0列宽度 8, 行高为 2 / Fixed width for col0 = 8, row height = 2
       .set_column_width(0, 8)
@@ -136,9 +168,18 @@ int main()
   // --- 自定义样式示例 (Custom Style Example) ---
   std::cout << "--- Custom Style Examples ---" << "\n";
 
+  // 创建一个在所有平台上都能正常显示的自定义样式
   print_style_t custom_style;
   custom_style.border_h = "=";
   custom_style.border_v = "*";
+  custom_style.box.top_left = "+";
+  custom_style.box.top_right = "+";
+  custom_style.box.bottom_left = "+";
+  custom_style.box.bottom_right = "+";
+  custom_style.box.left_joint = "+";
+  custom_style.box.right_joint = "+";
+  custom_style.box.top_joint = "+";
+  custom_style.box.bottom_joint = "+";
   custom_style.box.center = "#";
   custom_style.padding = "";  // 无填充 (No padding)
   custom_style.show_header = false;

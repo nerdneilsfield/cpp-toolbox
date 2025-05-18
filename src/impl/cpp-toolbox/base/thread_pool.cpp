@@ -32,11 +32,17 @@ thread_pool_t::thread_pool_t(size_t threads)
     throw std::invalid_argument("Thread pool cannot have 0 threads");
   }
 
-  worker_queues_.resize(num_threads);
-  queue_mutexes_.resize(num_threads);
+  // 预先分配空间以避免在添加元素时进行复制操作
+  worker_queues_.reserve(num_threads);
+  queue_mutexes_.reserve(num_threads);
+
+  // 使用 shared_ptr 包装每个 deque 以避免复制问题
   for (size_t i = 0; i < num_threads; ++i) {
-    queue_mutexes_[i] = std::make_unique<std::mutex>();
+    // 为每个工作线程创建一个新的 deque
+    worker_queues_.push_back(std::make_shared<std::deque<std::unique_ptr<detail::task_base>>>());
+    queue_mutexes_.push_back(std::make_unique<std::mutex>());
   }
+
   workers_.reserve(num_threads);
   for (size_t i = 0; i < num_threads; ++i) {
     workers_.emplace_back(&thread_pool_t::worker_loop, this, i);
@@ -63,9 +69,11 @@ void thread_pool_t::worker_loop(size_t worker_id)
 
     {
       std::lock_guard<std::mutex> lock(*queue_mutexes_[worker_id]);
-      if (!worker_queues_[worker_id].empty()) {
-        task = std::move(worker_queues_[worker_id].back());
-        worker_queues_[worker_id].pop_back();
+      auto& queue = *worker_queues_[worker_id];
+      if (!queue.empty()) {
+        // 使用 std::move 确保 unique_ptr 被移动而不是复制
+        task = std::move(queue.back());
+        queue.pop_back();
       }
     }
 
@@ -73,9 +81,11 @@ void thread_pool_t::worker_loop(size_t worker_id)
       for (size_t n = 0; n < worker_queues_.size(); ++n) {
         size_t victim = (worker_id + n + 1) % worker_queues_.size();
         std::lock_guard<std::mutex> lock(*queue_mutexes_[victim]);
-        if (!worker_queues_[victim].empty()) {
-          task = std::move(worker_queues_[victim].front());
-          worker_queues_[victim].pop_front();
+        auto& queue = *worker_queues_[victim];
+        if (!queue.empty()) {
+          // 使用 std::move 确保 unique_ptr 被移动而不是复制
+          task = std::move(queue.front());
+          queue.pop_front();
           break;
         }
       }
@@ -86,7 +96,8 @@ void thread_pool_t::worker_loop(size_t worker_id)
         bool empty = true;
         for (size_t i = 0; i < worker_queues_.size(); ++i) {
           std::lock_guard<std::mutex> lock(*queue_mutexes_[i]);
-          if (!worker_queues_[i].empty()) {
+          auto& queue = *worker_queues_[i];
+          if (!queue.empty()) {
             empty = false;
             break;
           }

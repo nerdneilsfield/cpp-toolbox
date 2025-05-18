@@ -146,7 +146,8 @@ private:
   // 工作线程列表/List of worker threads
   std::vector<std::thread> workers_;
   // 每个工作线程的任务双端队列/Per worker task deque
-  std::vector<std::deque<std::unique_ptr<detail::task_base>>> worker_queues_;
+  // 使用 shared_ptr 包装 deque 以避免复制问题
+  std::vector<std::shared_ptr<std::deque<std::unique_ptr<detail::task_base>>>> worker_queues_;
   // 保护每个双端队列的互斥锁/Mutex protecting each deque
   std::vector<std::unique_ptr<std::mutex>> queue_mutexes_;
   // 提交任务时下一个目标线程索引/Next worker index for task submission
@@ -227,7 +228,10 @@ auto thread_pool_t::submit(F&& f, Args&&... args)
       next_worker_.fetch_add(1, std::memory_order_relaxed) % workers_.size();
   {
     std::lock_guard<std::mutex> lock(*queue_mutexes_[idx]);
-    worker_queues_[idx].emplace_back(std::move(task_wrapper_ptr));
+    // 获取队列的引用并添加任务
+    auto& queue = *worker_queues_[idx];
+    // 确保使用 std::move 来移动 unique_ptr，避免复制
+    queue.emplace_back(std::move(task_wrapper_ptr));
   }
 
   // 5. 返回 future/Return the future

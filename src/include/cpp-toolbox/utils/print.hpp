@@ -112,12 +112,54 @@ inline auto get_default_style() -> const print_style_t&
 }
 
 /**
+ * @brief 获取 ASCII 风格的表格边框/Get ASCII style table borders
+ * @return const print_style_t& ASCII 风格引用/Reference to ASCII style
+ * @code
+ * const auto& style = toolbox::utils::get_ascii_style();
+ * @endcode
+ */
+inline auto get_ascii_style() -> const print_style_t&
+{
+  static const print_style_t style = [] {
+    print_style_t s;
+    s.border_h = "-";
+    s.border_v = "|";
+    s.box.top_left = "+";
+    s.box.top_right = "+";
+    s.box.bottom_left = "+";
+    s.box.bottom_right = "+";
+    s.box.left_joint = "+";
+    s.box.right_joint = "+";
+    s.box.top_joint = "+";
+    s.box.bottom_joint = "+";
+    s.box.center = "+";
+    return s;
+  }();
+  return style;
+}
+
+/**
  * @brief 获取圆角边框风格/Style using Unicode box drawing characters
  */
 inline auto get_rounded_style() -> const print_style_t&
 {
   static const print_style_t style = [] {
     print_style_t s;
+#ifdef CPP_TOOLBOX_PLATFORM_WINDOWS
+    // 在 Windows 上使用 ASCII 字符
+    s.border_h = "-";
+    s.border_v = "|";
+    s.box.top_left = "+";
+    s.box.top_right = "+";
+    s.box.bottom_left = "+";
+    s.box.bottom_right = "+";
+    s.box.left_joint = "+";
+    s.box.right_joint = "+";
+    s.box.top_joint = "+";
+    s.box.bottom_joint = "+";
+    s.box.center = "+";
+#else
+    // 在其他平台上使用 Unicode 字符
     s.border_h = "\xE2\x94\x80";      // "─"
     s.border_v = "\xE2\x94\x82";      // "│"
     s.box.top_left = "\xE2\x94\x8C";      // "┌"
@@ -129,6 +171,7 @@ inline auto get_rounded_style() -> const print_style_t&
     s.box.top_joint = "\xE2\x94\xAC";     // "┬"
     s.box.bottom_joint = "\xE2\x94\xB4";  // "┴"
     s.box.center = "\xE2\x94\xBC";       // "┼"
+#endif
     return s;
   }();
   return style;
