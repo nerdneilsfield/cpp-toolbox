@@ -31,7 +31,12 @@ auto string_to_path(const std::string& str) -> std::filesystem::path
 
 auto path_to_string(const std::filesystem::path& path) -> std::string
 {
+#if defined(CPP_TOOLBOX_PLATFORM_WINDOWS)
+  auto u8 = path.u8string();
+  return std::string(u8.begin(), u8.end());
+#else
   return path.string();
+#endif
 }
 
 auto get_current_working_directory() -> std::filesystem::path

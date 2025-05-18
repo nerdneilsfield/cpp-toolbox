@@ -29,7 +29,8 @@ kitti_pcd_dataset_t::at_impl(std::size_t index) const
     return std::nullopt;
   }
 
-  auto cloud = read_kitti_bin<float>(m_binary_paths[index]);
+  auto cloud = read_kitti_bin<float>(
+      toolbox::file::path_to_string(m_binary_paths[index]));
   return cloud;
 }
 
@@ -59,8 +60,10 @@ kitti_pcd_pair_t::at_impl(std::size_t index) const
     return std::nullopt;
   }
 
-  auto cloud1 = read_kitti_bin<float>(m_binary_paths[index]);
-  auto cloud2 = read_kitti_bin<float>(m_binary_paths[index + m_skip]);
+  auto cloud1 =
+      read_kitti_bin<float>(toolbox::file::path_to_string(m_binary_paths[index]));
+  auto cloud2 = read_kitti_bin<float>(
+      toolbox::file::path_to_string(m_binary_paths[index + m_skip]));
   return std::make_pair(std::move(cloud1), std::move(cloud2));
 }
 
