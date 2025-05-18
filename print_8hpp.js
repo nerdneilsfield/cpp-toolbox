@@ -15,6 +15,7 @@ var print_8hpp =
     [ "toolbox::utils::array_printer_t< T, N >", "classtoolbox_1_1utils_1_1array__printer__t.html", "classtoolbox_1_1utils_1_1array__printer__t" ],
     [ "toolbox::utils::queue_printer_t< T >", "classtoolbox_1_1utils_1_1queue__printer__t.html", "classtoolbox_1_1utils_1_1queue__printer__t" ],
     [ "align_text", "print_8hpp.html#a68622dfebab9e4c8dddcabce3cc25805", null ],
+    [ "get_ascii_style", "print_8hpp.html#ae288ecd1245268d09aee615d8c0adfb4", null ],
     [ "get_default_style", "print_8hpp.html#a5572a2b37d2d75af67443c063834b190", null ],
     [ "get_rounded_style", "print_8hpp.html#a889594a1965685eaa3c6a7c2e1558b1d", null ],
     [ "operator<<", "print_8hpp.html#a2184930783c2534ba0f5f25677a33f1c", null ],

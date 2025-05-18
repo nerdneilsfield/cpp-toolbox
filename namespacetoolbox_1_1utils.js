@@ -44,6 +44,7 @@ var namespacetoolbox_1_1utils =
     [ "display_all_timer", "namespacetoolbox_1_1utils.html#a51ff38032ae9aa82ae0a1f010f02a658", null ],
     [ "display_timer", "namespacetoolbox_1_1utils.html#a68025dd39e5b997d8f135daf943b63d5", null ],
     [ "gauss", "namespacetoolbox_1_1utils.html#a791ce71e30ffbf8dd7ae1d23eb40c717", null ],
+    [ "get_ascii_style", "namespacetoolbox_1_1utils.html#ae288ecd1245268d09aee615d8c0adfb4", null ],
     [ "get_default_style", "namespacetoolbox_1_1utils.html#a5572a2b37d2d75af67443c063834b190", null ],
     [ "get_rounded_style", "namespacetoolbox_1_1utils.html#a889594a1965685eaa3c6a7c2e1558b1d", null ],
     [ "get_timer_elapsed", "namespacetoolbox_1_1utils.html#ac1758c4154d27ba9aa8db3eb75d7944d", null ],
