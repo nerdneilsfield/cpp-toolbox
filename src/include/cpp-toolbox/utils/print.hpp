@@ -519,6 +519,20 @@ public:
   }
 
   /**
+   * @brief 设置表格标题 / Set table title text
+   * @param title 标题文本 / Title text
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_title(const std::string& title);
+
+  /**
+   * @brief 设置表格尾部文本 / Set table footer text
+   * @param footer 尾部文本 / Footer text
+   * @return table_t& 当前对象的引用 / Reference to this table_t
+   */
+  table_t& set_footer(const std::string& footer);
+
+  /**
    * @brief 设置指定列的对齐方式 / Set alignment for a specific column
    * @param column_index 列索引 / Column index
    * @param align 对齐方式 / Alignment
@@ -655,6 +669,12 @@ private:
 
   /** @brief 打印风格 / Base print style */
   print_style_t m_style;
+
+  /** @brief 表格标题文本 / Table title text */
+  std::string m_title;
+
+  /** @brief 表格尾部文本 / Table footer text */
+  std::string m_footer;
 
   /** @brief 列固定宽度映射 (col -> width) / Map of column to fixed width */
   std::unordered_map<size_t, size_t> m_col_fixed_width;
