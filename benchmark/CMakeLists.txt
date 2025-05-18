@@ -5,6 +5,7 @@ list(APPEND BENCHMARK_FILES
     concurrent/parallel_benc.cpp
     types/types_benc.cpp
     file/memory_mapped_file_benc.cpp
+    pcl/downsampling_benc.cpp
 )
 
 

@@ -19,27 +19,27 @@ public:
 
   std::size_t set_input(const point_cloud& cloud)
   {
-    return static_cast<const Derived*>(this)->set_input_impl(cloud);
+    return static_cast<Derived*>(this)->set_input_impl(cloud);
   }
 
   std::size_t set_input(const point_cloud_ptr& cloud)
   {
-    return static_cast<const Derived*>(this)->set_input_impl(cloud);
+    return static_cast<Derived*>(this)->set_input_impl(cloud);
   }
 
   void enable_parrallel(bool enable)
   {
-    return static_cast<const Derived*>(this)->enable_parallel_impl(enable);
+    return static_cast<Derived*>(this)->enable_parallel_impl(enable);
   }
 
   point_cloud filter()
   {
-    return static_cast<const Derived*>(this)->filter_impl();
+    return static_cast<Derived*>(this)->filter_impl();
   }
 
   void filter(point_cloud_ptr output)
   {
-    return static_cast<const Derived*>(this)->filter_impl(output);
+    return static_cast<Derived*>(this)->filter_impl(output);
   }
 
 protected:
