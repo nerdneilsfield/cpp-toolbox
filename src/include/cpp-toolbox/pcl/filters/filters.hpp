@@ -27,15 +27,12 @@ public:
     return static_cast<Derived*>(this)->set_input_impl(cloud);
   }
 
-  void enable_parrallel(bool enable)
+  void enable_parallel(bool enable)
   {
     return static_cast<Derived*>(this)->enable_parallel_impl(enable);
   }
 
-  point_cloud filter()
-  {
-    return static_cast<Derived*>(this)->filter_impl();
-  }
+  point_cloud filter() { return static_cast<Derived*>(this)->filter_impl(); }
 
   void filter(point_cloud_ptr output)
   {

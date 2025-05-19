@@ -59,11 +59,43 @@ void random_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
     return;
   }
 
-  std::vector<std::size_t> indices(input_size);
-  std::iota(indices.begin(), indices.end(), 0);
-  toolbox::utils::random_t::instance().shuffle(indices);
-  indices.resize(sample_count);
+  // 使用蓄水池采样算法(Reservoir Sampling)代替全数组洗牌
+  std::vector<std::size_t> indices;
+  indices.reserve(sample_count);
 
+  // 如果采样率很高或点云较小，使用传统方法可能更快
+  if (sample_count > input_size / 2 || input_size < 10000) {
+    // 传统方法：生成所有索引并洗牌
+    indices.resize(input_size);
+    std::iota(indices.begin(), indices.end(), 0);
+    toolbox::utils::random_t::instance().shuffle(indices);
+    indices.resize(sample_count);
+  } else {
+    // 蓄水池采样算法
+    auto& rng = toolbox::utils::random_t::instance();
+
+    // 第1步：填充初始蓄水池
+    indices.resize(sample_count);
+    for (std::size_t i = 0; i < sample_count; ++i) {
+      indices[i] = i;
+    }
+
+    // 第2步：处理剩余元素
+    for (std::size_t i = sample_count; i < input_size; ++i) {
+      // 以 k/i 的概率选择第i个元素
+      std::size_t j = rng.random_int<std::size_t>(0, i);
+      if (j < sample_count) {
+        indices[j] = i;
+      }
+    }
+
+    // 可选：打乱结果以避免顺序偏差
+    if (sample_count > 1) {
+      rng.shuffle(indices);
+    }
+  }
+
+  // 预分配输出点云内存
   output->points.resize(sample_count);
   if (!m_cloud->normals.empty()) {
     output->normals.resize(sample_count);
@@ -73,6 +105,7 @@ void random_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
   }
   output->intensity = m_cloud->intensity;
 
+  // 并行处理逻辑保持不变
   if (m_enable_parallel && sample_count > 1024) {
     toolbox::concurrent::parallel_transform(indices.cbegin(),
                                             indices.cend(),
