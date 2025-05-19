@@ -285,6 +285,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f00185fab69b28f6637cfe1c4c7af96"><td class="memTemplItemLeft" align="right" valign="top">TContainer&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1random__t.html#a8f00185fab69b28f6637cfe1c4c7af96">sample</a> (const TContainer &amp;population, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> k)</td></tr>
 <tr class="memdesc:a8f00185fab69b28f6637cfe1c4c7af96"><td class="mdescLeft">&#160;</td><td class="mdescRight">从容器中随机采样k个元素/Randomly sample k elements from container  <br /></td></tr>
 <tr class="separator:a8f00185fab69b28f6637cfe1c4c7af96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c509aafebfbfb3efef6ca0a7b7ec179" id="r_a2c509aafebfbfb3efef6ca0a7b7ec179"><td class="memTemplParams" colspan="2">template&lt;typename TContainer &gt; </td></tr>
+<tr class="memitem:a2c509aafebfbfb3efef6ca0a7b7ec179"><td class="memTemplItemLeft" align="right" valign="top">TContainer&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1utils_1_1random__t.html#a2c509aafebfbfb3efef6ca0a7b7ec179">generate</a> (std::size_t n, typename TContainer::value_type min, typename TContainer::value_type max)</td></tr>
+<tr class="memdesc:a2c509aafebfbfb3efef6ca0a7b7ec179"><td class="mdescLeft">&#160;</td><td class="mdescRight">生成n个随机数/Generate n random numbers  <br /></td></tr>
+<tr class="separator:a2c509aafebfbfb3efef6ca0a7b7ec179"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -525,6 +529,71 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>T 随机数/Random value <div class="fragment"><div class="line"><span class="keywordtype">float</span> g = rng.gauss&lt;<span class="keywordtype">float</span>&gt;(0.0f, 1.0f);</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a2c509aafebfbfb3efef6ca0a7b7ec179" name="a2c509aafebfbfb3efef6ca0a7b7ec179"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c509aafebfbfb3efef6ca0a7b7ec179">&#9670;&#160;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename TContainer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TContainer toolbox::utils::random_t::generate </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename TContainer::value_type&#160;</td>
+          <td class="paramname"><em>min</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename TContainer::value_type&#160;</td>
+          <td class="paramname"><em>max</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>生成n个随机数/Generate n random numbers </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">TContainer</td><td>容器类型/Container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>生成数量/Number of random numbers </td></tr>
+    <tr><td class="paramname">min</td><td>下界/Lower bound </td></tr>
+    <tr><td class="paramname">max</td><td>上界/Upper bound </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>TContainer 随机数容器/Container of random numbers <div class="fragment"><div class="line"><span class="keyword">auto</span> r = rng.generate&lt;std::vector&lt;int&gt;&gt;(10, 1, 100);</div>
+<div class="line"><span class="keyword">auto</span> f = rng.generate&lt;std::vector&lt;float&gt;&gt;(10, 0.0f, 1.0f);</div>
+<div class="line"><span class="keyword">auto</span> d = rng.generate&lt;std::list&lt;double&gt;&gt;(10, 0.0, 1.0);</div>
+<div class="line"><span class="keyword">auto</span> i = rng.generate&lt;std::deque&lt;int&gt;&gt;(10, 1, 100);</div>
 </div><!-- fragment --> </dd></dl>
 
 </div>

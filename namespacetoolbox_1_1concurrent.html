@@ -226,6 +226,30 @@ Functions</h2></td></tr>
 <tr class="memitem:ae4723fd2aab9fd17bfd539364bd3d924" id="r_ae4723fd2aab9fd17bfd539364bd3d924"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1thread__pool__singleton__t.html">base::thread_pool_singleton_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#ae4723fd2aab9fd17bfd539364bd3d924">default_pool</a> ()</td></tr>
 <tr class="memdesc:ae4723fd2aab9fd17bfd539364bd3d924"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取默认线程池实例/Get the default thread pool instance  <br /></td></tr>
 <tr class="separator:ae4723fd2aab9fd17bfd539364bd3d924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d0ea368729dc6986a3af3de477b032" id="r_aa2d0ea368729dc6986a3af3de477b032"><td class="memTemplParams" colspan="2">template&lt;typename Iterator , typename Function &gt; </td></tr>
+<tr class="memitem:aa2d0ea368729dc6986a3af3de477b032"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#aa2d0ea368729dc6986a3af3de477b032">parallel_for_each</a> (Iterator begin, Iterator end, Function func)</td></tr>
+<tr class="memdesc:aa2d0ea368729dc6986a3af3de477b032"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB并行对范围[begin, end)中的每个元素应用函数  <br /></td></tr>
+<tr class="separator:aa2d0ea368729dc6986a3af3de477b032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f8b2c1efd46ca3f5fb98d68dc2d02a" id="r_a51f8b2c1efd46ca3f5fb98d68dc2d02a"><td class="memTemplParams" colspan="2">template&lt;typename InputIt , typename OutputIt , typename UnaryOperation &gt; </td></tr>
+<tr class="memitem:a51f8b2c1efd46ca3f5fb98d68dc2d02a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a51f8b2c1efd46ca3f5fb98d68dc2d02a">parallel_transform</a> (InputIt first1, InputIt last1, OutputIt d_first, UnaryOperation unary_op)</td></tr>
+<tr class="memdesc:a51f8b2c1efd46ca3f5fb98d68dc2d02a"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB并行转换范围[first1, last1)中的元素并存储到从d_first开始的范围  <br /></td></tr>
+<tr class="separator:a51f8b2c1efd46ca3f5fb98d68dc2d02a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff15414c98b31ff961559235404fdd59" id="r_aff15414c98b31ff961559235404fdd59"><td class="memTemplParams" colspan="2">template&lt;typename Iterator , typename T , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:aff15414c98b31ff961559235404fdd59"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#aff15414c98b31ff961559235404fdd59">parallel_reduce</a> (Iterator begin, Iterator end, T identity, BinaryOperation reduce_op)</td></tr>
+<tr class="memdesc:aff15414c98b31ff961559235404fdd59"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB对范围[begin, end)执行并行归约操作  <br /></td></tr>
+<tr class="separator:aff15414c98b31ff961559235404fdd59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa06193869603a5cd942f9d0a294b61fa" id="r_aa06193869603a5cd942f9d0a294b61fa"><td class="memTemplParams" colspan="2">template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:aa06193869603a5cd942f9d0a294b61fa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#aa06193869603a5cd942f9d0a294b61fa">parallel_inclusive_scan</a> (InputIt first, InputIt last, OutputIt d_first, T init, BinaryOperation binary_op, T identity)</td></tr>
+<tr class="memdesc:aa06193869603a5cd942f9d0a294b61fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB执行并行包含扫描操作  <br /></td></tr>
+<tr class="separator:aa06193869603a5cd942f9d0a294b61fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f0da530454b12da9ed3b3f00b8de559" id="r_a3f0da530454b12da9ed3b3f00b8de559"><td class="memTemplParams" colspan="2">template&lt;typename RandomIt , typename Compare &gt; </td></tr>
+<tr class="memitem:a3f0da530454b12da9ed3b3f00b8de559"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a3f0da530454b12da9ed3b3f00b8de559">parallel_merge_sort</a> (RandomIt begin, RandomIt end, Compare comp)</td></tr>
+<tr class="memdesc:a3f0da530454b12da9ed3b3f00b8de559"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB实现并行合并排序  <br /></td></tr>
+<tr class="separator:a3f0da530454b12da9ed3b3f00b8de559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78c45e02439678dbfe567ea5ec72bf3" id="r_ac78c45e02439678dbfe567ea5ec72bf3"><td class="memTemplParams" colspan="2">template&lt;typename RandomIt , typename Compare &gt; </td></tr>
+<tr class="memitem:ac78c45e02439678dbfe567ea5ec72bf3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#ac78c45e02439678dbfe567ea5ec72bf3">parallel_tim_sort</a> (RandomIt begin, RandomIt end, Compare comp)</td></tr>
+<tr class="memdesc:ac78c45e02439678dbfe567ea5ec72bf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">使用TBB实现并行TimSort  <br /></td></tr>
+<tr class="separator:ac78c45e02439678dbfe567ea5ec72bf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acae673a7f47c092841ef7aab1894a71f" id="r_acae673a7f47c092841ef7aab1894a71f"><td class="memTemplParams" colspan="2">template&lt;typename Iterator , typename Function &gt; </td></tr>
 <tr class="memitem:acae673a7f47c092841ef7aab1894a71f"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#acae673a7f47c092841ef7aab1894a71f">parallel_for_each</a> (Iterator begin, Iterator end, Function func)</td></tr>
 <tr class="memdesc:acae673a7f47c092841ef7aab1894a71f"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行对范围[begin, end)中的每个元素应用函数/Applies a function to each element in range [begin, end) in parallel  <br /></td></tr>
@@ -290,10 +314,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af0f6fb62a817e46d980f97838b8f293d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#af0f6fb62a817e46d980f97838b8f293d">parallel_inclusive_scan</a> (InputIt first, InputIt last, OutputIt d_first, T init, BinaryOperation binary_op, T identity=T {})</td></tr>
 <tr class="memdesc:af0f6fb62a817e46d980f97838b8f293d"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行前缀和(包含式)/Parallel inclusive scan (prefix sum)  <br /></td></tr>
 <tr class="separator:af0f6fb62a817e46d980f97838b8f293d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04be47ffd5feb552873c63fafa31d360" id="r_a04be47ffd5feb552873c63fafa31d360"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </td></tr>
-<tr class="memitem:a04be47ffd5feb552873c63fafa31d360"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a04be47ffd5feb552873c63fafa31d360">parallel_inclusive_scan</a> (const std::vector&lt; T, Alloc &gt; &amp;in, std::vector&lt; T, Alloc &gt; &amp;out, T init, BinaryOperation binary_op, T identity=T {})</td></tr>
-<tr class="memdesc:a04be47ffd5feb552873c63fafa31d360"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量便捷重载/Convenience overload for vector  <br /></td></tr>
-<tr class="separator:a04be47ffd5feb552873c63fafa31d360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c73f098872b3e49c23006077662474d" id="r_a5c73f098872b3e49c23006077662474d"><td class="memTemplParams" colspan="2">template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </td></tr>
+<tr class="memitem:a5c73f098872b3e49c23006077662474d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a5c73f098872b3e49c23006077662474d">parallel_inclusive_scan</a> (const std::vector&lt; T, Alloc &gt; &amp;input, std::vector&lt; T, Alloc &gt; &amp;out, T init, BinaryOperation binary_op, T identity=T {})</td></tr>
+<tr class="memdesc:a5c73f098872b3e49c23006077662474d"><td class="mdescLeft">&#160;</td><td class="mdescRight">向量便捷重载/Convenience overload for vector  <br /></td></tr>
+<tr class="separator:a5c73f098872b3e49c23006077662474d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33db46784821a83231aea1960e53801a" id="r_a33db46784821a83231aea1960e53801a"><td class="memTemplParams" colspan="2">template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </td></tr>
 <tr class="memitem:a33db46784821a83231aea1960e53801a"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1concurrent.html#a33db46784821a83231aea1960e53801a">parallel_merge_sort</a> (RandomIt begin, RandomIt end, Compare comp=Compare())</td></tr>
 <tr class="memdesc:a33db46784821a83231aea1960e53801a"><td class="mdescLeft">&#160;</td><td class="mdescRight">并行合并排序/Parallel merge sort (chunked)  <br /></td></tr>
@@ -333,7 +357,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <a id="a3445a42f0d7ae47387555bc5b4576648" name="a3445a42f0d7ae47387555bc5b4576648"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3445a42f0d7ae47387555bc5b4576648">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3445a42f0d7ae47387555bc5b4576648">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +389,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="ab9f7beaaac6b99bcd570652522778550" name="ab9f7beaaac6b99bcd570652522778550"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9f7beaaac6b99bcd570652522778550">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9f7beaaac6b99bcd570652522778550">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,8 +420,62 @@ template&lt;typename T , typename Alloc , typename Function &gt; </div>
 
 </div>
 </div>
+<a id="aa2d0ea368729dc6986a3af3de477b032" name="aa2d0ea368729dc6986a3af3de477b032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d0ea368729dc6986a3af3de477b032">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Iterator , typename Function &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::concurrent::parallel_for_each </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB并行对范围[begin, end)中的每个元素应用函数 </p>
+<p>并行对范围[begin, end)中的每个元素应用函数/Applies a function to each element in range [begin, end) in parallel</p>
+<p>直接使用TBB的parallel_for_each实现高效并行处理 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>输入迭代器类型(必须支持随机访问以实现高效分块) </td></tr>
+    <tr><td class="paramname">Function</td><td>一元函数对象类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>范围起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>范围结束迭代器 </td></tr>
+    <tr><td class="paramname">func</td><td>应用于每个元素的函数对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="acae673a7f47c092841ef7aab1894a71f" name="acae673a7f47c092841ef7aab1894a71f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acae673a7f47c092841ef7aab1894a71f">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acae673a7f47c092841ef7aab1894a71f">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -449,21 +527,37 @@ template&lt;typename Iterator , typename Function &gt; </div>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行将每个元素翻倍/Double each element in parallel</span></div>
-<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#acae673a7f47c092841ef7aab1894a71f">parallel_for_each</a>(vec.begin(), vec.end(), [](<span class="keywordtype">int</span>&amp; x) {</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#aa2d0ea368729dc6986a3af3de477b032">parallel_for_each</a>(vec.begin(), vec.end(), [](<span class="keywordtype">int</span>&amp; x) {</div>
 <div class="line">  x *= 2;</div>
 <div class="line">});</div>
 <div class="line"><span class="comment">// vec 现在包含 {2, 4, 6, 8, 10}/vec now contains {2, 4, 6, 8, 10}</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行打印每个元素/Print each element in parallel</span></div>
-<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#acae673a7f47c092841ef7aab1894a71f">parallel_for_each</a>(vec.begin(), vec.end(), [](<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x) {</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#aa2d0ea368729dc6986a3af3de477b032">parallel_for_each</a>(vec.begin(), vec.end(), [](<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; x) {</div>
 <div class="line">  std::cout &lt;&lt; x &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
 <div class="line">});</div>
-<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_acae673a7f47c092841ef7aab1894a71f"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#acae673a7f47c092841ef7aab1894a71f">toolbox::concurrent::parallel_for_each</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT void parallel_for_each(Iterator begin, Iterator end, Function func)</div><div class="ttdoc">并行对范围[begin, end)中的每个元素应用函数/Applies a function to each element in range [begin, end) in parallel</div><div class="ttdef"><b>Definition</b> parallel.hpp:59</div></div>
-</div><!-- fragment --> 
+<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_aa2d0ea368729dc6986a3af3de477b032"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#aa2d0ea368729dc6986a3af3de477b032">toolbox::concurrent::parallel_for_each</a></div><div class="ttdeci">void parallel_for_each(Iterator begin, Iterator end, Function func)</div><div class="ttdoc">使用TBB并行对范围[begin, end)中的每个元素应用函数</div><div class="ttdef"><b>Definition</b> parallel_raw.hpp:21</div></div>
+</div><!-- fragment --><p>并行对范围[begin, end)中的每个元素应用函数/Applies a function to each element in range [begin, end) in parallel</p>
+<p>直接使用TBB的parallel_for_each实现高效并行处理 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>输入迭代器类型(必须支持随机访问以实现高效分块) </td></tr>
+    <tr><td class="paramname">Function</td><td>一元函数对象类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>范围起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>范围结束迭代器 </td></tr>
+    <tr><td class="paramname">func</td><td>应用于每个元素的函数对象 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aa7bd6ddb7ab2da26b9705ca3ed2f9c94" name="aa7bd6ddb7ab2da26b9705ca3ed2f9c94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7bd6ddb7ab2da26b9705ca3ed2f9c94">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7bd6ddb7ab2da26b9705ca3ed2f9c94">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +589,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="aa0a37c5ad71c53905b1c8db374cd4d43" name="aa0a37c5ad71c53905b1c8db374cd4d43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0a37c5ad71c53905b1c8db374cd4d43">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a37c5ad71c53905b1c8db374cd4d43">&#9670;&#160;</a></span>parallel_for_each() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -541,8 +635,8 @@ template&lt;typename T , typename Alloc , typename Function &gt; </div>
 
 </div>
 </div>
-<a id="a04be47ffd5feb552873c63fafa31d360" name="a04be47ffd5feb552873c63fafa31d360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04be47ffd5feb552873c63fafa31d360">&#9670;&#160;</a></span>parallel_inclusive_scan() <span class="overload">[1/2]</span></h2>
+<a id="a5c73f098872b3e49c23006077662474d" name="a5c73f098872b3e49c23006077662474d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c73f098872b3e49c23006077662474d">&#9670;&#160;</a></span>parallel_inclusive_scan() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,7 +647,7 @@ template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </div>
           <td class="memname">CPP_TOOLBOX_EXPORT void toolbox::concurrent::parallel_inclusive_scan </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; T, Alloc &gt; &amp;&#160;</td>
-          <td class="paramname"><em>in</em>, </td>
+          <td class="paramname"><em>input</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -591,8 +685,85 @@ template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </div>
 
 </div>
 </div>
+<a id="aa06193869603a5cd942f9d0a294b61fa" name="aa06193869603a5cd942f9d0a294b61fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06193869603a5cd942f9d0a294b61fa">&#9670;&#160;</a></span>parallel_inclusive_scan() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryOperation &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::concurrent::parallel_inclusive_scan </td>
+          <td>(</td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OutputIt&#160;</td>
+          <td class="paramname"><em>d_first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BinaryOperation&#160;</td>
+          <td class="paramname"><em>binary_op</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>identity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB执行并行包含扫描操作 </p>
+<p>并行前缀和(包含式)/Parallel inclusive scan (prefix sum)</p>
+<p>使用TBB的parallel_scan实现高效并行扫描 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputIt</td><td>输入迭代器类型 </td></tr>
+    <tr><td class="paramname">OutputIt</td><td>输出迭代器类型 </td></tr>
+    <tr><td class="paramname">T</td><td>扫描结果和初始值的类型 </td></tr>
+    <tr><td class="paramname">BinaryOperation</td><td>二元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>输入范围起始 </td></tr>
+    <tr><td class="paramname">last</td><td>输入范围结束 </td></tr>
+    <tr><td class="paramname">d_first</td><td>输出范围起始 </td></tr>
+    <tr><td class="paramname">init</td><td>初始值 </td></tr>
+    <tr><td class="paramname">binary_op</td><td>二元操作 </td></tr>
+    <tr><td class="paramname">identity</td><td>二元操作的单位元素 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af0f6fb62a817e46d980f97838b8f293d" name="af0f6fb62a817e46d980f97838b8f293d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0f6fb62a817e46d980f97838b8f293d">&#9670;&#160;</a></span>parallel_inclusive_scan() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af0f6fb62a817e46d980f97838b8f293d">&#9670;&#160;</a></span>parallel_inclusive_scan() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -633,7 +804,7 @@ template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryO
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">T&#160;</td>
-          <td class="paramname"><em>identity</em> = <code>T&#160;{}</code>&#160;</td>
+          <td class="paramname"><em>identity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -660,7 +831,82 @@ template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryO
     <tr><td class="paramname">d_first</td><td>输出范围起始/Start of output range </td></tr>
     <tr><td class="paramname">init</td><td>起始值/Initial value </td></tr>
     <tr><td class="paramname">binary_op</td><td>用于累加的二元操作/Binary operation for accumulation </td></tr>
-    <tr><td class="paramname">identity</td><td>binary_op 的单位元素/Identity element for binary_op </td></tr>
+    <tr><td class="paramname">identity</td><td>binary_op 的单位元素/Identity element for binary_op</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>并行前缀和(包含式)/Parallel inclusive scan (prefix sum)</p>
+<p>使用TBB的parallel_scan实现高效并行扫描 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputIt</td><td>输入迭代器类型 </td></tr>
+    <tr><td class="paramname">OutputIt</td><td>输出迭代器类型 </td></tr>
+    <tr><td class="paramname">T</td><td>扫描结果和初始值的类型 </td></tr>
+    <tr><td class="paramname">BinaryOperation</td><td>二元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>输入范围起始 </td></tr>
+    <tr><td class="paramname">last</td><td>输入范围结束 </td></tr>
+    <tr><td class="paramname">d_first</td><td>输出范围起始 </td></tr>
+    <tr><td class="paramname">init</td><td>初始值 </td></tr>
+    <tr><td class="paramname">binary_op</td><td>二元操作 </td></tr>
+    <tr><td class="paramname">identity</td><td>二元操作的单位元素 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3f0da530454b12da9ed3b3f00b8de559" name="a3f0da530454b12da9ed3b3f00b8de559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f0da530454b12da9ed3b3f00b8de559">&#9670;&#160;</a></span>parallel_merge_sort() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RandomIt , typename Compare &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::concurrent::parallel_merge_sort </td>
+          <td>(</td>
+          <td class="paramtype">RandomIt&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RandomIt&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB实现并行合并排序 </p>
+<p>并行合并排序/Parallel merge sort (chunked)</p>
+<p>直接使用TBB的parallel_sort实现高效并行排序 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RandomIt</td><td>随机访问迭代器类型 </td></tr>
+    <tr><td class="paramname">Compare</td><td>比较器类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">comp</td><td>比较器 </td></tr>
   </table>
   </dd>
 </dl>
@@ -668,7 +914,7 @@ template&lt;typename InputIt , typename OutputIt , typename T , typename BinaryO
 </div>
 </div>
 <a id="a33db46784821a83231aea1960e53801a" name="a33db46784821a83231aea1960e53801a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33db46784821a83231aea1960e53801a">&#9670;&#160;</a></span>parallel_merge_sort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33db46784821a83231aea1960e53801a">&#9670;&#160;</a></span>parallel_merge_sort() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -691,7 +937,7 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Compare&#160;</td>
-          <td class="paramname"><em>comp</em> = <code>Compare()</code>&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -705,7 +951,23 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">RandomIt</td><td>随机访问迭代器类型/Random access iterator type </td></tr>
-    <tr><td class="paramname">Compare</td><td>比较器类型/Comparator type </td></tr>
+    <tr><td class="paramname">Compare</td><td>比较器类型/Comparator type</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>并行合并排序/Parallel merge sort (chunked)</p>
+<p>直接使用TBB的parallel_sort实现高效并行排序 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RandomIt</td><td>随机访问迭代器类型 </td></tr>
+    <tr><td class="paramname">Compare</td><td>比较器类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">comp</td><td>比较器 </td></tr>
   </table>
   </dd>
 </dl>
@@ -713,7 +975,7 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
 </div>
 </div>
 <a id="abb403005ec151d5f1ce67d3986733d4d" name="abb403005ec151d5f1ce67d3986733d4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb403005ec151d5f1ce67d3986733d4d">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abb403005ec151d5f1ce67d3986733d4d">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -751,7 +1013,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="ad88cfa90539431b271421f750576bc0f" name="ad88cfa90539431b271421f750576bc0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad88cfa90539431b271421f750576bc0f">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88cfa90539431b271421f750576bc0f">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -788,8 +1050,71 @@ template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </div>
 
 </div>
 </div>
+<a id="aff15414c98b31ff961559235404fdd59" name="aff15414c98b31ff961559235404fdd59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff15414c98b31ff961559235404fdd59">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Iterator , typename T , typename BinaryOperation &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T toolbox::concurrent::parallel_reduce </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>identity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BinaryOperation&#160;</td>
+          <td class="paramname"><em>reduce_op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB对范围[begin, end)执行并行归约操作 </p>
+<p>对范围[begin, end)执行并行归约操作/Performs parallel reduction on range [begin, end)</p>
+<p>直接使用TBB的parallel_reduce实现高效并行归约 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>输入迭代器类型(必须支持随机访问) </td></tr>
+    <tr><td class="paramname">T</td><td>归约结果和单位元素的类型 </td></tr>
+    <tr><td class="paramname">BinaryOperation</td><td>二元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">identity</td><td>归约操作的单位元素 </td></tr>
+    <tr><td class="paramname">reduce_op</td><td>用于合并两个T值或T与元素类型的二元操作 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>并行归约的结果 </dd></dl>
+
+</div>
+</div>
 <a id="a6ea1b3789d0e60da0d852d4d2b1b0587" name="a6ea1b3789d0e60da0d852d4d2b1b0587"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ea1b3789d0e60da0d852d4d2b1b0587">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ea1b3789d0e60da0d852d4d2b1b0587">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -852,28 +1177,47 @@ const ElementType&amp;) or T(T,T) </td></tr>
 <div class="fragment"><div class="line">std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行求和/Sum elements in parallel</span></div>
-<div class="line"><span class="keywordtype">int</span> sum = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#a6ea1b3789d0e60da0d852d4d2b1b0587">parallel_reduce</a>(vec.begin(), vec.end(), 0,</div>
+<div class="line"><span class="keywordtype">int</span> sum = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#aff15414c98b31ff961559235404fdd59">parallel_reduce</a>(vec.begin(), vec.end(), 0,</div>
 <div class="line">                         std::plus&lt;int&gt;());</div>
 <div class="line"><span class="comment">// sum == 15</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行查找最大元素/Find maximum element in parallel</span></div>
-<div class="line"><span class="keywordtype">int</span> max = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#a6ea1b3789d0e60da0d852d4d2b1b0587">parallel_reduce</a>(vec.begin(), vec.end(),</div>
+<div class="line"><span class="keywordtype">int</span> max = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#aff15414c98b31ff961559235404fdd59">parallel_reduce</a>(vec.begin(), vec.end(),</div>
 <div class="line">                         std::numeric_limits&lt;int&gt;::min(),</div>
 <div class="line">                         [](<span class="keywordtype">int</span> a, <span class="keywordtype">int</span> b) { return std::max(a,b); });</div>
 <div class="line"><span class="comment">// max == 5</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行计算字符串连接/Concatenate strings in parallel</span></div>
 <div class="line">std::vector&lt;std::string&gt; strings = {<span class="stringliteral">&quot;Hello&quot;</span>, <span class="stringliteral">&quot; &quot;</span>, <span class="stringliteral">&quot;World&quot;</span>, <span class="stringliteral">&quot;!&quot;</span>};</div>
-<div class="line">std::string result = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#a6ea1b3789d0e60da0d852d4d2b1b0587">parallel_reduce</a>(strings.begin(), strings.end(),</div>
+<div class="line">std::string result = <a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#aff15414c98b31ff961559235404fdd59">parallel_reduce</a>(strings.begin(), strings.end(),</div>
 <div class="line">                                    std::string(),</div>
 <div class="line">                                    std::plus&lt;std::string&gt;());</div>
 <div class="line"><span class="comment">// result == &quot;Hello World!&quot;</span></div>
-<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_a6ea1b3789d0e60da0d852d4d2b1b0587"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#a6ea1b3789d0e60da0d852d4d2b1b0587">toolbox::concurrent::parallel_reduce</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT T parallel_reduce(Iterator begin, Iterator end, T identity, BinaryOperation reduce_op)</div><div class="ttdoc">对范围[begin, end)执行并行归约操作/Performs parallel reduction on range [begin, end)</div><div class="ttdef"><b>Definition</b> parallel.hpp:365</div></div>
-</div><!-- fragment --> 
+<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_aff15414c98b31ff961559235404fdd59"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#aff15414c98b31ff961559235404fdd59">toolbox::concurrent::parallel_reduce</a></div><div class="ttdeci">T parallel_reduce(Iterator begin, Iterator end, T identity, BinaryOperation reduce_op)</div><div class="ttdoc">使用TBB对范围[begin, end)执行并行归约操作</div><div class="ttdef"><b>Definition</b> parallel_raw.hpp:129</div></div>
+</div><!-- fragment --><p>对范围[begin, end)执行并行归约操作/Performs parallel reduction on range [begin, end)</p>
+<p>直接使用TBB的parallel_reduce实现高效并行归约 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Iterator</td><td>输入迭代器类型(必须支持随机访问) </td></tr>
+    <tr><td class="paramname">T</td><td>归约结果和单位元素的类型 </td></tr>
+    <tr><td class="paramname">BinaryOperation</td><td>二元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">identity</td><td>归约操作的单位元素 </td></tr>
+    <tr><td class="paramname">reduce_op</td><td>用于合并两个T值或T与元素类型的二元操作 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>并行归约的结果 </dd></dl>
+
 </div>
 </div>
 <a id="aa11d099f6070651f3af1f243019118b8" name="aa11d099f6070651f3af1f243019118b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11d099f6070651f3af1f243019118b8">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa11d099f6070651f3af1f243019118b8">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,7 +1255,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="a901bcfda7e90ddf49a34af8665b20564" name="a901bcfda7e90ddf49a34af8665b20564"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a901bcfda7e90ddf49a34af8665b20564">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a901bcfda7e90ddf49a34af8665b20564">&#9670;&#160;</a></span>parallel_reduce() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -948,8 +1292,62 @@ template&lt;typename T , typename Alloc , typename BinaryOperation &gt; </div>
 
 </div>
 </div>
+<a id="ac78c45e02439678dbfe567ea5ec72bf3" name="ac78c45e02439678dbfe567ea5ec72bf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac78c45e02439678dbfe567ea5ec72bf3">&#9670;&#160;</a></span>parallel_tim_sort() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename RandomIt , typename Compare &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::concurrent::parallel_tim_sort </td>
+          <td>(</td>
+          <td class="paramtype">RandomIt&#160;</td>
+          <td class="paramname"><em>begin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RandomIt&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Compare&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB实现并行TimSort </p>
+<p>A simplified parallel TimSort implementation.</p>
+<p>由于TBB的parallel_sort已经是高度优化的并行排序算法， 我们直接使用它作为TimSort的实现 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RandomIt</td><td>随机访问迭代器类型 </td></tr>
+    <tr><td class="paramname">Compare</td><td>比较器类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">comp</td><td>比较器 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ad5dbeebaf31bb2cf9eb078b4412ed166" name="ad5dbeebaf31bb2cf9eb078b4412ed166"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5dbeebaf31bb2cf9eb078b4412ed166">&#9670;&#160;</a></span>parallel_tim_sort()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5dbeebaf31bb2cf9eb078b4412ed166">&#9670;&#160;</a></span>parallel_tim_sort() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -972,7 +1370,7 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Compare&#160;</td>
-          <td class="paramname"><em>comp</em> = <code>Compare()</code>&#160;</td>
+          <td class="paramname"><em>comp</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -986,7 +1384,23 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">RandomIt</td><td>Random access iterator type </td></tr>
-    <tr><td class="paramname">Compare</td><td>Comparator type </td></tr>
+    <tr><td class="paramname">Compare</td><td>Comparator type</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>A simplified parallel TimSort implementation.</p>
+<p>由于TBB的parallel_sort已经是高度优化的并行排序算法， 我们直接使用它作为TimSort的实现 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">RandomIt</td><td>随机访问迭代器类型 </td></tr>
+    <tr><td class="paramname">Compare</td><td>比较器类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">begin</td><td>起始迭代器 </td></tr>
+    <tr><td class="paramname">end</td><td>结束迭代器 </td></tr>
+    <tr><td class="paramname">comp</td><td>比较器 </td></tr>
   </table>
   </dd>
 </dl>
@@ -994,7 +1408,7 @@ template&lt;typename RandomIt , typename Compare  = std::less&lt;&gt;&gt; </div>
 </div>
 </div>
 <a id="aa1e6d8ab2286c5d96dd9e0de3fc13ad1" name="aa1e6d8ab2286c5d96dd9e0de3fc13ad1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1e6d8ab2286c5d96dd9e0de3fc13ad1">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[1/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e6d8ab2286c5d96dd9e0de3fc13ad1">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[1/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1026,7 +1440,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="a778ee00b731c893ba86f150deae148b4" name="a778ee00b731c893ba86f150deae148b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a778ee00b731c893ba86f150deae148b4">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[2/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a778ee00b731c893ba86f150deae148b4">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[2/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1057,8 +1471,70 @@ template&lt;typename T , typename Alloc , typename Function &gt; </div>
 
 </div>
 </div>
+<a id="a51f8b2c1efd46ca3f5fb98d68dc2d02a" name="a51f8b2c1efd46ca3f5fb98d68dc2d02a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f8b2c1efd46ca3f5fb98d68dc2d02a">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputIt , typename OutputIt , typename UnaryOperation &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::concurrent::parallel_transform </td>
+          <td>(</td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>first1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>last1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OutputIt&#160;</td>
+          <td class="paramname"><em>d_first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UnaryOperation&#160;</td>
+          <td class="paramname"><em>unary_op</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>使用TBB并行转换范围[first1, last1)中的元素并存储到从d_first开始的范围 </p>
+<p>并行将输入范围的元素转换到输出范围/Transforms elements from input range to output range in parallel</p>
+<p>使用TBB的parallel_for实现高效并行转换 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputIt</td><td>输入迭代器类型 </td></tr>
+    <tr><td class="paramname">OutputIt</td><td>输出迭代器类型 </td></tr>
+    <tr><td class="paramname">UnaryOperation</td><td>一元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first1</td><td>输入范围起始 </td></tr>
+    <tr><td class="paramname">last1</td><td>输入范围结束 </td></tr>
+    <tr><td class="paramname">d_first</td><td>输出范围起始 </td></tr>
+    <tr><td class="paramname">unary_op</td><td>应用于每个元素的操作 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adc129cfed7d6ea2f9bd3cffde739ce9d" name="adc129cfed7d6ea2f9bd3cffde739ce9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc129cfed7d6ea2f9bd3cffde739ce9d">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[3/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#adc129cfed7d6ea2f9bd3cffde739ce9d">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1124,20 +1600,38 @@ last1)) must have sufficient allocated capacity </dd></dl>
 <div class="line">std::vector&lt;int&gt; output(input.size());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行计算每个元素的平方/Square each element in parallel</span></div>
-<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#adc129cfed7d6ea2f9bd3cffde739ce9d">parallel_transform</a>(input.begin(), input.end(), output.begin(),</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#a51f8b2c1efd46ca3f5fb98d68dc2d02a">parallel_transform</a>(input.begin(), input.end(), output.begin(),</div>
 <div class="line">                  [](<span class="keywordtype">int</span> x) { return x * x; });</div>
 <div class="line"><span class="comment">// output 现在包含 {1, 4, 9, 16, 25}/output now contains {1, 4, 9, 16, 25}</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// 并行将每个元素转换为字符串/Transform each element to string in parallel</span></div>
 <div class="line">std::vector&lt;std::string&gt; str_output(input.size());</div>
-<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#adc129cfed7d6ea2f9bd3cffde739ce9d">parallel_transform</a>(input.begin(), input.end(), str_output.begin(),</div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1concurrent.html#a51f8b2c1efd46ca3f5fb98d68dc2d02a">parallel_transform</a>(input.begin(), input.end(), str_output.begin(),</div>
 <div class="line">                  [](<span class="keywordtype">int</span> x) { return std::to_string(x); });</div>
-<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_adc129cfed7d6ea2f9bd3cffde739ce9d"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#adc129cfed7d6ea2f9bd3cffde739ce9d">toolbox::concurrent::parallel_transform</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT void parallel_transform(InputIt first1, InputIt last1, OutputIt d_first, UnaryOperation unary_op)</div><div class="ttdoc">并行将输入范围的元素转换到输出范围/Transforms elements from input range to output range in parallel</div><div class="ttdef"><b>Definition</b> parallel.hpp:207</div></div>
-</div><!-- fragment --> 
+<div class="ttc" id="anamespacetoolbox_1_1concurrent_html_a51f8b2c1efd46ca3f5fb98d68dc2d02a"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#a51f8b2c1efd46ca3f5fb98d68dc2d02a">toolbox::concurrent::parallel_transform</a></div><div class="ttdeci">void parallel_transform(InputIt first1, InputIt last1, OutputIt d_first, UnaryOperation unary_op)</div><div class="ttdoc">使用TBB并行转换范围[first1, last1)中的元素并存储到从d_first开始的范围</div><div class="ttdef"><b>Definition</b> parallel_raw.hpp:70</div></div>
+</div><!-- fragment --><p>并行将输入范围的元素转换到输出范围/Transforms elements from input range to output range in parallel</p>
+<p>使用TBB的parallel_for实现高效并行转换 </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">InputIt</td><td>输入迭代器类型 </td></tr>
+    <tr><td class="paramname">OutputIt</td><td>输出迭代器类型 </td></tr>
+    <tr><td class="paramname">UnaryOperation</td><td>一元操作类型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first1</td><td>输入范围起始 </td></tr>
+    <tr><td class="paramname">last1</td><td>输入范围结束 </td></tr>
+    <tr><td class="paramname">d_first</td><td>输出范围起始 </td></tr>
+    <tr><td class="paramname">unary_op</td><td>应用于每个元素的操作 </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aab4fda981d54019a30712394d7747cc4" name="aab4fda981d54019a30712394d7747cc4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aab4fda981d54019a30712394d7747cc4">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[4/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aab4fda981d54019a30712394d7747cc4">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[5/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1169,7 +1663,7 @@ template&lt;typename T , <a class="el" href="types_8hpp.html#a801d6a451a01953ef8
 </div>
 </div>
 <a id="aebf0bab748ed9ab65042ad8700411a9e" name="aebf0bab748ed9ab65042ad8700411a9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebf0bab748ed9ab65042ad8700411a9e">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[5/5]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf0bab748ed9ab65042ad8700411a9e">&#9670;&#160;</a></span>parallel_transform() <span class="overload">[6/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

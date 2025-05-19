@@ -10,5 +10,5 @@ digraph "src/include/cpp-toolbox/utils/impl"
   dir_78c34a98bded00aa65a243bb573c25b4 [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_78c34a98bded00aa65a243bb573c25b4.html",tooltip=""];
   }
   dir_40d9b6a4c321e73b85093107dc465522 [label="logger", fillcolor="#daedff", color="grey50", style="filled", URL="dir_40d9b6a4c321e73b85093107dc465522.html",tooltip=""];
-  dir_78c34a98bded00aa65a243bb573c25b4->dir_40d9b6a4c321e73b85093107dc465522 [headlabel="1", labeldistance=1.5 headhref="dir_000016_000019.html" href="dir_000016_000019.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_78c34a98bded00aa65a243bb573c25b4->dir_40d9b6a4c321e73b85093107dc465522 [headlabel="1", labeldistance=1.5 headhref="dir_000017_000020.html" href="dir_000017_000020.html" color="steelblue1" fontcolor="steelblue1"];
 }

@@ -117,7 +117,7 @@ var searchData=
   ['critical_114',['CRITICAL',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1a99cd1c61610c76a57cb8d10d6df6b870',1,'toolbox::logger::thread_logger_t']]],
   ['critical_5ff_115',['critical_f',['../classtoolbox_1_1logger_1_1thread__logger__t.html#ae330bc70bd65bf2105c63cde91684385',1,'toolbox::logger::thread_logger_t']]],
   ['critical_5fs_116',['critical_s',['../classtoolbox_1_1logger_1_1thread__logger__t.html#a71c413499ec2090385405577482eaff5',1,'toolbox::logger::thread_logger_t']]],
-  ['cross_117',['cross',['../classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea04dd53a8e6c2306e9bbf944c1d6047f2',1,'toolbox::utils::plot_t::CROSS'],['../structtoolbox_1_1types_1_1point__t.html#a1d705d8b2e6e7b688802c2e7894b77dd',1,'toolbox::types::point_t::cross()']]],
+  ['cross_117',['cross',['../structtoolbox_1_1types_1_1point__t.html#a1d705d8b2e6e7b688802c2e7894b77dd',1,'toolbox::types::point_t::cross()'],['../classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fea04dd53a8e6c2306e9bbf944c1d6047f2',1,'toolbox::utils::plot_t::CROSS']]],
   ['current_5findex_118',['current_index',['../classtoolbox_1_1io_1_1dataset__t.html#afc31d6dc0d05c457645a0a939255cd1e',1,'toolbox::io::dataset_t']]],
   ['cyan_119',['CYAN',['../namespacetoolbox_1_1utils.html#a5ed9fa4a2125c9d47f60228846a6bdea',1,'toolbox::utils']]]
 ];

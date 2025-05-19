@@ -1,0 +1,14 @@
+digraph "src/include/cpp-toolbox/concurrent/impl"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_53097c1fb4416aacf03fa23589a54650 {
+    graph [ bgcolor="#daedff", pencolor="grey50", label="concurrent", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_53097c1fb4416aacf03fa23589a54650.html",tooltip=""]
+  dir_9e27c55f36d3ced2b3c9ff2dc82c5988 [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_9e27c55f36d3ced2b3c9ff2dc82c5988.html",tooltip=""];
+  }
+  dir_175064ea02679cf4c3a50b5407502295 [label="base", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_175064ea02679cf4c3a50b5407502295.html",tooltip=""];
+  dir_9e27c55f36d3ced2b3c9ff2dc82c5988->dir_175064ea02679cf4c3a50b5407502295 [headlabel="2", labeldistance=1.5 headhref="dir_000013_000000.html" href="dir_000013_000000.html" color="steelblue1" fontcolor="steelblue1"];
+}

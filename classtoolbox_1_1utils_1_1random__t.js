@@ -5,6 +5,7 @@ var classtoolbox_1_1utils_1_1random__t =
     [ "choice", "classtoolbox_1_1utils_1_1random__t.html#a19e224c78e8bb494dab4965b2e2c9890", null ],
     [ "choice_general", "classtoolbox_1_1utils_1_1random__t.html#ac814fe8b606727862c536a7214ad7ed5", null ],
     [ "gauss", "classtoolbox_1_1utils_1_1random__t.html#a457dc02fdeca9da085a8727e060b10f0", null ],
+    [ "generate", "classtoolbox_1_1utils_1_1random__t.html#a2c509aafebfbfb3efef6ca0a7b7ec179", null ],
     [ "randint", "classtoolbox_1_1utils_1_1random__t.html#a17e6cbb47d28bac63c59b9282864f9be", null ],
     [ "random", "classtoolbox_1_1utils_1_1random__t.html#a6f77af6fbd0f1012e64024c7a1c7f636", null ],
     [ "random", "classtoolbox_1_1utils_1_1random__t.html#ab78cf660067be5ac15a0437d3edea5f4", null ],

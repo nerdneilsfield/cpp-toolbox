@@ -6,7 +6,7 @@ var parallel_8hpp =
     [ "parallel_for_each", "parallel_8hpp.html#acae673a7f47c092841ef7aab1894a71f", null ],
     [ "parallel_for_each", "parallel_8hpp.html#aa7bd6ddb7ab2da26b9705ca3ed2f9c94", null ],
     [ "parallel_for_each", "parallel_8hpp.html#aa0a37c5ad71c53905b1c8db374cd4d43", null ],
-    [ "parallel_inclusive_scan", "parallel_8hpp.html#a04be47ffd5feb552873c63fafa31d360", null ],
+    [ "parallel_inclusive_scan", "parallel_8hpp.html#a5c73f098872b3e49c23006077662474d", null ],
     [ "parallel_inclusive_scan", "parallel_8hpp.html#af0f6fb62a817e46d980f97838b8f293d", null ],
     [ "parallel_merge_sort", "parallel_8hpp.html#a33db46784821a83231aea1960e53801a", null ],
     [ "parallel_reduce", "parallel_8hpp.html#abb403005ec151d5f1ce67d3986733d4d", null ],

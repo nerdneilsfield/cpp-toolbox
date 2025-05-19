@@ -6,6 +6,7 @@ var random_8hpp =
     [ "choice_n", "random_8hpp.html#a935de9e93cce289a3625617027aadcf2", null ],
     [ "choice_n", "random_8hpp.html#a3a8e625e8e86bf33df3f0b83570b4809", null ],
     [ "gauss", "random_8hpp.html#a791ce71e30ffbf8dd7ae1d23eb40c717", null ],
+    [ "generate", "random_8hpp.html#a68d5c0d402f17e17968094978a7cd7e9", null ],
     [ "randint", "random_8hpp.html#a21c87346f8796fbdc55b7c27fefec4d6", null ],
     [ "random", "random_8hpp.html#aa005803f5356b572366e8cc35f6cfd5c", null ],
     [ "random", "random_8hpp.html#a8ed08affa07b3822791362de8ba2c47d", null ],
