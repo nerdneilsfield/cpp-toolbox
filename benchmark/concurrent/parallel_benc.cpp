@@ -1,6 +1,6 @@
 #include <algorithm>  // For std::for_each, std::transform, std::sort
-#include <random>
 #include <iomanip>
+#include <random>
 #include <sstream>
 // #include <execution>  // For std::execution::par (requires C++17 and
 // potentially TBB)
@@ -12,7 +12,10 @@
 #include <catch2/benchmark/catch_benchmark.hpp>
 #include <catch2/catch_test_macros.hpp>
 
-#include "cpp-toolbox/utils/plot.hpp"
+#include "cpp-toolbox/logger/thread_logger.hpp"
+#include "cpp-toolbox/utils/print.hpp"
+#include "cpp-toolbox/utils/random.hpp"
+#include "cpp-toolbox/utils/timer.hpp"
 
 // Include your parallel header
 #include <cpp-toolbox/concurrent/parallel.hpp>  // Corrected include path
@@ -23,6 +26,11 @@
 long long serial_sum(const std::vector<int>& data)
 {
   return std::accumulate(data.begin(), data.end(), 0LL);
+  // long long sum = 0LL;
+  // for (const auto& val : data) {
+  //   sum += val;
+  // }
+  // return sum;
 }
 
 // Parallel sum using std::execution::par (Requires C++17 and proper
@@ -78,9 +86,14 @@ void square_in_place_op(int& x)
 TEST_CASE("Benchmark Parallel Algorithms")
 {
   // Prepare large test data
-  const size_t data_size = 5'000'000;  // Five million elements to stress parallelism
-  std::vector<int> data(data_size);
-  std::iota(data.begin(), data.end(), 1);  // Fill with 1, 2, 3, ...
+  const size_t data_size =
+      10'000'000;  // Five million elements to stress parallelism
+  const auto data =
+      toolbox::utils::generate<std::vector<int> >(data_size, -100, 100);
+
+  const size_t sum_data_size = 100'000'000;  // Hundred million elements
+  const auto sum_data =
+      toolbox::utils::generate<std::vector<int> >(sum_data_size, -100, 100);
 
   std::vector<int> output_data(data_size);  // For transform output
   std::vector<long long> scan_output(data_size);  // For inclusive scan
@@ -175,7 +188,7 @@ TEST_CASE("Benchmark Parallel Algorithms")
 
     BENCHMARK("Serial Sum (std::accumulate)")
     {
-      return serial_sum(data);
+      return serial_sum(sum_data);
     };
 
     // Optional: Benchmark std::execution::par if configured
@@ -187,7 +200,7 @@ TEST_CASE("Benchmark Parallel Algorithms")
 
     BENCHMARK("Parallel Sum (toolbox::parallel_reduce)")
     {
-      return toolbox_parallel_sum(data);
+      return toolbox_parallel_sum(sum_data);
     };
   }
 
@@ -322,12 +335,8 @@ TEST_CASE("Benchmark Parallel Algorithms")
 
     BENCHMARK("Parallel Inclusive Scan (toolbox::parallel_inclusive_scan)")
     {
-      toolbox::concurrent::parallel_inclusive_scan(data.cbegin(),
-                                                   data.cend(),
-                                                   scan_out.begin(),
-                                                   0,
-                                                   std::plus<int>(),
-                                                   0);
+      toolbox::concurrent::parallel_inclusive_scan(
+          data.cbegin(), data.cend(), scan_out.begin(), 0, std::plus<int>(), 0);
       return scan_out.back();
     };
   }
@@ -360,51 +369,70 @@ TEST_CASE("Benchmark Parallel Algorithms")
   // --- Timing Table and Plot ---------------------------------------------
   SECTION("Timing Table")
   {
-    using namespace std::chrono;
+    // 使用 toolbox::utils::stop_watch_timer_t 进行更准确的计时
+    // Use toolbox::utils::stop_watch_timer_t for more accurate timing
     auto measure = [&](auto&& func)
     {
-      const int iters = 3;
-      double total = 0.0;
+      const int iters = 5;  // 增加迭代次数以获得更稳定的结果
+      double total_ms = 0.0;
       for (int i = 0; i < iters; ++i) {
-        auto start = high_resolution_clock::now();
+        toolbox::utils::stop_watch_timer_t timer;
+        timer.start();
         func();
-        auto end = high_resolution_clock::now();
-        total += duration<double>(end - start).count();
+        timer.stop();
+        total_ms += timer.elapsed_time_ms();  // 直接获取毫秒值
       }
-      return total / static_cast<double>(iters);
+      return total_ms / static_cast<double>(iters);
     };
 
-    // Measure all algorithms
-    double reduce_serial = measure([&]() { serial_sum(data); });
-    double reduce_parallel = measure([&]() { toolbox_parallel_sum(data); });
+    // Measure all algorithms - 确保使用相同大小的数据集
+    // Make sure to use the same dataset size for fair comparison
+    double reduce_serial = measure([&]() { return serial_sum(sum_data); });
+    LOG_DEBUG_S << "reduce_serial: " << reduce_serial << "ms";
+    double reduce_parallel =
+        measure([&]() { return toolbox_parallel_sum(sum_data); });
 
-    double for_each_serial = measure([&]() {
-      std::vector<int> tmp = data;
-      std::for_each(tmp.begin(), tmp.end(), square_in_place_op);
-    });
-    double for_each_parallel = measure([&]() {
-      std::vector<int> tmp = data;
-      toolbox::concurrent::parallel_for_each(tmp.begin(), tmp.end(),
-                                             square_in_place_op);
-    });
+    double for_each_serial = measure(
+        [&]()
+        {
+          std::vector<int> tmp = data;
+          std::for_each(tmp.begin(), tmp.end(), square_in_place_op);
+        });
+    double for_each_parallel = measure(
+        [&]()
+        {
+          std::vector<int> tmp = data;
+          toolbox::concurrent::parallel_for_each(
+              tmp.begin(), tmp.end(), square_in_place_op);
+        });
 
-    double transform_serial = measure([&]() {
-      std::transform(data.begin(), data.end(), output_data.begin(), square_op);
-    });
-    double transform_parallel = measure([&]() {
-      toolbox::concurrent::parallel_transform(data.begin(), data.end(),
-                                              output_data.begin(), square_op);
-    });
+    double transform_serial = measure(
+        [&]()
+        {
+          std::transform(
+              data.begin(), data.end(), output_data.begin(), square_op);
+        });
+    double transform_parallel = measure(
+        [&]()
+        {
+          toolbox::concurrent::parallel_transform(
+              data.begin(), data.end(), output_data.begin(), square_op);
+        });
 
     std::vector<int> scan_tmp(data_size);
-    double scan_serial = measure([&]() {
-      std::inclusive_scan(data.begin(), data.end(), scan_tmp.begin());
-    });
-    double scan_parallel = measure([&]() {
-      toolbox::concurrent::parallel_inclusive_scan(data.begin(), data.end(),
-                                                   scan_tmp.begin(), 0,
-                                                   std::plus<int>(), 0);
-    });
+    double scan_serial = measure(
+        [&]()
+        { std::inclusive_scan(data.begin(), data.end(), scan_tmp.begin()); });
+    double scan_parallel = measure(
+        [&]()
+        {
+          toolbox::concurrent::parallel_inclusive_scan(data.begin(),
+                                                       data.end(),
+                                                       scan_tmp.begin(),
+                                                       0,
+                                                       std::plus<int>(),
+                                                       0);
+        });
 
     std::vector<int> sort_input(data_size);
     {
@@ -414,29 +442,54 @@ TEST_CASE("Benchmark Parallel Algorithms")
         v = dist(rng);
       }
     }
-    double sort_serial = measure([&]() {
-      auto tmp = sort_input;
-      std::sort(tmp.begin(), tmp.end());
-    });
-    double sort_parallel = measure([&]() {
-      auto tmp = sort_input;
-      toolbox::concurrent::parallel_merge_sort(tmp.begin(), tmp.end());
-    });
+    double sort_serial = measure(
+        [&]()
+        {
+          auto tmp = sort_input;
+          std::sort(tmp.begin(), tmp.end());
+        });
+    double sort_parallel = measure(
+        [&]()
+        {
+          auto tmp = sort_input;
+          toolbox::concurrent::parallel_merge_sort(tmp.begin(), tmp.end());
+        });
 
     toolbox::utils::table_t table;
-    table.set_headers({"Benchmark", "Serial (s)", "Parallel (s)", "Speedup"});
-    auto add_row = [&](const std::string& name, double s, double p) {
-      std::ostringstream ss;
-      ss.setf(std::ios::fixed);
-      ss << std::setprecision(6) << s;
-      std::ostringstream sp;
-      sp.setf(std::ios::fixed);
-      sp << std::setprecision(6) << p;
-      double speedup = s / p;
-      std::ostringstream sd;
-      sd.setf(std::ios::fixed);
-      sd << std::setprecision(2) << speedup;
-      table.add_row(name, ss.str(), sp.str(), sd.str());
+    table.set_headers({"Benchmark", "Serial (ms)", "Parallel (ms)", "Speedup"});
+    auto add_row =
+        [&](const std::string& name, double serial_ms, double parallel_ms)
+    {
+      // 添加调试输出，显示实际的计时值
+      // Add debug output to show actual timing values
+      std::cout << "DEBUG - " << name << " - Serial: " << serial_ms
+                << " ms, Parallel: " << parallel_ms
+                << " ms, Speedup: " << (serial_ms / parallel_ms) << "\n";
+
+      // 已经是毫秒值，不需要转换
+      // Already in milliseconds, no conversion needed
+      std::ostringstream serial_str;
+      serial_str.setf(std::ios::fixed);
+      serial_str << std::setprecision(3) << serial_ms;
+
+      std::ostringstream parallel_str;
+      parallel_str.setf(std::ios::fixed);
+      parallel_str << std::setprecision(3) << parallel_ms;
+
+      // 计算加速比
+      // Calculate speedup
+      double speedup = 1.0;
+      if (parallel_ms > 0.001) {  // 避免除以非常小的值 / Avoid division by very
+                                  // small values
+        speedup = serial_ms / parallel_ms;
+      }
+
+      std::ostringstream speedup_str;
+      speedup_str.setf(std::ios::fixed);
+      speedup_str << std::setprecision(2) << speedup;
+
+      table.add_row(
+          name, serial_str.str(), parallel_str.str(), speedup_str.str());
     };
 
     add_row("Reduce", reduce_serial, reduce_parallel);
@@ -446,17 +499,6 @@ TEST_CASE("Benchmark Parallel Algorithms")
     add_row("Merge Sort", sort_serial, sort_parallel);
 
     std::cout << table << "\n";
-
-    toolbox::utils::plot_t plot;
-    plot.set_title("Sum Benchmark (sec)");
-    plot.set_x_axis();
-    plot.set_y_axis();
-    plot.enable_axis_grid();
-    plot.add_scatter_series({1.0, 2.0},
-                            {reduce_serial, reduce_parallel},
-                            toolbox::utils::color_t::GREEN,
-                            toolbox::utils::plot_t::style_t::CROSS);
-    std::cout << plot.render(40, 10) << "\n";
 
     REQUIRE(reduce_serial > 0.0);
     REQUIRE(reduce_parallel > 0.0);

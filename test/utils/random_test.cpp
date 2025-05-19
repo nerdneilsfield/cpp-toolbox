@@ -264,6 +264,23 @@ TEST_CASE("Random_t Container Functions", "[utils][random][container]")
     std::sort(vec.begin(), vec.end());
     REQUIRE(vec == original);
   }
+
+  SECTION("Generate Function")
+  {
+    // 测试生成整数
+    auto int_vec = random.generate<std::vector<int>>(10, 1, 100);
+    REQUIRE(int_vec.size() == 10);
+    for (int val : int_vec) {
+      REQUIRE(is_in_range(val, 1, 100));
+    }
+
+    // 测试生成浮点数
+    auto float_vec = random.generate<std::vector<float>>(10, 0.0f, 1.0f);
+    REQUIRE(float_vec.size() == 10);
+    for (float val : float_vec) {
+      REQUIRE(is_in_range(val, 0.0f, 1.0f));
+    }
+  }
 }
 
 TEST_CASE("Global Random Functions", "[utils][random][global]")
@@ -331,5 +348,14 @@ TEST_CASE("Global Random Functions", "[utils][random][global]")
     std::vector<int> shuffle_vec = {1, 2, 3, 4, 5};
     shuffle(shuffle_vec);
     REQUIRE(shuffle_vec.size() == 5);
+  }
+
+  SECTION("Global generate")
+  {
+    auto vec = generate<std::vector<int>>(10, 1, 100);
+    REQUIRE(vec.size() == 10);
+    for (int val : vec) {
+      REQUIRE(is_in_range(val, 1, 100));
+    }
   }
 }

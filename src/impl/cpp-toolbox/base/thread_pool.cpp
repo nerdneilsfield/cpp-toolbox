@@ -1,10 +1,11 @@
-#include <chrono>      // For std::chrono::milliseconds
-#include <iostream>    // Optional, for debug output
-#include <stdexcept>   // For std::invalid_argument
-#include <utility>
+#include <iostream>  // Optional, for debug output
 #include <memory>
+#include <stdexcept>  // For std::invalid_argument
+#include <utility>
 
 #include "cpp-toolbox/base/thread_pool.hpp"  // Include header file
+
+#include "cpp-toolbox/logger/thread_logger.hpp"
 
 namespace toolbox::base
 {
@@ -32,6 +33,8 @@ thread_pool_t::thread_pool_t(size_t threads)
     throw std::invalid_argument("Thread pool cannot have 0 threads");
   }
 
+  LOG_DEBUG_S << "Creating thread pool with " << num_threads << " threads";
+
   // 预先分配空间以避免在添加元素时进行复制操作
   worker_queues_.reserve(num_threads);
   queue_mutexes_.reserve(num_threads);
@@ -39,7 +42,8 @@ thread_pool_t::thread_pool_t(size_t threads)
   // 使用 shared_ptr 包装每个 deque 以避免复制问题
   for (size_t i = 0; i < num_threads; ++i) {
     // 为每个工作线程创建一个新的 deque
-    worker_queues_.push_back(std::make_shared<std::deque<std::unique_ptr<detail::task_base>>>());
+    worker_queues_.push_back(
+        std::make_shared<std::deque<std::unique_ptr<detail::task_base>>>());
     queue_mutexes_.push_back(std::make_unique<std::mutex>());
   }
 

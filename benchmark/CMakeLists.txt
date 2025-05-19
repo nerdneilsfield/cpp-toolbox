@@ -6,6 +6,7 @@ list(APPEND BENCHMARK_FILES
     types/types_benc.cpp
     file/memory_mapped_file_benc.cpp
     pcl/downsampling_benc.cpp
+    ${CMAKE_SOURCE_DIR}/test/my_catch2_main.cpp
 )
 
 

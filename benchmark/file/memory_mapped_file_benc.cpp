@@ -1,14 +1,18 @@
 #include <filesystem>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <limits>  // For std::numeric_limits
 #include <numeric>  // For std::accumulate
 #include <random>  // For random data generation
+#include <sstream>
 #include <vector>
 
 #include <catch2/benchmark/catch_benchmark.hpp>
 #include <catch2/catch_test_macros.hpp>
 #include <cpp-toolbox/file/memory_mapped_file.hpp>
+#include <cpp-toolbox/utils/print.hpp>
+#include <cpp-toolbox/utils/timer.hpp>
 
 // Helper function to create a large file with random binary data
 // Returns true on success, false otherwise.
@@ -125,8 +129,99 @@ TEST_CASE("File Reading Benchmark", "[hide][benchmark][file]")
     }
   };
 
+  // --- Timing Table ---
+  SECTION("Timing Table")
+  {
+    // 使用 toolbox::utils::stop_watch_timer_t 进行更准确的计时
+    // Use toolbox::utils::stop_watch_timer_t for more accurate timing
+    auto measure = [&](auto&& func)
+    {
+      const int iters = 5;  // 增加迭代次数以获得更稳定的结果
+      double total_ms = 0.0;
+      for (int i = 0; i < iters; ++i) {
+        toolbox::utils::stop_watch_timer_t timer;
+        timer.start();
+        func();
+        timer.stop();
+        total_ms += timer.elapsed_time_ms();  // 直接获取毫秒值
+      }
+      return total_ms / static_cast<double>(iters);
+    };
+
+    // Measure both methods
+    double traditional_read = measure(
+        [&]()
+        {
+          std::ifstream ifs(benchmark_file_path,
+                            std::ios::binary | std::ios::ate);
+          if (!ifs)
+            return;
+          std::streamsize size = ifs.tellg();
+          ifs.seekg(0, std::ios::beg);
+          std::vector<char> buffer(size);
+          ifs.read(buffer.data(), size);
+        });
+
+    double memory_mapped = measure(
+        [&]()
+        {
+          toolbox::file::memory_mapped_file_t mapped_file;
+          if (mapped_file.open(benchmark_file_path)) {
+            const unsigned char* data = mapped_file.data();
+            size_t size = mapped_file.size();
+            volatile unsigned long long sum = 0;
+            for (size_t i = 0; i < size; ++i) {
+              sum += data[i];
+            }
+            mapped_file.close();
+          }
+        });
+
+    // Create and display the results table
+    toolbox::utils::table_t table;
+    table.set_headers({"Benchmark", "Time (ms)", "Relative Speed"});
+    auto add_row =
+        [&](const std::string& name, double time_ms, double reference_ms)
+    {
+      // 添加调试输出，显示实际的计时值
+      // Add debug output to show actual timing values
+      std::cout << "DEBUG - " << name << " - Time: " << time_ms
+                << " ms, Reference: " << reference_ms
+                << " ms, Relative: " << (reference_ms / time_ms) << "x\n";
+
+      // 已经是毫秒值，不需要转换
+      // Already in milliseconds, no conversion needed
+      std::ostringstream time_str;
+      time_str.setf(std::ios::fixed);
+      time_str << std::setprecision(3) << time_ms;
+
+      // 计算相对速度
+      // Calculate relative speed
+      double relative = 1.0;
+      if (time_ms > 0.001) {  // 避免除以非常小的值 / Avoid division by very
+                              // small values
+        relative = reference_ms / time_ms;
+      }
+
+      std::ostringstream relative_str;
+      relative_str.setf(std::ios::fixed);
+      relative_str << std::setprecision(2) << relative << "x";
+
+      table.add_row(name, time_str.str(), relative_str.str());
+    };
+
+    // Add rows with traditional read as the reference
+    add_row("Traditional Read", traditional_read, traditional_read);
+    add_row("Memory Mapped", memory_mapped, traditional_read);
+
+    std::cout << table << "\n";
+
+    REQUIRE(traditional_read > 0.0);
+    REQUIRE(memory_mapped > 0.0);
+  }
+
   // --- Benchmark Teardown ---
   std::cout << "Benchmark Info: Removing large file: " << benchmark_file_path
-            << std::endl;
+            << "\n";
   std::filesystem::remove(benchmark_file_path);
 }

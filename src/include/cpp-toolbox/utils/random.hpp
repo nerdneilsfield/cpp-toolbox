@@ -346,6 +346,33 @@ public:
     return result;
   }
 
+  /**
+   * @brief 生成n个随机数/Generate n random numbers
+   * @tparam TContainer 容器类型/Container type
+   * @param n 生成数量/Number of random numbers
+   * @param min 下界/Lower bound
+   * @param max 上界/Upper bound
+   * @return TContainer 随机数容器/Container of random numbers
+   * @code
+   * auto r = rng.generate<std::vector<int>>(10, 1, 100);
+   * auto f = rng.generate<std::vector<float>>(10, 0.0f, 1.0f);
+   * auto d = rng.generate<std::list<double>>(10, 0.0, 1.0);
+   * auto i = rng.generate<std::deque<int>>(10, 1, 100);
+   * @endcode
+   */
+  template<typename TContainer>
+  TContainer generate(std::size_t n,
+                      typename TContainer::value_type min,
+                      typename TContainer::value_type max)
+  {
+    TContainer result;
+    result.reserve(n);
+    for (std::size_t i = 0; i < n; ++i) {
+      result.push_back(random(min, max));
+    }
+    return result;
+  }
+
 private:
   /**
    * @brief 随机数引擎/Mersenne Twister 随机数引擎/Mersenne Twister engine
@@ -567,6 +594,28 @@ template<typename TContainer>
 inline void shuffle(TContainer& container)
 {
   random_t::instance().shuffle(container);
+}
+
+/**
+ * @brief 生成n个随机数/Generate n random numbers
+ * @tparam TContainer 容器类型/Container type
+ * @param n 生成数量/Number of random numbers
+ * @param min 下界/Lower bound
+ * @param max 上界/Upper bound
+ * @return TContainer 随机数容器/Container of random numbers
+ * @code
+ * auto r = toolbox::utils::generate<std::vector<int>>(10, 1, 100);
+ * auto f = toolbox::utils::generate<std::vector<float>>(10, 0.0f, 1.0f);
+ * auto d = toolbox::utils::generate<std::list<double>>(10, 0.0, 1.0);
+ * auto i = toolbox::utils::generate<std::deque<int>>(10, 1, 100);
+ * @endcode
+ */
+template<typename TContainer>
+inline TContainer generate(std::size_t n,
+                           typename TContainer::value_type min,
+                           typename TContainer::value_type max)
+{
+  return random_t::instance().generate<TContainer>(n, min, max);
 }
 
 }  // namespace toolbox::utils
