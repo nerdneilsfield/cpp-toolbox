@@ -111,6 +111,7 @@ var hierarchy =
     [ "toolbox::traits::is_stack_allocated< T >", "structtoolbox_1_1traits_1_1is__stack__allocated.html", null ],
     [ "toolbox::traits::is_volatile< T >", "structtoolbox_1_1traits_1_1is__volatile.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >::iterator", "classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html", null ],
+    [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::key_hash", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html", null ],
     [ "toolbox::container::lock_free_queue_t< T >", "classtoolbox_1_1container_1_1lock__free__queue__t.html", null ],
     [ "toolbox::functional::MemoizedFunction< R(Args...)>", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html", null ],
     [ "toolbox::functional::detail_impl::MemoizeHelperState< R, Args >", "structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html", null ],
@@ -180,6 +181,7 @@ var hierarchy =
     ] ],
     [ "toolbox::traits::type_identity< T >", "structtoolbox_1_1traits_1_1type__identity.html", null ],
     [ "toolbox::traits::type_list< Ts >", "structtoolbox_1_1traits_1_1type__list.html", null ],
+    [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::voxel_data_soa_t", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t.html", null ],
     [ "toolbox::functional::detail::Fs", null, [
       [ "toolbox::functional::detail::overloaded< Fs >", "structtoolbox_1_1functional_1_1detail_1_1overloaded.html", null ]
     ] ]

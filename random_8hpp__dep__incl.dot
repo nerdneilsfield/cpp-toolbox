@@ -11,4 +11,7 @@ digraph "src/include/cpp-toolbox/utils/random.hpp"
   Node3 [id="Node000003",label="src/include/cpp-toolbox\l/pcl/filters/uniform_grid\l_subsampling.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$uniform__grid__subsampling_8hpp.html",tooltip=" "];
   Node1 -> Node4 [id="edge3_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 [id="Node000004",label="src/include/cpp-toolbox\l/pcl/filters/voxel_grid\l_downsampling.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$voxel__grid__downsampling_8hpp.html",tooltip=" "];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="src/include/cpp-toolbox\l/pcl/filters/impl/voxel\l_grid_downsampling_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$voxel__grid__downsampling__impl_8hpp.html",tooltip=" "];
+  Node5 -> Node4 [id="edge5_Node000005_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

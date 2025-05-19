@@ -176,7 +176,8 @@ var menudata={children:[
 {text:"p",url:"functions_type.html#index_p"},
 {text:"r",url:"functions_type.html#index_r"},
 {text:"t",url:"functions_type.html#index_t"},
-{text:"u",url:"functions_type.html#index_u"}]},
+{text:"u",url:"functions_type.html#index_u"},
+{text:"v",url:"functions_type.html#index_v"}]},
 {text:"Enumerations",url:"functions_enum.html"},
 {text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html",children:[

@@ -1,9 +1,12 @@
 var classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t =
 [
+    [ "key_hash", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash" ],
+    [ "voxel_data_soa_t", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t.html", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t" ],
     [ "base_type", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#ac6bdbc3b38cca1aa217485af5e49c007", null ],
     [ "data_type", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#a9d80581d3db91b9fede361fc3bdc0d7f", null ],
     [ "point_cloud", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#aeeabea9e6798815f35a70dff0a0d366b", null ],
     [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#ac404bc4d0f51ee61d0e5c7b6b254d7f7", null ],
+    [ "voxel_key_t", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#a5ad1a10d7da4ff9ace9357ac7dd4e1b9", null ],
     [ "voxel_grid_downsampling_t", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#ac32cae331f25964b39d0bf43197a3042", null ],
     [ "~voxel_grid_downsampling_t", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#ab2afe16ebc66919832c2142c32a88f3f", null ],
     [ "voxel_grid_downsampling_t", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html#ab424516ddedb47646807c75b60139561", null ],
