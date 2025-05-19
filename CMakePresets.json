@@ -37,6 +37,13 @@
       }
     },
     {
+      "name": "tbb",
+      "hidden": true,
+      "cacheVariables": {
+        "CPP_TOOLBOX_USE_TBB": "ON"
+      }
+    },
+    {
       "name": "clang-tidy",
       "hidden": true,
       "cacheVariables": {

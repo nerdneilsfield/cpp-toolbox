@@ -28,8 +28,20 @@ set(cpp-toolbox_srcs
     ${CMAKE_CURRENT_SOURCE_DIR}/io/kitti_pcd.cpp
 )
 
+set(cpp-toolbox_definitions "")
+
+set(cpp-toolbox_dependencies
+    concurrentqueue::concurrentqueue
+)
+
+if(CPP_TOOLBOX_USE_TBB)
+  list(APPEND cpp-toolbox_dependencies TBB::tbb)
+  list(APPEND cpp-toolbox_definitions CPP_TOOLBOX_USE_TBB)
+endif()
+
 add_library(cpp-toolbox SHARED ${cpp-toolbox_srcs})
 target_compile_features(cpp-toolbox PRIVATE cxx_std_17)
+target_compile_definitions(cpp-toolbox PRIVATE ${cpp-toolbox_definitions})
 add_library(cpp-toolbox::cpp-toolbox ALIAS cpp-toolbox)
 include(GenerateExportHeader)
 generate_export_header(cpp-toolbox
@@ -55,7 +67,7 @@ set_target_properties(cpp-toolbox PROPERTIES
 )
 target_link_libraries(cpp-toolbox
     PRIVATE
-    concurrentqueue::concurrentqueue
+    ${cpp-toolbox_dependencies}
 )
 target_link_libraries(cpp-toolbox PUBLIC Threads::Threads)
 target_precompile_headers(cpp-toolbox PRIVATE ${CPP_TOOLBOX_PCH_FILE})
@@ -75,8 +87,10 @@ target_compile_definitions(cpp-toolbox_static PUBLIC
     $<$<CXX_COMPILER_ID:MSVC>:_CRT_SECURE_NO_WARNINGS>
     CPP_TOOLBOX_STATIC_DEFINE
 )
-target_link_libraries(cpp-toolbox_static PRIVATE concurrentqueue::concurrentqueue)
+target_link_libraries(cpp-toolbox_static PRIVATE ${cpp-toolbox_dependencies})
 target_link_libraries(cpp-toolbox_static PUBLIC Threads::Threads)
+target_compile_features(cpp-toolbox_static PRIVATE cxx_std_17)
+target_compile_definitions(cpp-toolbox_static PRIVATE ${cpp-toolbox_definitions})
 add_library(cpp-toolbox::cpp-toolbox_static ALIAS cpp-toolbox_static)
 target_precompile_headers(cpp-toolbox_static PRIVATE ${CPP_TOOLBOX_PCH_FILE})
 

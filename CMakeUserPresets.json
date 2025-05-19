@@ -115,6 +115,18 @@
       }
     },
     {
+      "name": "build-linux-clang-21-tbb",
+      "binaryDir": "${sourceDir}/build/build-linux-clang-tbb",
+      "inherits": ["build-linux", "tbb"],
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++-21",
+        "CMAKE_C_COMPILER": "clang-21",
+        "CMAKE_LINKER": "lld-21",
+        "CMAKE_CXX_FLAGS": "-stdlib=libc++"
+      }
+    },
+    {
       "name": "build-linux-gcc-13",
       "binaryDir": "${sourceDir}/build/build-linux-gcc-13",
       "inherits": ["build-linux"],
