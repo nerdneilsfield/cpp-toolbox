@@ -90,10 +90,10 @@ void voxel_grid_downsampling_t<DataType>::compute_point_cloud_bounds()
   }
 
   // 使用现有的 minmax 工具计算点云边界
-  constexpr std::size_t kParallelThreshold = 1024;
+  constexpr std::size_t k_parallel_threshold = 1024;
 
   // 计算点云边界
-  auto bounds = m_enable_parallel && m_cloud->size() > kParallelThreshold
+  auto bounds = m_enable_parallel && m_cloud->size() > k_parallel_threshold
       ? toolbox::types::calculate_minmax_parallel(*m_cloud)
       : toolbox::types::calculate_minmax(*m_cloud);
 
@@ -374,7 +374,7 @@ void voxel_grid_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
   }
 
   // 定义常量
-  constexpr std::size_t kParallelThreshold = 1024;
+  constexpr std::size_t k_parallel_threshold = 1024;
   constexpr std::size_t kMaxVoxelsPerThread = 1000;
 
   const std::size_t total_points = m_cloud->size();
@@ -383,7 +383,7 @@ void voxel_grid_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
 
   // 确定线程数量
   const std::size_t num_threads =
-      m_enable_parallel && total_points > kParallelThreshold
+      m_enable_parallel && total_points > k_parallel_threshold
       ? std::thread::hardware_concurrency()
       : 1;
 
@@ -403,7 +403,7 @@ void voxel_grid_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
   }
 
   // 并行或串行处理点云
-  if (m_enable_parallel && total_points > kParallelThreshold) {
+  if (m_enable_parallel && total_points > k_parallel_threshold) {
     // 计算每个线程处理的点数
     const std::size_t points_per_thread =
         (total_points + num_threads - 1) / num_threads;
@@ -485,7 +485,7 @@ void voxel_grid_downsampling_t<DataType>::filter_impl(point_cloud_ptr output)
   output->intensity = m_cloud->intensity;
 
   // 并行或串行计算质心
-  if (m_enable_parallel && num_voxels > kParallelThreshold) {
+  if (m_enable_parallel && num_voxels > k_parallel_threshold) {
     std::vector<std::future<void>> futures;
     futures.reserve(num_threads);
 

@@ -1,13 +1,14 @@
 #pragma once
 
-#include <cpp-toolbox/pcl/knn/base_knn.hpp>
 #include <cpp-toolbox/concurrent/parallel.hpp>
+#include <cpp-toolbox/pcl/knn/base_knn.hpp>
 
 namespace toolbox::pcl
 {
 
 template<typename DataType>
-class CPP_TOOLBOX_EXPORT bfknn_parallel_t : public base_knn_t<bfknn_parallel_t<DataType>, DataType>
+class CPP_TOOLBOX_EXPORT bfknn_parallel_t
+    : public base_knn_t<bfknn_parallel_t<DataType>, DataType>
 {
 public:
   using data_type = DataType;
@@ -38,7 +39,10 @@ public:
                              std::vector<data_type>& distances);
 
   void enable_parallel(bool enable) { m_parallel_enabled = enable; }
-  [[nodiscard]] bool is_parallel_enabled() const noexcept { return m_parallel_enabled; }
+  [[nodiscard]] bool is_parallel_enabled() const noexcept
+  {
+    return m_parallel_enabled;
+  }
 
 private:
   data_type compute_distance(const point_t<data_type>& p1,
@@ -48,7 +52,7 @@ private:
   point_cloud_ptr m_cloud;
   metric_type_t m_metric = metric_type_t::euclidean;
   bool m_parallel_enabled = true;
-  static constexpr std::size_t kParallelThreshold = 1024;
+  static constexpr std::size_t k_parallel_threshold = 1024;
 };
 
 }  // namespace toolbox::pcl
