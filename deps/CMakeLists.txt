@@ -1,3 +1,10 @@
+# Create a header-only eigen interface target
+add_library(eigen INTERFACE)
+target_include_directories(eigen INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/eigen)
+set(EIGEN_TARGET eigen PARENT_SCOPE)
+set(EIGEN_TARGET eigen)
+
+
 if(BUILD_TESTING)
   message(STATUS "BUILDING TESTS")
   add_subdirectory(Catch2)
@@ -17,6 +24,10 @@ if(BUILD_TESTING)
 endif()
 
 add_subdirectory(concurrentqueue)
+
+# Add nanoflann
+add_library(nanoflann INTERFACE)
+target_include_directories(nanoflann INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/nanoflann)
 
 # set(FMT_HEADERS "")
 # set(FMT_MODULE OFF)

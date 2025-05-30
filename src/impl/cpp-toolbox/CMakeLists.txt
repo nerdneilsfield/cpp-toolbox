@@ -32,6 +32,8 @@ set(cpp-toolbox_definitions "")
 
 set(cpp-toolbox_dependencies
     concurrentqueue::concurrentqueue
+    nanoflann
+    eigen
 )
 
 if(CPP_TOOLBOX_USE_TBB)
