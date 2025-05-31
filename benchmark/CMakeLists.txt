@@ -8,6 +8,7 @@ list(APPEND BENCHMARK_FILES
     pcl/downsampling_benc.cpp
     pcl/knn_benc.cpp
     pcl/norm_benc.cpp
+    pcl/features_benc.cpp
     ${CMAKE_SOURCE_DIR}/test/my_catch2_main.cpp
 )
 
