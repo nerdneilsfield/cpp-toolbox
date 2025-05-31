@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::function\l_traits\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1function__traits.html",tooltip="函数特征基础模板/Function traits base template"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_keypoint_extractor\l_t\< susan_keypoint_extractor\l_t\< DataType, KNN \>, DataType, KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge47_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::susan\l_keypoint_extractor\l_t\< DataType, KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1susan__keypoint__extractor__t.html",tooltip="SUSAN (Smallest Univalue Segment Assimilating Nucleus) 3D关键点提取器 / SUSAN (Smallest Univalue Segment As..."];
 }

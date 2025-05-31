@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::type\l_list\< Ts \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1type__list.html",tooltip="类型列表容器/Type list container"];
+  Node0 [id="Node000000",label="toolbox::traits::function\l_traits\< R(Args...)\>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html",tooltip="普通函数的函数特征/Function traits for regular functions"];
+  Node0 -> Node1 [id="edge55_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::traits::function\l_traits\< R(C::*)(Args...)\>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html",tooltip="成员函数的函数特征/Function traits for member functions"];
 }

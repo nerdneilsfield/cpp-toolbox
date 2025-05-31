@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::command_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1command__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge43_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::utils::CommandLineApp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1_command_line_app.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::traits::is\l_const_volatile\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__const__volatile.html",tooltip="检查类型是否同时具有const和volatile限定/Check if type is const-volatile qualified"];
 }

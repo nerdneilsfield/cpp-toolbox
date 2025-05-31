@@ -325,10 +325,10 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  }</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="comment">// 使用现有的 minmax 工具计算点云边界</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">constexpr</span> std::size_t kParallelThreshold = 1024;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">constexpr</span> std::size_t k_parallel_threshold = 1024;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="comment">// 计算点云边界</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">auto</span> bounds = m_enable_parallel &amp;&amp; m_cloud-&gt;size() &gt; kParallelThreshold</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keyword">auto</span> bounds = m_enable_parallel &amp;&amp; m_cloud-&gt;size() &gt; k_parallel_threshold</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      ? <a class="code hl_function" href="namespacetoolbox_1_1types.html#ad70c9db55382ef901b36347c8a5da351">toolbox::types::calculate_minmax_parallel</a>(*m_cloud)</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      : <a class="code hl_namespace" href="namespacetoolbox.html">toolbox</a>::types::calculate_minmax(*m_cloud);</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
@@ -618,7 +618,7 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  }</div>
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span> </div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="comment">// 定义常量</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keyword">constexpr</span> std::size_t kParallelThreshold = 1024;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  <span class="keyword">constexpr</span> std::size_t k_parallel_threshold = 1024;</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  <span class="keyword">constexpr</span> std::size_t kMaxVoxelsPerThread = 1000;</div>
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  <span class="keyword">const</span> std::size_t total_points = m_cloud-&gt;size();</div>
@@ -627,7 +627,7 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span> </div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="comment">// 确定线程数量</span></div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <span class="keyword">const</span> std::size_t num_threads =</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      m_enable_parallel &amp;&amp; total_points &gt; kParallelThreshold</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>      m_enable_parallel &amp;&amp; total_points &gt; k_parallel_threshold</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      ? std::thread::hardware_concurrency()</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      : 1;</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span> </div>
@@ -647,7 +647,7 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  }</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="comment">// 并行或串行处理点云</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="keywordflow">if</span> (m_enable_parallel &amp;&amp; total_points &gt; kParallelThreshold) {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="keywordflow">if</span> (m_enable_parallel &amp;&amp; total_points &gt; k_parallel_threshold) {</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="comment">// 计算每个线程处理的点数</span></div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="keyword">const</span> std::size_t points_per_thread =</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>        (total_points + num_threads - 1) / num_threads;</div>
@@ -729,7 +729,7 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>  output-&gt;intensity = m_cloud-&gt;intensity;</div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span> </div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>  <span class="comment">// 并行或串行计算质心</span></div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>  <span class="keywordflow">if</span> (m_enable_parallel &amp;&amp; num_voxels &gt; kParallelThreshold) {</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>  <span class="keywordflow">if</span> (m_enable_parallel &amp;&amp; num_voxels &gt; k_parallel_threshold) {</div>
 <div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    std::vector&lt;std::future&lt;void&gt;&gt; futures;</div>
 <div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    futures.reserve(num_threads);</div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span> </div>
@@ -823,7 +823,7 @@ $(document).ready(function(){initNavTree('voxel__grid__downsampling__impl_8hpp_s
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a41475bb191d4ed9ded2031e64e00b107"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a41475bb191d4ed9ded2031e64e00b107">toolbox::types::point_cloud_t::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">清除点云中的所有数据 / Clear all data from cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:305</div></div>
 <div class="ttc" id="aminmax_8hpp_html"><div class="ttname"><a href="minmax_8hpp.html">minmax.hpp</a></div></div>
 <div class="ttc" id="anamespacetoolbox_1_1concurrent_html_ae4723fd2aab9fd17bfd539364bd3d924"><div class="ttname"><a href="namespacetoolbox_1_1concurrent.html#ae4723fd2aab9fd17bfd539364bd3d924">toolbox::concurrent::default_pool</a></div><div class="ttdeci">base::thread_pool_singleton_t &amp; default_pool()</div><div class="ttdoc">获取默认线程池实例/Get the default thread pool instance</div><div class="ttdef"><b>Definition</b> parallel.hpp:22</div></div>
-<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> filters.hpp:9</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> agast.hpp:8</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1types_html_ad70c9db55382ef901b36347c8a5da351"><div class="ttname"><a href="namespacetoolbox_1_1types.html#ad70c9db55382ef901b36347c8a5da351">toolbox::types::calculate_minmax_parallel</a></div><div class="ttdeci">auto calculate_minmax_parallel(const InputType &amp;input) -&gt; std::enable_if_t&lt;!detail::is_calculable_container_v&lt; InputType &gt;, minmax_t&lt; std::decay_t&lt; InputType &gt; &gt; &gt;</div><div class="ttdoc">并行计算非容器类型的最小最大值 / Calculate minmax for non-container type in parallel</div><div class="ttdef"><b>Definition</b> minmax_impl.hpp:227</div></div>
 <div class="ttc" id="anamespacetoolbox_html"><div class="ttname"><a href="namespacetoolbox.html">toolbox</a></div></div>
 <div class="ttc" id="aparallel_8hpp_html"><div class="ttname"><a href="parallel_8hpp.html">parallel.hpp</a></div></div>

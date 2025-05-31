@@ -1,12 +1,54 @@
 var hierarchy =
 [
     [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
+    [ "base_features_extractor_t", null, [
+      [ "toolbox::pcl::agast_features_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__features__extractor__t.html", null ]
+    ] ],
     [ "toolbox::io::base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", [
       [ "toolbox::types::point_cloud_t< T >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", [
       [ "toolbox::io::kitti_format_t", "classtoolbox_1_1io_1_1kitti__format__t.html", null ],
       [ "toolbox::io::pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", null ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< agast_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::agast_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< curvature_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::curvature_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< harris3d_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::harris3d_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< iss_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::iss_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< loam_feature_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::loam_feature_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< mls_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::mls_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< sift3d_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::sift3d_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1sift3d__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_keypoint_extractor_t< susan_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+      [ "toolbox::pcl::susan_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1susan__keypoint__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_knn_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", null ],
+    [ "toolbox::pcl::base_knn_t< bfknn_parallel_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
+      [ "toolbox::pcl::bfknn_parallel_t< DataType >", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_knn_t< bfknn_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
+      [ "toolbox::pcl::bfknn_t< DataType >", "classtoolbox_1_1pcl_1_1bfknn__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_knn_t< kdtree_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
+      [ "toolbox::pcl::kdtree_t< DataType >", "classtoolbox_1_1pcl_1_1kdtree__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_norm_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html", null ],
+    [ "toolbox::pcl::base_norm_extractor_t< pca_norm_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html", [
+      [ "toolbox::pcl::pca_norm_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html", null ]
     ] ],
     [ "std::bool_constant", null, [
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
@@ -112,6 +154,7 @@ var hierarchy =
     [ "toolbox::traits::is_volatile< T >", "structtoolbox_1_1traits_1_1is__volatile.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >::iterator", "classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html", null ],
     [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::key_hash", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html", null ],
+    [ "toolbox::pcl::loam_feature_extractor_t< DataType, KNN >::loam_result", "structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html", null ],
     [ "toolbox::container::lock_free_queue_t< T >", "classtoolbox_1_1container_1_1lock__free__queue__t.html", null ],
     [ "toolbox::functional::MemoizedFunction< R(Args...)>", "classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html", null ],
     [ "toolbox::functional::detail_impl::MemoizeHelperState< R, Args >", "structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html", null ],
@@ -120,6 +163,7 @@ var hierarchy =
     [ "toolbox::base::memory_pool_t", "classtoolbox_1_1base_1_1memory__pool__t.html", null ],
     [ "toolbox::types::minmax_t< T >", "structtoolbox_1_1types_1_1minmax__t.html", null ],
     [ "toolbox::types::minmax_t< point_t< T > >", "structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html", null ],
+    [ "toolbox::pcl::mls_keypoint_extractor_t< DataType, KNN >::MLSResult", "structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html", null ],
     [ "toolbox::base::object_pool_t< T >", "classtoolbox_1_1base_1_1object__pool__t.html", null ],
     [ "toolbox::base::object_pool_t< std::stringstream >", "classtoolbox_1_1base_1_1object__pool__t.html", null ],
     [ "toolbox::utils::detail::optional_value_type< T >", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type.html", null ],

@@ -1,0 +1,14 @@
+digraph "src/include/cpp-toolbox/pcl/knn/impl"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_243df28db0ff42736885b37407e99842 {
+    graph [ bgcolor="#daedff", pencolor="grey50", label="knn", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_243df28db0ff42736885b37407e99842.html",tooltip=""]
+  dir_9999cfbe4e3f3c198927bfa51ffe406e [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_9999cfbe4e3f3c198927bfa51ffe406e.html",tooltip=""];
+  }
+  dir_175064ea02679cf4c3a50b5407502295 [label="base", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_175064ea02679cf4c3a50b5407502295.html",tooltip=""];
+  dir_9999cfbe4e3f3c198927bfa51ffe406e->dir_175064ea02679cf4c3a50b5407502295 [headlabel="1", labeldistance=1.5 headhref="dir_000018_000000.html" href="dir_000018_000000.html" color="steelblue1" fontcolor="steelblue1"];
+}

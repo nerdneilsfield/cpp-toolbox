@@ -1,0 +1,755 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::bfknn_parallel_t&lt; DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1bfknn__parallel__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1bfknn__parallel__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::bfknn_parallel_t&lt; DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="bfknn__parallel_8hpp_source.html">bfknn_parallel.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::bfknn_parallel_t&lt; DataType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a760d2d2ff75b35c2dcd630e3fd26cc3f" id="r_a760d2d2ff75b35c2dcd630e3fd26cc3f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> = DataType</td></tr>
+<tr class="separator:a760d2d2ff75b35c2dcd630e3fd26cc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e64da8dd9ffe5c7d2c884d2ac144a98" id="r_a9e64da8dd9ffe5c7d2c884d2ac144a98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a9e64da8dd9ffe5c7d2c884d2ac144a98">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt; DataType &gt;, DataType &gt;</td></tr>
+<tr class="separator:a9e64da8dd9ffe5c7d2c884d2ac144a98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19689175bfdd5741b6dca6904296bde" id="r_ab19689175bfdd5741b6dca6904296bde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ab19689175bfdd5741b6dca6904296bde">point_cloud</a> = typename base_type::point_cloud</td></tr>
+<tr class="separator:ab19689175bfdd5741b6dca6904296bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e8837df040010d2a95a908b7a6e3a0" id="r_a06e8837df040010d2a95a908b7a6e3a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a06e8837df040010d2a95a908b7a6e3a0">point_cloud_ptr</a> = typename base_type::point_cloud_ptr</td></tr>
+<tr class="separator:a06e8837df040010d2a95a908b7a6e3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__knn__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__knn__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">toolbox::pcl::base_knn_t&lt; bfknn_parallel_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:ab5c04c6a7806017ef46d2d5f6ae91716 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t" id="r_ab5c04c6a7806017ef46d2d5f6ae91716"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> = DataType</td></tr>
+<tr class="separator:ab5c04c6a7806017ef46d2d5f6ae91716 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd4a9adb0ecd8ee93f110521ec1ed20 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t" id="r_aefd4a9adb0ecd8ee93f110521ec1ed20"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aefd4a9adb0ecd8ee93f110521ec1ed20">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt;</td></tr>
+<tr class="separator:aefd4a9adb0ecd8ee93f110521ec1ed20 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a3e10ce2668a06e6c59b4e00a03da4 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t" id="r_ac7a3e10ce2668a06e6c59b4e00a03da4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt; &gt;</td></tr>
+<tr class="separator:ac7a3e10ce2668a06e6c59b4e00a03da4 inherit pub_types_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aba606084b8ceda759592e5bf77d99932" id="r_aba606084b8ceda759592e5bf77d99932"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#aba606084b8ceda759592e5bf77d99932">bfknn_parallel_t</a> ()=default</td></tr>
+<tr class="separator:aba606084b8ceda759592e5bf77d99932"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88b78d6dbfe748ff23e20ed1534fb2f7" id="r_a88b78d6dbfe748ff23e20ed1534fb2f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a88b78d6dbfe748ff23e20ed1534fb2f7">~bfknn_parallel_t</a> ()=default</td></tr>
+<tr class="separator:a88b78d6dbfe748ff23e20ed1534fb2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fa8e048629162d9bdd809fc1cd7b18" id="r_a35fa8e048629162d9bdd809fc1cd7b18"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a35fa8e048629162d9bdd809fc1cd7b18">bfknn_parallel_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a35fa8e048629162d9bdd809fc1cd7b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f3bfb2bde7c98efdec5fdfd72abca0" id="r_ae0f3bfb2bde7c98efdec5fdfd72abca0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ae0f3bfb2bde7c98efdec5fdfd72abca0">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;)=delete</td></tr>
+<tr class="separator:ae0f3bfb2bde7c98efdec5fdfd72abca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad582b712c82f0ed03ce51c9852cdf892" id="r_ad582b712c82f0ed03ce51c9852cdf892"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ad582b712c82f0ed03ce51c9852cdf892">bfknn_parallel_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:ad582b712c82f0ed03ce51c9852cdf892"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726156fcfe1942f42f39efd5a0ec3668" id="r_a726156fcfe1942f42f39efd5a0ec3668"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a726156fcfe1942f42f39efd5a0ec3668">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a726156fcfe1942f42f39efd5a0ec3668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af00fc1c5b6fca90bbc21c7f79a83dde8" id="r_af00fc1c5b6fca90bbc21c7f79a83dde8"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#af00fc1c5b6fca90bbc21c7f79a83dde8">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ab19689175bfdd5741b6dca6904296bde">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="separator:af00fc1c5b6fca90bbc21c7f79a83dde8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088018780c1c2a88ef3159ced4409849" id="r_a088018780c1c2a88ef3159ced4409849"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a088018780c1c2a88ef3159ced4409849">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a06e8837df040010d2a95a908b7a6e3a0">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="separator:a088018780c1c2a88ef3159ced4409849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0cef160da9da199f32957f3dcc41f7" id="r_a9e0cef160da9da199f32957f3dcc41f7"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a9e0cef160da9da199f32957f3dcc41f7">set_metric_impl</a> (<a class="el" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a> metric)</td></tr>
+<tr class="separator:a9e0cef160da9da199f32957f3dcc41f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c381a81ffc63c1cf989b5056e5008e2" id="r_a0c381a81ffc63c1cf989b5056e5008e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a0c381a81ffc63c1cf989b5056e5008e2">kneighbors_impl</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;query_point, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;distances)</td></tr>
+<tr class="separator:a0c381a81ffc63c1cf989b5056e5008e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57bff38b03eb622b589ca0776c760716" id="r_a57bff38b03eb622b589ca0776c760716"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a57bff38b03eb622b589ca0776c760716">radius_neighbors_impl</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;query_point, <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;distances)</td></tr>
+<tr class="separator:a57bff38b03eb622b589ca0776c760716"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21876e62b441a466a093d97506f61eb0" id="r_a21876e62b441a466a093d97506f61eb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a21876e62b441a466a093d97506f61eb0">enable_parallel</a> (bool enable)</td></tr>
+<tr class="separator:a21876e62b441a466a093d97506f61eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76a3a383bc0bb490593aa1f830641fb9" id="r_a76a3a383bc0bb490593aa1f830641fb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a76a3a383bc0bb490593aa1f830641fb9">is_parallel_enabled</a> () const noexcept</td></tr>
+<tr class="separator:a76a3a383bc0bb490593aa1f830641fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__knn__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">toolbox::pcl::base_knn_t&lt; bfknn_parallel_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:af8b3addd915ae09fd76191ff1989de60 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_af8b3addd915ae09fd76191ff1989de60"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af8b3addd915ae09fd76191ff1989de60">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aefd4a9adb0ecd8ee93f110521ec1ed20">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="separator:af8b3addd915ae09fd76191ff1989de60 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea38feda60e624a8c74b2660b575c4f inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_aaea38feda60e624a8c74b2660b575c4f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aaea38feda60e624a8c74b2660b575c4f">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="separator:aaea38feda60e624a8c74b2660b575c4f inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60f33af08e7f2b36dc77a76af319f120 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_a60f33af08e7f2b36dc77a76af319f120"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a60f33af08e7f2b36dc77a76af319f120">set_metric</a> (metric_type_t metric)</td></tr>
+<tr class="separator:a60f33af08e7f2b36dc77a76af319f120 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac51deab0c27cfb99888df595500427d inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_aac51deab0c27cfb99888df595500427d"><td class="memItemLeft" align="right" valign="top">metric_type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aac51deab0c27cfb99888df595500427d">get_metric</a> () const noexcept</td></tr>
+<tr class="separator:aac51deab0c27cfb99888df595500427d inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac705abf9c9185d7268d169a5fcf022e6 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_ac705abf9c9185d7268d169a5fcf022e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac705abf9c9185d7268d169a5fcf022e6">kneighbors</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt; &amp;query_point, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt; &amp;distances)</td></tr>
+<tr class="separator:ac705abf9c9185d7268d169a5fcf022e6 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bc34f1bc6321cfd8abeddfd0e551fa inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_aa9bc34f1bc6321cfd8abeddfd0e551fa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aa9bc34f1bc6321cfd8abeddfd0e551fa">radius_neighbors</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt; &amp;query_point, <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> &gt; &amp;distances)</td></tr>
+<tr class="separator:aa9bc34f1bc6321cfd8abeddfd0e551fa inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af032bf0cb5ed66bb548264995b6d7902 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_af032bf0cb5ed66bb548264995b6d7902"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af032bf0cb5ed66bb548264995b6d7902">base_knn_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;)=delete</td></tr>
+<tr class="separator:af032bf0cb5ed66bb548264995b6d7902 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e09af217b7924dfa77dd613bfe23ee inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_a42e09af217b7924dfa77dd613bfe23ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a42e09af217b7924dfa77dd613bfe23ee">base_knn_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:a42e09af217b7924dfa77dd613bfe23ee inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5ee2dfa43606889c0ab83ac3d10706 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_a4b5ee2dfa43606889c0ab83ac3d10706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a4b5ee2dfa43606889c0ab83ac3d10706">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a4b5ee2dfa43606889c0ab83ac3d10706 inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac28965dd24ee674418397a9bb228344b inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_ac28965dd24ee674418397a9bb228344b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac28965dd24ee674418397a9bb228344b">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="separator:ac28965dd24ee674418397a9bb228344b inherit pub_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1base__knn__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">toolbox::pcl::base_knn_t&lt; bfknn_parallel_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:afe02f4e2954ab4e37600a0ca23741b30 inherit pro_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_afe02f4e2954ab4e37600a0ca23741b30"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#afe02f4e2954ab4e37600a0ca23741b30">base_knn_t</a> ()=default</td></tr>
+<tr class="separator:afe02f4e2954ab4e37600a0ca23741b30 inherit pro_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f631c00f1062711be8b69d380a82405 inherit pro_methods_classtoolbox_1_1pcl_1_1base__knn__t" id="r_a1f631c00f1062711be8b69d380a82405"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a1f631c00f1062711be8b69d380a82405">~base_knn_t</a> ()=default</td></tr>
+<tr class="separator:a1f631c00f1062711be8b69d380a82405 inherit pro_methods_classtoolbox_1_1pcl_1_1base__knn__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a9e64da8dd9ffe5c7d2c884d2ac144a98" name="a9e64da8dd9ffe5c7d2c884d2ac144a98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e64da8dd9ffe5c7d2c884d2ac144a98">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt;DataType&gt;, DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a760d2d2ff75b35c2dcd630e3fd26cc3f" name="a760d2d2ff75b35c2dcd630e3fd26cc3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a760d2d2ff75b35c2dcd630e3fd26cc3f">&#9670;&#160;</a></span>data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::data_type =  DataType</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab19689175bfdd5741b6dca6904296bde" name="ab19689175bfdd5741b6dca6904296bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19689175bfdd5741b6dca6904296bde">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::point_cloud =  typename base_type::point_cloud</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a06e8837df040010d2a95a908b7a6e3a0" name="a06e8837df040010d2a95a908b7a6e3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e8837df040010d2a95a908b7a6e3a0">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::point_cloud_ptr =  typename base_type::point_cloud_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aba606084b8ceda759592e5bf77d99932" name="aba606084b8ceda759592e5bf77d99932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba606084b8ceda759592e5bf77d99932">&#9670;&#160;</a></span>bfknn_parallel_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::bfknn_parallel_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88b78d6dbfe748ff23e20ed1534fb2f7" name="a88b78d6dbfe748ff23e20ed1534fb2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b78d6dbfe748ff23e20ed1534fb2f7">&#9670;&#160;</a></span>~bfknn_parallel_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35fa8e048629162d9bdd809fc1cd7b18" name="a35fa8e048629162d9bdd809fc1cd7b18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35fa8e048629162d9bdd809fc1cd7b18">&#9670;&#160;</a></span>bfknn_parallel_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::bfknn_parallel_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad582b712c82f0ed03ce51c9852cdf892" name="ad582b712c82f0ed03ce51c9852cdf892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad582b712c82f0ed03ce51c9852cdf892">&#9670;&#160;</a></span>bfknn_parallel_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::bfknn_parallel_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt; DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a21876e62b441a466a093d97506f61eb0" name="a21876e62b441a466a093d97506f61eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21876e62b441a466a093d97506f61eb0">&#9670;&#160;</a></span>enable_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::enable_parallel </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76a3a383bc0bb490593aa1f830641fb9" name="a76a3a383bc0bb490593aa1f830641fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76a3a383bc0bb490593aa1f830641fb9">&#9670;&#160;</a></span>is_parallel_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::is_parallel_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c381a81ffc63c1cf989b5056e5008e2" name="a0c381a81ffc63c1cf989b5056e5008e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c381a81ffc63c1cf989b5056e5008e2">&#9670;&#160;</a></span>kneighbors_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::kneighbors_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>query_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>num_neighbors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a726156fcfe1942f42f39efd5a0ec3668" name="a726156fcfe1942f42f39efd5a0ec3668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726156fcfe1942f42f39efd5a0ec3668">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt; DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0f3bfb2bde7c98efdec5fdfd72abca0" name="ae0f3bfb2bde7c98efdec5fdfd72abca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f3bfb2bde7c98efdec5fdfd72abca0">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a57bff38b03eb622b589ca0776c760716" name="a57bff38b03eb622b589ca0776c760716"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57bff38b03eb622b589ca0776c760716">&#9670;&#160;</a></span>radius_neighbors_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::radius_neighbors_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>query_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a>&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>indices</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f">data_type</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af00fc1c5b6fca90bbc21c7f79a83dde8" name="af00fc1c5b6fca90bbc21c7f79a83dde8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af00fc1c5b6fca90bbc21c7f79a83dde8">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ab19689175bfdd5741b6dca6904296bde">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a088018780c1c2a88ef3159ced4409849" name="a088018780c1c2a88ef3159ced4409849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088018780c1c2a88ef3159ced4409849">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a06e8837df040010d2a95a908b7a6e3a0">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e0cef160da9da199f32957f3dcc41f7" name="a9e0cef160da9da199f32957f3dcc41f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0cef160da9da199f32957f3dcc41f7">&#9670;&#160;</a></span>set_metric_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a>&lt; DataType &gt;::set_metric_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a>&#160;</td>
+          <td class="paramname"><em>metric</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/pcl/knn/<a class="el" href="bfknn__parallel_8hpp_source.html">bfknn_parallel.hpp</a></li>
+<li>src/include/cpp-toolbox/pcl/knn/impl/<a class="el" href="bfknn__parallel__impl_8hpp_source.html">bfknn_parallel_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

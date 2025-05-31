@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/knn/base_knn.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('base__knn_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">base_knn.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="base__knn_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">using </span><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">   13</a></span><span class="keyword">enum class</span> CPP_TOOLBOX_EXPORT <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a> : std::uint8_t</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  euclidean,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1pcl.html#a583e999a423e9afaa8846bc1aaa27d78">   16</a></span>  <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a583e999a423e9afaa8846bc1aaa27d78">manhattan</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1pcl.html#ab064ec83990a170ac51931dad77374a8">   17</a></span>  <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#ab064ec83990a170ac51931dad77374a8">chebyshev</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1pcl.html#a489f89fcf10fbf035a8702015e27a72d">   18</a></span>  <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a489f89fcf10fbf035a8702015e27a72d">minkowski</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Derived, <span class="keyword">typename</span> DataType&gt;</div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html">   22</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">   25</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> = DataType;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aefd4a9adb0ecd8ee93f110521ec1ed20">   26</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud</a> = <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;data_type&gt;</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">   27</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">point_cloud_ptr</a> =</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>      std::shared_ptr&lt;toolbox::types::point_cloud_t&lt;data_type&gt;&gt;;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="}">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af8b3addd915ae09fd76191ff1989de60">   30</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af8b3addd915ae09fd76191ff1989de60">set_input</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud</a>&amp; cloud)</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;set_input_impl(cloud);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
+</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aaea38feda60e624a8c74b2660b575c4f">   35</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aaea38feda60e624a8c74b2660b575c4f">set_input</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">point_cloud_ptr</a>&amp; cloud)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;set_input_impl(cloud);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a60f33af08e7f2b36dc77a76af319f120">   40</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a60f33af08e7f2b36dc77a76af319f120">set_metric</a>(metric_type_t metric)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;set_metric_impl(metric);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  }</div>
+</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aac51deab0c27cfb99888df595500427d">   45</a></span>  [[nodiscard]] <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aac51deab0c27cfb99888df595500427d">get_metric</a>() const noexcept { <span class="keywordflow">return</span> m_metric; }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac705abf9c9185d7268d169a5fcf022e6">   47</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac705abf9c9185d7268d169a5fcf022e6">kneighbors</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;data_type&gt;</a>&amp; query_point,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                  std::size_t num_neighbors,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                  std::vector&lt;std::size_t&gt;&amp; indices,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                  std::vector&lt;data_type&gt;&amp; distances)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;kneighbors_impl(</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        query_point, num_neighbors, indices, distances);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  }</div>
+</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aa9bc34f1bc6321cfd8abeddfd0e551fa">   56</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#aa9bc34f1bc6321cfd8abeddfd0e551fa">radius_neighbors</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;data_type&gt;</a>&amp; query_point,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">data_type</a> radius,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                        std::vector&lt;std::size_t&gt;&amp; indices,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                        std::vector&lt;data_type&gt;&amp; distances)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;radius_neighbors_impl(</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        query_point, radius, indices, distances);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
+</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#afe02f4e2954ab4e37600a0ca23741b30">   66</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#afe02f4e2954ab4e37600a0ca23741b30">base_knn_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a1f631c00f1062711be8b69d380a82405">   67</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a1f631c00f1062711be8b69d380a82405">~base_knn_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af032bf0cb5ed66bb548264995b6d7902">   70</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#af032bf0cb5ed66bb548264995b6d7902">base_knn_t</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a4b5ee2dfa43606889c0ab83ac3d10706">   71</a></span>  <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a4b5ee2dfa43606889c0ab83ac3d10706">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a42e09af217b7924dfa77dd613bfe23ee">   72</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#a42e09af217b7924dfa77dd613bfe23ee">base_knn_t</a>(<a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac28965dd24ee674418397a9bb228344b">   73</a></span>  <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac28965dd24ee674418397a9bb228344b">operator=</a>(<a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__knn__t.html">base_knn_t</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a> m_metric = metric_type_t::euclidean;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};  <span class="comment">// class base_knn_t</span></div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html">toolbox::pcl::base_knn_t</a></div><div class="ttdef"><b>Definition</b> base_knn.hpp:23</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_a1f631c00f1062711be8b69d380a82405"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#a1f631c00f1062711be8b69d380a82405">toolbox::pcl::base_knn_t::~base_knn_t</a></div><div class="ttdeci">~base_knn_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_a42e09af217b7924dfa77dd613bfe23ee"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#a42e09af217b7924dfa77dd613bfe23ee">toolbox::pcl::base_knn_t::base_knn_t</a></div><div class="ttdeci">base_knn_t(base_knn_t &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_a4b5ee2dfa43606889c0ab83ac3d10706"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#a4b5ee2dfa43606889c0ab83ac3d10706">toolbox::pcl::base_knn_t::operator=</a></div><div class="ttdeci">base_knn_t &amp; operator=(const base_knn_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_a60f33af08e7f2b36dc77a76af319f120"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#a60f33af08e7f2b36dc77a76af319f120">toolbox::pcl::base_knn_t::set_metric</a></div><div class="ttdeci">std::size_t set_metric(metric_type_t metric)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:40</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_aa9bc34f1bc6321cfd8abeddfd0e551fa"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#aa9bc34f1bc6321cfd8abeddfd0e551fa">toolbox::pcl::base_knn_t::radius_neighbors</a></div><div class="ttdeci">bool radius_neighbors(const point_t&lt; data_type &gt; &amp;query_point, data_type radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; data_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:56</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_aac51deab0c27cfb99888df595500427d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#aac51deab0c27cfb99888df595500427d">toolbox::pcl::base_knn_t::get_metric</a></div><div class="ttdeci">metric_type_t get_metric() const noexcept</div><div class="ttdef"><b>Definition</b> base_knn.hpp:45</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_aaea38feda60e624a8c74b2660b575c4f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#aaea38feda60e624a8c74b2660b575c4f">toolbox::pcl::base_knn_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const point_cloud_ptr &amp;cloud)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:35</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_ab5c04c6a7806017ef46d2d5f6ae91716"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#ab5c04c6a7806017ef46d2d5f6ae91716">toolbox::pcl::base_knn_t::data_type</a></div><div class="ttdeci">DataType data_type</div><div class="ttdef"><b>Definition</b> base_knn.hpp:25</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_ac28965dd24ee674418397a9bb228344b"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac28965dd24ee674418397a9bb228344b">toolbox::pcl::base_knn_t::operator=</a></div><div class="ttdeci">base_knn_t &amp; operator=(base_knn_t &amp;&amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_ac705abf9c9185d7268d169a5fcf022e6"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac705abf9c9185d7268d169a5fcf022e6">toolbox::pcl::base_knn_t::kneighbors</a></div><div class="ttdeci">bool kneighbors(const point_t&lt; data_type &gt; &amp;query_point, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; data_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:47</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_ac7a3e10ce2668a06e6c59b4e00a03da4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#ac7a3e10ce2668a06e6c59b4e00a03da4">toolbox::pcl::base_knn_t::point_cloud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; data_type &gt; &gt; point_cloud_ptr</div><div class="ttdef"><b>Definition</b> base_knn.hpp:28</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_af032bf0cb5ed66bb548264995b6d7902"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#af032bf0cb5ed66bb548264995b6d7902">toolbox::pcl::base_knn_t::base_knn_t</a></div><div class="ttdeci">base_knn_t(const base_knn_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_af8b3addd915ae09fd76191ff1989de60"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#af8b3addd915ae09fd76191ff1989de60">toolbox::pcl::base_knn_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const point_cloud &amp;cloud)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:30</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__t_html_afe02f4e2954ab4e37600a0ca23741b30"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__t.html#afe02f4e2954ab4e37600a0ca23741b30">toolbox::pcl::base_knn_t::base_knn_t</a></div><div class="ttdeci">base_knn_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:266</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> agast.hpp:8</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html_a3fce13949d52c65c6b5633d0d2c7bd5e"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">toolbox::pcl::metric_type_t</a></div><div class="ttdeci">enum CPP_TOOLBOX_EXPORT metric_type_t</div><div class="ttdef"><b>Definition</b> base_knn.hpp:13</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html_a489f89fcf10fbf035a8702015e27a72d"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html#a489f89fcf10fbf035a8702015e27a72d">toolbox::pcl::minkowski</a></div><div class="ttdeci">enum CPP_TOOLBOX_EXPORT minkowski</div><div class="ttdef"><b>Definition</b> base_knn.hpp:18</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html_a583e999a423e9afaa8846bc1aaa27d78"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html#a583e999a423e9afaa8846bc1aaa27d78">toolbox::pcl::manhattan</a></div><div class="ttdeci">enum CPP_TOOLBOX_EXPORT manhattan</div><div class="ttdef"><b>Definition</b> base_knn.hpp:16</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html_ab064ec83990a170ac51931dad77374a8"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html#ab064ec83990a170ac51931dad77374a8">toolbox::pcl::chebyshev</a></div><div class="ttdeci">enum CPP_TOOLBOX_EXPORT chebyshev</div><div class="ttdef"><b>Definition</b> base_knn.hpp:17</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_243df28db0ff42736885b37407e99842.html">knn</a></li><li class="navelem"><a class="el" href="base__knn_8hpp.html">base_knn.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

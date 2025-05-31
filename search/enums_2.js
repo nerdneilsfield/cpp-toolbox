@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['level_0',['Level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t']]]
+  ['feature_5flabel_0',['feature_label',['../classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1c',1,'toolbox::pcl::loam_feature_extractor_t']]]
 ];

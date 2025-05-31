@@ -8,5 +8,7 @@ var searchData=
   ['code_5fstyle_2emd_5',['CODE_STYLE.md',['../_c_o_d_e___s_t_y_l_e_8md.html',1,'']]],
   ['concurrent_5fqueue_2ehpp_6',['concurrent_queue.hpp',['../concurrent__queue_8hpp.html',1,'']]],
   ['contributing_2emd_7',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
-  ['cpp_2dtoolbox_2ehpp_8',['cpp-toolbox.hpp',['../cpp-toolbox_8hpp.html',1,'']]]
+  ['cpp_2dtoolbox_2ehpp_8',['cpp-toolbox.hpp',['../cpp-toolbox_8hpp.html',1,'']]],
+  ['curvature_5fkeypoints_2ehpp_9',['curvature_keypoints.hpp',['../curvature__keypoints_8hpp.html',1,'']]],
+  ['curvature_5fkeypoints_5fimpl_2ehpp_10',['curvature_keypoints_impl.hpp',['../curvature__keypoints__impl_8hpp.html',1,'']]]
 ];

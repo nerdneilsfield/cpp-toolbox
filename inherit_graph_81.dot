@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::container\l_printer_t\< std::vector\< T \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1container__printer__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge52_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::utils::vector\l_printer_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1vector__printer__t.html",tooltip="Vector 打印器/Vector printer."];
+  Node0 [id="Node000000",label="toolbox::traits::remove\l_all_qualifiers\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1remove__all__qualifiers.html",tooltip="移除类型的所有限定符/Remove all qualifiers from type"];
 }

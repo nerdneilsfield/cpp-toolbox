@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::container\l_printer_t\< std::set\< T \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1container__printer__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge49_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::utils::set\l_printer_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1set__printer__t.html",tooltip="Set 打印器/Set printer."];
+  Node0 [id="Node000000",label="toolbox::traits::is\l_reference\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__reference.html",tooltip="检查类型是否为引用/Check if type is a reference"];
 }

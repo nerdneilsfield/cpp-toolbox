@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['u16_0',['u16',['../types_8hpp.html#a6dbf9516e516c901604625282c174aa4',1,'types.hpp']]],
-  ['u32_1',['u32',['../types_8hpp.html#a70c1fcc1a4e96af8f6580f708657cd41',1,'types.hpp']]],
-  ['u64_2',['u64',['../types_8hpp.html#a1af9f95651e921615e75917a6dd1b574',1,'types.hpp']]],
-  ['u8_3',['u8',['../types_8hpp.html#a987e4d6cf789cb59dbb390728271e4d6',1,'types.hpp']]],
-  ['underlying_5ftype_4',['underlying_type',['../classtoolbox_1_1traits_1_1enum__wrapper.html#ad4b3d9de5cdfc3f337389c125be7105e',1,'toolbox::traits::enum_wrapper']]]
+  ['resulttype_0',['resulttype',['../structtoolbox_1_1functional_1_1detail_1_1_memoize_state.html#a0c3bb92ef50f79d303fe75ed1e7eb178',1,'toolbox::functional::detail::MemoizeState::ResultType'],['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html#a586f3942e8568eef056525a07f751f3f',1,'toolbox::functional::detail_impl::MemoizeHelperState::ResultType'],['../structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a5e26374c6dadf7bceadb10e20011cf88',1,'toolbox::functional::MemoizedFunction&lt; R(Args...)&gt;::State::ResultType']]],
+  ['return_5ftype_1',['return_type',['../structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html#a90bf05fe7186e146d5c448f5bc49ad92',1,'toolbox::traits::function_traits&lt; R(Args...)&gt;']]]
 ];

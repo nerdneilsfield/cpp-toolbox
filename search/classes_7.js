@@ -30,5 +30,6 @@ var searchData=
   ['is_5freference_27',['is_reference',['../structtoolbox_1_1traits_1_1is__reference.html',1,'toolbox::traits']]],
   ['is_5fstack_5fallocated_28',['is_stack_allocated',['../structtoolbox_1_1traits_1_1is__stack__allocated.html',1,'toolbox::traits']]],
   ['is_5fvolatile_29',['is_volatile',['../structtoolbox_1_1traits_1_1is__volatile.html',1,'toolbox::traits']]],
-  ['iterator_30',['iterator',['../classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html',1,'toolbox::io::dataloader_t']]]
+  ['iss_5fkeypoint_5fextractor_5ft_30',['iss_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html',1,'toolbox::pcl']]],
+  ['iterator_31',['iterator',['../classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html',1,'toolbox::io::dataloader_t']]]
 ];

@@ -1,0 +1,1113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::loam_feature_extractor_t&lt; DataType, KNN &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::loam_feature_extractor_t&lt; DataType, KNN &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>LOAM (Lidar Odometry and Mapping) 特征提取器 / LOAM (Lidar Odometry and Mapping) feature extractor.  
+ <a href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="loam__feature__extractor_8hpp_source.html">loam_feature_extractor.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::loam_feature_extractor_t&lt; DataType, KNN &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:abcd8d9a309ee27a4a16ecb1208784b1c" id="r_abcd8d9a309ee27a4a16ecb1208784b1c"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1c">feature_label</a> : uint8_t { <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1ca334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = 0
+, <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1ca09039bd1628a3c1b25fda3134a4fe050">edge</a> = 1
+, <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1ca3be411765e710adc7764f5056e44138c">planar</a> = 2
+ }</td></tr>
+<tr class="separator:abcd8d9a309ee27a4a16ecb1208784b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1034cb74216b3ae49be19a8c6d273e9d" id="r_a1034cb74216b3ae49be19a8c6d273e9d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a1034cb74216b3ae49be19a8c6d273e9d">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;, DataType, KNN &gt;</td></tr>
+<tr class="separator:a1034cb74216b3ae49be19a8c6d273e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d2611ab0f0c1a066594b6ae0980fd3" id="r_a35d2611ab0f0c1a066594b6ae0980fd3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> = typename base_type::data_type</td></tr>
+<tr class="separator:a35d2611ab0f0c1a066594b6ae0980fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b11e0c31798875760da45eeef3ac92c" id="r_a1b11e0c31798875760da45eeef3ac92c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a1b11e0c31798875760da45eeef3ac92c">knn_type</a> = typename base_type::knn_type</td></tr>
+<tr class="separator:a1b11e0c31798875760da45eeef3ac92c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774d57facd7e9e3b654bb93667dc8710" id="r_a774d57facd7e9e3b654bb93667dc8710"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a> = typename base_type::point_cloud</td></tr>
+<tr class="separator:a774d57facd7e9e3b654bb93667dc8710"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a832b545028e0c0c8e894de485b3138d1" id="r_a832b545028e0c0c8e894de485b3138d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a832b545028e0c0c8e894de485b3138d1">point_cloud_ptr</a> = typename base_type::point_cloud_ptr</td></tr>
+<tr class="separator:a832b545028e0c0c8e894de485b3138d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a38f60a1ce67e5014c0b0b8d6991bb9" id="r_a3a38f60a1ce67e5014c0b0b8d6991bb9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a> = typename base_type::indices_vector</td></tr>
+<tr class="separator:a3a38f60a1ce67e5014c0b0b8d6991bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">toolbox::pcl::base_keypoint_extractor_t&lt; loam_feature_extractor_t&lt; DataType, KNN &gt;, DataType, KNN &gt;</a></td></tr>
+<tr class="memitem:a08fcfad7a41e0ab4e2418ba34f61f591 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a08fcfad7a41e0ab4e2418ba34f61f591"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a08fcfad7a41e0ab4e2418ba34f61f591">data_type</a> = DataType</td></tr>
+<tr class="separator:a08fcfad7a41e0ab4e2418ba34f61f591 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b5468d2ea6ac89fbf66bb1756eefc11 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a0b5468d2ea6ac89fbf66bb1756eefc11"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a0b5468d2ea6ac89fbf66bb1756eefc11">knn_type</a> = KNN</td></tr>
+<tr class="separator:a0b5468d2ea6ac89fbf66bb1756eefc11 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e3a7317ea4f082463df0ab3c50b447 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_ad3e3a7317ea4f082463df0ab3c50b447"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#ad3e3a7317ea4f082463df0ab3c50b447">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a08fcfad7a41e0ab4e2418ba34f61f591">data_type</a> &gt;</td></tr>
+<tr class="separator:ad3e3a7317ea4f082463df0ab3c50b447 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb908e173eef4d901ff6f65d263fac3 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a5fb908e173eef4d901ff6f65d263fac3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5fb908e173eef4d901ff6f65d263fac3">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a08fcfad7a41e0ab4e2418ba34f61f591">data_type</a> &gt; &gt;</td></tr>
+<tr class="separator:a5fb908e173eef4d901ff6f65d263fac3 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b6f427670b1b4a45b9cf4d218afb0d1 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a5b6f427670b1b4a45b9cf4d218afb0d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5b6f427670b1b4a45b9cf4d218afb0d1">indices_vector</a> = std::vector&lt; std::size_t &gt;</td></tr>
+<tr class="separator:a5b6f427670b1b4a45b9cf4d218afb0d1 inherit pub_types_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a2ba8fb2f8243986a07e7a8e91dd8f9e6" id="r_a2ba8fb2f8243986a07e7a8e91dd8f9e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a2ba8fb2f8243986a07e7a8e91dd8f9e6">loam_feature_extractor_t</a> ()=default</td></tr>
+<tr class="separator:a2ba8fb2f8243986a07e7a8e91dd8f9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82f473153ddae4e4ac7908905c51c4e2" id="r_a82f473153ddae4e4ac7908905c51c4e2"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a82f473153ddae4e4ac7908905c51c4e2">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="separator:a82f473153ddae4e4ac7908905c51c4e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c4f8221421705dee871b60c9cd8fb9f" id="r_a8c4f8221421705dee871b60c9cd8fb9f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a8c4f8221421705dee871b60c9cd8fb9f">set_input_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a832b545028e0c0c8e894de485b3138d1">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="separator:a8c4f8221421705dee871b60c9cd8fb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a380db4eed45108eb2a4d35b61d522c" id="r_a4a380db4eed45108eb2a4d35b61d522c"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a4a380db4eed45108eb2a4d35b61d522c">set_knn_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a1b11e0c31798875760da45eeef3ac92c">knn_type</a> &amp;knn)</td></tr>
+<tr class="separator:a4a380db4eed45108eb2a4d35b61d522c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91a9d9f3f181ae2ae18d6f3c0de9e66f" id="r_a91a9d9f3f181ae2ae18d6f3c0de9e66f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a91a9d9f3f181ae2ae18d6f3c0de9e66f">set_search_radius_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> radius)</td></tr>
+<tr class="separator:a91a9d9f3f181ae2ae18d6f3c0de9e66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7583bfcff9b9ef44e93e048329669c34" id="r_a7583bfcff9b9ef44e93e048329669c34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a7583bfcff9b9ef44e93e048329669c34">enable_parallel_impl</a> (bool enable)</td></tr>
+<tr class="separator:a7583bfcff9b9ef44e93e048329669c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426dfae93064db2b99d8919df2bf36bd" id="r_a426dfae93064db2b99d8919df2bf36bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a426dfae93064db2b99d8919df2bf36bd">extract_impl</a> ()</td></tr>
+<tr class="separator:a426dfae93064db2b99d8919df2bf36bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad75bab49581ad8d4de4bc5d69dcd088e" id="r_ad75bab49581ad8d4de4bc5d69dcd088e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#ad75bab49581ad8d4de4bc5d69dcd088e">extract_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a> &amp;keypoint_indices)</td></tr>
+<tr class="separator:ad75bab49581ad8d4de4bc5d69dcd088e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3df36e5a5c2bce22a3741964e1c64163" id="r_a3df36e5a5c2bce22a3741964e1c64163"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3df36e5a5c2bce22a3741964e1c64163">extract_keypoints_impl</a> ()</td></tr>
+<tr class="separator:a3df36e5a5c2bce22a3741964e1c64163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba9a62d91e77e9930776bfac9a2da8b" id="r_a4ba9a62d91e77e9930776bfac9a2da8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a4ba9a62d91e77e9930776bfac9a2da8b">extract_keypoints_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a832b545028e0c0c8e894de485b3138d1">point_cloud_ptr</a> output)</td></tr>
+<tr class="separator:a4ba9a62d91e77e9930776bfac9a2da8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61ce4549ad9e99b4b47ea92c3ff1d445" id="r_a61ce4549ad9e99b4b47ea92c3ff1d445"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a61ce4549ad9e99b4b47ea92c3ff1d445">extract_labeled_cloud</a> ()</td></tr>
+<tr class="separator:a61ce4549ad9e99b4b47ea92c3ff1d445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff12a88a725e8624d2410138d6cf490" id="r_a8ff12a88a725e8624d2410138d6cf490"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a8ff12a88a725e8624d2410138d6cf490">set_edge_threshold</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> threshold)</td></tr>
+<tr class="separator:a8ff12a88a725e8624d2410138d6cf490"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60faf6eab1781959ee8ce436866b3ba5" id="r_a60faf6eab1781959ee8ce436866b3ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a60faf6eab1781959ee8ce436866b3ba5">set_planar_threshold</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> threshold)</td></tr>
+<tr class="separator:a60faf6eab1781959ee8ce436866b3ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d9b64f8919e0ddc3f01b601094c4a93" id="r_a3d9b64f8919e0ddc3f01b601094c4a93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3d9b64f8919e0ddc3f01b601094c4a93">set_curvature_threshold</a> (<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> threshold)</td></tr>
+<tr class="separator:a3d9b64f8919e0ddc3f01b601094c4a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ec31b70113f4f943c5c75771bd0a70" id="r_a86ec31b70113f4f943c5c75771bd0a70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a86ec31b70113f4f943c5c75771bd0a70">set_num_scan_neighbors</a> (std::size_t num)</td></tr>
+<tr class="separator:a86ec31b70113f4f943c5c75771bd0a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34e4f00cc7dbbd066017b7c960291156" id="r_a34e4f00cc7dbbd066017b7c960291156"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a34e4f00cc7dbbd066017b7c960291156">get_edge_threshold</a> () const</td></tr>
+<tr class="separator:a34e4f00cc7dbbd066017b7c960291156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8093ef32d2a4a81a625d9f4dd6afbf44" id="r_a8093ef32d2a4a81a625d9f4dd6afbf44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a8093ef32d2a4a81a625d9f4dd6afbf44">get_planar_threshold</a> () const</td></tr>
+<tr class="separator:a8093ef32d2a4a81a625d9f4dd6afbf44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ed9fbd6c3fe76b7d002cfed6197410" id="r_a68ed9fbd6c3fe76b7d002cfed6197410"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a68ed9fbd6c3fe76b7d002cfed6197410">get_curvature_threshold</a> () const</td></tr>
+<tr class="separator:a68ed9fbd6c3fe76b7d002cfed6197410"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1646584c8186c7750e21ff3dca41b757" id="r_a1646584c8186c7750e21ff3dca41b757"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a1646584c8186c7750e21ff3dca41b757">get_num_scan_neighbors</a> () const</td></tr>
+<tr class="separator:a1646584c8186c7750e21ff3dca41b757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">toolbox::pcl::base_keypoint_extractor_t&lt; loam_feature_extractor_t&lt; DataType, KNN &gt;, DataType, KNN &gt;</a></td></tr>
+<tr class="memitem:a8db0e0c35f09456b09cd7eda484234ff inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a8db0e0c35f09456b09cd7eda484234ff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a8db0e0c35f09456b09cd7eda484234ff">base_keypoint_extractor_t</a> ()=default</td></tr>
+<tr class="separator:a8db0e0c35f09456b09cd7eda484234ff inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aae3e06468607d5516b3c6913131c0c inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a3aae3e06468607d5516b3c6913131c0c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a3aae3e06468607d5516b3c6913131c0c">base_keypoint_extractor_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a3aae3e06468607d5516b3c6913131c0c inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用拷贝构造函数 / Disable copy constructor  <br /></td></tr>
+<tr class="separator:a3aae3e06468607d5516b3c6913131c0c inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8092530b15e7a99f0e32e02b73aeb66 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_ae8092530b15e7a99f0e32e02b73aeb66"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#ae8092530b15e7a99f0e32e02b73aeb66">base_keypoint_extractor_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:ae8092530b15e7a99f0e32e02b73aeb66 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用移动构造函数 / Disable move constructor  <br /></td></tr>
+<tr class="separator:ae8092530b15e7a99f0e32e02b73aeb66 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d41158eec38445dee250b543e2c53d inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_ac4d41158eec38445dee250b543e2c53d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#ac4d41158eec38445dee250b543e2c53d">~base_keypoint_extractor_t</a> ()=default</td></tr>
+<tr class="separator:ac4d41158eec38445dee250b543e2c53d inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ebf1757b1224b291eb67f97986b8f0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a13ebf1757b1224b291eb67f97986b8f0"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a13ebf1757b1224b291eb67f97986b8f0">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#ad3e3a7317ea4f082463df0ab3c50b447">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="memdesc:a13ebf1757b1224b291eb67f97986b8f0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入点云（值传递版本） / Set input point cloud (value passing version)  <br /></td></tr>
+<tr class="separator:a13ebf1757b1224b291eb67f97986b8f0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a6c91a6832fd263fe03070e3dc23973 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a8a6c91a6832fd263fe03070e3dc23973"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a8a6c91a6832fd263fe03070e3dc23973">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5fb908e173eef4d901ff6f65d263fac3">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="memdesc:a8a6c91a6832fd263fe03070e3dc23973 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入点云（智能指针版本） / Set input point cloud (smart pointer version)  <br /></td></tr>
+<tr class="separator:a8a6c91a6832fd263fe03070e3dc23973 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ab2246b1c294525723ffaf66a9f014b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a8ab2246b1c294525723ffaf66a9f014b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a8ab2246b1c294525723ffaf66a9f014b">set_search_radius</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a08fcfad7a41e0ab4e2418ba34f61f591">data_type</a> radius)</td></tr>
+<tr class="memdesc:a8ab2246b1c294525723ffaf66a9f014b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置搜索半径 / Set search radius  <br /></td></tr>
+<tr class="separator:a8ab2246b1c294525723ffaf66a9f014b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6b78768ce0337536a05d15b8f4038d7 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_af6b78768ce0337536a05d15b8f4038d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a08fcfad7a41e0ab4e2418ba34f61f591">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#af6b78768ce0337536a05d15b8f4038d7">get_search_radius</a> () const noexcept</td></tr>
+<tr class="memdesc:af6b78768ce0337536a05d15b8f4038d7 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前搜索半径 / Get current search radius  <br /></td></tr>
+<tr class="separator:af6b78768ce0337536a05d15b8f4038d7 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90e4dbcc3aaf8479393338ea062b518b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a90e4dbcc3aaf8479393338ea062b518b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a90e4dbcc3aaf8479393338ea062b518b">set_knn</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a0b5468d2ea6ac89fbf66bb1756eefc11">knn_type</a> &amp;knn)</td></tr>
+<tr class="memdesc:a90e4dbcc3aaf8479393338ea062b518b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最近邻搜索算法 / Set K-nearest neighbor search algorithm  <br /></td></tr>
+<tr class="separator:a90e4dbcc3aaf8479393338ea062b518b inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaefd18e8906cbbdb07af4d89fb1a0279 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_aaefd18e8906cbbdb07af4d89fb1a0279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#aaefd18e8906cbbdb07af4d89fb1a0279">enable_parallel</a> (bool enable)</td></tr>
+<tr class="memdesc:aaefd18e8906cbbdb07af4d89fb1a0279 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用或禁用并行处理 / Enable or disable parallel processing  <br /></td></tr>
+<tr class="separator:aaefd18e8906cbbdb07af4d89fb1a0279 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a848944d3c48ed0ec6716db0f8c5343c0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a848944d3c48ed0ec6716db0f8c5343c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5b6f427670b1b4a45b9cf4d218afb0d1">indices_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a848944d3c48ed0ec6716db0f8c5343c0">extract</a> ()</td></tr>
+<tr class="memdesc:a848944d3c48ed0ec6716db0f8c5343c0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取关键点索引 / Extract keypoint indices  <br /></td></tr>
+<tr class="separator:a848944d3c48ed0ec6716db0f8c5343c0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4539e25ea4a2e8e11f26794e2bbf837a inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a4539e25ea4a2e8e11f26794e2bbf837a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a4539e25ea4a2e8e11f26794e2bbf837a">extract</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5b6f427670b1b4a45b9cf4d218afb0d1">indices_vector</a> &amp;keypoint_indices)</td></tr>
+<tr class="memdesc:a4539e25ea4a2e8e11f26794e2bbf837a inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取关键点索引（输出参数版本） / Extract keypoint indices (output parameter version)  <br /></td></tr>
+<tr class="separator:a4539e25ea4a2e8e11f26794e2bbf837a inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813c094cb03aa70033969df1cf2cb9e1 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a813c094cb03aa70033969df1cf2cb9e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#ad3e3a7317ea4f082463df0ab3c50b447">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a813c094cb03aa70033969df1cf2cb9e1">extract_keypoints</a> ()</td></tr>
+<tr class="memdesc:a813c094cb03aa70033969df1cf2cb9e1 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取关键点云 / Extract keypoint cloud  <br /></td></tr>
+<tr class="separator:a813c094cb03aa70033969df1cf2cb9e1 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a18f90e60b53a9f9a3e04954fb22ab inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a62a18f90e60b53a9f9a3e04954fb22ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a62a18f90e60b53a9f9a3e04954fb22ab">extract_keypoints</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a5fb908e173eef4d901ff6f65d263fac3">point_cloud_ptr</a> output)</td></tr>
+<tr class="memdesc:a62a18f90e60b53a9f9a3e04954fb22ab inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取关键点云（输出参数版本） / Extract keypoint cloud (output parameter version)  <br /></td></tr>
+<tr class="separator:a62a18f90e60b53a9f9a3e04954fb22ab inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3502c3168d6db879cb48b0da0f81b0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a1b3502c3168d6db879cb48b0da0f81b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a1b3502c3168d6db879cb48b0da0f81b0">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;)=delete</td></tr>
+<tr class="memdesc:a1b3502c3168d6db879cb48b0da0f81b0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用拷贝赋值运算符 / Disable copy assignment operator  <br /></td></tr>
+<tr class="separator:a1b3502c3168d6db879cb48b0da0f81b0 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fc4ba5bc961d66bb0cd2aea70cfbc40 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" id="r_a1fc4ba5bc961d66bb0cd2aea70cfbc40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a1fc4ba5bc961d66bb0cd2aea70cfbc40">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a> &amp;&amp;)=delete</td></tr>
+<tr class="memdesc:a1fc4ba5bc961d66bb0cd2aea70cfbc40 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">禁用移动赋值运算符 / Disable move assignment operator  <br /></td></tr>
+<tr class="separator:a1fc4ba5bc961d66bb0cd2aea70cfbc40 inherit pub_methods_classtoolbox_1_1pcl_1_1base__keypoint__extractor__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a16dff3f04be54d59aa66e0904cd93ff8" id="r_a16dff3f04be54d59aa66e0904cd93ff8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a16dff3f04be54d59aa66e0904cd93ff8">extract_edge_points</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;result)</td></tr>
+<tr class="separator:a16dff3f04be54d59aa66e0904cd93ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12df972c991f87c5026f6e9e5d3d419" id="r_ad12df972c991f87c5026f6e9e5d3d419"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#ad12df972c991f87c5026f6e9e5d3d419">extract_planar_points</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;result)</td></tr>
+<tr class="separator:ad12df972c991f87c5026f6e9e5d3d419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce0d510c0193096fb091a3a6e3229c1" id="r_afce0d510c0193096fb091a3a6e3229c1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#afce0d510c0193096fb091a3a6e3229c1">extract_non_feature_points</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;result)</td></tr>
+<tr class="separator:afce0d510c0193096fb091a3a6e3229c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67bf6c10d37c569c99794e118321dfb3" id="r_a67bf6c10d37c569c99794e118321dfb3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a67bf6c10d37c569c99794e118321dfb3">extract_edge_indices</a> (const std::vector&lt; uint8_t &gt; &amp;labels)</td></tr>
+<tr class="separator:a67bf6c10d37c569c99794e118321dfb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a693ef1c160484eca1a1bcc62fb1031" id="r_a5a693ef1c160484eca1a1bcc62fb1031"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a5a693ef1c160484eca1a1bcc62fb1031">extract_planar_indices</a> (const std::vector&lt; uint8_t &gt; &amp;labels)</td></tr>
+<tr class="separator:a5a693ef1c160484eca1a1bcc62fb1031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType, typename KNN&gt;<br />
+class toolbox::pcl::loam_feature_extractor_t&lt; DataType, KNN &gt;</div><p>LOAM (Lidar Odometry and Mapping) 特征提取器 / LOAM (Lidar Odometry and Mapping) feature extractor. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型（float或double） / Data type (float or double) </td></tr>
+    <tr><td class="paramname">KNN</td><td>最近邻搜索算法类型 / K-nearest neighbor search algorithm type</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>LOAM特征提取器专门用于激光雷达点云，提取边缘点和平面点特征，常用于SLAM应用 / LOAM feature extractor is designed for LiDAR point clouds, extracting edge and planar features commonly used in SLAM applications </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1034cb74216b3ae49be19a8c6d273e9d" name="a1034cb74216b3ae49be19a8c6d273e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1034cb74216b3ae49be19a8c6d273e9d">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html">base_keypoint_extractor_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt;DataType, KNN&gt;, DataType, KNN&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35d2611ab0f0c1a066594b6ae0980fd3" name="a35d2611ab0f0c1a066594b6ae0980fd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d2611ab0f0c1a066594b6ae0980fd3">&#9670;&#160;</a></span>data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::data_type =  typename base_type::data_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a38f60a1ce67e5014c0b0b8d6991bb9" name="a3a38f60a1ce67e5014c0b0b8d6991bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a38f60a1ce67e5014c0b0b8d6991bb9">&#9670;&#160;</a></span>indices_vector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::indices_vector =  typename base_type::indices_vector</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1b11e0c31798875760da45eeef3ac92c" name="a1b11e0c31798875760da45eeef3ac92c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b11e0c31798875760da45eeef3ac92c">&#9670;&#160;</a></span>knn_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::knn_type =  typename base_type::knn_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a774d57facd7e9e3b654bb93667dc8710" name="a774d57facd7e9e3b654bb93667dc8710"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774d57facd7e9e3b654bb93667dc8710">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::point_cloud =  typename base_type::point_cloud</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a832b545028e0c0c8e894de485b3138d1" name="a832b545028e0c0c8e894de485b3138d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a832b545028e0c0c8e894de485b3138d1">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::point_cloud_ptr =  typename base_type::point_cloud_ptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="abcd8d9a309ee27a4a16ecb1208784b1c" name="abcd8d9a309ee27a4a16ecb1208784b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcd8d9a309ee27a4a16ecb1208784b1c">&#9670;&#160;</a></span>feature_label</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#abcd8d9a309ee27a4a16ecb1208784b1c">toolbox::pcl::loam_feature_extractor_t::feature_label</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="abcd8d9a309ee27a4a16ecb1208784b1ca334c4a4c42fdb79d7ebc3e73b517e6f8" name="abcd8d9a309ee27a4a16ecb1208784b1ca334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcd8d9a309ee27a4a16ecb1208784b1ca09039bd1628a3c1b25fda3134a4fe050" name="abcd8d9a309ee27a4a16ecb1208784b1ca09039bd1628a3c1b25fda3134a4fe050"></a>edge&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="abcd8d9a309ee27a4a16ecb1208784b1ca3be411765e710adc7764f5056e44138c" name="abcd8d9a309ee27a4a16ecb1208784b1ca3be411765e710adc7764f5056e44138c"></a>planar&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2ba8fb2f8243986a07e7a8e91dd8f9e6" name="a2ba8fb2f8243986a07e7a8e91dd8f9e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba8fb2f8243986a07e7a8e91dd8f9e6">&#9670;&#160;</a></span>loam_feature_extractor_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::loam_feature_extractor_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7583bfcff9b9ef44e93e048329669c34" name="a7583bfcff9b9ef44e93e048329669c34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7583bfcff9b9ef44e93e048329669c34">&#9670;&#160;</a></span>enable_parallel_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::enable_parallel_impl </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67bf6c10d37c569c99794e118321dfb3" name="a67bf6c10d37c569c99794e118321dfb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67bf6c10d37c569c99794e118321dfb3">&#9670;&#160;</a></span>extract_edge_indices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">::indices_vector</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_edge_indices </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16dff3f04be54d59aa66e0904cd93ff8" name="a16dff3f04be54d59aa66e0904cd93ff8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16dff3f04be54d59aa66e0904cd93ff8">&#9670;&#160;</a></span>extract_edge_points()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">::point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_edge_points </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a426dfae93064db2b99d8919df2bf36bd" name="a426dfae93064db2b99d8919df2bf36bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426dfae93064db2b99d8919df2bf36bd">&#9670;&#160;</a></span>extract_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">::indices_vector</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad75bab49581ad8d4de4bc5d69dcd088e" name="ad75bab49581ad8d4de4bc5d69dcd088e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad75bab49581ad8d4de4bc5d69dcd088e">&#9670;&#160;</a></span>extract_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">indices_vector</a> &amp;&#160;</td>
+          <td class="paramname"><em>keypoint_indices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3df36e5a5c2bce22a3741964e1c64163" name="a3df36e5a5c2bce22a3741964e1c64163"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3df36e5a5c2bce22a3741964e1c64163">&#9670;&#160;</a></span>extract_keypoints_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">::point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_keypoints_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ba9a62d91e77e9930776bfac9a2da8b" name="a4ba9a62d91e77e9930776bfac9a2da8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba9a62d91e77e9930776bfac9a2da8b">&#9670;&#160;</a></span>extract_keypoints_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_keypoints_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a832b545028e0c0c8e894de485b3138d1">point_cloud_ptr</a>&#160;</td>
+          <td class="paramname"><em>output</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a61ce4549ad9e99b4b47ea92c3ff1d445" name="a61ce4549ad9e99b4b47ea92c3ff1d445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61ce4549ad9e99b4b47ea92c3ff1d445">&#9670;&#160;</a></span>extract_labeled_cloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::loam_result <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_labeled_cloud </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afce0d510c0193096fb091a3a6e3229c1" name="afce0d510c0193096fb091a3a6e3229c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce0d510c0193096fb091a3a6e3229c1">&#9670;&#160;</a></span>extract_non_feature_points()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">::point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_non_feature_points </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a693ef1c160484eca1a1bcc62fb1031" name="a5a693ef1c160484eca1a1bcc62fb1031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a693ef1c160484eca1a1bcc62fb1031">&#9670;&#160;</a></span>extract_planar_indices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3a38f60a1ce67e5014c0b0b8d6991bb9">::indices_vector</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_planar_indices </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad12df972c991f87c5026f6e9e5d3d419" name="ad12df972c991f87c5026f6e9e5d3d419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad12df972c991f87c5026f6e9e5d3d419">&#9670;&#160;</a></span>extract_planar_points()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a>&lt; DataType, KNN &gt;<a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">::point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::extract_planar_points </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html">loam_result</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68ed9fbd6c3fe76b7d002cfed6197410" name="a68ed9fbd6c3fe76b7d002cfed6197410"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ed9fbd6c3fe76b7d002cfed6197410">&#9670;&#160;</a></span>get_curvature_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::get_curvature_threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a34e4f00cc7dbbd066017b7c960291156" name="a34e4f00cc7dbbd066017b7c960291156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34e4f00cc7dbbd066017b7c960291156">&#9670;&#160;</a></span>get_edge_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::get_edge_threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1646584c8186c7750e21ff3dca41b757" name="a1646584c8186c7750e21ff3dca41b757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1646584c8186c7750e21ff3dca41b757">&#9670;&#160;</a></span>get_num_scan_neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::get_num_scan_neighbors </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8093ef32d2a4a81a625d9f4dd6afbf44" name="a8093ef32d2a4a81a625d9f4dd6afbf44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8093ef32d2a4a81a625d9f4dd6afbf44">&#9670;&#160;</a></span>get_planar_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::get_planar_threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d9b64f8919e0ddc3f01b601094c4a93" name="a3d9b64f8919e0ddc3f01b601094c4a93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9b64f8919e0ddc3f01b601094c4a93">&#9670;&#160;</a></span>set_curvature_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_curvature_threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ff12a88a725e8624d2410138d6cf490" name="a8ff12a88a725e8624d2410138d6cf490"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff12a88a725e8624d2410138d6cf490">&#9670;&#160;</a></span>set_edge_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_edge_threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a82f473153ddae4e4ac7908905c51c4e2" name="a82f473153ddae4e4ac7908905c51c4e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f473153ddae4e4ac7908905c51c4e2">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c4f8221421705dee871b60c9cd8fb9f" name="a8c4f8221421705dee871b60c9cd8fb9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4f8221421705dee871b60c9cd8fb9f">&#9670;&#160;</a></span>set_input_impl() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_input_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a832b545028e0c0c8e894de485b3138d1">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4a380db4eed45108eb2a4d35b61d522c" name="a4a380db4eed45108eb2a4d35b61d522c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a380db4eed45108eb2a4d35b61d522c">&#9670;&#160;</a></span>set_knn_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_knn_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a1b11e0c31798875760da45eeef3ac92c">knn_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>knn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86ec31b70113f4f943c5c75771bd0a70" name="a86ec31b70113f4f943c5c75771bd0a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ec31b70113f4f943c5c75771bd0a70">&#9670;&#160;</a></span>set_num_scan_neighbors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_num_scan_neighbors </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>num</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a60faf6eab1781959ee8ce436866b3ba5" name="a60faf6eab1781959ee8ce436866b3ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60faf6eab1781959ee8ce436866b3ba5">&#9670;&#160;</a></span>set_planar_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_planar_threshold </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91a9d9f3f181ae2ae18d6f3c0de9e66f" name="a91a9d9f3f181ae2ae18d6f3c0de9e66f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91a9d9f3f181ae2ae18d6f3c0de9e66f">&#9670;&#160;</a></span>set_search_radius_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::set_search_radius_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a35d2611ab0f0c1a066594b6ae0980fd3">data_type</a>&#160;</td>
+          <td class="paramname"><em>radius</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/pcl/features/<a class="el" href="loam__feature__extractor_8hpp_source.html">loam_feature_extractor.hpp</a></li>
+<li>src/include/cpp-toolbox/pcl/features/impl/<a class="el" href="loam__feature__extractor__impl_8hpp_source.html">loam_feature_extractor_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">loam_feature_extractor_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

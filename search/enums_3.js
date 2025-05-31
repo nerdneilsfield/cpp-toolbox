@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['style_5ft_0',['style_t',['../classtoolbox_1_1utils_1_1plot__t.html#a353d934f6c0645ef1cf5e181524572fe',1,'toolbox::utils::plot_t']]]
+  ['level_0',['Level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t']]]
 ];
