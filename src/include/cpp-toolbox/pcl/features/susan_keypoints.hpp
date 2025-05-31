@@ -9,6 +9,14 @@
 namespace toolbox::pcl
 {
 
+/**
+ * @brief SUSAN (Smallest Univalue Segment Assimilating Nucleus) 3D关键点提取器 / SUSAN (Smallest Univalue Segment Assimilating Nucleus) 3D keypoint extractor
+ * 
+ * @tparam DataType 数据类型（float或double） / Data type (float or double)
+ * @tparam KNN 最近邻搜索算法类型 / K-nearest neighbor search algorithm type
+ * 
+ * @details SUSAN算法通过计算局部区域的相似性来检测角点和边缘，对噪声具有良好的鲁棒性 / SUSAN algorithm detects corners and edges by computing local area similarity, with good robustness to noise
+ */
 template<typename DataType, typename KNN>
 class CPP_TOOLBOX_EXPORT susan_keypoint_extractor_t
     : public base_keypoint_extractor_t<susan_keypoint_extractor_t<DataType, KNN>,

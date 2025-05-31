@@ -10,6 +10,14 @@
 namespace toolbox::pcl
 {
 
+/**
+ * @brief MLS (Moving Least Squares) 关键点提取器 / MLS (Moving Least Squares) keypoint extractor
+ * 
+ * @tparam DataType 数据类型（float或double） / Data type (float or double)
+ * @tparam KNN 最近邻搜索算法类型 / K-nearest neighbor search algorithm type
+ * 
+ * @details MLS算法通过局部多项式曲面拟合来检测表面变化显著的关键点，支持不同阶数的多项式拟合 / MLS algorithm detects keypoints with significant surface variations through local polynomial surface fitting, supporting different polynomial orders
+ */
 template<typename DataType, typename KNN>
 class CPP_TOOLBOX_EXPORT mls_keypoint_extractor_t
     : public base_keypoint_extractor_t<mls_keypoint_extractor_t<DataType, KNN>,

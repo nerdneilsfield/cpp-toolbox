@@ -8,6 +8,14 @@
 namespace toolbox::pcl
 {
 
+/**
+ * @brief LOAM (Lidar Odometry and Mapping) 特征提取器 / LOAM (Lidar Odometry and Mapping) feature extractor
+ * 
+ * @tparam DataType 数据类型（float或double） / Data type (float or double)
+ * @tparam KNN 最近邻搜索算法类型 / K-nearest neighbor search algorithm type
+ * 
+ * @details LOAM特征提取器专门用于激光雷达点云，提取边缘点和平面点特征，常用于SLAM应用 / LOAM feature extractor is designed for LiDAR point clouds, extracting edge and planar features commonly used in SLAM applications
+ */
 template<typename DataType, typename KNN>
 class CPP_TOOLBOX_EXPORT loam_feature_extractor_t
     : public base_keypoint_extractor_t<loam_feature_extractor_t<DataType, KNN>,
