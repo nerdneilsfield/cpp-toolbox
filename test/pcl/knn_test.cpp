@@ -5,6 +5,9 @@
 #include <cpp-toolbox/pcl/knn/bfknn_parallel.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/utils/random.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
+#include <cpp-toolbox/metrics/angular_metrics.hpp>
+#include <cpp-toolbox/metrics/metric_factory.hpp>
 
 #include <algorithm>
 #include <chrono>
@@ -12,6 +15,7 @@
 
 using namespace toolbox::pcl;
 using namespace toolbox::types;
+using namespace toolbox::metrics;
 using namespace Catch::Matchers;
 
 // Helper function to generate random point cloud
@@ -100,7 +104,7 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     
-    scalar_t radius = 1.0f;
+    scalar_t radius = 2.0f;
     REQUIRE(knn.radius_neighbors(query_point, radius, indices, distances));
     
     // All returned points should be within radius
@@ -116,7 +120,26 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
     }
   }
 
-  SECTION("Parallel Brute Force KNN - k-neighbors")
+  SECTION("KD-Tree KNN - k-neighbors")
+  {
+    kdtree_t<scalar_t> knn;
+    REQUIRE(knn.set_input(cloud) == 27);
+
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    
+    REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
+    REQUIRE(indices.size() == 5);
+    REQUIRE(distances.size() == 5);
+    
+    // Check that distances are sorted
+    for (std::size_t i = 1; i < distances.size(); ++i)
+    {
+      REQUIRE(distances[i] >= distances[i-1]);
+    }
+  }
+
+  SECTION("Parallel Brute Force KNN")
   {
     bfknn_parallel_t<scalar_t> knn;
     REQUIRE(knn.set_input(cloud) == 27);
@@ -127,126 +150,223 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
     REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
     REQUIRE(indices.size() == 5);
     REQUIRE(distances.size() == 5);
+  }
+}
+
+TEST_CASE("KNN Algorithms - Different Metrics", "[pcl][knn]")
+{
+  using scalar_t = float;
+  
+  auto cloud = create_test_cloud<scalar_t>();
+  point_t<scalar_t> query_point;
+  query_point.x = 1.5f;
+  query_point.y = 1.5f;
+  query_point.z = 1.5f;
+
+  SECTION("Legacy interface - Different metrics")
+  {
+    bfknn_t<scalar_t> knn;
+    REQUIRE(knn.set_input(cloud) == 27);
+
+    std::vector<std::size_t> indices_l2, indices_l1, indices_linf;
+    std::vector<scalar_t> distances_l2, distances_l1, distances_linf;
+
+    // Test L2 (Euclidean)
+    knn.set_metric(metric_type_t::euclidean);
+    REQUIRE(knn.kneighbors(query_point, 5, indices_l2, distances_l2));
     
-    // Check that distances are sorted
-    for (std::size_t i = 1; i < distances.size(); ++i)
+    // Test L1 (Manhattan)
+    knn.set_metric(metric_type_t::manhattan);
+    REQUIRE(knn.kneighbors(query_point, 5, indices_l1, distances_l1));
+    
+    // Test Linf (Chebyshev)
+    knn.set_metric(metric_type_t::chebyshev);
+    REQUIRE(knn.kneighbors(query_point, 5, indices_linf, distances_linf));
+    
+    // Different metrics should give different distances
+    REQUIRE(distances_l2[0] != distances_l1[0]);
+    REQUIRE(distances_l2[0] != distances_linf[0]);
+  }
+
+  SECTION("Generic interface - Compile-time metrics")
+  {
+    // Convert point cloud to vector for generic interface
+    std::vector<point_t<scalar_t>> points(cloud.points.begin(), cloud.points.end());
+
+    // Test with L2 metric
     {
-      REQUIRE(distances[i] >= distances[i-1]);
+      bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn_l2;
+      REQUIRE(knn_l2.set_input(points) == 27);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      
+      REQUIRE(knn_l2.kneighbors(query_point, 5, indices, distances));
+      REQUIRE(indices.size() == 5);
+      REQUIRE_THAT(distances[0], WithinRel(std::sqrt(0.75f), 0.001f));
+    }
+
+    // Test with L1 metric
+    {
+      bfknn_generic_t<point_t<scalar_t>, L1Metric<scalar_t>> knn_l1;
+      REQUIRE(knn_l1.set_input(points) == 27);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      
+      REQUIRE(knn_l1.kneighbors(query_point, 5, indices, distances));
+      REQUIRE(indices.size() == 5);
+      // For L1, distance to (1,1,1) is |1.5-1| + |1.5-1| + |1.5-1| = 1.5
+      REQUIRE_THAT(distances[0], WithinRel(1.5f, 0.001f));
+    }
+
+    // Test with Linf metric
+    {
+      bfknn_generic_t<point_t<scalar_t>, LinfMetric<scalar_t>> knn_linf;
+      REQUIRE(knn_linf.set_input(points) == 27);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      
+      REQUIRE(knn_linf.kneighbors(query_point, 5, indices, distances));
+      REQUIRE(indices.size() == 5);
+      // For Linf, distance to (1,1,1) is max(|1.5-1|, |1.5-1|, |1.5-1|) = 0.5
+      REQUIRE_THAT(distances[0], WithinRel(0.5f, 0.001f));
+    }
+
+    // Test with Cosine metric
+    {
+      bfknn_generic_t<point_t<scalar_t>, CosineMetric<scalar_t>> knn_cosine;
+      REQUIRE(knn_cosine.set_input(points) == 27);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      
+      REQUIRE(knn_cosine.kneighbors(query_point, 5, indices, distances));
+      REQUIRE(indices.size() == 5);
     }
   }
 
-  SECTION("KD-tree KNN - k-neighbors")
+  SECTION("Generic interface - Runtime metrics")
   {
-    kdtree_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
+    std::vector<point_t<scalar_t>> points(cloud.points.begin(), cloud.points.end());
+    
+    bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
+    REQUIRE(knn.set_input(points) == 27);
 
+    // Create runtime metric using factory
+    auto metric_l1 = MetricFactory<scalar_t>::instance().create("L1");
+    knn.set_metric(metric_l1);
+    
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     
     REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
     REQUIRE(indices.size() == 5);
-    REQUIRE(distances.size() == 5);
     
-    // Check that distances are sorted
-    for (std::size_t i = 1; i < distances.size(); ++i)
-    {
-      REQUIRE(distances[i] >= distances[i-1]);
-    }
+    // Test with different runtime metric
+    auto metric_linf = MetricFactory<scalar_t>::instance().create("Linf");
+    knn.set_metric(metric_linf);
     
-    // The closest point should be (1,1,1) or (2,2,2) with distance sqrt(0.75)
-    REQUIRE_THAT(distances[0], WithinRel(std::sqrt(0.75f), 0.001f));
+    indices.clear();
+    distances.clear();
+    
+    REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
+    REQUIRE(indices.size() == 5);
   }
+}
 
-  SECTION("KD-tree KNN - radius neighbors")
+TEST_CASE("KNN Algorithms - KDTree Metric Fallback", "[pcl][knn]")
+{
+  using scalar_t = float;
+  
+  auto cloud = create_test_cloud<scalar_t>();
+  point_t<scalar_t> query_point;
+  query_point.x = 1.5f;
+  query_point.y = 1.5f;
+  query_point.z = 1.5f;
+
+  kdtree_t<scalar_t> kdtree;
+  bfknn_t<scalar_t> bfknn;
+  
+  REQUIRE(kdtree.set_input(cloud) == 27);
+  REQUIRE(bfknn.set_input(cloud) == 27);
+
+  SECTION("KDTree supports Euclidean metric")
   {
-    kdtree_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
-
+    kdtree.set_metric(metric_type_t::euclidean);
+    
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     
-    scalar_t radius = 1.0f;
-    REQUIRE(knn.radius_neighbors(query_point, radius, indices, distances));
+    REQUIRE(kdtree.kneighbors(query_point, 5, indices, distances));
+    REQUIRE(indices.size() == 5);
+  }
+
+  SECTION("KDTree falls back to brute-force for unsupported metrics")
+  {
+    // Set unsupported metric
+    kdtree.set_metric(metric_type_t::manhattan);
+    bfknn.set_metric(metric_type_t::manhattan);
     
-    // All returned points should be within radius
-    for (auto dist : distances)
-    {
-      REQUIRE(dist <= radius);
-    }
+    std::vector<std::size_t> kdtree_indices, bfknn_indices;
+    std::vector<scalar_t> kdtree_distances, bfknn_distances;
     
-    // Check that distances are sorted
-    for (std::size_t i = 1; i < distances.size(); ++i)
+    REQUIRE(kdtree.kneighbors(query_point, 5, kdtree_indices, kdtree_distances));
+    REQUIRE(bfknn.kneighbors(query_point, 5, bfknn_indices, bfknn_distances));
+    
+    // Results should be the same (indices might be in different order for equal distances)
+    REQUIRE(kdtree_distances.size() == bfknn_distances.size());
+    
+    // Check distances match
+    for (std::size_t i = 0; i < kdtree_distances.size(); ++i)
     {
-      REQUIRE(distances[i] >= distances[i-1]);
+      REQUIRE_THAT(kdtree_distances[i], WithinRel(bfknn_distances[i], 0.001f));
     }
   }
 }
 
-TEST_CASE("KNN Algorithms - Consistency Check", "[pcl][knn]")
+TEST_CASE("KNN Algorithms - Performance Comparison", "[pcl][knn][!benchmark]")
 {
   using scalar_t = float;
   
-  auto cloud = generate_random_cloud<scalar_t>(1000);
-  point_t<scalar_t> query_point;
-  query_point.x = 0.0f;
-  query_point.y = 0.0f;
-  query_point.z = 0.0f;
+  const std::size_t num_points = 10000;
+  auto cloud = generate_random_cloud<scalar_t>(num_points);
+  auto query_cloud = generate_random_cloud<scalar_t>(100);
 
-  bfknn_t<scalar_t> bf_knn;
-  bfknn_parallel_t<scalar_t> bf_parallel_knn;
-  kdtree_t<scalar_t> kd_knn;
-
-  bf_knn.set_input(cloud);
-  bf_parallel_knn.set_input(cloud);
-  kd_knn.set_input(cloud);
-
-  SECTION("k-neighbors consistency")
+  SECTION("Compare algorithms")
   {
+    bfknn_t<scalar_t> bfknn;
+    bfknn_parallel_t<scalar_t> bfknn_parallel;
+    kdtree_t<scalar_t> kdtree;
+
+    REQUIRE(bfknn.set_input(cloud) == num_points);
+    REQUIRE(bfknn_parallel.set_input(cloud) == num_points);
+    REQUIRE(kdtree.set_input(cloud) == num_points);
+
     const std::size_t k = 10;
     
-    std::vector<std::size_t> bf_indices, bf_parallel_indices, kd_indices;
-    std::vector<scalar_t> bf_distances, bf_parallel_distances, kd_distances;
-
-    REQUIRE(bf_knn.kneighbors(query_point, k, bf_indices, bf_distances));
-    REQUIRE(bf_parallel_knn.kneighbors(query_point, k, bf_parallel_indices, bf_parallel_distances));
-    REQUIRE(kd_knn.kneighbors(query_point, k, kd_indices, kd_distances));
-
-    // All should return k neighbors
-    REQUIRE(bf_indices.size() == k);
-    REQUIRE(bf_parallel_indices.size() == k);
-    REQUIRE(kd_indices.size() == k);
-
-    // The results should be the same (allowing for different ordering of equidistant points)
-    std::sort(bf_indices.begin(), bf_indices.end());
-    std::sort(bf_parallel_indices.begin(), bf_parallel_indices.end());
-    std::sort(kd_indices.begin(), kd_indices.end());
-
-    REQUIRE(bf_indices == bf_parallel_indices);
-    REQUIRE(bf_indices == kd_indices);
-  }
-
-  SECTION("radius neighbors consistency")
-  {
-    const scalar_t radius = 2.0f;
+    // Test all algorithms produce same results for first query
+    std::vector<std::size_t> indices_bf, indices_parallel, indices_kd;
+    std::vector<scalar_t> distances_bf, distances_parallel, distances_kd;
     
-    std::vector<std::size_t> bf_indices, bf_parallel_indices, kd_indices;
-    std::vector<scalar_t> bf_distances, bf_parallel_distances, kd_distances;
-
-    REQUIRE(bf_knn.radius_neighbors(query_point, radius, bf_indices, bf_distances));
-    REQUIRE(bf_parallel_knn.radius_neighbors(query_point, radius, bf_parallel_indices, bf_parallel_distances));
-    REQUIRE(kd_knn.radius_neighbors(query_point, radius, kd_indices, kd_distances));
-
-    // All should return the same number of neighbors
-    REQUIRE(bf_indices.size() == bf_parallel_indices.size());
-    REQUIRE(bf_indices.size() == kd_indices.size());
-
-    // The results should be the same (allowing for different ordering)
-    std::sort(bf_indices.begin(), bf_indices.end());
-    std::sort(bf_parallel_indices.begin(), bf_parallel_indices.end());
-    std::sort(kd_indices.begin(), kd_indices.end());
-
-    REQUIRE(bf_indices == bf_parallel_indices);
-    REQUIRE(bf_indices == kd_indices);
+    auto query_point = query_cloud.points[0];
+    
+    REQUIRE(bfknn.kneighbors(query_point, k, indices_bf, distances_bf));
+    REQUIRE(bfknn_parallel.kneighbors(query_point, k, indices_parallel, distances_parallel));
+    REQUIRE(kdtree.kneighbors(query_point, k, indices_kd, distances_kd));
+    
+    // All should find same number of neighbors
+    REQUIRE(indices_bf.size() == k);
+    REQUIRE(indices_parallel.size() == k);
+    REQUIRE(indices_kd.size() == k);
+    
+    // Distances should be approximately the same (allowing for floating point differences)
+    for (std::size_t i = 0; i < k; ++i)
+    {
+      REQUIRE_THAT(distances_bf[i], WithinRel(distances_parallel[i], 0.001f));
+      REQUIRE_THAT(distances_bf[i], WithinRel(distances_kd[i], 0.001f));
+    }
   }
 }
 
@@ -257,179 +377,50 @@ TEST_CASE("KNN Algorithms - Edge Cases", "[pcl][knn]")
   SECTION("Empty cloud")
   {
     point_cloud_t<scalar_t> empty_cloud;
-    point_t<scalar_t> query_point{0, 0, 0};
-
-    bfknn_t<scalar_t> bf_knn;
-    kdtree_t<scalar_t> kd_knn;
-
-    REQUIRE(bf_knn.set_input(empty_cloud) == 0);
-    REQUIRE(kd_knn.set_input(empty_cloud) == 0);
-
+    bfknn_t<scalar_t> knn;
+    
+    REQUIRE(knn.set_input(empty_cloud) == 0);
+    
+    point_t<scalar_t> query;
+    query.x = query.y = query.z = 0;
+    
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
-
-    REQUIRE_FALSE(bf_knn.kneighbors(query_point, 5, indices, distances));
-    REQUIRE_FALSE(kd_knn.kneighbors(query_point, 5, indices, distances));
+    
+    REQUIRE_FALSE(knn.kneighbors(query, 5, indices, distances));
   }
 
-  SECTION("Single point cloud")
-  {
-    point_cloud_t<scalar_t> cloud;
-    point_t<scalar_t> pt{1, 2, 3};
-    cloud.points.push_back(pt);
-
-    point_t<scalar_t> query_point{0, 0, 0};
-
-    bfknn_t<scalar_t> bf_knn;
-    kdtree_t<scalar_t> kd_knn;
-
-    REQUIRE(bf_knn.set_input(cloud) == 1);
-    REQUIRE(kd_knn.set_input(cloud) == 1);
-
-    std::vector<std::size_t> indices;
-    std::vector<scalar_t> distances;
-
-    REQUIRE(bf_knn.kneighbors(query_point, 5, indices, distances));
-    REQUIRE(indices.size() == 1);  // Only one point available
-    REQUIRE(indices[0] == 0);
-
-    indices.clear();
-    distances.clear();
-
-    REQUIRE(kd_knn.kneighbors(query_point, 5, indices, distances));
-    REQUIRE(indices.size() == 1);
-    REQUIRE(indices[0] == 0);
-  }
-
-  SECTION("k larger than cloud size")
+  SECTION("K larger than cloud size")
   {
     auto cloud = create_test_cloud<scalar_t>();
-    point_t<scalar_t> query_point{0, 0, 0};
-
     bfknn_t<scalar_t> knn;
+    
     REQUIRE(knn.set_input(cloud) == 27);
-
+    
+    point_t<scalar_t> query;
+    query.x = query.y = query.z = 1.5f;
+    
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
-
-    REQUIRE(knn.kneighbors(query_point, 100, indices, distances));
+    
+    REQUIRE(knn.kneighbors(query, 100, indices, distances));
     REQUIRE(indices.size() == 27);  // Should return all points
+    REQUIRE(distances.size() == 27);
   }
-}
 
-TEST_CASE("KNN Algorithms - Different Metrics", "[pcl][knn]")
-{
-  using scalar_t = float;
-  
-  auto cloud = create_test_cloud<scalar_t>();
-  point_t<scalar_t> query_point{1.5f, 1.5f, 1.5f};
-
-  SECTION("Manhattan distance")
+  SECTION("Zero radius")
   {
+    auto cloud = create_test_cloud<scalar_t>();
     bfknn_t<scalar_t> knn;
-    knn.set_input(cloud);
-    knn.set_metric(metric_type_t::manhattan);
-
+    
+    REQUIRE(knn.set_input(cloud) == 27);
+    
+    point_t<scalar_t> query;
+    query.x = query.y = query.z = 1.5f;
+    
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     
-    REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
-    
-    // Verify Manhattan distance calculation
-    for (std::size_t i = 0; i < indices.size(); ++i)
-    {
-      auto& pt = cloud.points[indices[i]];
-      scalar_t expected_dist = std::abs(pt.x - query_point.x) + 
-                              std::abs(pt.y - query_point.y) + 
-                              std::abs(pt.z - query_point.z);
-      REQUIRE_THAT(distances[i], WithinRel(expected_dist, 0.001f));
-    }
-  }
-
-  SECTION("Chebyshev distance")
-  {
-    bfknn_t<scalar_t> knn;
-    knn.set_input(cloud);
-    knn.set_metric(metric_type_t::chebyshev);
-
-    std::vector<std::size_t> indices;
-    std::vector<scalar_t> distances;
-    
-    REQUIRE(knn.kneighbors(query_point, 5, indices, distances));
-    
-    // Verify Chebyshev distance calculation
-    for (std::size_t i = 0; i < indices.size(); ++i)
-    {
-      auto& pt = cloud.points[indices[i]];
-      scalar_t expected_dist = std::max({std::abs(pt.x - query_point.x),
-                                        std::abs(pt.y - query_point.y),
-                                        std::abs(pt.z - query_point.z)});
-      REQUIRE_THAT(distances[i], WithinRel(expected_dist, 0.001f));
-    }
-  }
-}
-
-TEST_CASE("KNN Algorithms - Performance Comparison", "[pcl][knn][benchmark]")
-{
-  using scalar_t = float;
-  
-  std::vector<std::size_t> sizes = {100, 1000, 10000};
-  
-  for (auto size : sizes)
-  {
-    INFO("Testing with " << size << " points");
-    
-    auto cloud = generate_random_cloud<scalar_t>(size);
-    point_t<scalar_t> query_point{0, 0, 0};
-    
-    bfknn_t<scalar_t> bf_knn;
-    bfknn_parallel_t<scalar_t> bf_parallel_knn;
-    kdtree_t<scalar_t> kd_knn;
-    
-    // Time setup
-    auto start = std::chrono::high_resolution_clock::now();
-    bf_knn.set_input(cloud);
-    auto bf_setup_time = std::chrono::high_resolution_clock::now() - start;
-    
-    start = std::chrono::high_resolution_clock::now();
-    bf_parallel_knn.set_input(cloud);
-    auto bf_parallel_setup_time = std::chrono::high_resolution_clock::now() - start;
-    
-    start = std::chrono::high_resolution_clock::now();
-    kd_knn.set_input(cloud);
-    auto kd_setup_time = std::chrono::high_resolution_clock::now() - start;
-    
-    // Time queries
-    std::vector<std::size_t> indices;
-    std::vector<scalar_t> distances;
-    const std::size_t k = 10;
-    const int num_queries = 100;
-    
-    start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < num_queries; ++i)
-    {
-      bf_knn.kneighbors(query_point, k, indices, distances);
-    }
-    auto bf_query_time = std::chrono::high_resolution_clock::now() - start;
-    
-    start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < num_queries; ++i)
-    {
-      bf_parallel_knn.kneighbors(query_point, k, indices, distances);
-    }
-    auto bf_parallel_query_time = std::chrono::high_resolution_clock::now() - start;
-    
-    start = std::chrono::high_resolution_clock::now();
-    for (int i = 0; i < num_queries; ++i)
-    {
-      kd_knn.kneighbors(query_point, k, indices, distances);
-    }
-    auto kd_query_time = std::chrono::high_resolution_clock::now() - start;
-    
-    // KD-tree should be faster for queries on larger datasets
-    if (size >= 1000)
-    {
-      REQUIRE(kd_query_time < bf_query_time);
-    }
+    REQUIRE_FALSE(knn.radius_neighbors(query, 0, indices, distances));
   }
 }

@@ -3,54 +3,73 @@
 #include <algorithm>
 #include <cmath>
 #include <vector>
+#include <cpp-toolbox/pcl/knn/bfknn.hpp>
 
 namespace toolbox::pcl
 {
 
-template<typename DataType>
-std::size_t kdtree_t<DataType>::set_input_impl(const point_cloud& cloud)
+// Generic KD-tree implementation
+template<typename Element, typename Metric>
+std::size_t kdtree_generic_t<Element, Metric>::set_input_impl(const container_type& data)
 {
-  m_cloud = std::make_shared<point_cloud>(cloud);
-  build_tree();
-  return m_cloud->size();
-}
-
-template<typename DataType>
-std::size_t kdtree_t<DataType>::set_input_impl(const point_cloud_ptr& cloud)
-{
-  m_cloud = cloud;
-  if (m_cloud && !m_cloud->empty())
+  m_data = std::make_shared<container_type>(data);
+  if (validate_metric())
   {
     build_tree();
   }
-  return m_cloud ? m_cloud->size() : 0;
+  return m_data->size();
 }
 
-template<typename DataType>
-std::size_t kdtree_t<DataType>::set_metric_impl(metric_type_t metric)
+template<typename Element, typename Metric>
+std::size_t kdtree_generic_t<Element, Metric>::set_input_impl(const container_ptr& data)
 {
-  // nanoflann only supports L2 (Euclidean) and L1 (Manhattan) metrics
-  // For other metrics, we'll default to Euclidean
-  if (metric != metric_type_t::euclidean && metric != metric_type_t::manhattan)
+  m_data = data;
+  if (m_data && !m_data->empty() && validate_metric())
   {
-    metric = metric_type_t::euclidean;
+    build_tree();
+  }
+  return m_data ? m_data->size() : 0;
+}
+
+template<typename Element, typename Metric>
+void kdtree_generic_t<Element, Metric>::set_metric_impl(const metric_type& metric)
+{
+  m_compile_time_metric = metric;
+  m_use_runtime_metric = false;
+  if (m_data && !m_data->empty() && validate_metric())
+  {
+    build_tree();
+  }
+}
+
+template<typename Element, typename Metric>
+void kdtree_generic_t<Element, Metric>::set_metric_impl(
+    std::shared_ptr<toolbox::metrics::IMetric<value_type>> metric)
+{
+  m_runtime_metric = metric;
+  m_use_runtime_metric = true;
+  // Note: Runtime metrics are not supported by nanoflann KD-tree
+  // This will use brute-force fallback in kneighbors/radius_neighbors
+}
+
+template<typename Element, typename Metric>
+bool kdtree_generic_t<Element, Metric>::validate_metric() const
+{
+  // nanoflann KD-tree only supports L2 metric efficiently
+  // For other metrics, we would need to fall back to brute-force
+  if (m_use_runtime_metric)
+  {
+    return false; // Runtime metrics not supported by KD-tree
   }
   
-  if (m_metric != metric)
-  {
-    m_metric = metric;
-    if (m_cloud && !m_cloud->empty())
-    {
-      build_tree();  // Rebuild tree with new metric
-    }
-  }
-  return 0;
+  // Check if metric is L2 (we can check this at compile time for known metrics)
+  return std::is_same_v<Metric, toolbox::metrics::L2Metric<value_type>>;
 }
 
-template<typename DataType>
-void kdtree_t<DataType>::build_tree()
+template<typename Element, typename Metric>
+void kdtree_generic_t<Element, Metric>::build_tree()
 {
-  if (!m_cloud || m_cloud->empty())
+  if (!m_data || m_data->empty())
   {
     m_kdtree.reset();
     m_adaptor.reset();
@@ -58,24 +77,9 @@ void kdtree_t<DataType>::build_tree()
   }
 
   // Create adaptor
-  m_adaptor = std::make_unique<point_cloud_adaptor_t>(m_cloud);
+  m_adaptor = std::make_unique<data_adaptor_t>(m_data);
 
   // Create and build KD-tree
-  if (m_metric == metric_type_t::manhattan)
-  {
-    // Use L1 metric
-    using l1_tree_t = nanoflann::KDTreeSingleIndexAdaptor<
-        nanoflann::L1_Adaptor<data_type, point_cloud_adaptor_t>,
-        point_cloud_adaptor_t,
-        3,
-        std::size_t
-    >;
-    
-    // Note: This is a simplification. In a real implementation,
-    // you'd need to handle different metric types properly
-    // For now, we'll use L2 for all cases
-  }
-
   m_kdtree = std::make_unique<kd_tree_t>(
       3,  // dimensions
       *m_adaptor,
@@ -85,6 +89,200 @@ void kdtree_t<DataType>::build_tree()
   m_kdtree->buildIndex();
 }
 
+template<typename Element, typename Metric>
+bool kdtree_generic_t<Element, Metric>::kneighbors_impl(
+    const element_type& query,
+    std::size_t num_neighbors,
+    std::vector<std::size_t>& indices,
+    std::vector<distance_type>& distances)
+{
+  if (!m_data || m_data->empty())
+  {
+    return false;
+  }
+
+  // If metric is not supported by KD-tree, fall back to brute-force
+  if (!validate_metric())
+  {
+    bfknn_generic_t<Element, Metric> bfknn;
+    bfknn.set_input(m_data);
+    if (m_use_runtime_metric)
+    {
+      bfknn.set_metric(m_runtime_metric);
+    }
+    else
+    {
+      bfknn.set_metric(m_compile_time_metric);
+    }
+    return bfknn.kneighbors(query, num_neighbors, indices, distances);
+  }
+
+  if (!m_kdtree)
+  {
+    return false;
+  }
+
+  const std::size_t data_size = m_data->size();
+  num_neighbors = std::min(num_neighbors, data_size);
+
+  // Prepare query point
+  value_type query_pt[3] = {query.x, query.y, query.z};
+
+  // Search
+  indices.resize(num_neighbors);
+  distances.resize(num_neighbors);
+
+  m_kdtree->knnSearch(
+      &query_pt[0],
+      num_neighbors,
+      &indices[0],
+      &distances[0]
+  );
+
+  // nanoflann returns squared distances for L2, so we need to take square root
+  if (std::is_same_v<Metric, toolbox::metrics::L2Metric<value_type>>)
+  {
+    for (auto& dist : distances)
+    {
+      dist = std::sqrt(dist);
+    }
+  }
+
+  return true;
+}
+
+template<typename Element, typename Metric>
+bool kdtree_generic_t<Element, Metric>::radius_neighbors_impl(
+    const element_type& query,
+    distance_type radius,
+    std::vector<std::size_t>& indices,
+    std::vector<distance_type>& distances)
+{
+  if (!m_data || m_data->empty() || radius <= 0)
+  {
+    return false;
+  }
+
+  // If metric is not supported by KD-tree, fall back to brute-force
+  if (!validate_metric())
+  {
+    bfknn_generic_t<Element, Metric> bfknn;
+    bfknn.set_input(m_data);
+    if (m_use_runtime_metric)
+    {
+      bfknn.set_metric(m_runtime_metric);
+    }
+    else
+    {
+      bfknn.set_metric(m_compile_time_metric);
+    }
+    return bfknn.radius_neighbors(query, radius, indices, distances);
+  }
+
+  if (!m_kdtree)
+  {
+    return false;
+  }
+
+  indices.clear();
+  distances.clear();
+
+  // Prepare query point
+  value_type query_pt[3] = {query.x, query.y, query.z};
+
+  // For L2 metric, nanoflann expects squared radius
+  distance_type search_radius = radius;
+  if (std::is_same_v<Metric, toolbox::metrics::L2Metric<value_type>>)
+  {
+    search_radius = radius * radius;
+  }
+
+  // Search
+  std::vector<nanoflann::ResultItem<std::size_t, distance_type>> matches;
+  const std::size_t num_matches = m_kdtree->radiusSearch(
+      &query_pt[0],
+      search_radius,
+      matches,
+      nanoflann::SearchParameters()
+  );
+
+  // Extract results
+  indices.reserve(num_matches);
+  distances.reserve(num_matches);
+
+  for (const auto& match : matches)
+  {
+    indices.push_back(match.first);
+    distance_type dist = match.second;
+    
+    // nanoflann returns squared distances for L2
+    if (std::is_same_v<Metric, toolbox::metrics::L2Metric<value_type>>)
+    {
+      dist = std::sqrt(dist);
+    }
+    
+    distances.push_back(dist);
+  }
+
+  return true;
+}
+
+// Legacy KD-tree implementation
+template<typename DataType>
+std::size_t kdtree_t<DataType>::set_input_impl(const point_cloud& cloud)
+{
+  // Convert point cloud to vector of points
+  std::vector<point_t<DataType>> points(cloud.points.begin(), cloud.points.end());
+  
+  // Only use kdtree for supported metrics
+  if (m_metric == metric_type_t::euclidean)
+  {
+    return m_impl.set_input(points);
+  }
+  else
+  {
+    // Use brute-force fallback for unsupported metrics
+    if (!m_bfknn_fallback)
+    {
+      m_bfknn_fallback = std::make_unique<bfknn_t<DataType>>();
+    }
+    m_use_bfknn_fallback = true;
+    return m_bfknn_fallback->set_input(cloud);
+  }
+}
+
+template<typename DataType>
+std::size_t kdtree_t<DataType>::set_input_impl(const point_cloud_ptr& cloud)
+{
+  if (!cloud) return 0;
+  return set_input_impl(*cloud);
+}
+
+template<typename DataType>
+std::size_t kdtree_t<DataType>::set_metric_impl(metric_type_t metric)
+{
+  m_metric = metric;
+  
+  // KD-tree only supports Euclidean distance efficiently
+  if (metric == metric_type_t::euclidean)
+  {
+    m_impl.set_metric(toolbox::metrics::L2Metric<DataType>{});
+    m_use_bfknn_fallback = false;
+  }
+  else
+  {
+    // Create fallback for unsupported metrics
+    if (!m_bfknn_fallback)
+    {
+      m_bfknn_fallback = std::make_unique<bfknn_t<DataType>>();
+    }
+    m_bfknn_fallback->set_metric(metric);
+    m_use_bfknn_fallback = true;
+  }
+  
+  return 0;
+}
+
 template<typename DataType>
 bool kdtree_t<DataType>::kneighbors_impl(
     const point_t<data_type>& query_point,
@@ -92,41 +290,11 @@ bool kdtree_t<DataType>::kneighbors_impl(
     std::vector<std::size_t>& indices,
     std::vector<data_type>& distances)
 {
-  if (!m_kdtree || !m_cloud || m_cloud->empty())
+  if (m_use_bfknn_fallback && m_bfknn_fallback)
   {
-    return false;
+    return m_bfknn_fallback->kneighbors(query_point, num_neighbors, indices, distances);
   }
-
-  const std::size_t cloud_size = m_cloud->size();
-  num_neighbors = std::min(num_neighbors, cloud_size);
-
-  // Prepare query point
-  std::array<data_type, 3> query_pt = {query_point.x, query_point.y, query_point.z};
-
-  // Resize output vectors
-  indices.resize(num_neighbors);
-  distances.resize(num_neighbors);
-
-  // Perform KNN search
-  std::vector<std::pair<std::size_t, data_type>> result_pairs(num_neighbors);
-  const std::size_t num_results = m_kdtree->knnSearch(
-      &query_pt[0], num_neighbors, &indices[0], &distances[0]
-  );
-
-  // nanoflann returns squared distances for L2, so we need to take sqrt
-  if (m_metric == metric_type_t::euclidean)
-  {
-    for (std::size_t i = 0; i < num_results; ++i)
-    {
-      distances[i] = std::sqrt(distances[i]);
-    }
-  }
-
-  // Resize to actual number of results (should be num_neighbors unless cloud is smaller)
-  indices.resize(num_results);
-  distances.resize(num_results);
-
-  return num_results > 0;
+  return m_impl.kneighbors(query_point, num_neighbors, indices, distances);
 }
 
 template<typename DataType>
@@ -136,52 +304,11 @@ bool kdtree_t<DataType>::radius_neighbors_impl(
     std::vector<std::size_t>& indices,
     std::vector<data_type>& distances)
 {
-  if (!m_kdtree || !m_cloud || m_cloud->empty() || radius <= 0)
+  if (m_use_bfknn_fallback && m_bfknn_fallback)
   {
-    return false;
+    return m_bfknn_fallback->radius_neighbors(query_point, radius, indices, distances);
   }
-
-  // Prepare query point
-  std::array<data_type, 3> query_pt = {query_point.x, query_point.y, query_point.z};
-
-  // For L2 metric, nanoflann expects squared radius
-  data_type search_radius = radius;
-  if (m_metric == metric_type_t::euclidean)
-  {
-    search_radius = radius * radius;
-  }
-
-  // Perform radius search
-  std::vector<nanoflann::ResultItem<std::size_t, data_type>> matches;
-  nanoflann::SearchParameters params;
-  params.sorted = true;  // Sort results by distance
-
-  const std::size_t num_matches = m_kdtree->radiusSearch(
-      &query_pt[0], search_radius, matches, params
-  );
-
-  // Extract results
-  indices.clear();
-  distances.clear();
-  indices.reserve(num_matches);
-  distances.reserve(num_matches);
-
-  for (const auto& match : matches)
-  {
-    indices.push_back(match.first);
-    
-    // Convert squared distance to actual distance for L2
-    if (m_metric == metric_type_t::euclidean)
-    {
-      distances.push_back(std::sqrt(match.second));
-    }
-    else
-    {
-      distances.push_back(match.second);
-    }
-  }
-
-  return true;
+  return m_impl.radius_neighbors(query_point, radius, indices, distances);
 }
 
 }  // namespace toolbox::pcl

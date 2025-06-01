@@ -6,6 +6,9 @@
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/utils/random.hpp>
 #include <cpp-toolbox/utils/timer.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
+#include <cpp-toolbox/metrics/angular_metrics.hpp>
+#include <cpp-toolbox/metrics/metric_factory.hpp>
 
 #include <iostream>
 #include <memory>
@@ -13,6 +16,7 @@
 
 using namespace toolbox::pcl;
 using namespace toolbox::types;
+using namespace toolbox::metrics;
 
 // Helper function to generate random point cloud
 template<typename T>
@@ -98,113 +102,44 @@ TEST_CASE("KNN Benchmark - K-Neighbors Query", "[pcl][knn][benchmark]")
     auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
     auto queries = generate_query_points<scalar_t>(100);
     
-    // Setup algorithms once
-    auto bf_knn = std::make_unique<bfknn_t<scalar_t>>();
-    auto bf_parallel_knn = std::make_unique<bfknn_parallel_t<scalar_t>>();
-    auto kd_knn = std::make_unique<kdtree_t<scalar_t>>();
+    // Setup KNN algorithms
+    auto bfknn = std::make_unique<bfknn_t<scalar_t>>();
+    auto bfknn_parallel = std::make_unique<bfknn_parallel_t<scalar_t>>();
+    auto kdtree = std::make_unique<kdtree_t<scalar_t>>();
     
-    bf_knn->set_input(cloud);
-    bf_parallel_knn->set_input(cloud);
-    kd_knn->set_input(cloud);
+    bfknn->set_input(cloud);
+    bfknn_parallel->set_input(cloud);
+    kdtree->set_input(cloud);
     
     for (auto k : k_values)
     {
-      // Skip if k > cloud_size
-      if (k > cloud_size) continue;
-      
-      std::string bench_name = std::to_string(cloud_size) + " points, k=" + std::to_string(k);
-      
-      BENCHMARK("BruteForce kNN - " + bench_name)
+      BENCHMARK("BruteForce Query - " + std::to_string(cloud_size) + " points, k=" + std::to_string(k))
       {
         std::vector<std::size_t> indices;
         std::vector<scalar_t> distances;
-        
         for (const auto& query : queries)
         {
-          bf_knn->kneighbors(query, k, indices, distances);
+          bfknn->kneighbors(query, k, indices, distances);
         }
       };
       
-      BENCHMARK("BruteForce Parallel kNN - " + bench_name)
+      BENCHMARK("BruteForce Parallel Query - " + std::to_string(cloud_size) + " points, k=" + std::to_string(k))
       {
         std::vector<std::size_t> indices;
         std::vector<scalar_t> distances;
-        
         for (const auto& query : queries)
         {
-          bf_parallel_knn->kneighbors(query, k, indices, distances);
+          bfknn_parallel->kneighbors(query, k, indices, distances);
         }
       };
       
-      BENCHMARK("KDTree kNN - " + bench_name)
+      BENCHMARK("KDTree Query - " + std::to_string(cloud_size) + " points, k=" + std::to_string(k))
       {
         std::vector<std::size_t> indices;
         std::vector<scalar_t> distances;
-        
         for (const auto& query : queries)
         {
-          kd_knn->kneighbors(query, k, indices, distances);
-        }
-      };
-    }
-  }
-}
-
-TEST_CASE("KNN Benchmark - Radius Search", "[pcl][knn][benchmark]")
-{
-  using scalar_t = float;
-  
-  std::vector<std::size_t> cloud_sizes = {1000, 10000, 50000, 100000};
-  std::vector<scalar_t> radii = {1.0f, 5.0f, 10.0f, 20.0f};
-  
-  for (auto cloud_size : cloud_sizes)
-  {
-    auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
-    auto queries = generate_query_points<scalar_t>(100);
-    
-    // Setup algorithms once
-    auto bf_knn = std::make_unique<bfknn_t<scalar_t>>();
-    auto bf_parallel_knn = std::make_unique<bfknn_parallel_t<scalar_t>>();
-    auto kd_knn = std::make_unique<kdtree_t<scalar_t>>();
-    
-    bf_knn->set_input(cloud);
-    bf_parallel_knn->set_input(cloud);
-    kd_knn->set_input(cloud);
-    
-    for (auto radius : radii)
-    {
-      std::string bench_name = std::to_string(cloud_size) + " points, r=" + std::to_string(radius);
-      
-      BENCHMARK("BruteForce Radius - " + bench_name)
-      {
-        std::vector<std::size_t> indices;
-        std::vector<scalar_t> distances;
-        
-        for (const auto& query : queries)
-        {
-          bf_knn->radius_neighbors(query, radius, indices, distances);
-        }
-      };
-      
-      BENCHMARK("BruteForce Parallel Radius - " + bench_name)
-      {
-        std::vector<std::size_t> indices;
-        std::vector<scalar_t> distances;
-        
-        for (const auto& query : queries)
-        {
-          bf_parallel_knn->radius_neighbors(query, radius, indices, distances);
-        }
-      };
-      
-      BENCHMARK("KDTree Radius - " + bench_name)
-      {
-        std::vector<std::size_t> indices;
-        std::vector<scalar_t> distances;
-        
-        for (const auto& query : queries)
-        {
-          kd_knn->radius_neighbors(query, radius, indices, distances);
+          kdtree->kneighbors(query, k, indices, distances);
         }
       };
     }
@@ -215,124 +150,278 @@ TEST_CASE("KNN Benchmark - Different Metrics", "[pcl][knn][benchmark]")
 {
   using scalar_t = float;
   
-  const std::size_t cloud_size = 50000;
+  const std::size_t cloud_size = 10000;
+  const std::size_t num_queries = 100;
   const std::size_t k = 10;
   
   auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
-  auto queries = generate_query_points<scalar_t>(100);
+  auto queries = generate_query_points<scalar_t>(num_queries);
   
-  std::vector<metric_type_t> metrics = {
-    metric_type_t::euclidean,
-    metric_type_t::manhattan,
-    metric_type_t::chebyshev,
-    metric_type_t::minkowski
-  };
-  
-  for (auto metric : metrics)
+  SECTION("Legacy interface metrics")
   {
-    auto bf_knn = std::make_unique<bfknn_t<scalar_t>>();
-    bf_knn->set_input(cloud);
-    bf_knn->set_metric(metric);
+    auto knn = std::make_unique<bfknn_t<scalar_t>>();
+    knn->set_input(cloud);
     
-    std::string metric_name;
-    switch (metric)
+    std::vector<metric_type_t> metrics = {
+      metric_type_t::euclidean,
+      metric_type_t::manhattan,
+      metric_type_t::chebyshev,
+      metric_type_t::minkowski
+    };
+    
+    std::vector<std::string> metric_names = {
+      "Euclidean",
+      "Manhattan",
+      "Chebyshev",
+      "Minkowski"
+    };
+    
+    for (std::size_t i = 0; i < metrics.size(); ++i)
     {
-      case metric_type_t::euclidean: metric_name = "Euclidean"; break;
-      case metric_type_t::manhattan: metric_name = "Manhattan"; break;
-      case metric_type_t::chebyshev: metric_name = "Chebyshev"; break;
-      case metric_type_t::minkowski: metric_name = "Minkowski"; break;
+      knn->set_metric(metrics[i]);
+      
+      BENCHMARK("BruteForce " + metric_names[i] + " - " + std::to_string(cloud_size) + " points")
+      {
+        std::vector<std::size_t> indices;
+        std::vector<scalar_t> distances;
+        for (const auto& query : queries)
+        {
+          knn->kneighbors(query, k, indices, distances);
+        }
+      };
     }
+  }
+  
+  SECTION("Generic interface metrics")
+  {
+    // Convert to vector for generic interface
+    std::vector<point_t<scalar_t>> points(cloud.points.begin(), cloud.points.end());
     
-    BENCHMARK("BruteForce kNN - " + metric_name + " metric")
+    BENCHMARK("Generic L2 Metric")
     {
+      bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
+      knn.set_input(points);
+      
       std::vector<std::size_t> indices;
       std::vector<scalar_t> distances;
-      
       for (const auto& query : queries)
       {
-        bf_knn->kneighbors(query, k, indices, distances);
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+    
+    BENCHMARK("Generic L1 Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, L1Metric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+    
+    BENCHMARK("Generic Linf Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, LinfMetric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+    
+    BENCHMARK("Generic Cosine Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, CosineMetric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+    
+    BENCHMARK("Generic Angular Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, AngularMetric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+  }
+  
+  SECTION("Runtime metrics")
+  {
+    std::vector<point_t<scalar_t>> points(cloud.points.begin(), cloud.points.end());
+    
+    BENCHMARK("Runtime L2 Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      auto metric = MetricFactory<scalar_t>::create("L2");
+      knn.set_metric(metric);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
+      }
+    };
+    
+    BENCHMARK("Runtime L1 Metric")
+    {
+      bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
+      knn.set_input(points);
+      
+      auto metric = MetricFactory<scalar_t>::create("L1");
+      knn.set_metric(metric);
+      
+      std::vector<std::size_t> indices;
+      std::vector<scalar_t> distances;
+      for (const auto& query : queries)
+      {
+        knn.kneighbors(query, k, indices, distances);
       }
     };
   }
 }
 
-TEST_CASE("KNN Benchmark - Parallel Speedup Analysis", "[pcl][knn][benchmark]")
+TEST_CASE("KNN Benchmark - Radius Neighbors", "[pcl][knn][benchmark]")
 {
   using scalar_t = float;
   
-  std::vector<std::size_t> cloud_sizes = {10000, 50000, 100000, 200000};
-  const std::size_t k = 10;
+  const std::size_t cloud_size = 10000;
+  const std::size_t num_queries = 100;
+  const scalar_t radius = 10.0f;
   
-  std::cout << "\n=== Parallel Speedup Analysis ===\n";
-  std::cout << "Cloud Size | Serial Time | Parallel Time | Speedup\n";
-  std::cout << "-----------|-------------|---------------|--------\n";
+  auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
+  auto queries = generate_query_points<scalar_t>(num_queries);
   
-  for (auto cloud_size : cloud_sizes)
+  // Setup KNN algorithms
+  auto bfknn = std::make_unique<bfknn_t<scalar_t>>();
+  auto bfknn_parallel = std::make_unique<bfknn_parallel_t<scalar_t>>();
+  auto kdtree = std::make_unique<kdtree_t<scalar_t>>();
+  
+  bfknn->set_input(cloud);
+  bfknn_parallel->set_input(cloud);
+  kdtree->set_input(cloud);
+  
+  BENCHMARK("BruteForce Radius Search - " + std::to_string(cloud_size) + " points")
   {
-    auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
-    auto queries = generate_query_points<scalar_t>(100);
-    
-    auto bf_knn = std::make_unique<bfknn_t<scalar_t>>();
-    auto bf_parallel_knn = std::make_unique<bfknn_parallel_t<scalar_t>>();
-    
-    bf_knn->set_input(cloud);
-    bf_parallel_knn->set_input(cloud);
-    
-    // Time serial version
-    toolbox::utils::stop_watch_timer_t timer;
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
-    
-    timer.start();
     for (const auto& query : queries)
     {
-      bf_knn->kneighbors(query, k, indices, distances);
+      bfknn->radius_neighbors(query, radius, indices, distances);
     }
-    timer.stop();
-    double serial_time = timer.elapsed_time();
-    
-    // Time parallel version
-    timer.start();
+  };
+  
+  BENCHMARK("BruteForce Parallel Radius Search - " + std::to_string(cloud_size) + " points")
+  {
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
     for (const auto& query : queries)
     {
-      bf_parallel_knn->kneighbors(query, k, indices, distances);
+      bfknn_parallel->radius_neighbors(query, radius, indices, distances);
     }
-    timer.stop();
-    double parallel_time = timer.elapsed_time();
-    
-    double speedup = serial_time / parallel_time;
-    
-    std::cout << std::setw(10) << cloud_size << " | "
-              << std::setw(11) << std::fixed << std::setprecision(3) << serial_time << " | "
-              << std::setw(13) << std::fixed << std::setprecision(3) << parallel_time << " | "
-              << std::setw(7) << std::fixed << std::setprecision(2) << speedup << "x\n";
-  }
-  std::cout << "\n";
+  };
+  
+  BENCHMARK("KDTree Radius Search - " + std::to_string(cloud_size) + " points")
+  {
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    for (const auto& query : queries)
+    {
+      kdtree->radius_neighbors(query, radius, indices, distances);
+    }
+  };
 }
 
-TEST_CASE("KNN Benchmark - Memory Usage Patterns", "[pcl][knn][benchmark]")
+TEST_CASE("KNN Benchmark - Parallel Scaling", "[pcl][knn][benchmark]")
 {
   using scalar_t = float;
   
-  std::vector<std::size_t> cloud_sizes = {1000, 10000, 100000};
+  const std::size_t cloud_size = 100000;
+  const std::size_t num_queries = 100;
+  const std::size_t k = 10;
   
-  std::cout << "\n=== Memory Usage Analysis ===\n";
-  std::cout << "Algorithm | Cloud Size | Approx Memory (MB)\n";
-  std::cout << "----------|------------|------------------\n";
+  auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
+  auto queries = generate_query_points<scalar_t>(num_queries);
   
-  for (auto cloud_size : cloud_sizes)
+  auto bfknn_parallel = std::make_unique<bfknn_parallel_t<scalar_t>>();
+  bfknn_parallel->set_input(cloud);
+  
+  BENCHMARK("Parallel Enabled - " + std::to_string(cloud_size) + " points")
   {
-    // Calculate approximate memory usage
-    std::size_t point_size = sizeof(point_t<scalar_t>);
-    std::size_t cloud_memory = cloud_size * point_size / (1024 * 1024);
-    
-    // BruteForce: just stores the cloud
-    std::cout << "BruteForce | " << std::setw(10) << cloud_size 
-              << " | " << std::setw(17) << cloud_memory << "\n";
-    
-    // KDTree: stores cloud + tree structure (roughly 2x)
-    std::cout << "KDTree     | " << std::setw(10) << cloud_size 
-              << " | " << std::setw(17) << cloud_memory * 2 << "\n";
-  }
-  std::cout << "\n";
+    bfknn_parallel->enable_parallel(true);
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    for (const auto& query : queries)
+    {
+      bfknn_parallel->kneighbors(query, k, indices, distances);
+    }
+  };
+  
+  BENCHMARK("Parallel Disabled - " + std::to_string(cloud_size) + " points")
+  {
+    bfknn_parallel->enable_parallel(false);
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    for (const auto& query : queries)
+    {
+      bfknn_parallel->kneighbors(query, k, indices, distances);
+    }
+  };
+}
+
+TEST_CASE("KNN Benchmark - KDTree Fallback for Metrics", "[pcl][knn][benchmark]")
+{
+  using scalar_t = float;
+  
+  const std::size_t cloud_size = 10000;
+  const std::size_t num_queries = 100;
+  const std::size_t k = 10;
+  
+  auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
+  auto queries = generate_query_points<scalar_t>(num_queries);
+  
+  auto kdtree = std::make_unique<kdtree_t<scalar_t>>();
+  kdtree->set_input(cloud);
+  
+  BENCHMARK("KDTree with Euclidean (Native)")
+  {
+    kdtree->set_metric(metric_type_t::euclidean);
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    for (const auto& query : queries)
+    {
+      kdtree->kneighbors(query, k, indices, distances);
+    }
+  };
+  
+  BENCHMARK("KDTree with Manhattan (Fallback)")
+  {
+    kdtree->set_metric(metric_type_t::manhattan);
+    std::vector<std::size_t> indices;
+    std::vector<scalar_t> distances;
+    for (const auto& query : queries)
+    {
+      kdtree->kneighbors(query, k, indices, distances);
+    }
+  };
 }

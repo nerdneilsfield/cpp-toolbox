@@ -5,6 +5,7 @@
 #include <numeric>
 
 #include <cpp-toolbox/metrics/base_metric.hpp>
+#include <cpp-toolbox/types/point.hpp>
 
 namespace toolbox::metrics
 {

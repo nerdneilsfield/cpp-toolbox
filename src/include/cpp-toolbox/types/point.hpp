@@ -46,6 +46,8 @@ namespace toolbox::types
 template<typename T>
 struct CPP_TOOLBOX_EXPORT point_t
 {
+  using value_type = T;  ///< Value type for compatibility with STL containers
+  
   T x;  ///< X坐标 / X coordinate
   T y;  ///< Y坐标 / Y coordinate
   T z;  ///< Z坐标 / Z coordinate

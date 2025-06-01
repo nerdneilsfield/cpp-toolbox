@@ -8,6 +8,7 @@
 #include <stdexcept>
 
 #include <cpp-toolbox/metrics/base_metric.hpp>
+#include <cpp-toolbox/types/point.hpp>
 
 namespace toolbox::metrics
 {
@@ -34,6 +35,17 @@ public:
     }
     return sum;
   }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    T dx = a.x - b.x;
+    T dy = a.y - b.y;
+    T dz = a.z - b.z;
+    return std::sqrt(dx * dx + dy * dy + dz * dz);
+  }
 };
 
 template<typename T>
@@ -57,6 +69,16 @@ public:
   {
     T dist = distance_impl(a, b, size);
     return dist * dist;
+  }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    return std::abs(static_cast<T>(a.x - b.x)) + 
+           std::abs(static_cast<T>(a.y - b.y)) + 
+           std::abs(static_cast<T>(a.z - b.z));
   }
 };
 
@@ -84,6 +106,16 @@ public:
   {
     T dist = distance_impl(a, b, size);
     return dist * dist;
+  }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    return std::max({std::abs(static_cast<T>(a.x - b.x)), 
+                     std::abs(static_cast<T>(a.y - b.y)), 
+                     std::abs(static_cast<T>(a.z - b.z))});
   }
 };
 
@@ -204,6 +236,35 @@ public:
     else {
       T dist = distance_impl(a, b, size);
       return dist * dist;
+    }
+  }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    if (std::abs(p_ - T(1)) < std::numeric_limits<T>::epsilon()) {
+      return std::abs(static_cast<T>(a.x - b.x)) + 
+             std::abs(static_cast<T>(a.y - b.y)) + 
+             std::abs(static_cast<T>(a.z - b.z));
+    }
+    else if (std::abs(p_ - T(2)) < std::numeric_limits<T>::epsilon()) {
+      T dx = a.x - b.x;
+      T dy = a.y - b.y;
+      T dz = a.z - b.z;
+      return std::sqrt(dx * dx + dy * dy + dz * dz);
+    }
+    else if (std::isinf(p_)) {
+      return std::max({std::abs(static_cast<T>(a.x - b.x)), 
+                       std::abs(static_cast<T>(a.y - b.y)), 
+                       std::abs(static_cast<T>(a.z - b.z))});
+    }
+    else {
+      T sum = std::pow(std::abs(static_cast<T>(a.x - b.x)), p_) +
+              std::pow(std::abs(static_cast<T>(a.y - b.y)), p_) +
+              std::pow(std::abs(static_cast<T>(a.z - b.z)), p_);
+      return std::pow(sum, T(1) / p_);
     }
   }
 
