@@ -43,40 +43,34 @@ class dsc3d_extractor_t
 public:
   dsc3d_extractor_t() = default;
 
-  std::size_t set_input(const toolbox::types::point_cloud_t<DataType>& cloud)
+  void set_input(const toolbox::types::point_cloud_t<DataType>& cloud)
   {
     cloud_ = &cloud;
-    return cloud.size();
   }
 
-  std::size_t set_knn(KNN& knn)
+  void set_knn(KNN& knn)
   {
     knn_ = &knn;
-    return cloud_ ? cloud_->size() : 0;
   }
 
-  std::size_t set_search_radius(DataType radius)
+  void set_search_radius(DataType radius)
   {
     search_radius_ = radius;
-    return cloud_ ? cloud_->size() : 0;
   }
 
-  std::size_t set_num_neighbors(std::size_t num_neighbors)
+  void set_num_neighbors(std::size_t num_neighbors)
   {
     num_neighbors_ = num_neighbors;
-    return cloud_ ? cloud_->size() : 0;
   }
 
-  std::size_t set_minimal_radius(DataType radius)
+  void set_minimal_radius(DataType radius)
   {
     minimal_radius_ = radius;
-    return cloud_ ? cloud_->size() : 0;
   }
 
-  std::size_t set_point_density_radius(DataType radius)
+  void set_point_density_radius(DataType radius)
   {
     point_density_radius_ = radius;
-    return cloud_ ? cloud_->size() : 0;
   }
 
   void enable_parallel_impl(bool enable)
@@ -104,12 +98,8 @@ public:
     
     if (enable_parallel_)
     {
-      // Use a simple parallel for loop
-      #pragma omp parallel for
-      for (int i = 0; i < static_cast<int>(keypoint_indices.size()); ++i)
-      {
-        compute_descriptor(static_cast<std::size_t>(i));
-      }
+      toolbox::concurrent::parallel_for_each(
+        keypoint_indices.size(), compute_descriptor);
     }
     else
     {
@@ -134,19 +124,14 @@ private:
   {
     if (!knn_) return;
     
-    pca_norm_extractor_t<DataType, KNN> normal_estimator;
+    pca_norm_t<DataType, KNN> normal_estimator;
     normal_estimator.set_input(cloud);
     normal_estimator.set_knn(*knn_);
+    normal_estimator.set_search_radius(search_radius_);
     normal_estimator.set_num_neighbors(num_neighbors_);
     normal_estimator.enable_parallel(enable_parallel_);
     
-    auto normal_cloud = normal_estimator.extract();
-    normals.clear();
-    normals.reserve(normal_cloud.size());
-    for (const auto& pt : normal_cloud.points)
-    {
-      normals.push_back(pt);
-    }
+    normal_estimator.compute(cloud, normals);
   }
   
   void compute_3dsc(const toolbox::types::point_cloud_t<DataType>& cloud,
@@ -168,7 +153,7 @@ private:
     if (neighbors.size() < 3) return;
     
     // Create local reference frame
-    auto lrf = compute_local_reference_frame(cloud, keypoint, normal, neighbors, keypoint_idx);
+    auto lrf = compute_local_reference_frame(cloud, keypoint, normal, neighbors);
     
     // Compute shape context
     const std::size_t nr_bins_r = 11;    // Radial bins
@@ -247,70 +232,51 @@ private:
       const toolbox::types::point_cloud_t<DataType>& cloud,
       const toolbox::types::point_t<DataType>& keypoint,
       const toolbox::types::point_t<DataType>& normal,
-      const std::vector<std::size_t>& neighbors,
-      std::size_t keypoint_idx) const
+      const std::vector<std::size_t>& neighbors) const
   {
     LocalReferenceFrame lrf;
     
     // Z-axis is the normal
-    lrf.z_axis = normal;
-    auto z_norm = lrf.z_axis.norm();
-    if (z_norm > 0)
-    {
-      lrf.z_axis.x /= z_norm;
-      lrf.z_axis.y /= z_norm;
-      lrf.z_axis.z /= z_norm;
-    }
+    lrf.z_axis = normal.normalize();
     
     // Find the point with maximum angle from normal
     DataType max_angle = 0;
-    toolbox::types::point_t<DataType> max_point(0, 0, 0);
+    toolbox::types::point_t<DataType> max_point;
     
     for (const auto& idx : neighbors)
     {
-      if (idx == keypoint_idx) continue;
+      if (idx == keypoint.index) continue;
       
       auto diff = cloud.points[idx];
       diff.x -= keypoint.x;
       diff.y -= keypoint.y;
       diff.z -= keypoint.z;
       
-      auto d_norm = diff.norm();
-      if (d_norm > 0)
-      {
-        diff.x /= d_norm;
-        diff.y /= d_norm;
-        diff.z /= d_norm;
-      }
-      
-      DataType angle = std::acos(std::min<DataType>(1.0, std::max<DataType>(-1.0, 
-        std::abs(diff.x * lrf.z_axis.x + 
-                 diff.y * lrf.z_axis.y + 
-                 diff.z * lrf.z_axis.z))));
+      auto d_norm = diff.normalize();
+      DataType angle = std::acos(std::abs(
+        d_norm.x * lrf.z_axis.x + 
+        d_norm.y * lrf.z_axis.y + 
+        d_norm.z * lrf.z_axis.z));
       
       if (angle > max_angle)
       {
         max_angle = angle;
-        max_point = diff;
+        max_point = d_norm;
       }
     }
     
     // X-axis perpendicular to Z
     lrf.x_axis = max_point;
-    DataType dot = lrf.x_axis.x * lrf.z_axis.x + 
-                   lrf.x_axis.y * lrf.z_axis.y + 
-                   lrf.x_axis.z * lrf.z_axis.z;
-    lrf.x_axis.x -= dot * lrf.z_axis.x;
-    lrf.x_axis.y -= dot * lrf.z_axis.y;
-    lrf.x_axis.z -= dot * lrf.z_axis.z;
-    
-    auto x_norm = lrf.x_axis.norm();
-    if (x_norm > 0)
-    {
-      lrf.x_axis.x /= x_norm;
-      lrf.x_axis.y /= x_norm;
-      lrf.x_axis.z /= x_norm;
-    }
+    lrf.x_axis.x -= (lrf.x_axis.x * lrf.z_axis.x + 
+                     lrf.x_axis.y * lrf.z_axis.y + 
+                     lrf.x_axis.z * lrf.z_axis.z) * lrf.z_axis.x;
+    lrf.x_axis.y -= (lrf.x_axis.x * lrf.z_axis.x + 
+                     lrf.x_axis.y * lrf.z_axis.y + 
+                     lrf.x_axis.z * lrf.z_axis.z) * lrf.z_axis.y;
+    lrf.x_axis.z -= (lrf.x_axis.x * lrf.z_axis.x + 
+                     lrf.x_axis.y * lrf.z_axis.y + 
+                     lrf.x_axis.z * lrf.z_axis.z) * lrf.z_axis.z;
+    lrf.x_axis = lrf.x_axis.normalize();
     
     // Y-axis = Z x X
     lrf.y_axis.x = lrf.z_axis.y * lrf.x_axis.z - lrf.z_axis.z * lrf.x_axis.y;

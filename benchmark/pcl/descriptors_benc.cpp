@@ -4,6 +4,10 @@
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/shot_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/pfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/vfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/3dsc_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/cvfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/rops_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/utils/random.hpp>
 
@@ -550,6 +554,169 @@ TEST_CASE("Descriptor extraction comprehensive benchmarks", "[pcl][descriptors][
         for (std::size_t j = i + 1; j < pfh_desc.size(); ++j)
         {
           total_distance += pfh_desc[i].distance(pfh_desc[j]);
+        }
+      }
+      return total_distance;
+    };
+  }
+  
+  // New descriptors benchmarks
+  SECTION("New descriptors performance comparison")
+  {
+    auto cloud = generate_benchmark_cloud<data_type>(10000);
+    auto keypoint_indices = generate_keypoint_indices(cloud.size(), 100);
+    
+    BENCHMARK("VFH - 10K points (global descriptor)")
+    {
+      kdtree_t<data_type> kdtree;
+      kdtree.set_input(cloud);
+      
+      vfh_extractor_t<data_type, kdtree_t<data_type>> extractor;
+      extractor.set_input(cloud);
+      extractor.set_knn(kdtree);
+      extractor.set_search_radius(0.5);
+      extractor.set_num_neighbors(50);
+      
+      std::vector<vfh_signature_t<data_type>> descriptors;
+      std::vector<std::size_t> empty_indices;  // VFH ignores keypoints
+      extractor.compute(cloud, empty_indices, descriptors);
+      return descriptors.size();
+    };
+    
+    BENCHMARK("3DSC - 10K points, 100 keypoints")
+    {
+      kdtree_t<data_type> kdtree;
+      kdtree.set_input(cloud);
+      
+      dsc3d_extractor_t<data_type, kdtree_t<data_type>> extractor;
+      extractor.set_input(cloud);
+      extractor.set_knn(kdtree);
+      extractor.set_search_radius(1.0);
+      extractor.set_num_neighbors(50);
+      extractor.set_minimal_radius(0.01);
+      extractor.set_point_density_radius(0.05);
+      
+      std::vector<dsc3d_signature_t<data_type>> descriptors;
+      extractor.compute(cloud, keypoint_indices, descriptors);
+      return descriptors.size();
+    };
+    
+    BENCHMARK("CVFH - 10K points (clustered)")
+    {
+      kdtree_t<data_type> kdtree;
+      kdtree.set_input(cloud);
+      
+      cvfh_extractor_t<data_type, kdtree_t<data_type>> extractor;
+      extractor.set_input(cloud);
+      extractor.set_knn(kdtree);
+      extractor.set_search_radius(0.5);
+      extractor.set_num_neighbors(50);
+      extractor.set_cluster_tolerance(0.5);
+      extractor.set_eps_angle_threshold(0.08);
+      
+      std::vector<cvfh_signature_t<data_type>> descriptors;
+      std::vector<std::size_t> empty_indices;  // CVFH segments the cloud
+      extractor.compute(cloud, empty_indices, descriptors);
+      return descriptors.size();
+    };
+    
+    BENCHMARK("ROPS - 10K points, 100 keypoints")
+    {
+      kdtree_t<data_type> kdtree;
+      kdtree.set_input(cloud);
+      
+      rops_extractor_t<data_type, kdtree_t<data_type>> extractor;
+      extractor.set_input(cloud);
+      extractor.set_knn(kdtree);
+      extractor.set_search_radius(1.0);
+      extractor.set_num_neighbors(50);
+      extractor.set_num_rotations(5);
+      extractor.set_num_partitions_x(3);
+      extractor.set_num_partitions_y(3);
+      extractor.set_num_partitions_z(3);
+      
+      std::vector<rops_signature_t<data_type>> descriptors;
+      extractor.compute(cloud, keypoint_indices, descriptors);
+      return descriptors.size();
+    };
+  }
+  
+  // Descriptor size and distance computation comparison
+  SECTION("All descriptors distance computation")
+  {
+    auto cloud = generate_benchmark_cloud<data_type>(5000);
+    auto keypoint_indices = generate_keypoint_indices(cloud.size(), 50);
+    
+    // Pre-compute descriptors
+    kdtree_t<data_type> kdtree;
+    kdtree.set_input(cloud);
+    
+    // VFH descriptors (global)
+    vfh_extractor_t<data_type, kdtree_t<data_type>> vfh_extractor;
+    vfh_extractor.set_input(cloud);
+    vfh_extractor.set_knn(kdtree);
+    vfh_extractor.set_search_radius(0.5);
+    
+    std::vector<vfh_signature_t<data_type>> vfh_desc;
+    std::vector<std::size_t> empty_indices;
+    vfh_extractor.compute(cloud, empty_indices, vfh_desc);
+    
+    // 3DSC descriptors
+    dsc3d_extractor_t<data_type, kdtree_t<data_type>> dsc3d_extractor;
+    dsc3d_extractor.set_input(cloud);
+    dsc3d_extractor.set_knn(kdtree);
+    dsc3d_extractor.set_search_radius(1.0);
+    
+    std::vector<dsc3d_signature_t<data_type>> dsc3d_desc;
+    dsc3d_extractor.compute(cloud, keypoint_indices, dsc3d_desc);
+    
+    // ROPS descriptors
+    rops_extractor_t<data_type, kdtree_t<data_type>> rops_extractor;
+    rops_extractor.set_input(cloud);
+    rops_extractor.set_knn(kdtree);
+    rops_extractor.set_search_radius(1.0);
+    
+    std::vector<rops_signature_t<data_type>> rops_desc;
+    rops_extractor.compute(cloud, keypoint_indices, rops_desc);
+    
+    BENCHMARK("VFH distance computation (308 dims)")
+    {
+      data_type total_distance = 0;
+      // VFH usually produces one descriptor per cloud
+      if (vfh_desc.size() > 1)
+      {
+        for (std::size_t i = 0; i < vfh_desc.size(); ++i)
+        {
+          for (std::size_t j = i + 1; j < vfh_desc.size(); ++j)
+          {
+            total_distance += vfh_desc[i].distance(vfh_desc[j]);
+          }
+        }
+      }
+      return total_distance;
+    };
+    
+    BENCHMARK("3DSC distance computation (1980 dims)")
+    {
+      data_type total_distance = 0;
+      for (std::size_t i = 0; i < dsc3d_desc.size(); ++i)
+      {
+        for (std::size_t j = i + 1; j < dsc3d_desc.size(); ++j)
+        {
+          total_distance += dsc3d_desc[i].distance(dsc3d_desc[j]);
+        }
+      }
+      return total_distance;
+    };
+    
+    BENCHMARK("ROPS distance computation (135 dims)")
+    {
+      data_type total_distance = 0;
+      for (std::size_t i = 0; i < rops_desc.size(); ++i)
+      {
+        for (std::size_t j = i + 1; j < rops_desc.size(); ++j)
+        {
+          total_distance += rops_desc[i].distance(rops_desc[j]);
         }
       }
       return total_distance;

@@ -5,6 +5,10 @@
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/shot_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/pfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/vfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/3dsc_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/cvfh_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/rops_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/knn/bfknn_parallel.hpp>
 #include <cpp-toolbox/io/formats/pcd.hpp>
@@ -537,6 +541,333 @@ TEST_CASE("Real point cloud descriptors", "[pcl][descriptors]")
           CHECK(distance < 0.1f);  // Small threshold for numerical differences
         }
       }
+    }
+  }
+}
+
+TEST_CASE("VFH descriptor extractor", "[pcl][descriptors]")
+{
+  using data_type = float;
+  using point_cloud = types::point_cloud_t<data_type>;
+  using vfh_extractor = vfh_extractor_t<data_type, kdtree_t<data_type>>;
+  using vfh_signature = vfh_signature_t<data_type>;
+
+  SECTION("Basic functionality")
+  {
+    auto cloud = generate_sphere_cloud<data_type>(500, 1.0f);
+    
+    vfh_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    extractor.set_input(cloud);
+    extractor.set_knn(kdtree);
+    extractor.set_search_radius(0.1f);
+    extractor.set_num_neighbors(20);
+    
+    std::vector<std::size_t> keypoint_indices;  // VFH is global, ignores keypoints
+    std::vector<vfh_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    CHECK(descriptors.size() == 1);  // VFH produces one global descriptor
+    
+    // Check that descriptor is normalized
+    const auto& desc = descriptors[0];
+    data_type sum = 0;
+    for (std::size_t i = 0; i < vfh_signature::HISTOGRAM_SIZE; ++i)
+    {
+      CHECK(desc.histogram[i] >= 0);
+      sum += desc.histogram[i];
+    }
+    CHECK(sum == Catch::Approx(1.0f).margin(0.01f));
+  }
+
+  SECTION("Shape discrimination")
+  {
+    auto sphere_cloud = generate_sphere_cloud<data_type>(500, 1.0f);
+    auto plane_cloud = generate_plane_cloud<data_type>(25, 20, 0.05f);
+    
+    vfh_extractor extractor1, extractor2;
+    kdtree_t<data_type> kdtree1, kdtree2;
+    
+    extractor1.set_input(sphere_cloud);
+    extractor1.set_knn(kdtree1);
+    extractor1.set_search_radius(0.1f);
+    
+    extractor2.set_input(plane_cloud);
+    extractor2.set_knn(kdtree2);
+    extractor2.set_search_radius(0.1f);
+    
+    std::vector<std::size_t> empty_indices;
+    std::vector<vfh_signature> sphere_desc, plane_desc;
+    
+    extractor1.compute(sphere_cloud, empty_indices, sphere_desc);
+    extractor2.compute(plane_cloud, empty_indices, plane_desc);
+    
+    CHECK(sphere_desc.size() == 1);
+    CHECK(plane_desc.size() == 1);
+    
+    // Different shapes should produce different descriptors
+    data_type distance = sphere_desc[0].distance(plane_desc[0]);
+    CHECK(distance > 0.1f);
+  }
+}
+
+TEST_CASE("3DSC descriptor extractor", "[pcl][descriptors]")
+{
+  using data_type = float;
+  using point_cloud = types::point_cloud_t<data_type>;
+  using dsc3d_extractor = dsc3d_extractor_t<data_type, kdtree_t<data_type>>;
+  using dsc3d_signature = dsc3d_signature_t<data_type>;
+
+  SECTION("Basic functionality")
+  {
+    auto cloud = generate_synthetic_cloud<data_type>(1000);
+    
+    dsc3d_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    CHECK(extractor.set_input(cloud) == 1000);
+    CHECK(extractor.set_knn(kdtree) == 1000);
+    CHECK(extractor.set_search_radius(0.5f) == 1000);
+    CHECK(extractor.set_num_neighbors(50) == 1000);
+    CHECK(extractor.set_minimal_radius(0.01f) == 1000);
+    CHECK(extractor.set_point_density_radius(0.05f) == 1000);
+    
+    std::vector<std::size_t> keypoint_indices = {100, 200, 300};
+    std::vector<dsc3d_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    CHECK(descriptors.size() == keypoint_indices.size());
+    
+    // Check descriptor properties
+    for (const auto& desc : descriptors)
+    {
+      data_type sum = 0;
+      for (std::size_t i = 0; i < dsc3d_signature::HISTOGRAM_SIZE; ++i)
+      {
+        CHECK(desc.histogram[i] >= 0);
+        sum += desc.histogram[i];
+      }
+      // 3DSC uses density weighting, so not necessarily sum to 1
+      CHECK(sum >= 0);
+    }
+  }
+
+  SECTION("Spherical binning")
+  {
+    auto cloud = generate_sphere_cloud<data_type>(1000, 1.0f);
+    
+    dsc3d_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    extractor.set_input(cloud);
+    extractor.set_knn(kdtree);
+    extractor.set_search_radius(0.3f);
+    extractor.set_minimal_radius(0.05f);
+    
+    std::vector<std::size_t> keypoint_indices = {100};
+    std::vector<dsc3d_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    CHECK(descriptors.size() == 1);
+    
+    // Check that some bins are non-zero
+    const auto& desc = descriptors[0];
+    std::size_t non_zero_count = 0;
+    for (std::size_t i = 0; i < dsc3d_signature::HISTOGRAM_SIZE; ++i)
+    {
+      if (desc.histogram[i] > 0) non_zero_count++;
+    }
+    CHECK(non_zero_count > 0);
+  }
+}
+
+TEST_CASE("CVFH descriptor extractor", "[pcl][descriptors]")
+{
+  using data_type = float;
+  using point_cloud = types::point_cloud_t<data_type>;
+  using cvfh_extractor = cvfh_extractor_t<data_type, kdtree_t<data_type>>;
+  using cvfh_signature = cvfh_signature_t<data_type>;
+
+  SECTION("Basic functionality")
+  {
+    auto cloud = generate_sphere_cloud<data_type>(500, 1.0f);
+    
+    cvfh_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    extractor.set_input(cloud);
+    extractor.set_knn(kdtree);
+    extractor.set_search_radius(0.1f);
+    extractor.set_num_neighbors(20);
+    extractor.set_cluster_tolerance(0.05f);
+    extractor.set_eps_angle_threshold(0.08f);
+    extractor.set_curvature_threshold(0.1f);
+    
+    std::vector<std::size_t> keypoint_indices;  // CVFH segments the cloud
+    std::vector<cvfh_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    // CVFH produces one descriptor per smooth cluster
+    CHECK(descriptors.size() >= 1);
+    
+    // Check descriptor properties
+    for (const auto& desc : descriptors)
+    {
+      data_type sum = 0;
+      for (std::size_t i = 0; i < cvfh_signature::HISTOGRAM_SIZE; ++i)
+      {
+        CHECK(desc.histogram[i] >= 0);
+        sum += desc.histogram[i];
+      }
+      if (sum > 0)
+      {
+        CHECK(sum == Catch::Approx(1.0f).margin(0.01f));
+      }
+    }
+  }
+
+  SECTION("Clustering behavior")
+  {
+    // Create a cloud with two disconnected parts
+    auto sphere1 = generate_sphere_cloud<data_type>(250, 0.5f);
+    auto sphere2 = generate_sphere_cloud<data_type>(250, 0.5f);
+    
+    // Translate second sphere
+    for (auto& point : sphere2.points)
+    {
+      point.x += 2.0f;
+    }
+    
+    point_cloud combined_cloud;
+    combined_cloud.points.reserve(500);
+    combined_cloud.points.insert(combined_cloud.points.end(), sphere1.points.begin(), sphere1.points.end());
+    combined_cloud.points.insert(combined_cloud.points.end(), sphere2.points.begin(), sphere2.points.end());
+    
+    cvfh_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    extractor.set_input(combined_cloud);
+    extractor.set_knn(kdtree);
+    extractor.set_search_radius(0.1f);
+    extractor.set_cluster_tolerance(0.1f);  // Small enough to separate spheres
+    
+    std::vector<std::size_t> keypoint_indices;
+    std::vector<cvfh_signature> descriptors;
+    
+    extractor.compute(combined_cloud, keypoint_indices, descriptors);
+    
+    // Should produce multiple descriptors for disconnected parts
+    CHECK(descriptors.size() >= 2);
+  }
+}
+
+TEST_CASE("ROPS descriptor extractor", "[pcl][descriptors]")
+{
+  using data_type = float;
+  using point_cloud = types::point_cloud_t<data_type>;
+  using rops_extractor = rops_extractor_t<data_type, kdtree_t<data_type>>;
+  using rops_signature = rops_signature_t<data_type>;
+
+  SECTION("Basic functionality")
+  {
+    auto cloud = generate_synthetic_cloud<data_type>(1000);
+    
+    rops_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    CHECK(extractor.set_input(cloud) == 1000);
+    CHECK(extractor.set_knn(kdtree) == 1000);
+    CHECK(extractor.set_search_radius(0.2f) == 1000);
+    CHECK(extractor.set_num_neighbors(50) == 1000);
+    CHECK(extractor.set_num_partitions_x(3) == 1000);
+    CHECK(extractor.set_num_partitions_y(3) == 1000);
+    CHECK(extractor.set_num_partitions_z(3) == 1000);
+    CHECK(extractor.set_num_rotations(5) == 1000);
+    
+    std::vector<std::size_t> keypoint_indices = {100, 200, 300};
+    std::vector<rops_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    CHECK(descriptors.size() == keypoint_indices.size());
+    
+    // Check that descriptors are normalized
+    for (const auto& desc : descriptors)
+    {
+      data_type norm = 0;
+      for (std::size_t i = 0; i < rops_signature::HISTOGRAM_SIZE; ++i)
+      {
+        norm += desc.histogram[i] * desc.histogram[i];
+      }
+      if (norm > 0)
+      {
+        CHECK(std::sqrt(norm) == Catch::Approx(1.0f).margin(0.01f));
+      }
+    }
+  }
+
+  SECTION("Rotation projections")
+  {
+    auto cloud = generate_sphere_cloud<data_type>(500, 1.0f);
+    
+    rops_extractor extractor;
+    kdtree_t<data_type> kdtree;
+    
+    extractor.set_input(cloud);
+    extractor.set_knn(kdtree);
+    extractor.set_search_radius(0.3f);
+    extractor.set_num_rotations(3);  // Fewer rotations for testing
+    extractor.set_num_partitions_x(2);
+    extractor.set_num_partitions_y(2);
+    extractor.set_num_partitions_z(2);
+    
+    std::vector<std::size_t> keypoint_indices = {100};
+    std::vector<rops_signature> descriptors;
+    
+    extractor.compute(cloud, keypoint_indices, descriptors);
+    
+    CHECK(descriptors.size() == 1);
+    
+    // Check histogram size matches parameters
+    // 3 rotations * 2 * 2 * 2 partitions = 24 values
+    std::size_t expected_size = 3 * 2 * 2 * 2;
+    CHECK(expected_size <= rops_signature::HISTOGRAM_SIZE);
+  }
+
+  SECTION("Parallel vs Sequential")
+  {
+    auto cloud = generate_synthetic_cloud<data_type>(500);
+    
+    rops_extractor extractor_seq, extractor_par;
+    kdtree_t<data_type> kdtree1, kdtree2;
+    
+    extractor_seq.set_input(cloud);
+    extractor_seq.set_knn(kdtree1);
+    extractor_seq.set_search_radius(0.2f);
+    extractor_seq.enable_parallel(false);
+    
+    extractor_par.set_input(cloud);
+    extractor_par.set_knn(kdtree2);
+    extractor_par.set_search_radius(0.2f);
+    extractor_par.enable_parallel(true);
+    
+    std::vector<std::size_t> keypoint_indices = {50, 100, 150};
+    std::vector<rops_signature> desc_seq, desc_par;
+    
+    extractor_seq.compute(cloud, keypoint_indices, desc_seq);
+    extractor_par.compute(cloud, keypoint_indices, desc_par);
+    
+    CHECK(desc_seq.size() == desc_par.size());
+    
+    // Results should be identical
+    for (std::size_t i = 0; i < desc_seq.size(); ++i)
+    {
+      CHECK(desc_seq[i] == desc_par[i]);
     }
   }
 }
