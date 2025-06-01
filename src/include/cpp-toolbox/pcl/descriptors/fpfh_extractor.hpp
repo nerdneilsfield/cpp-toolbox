@@ -21,7 +21,7 @@ namespace toolbox::pcl
  * features)
  */
 template<typename DataType>
-struct fpfh_signature_t : public base_signature_t<fpfh_signature_t<DataType>>
+struct fpfh_signature_t : public base_signature_t<DataType, fpfh_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 33;
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

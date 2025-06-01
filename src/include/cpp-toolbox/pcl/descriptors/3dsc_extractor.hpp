@@ -13,7 +13,7 @@ namespace toolbox::pcl
 {
 
 template<typename DataType>
-struct dsc3d_signature_t : public base_signature_t<dsc3d_signature_t<DataType>>
+struct dsc3d_signature_t : public base_signature_t<DataType, dsc3d_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 1980;  // 11 * 12 * 15
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

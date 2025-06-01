@@ -12,7 +12,7 @@ namespace toolbox::pcl
 {
 
 template<typename DataType>
-struct vfh_signature_t : public base_signature_t<vfh_signature_t<DataType>>
+struct vfh_signature_t : public base_signature_t<DataType, vfh_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 308;  // 4*45 + 128
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

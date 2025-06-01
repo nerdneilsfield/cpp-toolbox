@@ -15,7 +15,7 @@ namespace toolbox::pcl
 {
 
 template<typename DataType>
-struct rops_signature_t : public base_signature_t<rops_signature_t<DataType>>
+struct rops_signature_t : public base_signature_t<DataType, rops_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 135;  // 5 * 3 * 3 * 3
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

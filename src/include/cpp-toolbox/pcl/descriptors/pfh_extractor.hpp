@@ -20,7 +20,7 @@ namespace toolbox::pcl
  * @details PFH descriptor with 125 bins (5^3 for the 3 angular features)
  */
 template<typename DataType>
-struct pfh_signature_t : public base_signature_t<pfh_signature_t<DataType>>
+struct pfh_signature_t : public base_signature_t<DataType, pfh_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 125;  // 5 � 5 � 5
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

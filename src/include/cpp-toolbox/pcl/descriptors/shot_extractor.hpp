@@ -22,7 +22,7 @@ namespace toolbox::pcl
  * bins)
  */
 template<typename DataType>
-struct shot_signature_t : public base_signature_t<shot_signature_t<DataType>>
+struct shot_signature_t : public base_signature_t<DataType, shot_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 352;  // 32 spatial � 11 angular
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

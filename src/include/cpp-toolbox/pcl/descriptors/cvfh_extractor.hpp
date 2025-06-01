@@ -13,7 +13,7 @@ namespace toolbox::pcl
 {
 
 template<typename DataType>
-struct cvfh_signature_t : public base_signature_t<cvfh_signature_t<DataType>>
+struct cvfh_signature_t : public base_signature_t<DataType, cvfh_signature_t<DataType>>
 {
   static constexpr std::size_t HISTOGRAM_SIZE = 308;  // Same as VFH
   std::array<DataType, HISTOGRAM_SIZE> histogram {};

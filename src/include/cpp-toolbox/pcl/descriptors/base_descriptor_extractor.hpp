@@ -14,7 +14,7 @@ struct base_signature_t
   using data_type = DataType;
   using derived_type = Derived;
 
-  DataType distance(const base_signature_t& other) const
+  DataType distance(const Derived& other) const
   {
     return static_cast<const Derived*>(this)->distance_impl(other);
   }

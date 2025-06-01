@@ -65,6 +65,7 @@ add_subdirectory(types)
 add_subdirectory(io)
 add_subdirectory(math)
 add_subdirectory(pcl)
+add_subdirectory(metrics)
 list(APPEND TEST_FILES my_catch2_main.cpp)
 
 add_executable(cpp-toolbox_test ${TEST_FILES})
