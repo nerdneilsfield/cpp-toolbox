@@ -122,12 +122,12 @@ digraph "src/include/cpp-toolbox/macro/platforms.hpp"
   Node68 -> Node41 [id="edge67_Node000068_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node67 -> Node58 [id="edge68_Node000067_Node000058",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node67 -> Node62 [id="edge69_Node000067_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node81 [id="edge70_Node000002_Node000081",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node81 [id="Node000081",label="src/include/cpp-toolbox\l/file/memory_mapped_file.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$memory__mapped__file_8hpp.html",tooltip=" "];
-  Node81 -> Node57 [id="edge71_Node000081_Node000057",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node81 -> Node61 [id="edge72_Node000081_Node000061",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node81 -> Node58 [id="edge73_Node000081_Node000058",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node81 -> Node62 [id="edge74_Node000081_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node89 [id="edge70_Node000002_Node000089",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node89 [id="Node000089",label="src/include/cpp-toolbox\l/file/memory_mapped_file.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$memory__mapped__file_8hpp.html",tooltip=" "];
+  Node89 -> Node57 [id="edge71_Node000089_Node000057",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node89 -> Node61 [id="edge72_Node000089_Node000061",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node89 -> Node58 [id="edge73_Node000089_Node000058",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node89 -> Node62 [id="edge74_Node000089_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node58 [id="edge75_Node000002_Node000058",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node62 [id="edge76_Node000002_Node000062",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 -> Node56 [id="edge77_Node000002_Node000056",dir="back",color="steelblue1",style="solid",tooltip=" "];

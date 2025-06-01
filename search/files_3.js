@@ -13,5 +13,6 @@ var searchData=
   ['cpp_2dtoolbox_2ehpp_10',['cpp-toolbox.hpp',['../cpp-toolbox_8hpp.html',1,'']]],
   ['curvature_5fkeypoints_2ehpp_11',['curvature_keypoints.hpp',['../curvature__keypoints_8hpp.html',1,'']]],
   ['curvature_5fkeypoints_5fimpl_2ehpp_12',['curvature_keypoints_impl.hpp',['../curvature__keypoints__impl_8hpp.html',1,'']]],
-  ['cvfh_5fextractor_2ehpp_13',['cvfh_extractor.hpp',['../cvfh__extractor_8hpp.html',1,'']]]
+  ['custom_5fmetric_2ehpp_13',['custom_metric.hpp',['../custom__metric_8hpp.html',1,'']]],
+  ['cvfh_5fextractor_2ehpp_14',['cvfh_extractor.hpp',['../cvfh__extractor_8hpp.html',1,'']]]
 ];

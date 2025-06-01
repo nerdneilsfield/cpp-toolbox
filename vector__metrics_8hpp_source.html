@@ -1,0 +1,588 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/metrics/vector_metrics.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('vector__metrics_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">vector_metrics.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="vector__metrics_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="base__metric_8hpp.html">cpp-toolbox/metrics/base_metric.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1metrics.html">toolbox::metrics</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l2_metric.html">   17</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1metrics_1_1_l2_metric.html">L2Metric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1metrics_1_1base__metric__t.html">base_metric_t</a>&lt;L2Metric&lt;T&gt;, T&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l2_metric.html#adad8e1137ec7e9c9593e9ca21173cf7e">   20</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1metrics_1_1_l2_metric.html#adad8e1137ec7e9c9593e9ca21173cf7e">element_type</a> = T;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a05db3548e6e165ae6b75a52376456428">   22</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a05db3548e6e165ae6b75a52376456428">distance_impl</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> std::sqrt(<a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a90143d58f6ce86e5280ceaa116c38ac2">squared_distance_impl</a>(a, b, size));</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="}">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a90143d58f6ce86e5280ceaa116c38ac2">   27</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a90143d58f6ce86e5280ceaa116c38ac2">squared_distance_impl</a>(<span class="keyword">const</span> T* a,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                                    <span class="keyword">const</span> T* b,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                                    std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    T sum {};</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      T diff = a[i] - b[i];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      sum += diff * diff;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
+</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="comment">// Overload for point_t types</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="foldopen" id="foldopen00041" data-start="{" data-end="}">
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a560d1587bd15c56b1f9f4a0d4a0719cc">   41</a></span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l2_metric.html#a560d1587bd15c56b1f9f4a0d4a0719cc">operator()</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; a, </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                           <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    T dx = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    T dy = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    T dz = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> std::sqrt(dx * dx + dy * dy + dz * dz);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l1_metric.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1metrics_1_1_l1_metric.html">L1Metric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1metrics_1_1base__metric__t.html">base_metric_t</a>&lt;L1Metric&lt;T&gt;, T&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a32fd02e01ac0b9096eb9646a2c1ec7cd">   55</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a32fd02e01ac0b9096eb9646a2c1ec7cd">element_type</a> = T;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5ef0b21b71b8a6b43f0ef2bab5459cf2">   57</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5ef0b21b71b8a6b43f0ef2bab5459cf2">distance_impl</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    T sum {};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      sum += std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }</div>
+</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5c2a27f385123cbd5b97ffe5010d7392">   66</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5c2a27f385123cbd5b97ffe5010d7392">squared_distance_impl</a>(<span class="keyword">const</span> T* a,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                                    <span class="keyword">const</span> T* b,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                                    std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    T dist = <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5ef0b21b71b8a6b43f0ef2bab5459cf2">distance_impl</a>(a, b, size);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> dist * dist;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// Overload for point_t types</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a3fe40ebc81fc59756100bd7292817211">   76</a></span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a3fe40ebc81fc59756100bd7292817211">operator()</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; a, </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                           <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>)) + </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>           std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>)) + </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>           std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>));</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  }</div>
+</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="};">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_linf_metric.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1metrics_1_1_linf_metric.html">LinfMetric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1metrics_1_1base__metric__t.html">base_metric_t</a>&lt;LinfMetric&lt;T&gt;, T&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>{</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a60de80e1272c3ed154b4379ca2ee0853">   89</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a60de80e1272c3ed154b4379ca2ee0853">element_type</a> = T;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="foldopen" id="foldopen00091" data-start="{" data-end="}">
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_linf_metric.html#abea0e8675c1cdea721ed596079595d8e">   91</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_linf_metric.html#abea0e8675c1cdea721ed596079595d8e">distance_impl</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    T max_diff {};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      T diff = std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keywordflow">if</span> (diff &gt; max_diff) {</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        max_diff = diff;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> max_diff;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a4827ab58899c8a795786c55ec927351a">  103</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a4827ab58899c8a795786c55ec927351a">squared_distance_impl</a>(<span class="keyword">const</span> T* a,</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>                                    <span class="keyword">const</span> T* b,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                    std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    T dist = <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_linf_metric.html#abea0e8675c1cdea721ed596079595d8e">distance_impl</a>(a, b, size);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> dist * dist;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="comment">// Overload for point_t types</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a7349aabf07508aa050e62d77458b4c8d">  113</a></span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_linf_metric.html#a7349aabf07508aa050e62d77458b4c8d">operator()</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; a, </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                           <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">return</span> std::max({std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>)), </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                     std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>)), </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                     std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>))});</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>};</div>
+</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">int</span> P = 2&gt;</div>
+<div class="foldopen" id="foldopen00123" data-start="{" data-end="};">
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_lp_metric.html">  123</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1metrics_1_1_lp_metric.html">LpMetric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1metrics_1_1base__metric__t.html">base_metric_t</a>&lt;LpMetric&lt;T, P&gt;, T&gt;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>{</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a1023821fb6f8f2df8db94743a8bcfe6d">  126</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a1023821fb6f8f2df8db94743a8bcfe6d">element_type</a> = T;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_lp_metric.html#abd2531ddc1af343f0e4c68b6c003b1ee">  127</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classtoolbox_1_1metrics_1_1_lp_metric.html#abd2531ddc1af343f0e4c68b6c003b1ee">p_value</a> = P;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="foldopen" id="foldopen00129" data-start="{" data-end="}">
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a413a69af22cadcf7d45c9a1e5a545079">  129</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a413a69af22cadcf7d45c9a1e5a545079">distance_impl</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">static_assert</span>(P &gt; 0, <span class="stringliteral">&quot;P must be positive&quot;</span>);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (P == 1) {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="comment">// Special case for L1</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      T sum {};</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        sum += std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (P == 2) {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      <span class="comment">// Special case for L2</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <span class="keywordflow">return</span> std::sqrt(<a class="code hl_function" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a18c6dbe6bb40824a23134a14afe8c407">squared_distance_impl</a>(a, b, size));</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      T sum {};</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        T diff = std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        sum += std::pow(diff, P);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">return</span> std::pow(sum, T(1) / P);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  }</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a18c6dbe6bb40824a23134a14afe8c407">  155</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a18c6dbe6bb40824a23134a14afe8c407">squared_distance_impl</a>(<span class="keyword">const</span> T* a,</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>                                    <span class="keyword">const</span> T* b,</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                                    std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (P == 2) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      T sum {};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        T diff = a[i] - b[i];</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        sum += diff * diff;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      T dist = <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_lp_metric.html#a413a69af22cadcf7d45c9a1e5a545079">distance_impl</a>(a, b, size);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordflow">return</span> dist * dist;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  }</div>
+</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>};</div>
+</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="comment">// Specialization for dynamic p-value</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00176" data-start="{" data-end="};">
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html">  176</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html">GeneralizedLpMetric</a> : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1metrics_1_1base__metric__t.html">base_metric_t</a>&lt;GeneralizedLpMetric&lt;T&gt;, T&gt;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>{</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a4b6d067b5b93991a724b0a3b34d607c9">  179</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a4b6d067b5b93991a724b0a3b34d607c9">element_type</a> = T;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="foldopen" id="foldopen00181" data-start="{" data-end="}">
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a026c8807a0baa180daf34552cea9647b">  181</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a026c8807a0baa180daf34552cea9647b">GeneralizedLpMetric</a>(T p) : p_(p) </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  {</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">if</span> (p &lt;= 0) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;P must be positive&quot;</span>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  }</div>
+</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#af5e22b9c9c268c521079c06165b99153">  188</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#af5e22b9c9c268c521079c06165b99153">distance_impl</a>(<span class="keyword">const</span> T* a, <span class="keyword">const</span> T* b, std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">if</span> (std::abs(p_ - T(1)) &lt; std::numeric_limits&lt;T&gt;::epsilon()) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      <span class="comment">// L1 norm</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>      T sum {};</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        sum += std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>      }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::abs(p_ - T(2)) &lt; std::numeric_limits&lt;T&gt;::epsilon()) {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="comment">// L2 norm</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordflow">return</span> std::sqrt(<a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a87f80a12c26892e920b637bb46519a74">squared_distance_impl</a>(a, b, size));</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    }</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::isinf(p_)) {</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="comment">// L-infinity norm</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      T max_diff {};</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        T diff = std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">if</span> (diff &gt; max_diff) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>          max_diff = diff;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>      <span class="keywordflow">return</span> max_diff;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <span class="comment">// General Lp norm</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>      T sum {};</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        T diff = std::abs(a[i] - b[i]);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        sum += std::pow(diff, p_);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      }</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      <span class="keywordflow">return</span> std::pow(sum, T(1) / p_);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  }</div>
+</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="foldopen" id="foldopen00224" data-start="{" data-end="}">
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a87f80a12c26892e920b637bb46519a74">  224</a></span>  <span class="keyword">constexpr</span> T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a87f80a12c26892e920b637bb46519a74">squared_distance_impl</a>(<span class="keyword">const</span> T* a,</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                                    <span class="keyword">const</span> T* b,</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>                                    std::size_t size)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">if</span> (std::abs(p_ - T(2)) &lt; std::numeric_limits&lt;T&gt;::epsilon()) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      T sum {};</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; size; ++i) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        T diff = a[i] - b[i];</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        sum += diff * diff;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">return</span> sum;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      T dist = <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#af5e22b9c9c268c521079c06165b99153">distance_impl</a>(a, b, size);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      <span class="keywordflow">return</span> dist * dist;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
+</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="comment">// Overload for point_t types</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> U&gt;</div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a2eedacca3e5a753032aea52ae837756a">  244</a></span>  <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a2eedacca3e5a753032aea52ae837756a">operator()</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; a, </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                           <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;U&gt;</a>&amp; b)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">if</span> (std::abs(p_ - T(1)) &lt; std::numeric_limits&lt;T&gt;::epsilon()) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <span class="keywordflow">return</span> std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>)) + </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>             std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>)) + </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>             std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>));</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::abs(p_ - T(2)) &lt; std::numeric_limits&lt;T&gt;::epsilon()) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      T dx = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      T dy = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      T dz = a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>      <span class="keywordflow">return</span> std::sqrt(dx * dx + dy * dy + dz * dz);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (std::isinf(p_)) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      <span class="keywordflow">return</span> std::max({std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>)), </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                       std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>)), </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                       std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>))});</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      T sum = std::pow(std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>)), p_) +</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>              std::pow(std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>)), p_) +</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>              std::pow(std::abs(<span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(a.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> - b.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>)), p_);</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="keywordflow">return</span> std::pow(sum, T(1) / p_);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  }</div>
+</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a7048fa7b423c7f11e8ac276941ab8a3c">  271</a></span>  T <a class="code hl_function" href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a7048fa7b423c7f11e8ac276941ab8a3c">get_p</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> p_; }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  T p_;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>};</div>
+</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span> </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>}  <span class="comment">// namespace toolbox::metrics</span></div>
+<div class="ttc" id="abase__metric_8hpp_html"><div class="ttname"><a href="base__metric_8hpp.html">base_metric.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html">toolbox::metrics::GeneralizedLpMetric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:177</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_a026c8807a0baa180daf34552cea9647b"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a026c8807a0baa180daf34552cea9647b">toolbox::metrics::GeneralizedLpMetric::GeneralizedLpMetric</a></div><div class="ttdeci">GeneralizedLpMetric(T p)</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:181</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_a2eedacca3e5a753032aea52ae837756a"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a2eedacca3e5a753032aea52ae837756a">toolbox::metrics::GeneralizedLpMetric::operator()</a></div><div class="ttdeci">constexpr auto operator()(const toolbox::types::point_t&lt; U &gt; &amp;a, const toolbox::types::point_t&lt; U &gt; &amp;b) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:244</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_a4b6d067b5b93991a724b0a3b34d607c9"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a4b6d067b5b93991a724b0a3b34d607c9">toolbox::metrics::GeneralizedLpMetric::element_type</a></div><div class="ttdeci">T element_type</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:179</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_a7048fa7b423c7f11e8ac276941ab8a3c"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a7048fa7b423c7f11e8ac276941ab8a3c">toolbox::metrics::GeneralizedLpMetric::get_p</a></div><div class="ttdeci">T get_p() const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:271</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_a87f80a12c26892e920b637bb46519a74"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#a87f80a12c26892e920b637bb46519a74">toolbox::metrics::GeneralizedLpMetric::squared_distance_impl</a></div><div class="ttdeci">constexpr T squared_distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:224</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_generalized_lp_metric_html_af5e22b9c9c268c521079c06165b99153"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_generalized_lp_metric.html#af5e22b9c9c268c521079c06165b99153">toolbox::metrics::GeneralizedLpMetric::distance_impl</a></div><div class="ttdeci">constexpr T distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:188</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l1_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l1_metric.html">toolbox::metrics::L1Metric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:53</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l1_metric_html_a32fd02e01ac0b9096eb9646a2c1ec7cd"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l1_metric.html#a32fd02e01ac0b9096eb9646a2c1ec7cd">toolbox::metrics::L1Metric::element_type</a></div><div class="ttdeci">T element_type</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:55</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l1_metric_html_a3fe40ebc81fc59756100bd7292817211"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l1_metric.html#a3fe40ebc81fc59756100bd7292817211">toolbox::metrics::L1Metric::operator()</a></div><div class="ttdeci">constexpr auto operator()(const toolbox::types::point_t&lt; U &gt; &amp;a, const toolbox::types::point_t&lt; U &gt; &amp;b) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:76</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l1_metric_html_a5c2a27f385123cbd5b97ffe5010d7392"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5c2a27f385123cbd5b97ffe5010d7392">toolbox::metrics::L1Metric::squared_distance_impl</a></div><div class="ttdeci">constexpr T squared_distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:66</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l1_metric_html_a5ef0b21b71b8a6b43f0ef2bab5459cf2"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5ef0b21b71b8a6b43f0ef2bab5459cf2">toolbox::metrics::L1Metric::distance_impl</a></div><div class="ttdeci">constexpr T distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:57</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html">toolbox::metrics::L2Metric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:18</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html_a05db3548e6e165ae6b75a52376456428"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html#a05db3548e6e165ae6b75a52376456428">toolbox::metrics::L2Metric::distance_impl</a></div><div class="ttdeci">constexpr T distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:22</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html_a560d1587bd15c56b1f9f4a0d4a0719cc"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html#a560d1587bd15c56b1f9f4a0d4a0719cc">toolbox::metrics::L2Metric::operator()</a></div><div class="ttdeci">constexpr auto operator()(const toolbox::types::point_t&lt; U &gt; &amp;a, const toolbox::types::point_t&lt; U &gt; &amp;b) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:41</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html_a90143d58f6ce86e5280ceaa116c38ac2"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html#a90143d58f6ce86e5280ceaa116c38ac2">toolbox::metrics::L2Metric::squared_distance_impl</a></div><div class="ttdeci">constexpr T squared_distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:27</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html_adad8e1137ec7e9c9593e9ca21173cf7e"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html#adad8e1137ec7e9c9593e9ca21173cf7e">toolbox::metrics::L2Metric::element_type</a></div><div class="ttdeci">T element_type</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:20</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_linf_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_linf_metric.html">toolbox::metrics::LinfMetric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:87</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_linf_metric_html_a4827ab58899c8a795786c55ec927351a"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_linf_metric.html#a4827ab58899c8a795786c55ec927351a">toolbox::metrics::LinfMetric::squared_distance_impl</a></div><div class="ttdeci">constexpr T squared_distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:103</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_linf_metric_html_a60de80e1272c3ed154b4379ca2ee0853"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_linf_metric.html#a60de80e1272c3ed154b4379ca2ee0853">toolbox::metrics::LinfMetric::element_type</a></div><div class="ttdeci">T element_type</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:89</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_linf_metric_html_a7349aabf07508aa050e62d77458b4c8d"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_linf_metric.html#a7349aabf07508aa050e62d77458b4c8d">toolbox::metrics::LinfMetric::operator()</a></div><div class="ttdeci">constexpr auto operator()(const toolbox::types::point_t&lt; U &gt; &amp;a, const toolbox::types::point_t&lt; U &gt; &amp;b) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:113</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_linf_metric_html_abea0e8675c1cdea721ed596079595d8e"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_linf_metric.html#abea0e8675c1cdea721ed596079595d8e">toolbox::metrics::LinfMetric::distance_impl</a></div><div class="ttdeci">constexpr T distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:91</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_lp_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_lp_metric.html">toolbox::metrics::LpMetric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:124</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_lp_metric_html_a1023821fb6f8f2df8db94743a8bcfe6d"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_lp_metric.html#a1023821fb6f8f2df8db94743a8bcfe6d">toolbox::metrics::LpMetric::element_type</a></div><div class="ttdeci">T element_type</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:126</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_lp_metric_html_a18c6dbe6bb40824a23134a14afe8c407"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_lp_metric.html#a18c6dbe6bb40824a23134a14afe8c407">toolbox::metrics::LpMetric::squared_distance_impl</a></div><div class="ttdeci">constexpr T squared_distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:155</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_lp_metric_html_a413a69af22cadcf7d45c9a1e5a545079"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_lp_metric.html#a413a69af22cadcf7d45c9a1e5a545079">toolbox::metrics::LpMetric::distance_impl</a></div><div class="ttdeci">constexpr T distance_impl(const T *a, const T *b, std::size_t size) const</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:129</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_lp_metric_html_abd2531ddc1af343f0e4c68b6c003b1ee"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_lp_metric.html#abd2531ddc1af343f0e4c68b6c003b1ee">toolbox::metrics::LpMetric::p_value</a></div><div class="ttdeci">static constexpr int p_value</div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:127</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1base__metric__t_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1base__metric__t.html">toolbox::metrics::base_metric_t</a></div><div class="ttdef"><b>Definition</b> base_metric.hpp:13</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1metrics_html"><div class="ttname"><a href="namespacetoolbox_1_1metrics.html">toolbox::metrics</a></div><div class="ttdef"><b>Definition</b> angular_metrics.hpp:11</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a171efb0a8686791dd6b042babab79ad4"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">toolbox::types::point_t::x</a></div><div class="ttdeci">T x</div><div class="ttdoc">X坐标 / X coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:51</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a5697097cf3fe9bed97c2ebc8e9544db6"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">toolbox::types::point_t::z</a></div><div class="ttdeci">T z</div><div class="ttdoc">Z坐标 / Z coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:53</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_ae84eeb1bacaf6f2aa28321f152f38624"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">toolbox::types::point_t::y</a></div><div class="ttdeci">T y</div><div class="ttdoc">Y坐标 / Y coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_8fad4626683566b36de06301c858df30.html">metrics</a></li><li class="navelem"><a class="el" href="vector__metrics_8hpp.html">vector_metrics.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

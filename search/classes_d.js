@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_5fprinter_5ft_0',['queue_printer_t',['../classtoolbox_1_1utils_1_1queue__printer__t.html',1,'toolbox::utils']]]
+  ['normalizedangularmetric_0',['NormalizedAngularMetric',['../classtoolbox_1_1metrics_1_1_normalized_angular_metric.html',1,'toolbox::metrics']]]
 ];

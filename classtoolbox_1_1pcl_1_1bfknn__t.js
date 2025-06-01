@@ -2,6 +2,7 @@ var classtoolbox_1_1pcl_1_1bfknn__t =
 [
     [ "base_type", "classtoolbox_1_1pcl_1_1bfknn__t.html#a160aadf386dbf0bce03fa106fcfb44d9", null ],
     [ "data_type", "classtoolbox_1_1pcl_1_1bfknn__t.html#ac26c1c85aff64cff0dc449738280e9ac", null ],
+    [ "generic_impl_type", "classtoolbox_1_1pcl_1_1bfknn__t.html#a519a458b91deca7a6690ea6567848852", null ],
     [ "point_cloud", "classtoolbox_1_1pcl_1_1bfknn__t.html#a8fbffd677f465a10238e9e2e1c4500bc", null ],
     [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1bfknn__t.html#a5a9d1e55f435e4b573ac5cdf86ebbdab", null ],
     [ "bfknn_t", "classtoolbox_1_1pcl_1_1bfknn__t.html#a4b31d505882fe770a0a8e90b3188be73", null ],

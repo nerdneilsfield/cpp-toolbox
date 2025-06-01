@@ -12,8 +12,10 @@ var searchData=
   ['platforms_2ehpp_9',['platforms.hpp',['../platforms_8hpp.html',1,'']]],
   ['plot_2ehpp_10',['plot.hpp',['../plot_8hpp.html',1,'']]],
   ['point_2ehpp_11',['point.hpp',['../point_8hpp.html',1,'']]],
-  ['point_5fimpl_2ehpp_12',['point_impl.hpp',['../point__impl_8hpp.html',1,'']]],
-  ['point_5futils_2ehpp_13',['point_utils.hpp',['../point__utils_8hpp.html',1,'']]],
-  ['print_2ehpp_14',['print.hpp',['../print_8hpp.html',1,'']]],
-  ['print_5fimpl_2ehpp_15',['print_impl.hpp',['../print__impl_8hpp.html',1,'']]]
+  ['point_5fcloud_5fmetrics_2ehpp_12',['point_cloud_metrics.hpp',['../point__cloud__metrics_8hpp.html',1,'']]],
+  ['point_5fimpl_2ehpp_13',['point_impl.hpp',['../point__impl_8hpp.html',1,'']]],
+  ['point_5fmetric_5fadapter_2ehpp_14',['point_metric_adapter.hpp',['../point__metric__adapter_8hpp.html',1,'']]],
+  ['point_5futils_2ehpp_15',['point_utils.hpp',['../point__utils_8hpp.html',1,'']]],
+  ['print_2ehpp_16',['print.hpp',['../print_8hpp.html',1,'']]],
+  ['print_5fimpl_2ehpp_17',['print_impl.hpp',['../print__impl_8hpp.html',1,'']]]
 ];

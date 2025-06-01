@@ -5,7 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::base\l_signature_t\< fpfh_signature\l_t\< DataType \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1base__signature__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge62_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::pcl::fpfh\l_signature_t\< DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1fpfh__signature__t.html",tooltip="FPFH (Fast Point Feature Histogram) signature."];
+  Node0 [id="Node000000",label="toolbox::metrics::base\l_metric_t\< ParameterizedMetric\l\< T \>, T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1base__metric__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge68_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::metrics::Parameterized\lMetric\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1_parameterized_metric.html",tooltip=" "];
 }

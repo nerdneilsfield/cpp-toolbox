@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::metrics::L1Metric&lt; T &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1metrics_1_1_l1_metric.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classtoolbox_1_1metrics_1_1_l1_metric-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::metrics::L1Metric&lt; T &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="vector__metrics_8hpp_source.html">vector_metrics.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::metrics::L1Metric&lt; T &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a32fd02e01ac0b9096eb9646a2c1ec7cd" id="r_a32fd02e01ac0b9096eb9646a2c1ec7cd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a32fd02e01ac0b9096eb9646a2c1ec7cd">element_type</a> = T</td></tr>
+<tr class="separator:a32fd02e01ac0b9096eb9646a2c1ec7cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1metrics_1_1base__metric__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1metrics_1_1base__metric__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html">toolbox::metrics::base_metric_t&lt; L1Metric&lt; T &gt;, T &gt;</a></td></tr>
+<tr class="memitem:a09f436faf0a0ae3f12d14ce595a5cad3 inherit pub_types_classtoolbox_1_1metrics_1_1base__metric__t" id="r_a09f436faf0a0ae3f12d14ce595a5cad3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#a09f436faf0a0ae3f12d14ce595a5cad3">element_type</a> = T</td></tr>
+<tr class="separator:a09f436faf0a0ae3f12d14ce595a5cad3 inherit pub_types_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae03e0becbfb7acc33a0d94c3a4f31f5 inherit pub_types_classtoolbox_1_1metrics_1_1base__metric__t" id="r_aae03e0becbfb7acc33a0d94c3a4f31f5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#aae03e0becbfb7acc33a0d94c3a4f31f5">result_type</a> = T</td></tr>
+<tr class="separator:aae03e0becbfb7acc33a0d94c3a4f31f5 inherit pub_types_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a5ef0b21b71b8a6b43f0ef2bab5459cf2" id="r_a5ef0b21b71b8a6b43f0ef2bab5459cf2"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5ef0b21b71b8a6b43f0ef2bab5459cf2">distance_impl</a> (const T *a, const T *b, std::size_t size) const</td></tr>
+<tr class="separator:a5ef0b21b71b8a6b43f0ef2bab5459cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2a27f385123cbd5b97ffe5010d7392" id="r_a5c2a27f385123cbd5b97ffe5010d7392"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a5c2a27f385123cbd5b97ffe5010d7392">squared_distance_impl</a> (const T *a, const T *b, std::size_t size) const</td></tr>
+<tr class="separator:a5c2a27f385123cbd5b97ffe5010d7392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fe40ebc81fc59756100bd7292817211" id="r_a3fe40ebc81fc59756100bd7292817211"><td class="memTemplParams" colspan="2">template&lt;typename U &gt; </td></tr>
+<tr class="memitem:a3fe40ebc81fc59756100bd7292817211"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html#a3fe40ebc81fc59756100bd7292817211">operator()</a> (const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; U &gt; &amp;a, const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; U &gt; &amp;b) const</td></tr>
+<tr class="separator:a3fe40ebc81fc59756100bd7292817211"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1metrics_1_1base__metric__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1metrics_1_1base__metric__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html">toolbox::metrics::base_metric_t&lt; L1Metric&lt; T &gt;, T &gt;</a></td></tr>
+<tr class="memitem:a2c03c4f875bfcdebb9912b9ec9d0b6e4 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t" id="r_a2c03c4f875bfcdebb9912b9ec9d0b6e4"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#a2c03c4f875bfcdebb9912b9ec9d0b6e4">distance</a> (const T *a, const T *b, std::size_t size) const</td></tr>
+<tr class="separator:a2c03c4f875bfcdebb9912b9ec9d0b6e4 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a357ce1f0deb7ce5c16e7f0e37acb2a65 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t" id="r_a357ce1f0deb7ce5c16e7f0e37acb2a65"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#a357ce1f0deb7ce5c16e7f0e37acb2a65">distance</a> (const Container &amp;a, const Container &amp;b) const</td></tr>
+<tr class="separator:a357ce1f0deb7ce5c16e7f0e37acb2a65 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a570a5960e78c56748c71d35536a3ca60 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t" id="r_a570a5960e78c56748c71d35536a3ca60"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#a570a5960e78c56748c71d35536a3ca60">squared_distance</a> (const T *a, const T *b, std::size_t size) const</td></tr>
+<tr class="separator:a570a5960e78c56748c71d35536a3ca60 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c74803cb3509981e7c06938899df709 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t" id="r_a1c74803cb3509981e7c06938899df709"><td class="memItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1metrics_1_1base__metric__t.html#a1c74803cb3509981e7c06938899df709">squared_distance</a> (const Container &amp;a, const Container &amp;b) const</td></tr>
+<tr class="separator:a1c74803cb3509981e7c06938899df709 inherit pub_methods_classtoolbox_1_1metrics_1_1base__metric__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a32fd02e01ac0b9096eb9646a2c1ec7cd" name="a32fd02e01ac0b9096eb9646a2c1ec7cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32fd02e01ac0b9096eb9646a2c1ec7cd">&#9670;&#160;</a></span>element_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html">toolbox::metrics::L1Metric</a>&lt; T &gt;::element_type =  T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5ef0b21b71b8a6b43f0ef2bab5459cf2" name="a5ef0b21b71b8a6b43f0ef2bab5459cf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ef0b21b71b8a6b43f0ef2bab5459cf2">&#9670;&#160;</a></span>distance_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr T <a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html">toolbox::metrics::L1Metric</a>&lt; T &gt;::distance_impl </td>
+          <td>(</td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3fe40ebc81fc59756100bd7292817211" name="a3fe40ebc81fc59756100bd7292817211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fe40ebc81fc59756100bd7292817211">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<div class="memtemplate">
+template&lt;typename U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr auto <a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html">toolbox::metrics::L1Metric</a>&lt; T &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5c2a27f385123cbd5b97ffe5010d7392" name="a5c2a27f385123cbd5b97ffe5010d7392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2a27f385123cbd5b97ffe5010d7392">&#9670;&#160;</a></span>squared_distance_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr T <a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html">toolbox::metrics::L1Metric</a>&lt; T &gt;::squared_distance_impl </td>
+          <td>(</td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T *&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/metrics/<a class="el" href="metric__traits_8hpp_source.html">metric_traits.hpp</a></li>
+<li>src/include/cpp-toolbox/metrics/<a class="el" href="vector__metrics_8hpp_source.html">vector_metrics.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1metrics.html">metrics</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1metrics_1_1_l1_metric.html">L1Metric</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

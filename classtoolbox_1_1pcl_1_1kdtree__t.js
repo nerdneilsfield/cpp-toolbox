@@ -2,6 +2,7 @@ var classtoolbox_1_1pcl_1_1kdtree__t =
 [
     [ "base_type", "classtoolbox_1_1pcl_1_1kdtree__t.html#a32d64aa142ca0a1d03f3f0b3ece0bd85", null ],
     [ "data_type", "classtoolbox_1_1pcl_1_1kdtree__t.html#aa144a4acb8747b0b192dd7dd46093615", null ],
+    [ "generic_impl_type", "classtoolbox_1_1pcl_1_1kdtree__t.html#a6b7a892fd732c069e71c59a9624b2291", null ],
     [ "point_cloud", "classtoolbox_1_1pcl_1_1kdtree__t.html#a1093c14e61eaf135ddabacf8f15212a2", null ],
     [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1kdtree__t.html#a08baa9743f3c54616f0f69cd0194d3ab", null ],
     [ "kdtree_t", "classtoolbox_1_1pcl_1_1kdtree__t.html#aedc0419ff43bf3272a01f7b434fc7180", null ],

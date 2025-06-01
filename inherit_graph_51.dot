@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::base\l_keypoint_extractor\l_t\< Derived, DataType,\l KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html",tooltip="关键点提取器的基类，使用CRTP模式实现静态多态 / Base class for keypoint extractors using CRTP pattern for static polymorph..."];
+  Node0 [id="Node000000",label="toolbox::metrics::base\l_metric_t\< Derived, ElementType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1base__metric__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge53_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::metrics::LpMetric\l\< T, P \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1_lp_metric.html",tooltip=" "];
 }

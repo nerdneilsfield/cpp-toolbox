@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::detail\l::storage_traits\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1detail_1_1storage__traits.html",tooltip="类型存储特征/Storage traits for types"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_descriptor_extractor\l_t\< fpfh_extractor_t\<\l DataType, KNN \>, DataType,\l fpfh_signature_t\< DataType \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge76_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::fpfh\l_extractor_t\< DataType,\l KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1fpfh__extractor__t.html",tooltip="FPFH (Fast Point Feature Histogram) descriptor extractor."];
 }

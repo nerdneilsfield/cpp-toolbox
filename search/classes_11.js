@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['uniform_5fgrid_5fsubsampling_5ft_0',['uniform_grid_subsampling_t',['../classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html',1,'toolbox::pcl']]],
-  ['unorderedmap_5fprinter_5ft_1',['unorderedmap_printer_t',['../classtoolbox_1_1utils_1_1unorderedmap__printer__t.html',1,'toolbox::utils']]],
-  ['unorderedset_5fprinter_5ft_2',['unorderedset_printer_t',['../classtoolbox_1_1utils_1_1unorderedset__printer__t.html',1,'toolbox::utils']]],
-  ['usageerror_3',['UsageError',['../classtoolbox_1_1utils_1_1_usage_error.html',1,'toolbox::utils']]]
+  ['random_5fdownsampling_5ft_0',['random_downsampling_t',['../classtoolbox_1_1pcl_1_1random__downsampling__t.html',1,'toolbox::pcl']]],
+  ['random_5ft_1',['random_t',['../classtoolbox_1_1utils_1_1random__t.html',1,'toolbox::utils']]],
+  ['remove_5fall_5fqualifiers_2',['remove_all_qualifiers',['../structtoolbox_1_1traits_1_1remove__all__qualifiers.html',1,'toolbox::traits']]],
+  ['remove_5freference_3',['remove_reference',['../structtoolbox_1_1traits_1_1remove__reference.html',1,'toolbox::traits']]],
+  ['rops_5fextractor_5ft_4',['rops_extractor_t',['../classtoolbox_1_1pcl_1_1rops__extractor__t.html',1,'toolbox::pcl']]],
+  ['rops_5fsignature_5ft_5',['rops_signature_t',['../structtoolbox_1_1pcl_1_1rops__signature__t.html',1,'toolbox::pcl']]]
 ];

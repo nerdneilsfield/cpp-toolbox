@@ -10,5 +10,7 @@ digraph "src/include/cpp-toolbox/pcl/knn/impl"
   dir_9999cfbe4e3f3c198927bfa51ffe406e [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_9999cfbe4e3f3c198927bfa51ffe406e.html",tooltip=""];
   }
   dir_175064ea02679cf4c3a50b5407502295 [label="base", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_175064ea02679cf4c3a50b5407502295.html",tooltip=""];
+  dir_8fad4626683566b36de06301c858df30 [label="metrics", fillcolor="#daedff", color="grey50", style="filled", URL="dir_8fad4626683566b36de06301c858df30.html",tooltip=""];
   dir_9999cfbe4e3f3c198927bfa51ffe406e->dir_175064ea02679cf4c3a50b5407502295 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000000.html" href="dir_000022_000000.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_9999cfbe4e3f3c198927bfa51ffe406e->dir_8fad4626683566b36de06301c858df30 [headlabel="1", labeldistance=1.5 headhref="dir_000022_000033.html" href="dir_000022_000033.html" color="steelblue1" fontcolor="steelblue1"];
 }

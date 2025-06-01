@@ -1,5 +1,6 @@
 var structtoolbox_1_1types_1_1point__t =
 [
+    [ "value_type", "structtoolbox_1_1types_1_1point__t.html#ac40260bfa6c38f16a7a7521879133c23", null ],
     [ "~point_t", "structtoolbox_1_1types_1_1point__t.html#a3b6a72a74b2f562ce835d451cdb6a1ac", null ],
     [ "point_t", "structtoolbox_1_1types_1_1point__t.html#a562974be138dbf613f340cab7b6d37ac", null ],
     [ "point_t", "structtoolbox_1_1types_1_1point__t.html#a09f13a0dc148b311f1617c36521fd812", null ],

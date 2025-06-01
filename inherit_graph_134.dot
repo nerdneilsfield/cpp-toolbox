@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::simple\l_timer_interface_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1simple__timer__interface__t.html",tooltip="Interface for managing a collection of timers."];
-  Node0 -> Node1 [id="edge85_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::utils::simple\l_timer_array_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1simple__timer__array__t.html",tooltip="Concrete implementation of simple_timer_interface_t using an array of timers."];
+  Node0 [id="Node000000",label="toolbox::traits::is\l_const\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__const.html",tooltip="检查类型是否为const限定/Check if type is const-qualified"];
 }

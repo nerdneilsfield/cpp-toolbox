@@ -9,6 +9,7 @@ var dir_09c6140c2956544491238e129f11fd9f =
     [ "logger", "dir_40d9b6a4c321e73b85093107dc465522.html", "dir_40d9b6a4c321e73b85093107dc465522" ],
     [ "macro", "dir_5a67e91a1465d0f547b2b0b801205bed.html", "dir_5a67e91a1465d0f547b2b0b801205bed" ],
     [ "math", "dir_456e3efa1700f2e372aa6b9f2b6f70ca.html", "dir_456e3efa1700f2e372aa6b9f2b6f70ca" ],
+    [ "metrics", "dir_8fad4626683566b36de06301c858df30.html", "dir_8fad4626683566b36de06301c858df30" ],
     [ "pcl", "dir_f66d48d75a3d5d9d9a342840712bf869.html", "dir_f66d48d75a3d5d9d9a342840712bf869" ],
     [ "types", "dir_d073c017754f5bdb7e8e1de8ad13b99a.html", "dir_d073c017754f5bdb7e8e1de8ad13b99a" ],
     [ "utils", "dir_f67a023f401e335084376ee616e38b67.html", "dir_f67a023f401e335084376ee616e38b67" ],
@@ -16,6 +17,7 @@ var dir_09c6140c2956544491238e129f11fd9f =
     [ "cpp-toolbox.hpp", "cpp-toolbox_8hpp.html", "cpp-toolbox_8hpp" ],
     [ "logger.hpp", "logger_8hpp.html", null ],
     [ "macro.hpp", "macro_8hpp.html", "macro_8hpp" ],
+    [ "metrics.hpp", "metrics_8hpp.html", null ],
     [ "type_traits.hpp", "type__traits_8hpp.html", "type__traits_8hpp" ],
     [ "types.hpp", "types_8hpp.html", "types_8hpp" ]
 ];

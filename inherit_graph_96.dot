@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::traits::is\l_reference\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1traits_1_1is__reference.html",tooltip="检查类型是否为引用/Check if type is a reference"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_knn_generic_t\< bfknn\l_generic_t\< Element, toolbox\l::metrics::L2Metric\< typename\l Element::value_type \> \>, Element,\l toolbox::metrics::L2Metric\< typename\l Element::value_type \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__knn__generic__t.html",tooltip=" "];
 }

@@ -329,7 +329,7 @@ class toolbox::pcl::base_keypoint_extractor_t&lt; Derived, DataType, KNN &gt;</d
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__keypoint__extractor__t_html_a8ab2246b1c294525723ffaf66a9f014b"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a8ab2246b1c294525723ffaf66a9f014b">toolbox::pcl::base_keypoint_extractor_t::set_search_radius</a></div><div class="ttdeci">std::size_t set_search_radius(data_type radius)</div><div class="ttdoc">设置搜索半径 / Set search radius</div><div class="ttdef"><b>Definition</b> base_feature_extractor.hpp:82</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__keypoint__extractor__t_html_a90e4dbcc3aaf8479393338ea062b518b"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#a90e4dbcc3aaf8479393338ea062b518b">toolbox::pcl::base_keypoint_extractor_t::set_knn</a></div><div class="ttdeci">std::size_t set_knn(const knn_type &amp;knn)</div><div class="ttdoc">设置最近邻搜索算法 / Set K-nearest neighbor search algorithm</div><div class="ttdef"><b>Definition</b> base_feature_extractor.hpp:117</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1curvature__keypoint__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html">toolbox::pcl::curvature_keypoint_extractor_t</a></div><div class="ttdoc">基于曲率的关键点提取器 / Curvature-based keypoint extractor</div><div class="ttdef"><b>Definition</b> curvature_keypoints.hpp:60</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html">toolbox::pcl::kdtree_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:11</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html">toolbox::pcl::kdtree_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:130</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a08fcfad7a41e0ab4e2418ba34f61f591" name="a08fcfad7a41e0ab4e2418ba34f61f591"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08fcfad7a41e0ab4e2418ba34f61f591">&#9670;&#160;</a></span>data_type</h2>
@@ -921,8 +921,8 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
 <div class="line"><span class="comment">// 使用并行暴力搜索（适合多核CPU） / Use parallel brute force (suitable for multi-core CPU)</span></div>
 <div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">bfknn_parallel_t&lt;float&gt;</a> bfknn_parallel;</div>
 <div class="line">extractor.set_knn(bfknn_parallel);</div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__parallel__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a></div><div class="ttdef"><b>Definition</b> bfknn_parallel.hpp:12</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__t.html">toolbox::pcl::bfknn_t</a></div><div class="ttdef"><b>Definition</b> bfknn.hpp:10</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__parallel__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__parallel__t.html">toolbox::pcl::bfknn_parallel_t</a></div><div class="ttdef"><b>Definition</b> bfknn_parallel.hpp:66</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__t.html">toolbox::pcl::bfknn_t</a></div><div class="ttdef"><b>Definition</b> bfknn.hpp:61</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['map_5fprinter_5ft_0',['map_printer_t',['../classtoolbox_1_1utils_1_1map__printer__t.html',1,'toolbox::utils']]],
-  ['memoizedfunction_3c_20r_28args_2e_2e_2e_29_3e_1',['MemoizedFunction&lt; R(Args...)&gt;',['../classtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4.html',1,'toolbox::functional']]],
-  ['memoizehelperstate_2',['MemoizeHelperState',['../structtoolbox_1_1functional_1_1detail__impl_1_1_memoize_helper_state.html',1,'toolbox::functional::detail_impl']]],
-  ['memoizestate_3',['MemoizeState',['../structtoolbox_1_1functional_1_1detail_1_1_memoize_state.html',1,'toolbox::functional::detail']]],
-  ['memory_5fmapped_5ffile_5ft_4',['memory_mapped_file_t',['../classtoolbox_1_1file_1_1memory__mapped__file__t.html',1,'toolbox::file']]],
-  ['memory_5fpool_5ft_5',['memory_pool_t',['../classtoolbox_1_1base_1_1memory__pool__t.html',1,'toolbox::base']]],
-  ['minmax_5ft_6',['minmax_t',['../structtoolbox_1_1types_1_1minmax__t.html',1,'toolbox::types']]],
-  ['minmax_5ft_3c_20point_5ft_3c_20t_20_3e_20_3e_7',['minmax_t&lt; point_t&lt; T &gt; &gt;',['../structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html',1,'toolbox::types']]],
-  ['mls_5fkeypoint_5fextractor_5ft_8',['mls_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html',1,'toolbox::pcl']]],
-  ['mlsresult_9',['MLSResult',['../structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html',1,'toolbox::pcl::mls_keypoint_extractor_t']]]
+  ['kdtree_5fgeneric_5ft_0',['kdtree_generic_t',['../classtoolbox_1_1pcl_1_1kdtree__generic__t.html',1,'toolbox::pcl']]],
+  ['kdtree_5fgeneric_5ft_3c_20point_5ft_3c_20datatype_20_3e_2c_20toolbox_3a_3ametrics_3a_3al2metric_3c_20datatype_20_3e_20_3e_1',['kdtree_generic_t&lt; point_t&lt; DataType &gt;, toolbox::metrics::L2Metric&lt; DataType &gt; &gt;',['../classtoolbox_1_1pcl_1_1kdtree__generic__t.html',1,'toolbox::pcl']]],
+  ['kdtree_5ft_2',['kdtree_t',['../classtoolbox_1_1pcl_1_1kdtree__t.html',1,'toolbox::pcl']]],
+  ['key_5fhash_3',['key_hash',['../structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html',1,'toolbox::pcl::voxel_grid_downsampling_t']]],
+  ['kitti_5fformat_5ft_4',['kitti_format_t',['../classtoolbox_1_1io_1_1kitti__format__t.html',1,'toolbox::io']]],
+  ['kitti_5fpcd_5fdataset_5ft_5',['kitti_pcd_dataset_t',['../classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html',1,'toolbox::io']]],
+  ['kitti_5fpcd_5fpair_5ft_6',['kitti_pcd_pair_t',['../classtoolbox_1_1io_1_1kitti__pcd__pair__t.html',1,'toolbox::io']]],
+  ['kldivergencemetric_7',['KLDivergenceMetric',['../classtoolbox_1_1metrics_1_1_k_l_divergence_metric.html',1,'toolbox::metrics']]],
+  ['knn_5ftraits_8',['knn_traits',['../structtoolbox_1_1pcl_1_1knn__traits.html',1,'toolbox::pcl']]]
 ];

@@ -6,5 +6,5 @@ digraph "toolbox::pcl::fpfh_signature_t&lt; DataType &gt;"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="toolbox::pcl::fpfh\l_signature_t\< DataType \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="FPFH (Fast Point Feature Histogram) signature."];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="toolbox::pcl::base\l_signature_t\< fpfh_signature\l_t\< DataType \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1base__signature__t.html",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::pcl::base\l_signature_t\< DataType,\l fpfh_signature_t\< DataType \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1base__signature__t.html",tooltip=" "];
 }

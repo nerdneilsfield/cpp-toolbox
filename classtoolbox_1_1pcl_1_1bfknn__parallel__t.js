@@ -2,6 +2,7 @@ var classtoolbox_1_1pcl_1_1bfknn__parallel__t =
 [
     [ "base_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a9e64da8dd9ffe5c7d2c884d2ac144a98", null ],
     [ "data_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a760d2d2ff75b35c2dcd630e3fd26cc3f", null ],
+    [ "generic_impl_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a85fb703a504eecebf61eaac2f648b04b", null ],
     [ "point_cloud", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#ab19689175bfdd5741b6dca6904296bde", null ],
     [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#a06e8837df040010d2a95a908b7a6e3a0", null ],
     [ "bfknn_parallel_t", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html#aba606084b8ceda759592e5bf77d99932", null ],

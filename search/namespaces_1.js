@@ -14,13 +14,14 @@ var searchData=
   ['toolbox_3a_3aio_11',['io',['../namespacetoolbox_1_1io.html',1,'toolbox']]],
   ['toolbox_3a_3alogger_12',['logger',['../namespacetoolbox_1_1logger.html',1,'toolbox']]],
   ['toolbox_3a_3amath_13',['math',['../namespacetoolbox_1_1math.html',1,'toolbox']]],
-  ['toolbox_3a_3apcl_14',['pcl',['../namespacetoolbox_1_1pcl.html',1,'toolbox']]],
-  ['toolbox_3a_3atraits_15',['traits',['../namespacetoolbox_1_1traits.html',1,'toolbox']]],
-  ['toolbox_3a_3atraits_3a_3adetail_16',['detail',['../namespacetoolbox_1_1traits_1_1detail.html',1,'toolbox::traits']]],
-  ['toolbox_3a_3atypes_17',['types',['../namespacetoolbox_1_1types.html',1,'toolbox']]],
-  ['toolbox_3a_3atypes_3a_3adetail_18',['detail',['../namespacetoolbox_1_1types_1_1detail.html',1,'toolbox::types']]],
-  ['toolbox_3a_3autils_19',['utils',['../namespacetoolbox_1_1utils.html',1,'toolbox']]],
-  ['toolbox_3a_3autils_3a_3adetail_20',['detail',['../namespacetoolbox_1_1utils_1_1detail.html',1,'toolbox::utils']]],
-  ['toolbox_3a_3autils_3a_3aimpl_21',['impl',['../namespacetoolbox_1_1utils_1_1impl.html',1,'toolbox::utils']]],
-  ['toolbox_3a_3autils_3a_3aini_5fdetail_22',['ini_detail',['../namespacetoolbox_1_1utils_1_1ini__detail.html',1,'toolbox::utils']]]
+  ['toolbox_3a_3ametrics_14',['metrics',['../namespacetoolbox_1_1metrics.html',1,'toolbox']]],
+  ['toolbox_3a_3apcl_15',['pcl',['../namespacetoolbox_1_1pcl.html',1,'toolbox']]],
+  ['toolbox_3a_3atraits_16',['traits',['../namespacetoolbox_1_1traits.html',1,'toolbox']]],
+  ['toolbox_3a_3atraits_3a_3adetail_17',['detail',['../namespacetoolbox_1_1traits_1_1detail.html',1,'toolbox::traits']]],
+  ['toolbox_3a_3atypes_18',['types',['../namespacetoolbox_1_1types.html',1,'toolbox']]],
+  ['toolbox_3a_3atypes_3a_3adetail_19',['detail',['../namespacetoolbox_1_1types_1_1detail.html',1,'toolbox::types']]],
+  ['toolbox_3a_3autils_20',['utils',['../namespacetoolbox_1_1utils.html',1,'toolbox']]],
+  ['toolbox_3a_3autils_3a_3adetail_21',['detail',['../namespacetoolbox_1_1utils_1_1detail.html',1,'toolbox::utils']]],
+  ['toolbox_3a_3autils_3a_3aimpl_22',['impl',['../namespacetoolbox_1_1utils_1_1impl.html',1,'toolbox::utils']]],
+  ['toolbox_3a_3autils_3a_3aini_5fdetail_23',['ini_detail',['../namespacetoolbox_1_1utils_1_1ini__detail.html',1,'toolbox::utils']]]
 ];

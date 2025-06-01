@@ -112,7 +112,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Typedefs", "functions_type.html", null ],
+        [ "Typedefs", "functions_type.html", "functions_type" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
@@ -134,20 +134,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "3dsc__extractor_8hpp.html",
-"classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#adf6dbd37c0efdb96c01cd05719f075d0",
-"classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html#a24c99e5765175054a37bacf24c322889",
-"classtoolbox_1_1pcl_1_1correspondence__generator__t.html#a10ec2c32fbf0ae17f21f271d5f7ef29b",
-"classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html#ada967fd6aee7371584e1084d40d7db68",
-"classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html#af534292b8e5098f590642db56a827d63",
-"classtoolbox_1_1pcl_1_1uniform__grid__subsampling__t.html#a6e5de55311c01627e9ca5a0306aff3a7",
-"classtoolbox_1_1utils_1_1deque__printer__t.html",
-"classtoolbox_1_1utils_1_1table__t.html#a1f1cc7163cf879f8da1c268172682c62",
-"functional_8hpp.html#aecc9e3b337e5a7e2d3d9eaac80939002",
-"minmax_8hpp.html#a0b4639d45a66f1a844a629bf98d5ed88",
-"namespacetoolbox_1_1functional.html#ae72a328600ef1342629b7fe3bab4d88b",
-"print_8hpp.html#a770eb16158ed065c431e4b8e51d9e05a",
-"structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html#ad91856f17baad5ea8c83a91773be3ef6",
-"structtoolbox_1_1types_1_1point__t.html#a732ad3dcf6da0e98bbf54d65efdb8e56"
+"classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a84584f607419fabec8b0453aabfbdc31",
+"classtoolbox_1_1metrics_1_1_centroid_metric.html",
+"classtoolbox_1_1metrics_1_1_modified_hausdorff_metric.html",
+"classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#af6b78768ce0337536a05d15b8f4038d7",
+"classtoolbox_1_1pcl_1_1bfknn__t.html#ac26c1c85aff64cff0dc449738280e9ac",
+"classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html#aaf0cf2e90adeb74f3eb0a850831ec084",
+"classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html#a854f5b4be5a3569a2e5378e49cf8c87d",
+"classtoolbox_1_1pcl_1_1susan__keypoint__extractor__t.html#a16e3864b56deee12483e0da288c65a3a",
+"classtoolbox_1_1utils_1_1command__t.html#a5dfa0b0cd8add7049b092cb626e321ae",
+"classtoolbox_1_1utils_1_1simple__timer__array__t.html#a9f37c360c2a1965b1bebb817570ddcde",
+"file_8hpp.html#a9d370d4f448be574533574f643bc1298",
+"lock__free__queue_8hpp.html#ad24b531d08aaf5d51fd24cbb974f1c9f",
+"namespacetoolbox_1_1container_1_1string.html#ace2f63ba20582b4e048fefeac749de3d",
+"namespacetoolbox_1_1utils_1_1ini__detail.html",
+"structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a5e26374c6dadf7bceadb10e20011cf88",
+"structtoolbox_1_1traits_1_1has__to_string.html",
+"structtoolbox_1_1utils_1_1print__style__t.html#a5817cdc9b15e13e9e563e7cb3350b68d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

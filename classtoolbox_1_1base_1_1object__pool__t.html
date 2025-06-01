@@ -228,13 +228,13 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1base_1_1object__pool__
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:ae721bc932699daa4c5e521583b54eb5f" id="r_ae721bc932699daa4c5e521583b54eb5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> = std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &gt;</td></tr>
+<tr class="memitem:ae721bc932699daa4c5e521583b54eb5f" id="r_ae721bc932699daa4c5e521583b54eb5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> = std::unique_ptr&lt; T, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; T &gt; &gt;</td></tr>
 <tr class="memdesc:ae721bc932699daa4c5e521583b54eb5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">管理池化对象的 unique_ptr 的别名。当超出作用域时自动将对象返回池中/ Alias for a unique_ptr managing a pooled object. Automatically returns the object to the pool when it goes out of scope  <br /></td></tr>
 <tr class="separator:ae721bc932699daa4c5e521583b54eb5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a76ed5cc37a23b4b4c05e7035c844b44e" id="r_a76ed5cc37a23b4b4c05e7035c844b44e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">object_pool_t</a> (<a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_size</a>=0, std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &amp;)&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">resetter</a>=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">nullptr</a>)</td></tr>
+<tr class="memitem:a76ed5cc37a23b4b4c05e7035c844b44e" id="r_a76ed5cc37a23b4b4c05e7035c844b44e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">object_pool_t</a> (<a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">initial_size</a>=0, std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(T &amp;)&gt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">resetter</a>=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">nullptr</a>)</td></tr>
 <tr class="memdesc:a76ed5cc37a23b4b4c05e7035c844b44e"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造对象池/Construct an object pool  <br /></td></tr>
 <tr class="separator:a76ed5cc37a23b4b4c05e7035c844b44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade913fc522724ec24d9e670856c9f248" id="r_ade913fc522724ec24d9e670856c9f248"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ade913fc522724ec24d9e670856c9f248">object_pool_t</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp;)=<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">delete</a></td></tr>
@@ -248,7 +248,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aee1365b915dd94ff289623f8b8e3818f" id="r_aee1365b915dd94ff289623f8b8e3818f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#aee1365b915dd94ff289623f8b8e3818f">acquire</a> ()</td></tr>
 <tr class="memdesc:aee1365b915dd94ff289623f8b8e3818f"><td class="mdescLeft">&#160;</td><td class="mdescRight">从池中获取一个对象/Acquire an object from the pool  <br /></td></tr>
 <tr class="separator:aee1365b915dd94ff289623f8b8e3818f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad760b438b3168f37bfe95d2bf16c1735" id="r_ad760b438b3168f37bfe95d2bf16c1735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a> (<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> *<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</td></tr>
+<tr class="memitem:ad760b438b3168f37bfe95d2bf16c1735" id="r_ad760b438b3168f37bfe95d2bf16c1735"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ad760b438b3168f37bfe95d2bf16c1735">release</a> (T *<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ptr</a>)</td></tr>
 <tr class="memdesc:ad760b438b3168f37bfe95d2bf16c1735"><td class="mdescLeft">&#160;</td><td class="mdescRight">将对象释放回池中/Release an object back to the pool  <br /></td></tr>
 <tr class="separator:ad760b438b3168f37bfe95d2bf16c1735"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -264,10 +264,10 @@ Friends</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::PooledObjectPtr =  std::unique_ptr&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a>&gt; &gt;</td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">using</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::PooledObjectPtr =  std::unique_ptr&lt;T, <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt;T&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -285,13 +285,13 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::object_pool_t </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
           <td class="paramname"><em>initial_size</em> = <code>0</code>, </td>
@@ -299,7 +299,7 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &amp;)&gt;&#160;</td>
+          <td class="paramtype">std::function&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a>(T &amp;)&gt;&#160;</td>
           <td class="paramname"><em>resetter</em> = <code><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">nullptr</a></code>&#160;</td>
         </tr>
         <tr>
@@ -332,15 +332,15 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::object_pool_t </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -360,15 +360,15 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::object_pool_t </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::object_pool_t </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -389,13 +389,13 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::acquire </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#ae721bc932699daa4c5e521583b54eb5f">PooledObjectPtr</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::acquire </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -422,15 +422,15 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">const</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -452,15 +452,15 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a> &amp; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html#a76ed5cc37a23b4b4c05e7035c844b44e">::operator</a>= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">object_pool_t</a>&lt; T &gt; &amp;&amp;&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -480,15 +480,15 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;::release </td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">void</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">toolbox::base::object_pool_t</a>&lt; T &gt;::release </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> *&#160;</td>
+          <td class="paramtype">T *&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -520,13 +520,13 @@ template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">ty
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt; </div>
+template&lt;<a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">typename</a> T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">friend</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">T</a> &gt;</td>
+          <td class="memname"><a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">friend</a> <a class="el" href="classtoolbox_1_1base_1_1object__pool__t.html">class</a> <a class="el" href="classtoolbox_1_1base_1_1_pool_deleter.html">PoolDeleter</a>&lt; T &gt;</td>
         </tr>
       </table>
   </td>
