@@ -8,6 +8,7 @@
 #include <cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/norm/pca_norm.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
 
 namespace toolbox::pcl
 {
@@ -73,7 +74,8 @@ struct pfh_signature_t : public base_signature_t<DataType, pfh_signature_t<DataT
  * extractor.compute(cloud, keypoint_indices, descriptors);
  * @endcode
  */
-template<typename DataType, typename KNN>
+template<typename DataType, 
+         typename KNN = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>>
 class CPP_TOOLBOX_EXPORT pfh_extractor_t
     : public base_descriptor_extractor_t<pfh_extractor_t<DataType, KNN>,
                                          DataType,

@@ -31,7 +31,7 @@ template<typename DataType, typename KNN>
 std::size_t mls_keypoint_extractor_t<DataType, KNN>::set_knn_impl(const knn_type& knn)
 {
   m_knn = const_cast<knn_type*>(&knn);
-  if (m_cloud) {
+  if (m_cloud && m_knn) {
     m_knn->set_input(*m_cloud);
   }
   return m_cloud ? m_cloud->size() : 0;

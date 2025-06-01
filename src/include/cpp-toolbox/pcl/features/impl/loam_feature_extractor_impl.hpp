@@ -29,7 +29,7 @@ std::size_t loam_feature_extractor_t<DataType, KNN>::set_knn_impl(const knn_type
 {
   m_knn = const_cast<knn_type*>(&knn);
   if (m_cloud) {
-    m_knn->set_input(*m_cloud);
+    m_knn->set_input(m_cloud->points);
   }
   return m_cloud ? m_cloud->size() : 0;
 }

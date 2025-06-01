@@ -20,6 +20,7 @@ public:
   using distance_type = typename traits_type::distance_type;
   using container_type = typename base_type::container_type;
   using container_ptr = typename base_type::container_ptr;
+  using value_type = typename Element::value_type;
 
   bfknn_parallel_generic_t() = default;
   ~bfknn_parallel_generic_t() = default;
@@ -60,48 +61,9 @@ private:
   static constexpr std::size_t k_parallel_threshold = 1024;
 };
 
-// Legacy parallel brute-force KNN for backward compatibility
+// Type aliases for common use cases
 template<typename DataType>
-class CPP_TOOLBOX_EXPORT bfknn_parallel_t : public base_knn_t<bfknn_parallel_t<DataType>, DataType>
-{
-public:
-  using data_type = DataType;
-  using base_type = base_knn_t<bfknn_parallel_t<DataType>, DataType>;
-  using point_cloud = typename base_type::point_cloud;
-  using point_cloud_ptr = typename base_type::point_cloud_ptr;
-
-  // Internal generic implementation
-  using generic_impl_type = bfknn_parallel_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>;
-
-  bfknn_parallel_t() = default;
-  ~bfknn_parallel_t() = default;
-
-  bfknn_parallel_t(const bfknn_parallel_t&) = delete;
-  bfknn_parallel_t& operator=(const bfknn_parallel_t&) = delete;
-  bfknn_parallel_t(bfknn_parallel_t&&) = delete;
-  bfknn_parallel_t& operator=(bfknn_parallel_t&&) = delete;
-
-  std::size_t set_input_impl(const point_cloud& cloud);
-  std::size_t set_input_impl(const point_cloud_ptr& cloud);
-  std::size_t set_metric_impl(metric_type_t metric);
-
-  bool kneighbors_impl(const point_t<data_type>& query_point,
-                       std::size_t num_neighbors,
-                       std::vector<std::size_t>& indices,
-                       std::vector<data_type>& distances);
-
-  bool radius_neighbors_impl(const point_t<data_type>& query_point,
-                             data_type radius,
-                             std::vector<std::size_t>& indices,
-                             std::vector<data_type>& distances);
-
-  void enable_parallel(bool enable) { m_impl.enable_parallel(enable); }
-  [[nodiscard]] bool is_parallel_enabled() const noexcept { return m_impl.is_parallel_enabled(); }
-
-private:
-  generic_impl_type m_impl;
-  metric_type_t m_metric = metric_type_t::euclidean;
-};
+using bfknn_parallel_t = bfknn_parallel_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>;
 
 }  // namespace toolbox::pcl
 

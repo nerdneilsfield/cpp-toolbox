@@ -27,7 +27,8 @@ std::size_t pfh_extractor_t<DataType, KNN>::set_knn(const knn_type& knn)
   m_knn = const_cast<knn_type*>(&knn);
   if (m_cloud && m_knn)
   {
-    m_knn->set_input(*m_cloud);
+    // Use the points vector directly from the point cloud for new KNN API
+    m_knn->set_input(m_cloud->points);
   }
   return m_cloud ? m_cloud->size() : 0;
 }

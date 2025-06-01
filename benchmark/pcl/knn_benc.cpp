@@ -157,40 +157,6 @@ TEST_CASE("KNN Benchmark - Different Metrics", "[pcl][knn][benchmark]")
   auto cloud = generate_benchmark_cloud<scalar_t>(cloud_size);
   auto queries = generate_query_points<scalar_t>(num_queries);
   
-  SECTION("Legacy interface metrics")
-  {
-    auto knn = std::make_unique<bfknn_t<scalar_t>>();
-    knn->set_input(cloud);
-    
-    std::vector<metric_type_t> metrics = {
-      metric_type_t::euclidean,
-      metric_type_t::manhattan,
-      metric_type_t::chebyshev,
-      metric_type_t::minkowski
-    };
-    
-    std::vector<std::string> metric_names = {
-      "Euclidean",
-      "Manhattan",
-      "Chebyshev",
-      "Minkowski"
-    };
-    
-    for (std::size_t i = 0; i < metrics.size(); ++i)
-    {
-      knn->set_metric(metrics[i]);
-      
-      BENCHMARK("BruteForce " + metric_names[i] + " - " + std::to_string(cloud_size) + " points")
-      {
-        std::vector<std::size_t> indices;
-        std::vector<scalar_t> distances;
-        for (const auto& query : queries)
-        {
-          knn->kneighbors(query, k, indices, distances);
-        }
-      };
-    }
-  }
   
   SECTION("Generic interface metrics")
   {
@@ -272,8 +238,8 @@ TEST_CASE("KNN Benchmark - Different Metrics", "[pcl][knn][benchmark]")
       bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
       knn.set_input(points);
       
-      auto metric = MetricFactory<scalar_t>::create("L2");
-      knn.set_metric(metric);
+      auto metric = MetricFactory<scalar_t>::instance().create("L2");
+      knn.set_metric(std::move(metric));
       
       std::vector<std::size_t> indices;
       std::vector<scalar_t> distances;
@@ -288,8 +254,8 @@ TEST_CASE("KNN Benchmark - Different Metrics", "[pcl][knn][benchmark]")
       bfknn_generic_t<point_t<scalar_t>, L2Metric<scalar_t>> knn;
       knn.set_input(points);
       
-      auto metric = MetricFactory<scalar_t>::create("L1");
-      knn.set_metric(metric);
+      auto metric = MetricFactory<scalar_t>::instance().create("L1");
+      knn.set_metric(std::move(metric));
       
       std::vector<std::size_t> indices;
       std::vector<scalar_t> distances;
@@ -317,9 +283,9 @@ TEST_CASE("KNN Benchmark - Radius Neighbors", "[pcl][knn][benchmark]")
   auto bfknn_parallel = std::make_unique<bfknn_parallel_t<scalar_t>>();
   auto kdtree = std::make_unique<kdtree_t<scalar_t>>();
   
-  bfknn->set_input(cloud);
-  bfknn_parallel->set_input(cloud);
-  kdtree->set_input(cloud);
+  bfknn->set_input(cloud.points);
+  bfknn_parallel->set_input(cloud.points);
+  kdtree->set_input(cloud.points);
   
   BENCHMARK("BruteForce Radius Search - " + std::to_string(cloud_size) + " points")
   {
@@ -364,7 +330,7 @@ TEST_CASE("KNN Benchmark - Parallel Scaling", "[pcl][knn][benchmark]")
   auto queries = generate_query_points<scalar_t>(num_queries);
   
   auto bfknn_parallel = std::make_unique<bfknn_parallel_t<scalar_t>>();
-  bfknn_parallel->set_input(cloud);
+  bfknn_parallel->set_input(cloud.points);
   
   BENCHMARK("Parallel Enabled - " + std::to_string(cloud_size) + " points")
   {
@@ -401,11 +367,11 @@ TEST_CASE("KNN Benchmark - KDTree Fallback for Metrics", "[pcl][knn][benchmark]"
   auto queries = generate_query_points<scalar_t>(num_queries);
   
   auto kdtree = std::make_unique<kdtree_t<scalar_t>>();
-  kdtree->set_input(cloud);
+  kdtree->set_input(cloud.points);
   
   BENCHMARK("KDTree with Euclidean (Native)")
   {
-    kdtree->set_metric(metric_type_t::euclidean);
+    // KDTree uses L2 metric by default
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     for (const auto& query : queries)
@@ -414,9 +380,10 @@ TEST_CASE("KNN Benchmark - KDTree Fallback for Metrics", "[pcl][knn][benchmark]"
     }
   };
   
-  BENCHMARK("KDTree with Manhattan (Fallback)")
+  BENCHMARK("KDTree with L1 (Fallback)")
   {
-    kdtree->set_metric(metric_type_t::manhattan);
+    auto metric_l1 = MetricFactory<scalar_t>::instance().create("l1");
+    kdtree->set_metric(std::move(metric_l1));
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     for (const auto& query : queries)

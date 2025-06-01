@@ -47,6 +47,16 @@ void bfknn_generic_t<Element, Metric>::set_metric_impl(
 }
 
 template<typename Element, typename Metric>
+template<typename T>
+void bfknn_generic_t<Element, Metric>::set_metric_impl(
+    std::unique_ptr<toolbox::metrics::IMetric<T>> metric)
+{
+  // Convert unique_ptr to shared_ptr
+  auto shared_metric = std::shared_ptr<toolbox::metrics::IMetric<T>>(std::move(metric));
+  set_metric_impl(shared_metric);
+}
+
+template<typename Element, typename Metric>
 bool bfknn_generic_t<Element, Metric>::kneighbors_impl(
     const element_type& query,
     std::size_t num_neighbors,
@@ -71,10 +81,13 @@ bool bfknn_generic_t<Element, Metric>::kneighbors_impl(
     if (m_use_runtime_metric && m_runtime_metric)
     {
       if constexpr (std::is_same_v<Element, toolbox::types::point_t<typename Element::value_type>>) {
-        auto adapter = std::static_pointer_cast<toolbox::metrics::PointMetricAdapter<typename Element::value_type>>(m_runtime_metric);
-        dist = (*adapter)(query, (*m_data)[i]);
+        // For point types, convert to arrays and use distance method
+        value_type arr_query[3] = {query.x, query.y, query.z};
+        value_type arr_data[3] = {(*m_data)[i].x, (*m_data)[i].y, (*m_data)[i].z};
+        dist = m_runtime_metric->distance(arr_query, arr_data, 3);
       } else {
-        dist = (*m_runtime_metric)(query, (*m_data)[i]);
+        // For generic types, assume they have data() and size() methods
+        dist = m_runtime_metric->distance(query, (*m_data)[i]);
       }
     }
     else
@@ -126,10 +139,13 @@ bool bfknn_generic_t<Element, Metric>::radius_neighbors_impl(
     if (m_use_runtime_metric && m_runtime_metric)
     {
       if constexpr (std::is_same_v<Element, toolbox::types::point_t<typename Element::value_type>>) {
-        auto adapter = std::static_pointer_cast<toolbox::metrics::PointMetricAdapter<typename Element::value_type>>(m_runtime_metric);
-        dist = (*adapter)(query, (*m_data)[i]);
+        // For point types, convert to arrays and use distance method
+        value_type arr_query[3] = {query.x, query.y, query.z};
+        value_type arr_data[3] = {(*m_data)[i].x, (*m_data)[i].y, (*m_data)[i].z};
+        dist = m_runtime_metric->distance(arr_query, arr_data, 3);
       } else {
-        dist = (*m_runtime_metric)(query, (*m_data)[i]);
+        // For generic types, assume they have data() and size() methods
+        dist = m_runtime_metric->distance(query, (*m_data)[i]);
       }
     }
     else
@@ -157,70 +173,6 @@ bool bfknn_generic_t<Element, Metric>::radius_neighbors_impl(
   }
 
   return true;
-}
-
-// Legacy brute-force KNN implementation
-template<typename DataType>
-std::size_t bfknn_t<DataType>::set_input_impl(const point_cloud& cloud)
-{
-  // Convert point cloud to vector of points
-  std::vector<point_t<DataType>> points(cloud.points.begin(), cloud.points.end());
-  return m_impl.set_input(points);
-}
-
-template<typename DataType>
-std::size_t bfknn_t<DataType>::set_input_impl(const point_cloud_ptr& cloud)
-{
-  if (!cloud) return 0;
-  return set_input_impl(*cloud);
-}
-
-template<typename DataType>
-std::size_t bfknn_t<DataType>::set_metric_impl(metric_type_t metric)
-{
-  m_metric = metric;
-  
-  // Create appropriate metric based on enum
-  switch (metric)
-  {
-    case metric_type_t::euclidean:
-      m_impl.set_metric(toolbox::metrics::L2Metric<DataType>{});
-      break;
-    case metric_type_t::manhattan:
-      m_impl.set_metric(toolbox::metrics::L1Metric<DataType>{});
-      break;
-    case metric_type_t::chebyshev:
-      m_impl.set_metric(toolbox::metrics::LinfMetric<DataType>{});
-      break;
-    case metric_type_t::minkowski:
-      m_impl.set_metric(toolbox::metrics::GeneralizedLpMetric<DataType>{3.0}); // Default p=3
-      break;
-    default:
-      m_impl.set_metric(toolbox::metrics::L2Metric<DataType>{});
-      break;
-  }
-  
-  return 0;
-}
-
-template<typename DataType>
-bool bfknn_t<DataType>::kneighbors_impl(
-    const point_t<data_type>& query_point,
-    std::size_t num_neighbors,
-    std::vector<std::size_t>& indices,
-    std::vector<data_type>& distances)
-{
-  return m_impl.kneighbors(query_point, num_neighbors, indices, distances);
-}
-
-template<typename DataType>
-bool bfknn_t<DataType>::radius_neighbors_impl(
-    const point_t<data_type>& query_point,
-    data_type radius,
-    std::vector<std::size_t>& indices,
-    std::vector<data_type>& distances)
-{
-  return m_impl.radius_neighbors(query_point, radius, indices, distances);
 }
 
 }  // namespace toolbox::pcl

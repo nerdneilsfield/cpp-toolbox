@@ -6,8 +6,10 @@
 
 #include <cpp-toolbox/concurrent/parallel.hpp>
 #include <cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp>
+#include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/norm/pca_norm.hpp>
 #include <cpp-toolbox/types/point.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
 
 namespace toolbox::pcl
 {
@@ -29,7 +31,8 @@ struct cvfh_signature_t : public base_signature_t<DataType, cvfh_signature_t<Dat
   }
 };
 
-template<typename DataType, typename KNN>
+template<typename DataType, 
+         typename KNN = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>>
 class cvfh_extractor_t
     : public base_descriptor_extractor_t<cvfh_extractor_t<DataType, KNN>,
                                          DataType,

@@ -5,8 +5,10 @@
 #include <vector>
 
 #include <cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp>
+#include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/norm/pca_norm.hpp>
 #include <cpp-toolbox/types/point.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
 
 namespace toolbox::pcl
 {
@@ -28,7 +30,8 @@ struct vfh_signature_t : public base_signature_t<DataType, vfh_signature_t<DataT
   }
 };
 
-template<typename DataType, typename KNN>
+template<typename DataType, 
+         typename KNN = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>>
 class vfh_extractor_t
     : public base_descriptor_extractor_t<vfh_extractor_t<DataType, KNN>,
                                          DataType,

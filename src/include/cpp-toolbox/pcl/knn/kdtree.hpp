@@ -96,17 +96,9 @@ private:
     }
   };
 
-  // Select appropriate nanoflann metric based on our metric type
-  template<typename M>
-  struct nanoflann_metric_selector
-  {
-    using type = nanoflann::metric_L2; // Default to L2
-  };
-
-  // KD-tree type definitions
-  using selected_metric = typename nanoflann_metric_selector<Metric>::type;
+  // KD-tree type definitions using nanoflann's L2_Simple
   using kd_tree_t = nanoflann::KDTreeSingleIndexAdaptor<
-      selected_metric,
+      nanoflann::L2_Simple_Adaptor<value_type, data_adaptor_t>,
       data_adaptor_t,
       3,  // dimensions
       std::size_t
@@ -124,50 +116,9 @@ private:
   std::size_t m_max_leaf_size = 10;
 };
 
-// Legacy KD-tree for backward compatibility
+// Type aliases for common use cases
 template<typename DataType>
-class CPP_TOOLBOX_EXPORT kdtree_t : public base_knn_t<kdtree_t<DataType>, DataType>
-{
-public:
-  using data_type = DataType;
-  using base_type = base_knn_t<kdtree_t<DataType>, DataType>;
-  using point_cloud = typename base_type::point_cloud;
-  using point_cloud_ptr = typename base_type::point_cloud_ptr;
-
-  // Internal generic implementation
-  using generic_impl_type = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>;
-
-  kdtree_t() = default;
-  ~kdtree_t() = default;
-
-  kdtree_t(const kdtree_t&) = delete;
-  kdtree_t& operator=(const kdtree_t&) = delete;
-  kdtree_t(kdtree_t&&) = delete;
-  kdtree_t& operator=(kdtree_t&&) = delete;
-
-  std::size_t set_input_impl(const point_cloud& cloud);
-  std::size_t set_input_impl(const point_cloud_ptr& cloud);
-  std::size_t set_metric_impl(metric_type_t metric);
-
-  bool kneighbors_impl(const point_t<data_type>& query_point,
-                       std::size_t num_neighbors,
-                       std::vector<std::size_t>& indices,
-                       std::vector<data_type>& distances);
-
-  bool radius_neighbors_impl(const point_t<data_type>& query_point,
-                             data_type radius,
-                             std::vector<std::size_t>& indices,
-                             std::vector<data_type>& distances);
-
-  void set_max_leaf_size(std::size_t max_leaf_size) { m_impl.set_max_leaf_size(max_leaf_size); }
-  [[nodiscard]] std::size_t get_max_leaf_size() const noexcept { return m_impl.get_max_leaf_size(); }
-
-private:
-  generic_impl_type m_impl;
-  metric_type_t m_metric = metric_type_t::euclidean;
-  bool m_use_bfknn_fallback = false; // For unsupported metrics
-  std::unique_ptr<bfknn_t<DataType>> m_bfknn_fallback;
-};
+using kdtree_t = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>;
 
 }  // namespace toolbox::pcl
 

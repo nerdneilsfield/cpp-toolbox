@@ -22,10 +22,10 @@ std::size_t pca_norm_extractor_t<DataType, KNN>::set_input_impl(
     const point_cloud_ptr& cloud)
 {
   m_cloud = cloud;
-  if (m_knn) {
+  if (m_knn && cloud) {
     m_knn->set_input(cloud);
   }
-  return cloud->size();
+  return cloud ? cloud->size() : 0;
 }
 
 template<typename DataType, typename KNN>
@@ -33,7 +33,7 @@ std::size_t pca_norm_extractor_t<DataType, KNN>::set_knn_impl(
     const knn_type& knn)
 {
   m_knn = const_cast<knn_type*>(&knn);
-  if (m_cloud) {
+  if (m_cloud && m_knn) {
     m_knn->set_input(m_cloud);
   }
   return 0;

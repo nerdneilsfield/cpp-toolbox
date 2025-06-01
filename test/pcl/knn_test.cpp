@@ -77,7 +77,7 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
   SECTION("Brute Force KNN - k-neighbors")
   {
     bfknn_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
 
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
@@ -99,7 +99,7 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
   SECTION("Brute Force KNN - radius neighbors")
   {
     bfknn_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
 
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
@@ -123,7 +123,7 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
   SECTION("KD-Tree KNN - k-neighbors")
   {
     kdtree_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
 
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
@@ -142,7 +142,7 @@ TEST_CASE("KNN Algorithms - Basic Functionality", "[pcl][knn]")
   SECTION("Parallel Brute Force KNN")
   {
     bfknn_parallel_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
 
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
@@ -163,30 +163,6 @@ TEST_CASE("KNN Algorithms - Different Metrics", "[pcl][knn]")
   query_point.y = 1.5f;
   query_point.z = 1.5f;
 
-  SECTION("Legacy interface - Different metrics")
-  {
-    bfknn_t<scalar_t> knn;
-    REQUIRE(knn.set_input(cloud) == 27);
-
-    std::vector<std::size_t> indices_l2, indices_l1, indices_linf;
-    std::vector<scalar_t> distances_l2, distances_l1, distances_linf;
-
-    // Test L2 (Euclidean)
-    knn.set_metric(metric_type_t::euclidean);
-    REQUIRE(knn.kneighbors(query_point, 5, indices_l2, distances_l2));
-    
-    // Test L1 (Manhattan)
-    knn.set_metric(metric_type_t::manhattan);
-    REQUIRE(knn.kneighbors(query_point, 5, indices_l1, distances_l1));
-    
-    // Test Linf (Chebyshev)
-    knn.set_metric(metric_type_t::chebyshev);
-    REQUIRE(knn.kneighbors(query_point, 5, indices_linf, distances_linf));
-    
-    // Different metrics should give different distances
-    REQUIRE(distances_l2[0] != distances_l1[0]);
-    REQUIRE(distances_l2[0] != distances_linf[0]);
-  }
 
   SECTION("Generic interface - Compile-time metrics")
   {
@@ -255,8 +231,8 @@ TEST_CASE("KNN Algorithms - Different Metrics", "[pcl][knn]")
     REQUIRE(knn.set_input(points) == 27);
 
     // Create runtime metric using factory
-    auto metric_l1 = MetricFactory<scalar_t>::instance().create("L1");
-    knn.set_metric(metric_l1);
+    auto metric_l1 = MetricFactory<scalar_t>::instance().create("l1");
+    knn.set_metric(std::move(metric_l1));
     
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
@@ -265,8 +241,8 @@ TEST_CASE("KNN Algorithms - Different Metrics", "[pcl][knn]")
     REQUIRE(indices.size() == 5);
     
     // Test with different runtime metric
-    auto metric_linf = MetricFactory<scalar_t>::instance().create("Linf");
-    knn.set_metric(metric_linf);
+    auto metric_linf = MetricFactory<scalar_t>::instance().create("linf");
+    knn.set_metric(std::move(metric_linf));
     
     indices.clear();
     distances.clear();
@@ -289,13 +265,12 @@ TEST_CASE("KNN Algorithms - KDTree Metric Fallback", "[pcl][knn]")
   kdtree_t<scalar_t> kdtree;
   bfknn_t<scalar_t> bfknn;
   
-  REQUIRE(kdtree.set_input(cloud) == 27);
-  REQUIRE(bfknn.set_input(cloud) == 27);
+  REQUIRE(kdtree.set_input(cloud.points) == 27);
+  REQUIRE(bfknn.set_input(cloud.points) == 27);
 
   SECTION("KDTree supports Euclidean metric")
   {
-    kdtree.set_metric(metric_type_t::euclidean);
-    
+    // KDTree uses L2 metric by default
     std::vector<std::size_t> indices;
     std::vector<scalar_t> distances;
     
@@ -305,15 +280,19 @@ TEST_CASE("KNN Algorithms - KDTree Metric Fallback", "[pcl][knn]")
 
   SECTION("KDTree falls back to brute-force for unsupported metrics")
   {
-    // Set unsupported metric
-    kdtree.set_metric(metric_type_t::manhattan);
-    bfknn.set_metric(metric_type_t::manhattan);
+    // Set unsupported metric using runtime metric
+    auto metric_l1 = MetricFactory<scalar_t>::instance().create("l1");
+    kdtree.set_metric(std::move(metric_l1));
+    
+    // Create a generic bfknn with L1 metric for comparison
+    bfknn_generic_t<point_t<scalar_t>, L1Metric<scalar_t>> bfknn_l1;
+    REQUIRE(bfknn_l1.set_input(cloud.points) == 27);
     
     std::vector<std::size_t> kdtree_indices, bfknn_indices;
     std::vector<scalar_t> kdtree_distances, bfknn_distances;
     
     REQUIRE(kdtree.kneighbors(query_point, 5, kdtree_indices, kdtree_distances));
-    REQUIRE(bfknn.kneighbors(query_point, 5, bfknn_indices, bfknn_distances));
+    REQUIRE(bfknn_l1.kneighbors(query_point, 5, bfknn_indices, bfknn_distances));
     
     // Results should be the same (indices might be in different order for equal distances)
     REQUIRE(kdtree_distances.size() == bfknn_distances.size());
@@ -340,9 +319,9 @@ TEST_CASE("KNN Algorithms - Performance Comparison", "[pcl][knn][!benchmark]")
     bfknn_parallel_t<scalar_t> bfknn_parallel;
     kdtree_t<scalar_t> kdtree;
 
-    REQUIRE(bfknn.set_input(cloud) == num_points);
-    REQUIRE(bfknn_parallel.set_input(cloud) == num_points);
-    REQUIRE(kdtree.set_input(cloud) == num_points);
+    REQUIRE(bfknn.set_input(cloud.points) == num_points);
+    REQUIRE(bfknn_parallel.set_input(cloud.points) == num_points);
+    REQUIRE(kdtree.set_input(cloud.points) == num_points);
 
     const std::size_t k = 10;
     
@@ -379,7 +358,7 @@ TEST_CASE("KNN Algorithms - Edge Cases", "[pcl][knn]")
     point_cloud_t<scalar_t> empty_cloud;
     bfknn_t<scalar_t> knn;
     
-    REQUIRE(knn.set_input(empty_cloud) == 0);
+    REQUIRE(knn.set_input(empty_cloud.points) == 0);
     
     point_t<scalar_t> query;
     query.x = query.y = query.z = 0;
@@ -395,7 +374,7 @@ TEST_CASE("KNN Algorithms - Edge Cases", "[pcl][knn]")
     auto cloud = create_test_cloud<scalar_t>();
     bfknn_t<scalar_t> knn;
     
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
     
     point_t<scalar_t> query;
     query.x = query.y = query.z = 1.5f;
@@ -413,7 +392,7 @@ TEST_CASE("KNN Algorithms - Edge Cases", "[pcl][knn]")
     auto cloud = create_test_cloud<scalar_t>();
     bfknn_t<scalar_t> knn;
     
-    REQUIRE(knn.set_input(cloud) == 27);
+    REQUIRE(knn.set_input(cloud.points) == 27);
     
     point_t<scalar_t> query;
     query.x = query.y = query.z = 1.5f;

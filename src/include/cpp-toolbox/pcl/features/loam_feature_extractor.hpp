@@ -4,6 +4,7 @@
 #include <cpp-toolbox/pcl/features/base_feature_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/knn/bfknn_parallel.hpp>
+#include <cpp-toolbox/metrics/vector_metrics.hpp>
 
 namespace toolbox::pcl
 {
@@ -12,11 +13,12 @@ namespace toolbox::pcl
  * @brief LOAM (Lidar Odometry and Mapping) 特征提取器 / LOAM (Lidar Odometry and Mapping) feature extractor
  * 
  * @tparam DataType 数据类型（float或double） / Data type (float or double)
- * @tparam KNN 最近邻搜索算法类型 / K-nearest neighbor search algorithm type
+ * @tparam KNN 最近邻搜索算法类型，默认使用 kdtree_generic_t / K-nearest neighbor search algorithm type, defaults to kdtree_generic_t
  * 
  * @details LOAM特征提取器专门用于激光雷达点云，提取边缘点和平面点特征，常用于SLAM应用 / LOAM feature extractor is designed for LiDAR point clouds, extracting edge and planar features commonly used in SLAM applications
  */
-template<typename DataType, typename KNN>
+template<typename DataType, 
+         typename KNN = kdtree_generic_t<point_t<DataType>, toolbox::metrics::L2Metric<DataType>>>
 class CPP_TOOLBOX_EXPORT loam_feature_extractor_t
     : public base_keypoint_extractor_t<loam_feature_extractor_t<DataType, KNN>,
                                        DataType,

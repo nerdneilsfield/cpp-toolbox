@@ -51,6 +51,16 @@ public:
     T dist = distance_impl(a, b, size);
     return dist * dist;
   }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    T arr_a[3] = {static_cast<T>(a.x), static_cast<T>(a.y), static_cast<T>(a.z)};
+    T arr_b[3] = {static_cast<T>(b.x), static_cast<T>(b.y), static_cast<T>(b.z)};
+    return distance_impl(arr_a, arr_b, 3);
+  }
 };
 
 template<typename T>
@@ -93,6 +103,16 @@ public:
   {
     T dist = distance_impl(a, b, size);
     return dist * dist;
+  }
+  
+  // Overload for point_t types
+  template<typename U>
+  constexpr auto operator()(const toolbox::types::point_t<U>& a, 
+                           const toolbox::types::point_t<U>& b) const
+  {
+    T arr_a[3] = {static_cast<T>(a.x), static_cast<T>(a.y), static_cast<T>(a.z)};
+    T arr_b[3] = {static_cast<T>(b.x), static_cast<T>(b.y), static_cast<T>(b.z)};
+    return distance_impl(arr_a, arr_b, 3);
   }
 };
 

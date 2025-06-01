@@ -29,7 +29,9 @@ std::size_t shot_extractor_t<DataType, KNN>::set_knn(const knn_type& knn)
   m_knn = const_cast<knn_type*>(&knn);
   if (m_cloud && m_knn)
   {
-    m_knn->set_input(*m_cloud);
+    // Convert point cloud to vector of points for new KNN API
+    std::vector<point_t<DataType>> points(m_cloud->points.begin(), m_cloud->points.end());
+    m_knn->set_input(points);
   }
   return m_cloud ? m_cloud->size() : 0;
 }
