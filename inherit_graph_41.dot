@@ -5,7 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::base\l_keypoint_extractor\l_t\< agast_keypoint_extractor\l_t\< DataType, KNN \>, DataType, KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge40_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::pcl::agast\l_keypoint_extractor\l_t\< DataType, KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html",tooltip="AGAST (Adaptive and Generic Accelerated Segment Test) 3D关键点提取器 / AGAST (Adaptive and Generic Accelera..."];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_descriptor_extractor\l_t\< cvfh_extractor_t\<\l DataType, KNN \>, DataType,\l cvfh_signature_t\< DataType \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge41_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::cvfh\l_extractor_t\< DataType,\l KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1cvfh__extractor__t.html",tooltip=" "];
 }

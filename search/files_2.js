@@ -1,14 +1,13 @@
 var searchData=
 [
-  ['class_2ehpp_0',['class.hpp',['../class_8hpp.html',1,'']]],
-  ['click_2ehpp_1',['click.hpp',['../click_8hpp.html',1,'']]],
-  ['click_5fexample_2emd_2',['click_example.md',['../click__example_8md.html',1,'']]],
-  ['click_5fimpl_2ehpp_3',['click_impl.hpp',['../click__impl_8hpp.html',1,'']]],
-  ['code_5fof_5fconduct_2emd_4',['CODE_OF_CONDUCT.md',['../_c_o_d_e___o_f___c_o_n_d_u_c_t_8md.html',1,'']]],
-  ['code_5fstyle_2emd_5',['CODE_STYLE.md',['../_c_o_d_e___s_t_y_l_e_8md.html',1,'']]],
-  ['concurrent_5fqueue_2ehpp_6',['concurrent_queue.hpp',['../concurrent__queue_8hpp.html',1,'']]],
-  ['contributing_2emd_7',['CONTRIBUTING.md',['../_c_o_n_t_r_i_b_u_t_i_n_g_8md.html',1,'']]],
-  ['cpp_2dtoolbox_2ehpp_8',['cpp-toolbox.hpp',['../cpp-toolbox_8hpp.html',1,'']]],
-  ['curvature_5fkeypoints_2ehpp_9',['curvature_keypoints.hpp',['../curvature__keypoints_8hpp.html',1,'']]],
-  ['curvature_5fkeypoints_5fimpl_2ehpp_10',['curvature_keypoints_impl.hpp',['../curvature__keypoints__impl_8hpp.html',1,'']]]
+  ['base_2ehpp_0',['base.hpp',['../base_8hpp.html',1,'(Global Namespace)'],['../io_2formats_2base_8hpp.html',1,'(Global Namespace)']]],
+  ['base_5fdescriptor_5fextractor_2ehpp_1',['base_descriptor_extractor.hpp',['../base__descriptor__extractor_8hpp.html',1,'']]],
+  ['base_5ffeature_5fextractor_2ehpp_2',['base_feature_extractor.hpp',['../base__feature__extractor_8hpp.html',1,'']]],
+  ['base_5fknn_2ehpp_3',['base_knn.hpp',['../base__knn_8hpp.html',1,'']]],
+  ['base_5fnorm_2ehpp_4',['base_norm.hpp',['../base__norm_8hpp.html',1,'']]],
+  ['bfknn_2ehpp_5',['bfknn.hpp',['../bfknn_8hpp.html',1,'']]],
+  ['bfknn_5fimpl_2ehpp_6',['bfknn_impl.hpp',['../bfknn__impl_8hpp.html',1,'']]],
+  ['bfknn_5fparallel_2ehpp_7',['bfknn_parallel.hpp',['../bfknn__parallel_8hpp.html',1,'']]],
+  ['bfknn_5fparallel_5fimpl_2ehpp_8',['bfknn_parallel_impl.hpp',['../bfknn__parallel__impl_8hpp.html',1,'']]],
+  ['building_2emd_9',['BUILDING.md',['../_b_u_i_l_d_i_n_g_8md.html',1,'']]]
 ];

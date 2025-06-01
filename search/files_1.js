@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['base_2ehpp_0',['base.hpp',['../base_8hpp.html',1,'(Global Namespace)'],['../io_2formats_2base_8hpp.html',1,'(Global Namespace)']]],
-  ['base_5ffeature_5fextractor_2ehpp_1',['base_feature_extractor.hpp',['../base__feature__extractor_8hpp.html',1,'']]],
-  ['base_5fknn_2ehpp_2',['base_knn.hpp',['../base__knn_8hpp.html',1,'']]],
-  ['base_5fnorm_2ehpp_3',['base_norm.hpp',['../base__norm_8hpp.html',1,'']]],
-  ['bfknn_2ehpp_4',['bfknn.hpp',['../bfknn_8hpp.html',1,'']]],
-  ['bfknn_5fimpl_2ehpp_5',['bfknn_impl.hpp',['../bfknn__impl_8hpp.html',1,'']]],
-  ['bfknn_5fparallel_2ehpp_6',['bfknn_parallel.hpp',['../bfknn__parallel_8hpp.html',1,'']]],
-  ['bfknn_5fparallel_5fimpl_2ehpp_7',['bfknn_parallel_impl.hpp',['../bfknn__parallel__impl_8hpp.html',1,'']]],
-  ['building_2emd_8',['BUILDING.md',['../_b_u_i_l_d_i_n_g_8md.html',1,'']]]
+  ['about_2edox_0',['about.dox',['../about_8dox.html',1,'']]],
+  ['agast_2ehpp_1',['agast.hpp',['../agast_8hpp.html',1,'']]],
+  ['agast_5fkeypoints_2ehpp_2',['agast_keypoints.hpp',['../agast__keypoints_8hpp.html',1,'']]],
+  ['agast_5fkeypoints_5fimpl_2ehpp_3',['agast_keypoints_impl.hpp',['../agast__keypoints__impl_8hpp.html',1,'']]]
 ];

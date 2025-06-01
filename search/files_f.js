@@ -1,11 +1,12 @@
 var searchData=
 [
-  ['task_5fbase_2ehpp_0',['task_base.hpp',['../task__base_8hpp.html',1,'']]],
-  ['thread_5flogger_2ehpp_1',['thread_logger.hpp',['../thread__logger_8hpp.html',1,'']]],
-  ['thread_5fpool_2ehpp_2',['thread_pool.hpp',['../thread__pool_8hpp.html',1,'']]],
-  ['thread_5fpool_5fold_2ehpp_3',['thread_pool_old.hpp',['../thread__pool__old_8hpp.html',1,'']]],
-  ['thread_5fpool_5fsingleton_2ehpp_4',['thread_pool_singleton.hpp',['../thread__pool__singleton_8hpp.html',1,'']]],
-  ['timer_2ehpp_5',['timer.hpp',['../timer_8hpp.html',1,'']]],
-  ['type_5ftraits_2ehpp_6',['type_traits.hpp',['../type__traits_8hpp.html',1,'']]],
-  ['types_2ehpp_7',['types.hpp',['../types_8hpp.html',1,'']]]
+  ['sampler_2ehpp_0',['sampler.hpp',['../sampler_8hpp.html',1,'']]],
+  ['shot_5fextractor_2ehpp_1',['shot_extractor.hpp',['../shot__extractor_8hpp.html',1,'']]],
+  ['shot_5fextractor_5fimpl_2ehpp_2',['shot_extractor_impl.hpp',['../shot__extractor__impl_8hpp.html',1,'']]],
+  ['sift3d_5fkeypoints_2ehpp_3',['sift3d_keypoints.hpp',['../sift3d__keypoints_8hpp.html',1,'']]],
+  ['sift3d_5fkeypoints_5fimpl_2ehpp_4',['sift3d_keypoints_impl.hpp',['../sift3d__keypoints__impl_8hpp.html',1,'']]],
+  ['statistics_2ehpp_5',['statistics.hpp',['../statistics_8hpp.html',1,'']]],
+  ['string_2ehpp_6',['string.hpp',['../string_8hpp.html',1,'']]],
+  ['susan_5fkeypoints_2ehpp_7',['susan_keypoints.hpp',['../susan__keypoints_8hpp.html',1,'']]],
+  ['susan_5fkeypoints_5fimpl_2ehpp_8',['susan_keypoints_impl.hpp',['../susan__keypoints__impl_8hpp.html',1,'']]]
 ];

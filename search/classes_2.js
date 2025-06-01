@@ -16,5 +16,9 @@ var searchData=
   ['container_5fprinter_5ft_3c_20std_3a_3aunordered_5fmap_3c_20k_2c_20v_20_3e_20_3e_13',['container_printer_t&lt; std::unordered_map&lt; K, V &gt; &gt;',['../classtoolbox_1_1utils_1_1container__printer__t.html',1,'toolbox::utils']]],
   ['container_5fprinter_5ft_3c_20std_3a_3aunordered_5fset_3c_20t_20_3e_20_3e_14',['container_printer_t&lt; std::unordered_set&lt; T &gt; &gt;',['../classtoolbox_1_1utils_1_1container__printer__t.html',1,'toolbox::utils']]],
   ['container_5fprinter_5ft_3c_20std_3a_3avector_3c_20t_20_3e_20_3e_15',['container_printer_t&lt; std::vector&lt; T &gt; &gt;',['../classtoolbox_1_1utils_1_1container__printer__t.html',1,'toolbox::utils']]],
-  ['curvature_5fkeypoint_5fextractor_5ft_16',['curvature_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html',1,'toolbox::pcl']]]
+  ['correspondence_5fgenerator_5ft_16',['correspondence_generator_t',['../classtoolbox_1_1pcl_1_1correspondence__generator__t.html',1,'toolbox::pcl']]],
+  ['correspondence_5ft_17',['correspondence_t',['../structtoolbox_1_1pcl_1_1correspondence__t.html',1,'toolbox::pcl']]],
+  ['curvature_5fkeypoint_5fextractor_5ft_18',['curvature_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html',1,'toolbox::pcl']]],
+  ['cvfh_5fextractor_5ft_19',['cvfh_extractor_t',['../classtoolbox_1_1pcl_1_1cvfh__extractor__t.html',1,'toolbox::pcl']]],
+  ['cvfh_5fsignature_5ft_20',['cvfh_signature_t',['../structtoolbox_1_1pcl_1_1cvfh__signature__t.html',1,'toolbox::pcl']]]
 ];

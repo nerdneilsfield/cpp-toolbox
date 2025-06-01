@@ -1,10 +1,34 @@
 var hierarchy =
 [
     [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", null ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< cvfh_extractor_t< DataType, KNN >, DataType, cvfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::cvfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1cvfh__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< dsc3d_extractor_t< DataType, KNN >, DataType, dsc3d_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::dsc3d_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html", null ],
+      [ "toolbox::pcl::dsc3d_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< fpfh_extractor_t< DataType, KNN >, DataType, fpfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::fpfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1fpfh__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< pfh_extractor_t< DataType, KNN >, DataType, pfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::pfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1pfh__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< rops_extractor_t< DataType, KNN >, DataType, rops_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::rops_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1rops__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< shot_extractor_t< DataType, KNN >, DataType, shot_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::shot_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1shot__extractor__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_descriptor_extractor_t< vfh_extractor_t< DataType, KNN >, DataType, vfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+      [ "toolbox::pcl::vfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1vfh__extractor__t.html", null ]
+    ] ],
     [ "base_features_extractor_t", null, [
       [ "toolbox::pcl::agast_features_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__features__extractor__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", [
+      [ "toolbox::types::point_cloud_t< DataType >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ],
       [ "toolbox::types::point_cloud_t< T >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_format_t", "classtoolbox_1_1io_1_1base__file__format__t.html", [
@@ -50,6 +74,29 @@ var hierarchy =
     [ "toolbox::pcl::base_norm_extractor_t< pca_norm_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html", [
       [ "toolbox::pcl::pca_norm_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html", null ]
     ] ],
+    [ "toolbox::pcl::base_signature_t< DataType, Derived >", "structtoolbox_1_1pcl_1_1base__signature__t.html", null ],
+    [ "toolbox::pcl::base_signature_t< cvfh_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::cvfh_signature_t< DataType >", "structtoolbox_1_1pcl_1_1cvfh__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< dsc3d_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::dsc3d_signature_t< DataType >", "structtoolbox_1_1pcl_1_1dsc3d__signature__t.html", null ],
+      [ "toolbox::pcl::dsc3d_signature_t< DataType >", "structtoolbox_1_1pcl_1_1dsc3d__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< fpfh_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::fpfh_signature_t< DataType >", "structtoolbox_1_1pcl_1_1fpfh__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< pfh_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::pfh_signature_t< DataType >", "structtoolbox_1_1pcl_1_1pfh__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< rops_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::rops_signature_t< DataType >", "structtoolbox_1_1pcl_1_1rops__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< shot_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::shot_signature_t< DataType >", "structtoolbox_1_1pcl_1_1shot__signature__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_signature_t< vfh_signature_t< DataType > >", "structtoolbox_1_1pcl_1_1base__signature__t.html", [
+      [ "toolbox::pcl::vfh_signature_t< DataType >", "structtoolbox_1_1pcl_1_1vfh__signature__t.html", null ]
+    ] ],
     [ "std::bool_constant", null, [
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
     ] ],
@@ -88,6 +135,8 @@ var hierarchy =
     [ "toolbox::utils::container_printer_t< std::vector< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
       [ "toolbox::utils::vector_printer_t< T >", "classtoolbox_1_1utils_1_1vector__printer__t.html", null ]
     ] ],
+    [ "toolbox::pcl::correspondence_generator_t< DataType, Signature, KNN >", "classtoolbox_1_1pcl_1_1correspondence__generator__t.html", null ],
+    [ "toolbox::pcl::correspondence_t", "structtoolbox_1_1pcl_1_1correspondence__t.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >", "classtoolbox_1_1io_1_1dataloader__t.html", null ],
     [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
     [ "toolbox::io::dataset_t< kitti_pcd_dataset_t, std::unique_ptr< toolbox::types::point_cloud_t< float > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
@@ -179,6 +228,8 @@ var hierarchy =
     ] ],
     [ "toolbox::utils::plot_t", "classtoolbox_1_1utils_1_1plot__t.html", null ],
     [ "toolbox::types::point_t< T >", "structtoolbox_1_1types_1_1point__t.html", null ],
+    [ "toolbox::types::point_t< data_type >", "structtoolbox_1_1types_1_1point__t.html", null ],
+    [ "toolbox::types::point_t< DataType >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::base::PoolDeleter< T >", "classtoolbox_1_1base_1_1_pool_deleter.html", null ],
     [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", null ],
     [ "toolbox::utils::random_t", "classtoolbox_1_1utils_1_1random__t.html", null ],

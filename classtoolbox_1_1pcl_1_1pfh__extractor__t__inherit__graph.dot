@@ -1,0 +1,11 @@
+digraph "toolbox::pcl::pfh_extractor_t&lt; DataType, KNN &gt;"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="toolbox::pcl::pfh_extractor\l_t\< DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="PFH (Point Feature Histogram) descriptor extractor."];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::pcl::base\l_descriptor_extractor\l_t\< pfh_extractor_t\< DataType,\l KNN \>, DataType, pfh_signature\l_t\< DataType \> \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html",tooltip=" "];
+}
