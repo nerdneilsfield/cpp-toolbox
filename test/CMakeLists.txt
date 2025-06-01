@@ -69,6 +69,12 @@ list(APPEND TEST_FILES my_catch2_main.cpp)
 
 add_executable(cpp-toolbox_test ${TEST_FILES})
 target_link_libraries(cpp-toolbox_test PRIVATE cpp-toolbox_test_lib Catch2::Catch2WithMain)
+
+if(CPP_TOOLBOX_USE_TBB)
+  find_package(TBB REQUIRED)
+  target_link_libraries(cpp-toolbox_test PRIVATE TBB::tbb)
+endif()
+
 target_compile_features(cpp-toolbox_test PRIVATE cxx_std_17)
 target_precompile_headers(cpp-toolbox_test PRIVATE ${CPP_TOOLBOX_PCH_FILE})
 # target_compile_definitions(cpp-toolbox_test PRIVATE CATCH_CONFIG_MAIN)

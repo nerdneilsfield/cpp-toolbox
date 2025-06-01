@@ -124,6 +124,7 @@
         "CMAKE_C_COMPILER": "clang-21",
         "CMAKE_LINKER": "lld-21",
         "CMAKE_CXX_FLAGS": "-stdlib=libc++"
+        // "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
