@@ -5,42 +5,32 @@
 #include <vector>
 
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
+#include <cpp-toolbox/math/matrix.hpp>
 #include <cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/pcl/norm/pca_norm.hpp>
-#include <cpp-toolbox/math/matrix.hpp>
 
 namespace toolbox::pcl
 {
 
 /**
  * @brief SHOT (Signature of Histograms of Orientations) signature
- * 
+ *
  * @tparam DataType The data type (float or double)
- * 
- * @details SHOT descriptor with 352 bins (32 spatial divisions × 11 angular bins)
+ *
+ * @details SHOT descriptor with 352 bins (32 spatial divisions ï¿½ 11 angular
+ * bins)
  */
 template<typename DataType>
 struct shot_signature_t : public base_signature_t<shot_signature_t<DataType>>
 {
-  static constexpr std::size_t HISTOGRAM_SIZE = 352;  // 32 spatial × 11 angular
-  std::array<DataType, HISTOGRAM_SIZE> histogram{};
+  static constexpr std::size_t HISTOGRAM_SIZE = 352;  // 32 spatial ï¿½ 11 angular
+  std::array<DataType, HISTOGRAM_SIZE> histogram {};
 
-  bool operator==(const shot_signature_t& other) const
-  {
-    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i)
-    {
-      if (std::abs(histogram[i] - other.histogram[i]) > DataType(1e-6))
-        return false;
-    }
-    return true;
-  }
-
-  DataType distance(const shot_signature_t& other) const
+  DataType distance_impl(const shot_signature_t& other) const
   {
     DataType dist = 0;
-    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i)
-    {
+    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i) {
       DataType diff = histogram[i] - other.histogram[i];
       dist += diff * diff;
     }
@@ -50,34 +40,34 @@ struct shot_signature_t : public base_signature_t<shot_signature_t<DataType>>
 
 /**
  * @brief SHOT (Signature of Histograms of Orientations) descriptor extractor
- * 
+ *
  * @tparam DataType The data type (float or double)
  * @tparam KNN The K-nearest neighbor search algorithm type
- * 
- * @details SHOT is a 3D descriptor that encodes point distributions in a local reference frame
- * using a combination of spatial and angular histograms. It is rotation invariant and highly
- * discriminative.
- * 
- * Reference: Tombari, F., Salti, S., & Di Stefano, L. (2010). Unique signatures of histograms 
- * for local surface description.
- * 
+ *
+ * @details SHOT is a 3D descriptor that encodes point distributions in a local
+ * reference frame using a combination of spatial and angular histograms. It is
+ * rotation invariant and highly discriminative.
+ *
+ * Reference: Tombari, F., Salti, S., & Di Stefano, L. (2010). Unique signatures
+ * of histograms for local surface description.
+ *
  * @code
  * // Basic usage example
  * using data_type = float;
  * point_cloud_t<data_type> cloud = load_point_cloud();
- * 
+ *
  * // Create SHOT descriptor extractor
  * shot_extractor_t<data_type, kdtree_t<data_type>> extractor;
- * 
+ *
  * // Set parameters
  * extractor.set_input(cloud);
  * extractor.set_search_radius(0.1f);   // Search radius for neighbors
  * extractor.set_num_neighbors(100);    // Maximum number of neighbors
- * 
+ *
  * // Set up KNN search
  * kdtree_t<data_type> kdtree;
  * extractor.set_knn(kdtree);
- * 
+ *
  * // Extract descriptors for keypoints
  * std::vector<std::size_t> keypoint_indices = {10, 20, 30};
  * std::vector<shot_signature_t<data_type>> descriptors;
@@ -124,7 +114,8 @@ public:
   std::size_t set_num_neighbors(std::size_t num_neighbors);
 
   /**
-   * @brief Set the point cloud normals (optional, will be computed if not provided)
+   * @brief Set the point cloud normals (optional, will be computed if not
+   * provided)
    */
   void set_normals(const point_cloud_ptr& normals);
 
@@ -140,9 +131,10 @@ public:
                     const std::vector<std::size_t>& keypoint_indices,
                     std::vector<signature_type>& descriptors) const;
 
-  void compute_impl(const point_cloud& cloud,
-                    const std::vector<std::size_t>& keypoint_indices,
-                    std::unique_ptr<std::vector<signature_type>>& descriptors) const;
+  void compute_impl(
+      const point_cloud& cloud,
+      const std::vector<std::size_t>& keypoint_indices,
+      std::unique_ptr<std::vector<signature_type>>& descriptors) const;
 
 private:
   struct local_rf_t
@@ -152,11 +144,12 @@ private:
     point_t<data_type> z_axis;
   };
 
-  void compute_local_reference_frame(const point_cloud& cloud,
-                                     const point_cloud& normals,
-                                     std::size_t index,
-                                     const std::vector<std::size_t>& neighbor_indices,
-                                     local_rf_t& lrf) const;
+  void compute_local_reference_frame(
+      const point_cloud& cloud,
+      const point_cloud& normals,
+      std::size_t index,
+      const std::vector<std::size_t>& neighbor_indices,
+      local_rf_t& lrf) const;
 
   void compute_shot_feature(const point_cloud& cloud,
                             const point_cloud& normals,

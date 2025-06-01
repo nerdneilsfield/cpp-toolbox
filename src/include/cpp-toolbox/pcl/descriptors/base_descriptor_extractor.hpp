@@ -8,17 +8,15 @@
 namespace toolbox::pcl
 {
 
-template<class Derived>
+template<typename DataType, class Derived>
 struct base_signature_t
 {
-  bool operator==(const base_signature_t& other) const
-  {
-    return static_cast<const Derived*>(this)->operator==(other);
-  }
+  using data_type = DataType;
+  using derived_type = Derived;
 
-  bool operator!=(const base_signature_t& other) const
+  DataType distance(const base_signature_t& other) const
   {
-    return static_cast<const Derived*>(this)->operator!=(other);
+    return static_cast<const Derived*>(this)->distance_impl(other);
   }
 };  // struct base_signature_t
 

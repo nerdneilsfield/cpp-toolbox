@@ -14,32 +14,21 @@ namespace toolbox::pcl
 
 /**
  * @brief PFH (Point Feature Histogram) signature
- * 
+ *
  * @tparam DataType The data type (float or double)
- * 
+ *
  * @details PFH descriptor with 125 bins (5^3 for the 3 angular features)
  */
 template<typename DataType>
 struct pfh_signature_t : public base_signature_t<pfh_signature_t<DataType>>
 {
-  static constexpr std::size_t HISTOGRAM_SIZE = 125;  // 5 × 5 × 5
-  std::array<DataType, HISTOGRAM_SIZE> histogram{};
+  static constexpr std::size_t HISTOGRAM_SIZE = 125;  // 5 ï¿½ 5 ï¿½ 5
+  std::array<DataType, HISTOGRAM_SIZE> histogram {};
 
-  bool operator==(const pfh_signature_t& other) const
-  {
-    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i)
-    {
-      if (std::abs(histogram[i] - other.histogram[i]) > DataType(1e-6))
-        return false;
-    }
-    return true;
-  }
-
-  DataType distance(const pfh_signature_t& other) const
+  DataType distance_impl(const pfh_signature_t& other) const
   {
     DataType dist = 0;
-    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i)
-    {
+    for (std::size_t i = 0; i < HISTOGRAM_SIZE; ++i) {
       DataType diff = histogram[i] - other.histogram[i];
       dist += diff * diff;
     }
@@ -49,34 +38,35 @@ struct pfh_signature_t : public base_signature_t<pfh_signature_t<DataType>>
 
 /**
  * @brief PFH (Point Feature Histogram) descriptor extractor
- * 
+ *
  * @tparam DataType The data type (float or double)
  * @tparam KNN The K-nearest neighbor search algorithm type
- * 
- * @details PFH encodes the local geometry around a point by computing angular features
- * between all pairs of points in the neighborhood. It captures detailed geometric 
- * information but is computationally expensive with O(k^2) complexity.
- * 
- * Reference: Rusu, R. B., Blodow, N., Marton, Z. C., & Beetz, M. (2008). Aligning 
- * point cloud views using persistent feature histograms.
- * 
+ *
+ * @details PFH encodes the local geometry around a point by computing angular
+ * features between all pairs of points in the neighborhood. It captures
+ * detailed geometric information but is computationally expensive with O(k^2)
+ * complexity.
+ *
+ * Reference: Rusu, R. B., Blodow, N., Marton, Z. C., & Beetz, M. (2008).
+ * Aligning point cloud views using persistent feature histograms.
+ *
  * @code
  * // Basic usage example
  * using data_type = float;
  * point_cloud_t<data_type> cloud = load_point_cloud();
- * 
+ *
  * // Create PFH descriptor extractor
  * pfh_extractor_t<data_type, kdtree_t<data_type>> extractor;
- * 
+ *
  * // Set parameters
  * extractor.set_input(cloud);
  * extractor.set_search_radius(0.05f);  // Search radius for neighbors
  * extractor.set_num_neighbors(30);     // Maximum number of neighbors
- * 
+ *
  * // Set up KNN search
  * kdtree_t<data_type> kdtree;
  * extractor.set_knn(kdtree);
- * 
+ *
  * // Extract descriptors for keypoints
  * std::vector<std::size_t> keypoint_indices = {10, 20, 30};
  * std::vector<pfh_signature_t<data_type>> descriptors;
@@ -123,7 +113,8 @@ public:
   std::size_t set_num_neighbors(std::size_t num_neighbors);
 
   /**
-   * @brief Set the point cloud normals (optional, will be computed if not provided)
+   * @brief Set the point cloud normals (optional, will be computed if not
+   * provided)
    */
   void set_normals(const point_cloud_ptr& normals);
 
@@ -144,9 +135,10 @@ public:
                     const std::vector<std::size_t>& keypoint_indices,
                     std::vector<signature_type>& descriptors) const;
 
-  void compute_impl(const point_cloud& cloud,
-                    const std::vector<std::size_t>& keypoint_indices,
-                    std::unique_ptr<std::vector<signature_type>>& descriptors) const;
+  void compute_impl(
+      const point_cloud& cloud,
+      const std::vector<std::size_t>& keypoint_indices,
+      std::unique_ptr<std::vector<signature_type>>& descriptors) const;
 
 private:
   void compute_pfh_feature(const point_cloud& cloud,
