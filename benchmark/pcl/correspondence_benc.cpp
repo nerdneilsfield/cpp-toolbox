@@ -1,8 +1,7 @@
 #include <catch2/catch_all.hpp>
-#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence.hpp>
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/bfknn.hpp>
-#include <cpp-toolbox/pcl/knn/bfknn_parallel.hpp>
 #include <cpp-toolbox/types/point.hpp>
 #include <random>
 #include <chrono>
@@ -91,12 +90,12 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
         src_cloud->points.resize(num_desc * 10);
         dst_cloud->points.resize(num_desc * 10);
         
-        // 暴力搜索 / Brute-force search
-        BENCHMARK("暴力KNN / Brute-force KNN")
+        // KNN方法 / KNN method
+        BENCHMARK("KNN方法 / KNN method")
         {
-          using CorrespondenceGen = correspondence_generator_t<T, fpfh_signature_t<T>, 
-                                                              bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                             FPFHMetric<T>>>;
+          using CorrespondenceGen = knn_correspondence_generator_t<T, fpfh_signature_t<T>, 
+                                                                  bfknn_generic_t<fpfh_signature_t<T>, 
+                                                                                 FPFHMetric<T>>>;
           CorrespondenceGen corr_gen;
           
           auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
@@ -112,8 +111,39 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
           return correspondences.size();
         };
         
-        // 注释掉并行版本，因为它目前只支持点类型 / Comment out parallel version as it only supports point types
-        // TODO: 修复 bfknn_parallel 以支持通用元素类型 / Fix bfknn_parallel to support generic element types
+        // 暴力搜索方法（串行） / Brute-force method (serial)
+        BENCHMARK("暴力搜索（串行） / Brute-force (serial)")
+        {
+          brute_force_correspondence_generator_t<T, fpfh_signature_t<T>> corr_gen;
+          
+          corr_gen.enable_parallel(false);
+          corr_gen.set_source(src_cloud, src_descriptors, src_indices);
+          corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
+          corr_gen.set_ratio(0.8f);
+          corr_gen.set_mutual_verification(true);
+          
+          std::vector<correspondence_t> correspondences;
+          corr_gen.compute(correspondences);
+          
+          return correspondences.size();
+        };
+        
+        // 暴力搜索方法（并行） / Brute-force method (parallel)
+        BENCHMARK("暴力搜索（并行） / Brute-force (parallel)")
+        {
+          brute_force_correspondence_generator_t<T, fpfh_signature_t<T>> corr_gen;
+          
+          corr_gen.enable_parallel(true);
+          corr_gen.set_source(src_cloud, src_descriptors, src_indices);
+          corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
+          corr_gen.set_ratio(0.8f);
+          corr_gen.set_mutual_verification(true);
+          
+          std::vector<correspondence_t> correspondences;
+          corr_gen.compute(correspondences);
+          
+          return correspondences.size();
+        };
       }
     }
   }

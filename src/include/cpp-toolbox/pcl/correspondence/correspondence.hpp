@@ -37,7 +37,10 @@
  * @endcode
  */
 
-#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/brute_force_correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>  // 向后兼容 / Backward compatibility
 #include <memory>
 #include <vector>
 
@@ -80,7 +83,7 @@ namespace toolbox::pcl
  */
 
 /**
- * @brief 快速生成对应关系的便捷函数 / Convenience function for quick correspondence generation
+ * @brief 快速生成对应关系的便捷函数（使用KNN） / Convenience function for quick correspondence generation (using KNN)
  * @tparam DataType 数据类型 / Data type
  * @tparam Signature 描述子签名类型 / Descriptor signature type
  * @tparam KNN KNN搜索算法类型 / KNN search algorithm type
@@ -95,28 +98,77 @@ namespace toolbox::pcl
  * @return 对应关系列表 / List of correspondences
  * 
  * @code
- * // 快速生成对应关系 / Quick correspondence generation
- * auto correspondences = generate_correspondences<float, fpfh_signature_t<float>>(
+ * // 使用KNN快速生成对应关系 / Quick correspondence generation using KNN
+ * auto correspondences = generate_correspondences_knn<float, fpfh_signature_t<float>, kdtree_t<fpfh_signature_t<float>>>(
  *     src_cloud, src_descriptors, src_keypoints,
  *     dst_cloud, dst_descriptors, dst_keypoints,
  *     0.8f, true);
  * @endcode
  */
 template<typename DataType, typename Signature, typename KNN>
-std::vector<correspondence_t> generate_correspondences(
-    const std::shared_ptr<point_cloud_t<DataType>>& src_cloud,
+std::vector<correspondence_t> generate_correspondences_knn(
+    const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& src_cloud,
     const std::shared_ptr<std::vector<Signature>>& src_descriptors,
     const std::shared_ptr<std::vector<std::size_t>>& src_keypoints,
-    const std::shared_ptr<point_cloud_t<DataType>>& dst_cloud,
+    const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& dst_cloud,
     const std::shared_ptr<std::vector<Signature>>& dst_descriptors,
     const std::shared_ptr<std::vector<std::size_t>>& dst_keypoints,
     float ratio = 0.8f,
     bool mutual = true)
 {
-    correspondence_generator_t<DataType, Signature, KNN> gen;
+    knn_correspondence_generator_t<DataType, Signature, KNN> gen;
     
     auto knn = std::make_shared<KNN>();
     gen.set_knn(knn);
+    gen.set_source(src_cloud, src_descriptors, src_keypoints);
+    gen.set_destination(dst_cloud, dst_descriptors, dst_keypoints);
+    gen.set_ratio(ratio);
+    gen.set_mutual_verification(mutual);
+    
+    std::vector<correspondence_t> correspondences;
+    gen.compute(correspondences);
+    
+    return correspondences;
+}
+
+/**
+ * @brief 快速生成对应关系的便捷函数（使用暴力搜索） / Convenience function for quick correspondence generation (using brute force)
+ * @tparam DataType 数据类型 / Data type
+ * @tparam Signature 描述子签名类型 / Descriptor signature type
+ * @param src_cloud 源点云 / Source point cloud
+ * @param src_descriptors 源描述子 / Source descriptors
+ * @param src_keypoints 源关键点索引 / Source keypoint indices
+ * @param dst_cloud 目标点云 / Target point cloud
+ * @param dst_descriptors 目标描述子 / Target descriptors
+ * @param dst_keypoints 目标关键点索引 / Target keypoint indices
+ * @param ratio 比率测试阈值（默认0.8） / Ratio test threshold (default 0.8)
+ * @param mutual 是否启用双向验证（默认true） / Whether to enable mutual verification (default true)
+ * @param parallel 是否启用并行计算（默认false） / Whether to enable parallel computation (default false)
+ * @return 对应关系列表 / List of correspondences
+ * 
+ * @code
+ * // 使用暴力搜索生成对应关系 / Generate correspondences using brute force
+ * auto correspondences = generate_correspondences_brute_force<float, fpfh_signature_t<float>>(
+ *     src_cloud, src_descriptors, src_keypoints,
+ *     dst_cloud, dst_descriptors, dst_keypoints,
+ *     0.8f, true, true);  // 启用并行 / Enable parallel
+ * @endcode
+ */
+template<typename DataType, typename Signature>
+std::vector<correspondence_t> generate_correspondences_brute_force(
+    const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& src_cloud,
+    const std::shared_ptr<std::vector<Signature>>& src_descriptors,
+    const std::shared_ptr<std::vector<std::size_t>>& src_keypoints,
+    const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& dst_cloud,
+    const std::shared_ptr<std::vector<Signature>>& dst_descriptors,
+    const std::shared_ptr<std::vector<std::size_t>>& dst_keypoints,
+    float ratio = 0.8f,
+    bool mutual = true,
+    bool parallel = false)
+{
+    brute_force_correspondence_generator_t<DataType, Signature> gen;
+    
+    gen.enable_parallel(parallel);
     gen.set_source(src_cloud, src_descriptors, src_keypoints);
     gen.set_destination(dst_cloud, dst_descriptors, dst_keypoints);
     gen.set_ratio(ratio);

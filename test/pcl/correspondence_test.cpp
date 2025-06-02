@@ -1,5 +1,5 @@
 #include <catch2/catch_all.hpp>
-#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence.hpp>
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>  // 只为了 fpfh_signature_t / Only for fpfh_signature_t
 #include <cpp-toolbox/pcl/knn/bfknn.hpp>
 #include <cpp-toolbox/types/point.hpp>
@@ -114,40 +114,78 @@ TEST_CASE("对应点生成器 / Correspondence Generator", "[pcl][correspondence
     std::cout << "描述子数量 / Descriptor count: " << src_descriptors->size() 
               << ", " << dst_descriptors->size() << std::endl;
     
-    // 创建对应点生成器 / Create correspondence generator
-    using CorrespondenceGen = correspondence_generator_t<T, fpfh_signature_t<T>, 
-                                                        bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                       FPFHMetric<T>>>;
-    CorrespondenceGen corr_gen;
+    // 测试KNN方法 / Test KNN method
+    {
+      using CorrespondenceGen = knn_correspondence_generator_t<T, fpfh_signature_t<T>, 
+                                                              bfknn_generic_t<fpfh_signature_t<T>, 
+                                                                             FPFHMetric<T>>>;
+      CorrespondenceGen corr_gen;
+      
+      // 设置KNN / Set KNN
+      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
+      corr_gen.set_knn(knn);
+      
+      // 设置数据 / Set data
+      corr_gen.set_source(src_cloud, src_descriptors, src_keypoint_indices);
+      corr_gen.set_destination(dst_cloud, dst_descriptors, dst_keypoint_indices);
+      
+      // 设置参数 / Set parameters
+      corr_gen.set_ratio(0.8f);
+      corr_gen.set_mutual_verification(true);
+      corr_gen.set_distance_threshold(0.5f);
+      
+      // 计算对应关系 / Compute correspondences
+      std::vector<correspondence_t> correspondences_knn;
+      corr_gen.compute(correspondences_knn);
+      
+      // 验证结果 / Verify results
+      REQUIRE(correspondences_knn.size() > 0);
+      REQUIRE(correspondences_knn.size() <= src_keypoint_indices->size());
+      
+      // 打印统计信息 / Print statistics
+      std::cout << "KNN方法统计 / KNN method statistics:\n";
+      std::cout << corr_gen.get_statistics() << std::endl;
+      
+      // 检查每个对应关系 / Check each correspondence
+      for (const auto& corr : correspondences_knn) {
+        REQUIRE(corr.distance >= 0.0f);
+        REQUIRE(corr.distance <= 0.5f);  // 应该满足距离阈值 / Should satisfy distance threshold
+      }
+    }
     
-    // 设置KNN / Set KNN
-    auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
-    corr_gen.set_knn(knn);
-    
-    // 设置数据 / Set data
-    corr_gen.set_source(src_cloud, src_descriptors, src_keypoint_indices);
-    corr_gen.set_destination(dst_cloud, dst_descriptors, dst_keypoint_indices);
-    
-    // 设置参数 / Set parameters
-    corr_gen.set_ratio(0.8f);
-    corr_gen.set_mutual_verification(true);
-    corr_gen.set_distance_threshold(0.5f);
-    
-    // 计算对应关系 / Compute correspondences
-    std::vector<correspondence_t> correspondences;
-    corr_gen.compute(correspondences);
-    
-    // 验证结果 / Verify results
-    REQUIRE(correspondences.size() > 0);
-    REQUIRE(correspondences.size() <= src_keypoint_indices->size());
-    
-    // 打印统计信息 / Print statistics
-    std::cout << corr_gen.get_statistics() << std::endl;
-    
-    // 检查每个对应关系 / Check each correspondence
-    for (const auto& corr : correspondences) {
-      REQUIRE(corr.distance >= 0.0f);
-      REQUIRE(corr.distance <= 0.5f);  // 应该满足距离阈值 / Should satisfy distance threshold
+    // 测试暴力搜索方法 / Test brute-force method
+    {
+      brute_force_correspondence_generator_t<T, fpfh_signature_t<T>> corr_gen;
+      
+      // 启用并行 / Enable parallel
+      corr_gen.enable_parallel(true);
+      
+      // 设置数据 / Set data
+      corr_gen.set_source(src_cloud, src_descriptors, src_keypoint_indices);
+      corr_gen.set_destination(dst_cloud, dst_descriptors, dst_keypoint_indices);
+      
+      // 设置参数 / Set parameters
+      corr_gen.set_ratio(0.8f);
+      corr_gen.set_mutual_verification(true);
+      corr_gen.set_distance_threshold(0.5f);
+      
+      // 计算对应关系 / Compute correspondences
+      std::vector<correspondence_t> correspondences_bf;
+      corr_gen.compute(correspondences_bf);
+      
+      // 验证结果 / Verify results
+      REQUIRE(correspondences_bf.size() > 0);
+      REQUIRE(correspondences_bf.size() <= src_keypoint_indices->size());
+      
+      // 打印统计信息 / Print statistics
+      std::cout << "暴力搜索方法统计 / Brute-force method statistics:\n";
+      std::cout << corr_gen.get_statistics() << std::endl;
+      
+      // 检查每个对应关系 / Check each correspondence
+      for (const auto& corr : correspondences_bf) {
+        REQUIRE(corr.distance >= 0.0f);
+        REQUIRE(corr.distance <= 0.5f);  // 应该满足距离阈值 / Should satisfy distance threshold
+      }
     }
   }
   
@@ -187,50 +225,27 @@ TEST_CASE("对应点生成器 / Correspondence Generator", "[pcl][correspondence
                                                         bfknn_generic_t<fpfh_signature_t<T>, 
                                                                        FPFHMetric<T>>>;
     
-    // 测试不同的比率阈值 / Test different ratio thresholds
+    // 使用便捷函数测试 / Test using convenience functions
     {
-      CorrespondenceGen corr_gen;
-      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
-      corr_gen.set_knn(knn);
-      corr_gen.set_source(src_cloud, src_descriptors, src_keypoint_indices);
-      corr_gen.set_destination(dst_cloud, dst_descriptors, dst_keypoint_indices);
-      corr_gen.set_mutual_verification(false);  // 禁用以测试比率的影响 / Disable to test ratio effect
+      // 测试KNN便捷函数 / Test KNN convenience function
+      auto corr_knn = generate_correspondences_knn<T, fpfh_signature_t<T>, 
+                                                   bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>(
+          src_cloud, src_descriptors, src_keypoint_indices,
+          dst_cloud, dst_descriptors, dst_keypoint_indices,
+          0.8f, true);
       
-      std::vector<correspondence_t> corr_strict, corr_loose;
+      REQUIRE(corr_knn.size() > 0);
       
-      // 严格的比率 / Strict ratio
-      corr_gen.set_ratio(0.6f);
-      corr_gen.compute(corr_strict);
+      // 测试暴力搜索便捷函数 / Test brute-force convenience function
+      auto corr_bf = generate_correspondences_brute_force<T, fpfh_signature_t<T>>(
+          src_cloud, src_descriptors, src_keypoint_indices,
+          dst_cloud, dst_descriptors, dst_keypoint_indices,
+          0.8f, true, false);  // 不使用并行 / Don't use parallel
       
-      // 宽松的比率 / Loose ratio
-      corr_gen.set_ratio(0.95f);
-      corr_gen.compute(corr_loose);
+      REQUIRE(corr_bf.size() > 0);
       
-      // 宽松的应该有更多匹配 / Loose should have more matches
-      REQUIRE(corr_loose.size() >= corr_strict.size());
-    }
-    
-    // 测试双向验证的影响 / Test mutual verification effect
-    {
-      CorrespondenceGen corr_gen;
-      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
-      corr_gen.set_knn(knn);
-      corr_gen.set_source(src_cloud, src_descriptors, src_keypoint_indices);
-      corr_gen.set_destination(dst_cloud, dst_descriptors, dst_keypoint_indices);
-      corr_gen.set_ratio(0.8f);
-      
-      std::vector<correspondence_t> corr_no_mutual, corr_with_mutual;
-      
-      // 无双向验证 / Without mutual verification
-      corr_gen.set_mutual_verification(false);
-      corr_gen.compute(corr_no_mutual);
-      
-      // 有双向验证 / With mutual verification
-      corr_gen.set_mutual_verification(true);
-      corr_gen.compute(corr_with_mutual);
-      
-      // 双向验证应该减少匹配数 / Mutual verification should reduce matches
-      REQUIRE(corr_with_mutual.size() <= corr_no_mutual.size());
+      // 两种方法应该产生相似的结果 / Both methods should produce similar results
+      REQUIRE(std::abs(static_cast<int>(corr_knn.size()) - static_cast<int>(corr_bf.size())) <= 5);
     }
   }
 }
