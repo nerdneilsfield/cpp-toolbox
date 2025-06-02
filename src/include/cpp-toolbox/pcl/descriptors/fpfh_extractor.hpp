@@ -246,6 +246,29 @@ private:
                                     const neighbor_info_t<data_type>& neighbor_info,
                                     const spfh_cache_manager_t<data_type, knn_type>& spfh_cache,
                                     signature_type& fpfh) const;
+  
+  /**
+   * @brief 直接计算FPFH（用于低密度情况）/ Direct FPFH computation (for low density cases)
+   */
+  void compute_fpfh_direct(const point_cloud& cloud,
+                          const point_cloud& normals,
+                          std::size_t index,
+                          const std::vector<std::size_t>& neighbor_indices,
+                          const std::vector<data_type>& neighbor_distances,
+                          signature_type& fpfh) const;
+  
+  /**
+   * @brief 自适应FPFH计算（混合预计算和延迟计算）/ Adaptive FPFH computation (mix of pre-computed and lazy)
+   */
+  void compute_fpfh_feature_adaptive(const point_cloud& cloud,
+                                    const point_cloud& normals,
+                                    std::size_t index,
+                                    const std::vector<std::size_t>& neighbor_indices,
+                                    const std::vector<data_type>& neighbor_distances,
+                                    std::vector<neighbor_info_t<data_type>>& all_neighbors,
+                                    std::vector<spfh_signature_t>& spfh_array,
+                                    std::vector<bool>& spfh_computed,
+                                    signature_type& fpfh) const;
 
   void compute_pair_features(const point_t<data_type>& p1,
                              const point_t<data_type>& n1,
