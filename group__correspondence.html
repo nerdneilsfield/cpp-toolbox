@@ -1,0 +1,613 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: 对应点生成 / Correspondence Generation</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__correspondence.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">对应点生成 / Correspondence Generation</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gad953c6719d42c6d8f50bed9a4998d77b" id="r_gad953c6719d42c6d8f50bed9a4998d77b"><td class="memTemplParams" colspan="2">template&lt;typename DataType , typename Signature , typename KNN &gt; </td></tr>
+<tr class="memitem:gad953c6719d42c6d8f50bed9a4998d77b"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">toolbox::pcl::generate_correspondences_knn</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true)</td></tr>
+<tr class="memdesc:gad953c6719d42c6d8f50bed9a4998d77b"><td class="mdescLeft">&#160;</td><td class="mdescRight">对应关系生成策略 / Correspondence generation strategies  <br /></td></tr>
+<tr class="separator:gad953c6719d42c6d8f50bed9a4998d77b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa516fb42a0c44e128df79cc240c17162" id="r_gaa516fb42a0c44e128df79cc240c17162"><td class="memTemplParams" colspan="2">template&lt;typename DataType , typename Signature &gt; </td></tr>
+<tr class="memitem:gaa516fb42a0c44e128df79cc240c17162"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">toolbox::pcl::generate_correspondences_brute_force</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true, bool parallel=false)</td></tr>
+<tr class="memdesc:gaa516fb42a0c44e128df79cc240c17162"><td class="mdescLeft">&#160;</td><td class="mdescRight">快速生成对应关系的便捷函数（使用暴力搜索） / Convenience function for quick correspondence generation (using brute force)  <br /></td></tr>
+<tr class="separator:gaa516fb42a0c44e128df79cc240c17162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bb0403c43b2529ca6e2bcc7ccacb2ee" id="r_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a> (std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences, float max_distance)</td></tr>
+<tr class="memdesc:ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">过滤对应关系的辅助函数 / Helper function to filter correspondences  <br /></td></tr>
+<tr class="separator:ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad1f795bd916a4c4e5b0ca3b7a7ff345a" id="r_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; float, float, float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a> (const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences)</td></tr>
+<tr class="memdesc:gad1f795bd916a4c4e5b0ca3b7a7ff345a"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算对应关系的统计信息 / Compute statistics of correspondences  <br /></td></tr>
+<tr class="separator:gad1f795bd916a4c4e5b0ca3b7a7ff345a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7cb3cde3a1e77db3bb333afe0e85aee7" id="r_ga7cb3cde3a1e77db3bb333afe0e85aee7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a> (const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences, <a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> max_display=10)</td></tr>
+<tr class="memdesc:ga7cb3cde3a1e77db3bb333afe0e85aee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">可视化对应关系的辅助信息 / Helper to visualize correspondence information  <br /></td></tr>
+<tr class="separator:ga7cb3cde3a1e77db3bb333afe0e85aee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gad1f795bd916a4c4e5b0ca3b7a7ff345a" name="gad1f795bd916a4c4e5b0ca3b7a7ff345a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad1f795bd916a4c4e5b0ca3b7a7ff345a">&#9670;&#160;</a></span>compute_correspondence_statistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; float, float, float, float &gt; toolbox::pcl::compute_correspondence_statistics </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算对应关系的统计信息 / Compute statistics of correspondences </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>对应关系列表 / List of correspondences </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>包含均值、标准差、最小值、最大值的元组 / Tuple of mean, std, min, max</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> [mean, std, min, max] = <a class="code hl_function" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">compute_correspondence_statistics</a>(correspondences);</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;距离统计 / Distance statistics: &quot;</span></div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot;均值 / mean=&quot;</span> &lt;&lt; mean </div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot;, 标准差 / std=&quot;</span> &lt;&lt; std </div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot;, 范围 / range=[&quot;</span> &lt;&lt; min &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; max &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
+<div class="ttc" id="agroup__correspondence_html_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><div class="ttname"><a href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; compute_correspondence_statistics(const std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系的统计信息 / Compute statistics of correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:224</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga6bb0403c43b2529ca6e2bcc7ccacb2ee" name="ga6bb0403c43b2529ca6e2bcc7ccacb2ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">&#9670;&#160;</a></span>filter_correspondences_by_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a> toolbox::pcl::filter_correspondences_by_distance </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>max_distance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>过滤对应关系的辅助函数 / Helper function to filter correspondences </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>[in/out] 对应关系列表 / List of correspondences </td></tr>
+    <tr><td class="paramname">max_distance</td><td>最大允许距离 / Maximum allowed distance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>被过滤掉的对应关系数量 / Number of filtered correspondences</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 过滤掉距离过大的对应关系 / Filter out correspondences with large distances</span></div>
+<div class="line"><span class="keywordtype">size_t</span> filtered = <a class="code hl_function" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">filter_correspondences_by_distance</a>(correspondences, 0.5f);</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;过滤掉 / Filtered out &quot;</span> &lt;&lt; filtered &lt;&lt; <span class="stringliteral">&quot; 个对应关系 / correspondences&quot;</span> &lt;&lt; std::endl;</div>
+<div class="ttc" id="agroup__correspondence_html_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><div class="ttname"><a href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a></div><div class="ttdeci">size_t filter_correspondences_by_distance(std::vector&lt; correspondence_t &gt; &amp;correspondences, float max_distance)</div><div class="ttdoc">过滤对应关系的辅助函数 / Helper function to filter correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:195</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="gaa516fb42a0c44e128df79cc240c17162" name="gaa516fb42a0c44e128df79cc240c17162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa516fb42a0c44e128df79cc240c17162">&#9670;&#160;</a></span>generate_correspondences_brute_force()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename Signature &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; toolbox::pcl::generate_correspondences_brute_force </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_keypoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_keypoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ratio</em> = <code>0.8f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mutual</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>parallel</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>快速生成对应关系的便捷函数（使用暴力搜索） / Convenience function for quick correspondence generation (using brute force) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+    <tr><td class="paramname">Signature</td><td>描述子签名类型 / Descriptor signature type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src_cloud</td><td>源点云 / Source point cloud </td></tr>
+    <tr><td class="paramname">src_descriptors</td><td>源描述子 / Source descriptors </td></tr>
+    <tr><td class="paramname">src_keypoints</td><td>源关键点索引 / Source keypoint indices </td></tr>
+    <tr><td class="paramname">dst_cloud</td><td>目标点云 / Target point cloud </td></tr>
+    <tr><td class="paramname">dst_descriptors</td><td>目标描述子 / Target descriptors </td></tr>
+    <tr><td class="paramname">dst_keypoints</td><td>目标关键点索引 / Target keypoint indices </td></tr>
+    <tr><td class="paramname">ratio</td><td>比率测试阈值（默认0.8） / Ratio test threshold (default 0.8) </td></tr>
+    <tr><td class="paramname">mutual</td><td>是否启用双向验证（默认true） / Whether to enable mutual verification (default true) </td></tr>
+    <tr><td class="paramname">parallel</td><td>是否启用并行计算（默认false） / Whether to enable parallel computation (default false) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对应关系列表 / List of correspondences</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用暴力搜索生成对应关系 / Generate correspondences using brute force</span></div>
+<div class="line"><span class="keyword">auto</span> correspondences = generate_correspondences_brute_force&lt;float, fpfh_signature_t&lt;float&gt;&gt;(</div>
+<div class="line">    src_cloud, src_descriptors, src_keypoints,</div>
+<div class="line">    dst_cloud, dst_descriptors, dst_keypoints,</div>
+<div class="line">    0.8f, <span class="keyword">true</span>, <span class="keyword">true</span>);  <span class="comment">// 启用并行 / Enable parallel</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="gad953c6719d42c6d8f50bed9a4998d77b" name="gad953c6719d42c6d8f50bed9a4998d77b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad953c6719d42c6d8f50bed9a4998d77b">&#9670;&#160;</a></span>generate_correspondences_knn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename Signature , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; toolbox::pcl::generate_correspondences_knn </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>src_keypoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>dst_keypoints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ratio</em> = <code>0.8f</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mutual</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>对应关系生成策略 / Correspondence generation strategies </p>
+<p>不同的策略适用于不同的场景： Different strategies are suitable for different scenarios:</p>
+<ul>
+<li>最近邻匹配：简单快速，但可能产生很多错误匹配 / Nearest neighbor: Simple and fast, but may produce many false matches</li>
+<li>比率测试：Lowe's ratio test，有效减少错误匹配 / Ratio test: Lowe's ratio test, effectively reduces false matches</li>
+<li>双向验证：要求匹配是相互的，进一步提高准确性 / Mutual verification: Requires mutual matching, further improves accuracy</li>
+<li>几何一致性：检查匹配的几何关系，最可靠但计算量大 / Geometric consistency: Checks geometric relationships, most reliable but computationally intensive</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// 配置对应点生成器 / Configure correspondence generator</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">correspondence_generator_t&lt;float, fpfh_signature_t&lt;float&gt;</a>, knn_t&gt; gen;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 宽松匹配（更多对应点，可能有错误） / Loose matching (more correspondences, possibly with errors)</span></div>
+<div class="line">gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(0.9f);</div>
+<div class="line">gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(<span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 严格匹配（更少但更可靠的对应点） / Strict matching (fewer but more reliable correspondences)</span></div>
+<div class="line">gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(0.7f);</div>
+<div class="line">gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(<span class="keyword">true</span>);</div>
+<div class="line">gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">set_distance_threshold</a>(0.2f);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a2f720990a4e646e99f9832867e8177c3"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">toolbox::pcl::base_correspondence_generator_t::set_ratio</a></div><div class="ttdeci">void set_ratio(float ratio)</div><div class="ttdoc">设置比率测试阈值 / Set ratio test threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:107</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a6a0310800a7a68cf6f29132139b179c1"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">toolbox::pcl::base_correspondence_generator_t::set_distance_threshold</a></div><div class="ttdeci">void set_distance_threshold(float distance_threshold)</div><div class="ttdoc">设置距离阈值 / Set distance threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:134</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ac078ce2b872b6730acd11b385961d10d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">toolbox::pcl::base_correspondence_generator_t::set_mutual_verification</a></div><div class="ttdeci">void set_mutual_verification(bool mutual_verification)</div><div class="ttdoc">设置是否启用双向验证 / Set whether to enable mutual verification</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:119</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1knn__correspondence__generator__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">toolbox::pcl::knn_correspondence_generator_t</a></div><div class="ttdoc">基于KNN的对应点生成器 / KNN-based correspondence generator</div><div class="ttdef"><b>Definition</b> knn_correspondence_generator.hpp:50</div></div>
+</div><!-- fragment --><p>快速生成对应关系的便捷函数（使用KNN） / Convenience function for quick correspondence generation (using KNN) </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+    <tr><td class="paramname">Signature</td><td>描述子签名类型 / Descriptor signature type </td></tr>
+    <tr><td class="paramname">KNN</td><td>KNN搜索算法类型 / KNN search algorithm type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src_cloud</td><td>源点云 / Source point cloud </td></tr>
+    <tr><td class="paramname">src_descriptors</td><td>源描述子 / Source descriptors </td></tr>
+    <tr><td class="paramname">src_keypoints</td><td>源关键点索引 / Source keypoint indices </td></tr>
+    <tr><td class="paramname">dst_cloud</td><td>目标点云 / Target point cloud </td></tr>
+    <tr><td class="paramname">dst_descriptors</td><td>目标描述子 / Target descriptors </td></tr>
+    <tr><td class="paramname">dst_keypoints</td><td>目标关键点索引 / Target keypoint indices </td></tr>
+    <tr><td class="paramname">ratio</td><td>比率测试阈值（默认0.8） / Ratio test threshold (default 0.8) </td></tr>
+    <tr><td class="paramname">mutual</td><td>是否启用双向验证（默认true） / Whether to enable mutual verification (default true) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>对应关系列表 / List of correspondences</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用KNN快速生成对应关系 / Quick correspondence generation using KNN</span></div>
+<div class="line"><span class="keyword">auto</span> correspondences = generate_correspondences_knn&lt;float, fpfh_signature_t&lt;float&gt;, <a class="code hl_class" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">kdtree_t&lt;fpfh_signature_t&lt;float&gt;</a>&gt;&gt;(</div>
+<div class="line">    src_cloud, src_descriptors, src_keypoints,</div>
+<div class="line">    dst_cloud, dst_descriptors, dst_keypoints,</div>
+<div class="line">    0.8f, <span class="keyword">true</span>);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">toolbox::pcl::kdtree_generic_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:14</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga7cb3cde3a1e77db3bb333afe0e85aee7" name="ga7cb3cde3a1e77db3bb333afe0e85aee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7cb3cde3a1e77db3bb333afe0e85aee7">&#9670;&#160;</a></span>print_correspondences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::pcl::print_correspondences </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638">size_t</a>&#160;</td>
+          <td class="paramname"><em>max_display</em> = <code>10</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>可视化对应关系的辅助信息 / Helper to visualize correspondence information </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>对应关系列表 / List of correspondences </td></tr>
+    <tr><td class="paramname">max_display</td><td>最多显示的对应关系数量 / Maximum number of correspondences to display</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 打印前10个对应关系 / Print first 10 correspondences</span></div>
+<div class="line"><a class="code hl_function" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">print_correspondences</a>(correspondences, 10);</div>
+<div class="ttc" id="agroup__correspondence_html_ga7cb3cde3a1e77db3bb333afe0e85aee7"><div class="ttname"><a href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a></div><div class="ttdeci">void print_correspondences(const std::vector&lt; correspondence_t &gt; &amp;correspondences, size_t max_display=10)</div><div class="ttdoc">可视化对应关系的辅助信息 / Helper to visualize correspondence information</div><div class="ttdef"><b>Definition</b> correspondence.hpp:264</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

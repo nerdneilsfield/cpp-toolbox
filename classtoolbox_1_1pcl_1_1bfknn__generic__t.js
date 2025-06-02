@@ -7,6 +7,7 @@ var classtoolbox_1_1pcl_1_1bfknn__generic__t =
     [ "element_type", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a7ed4a01044a61abfc0c6dddc141c2b75", null ],
     [ "metric_type", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#ab4d7cb491816e0f718fb58d1e8f5f204", null ],
     [ "traits_type", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#ade374d3050896923de01b96b5c5fb0fe", null ],
+    [ "value_type", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a4d89396db12d168655a692313d76c21d", null ],
     [ "bfknn_generic_t", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a9c09ab33475d6b9ef022f71ba54be451", null ],
     [ "~bfknn_generic_t", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a963e1fa7b8926f845d1de6374207a4e6", null ],
     [ "bfknn_generic_t", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a2fe16aa0f6a8bb9edc7233763b84cee5", null ],
@@ -18,5 +19,6 @@ var classtoolbox_1_1pcl_1_1bfknn__generic__t =
     [ "set_input_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a07e0b8f035e46c2578f3f9f160bec633", null ],
     [ "set_input_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#aa9d357bc869df00a994e8cc5303b7fe1", null ],
     [ "set_metric_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#af84562335b0453c72655f555b2ef3f07", null ],
-    [ "set_metric_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a299f39aa7eba2aa1202af9c757974764", null ]
+    [ "set_metric_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a299f39aa7eba2aa1202af9c757974764", null ],
+    [ "set_metric_impl", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html#a8c721e3c73af8a49c9d5dd6f86fd06ad", null ]
 ];

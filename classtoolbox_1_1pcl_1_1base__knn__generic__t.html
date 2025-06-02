@@ -224,6 +224,9 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__knn__gene
 </div><!--header-->
 <div class="contents">
 
+<p>KNN算法的基类（CRTP模式） / Base class for KNN algorithms (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="base__knn_8hpp_source.html">base_knn.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for toolbox::pcl::base_knn_generic_t&lt; Derived, Element, Metric &gt;:</div>
@@ -249,17 +252,35 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afb54f4f22166504d463a3467693f130e" id="r_afb54f4f22166504d463a3467693f130e"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afdfb5e0d0f67642caed16f8d98ab3563">container_type</a> &amp;data)</td></tr>
+<tr class="memdesc:afb54f4f22166504d463a3467693f130e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入数据 / Set input data  <br /></td></tr>
 <tr class="separator:afb54f4f22166504d463a3467693f130e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3eeb3e4b5943c3dc6a37e8b042a48b" id="r_afe3eeb3e4b5943c3dc6a37e8b042a48b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afe3eeb3e4b5943c3dc6a37e8b042a48b">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#ab6570b8605e9a87fb7b4bd834849194d">container_ptr</a> &amp;data)</td></tr>
+<tr class="memdesc:afe3eeb3e4b5943c3dc6a37e8b042a48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入数据（智能指针版本） / Set input data (smart pointer version)  <br /></td></tr>
 <tr class="separator:afe3eeb3e4b5943c3dc6a37e8b042a48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e470f1e5ef3bef5cc55bbfe264ddbf1" id="r_a2e470f1e5ef3bef5cc55bbfe264ddbf1"><td class="memTemplParams" colspan="2">template&lt;typename T  = typename Element::value_type, typename  = std::enable_if_t&lt;std::is_same_v&lt;Element, point_t&lt;T&gt;&gt;&gt;&gt; </td></tr>
+<tr class="memitem:a2e470f1e5ef3bef5cc55bbfe264ddbf1"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a2e470f1e5ef3bef5cc55bbfe264ddbf1">set_input</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
+<tr class="memdesc:a2e470f1e5ef3bef5cc55bbfe264ddbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点云输入数据（仅当Element为point_t时可用） / Set point cloud input data (only available when Element is point_t)  <br /></td></tr>
+<tr class="separator:a2e470f1e5ef3bef5cc55bbfe264ddbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada68d153e808b19c527c187eaceb2edd" id="r_ada68d153e808b19c527c187eaceb2edd"><td class="memTemplParams" colspan="2">template&lt;typename T  = typename Element::value_type, typename  = std::enable_if_t&lt;std::is_same_v&lt;Element, point_t&lt;T&gt;&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ada68d153e808b19c527c187eaceb2edd"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#ada68d153e808b19c527c187eaceb2edd">set_input</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; &amp;cloud)</td></tr>
+<tr class="memdesc:ada68d153e808b19c527c187eaceb2edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点云输入数据（智能指针版本） / Set point cloud input data (smart pointer version)  <br /></td></tr>
+<tr class="separator:ada68d153e808b19c527c187eaceb2edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a977df6a2e9e1eba8d2543e229d43b5c1" id="r_a977df6a2e9e1eba8d2543e229d43b5c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a977df6a2e9e1eba8d2543e229d43b5c1">set_metric</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a4803ae5ebe708056397cca87527000e9">metric_type</a> &amp;metric)</td></tr>
+<tr class="memdesc:a977df6a2e9e1eba8d2543e229d43b5c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置度量方式（编译时版本） / Set metric (compile-time version)  <br /></td></tr>
 <tr class="separator:a977df6a2e9e1eba8d2543e229d43b5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a537a922528b5b520b31d035d8c3e345d" id="r_a537a922528b5b520b31d035d8c3e345d"><td class="memTemplParams" colspan="2">template&lt;typename T  = typename Element::value_type&gt; </td></tr>
 <tr class="memitem:a537a922528b5b520b31d035d8c3e345d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a537a922528b5b520b31d035d8c3e345d">set_metric</a> (std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric</a>&lt; T &gt; &gt; metric)</td></tr>
+<tr class="memdesc:a537a922528b5b520b31d035d8c3e345d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置度量方式（运行时版本 - shared_ptr） / Set metric (runtime version - shared_ptr)  <br /></td></tr>
 <tr class="separator:a537a922528b5b520b31d035d8c3e345d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84c6157798d838aefb461d86f1b0bf97" id="r_a84c6157798d838aefb461d86f1b0bf97"><td class="memTemplParams" colspan="2">template&lt;typename T  = typename Element::value_type&gt; </td></tr>
+<tr class="memitem:a84c6157798d838aefb461d86f1b0bf97"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a84c6157798d838aefb461d86f1b0bf97">set_metric</a> (std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric</a>&lt; T &gt; &gt; metric)</td></tr>
+<tr class="memdesc:a84c6157798d838aefb461d86f1b0bf97"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置度量方式（运行时版本 - unique_ptr） / Set metric (runtime version - unique_ptr)  <br /></td></tr>
+<tr class="separator:a84c6157798d838aefb461d86f1b0bf97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dfe75b1d9a6cfdc0755d1da197ace77" id="r_a2dfe75b1d9a6cfdc0755d1da197ace77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a2dfe75b1d9a6cfdc0755d1da197ace77">kneighbors</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#ab8a24e6f9cc45184228f96a27a5ca673">element_type</a> &amp;query, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a878350a3351af3964ebcf389707c4a19">distance_type</a> &gt; &amp;distances)</td></tr>
+<tr class="memdesc:a2dfe75b1d9a6cfdc0755d1da197ace77"><td class="mdescLeft">&#160;</td><td class="mdescRight">K近邻搜索 / K-nearest neighbors search.  <br /></td></tr>
 <tr class="separator:a2dfe75b1d9a6cfdc0755d1da197ace77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abbd2212c8fd0523221abe9160bbacf76" id="r_abbd2212c8fd0523221abe9160bbacf76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#abbd2212c8fd0523221abe9160bbacf76">radius_neighbors</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#ab8a24e6f9cc45184228f96a27a5ca673">element_type</a> &amp;query, <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a878350a3351af3964ebcf389707c4a19">distance_type</a> radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a878350a3351af3964ebcf389707c4a19">distance_type</a> &gt; &amp;distances)</td></tr>
+<tr class="memdesc:abbd2212c8fd0523221abe9160bbacf76"><td class="mdescLeft">&#160;</td><td class="mdescRight">半径近邻搜索 / Radius neighbors search  <br /></td></tr>
 <tr class="separator:abbd2212c8fd0523221abe9160bbacf76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1edee066258768f9259e71f17e8d278a" id="r_a1edee066258768f9259e71f17e8d278a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a1edee066258768f9259e71f17e8d278a">base_knn_generic_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html">base_knn_generic_t</a> &amp;)=delete</td></tr>
 <tr class="separator:a1edee066258768f9259e71f17e8d278a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,7 +298,42 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a495e34779fde5ecfcd8ac24258a72ff6" id="r_a495e34779fde5ecfcd8ac24258a72ff6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a495e34779fde5ecfcd8ac24258a72ff6">~base_knn_generic_t</a> ()=default</td></tr>
 <tr class="separator:a495e34779fde5ecfcd8ac24258a72ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived, typename Element, typename Metric = toolbox::metrics::L2Metric&lt;typename Element::value_type&gt;&gt;<br />
+class toolbox::pcl::base_knn_generic_t&lt; Derived, Element, Metric &gt;</div><p>KNN算法的基类（CRTP模式） / Base class for KNN algorithms (CRTP pattern) </p>
+<p>这是一个通用的K近邻搜索算法基类，使用CRTP（Curiously Recurring Template Pattern）实现静态多态。 支持任意元素类型和度量方式。 / This is a generic base class for K-nearest neighbor search algorithms, using CRTP (Curiously Recurring Template Pattern) for static polymorphism. Supports arbitrary element types and metrics.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生类类型 / Derived class type </td></tr>
+    <tr><td class="paramname">Element</td><td>元素类型（如point_t&lt;float&gt;） / Element type (e.g., point_t&lt;float&gt;) </td></tr>
+    <tr><td class="paramname">Metric</td><td>度量类型（默认为L2度量） / Metric type (default is L2 metric)</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用示例 / Usage example</span></div>
+<div class="line"><span class="keyword">using </span>MyKNN = <a class="code hl_class" href="classtoolbox_1_1pcl_1_1bfknn__generic__t.html">bfknn_generic_t&lt;point_t&lt;float&gt;</a>, L2Metric&lt;float&gt;&gt;;</div>
+<div class="line">MyKNN knn;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置输入数据 / Set input data</span></div>
+<div class="line">std::vector&lt;point_t&lt;float&gt;&gt; points = {...};</div>
+<div class="line">knn.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e">set_input</a>(points);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// K近邻搜索 / K-nearest neighbors search</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;float&gt;</a> query = {1.0f, 2.0f, 3.0f};</div>
+<div class="line">std::vector&lt;std::size_t&gt; indices;</div>
+<div class="line">std::vector&lt;float&gt; distances;</div>
+<div class="line">knn.kneighbors(query, 5, indices, distances);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_afb54f4f22166504d463a3467693f130e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e">toolbox::pcl::base_knn_generic_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const container_type &amp;data)</div><div class="ttdoc">设置输入数据 / Set input data</div><div class="ttdef"><b>Definition</b> base_knn.hpp:83</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__generic__t.html">toolbox::pcl::bfknn_generic_t</a></div><div class="ttdoc">暴力K近邻搜索算法的通用实现 / Generic brute-force K-nearest neighbors search implementation</div><div class="ttdef"><b>Definition</b> bfknn.hpp:45</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+</div><!-- fragment --><div class="fragment"><div class="line"><span class="comment">// 使用点云数据 / Using point cloud data</span></div>
+<div class="line">point_cloud_t&lt;float&gt; cloud = load_point_cloud();</div>
+<div class="line">knn.set_input(cloud);  <span class="comment">// 自动使用cloud.points / Automatically uses cloud.points</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 半径搜索 / Radius search</span></div>
+<div class="line"><span class="keywordtype">float</span> radius = 2.0f;</div>
+<div class="line">knn.radius_neighbors(query, radius, indices, distances);</div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ab6570b8605e9a87fb7b4bd834849194d" name="ab6570b8605e9a87fb7b4bd834849194d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab6570b8605e9a87fb7b4bd834849194d">&#9670;&#160;</a></span>container_ptr</h2>
 
@@ -534,6 +590,30 @@ template&lt;typename Derived , typename Element , typename Metric  = toolbox::me
 </table>
 </div><div class="memdoc">
 
+<p>K近邻搜索 / K-nearest neighbors search. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>查询点 / Query point </td></tr>
+    <tr><td class="paramname">num_neighbors</td><td>要查找的最近邻数量 / Number of nearest neighbors to find </td></tr>
+    <tr><td class="paramname">indices</td><td>[out] 找到的最近邻索引 / Indices of found nearest neighbors </td></tr>
+    <tr><td class="paramname">distances</td><td>[out] 对应的距离 / Corresponding distances </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否成功 / Whether successful</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 示例：查找5个最近邻 / Example: Find 5 nearest neighbors</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;float&gt;</a> query = {1.0f, 2.0f, 3.0f};</div>
+<div class="line">std::vector&lt;std::size_t&gt; indices;</div>
+<div class="line">std::vector&lt;float&gt; distances;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (knn.kneighbors(query, 5, indices, distances)) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; indices.size(); ++i) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;邻居 / Neighbor &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span></div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;索引 / index = &quot;</span> &lt;&lt; indices[i] </div>
+<div class="line">                  &lt;&lt; <span class="stringliteral">&quot;, 距离 / distance = &quot;</span> &lt;&lt; distances[i] &lt;&lt; std::endl;</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="a9eda980b43fda09ed47148fac83d7378" name="a9eda980b43fda09ed47148fac83d7378"></a>
@@ -640,10 +720,31 @@ template&lt;typename Derived , typename Element , typename Metric  = toolbox::me
 </table>
 </div><div class="memdoc">
 
+<p>半径近邻搜索 / Radius neighbors search </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td>查询点 / Query point </td></tr>
+    <tr><td class="paramname">radius</td><td>搜索半径 / Search radius </td></tr>
+    <tr><td class="paramname">indices</td><td>[out] 半径内所有点的索引 / Indices of all points within radius </td></tr>
+    <tr><td class="paramname">distances</td><td>[out] 对应的距离 / Corresponding distances </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否成功 / Whether successful</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 示例：查找半径2.0内的所有点 / Example: Find all points within radius 2.0</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;float&gt;</a> query = {1.0f, 2.0f, 3.0f};</div>
+<div class="line">std::vector&lt;std::size_t&gt; indices;</div>
+<div class="line">std::vector&lt;float&gt; distances;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">if</span> (knn.radius_neighbors(query, 2.0f, indices, distances)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;找到 / Found &quot;</span> &lt;&lt; indices.size() </div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot; 个点在半径内 / points within radius&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="afe3eeb3e4b5943c3dc6a37e8b042a48b" name="afe3eeb3e4b5943c3dc6a37e8b042a48b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe3eeb3e4b5943c3dc6a37e8b042a48b">&#9670;&#160;</a></span>set_input() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afe3eeb3e4b5943c3dc6a37e8b042a48b">&#9670;&#160;</a></span>set_input() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -668,10 +769,19 @@ template&lt;typename Derived , typename Element , typename Metric  = toolbox::me
 </table>
 </div><div class="memdoc">
 
+<p>设置输入数据（智能指针版本） / Set input data (smart pointer version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入数据容器的智能指针 / Smart pointer to input data container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>数据点的数量 / Number of data points </dd></dl>
+
 </div>
 </div>
 <a id="afb54f4f22166504d463a3467693f130e" name="afb54f4f22166504d463a3467693f130e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb54f4f22166504d463a3467693f130e">&#9670;&#160;</a></span>set_input() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afb54f4f22166504d463a3467693f130e">&#9670;&#160;</a></span>set_input() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -696,10 +806,109 @@ template&lt;typename Derived , typename Element , typename Metric  = toolbox::me
 </table>
 </div><div class="memdoc">
 
+<p>设置输入数据 / Set input data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>输入数据容器 / Input data container </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>数据点的数量 / Number of data points </dd></dl>
+
+</div>
+</div>
+<a id="ada68d153e808b19c527c187eaceb2edd" name="ada68d153e808b19c527c187eaceb2edd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada68d153e808b19c527c187eaceb2edd">&#9670;&#160;</a></span>set_input() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename Element , typename Metric  = toolbox::metrics::L2Metric&lt;typename Element::value_type&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename T  = typename Element::value_type, typename  = std::enable_if_t&lt;std::is_same_v&lt;Element, point_t&lt;T&gt;&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html">toolbox::pcl::base_knn_generic_t</a>&lt; Derived, Element, Metric &gt;::set_input </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置点云输入数据（智能指针版本） / Set point cloud input data (smart pointer version) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据类型 / Point cloud data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云的智能指针 / Smart pointer to input point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>点的数量 / Number of points </dd></dl>
+
+</div>
+</div>
+<a id="a2e470f1e5ef3bef5cc55bbfe264ddbf1" name="a2e470f1e5ef3bef5cc55bbfe264ddbf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e470f1e5ef3bef5cc55bbfe264ddbf1">&#9670;&#160;</a></span>set_input() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename Element , typename Metric  = toolbox::metrics::L2Metric&lt;typename Element::value_type&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename T  = typename Element::value_type, typename  = std::enable_if_t&lt;std::is_same_v&lt;Element, point_t&lt;T&gt;&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html">toolbox::pcl::base_knn_generic_t</a>&lt; Derived, Element, Metric &gt;::set_input </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置点云输入数据（仅当Element为point_t时可用） / Set point cloud input data (only available when Element is point_t) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>点云数据类型 / Point cloud data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>点的数量 / Number of points </dd></dl>
+
 </div>
 </div>
 <a id="a977df6a2e9e1eba8d2543e229d43b5c1" name="a977df6a2e9e1eba8d2543e229d43b5c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a977df6a2e9e1eba8d2543e229d43b5c1">&#9670;&#160;</a></span>set_metric() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a977df6a2e9e1eba8d2543e229d43b5c1">&#9670;&#160;</a></span>set_metric() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -724,10 +933,18 @@ template&lt;typename Derived , typename Element , typename Metric  = toolbox::me
 </table>
 </div><div class="memdoc">
 
+<p>设置度量方式（编译时版本） / Set metric (compile-time version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metric</td><td>度量对象 / Metric object </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a537a922528b5b520b31d035d8c3e345d" name="a537a922528b5b520b31d035d8c3e345d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a537a922528b5b520b31d035d8c3e345d">&#9670;&#160;</a></span>set_metric() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a537a922528b5b520b31d035d8c3e345d">&#9670;&#160;</a></span>set_metric() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -753,6 +970,64 @@ template&lt;typename T  = typename Element::value_type&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>设置度量方式（运行时版本 - shared_ptr） / Set metric (runtime version - shared_ptr) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metric</td><td>度量接口的智能指针 / Smart pointer to metric interface </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a84c6157798d838aefb461d86f1b0bf97" name="a84c6157798d838aefb461d86f1b0bf97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84c6157798d838aefb461d86f1b0bf97">&#9670;&#160;</a></span>set_metric() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename Element , typename Metric  = toolbox::metrics::L2Metric&lt;typename Element::value_type&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename T  = typename Element::value_type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html">toolbox::pcl::base_knn_generic_t</a>&lt; Derived, Element, Metric &gt;::set_metric </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric</a>&lt; T &gt; &gt;&#160;</td>
+          <td class="paramname"><em>metric</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置度量方式（运行时版本 - unique_ptr） / Set metric (runtime version - unique_ptr) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">metric</td><td>度量接口的独占指针 / Unique pointer to metric interface </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

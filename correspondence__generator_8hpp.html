@@ -216,37 +216,49 @@ $(document).ready(function(){initNavTree('correspondence__generator_8hpp.html','
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">correspondence_generator.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="base__descriptor__extractor_8hpp_source.html">cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="base__knn_8hpp_source.html">cpp-toolbox/pcl/knn/base_knn.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="correspondence__generator__impl_8hpp_source.html">cpp-toolbox/pcl/correspondence/impl/correspondence_generator_impl.hpp</a>&gt;</code><br />
+
+<p>对应点生成器的向后兼容别名 / Backward compatibility aliases for correspondence generators  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &lt;<a class="el" href="knn__correspondence__generator_8hpp_source.html">cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for correspondence_generator.hpp:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 0 --></div>
 </div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
 </div>
 <p><a href="correspondence__generator_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1correspondence__generator__t.html">toolbox::pcl::correspondence_generator_t&lt; DataType, Signature, KNN &gt;</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacetoolbox" id="r_namespacetoolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox.html">toolbox</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacetoolbox_1_1pcl" id="r_namespacetoolbox_1_1pcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac8f39bd4d9f597bed942eb1d9ad2caac" id="r_ac8f39bd4d9f597bed942eb1d9ad2caac"><td class="memTemplParams" colspan="2">template&lt;typename DataType , typename Signature , typename KNN &gt; </td></tr>
+<tr class="memitem:ac8f39bd4d9f597bed942eb1d9ad2caac"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1pcl.html#ac8f39bd4d9f597bed942eb1d9ad2caac">toolbox::pcl::correspondence_generator_t</a> = <a class="el" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">knn_correspondence_generator_t</a>&lt; DataType, Signature, KNN &gt;</td></tr>
+<tr class="memdesc:ac8f39bd4d9f597bed942eb1d9ad2caac"><td class="mdescLeft">&#160;</td><td class="mdescRight">对应点生成器的类型别名（向后兼容） / Type alias for correspondence generator (backward compatibility)  <br /></td></tr>
+<tr class="separator:ac8f39bd4d9f597bed942eb1d9ad2caac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-</div><!-- contents -->
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>对应点生成器的向后兼容别名 / Backward compatibility aliases for correspondence generators </p>
+<p>该文件提供了向后兼容的类型别名。新代码应该使用具体的实现类： This file provides backward compatibility type aliases. New code should use specific implementation classes:</p><ul>
+<li>knn_correspondence_generator_t: 基于KNN的对应点生成 / KNN-based correspondence generation</li>
+<li>brute_force_correspondence_generator_t: 暴力搜索对应点生成 / Brute-force correspondence generation </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -9,4 +9,6 @@ digraph "src/include/cpp-toolbox/pcl/correspondence/impl"
     graph [ bgcolor="#daedff", pencolor="grey50", label="correspondence", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_9bd22864257bc944587f30bf5e25cc1c.html",tooltip=""]
   dir_78b956552c331723b05057a9a462d86c [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_78b956552c331723b05057a9a462d86c.html",tooltip=""];
   }
+  dir_175064ea02679cf4c3a50b5407502295 [label="base", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_175064ea02679cf4c3a50b5407502295.html",tooltip=""];
+  dir_78b956552c331723b05057a9a462d86c->dir_175064ea02679cf4c3a50b5407502295 [headlabel="1", labeldistance=1.5 headhref="dir_000018_000000.html" href="dir_000018_000000.html" color="steelblue1" fontcolor="steelblue1"];
 }

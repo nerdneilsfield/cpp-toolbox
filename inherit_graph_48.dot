@@ -5,7 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::metrics::base\l_metric_t\< CorrelationMetric\l\< T \>, T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1base__metric__t.html",tooltip=" "];
-  Node0 -> Node1 [id="edge50_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::metrics::Correlation\lMetric\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1metrics_1_1_correlation_metric.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::io::sampler\l_t\< PolicyT \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1sampler__t.html",tooltip="通用采样器/Generic sampler"];
 }

@@ -260,33 +260,30 @@ $(document).ready(function(){initNavTree('kdtree__impl_8hpp_source.html',''); in
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ac9dfa7ee4a7490d3f2cf36e614f89d0e">   34</a></span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Metric&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Metric&gt;</div>
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a728ca3c671795fcbdb49b13b97618d98">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">kdtree_generic_t&lt;Element, Metric&gt;::set_metric_impl</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ae41d445e1bf703b131d45540a7cd5e60">metric_type</a>&amp; metric)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">   35</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">kdtree_generic_t&lt;Element, Metric&gt;::set_metric_impl</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ae41d445e1bf703b131d45540a7cd5e60">metric_type</a>&amp; metric)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  m_compile_time_metric = metric;</div>
-<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">   38</a></span>  m_use_runtime_metric = <span class="keyword">false</span>;</div>
-<div class="foldopen" id="foldopen00039" data-start="{" data-end="}">
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a1b58b639021f5a9e466ecd3107865754">   39</a></span>  <span class="keywordflow">if</span> (m_data &amp;&amp; !m_data-&gt;empty() &amp;&amp; validate_metric())</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  m_use_runtime_metric = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordflow">if</span> (m_data &amp;&amp; !m_data-&gt;empty() &amp;&amp; validate_metric())</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    build_tree();</div>
-<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a56fc7a75cad82e57f09cb3ec4eb752c4">   42</a></span>  }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Metric&gt;</div>
 <div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a1b58b639021f5a9e466ecd3107865754">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">kdtree_generic_t&lt;Element, Metric&gt;::set_metric_impl</a>(</div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ab0c62a3455a8606e75bd6d22672be84c">   47</a></span>    std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric&lt;value_type&gt;</a>&gt; metric)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric&lt;value_type&gt;</a>&gt; metric)</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>{</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  m_runtime_metric = metric;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  m_use_runtime_metric = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// Note: Runtime metrics are not supported by nanoflann KD-tree</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// This will use brute-force fallback in kneighbors/radius_neighbors</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
+</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Element, <span class="keyword">typename</span> Metric&gt;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keywordtype">bool</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">kdtree_generic_t&lt;Element, Metric&gt;::validate_metric</a>()<span class="keyword"> const</span></div>
@@ -466,117 +463,16 @@ $(document).ready(function(){initNavTree('kdtree__impl_8hpp_source.html',''); in
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
 </div>
-</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">// Legacy KD-tree implementation</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00232" data-start="{" data-end="}">
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__t.html#a091527caf43c4da93c2fc57b876fdacf">  232</a></span>std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__t.html#a091527caf43c4da93c2fc57b876fdacf">kdtree_t&lt;DataType&gt;::set_input_impl</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1kdtree__t.html#a1093c14e61eaf135ddabacf8f15212a2">point_cloud</a>&amp; cloud)</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>{</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="comment">// Convert point cloud to vector of points</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  std::vector&lt;point_t&lt;DataType&gt;&gt; points(cloud.points.begin(), cloud.points.end());</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  <span class="comment">// Only use kdtree for supported metrics</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  <span class="keywordflow">if</span> (m_metric == metric_type_t::euclidean)</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  {</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">return</span> m_impl.set_input(points);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  }</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  {</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="comment">// Use brute-force fallback for unsupported metrics</span></div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">if</span> (!m_bfknn_fallback)</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      m_bfknn_fallback = std::make_unique&lt;bfknn_t&lt;DataType&gt;&gt;();</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    }</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    m_use_bfknn_fallback = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <span class="keywordflow">return</span> m_bfknn_fallback-&gt;set_input(cloud);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>}</div>
-</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00255" data-start="{" data-end="}">
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__t.html#af2a5d1775a6b315e6a2e4df3749e5e00">  255</a></span>std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__t.html#a091527caf43c4da93c2fc57b876fdacf">kdtree_t&lt;DataType&gt;::set_input_impl</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1kdtree__t.html#a08baa9743f3c54616f0f69cd0194d3ab">point_cloud_ptr</a>&amp; cloud)</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>{</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keywordflow">if</span> (!cloud) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordflow">return</span> set_input_impl(*cloud);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>}</div>
-</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00262" data-start="{" data-end="}">
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__t.html#ae2ecad5a848890234306505fbe5a6a52">  262</a></span>std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__t.html#ae2ecad5a848890234306505fbe5a6a52">kdtree_t&lt;DataType&gt;::set_metric_impl</a>(<a class="code hl_variable" href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">metric_type_t</a> metric)</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>{</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  m_metric = metric;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  </div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  <span class="comment">// KD-tree only supports Euclidean distance efficiently</span></div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  <span class="keywordflow">if</span> (metric == metric_type_t::euclidean)</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  {</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    m_impl.set_metric(<a class="code hl_class" href="classtoolbox_1_1metrics_1_1_l2_metric.html">toolbox::metrics::L2Metric&lt;DataType&gt;</a>{});</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    m_use_bfknn_fallback = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  {</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="comment">// Create fallback for unsupported metrics</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">if</span> (!m_bfknn_fallback)</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      m_bfknn_fallback = std::make_unique&lt;bfknn_t&lt;DataType&gt;&gt;();</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    m_bfknn_fallback-&gt;set_metric(metric);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    m_use_bfknn_fallback = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}</div>
-</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00287" data-start="{" data-end="}">
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__t.html#acb1d1e5581646befd8e2523fa9b1287e">  287</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__t.html#acb1d1e5581646befd8e2523fa9b1287e">kdtree_t&lt;DataType&gt;::kneighbors_impl</a>(</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;data_type&gt;</a>&amp; query_point,</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    std::size_t num_neighbors,</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    std::vector&lt;std::size_t&gt;&amp; indices,</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    std::vector&lt;data_type&gt;&amp; distances)</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>{</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordflow">if</span> (m_use_bfknn_fallback &amp;&amp; m_bfknn_fallback)</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">return</span> m_bfknn_fallback-&gt;kneighbors(query_point, num_neighbors, indices, distances);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  }</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keywordflow">return</span> m_impl.kneighbors(query_point, num_neighbors, indices, distances);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
-</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1kdtree__t.html#af8cc84aacb9c6a2d18450d5db2ea4efa">  301</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1kdtree__t.html#af8cc84aacb9c6a2d18450d5db2ea4efa">kdtree_t&lt;DataType&gt;::radius_neighbors_impl</a>(</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;data_type&gt;</a>&amp; query_point,</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1kdtree__t.html#aa144a4acb8747b0b192dd7dd46093615">data_type</a> radius,</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    std::vector&lt;std::size_t&gt;&amp; indices,</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    std::vector&lt;data_type&gt;&amp; distances)</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>{</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordflow">if</span> (m_use_bfknn_fallback &amp;&amp; m_bfknn_fallback)</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  {</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">return</span> m_bfknn_fallback-&gt;radius_neighbors(query_point, radius, indices, distances);</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  }</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="keywordflow">return</span> m_impl.radius_neighbors(query_point, radius, indices, distances);</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>}</div>
-</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
 <div class="ttc" id="abfknn_8hpp_html"><div class="ttname"><a href="bfknn_8hpp.html">bfknn.hpp</a></div></div>
 <div class="ttc" id="aclasstoolbox_1_1metrics_1_1_i_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_i_metric.html">toolbox::metrics::IMetric</a></div><div class="ttdef"><b>Definition</b> metric_factory.hpp:23</div></div>
 <div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html">toolbox::metrics::L2Metric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:18</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_a2dfe75b1d9a6cfdc0755d1da197ace77"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a2dfe75b1d9a6cfdc0755d1da197ace77">toolbox::pcl::base_knn_generic_t::kneighbors</a></div><div class="ttdeci">bool kneighbors(const element_type &amp;query, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; distance_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:71</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_a977df6a2e9e1eba8d2543e229d43b5c1"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a977df6a2e9e1eba8d2543e229d43b5c1">toolbox::pcl::base_knn_generic_t::set_metric</a></div><div class="ttdeci">void set_metric(const metric_type &amp;metric)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:58</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_abbd2212c8fd0523221abe9160bbacf76"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#abbd2212c8fd0523221abe9160bbacf76">toolbox::pcl::base_knn_generic_t::radius_neighbors</a></div><div class="ttdeci">bool radius_neighbors(const element_type &amp;query, distance_type radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; distance_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:81</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_afb54f4f22166504d463a3467693f130e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e">toolbox::pcl::base_knn_generic_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const container_type &amp;data)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:47</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__generic__t.html">toolbox::pcl::bfknn_generic_t</a></div><div class="ttdef"><b>Definition</b> bfknn.hpp:13</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_a2dfe75b1d9a6cfdc0755d1da197ace77"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a2dfe75b1d9a6cfdc0755d1da197ace77">toolbox::pcl::base_knn_generic_t::kneighbors</a></div><div class="ttdeci">bool kneighbors(const element_type &amp;query, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; distance_type &gt; &amp;distances)</div><div class="ttdoc">K近邻搜索 / K-nearest neighbors search.</div><div class="ttdef"><b>Definition</b> base_knn.hpp:179</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_a977df6a2e9e1eba8d2543e229d43b5c1"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a977df6a2e9e1eba8d2543e229d43b5c1">toolbox::pcl::base_knn_generic_t::set_metric</a></div><div class="ttdeci">void set_metric(const metric_type &amp;metric)</div><div class="ttdoc">设置度量方式（编译时版本） / Set metric (compile-time version)</div><div class="ttdef"><b>Definition</b> base_knn.hpp:129</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_abbd2212c8fd0523221abe9160bbacf76"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#abbd2212c8fd0523221abe9160bbacf76">toolbox::pcl::base_knn_generic_t::radius_neighbors</a></div><div class="ttdeci">bool radius_neighbors(const element_type &amp;query, distance_type radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; distance_type &gt; &amp;distances)</div><div class="ttdoc">半径近邻搜索 / Radius neighbors search</div><div class="ttdef"><b>Definition</b> base_knn.hpp:208</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__knn__generic__t_html_afb54f4f22166504d463a3467693f130e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e">toolbox::pcl::base_knn_generic_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const container_type &amp;data)</div><div class="ttdoc">设置输入数据 / Set input data</div><div class="ttdef"><b>Definition</b> base_knn.hpp:83</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1bfknn__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1bfknn__generic__t.html">toolbox::pcl::bfknn_generic_t</a></div><div class="ttdoc">暴力K近邻搜索算法的通用实现 / Generic brute-force K-nearest neighbors search implementation</div><div class="ttdef"><b>Definition</b> bfknn.hpp:45</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">toolbox::pcl::kdtree_generic_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:14</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_a00e21ad1ded498d69fd104167805a1b7"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a00e21ad1ded498d69fd104167805a1b7">toolbox::pcl::kdtree_generic_t::container_ptr</a></div><div class="ttdeci">typename base_type::container_ptr container_ptr</div><div class="ttdef"><b>Definition</b> kdtree.hpp:22</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_a04549e6bee9678c6835fcf4ce5751219"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a04549e6bee9678c6835fcf4ce5751219">toolbox::pcl::kdtree_generic_t::set_metric_impl</a></div><div class="ttdeci">void set_metric_impl(const metric_type &amp;metric)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:35</div></div>
@@ -587,17 +483,8 @@ $(document).ready(function(){initNavTree('kdtree__impl_8hpp_source.html',''); in
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_a8552287d1c3a8087accd3b0724eabbe0"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#a8552287d1c3a8087accd3b0724eabbe0">toolbox::pcl::kdtree_generic_t::value_type</a></div><div class="ttdeci">typename Element::value_type value_type</div><div class="ttdef"><b>Definition</b> kdtree.hpp:23</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_ab0c62a3455a8606e75bd6d22672be84c"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ab0c62a3455a8606e75bd6d22672be84c">toolbox::pcl::kdtree_generic_t::radius_neighbors_impl</a></div><div class="ttdeci">bool radius_neighbors_impl(const element_type &amp;query, distance_type radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; distance_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:155</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_ac9dfa7ee4a7490d3f2cf36e614f89d0e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ac9dfa7ee4a7490d3f2cf36e614f89d0e">toolbox::pcl::kdtree_generic_t::set_input_impl</a></div><div class="ttdeci">std::size_t set_input_impl(const container_type &amp;data)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:13</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_ae41d445e1bf703b131d45540a7cd5e60"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ae41d445e1bf703b131d45540a7cd5e60">toolbox::pcl::kdtree_generic_t&lt; point_t&lt; DataType &gt;, toolbox::metrics::L2Metric&lt; DataType &gt; &gt;::metric_type</a></div><div class="ttdeci">typename traits_type::metric_type metric_type</div><div class="ttdef"><b>Definition</b> kdtree.hpp:19</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_a08baa9743f3c54616f0f69cd0194d3ab"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#a08baa9743f3c54616f0f69cd0194d3ab">toolbox::pcl::kdtree_t::point_cloud_ptr</a></div><div class="ttdeci">typename base_type::point_cloud_ptr point_cloud_ptr</div><div class="ttdef"><b>Definition</b> kdtree.hpp:135</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_a091527caf43c4da93c2fc57b876fdacf"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#a091527caf43c4da93c2fc57b876fdacf">toolbox::pcl::kdtree_t::set_input_impl</a></div><div class="ttdeci">std::size_t set_input_impl(const point_cloud &amp;cloud)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:232</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_a1093c14e61eaf135ddabacf8f15212a2"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#a1093c14e61eaf135ddabacf8f15212a2">toolbox::pcl::kdtree_t::point_cloud</a></div><div class="ttdeci">typename base_type::point_cloud point_cloud</div><div class="ttdef"><b>Definition</b> kdtree.hpp:134</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_aa144a4acb8747b0b192dd7dd46093615"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#aa144a4acb8747b0b192dd7dd46093615">toolbox::pcl::kdtree_t::data_type</a></div><div class="ttdeci">DataType data_type</div><div class="ttdef"><b>Definition</b> kdtree.hpp:132</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_acb1d1e5581646befd8e2523fa9b1287e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#acb1d1e5581646befd8e2523fa9b1287e">toolbox::pcl::kdtree_t::kneighbors_impl</a></div><div class="ttdeci">bool kneighbors_impl(const point_t&lt; data_type &gt; &amp;query_point, std::size_t num_neighbors, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; data_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:287</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_ae2ecad5a848890234306505fbe5a6a52"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#ae2ecad5a848890234306505fbe5a6a52">toolbox::pcl::kdtree_t::set_metric_impl</a></div><div class="ttdeci">std::size_t set_metric_impl(metric_type_t metric)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:262</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__t_html_af8cc84aacb9c6a2d18450d5db2ea4efa"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__t.html#af8cc84aacb9c6a2d18450d5db2ea4efa">toolbox::pcl::kdtree_t::radius_neighbors_impl</a></div><div class="ttdeci">bool radius_neighbors_impl(const point_t&lt; data_type &gt; &amp;query_point, data_type radius, std::vector&lt; std::size_t &gt; &amp;indices, std::vector&lt; data_type &gt; &amp;distances)</div><div class="ttdef"><b>Definition</b> kdtree_impl.hpp:301</div></div>
-<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> correspondence_generator.hpp:7</div></div>
-<div class="ttc" id="anamespacetoolbox_1_1pcl_html_a3fce13949d52c65c6b5633d0d2c7bd5e"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html#a3fce13949d52c65c6b5633d0d2c7bd5e">toolbox::pcl::metric_type_t</a></div><div class="ttdeci">enum CPP_TOOLBOX_EXPORT metric_type_t</div><div class="ttdef"><b>Definition</b> base_knn.hpp:26</div></div>
-<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html_ae41d445e1bf703b131d45540a7cd5e60"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html#ae41d445e1bf703b131d45540a7cd5e60">toolbox::pcl::kdtree_generic_t::metric_type</a></div><div class="ttdeci">typename traits_type::metric_type metric_type</div><div class="ttdef"><b>Definition</b> kdtree.hpp:19</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

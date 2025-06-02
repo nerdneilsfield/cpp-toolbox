@@ -21,11 +21,10 @@ var searchData=
   ['container_5fprinter_5ft_3c_20std_3a_3aunordered_5fset_3c_20t_20_3e_20_3e_18',['container_printer_t&lt; std::unordered_set&lt; T &gt; &gt;',['../classtoolbox_1_1utils_1_1container__printer__t.html',1,'toolbox::utils']]],
   ['container_5fprinter_5ft_3c_20std_3a_3avector_3c_20t_20_3e_20_3e_19',['container_printer_t&lt; std::vector&lt; T &gt; &gt;',['../classtoolbox_1_1utils_1_1container__printer__t.html',1,'toolbox::utils']]],
   ['correlationmetric_20',['CorrelationMetric',['../classtoolbox_1_1metrics_1_1_correlation_metric.html',1,'toolbox::metrics']]],
-  ['correspondence_5fgenerator_5ft_21',['correspondence_generator_t',['../classtoolbox_1_1pcl_1_1correspondence__generator__t.html',1,'toolbox::pcl']]],
-  ['correspondence_5ft_22',['correspondence_t',['../structtoolbox_1_1pcl_1_1correspondence__t.html',1,'toolbox::pcl']]],
-  ['cosinemetric_23',['CosineMetric',['../classtoolbox_1_1metrics_1_1_cosine_metric.html',1,'toolbox::metrics']]],
-  ['curvature_5fkeypoint_5fextractor_5ft_24',['curvature_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html',1,'toolbox::pcl']]],
-  ['custommetric_25',['CustomMetric',['../classtoolbox_1_1metrics_1_1_custom_metric.html',1,'toolbox::metrics']]],
-  ['cvfh_5fextractor_5ft_26',['cvfh_extractor_t',['../classtoolbox_1_1pcl_1_1cvfh__extractor__t.html',1,'toolbox::pcl']]],
-  ['cvfh_5fsignature_5ft_27',['cvfh_signature_t',['../structtoolbox_1_1pcl_1_1cvfh__signature__t.html',1,'toolbox::pcl']]]
+  ['correspondence_5ft_21',['correspondence_t',['../structtoolbox_1_1pcl_1_1correspondence__t.html',1,'toolbox::pcl']]],
+  ['cosinemetric_22',['CosineMetric',['../classtoolbox_1_1metrics_1_1_cosine_metric.html',1,'toolbox::metrics']]],
+  ['curvature_5fkeypoint_5fextractor_5ft_23',['curvature_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html',1,'toolbox::pcl']]],
+  ['custommetric_24',['CustomMetric',['../classtoolbox_1_1metrics_1_1_custom_metric.html',1,'toolbox::metrics']]],
+  ['cvfh_5fextractor_5ft_25',['cvfh_extractor_t',['../classtoolbox_1_1pcl_1_1cvfh__extractor__t.html',1,'toolbox::pcl']]],
+  ['cvfh_5fsignature_5ft_26',['cvfh_signature_t',['../structtoolbox_1_1pcl_1_1cvfh__signature__t.html',1,'toolbox::pcl']]]
 ];

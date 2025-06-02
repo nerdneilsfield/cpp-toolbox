@@ -4,6 +4,7 @@ var classtoolbox_1_1pcl_1_1base__norm__extractor__t =
     [ "knn_type", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a2c6927619dd581a8f05ea36864056743", null ],
     [ "point_cloud", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3b99887d897e7679a3c46a850b7bfc28", null ],
     [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3d3d1f19bda6a64dcef5088d90c6cf75", null ],
+    [ "point_type", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a0c7edcf34665ddda79b7a7f3c6c565c5", null ],
     [ "base_norm_extractor_t", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa55d1bcd579a0461e3b59792c3d45eeb", null ],
     [ "~base_norm_extractor_t", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a808535b8b7f3153451125f507fb1dae6", null ],
     [ "base_norm_extractor_t", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab37d656f38b35a027f7cc0edc4e06497", null ],

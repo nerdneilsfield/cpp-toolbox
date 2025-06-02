@@ -93,6 +93,7 @@ var NAVTREE =
       [ "10. 代码风格示例 / Style Example", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md66", null ],
       [ "11. 备注 / Notes", "md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md68", null ]
     ] ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -134,23 +135,23 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "3dsc__extractor_8hpp.html",
-"classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a84584f607419fabec8b0453aabfbdc31",
-"classtoolbox_1_1metrics_1_1_centroid_metric.html",
-"classtoolbox_1_1metrics_1_1_modified_hausdorff_metric.html",
-"classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html#af6b78768ce0337536a05d15b8f4038d7",
-"classtoolbox_1_1pcl_1_1bfknn__t.html#ac26c1c85aff64cff0dc449738280e9ac",
-"classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html#aaf0cf2e90adeb74f3eb0a850831ec084",
-"classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html#a854f5b4be5a3569a2e5378e49cf8c87d",
-"classtoolbox_1_1pcl_1_1susan__keypoint__extractor__t.html#a16e3864b56deee12483e0da288c65a3a",
-"classtoolbox_1_1utils_1_1command__t.html#a5dfa0b0cd8add7049b092cb626e321ae",
-"classtoolbox_1_1utils_1_1simple__timer__array__t.html#a9f37c360c2a1965b1bebb817570ddcde",
-"file_8hpp.html#a9d370d4f448be574533574f643bc1298",
-"lock__free__queue_8hpp.html#ad24b531d08aaf5d51fd24cbb974f1c9f",
-"namespacetoolbox_1_1container_1_1string.html#ace2f63ba20582b4e048fefeac749de3d",
-"namespacetoolbox_1_1utils_1_1ini__detail.html",
-"structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html#a5e26374c6dadf7bceadb10e20011cf88",
-"structtoolbox_1_1traits_1_1has__to_string.html",
-"structtoolbox_1_1utils_1_1print__style__t.html#a5817cdc9b15e13e9e563e7cb3350b68d"
+"classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html#a495f57bac8382a9116b3190013c5fbb5",
+"classtoolbox_1_1metrics_1_1_bounding_box_metric.html#acc859b0ecb9e396f6a81238569fffe29",
+"classtoolbox_1_1metrics_1_1_metric_wrapper.html#a4fb4e2e1fb2a0f9c4bc61239566e7315",
+"classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#ab18819394fa2445328c3bf4bf43e9c5f",
+"classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html#a5e62974cd147d9d14f75b5e66f3249ac",
+"classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html#aaf20b9736d240d1ea96368baa9d84b6d",
+"classtoolbox_1_1pcl_1_1pfh__extractor__t.html#ac75b537d3eccb988c7b8c39b0fd54f80",
+"classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3",
+"classtoolbox_1_1utils_1_1list__printer__t.html",
+"classtoolbox_1_1utils_1_1table__t.html#ac7d9673ea573435cd6fcc664bd89251e",
+"functional__impl_8hpp.html#ac473d11cdff7b5498e4d4562534d6cd8",
+"md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md48",
+"namespacetoolbox_1_1functional.html#a28234663d88d2ee0d2a8fc72044235e3",
+"pcd_8hpp.html#adb238dd0524221508906155a7528f569",
+"structtoolbox_1_1io_1_1sequential__policy__t.html#a70900edb715ae29d4c2da194ccb4ebd7",
+"structtoolbox_1_1traits_1_1is__null__pointer.html",
+"structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html#a31e26a8d5b6c040f79c7d8fdaad633e8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

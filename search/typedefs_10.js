@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['t_0',['T',['../classtoolbox_1_1metrics_1_1_metric_wrapper.html#a522e93868f3c11edc86778229dc6843a',1,'toolbox::metrics::MetricWrapper']]],
-  ['traits_5ftype_1',['traits_type',['../classtoolbox_1_1pcl_1_1base__knn__generic__t.html#aa2cabafdcdc48df34c1d3b7b185b9356',1,'toolbox::pcl::base_knn_generic_t::traits_type'],['../classtoolbox_1_1pcl_1_1bfknn__generic__t.html#ade374d3050896923de01b96b5c5fb0fe',1,'toolbox::pcl::bfknn_generic_t::traits_type'],['../classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a3391c515abfad863eadf710d3bb8486d',1,'toolbox::pcl::bfknn_parallel_generic_t::traits_type'],['../classtoolbox_1_1pcl_1_1kdtree__generic__t.html#aa31de7447fcd443addb9e335b6919864',1,'toolbox::pcl::kdtree_generic_t::traits_type']]],
-  ['type_2',['type',['../structtoolbox_1_1traits_1_1type__identity.html#ad3aa17c897c9aa42de261ad21f61f6b9',1,'toolbox::traits::type_identity::type'],['../structtoolbox_1_1traits_1_1remove__reference.html#a2401fc7fd855e8ee64efdeb8961d3a35',1,'toolbox::traits::remove_reference::type'],['../structtoolbox_1_1traits_1_1remove__all__qualifiers.html#aee52fc7f2cfe82e97e65ebb912439cbb',1,'toolbox::traits::remove_all_qualifiers::type'],['../structtoolbox_1_1utils_1_1detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html#abc04c294c7cf36ae22354add3acbcdf6',1,'toolbox::utils::detail::optional_value_type&lt; std::optional&lt; U &gt; &gt;::type'],['../structtoolbox_1_1utils_1_1ini__detail_1_1optional__value__type_3_01std_1_1optional_3_01_u_01_4_01_4.html#a3950c27ef40492481ce2c2a750003d70',1,'toolbox::utils::ini_detail::optional_value_type&lt; std::optional&lt; U &gt; &gt;::type']]]
+  ['u16_0',['u16',['../types_8hpp.html#a6dbf9516e516c901604625282c174aa4',1,'types.hpp']]],
+  ['u32_1',['u32',['../types_8hpp.html#a70c1fcc1a4e96af8f6580f708657cd41',1,'types.hpp']]],
+  ['u64_2',['u64',['../types_8hpp.html#a1af9f95651e921615e75917a6dd1b574',1,'types.hpp']]],
+  ['u8_3',['u8',['../types_8hpp.html#a987e4d6cf789cb59dbb390728271e4d6',1,'types.hpp']]],
+  ['underlying_5ftype_4',['underlying_type',['../classtoolbox_1_1traits_1_1enum__wrapper.html#ad4b3d9de5cdfc3f337389c125be7105e',1,'toolbox::traits::enum_wrapper']]]
 ];

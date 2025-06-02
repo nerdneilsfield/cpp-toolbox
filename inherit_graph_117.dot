@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::correspondence\l_generator_t\< DataType, Signature, KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1correspondence__generator__t.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::pcl::knn_traits\l\< Element, Metric \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1knn__traits.html",tooltip="KNN算法的特征定义 / KNN algorithm traits definition."];
 }

@@ -196,9 +196,10 @@ digraph "src/include/cpp-toolbox/pcl/descriptors/impl/shot_extractor_impl.hpp"
   Node63 -> Node52 [id="edge140_Node000063_Node000052",color="steelblue1",style="solid",tooltip=" "];
   Node63 -> Node51 [id="edge141_Node000063_Node000051",color="steelblue1",style="solid",tooltip=" "];
   Node63 -> Node10 [id="edge142_Node000063_Node000010",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node1 [id="edge143_Node000002_Node000001",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node40 [id="edge144_Node000001_Node000040",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node50 [id="edge145_Node000001_Node000050",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node64 [id="edge146_Node000001_Node000064",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node65 [id="edge147_Node000001_Node000065",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node32 [id="edge143_Node000002_Node000032",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node1 [id="edge144_Node000002_Node000001",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node40 [id="edge145_Node000001_Node000040",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node50 [id="edge146_Node000001_Node000050",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node64 [id="edge147_Node000001_Node000064",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node65 [id="edge148_Node000001_Node000065",color="steelblue1",style="solid",tooltip=" "];
 }

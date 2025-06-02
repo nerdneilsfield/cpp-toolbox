@@ -1,5 +1,4 @@
 var correspondence__generator_8hpp =
 [
-    [ "toolbox::pcl::correspondence_t", "structtoolbox_1_1pcl_1_1correspondence__t.html", "structtoolbox_1_1pcl_1_1correspondence__t" ],
-    [ "toolbox::pcl::correspondence_generator_t< DataType, Signature, KNN >", "classtoolbox_1_1pcl_1_1correspondence__generator__t.html", "classtoolbox_1_1pcl_1_1correspondence__generator__t" ]
+    [ "correspondence_generator_t", "correspondence__generator_8hpp.html#ac8f39bd4d9f597bed942eb1d9ad2caac", null ]
 ];

@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::io::dataset\l_t\< Derived, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1io_1_1dataset__t.html",tooltip="数据集基类/Abstract base class for datasets"];
+  Node0 [id="Node000000",label="toolbox::container\l::concurrent_queue_t\l\< std::pair\< Level, std\l::string \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1container_1_1concurrent__queue__t.html",tooltip=" "];
 }

@@ -230,301 +230,302 @@ $(document).ready(function(){initNavTree('vfh__extractor_8hpp_source.html',''); 
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="base__descriptor__extractor_8hpp.html">cpp-toolbox/pcl/descriptors/base_descriptor_extractor.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="pca__norm_8hpp.html">cpp-toolbox/pcl/norm/pca_norm.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1base__signature__t.html">base_signature_t</a>&lt;DataType, vfh_signature_t&lt;DataType&gt;&gt;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">   17</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">HISTOGRAM_SIZE</a> = 308;  <span class="comment">// 4*45 + 128</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">   18</a></span>  std::array&lt;DataType, HISTOGRAM_SIZE&gt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a> {};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">   20</a></span>  DataType <a class="code hl_function" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">distance_impl</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t</a>&amp; other)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    DataType dist = 0;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">HISTOGRAM_SIZE</a>; ++i) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      DataType diff = <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a>[i] - other.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a>[i];</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      dist += diff * diff;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">return</span> std::sqrt(dist);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  }</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="kdtree_8hpp.html">cpp-toolbox/pcl/knn/kdtree.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="pca__norm_8hpp.html">cpp-toolbox/pcl/norm/pca_norm.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="vector__metrics_8hpp.html">cpp-toolbox/metrics/vector_metrics.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1base__signature__t.html">base_signature_t</a>&lt;DataType, vfh_signature_t&lt;DataType&gt;&gt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">   19</a></span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> std::size_t <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">HISTOGRAM_SIZE</a> = 308;  <span class="comment">// 4*45 + 128</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">   20</a></span>  std::array&lt;DataType, HISTOGRAM_SIZE&gt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a> {};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">   22</a></span>  DataType <a class="code hl_function" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">distance_impl</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t</a>&amp; other)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    DataType dist = 0;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">HISTOGRAM_SIZE</a>; ++i) {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>      DataType diff = <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a>[i] - other.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">histogram</a>[i];</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      dist += diff * diff;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">return</span> std::sqrt(dist);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
 </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNN&gt;</div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">vfh_extractor_t</a></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html">base_descriptor_extractor_t</a>&lt;vfh_extractor_t&lt;DataType, KNN&gt;,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                         DataType,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                         vfh_signature_t&lt;DataType&gt;&gt;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab754489f75007033f4e4840e3bb2670d">   38</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab754489f75007033f4e4840e3bb2670d">vfh_extractor_t</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="foldopen" id="foldopen00040" data-start="{" data-end="}">
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">   40</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">set_input</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  {</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    cloud_ = &amp;cloud;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">return</span> cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>();</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>         <span class="keyword">typename</span> KNN = kdtree_generic_t&lt;point_t&lt;DataType&gt;, <a class="code hl_class" href="classtoolbox_1_1metrics_1_1_l2_metric.html">toolbox::metrics::L2Metric&lt;DataType&gt;</a>&gt;&gt;</div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">   35</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">vfh_extractor_t</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html">base_descriptor_extractor_t</a>&lt;vfh_extractor_t&lt;DataType, KNN&gt;,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                         DataType,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                                         vfh_signature_t&lt;DataType&gt;&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab754489f75007033f4e4840e3bb2670d">   41</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab754489f75007033f4e4840e3bb2670d">vfh_extractor_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">   43</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">set_input</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud)</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    cloud_ = &amp;cloud;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> cloud.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">   46</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">set_knn</a>(KNN&amp; knn)</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    knn_ = &amp;knn;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">   49</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">set_knn</a>(KNN&amp; knn)</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    knn_ = &amp;knn;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
 </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">   52</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">set_search_radius</a>(DataType radius)</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    search_radius_ = radius;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00055" data-start="{" data-end="}">
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">   55</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">set_search_radius</a>(DataType radius)</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    search_radius_ = radius;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">   58</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">set_num_neighbors</a>(std::size_t num_neighbors)</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  {</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    num_neighbors_ = num_neighbors;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">   61</a></span>  std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">set_num_neighbors</a>(std::size_t num_neighbors)</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    num_neighbors_ = num_neighbors;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> cloud_ ? cloud_-&gt;<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">size</a>() : 0;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  }</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">   64</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">enable_parallel_impl</a>(<span class="keywordtype">bool</span> enable) { enable_parallel_ = enable; }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">compute_impl</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                    <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; keypoint_indices,</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                    std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a>&gt;&amp; descriptors)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    descriptors.clear();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// VFH is a global descriptor - compute for the entire cloud</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// Ignore keypoint_indices and process all points</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">   67</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">enable_parallel_impl</a>(<span class="keywordtype">bool</span> enable) { enable_parallel_ = enable; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">   69</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">compute_impl</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; keypoint_indices,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                    std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a>&gt;&amp; descriptors)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    descriptors.clear();</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// Compute centroid</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a> centroid(0, 0, 0);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; point : cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>) {</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> += point.x;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> += point.y;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> += point.z;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">// Compute normals if not provided</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    std::vector&lt;toolbox::types::point_t&lt;DataType&gt;&gt; normals;</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    compute_normals(cloud, normals);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">// Compute viewpoint vector (from centroid to viewpoint)</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a> viewpoint(</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        0, 0, 100);  <span class="comment">// Default viewpoint</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// Compute VFH</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a> vfh;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    compute_vfh(cloud, normals, centroid, viewpoint, vfh);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    descriptors.push_back(vfh);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
-</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// VFH is a global descriptor - compute for the entire cloud</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// Ignore keypoint_indices and process all points</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// Compute centroid</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a> centroid(0, 0, 0);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; point : cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> += point.x;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> += point.y;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> += point.z;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a> /= cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size();</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// Compute normals if not provided</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    std::vector&lt;toolbox::types::point_t&lt;DataType&gt;&gt; normals;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    compute_normals(cloud, normals);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">// Compute viewpoint vector (from centroid to viewpoint)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a> viewpoint(</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        0, 0, 100);  <span class="comment">// Default viewpoint</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Compute VFH</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a> vfh;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    compute_vfh(cloud, normals, centroid, viewpoint, vfh);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">  101</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">compute_impl</a>(</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; keypoint_indices,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      std::unique_ptr&lt;std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a>&gt;&gt; descriptors)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    descriptors-&gt;clear();</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">compute_impl</a>(cloud, keypoint_indices, *descriptors);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    descriptors.push_back(vfh);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
 </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordtype">void</span> compute_normals(</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&gt;&amp; normals)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">if</span> (!knn_)</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">pca_norm_extractor_t&lt;DataType, KNN&gt;</a> normal_estimator;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#abc79d534d6c16d2e42e9c20ed0badcc9">set_input</a>(cloud);</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa636630b39389fde6668d36138defa80">set_knn</a>(*knn_);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab60d1897cb2fc2e3a08da0bb0164fd24">set_num_neighbors</a>(num_neighbors_);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html#a98e58a7ab785a4f9a51b75073b806724">enable_parallel</a>(enable_parallel_);</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">auto</span> normal_cloud = normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aada8ea1e4ccf3d1d40884b7cc68e5b58">extract</a>();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    normals.<a class="code hl_function" href="classtoolbox_1_1types_1_1point__cloud__t.html#a41475bb191d4ed9ded2031e64e00b107">clear</a>();</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    normals.reserve(normal_cloud.size());</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pt : normal_cloud.points) {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      normals.push_back(pt);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keywordtype">void</span> compute_vfh(</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keyword">const</span> std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&gt;&amp; normals,</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&amp; centroid,</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&amp; viewpoint,</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      vfh_signature_t&lt;DataType&gt;&amp; vfh)<span class="keyword"> const</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="keyword">  </span>{</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">const</span> std::size_t nr_bins_f1 = 45;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> std::size_t nr_bins_f2 = 45;</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keyword">const</span> std::size_t nr_bins_f3 = 45;</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">const</span> std::size_t nr_bins_f4 = 45;</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">const</span> std::size_t nr_bins_vp = 128;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="comment">// Initialize histogram</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    std::fill(vfh.histogram.begin(), vfh.histogram.end(), 0);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">  104</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">compute_impl</a>(</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; keypoint_indices,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      std::unique_ptr&lt;std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">vfh_signature_t&lt;DataType&gt;</a>&gt;&gt; descriptors)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    descriptors-&gt;clear();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">compute_impl</a>(cloud, keypoint_indices, *descriptors);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  }</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keywordtype">void</span> compute_normals(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&gt;&amp; normals)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordflow">if</span> (!knn_)</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">pca_norm_extractor_t&lt;DataType, KNN&gt;</a> normal_estimator;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    normal_estimator.set_input(cloud);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    normal_estimator.set_knn(*knn_);</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    normal_estimator.set_num_neighbors(num_neighbors_);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    normal_estimator.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html#a98e58a7ab785a4f9a51b75073b806724">enable_parallel</a>(enable_parallel_);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">auto</span> normal_cloud = normal_estimator.extract();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    normals.clear();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    normals.reserve(normal_cloud.size());</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pt : normal_cloud.points) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      normals.push_back(pt);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  }</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keywordtype">void</span> compute_vfh(</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keyword">const</span> std::vector&lt;<a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&gt;&amp; normals,</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&amp; centroid,</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t&lt;DataType&gt;</a>&amp; viewpoint,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      vfh_signature_t&lt;DataType&gt;&amp; vfh)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keyword">const</span> std::size_t nr_bins_f1 = 45;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keyword">const</span> std::size_t nr_bins_f2 = 45;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keyword">const</span> std::size_t nr_bins_f3 = 45;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keyword">const</span> std::size_t nr_bins_f4 = 45;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keyword">const</span> std::size_t nr_bins_vp = 128;</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// Viewpoint direction from centroid</span></div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keyword">auto</span> vp_dir = viewpoint;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    vp_dir.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    vp_dir.y -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    vp_dir.z -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keyword">auto</span> vp_norm = vp_dir.normalize();</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="comment">// Compute extended FPFH for all point pairs</span></div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size(); ++i) {</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pi = cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[i];</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ni = normals[i];</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="comment">// Compute angle between normal and viewpoint direction</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      DataType vp_angle = std::acos(std::min&lt;DataType&gt;(</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>          1.0,</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          std::max&lt;DataType&gt;(</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>              -1.0, ni.x * vp_norm.x + ni.y * vp_norm.y + ni.z * vp_norm.z)));</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>      <span class="comment">// Add to viewpoint component histogram</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      std::size_t vp_bin =</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>          <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(vp_angle / M_PI * nr_bins_vp);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="keywordflow">if</span> (vp_bin &gt;= nr_bins_vp)</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        vp_bin = nr_bins_vp - 1;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      vfh.histogram[180 + vp_bin] += 1.0;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      <span class="comment">// Compute FPFH features with other points</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">for</span> (std::size_t j = i + 1; j &lt; cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size(); ++j) {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pj = cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[j];</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; nj = normals[j];</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="comment">// Compute features between points i and j</span></div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">auto</span> d = pj;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        d.x -= pi.x;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        d.y -= pi.y;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        d.z -= pi.z;</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        DataType dist = std::sqrt(d.x * d.x + d.y * d.y + d.z * d.z);</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">if</span> (dist &lt; 1e-8)</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// Initialize histogram</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    std::fill(vfh.histogram.begin(), vfh.histogram.end(), 0);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">// Viewpoint direction from centroid</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keyword">auto</span> vp_dir = viewpoint;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    vp_dir.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a> -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">x</a>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    vp_dir.y -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">y</a>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    vp_dir.z -= centroid.<a class="code hl_variable" href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">z</a>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">auto</span> vp_norm = vp_dir.normalize();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="comment">// Compute extended FPFH for all point pairs</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size(); ++i) {</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pi = cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[i];</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; ni = normals[i];</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      <span class="comment">// Compute angle between normal and viewpoint direction</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      DataType vp_angle = std::acos(std::min&lt;DataType&gt;(</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>          1.0,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>          std::max&lt;DataType&gt;(</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>              -1.0, ni.x * vp_norm.x + ni.y * vp_norm.y + ni.z * vp_norm.z)));</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>      <span class="comment">// Add to viewpoint component histogram</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      std::size_t vp_bin =</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>          <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(vp_angle / M_PI * nr_bins_vp);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      <span class="keywordflow">if</span> (vp_bin &gt;= nr_bins_vp)</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        vp_bin = nr_bins_vp - 1;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      vfh.histogram[180 + vp_bin] += 1.0;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="comment">// Compute FPFH features with other points</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      <span class="keywordflow">for</span> (std::size_t j = i + 1; j &lt; cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>.size(); ++j) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; pj = cloud.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[j];</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; nj = normals[j];</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="comment">// Compute features between points i and j</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <span class="keyword">auto</span> d = pj;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        d.x -= pi.x;</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        d.y -= pi.y;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        d.z -= pi.z;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        DataType dist = std::sqrt(d.x * d.x + d.y * d.y + d.z * d.z);</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        d.x /= dist;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        d.y /= dist;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        d.z /= dist;</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="comment">// Compute angles</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        DataType f1 = ni.x * d.x + ni.y * d.y + ni.z * d.z;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        DataType f2 = (d.x * nj.x + d.y * nj.y + d.z * nj.z) - f1;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        DataType f3 = std::atan2(ni.y * d.z - ni.z * d.y,</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>                                 ni.x * d.x + ni.y * d.y + ni.z * d.z);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        DataType f4 = std::atan2(nj.y * d.z - nj.z * d.y,</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                                 nj.x * d.x + nj.y * d.y + nj.z * d.z)</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>            - f3;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="comment">// Normalize angles</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        f1 = (f1 + 1.0) * 0.5;  <span class="comment">// [0, 1]</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        f2 = (f2 + 1.0) * 0.5;  <span class="comment">// [0, 1]</span></div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        f3 = (f3 + M_PI) / (2.0 * M_PI);  <span class="comment">// [0, 1]</span></div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        f4 = (f4 + M_PI) / (2.0 * M_PI);  <span class="comment">// [0, 1]</span></div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="comment">// Compute bins</span></div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        std::size_t bin_f1 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f1 * nr_bins_f1);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        std::size_t bin_f2 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f2 * nr_bins_f2);</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        std::size_t bin_f3 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f3 * nr_bins_f3);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        std::size_t bin_f4 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f4 * nr_bins_f4);</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="keywordflow">if</span> (bin_f1 &gt;= nr_bins_f1)</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>          bin_f1 = nr_bins_f1 - 1;</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">if</span> (bin_f2 &gt;= nr_bins_f2)</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>          bin_f2 = nr_bins_f2 - 1;</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        <span class="keywordflow">if</span> (bin_f3 &gt;= nr_bins_f3)</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>          bin_f3 = nr_bins_f3 - 1;</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        <span class="keywordflow">if</span> (bin_f4 &gt;= nr_bins_f4)</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>          bin_f4 = nr_bins_f4 - 1;</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="comment">// Update histogram</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        vfh.histogram[bin_f1] += 1.0;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        vfh.histogram[45 + bin_f2] += 1.0;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        vfh.histogram[90 + bin_f3] += 1.0;</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        vfh.histogram[135 + bin_f4] += 1.0;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      }</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="comment">// Normalize histogram</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    DataType <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> = 0;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val : vfh.histogram) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> += val;</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    }</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">if</span> (sum &gt; 0) {</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val : vfh.histogram) {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>        val /= <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>      }</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  }</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>* cloud_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  KNN* knn_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  DataType search_radius_ = 0.1;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  std::size_t num_neighbors_ = 10;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  <span class="keywordtype">bool</span> enable_parallel_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>};</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">if</span> (dist &lt; 1e-8)</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>          <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        d.x /= dist;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        d.y /= dist;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        d.z /= dist;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <span class="comment">// Compute angles</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        DataType f1 = ni.x * d.x + ni.y * d.y + ni.z * d.z;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        DataType f2 = (d.x * nj.x + d.y * nj.y + d.z * nj.z) - f1;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        DataType f3 = std::atan2(ni.y * d.z - ni.z * d.y,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                 ni.x * d.x + ni.y * d.y + ni.z * d.z);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        DataType f4 = std::atan2(nj.y * d.z - nj.z * d.y,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                                 nj.x * d.x + nj.y * d.y + nj.z * d.z)</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            - f3;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        <span class="comment">// Normalize angles</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        f1 = (f1 + 1.0) * 0.5;  <span class="comment">// [0, 1]</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        f2 = (f2 + 1.0) * 0.5;  <span class="comment">// [0, 1]</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        f3 = (f3 + M_PI) / (2.0 * M_PI);  <span class="comment">// [0, 1]</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        f4 = (f4 + M_PI) / (2.0 * M_PI);  <span class="comment">// [0, 1]</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        <span class="comment">// Compute bins</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        std::size_t bin_f1 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f1 * nr_bins_f1);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        std::size_t bin_f2 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f2 * nr_bins_f2);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        std::size_t bin_f3 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f3 * nr_bins_f3);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        std::size_t bin_f4 = <span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(f4 * nr_bins_f4);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        <span class="keywordflow">if</span> (bin_f1 &gt;= nr_bins_f1)</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>          bin_f1 = nr_bins_f1 - 1;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        <span class="keywordflow">if</span> (bin_f2 &gt;= nr_bins_f2)</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>          bin_f2 = nr_bins_f2 - 1;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        <span class="keywordflow">if</span> (bin_f3 &gt;= nr_bins_f3)</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>          bin_f3 = nr_bins_f3 - 1;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        <span class="keywordflow">if</span> (bin_f4 &gt;= nr_bins_f4)</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>          bin_f4 = nr_bins_f4 - 1;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>        <span class="comment">// Update histogram</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        vfh.histogram[bin_f1] += 1.0;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        vfh.histogram[45 + bin_f2] += 1.0;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        vfh.histogram[90 + bin_f3] += 1.0;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        vfh.histogram[135 + bin_f4] += 1.0;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="comment">// Normalize histogram</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    DataType <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> = 0;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val : vfh.histogram) {</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> += val;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">if</span> (sum &gt; 0) {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; val : vfh.histogram) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        val /= <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a>;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      }</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    }</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>* cloud_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  KNN* knn_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  DataType search_radius_ = 0.1;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  std::size_t num_neighbors_ = 10;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">bool</span> enable_parallel_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>};</div>
 </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
 <div class="ttc" id="abase__descriptor__extractor_8hpp_html"><div class="ttname"><a href="base__descriptor__extractor_8hpp.html">base_descriptor_extractor.hpp</a></div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__descriptor__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html">toolbox::pcl::base_descriptor_extractor_t</a></div><div class="ttdef"><b>Definition</b> base_descriptor_extractor.hpp:25</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__norm__extractor__t_html_aa636630b39389fde6668d36138defa80"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa636630b39389fde6668d36138defa80">toolbox::pcl::base_norm_extractor_t::set_knn</a></div><div class="ttdeci">std::size_t set_knn(const knn_type &amp;knn)</div><div class="ttdef"><b>Definition</b> base_norm.hpp:44</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__norm__extractor__t_html_aada8ea1e4ccf3d1d40884b7cc68e5b58"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aada8ea1e4ccf3d1d40884b7cc68e5b58">toolbox::pcl::base_norm_extractor_t::extract</a></div><div class="ttdeci">point_cloud extract()</div><div class="ttdef"><b>Definition</b> base_norm.hpp:49</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__norm__extractor__t_html_ab60d1897cb2fc2e3a08da0bb0164fd24"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab60d1897cb2fc2e3a08da0bb0164fd24">toolbox::pcl::base_norm_extractor_t::set_num_neighbors</a></div><div class="ttdeci">std::size_t set_num_neighbors(std::size_t num_neighbors)</div><div class="ttdef"><b>Definition</b> base_norm.hpp:33</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__norm__extractor__t_html_abc79d534d6c16d2e42e9c20ed0badcc9"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#abc79d534d6c16d2e42e9c20ed0badcc9">toolbox::pcl::base_norm_extractor_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const point_cloud &amp;cloud)</div><div class="ttdef"><b>Definition</b> base_norm.hpp:23</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1pca__norm__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">toolbox::pcl::pca_norm_extractor_t</a></div><div class="ttdef"><b>Definition</b> pca_norm.hpp:16</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1pca__norm__extractor__t_html_a98e58a7ab785a4f9a51b75073b806724"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html#a98e58a7ab785a4f9a51b75073b806724">toolbox::pcl::pca_norm_extractor_t::enable_parallel</a></div><div class="ttdeci">void enable_parallel(bool enable)</div><div class="ttdef"><b>Definition</b> pca_norm.hpp:37</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">toolbox::pcl::vfh_extractor_t</a></div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:36</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a1963d62847a7fd25c96a1f164ae747ab"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">toolbox::pcl::vfh_extractor_t::compute_impl</a></div><div class="ttdeci">void compute_impl(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::unique_ptr&lt; std::vector&lt; vfh_signature_t&lt; DataType &gt; &gt; &gt; descriptors) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:101</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a55914216ba61bf01dbd659bd94fd42e3"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">toolbox::pcl::vfh_extractor_t::set_knn</a></div><div class="ttdeci">std::size_t set_knn(KNN &amp;knn)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:46</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a70a448c6d5f54b6a560952a86df7f799"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">toolbox::pcl::vfh_extractor_t::set_search_radius</a></div><div class="ttdeci">std::size_t set_search_radius(DataType radius)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:52</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_ab2ee0726d75da63a0881ad8896a72c8e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">toolbox::pcl::vfh_extractor_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:40</div></div>
+<div class="ttc" id="aclasstoolbox_1_1metrics_1_1_l2_metric_html"><div class="ttname"><a href="classtoolbox_1_1metrics_1_1_l2_metric.html">toolbox::metrics::L2Metric</a></div><div class="ttdef"><b>Definition</b> vector_metrics.hpp:18</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__descriptor__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html">toolbox::pcl::base_descriptor_extractor_t</a></div><div class="ttdoc">描述子提取器的基类（CRTP模式） / Base class for descriptor extractors (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_descriptor_extractor.hpp:91</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1pca__norm__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">toolbox::pcl::pca_norm_extractor_t</a></div><div class="ttdoc">基于PCA的法向量提取器 / PCA-based normal extractor</div><div class="ttdef"><b>Definition</b> pca_norm.hpp:56</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1pca__norm__extractor__t_html_a98e58a7ab785a4f9a51b75073b806724"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html#a98e58a7ab785a4f9a51b75073b806724">toolbox::pcl::pca_norm_extractor_t::enable_parallel</a></div><div class="ttdeci">void enable_parallel(bool enable)</div><div class="ttdoc">启用或禁用并行计算 / Enable or disable parallel computation</div><div class="ttdef"><b>Definition</b> pca_norm.hpp:120</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html">toolbox::pcl::vfh_extractor_t</a></div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:39</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a1963d62847a7fd25c96a1f164ae747ab"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a1963d62847a7fd25c96a1f164ae747ab">toolbox::pcl::vfh_extractor_t::compute_impl</a></div><div class="ttdeci">void compute_impl(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::unique_ptr&lt; std::vector&lt; vfh_signature_t&lt; DataType &gt; &gt; &gt; descriptors) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:104</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a55914216ba61bf01dbd659bd94fd42e3"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3">toolbox::pcl::vfh_extractor_t::set_knn</a></div><div class="ttdeci">std::size_t set_knn(KNN &amp;knn)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:49</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_a70a448c6d5f54b6a560952a86df7f799"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a70a448c6d5f54b6a560952a86df7f799">toolbox::pcl::vfh_extractor_t::set_search_radius</a></div><div class="ttdeci">std::size_t set_search_radius(DataType radius)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:55</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_ab2ee0726d75da63a0881ad8896a72c8e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab2ee0726d75da63a0881ad8896a72c8e">toolbox::pcl::vfh_extractor_t::set_input</a></div><div class="ttdeci">std::size_t set_input(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:43</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_ab754489f75007033f4e4840e3bb2670d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#ab754489f75007033f4e4840e3bb2670d">toolbox::pcl::vfh_extractor_t::vfh_extractor_t</a></div><div class="ttdeci">vfh_extractor_t()=default</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_aebba433a9257a494bb029f950cd1882a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">toolbox::pcl::vfh_extractor_t::enable_parallel_impl</a></div><div class="ttdeci">void enable_parallel_impl(bool enable)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:64</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_aedb669c5515538c3241571e8cf08eded"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">toolbox::pcl::vfh_extractor_t::set_num_neighbors</a></div><div class="ttdeci">std::size_t set_num_neighbors(std::size_t num_neighbors)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:58</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_afdcde1879b88580c7a5774f9241046a6"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">toolbox::pcl::vfh_extractor_t::compute_impl</a></div><div class="ttdeci">void compute_impl(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::vector&lt; vfh_signature_t&lt; DataType &gt; &gt; &amp;descriptors) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:66</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_aebba433a9257a494bb029f950cd1882a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aebba433a9257a494bb029f950cd1882a">toolbox::pcl::vfh_extractor_t::enable_parallel_impl</a></div><div class="ttdeci">void enable_parallel_impl(bool enable)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:67</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_aedb669c5515538c3241571e8cf08eded"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#aedb669c5515538c3241571e8cf08eded">toolbox::pcl::vfh_extractor_t::set_num_neighbors</a></div><div class="ttdeci">std::size_t set_num_neighbors(std::size_t num_neighbors)</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:61</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1vfh__extractor__t_html_afdcde1879b88580c7a5774f9241046a6"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1vfh__extractor__t.html#afdcde1879b88580c7a5774f9241046a6">toolbox::pcl::vfh_extractor_t::compute_impl</a></div><div class="ttdeci">void compute_impl(const toolbox::types::point_cloud_t&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::vector&lt; vfh_signature_t&lt; DataType &gt; &gt; &amp;descriptors) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:69</div></div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
-<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a41475bb191d4ed9ded2031e64e00b107"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a41475bb191d4ed9ded2031e64e00b107">toolbox::types::point_cloud_t::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">清除点云中的所有数据 / Clear all data from cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:305</div></div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:270</div></div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a929bfd294a28a1f344bf4a6183ccb664"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a929bfd294a28a1f344bf4a6183ccb664">toolbox::types::point_cloud_t::size</a></div><div class="ttdeci">auto size() const -&gt; std::size_t</div><div class="ttdoc">获取点云中的点数 / Get number of points in cloud</div><div class="ttdef"><b>Definition</b> point_impl.hpp:293</div></div>
+<div class="ttc" id="akdtree_8hpp_html"><div class="ttname"><a href="kdtree_8hpp.html">kdtree.hpp</a></div></div>
 <div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:288</div></div>
-<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> correspondence_generator.hpp:7</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:14</div></div>
 <div class="ttc" id="apca__norm_8hpp_html"><div class="ttname"><a href="pca__norm_8hpp.html">pca_norm.hpp</a></div></div>
 <div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1base__signature__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1base__signature__t.html">toolbox::pcl::base_signature_t</a></div><div class="ttdef"><b>Definition</b> base_descriptor_extractor.hpp:13</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">toolbox::pcl::vfh_signature_t</a></div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:16</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_a83e5410b046302fdb03d6c7ed24ca9fd"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">toolbox::pcl::vfh_signature_t::histogram</a></div><div class="ttdeci">std::array&lt; DataType, HISTOGRAM_SIZE &gt; histogram</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:18</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_aacacd6f9d81cdac45dda679f5b4a41a6"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">toolbox::pcl::vfh_signature_t::distance_impl</a></div><div class="ttdeci">DataType distance_impl(const vfh_signature_t &amp;other) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:20</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_abd0ae0edb82f3c7e65bff336be6fc1bc"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">toolbox::pcl::vfh_signature_t::HISTOGRAM_SIZE</a></div><div class="ttdeci">static constexpr std::size_t HISTOGRAM_SIZE</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:17</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1base__signature__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1base__signature__t.html">toolbox::pcl::base_signature_t</a></div><div class="ttdoc">描述子签名的基类 / Base class for descriptor signatures</div><div class="ttdef"><b>Definition</b> base_descriptor_extractor.hpp:38</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html">toolbox::pcl::vfh_signature_t</a></div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:18</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_a83e5410b046302fdb03d6c7ed24ca9fd"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#a83e5410b046302fdb03d6c7ed24ca9fd">toolbox::pcl::vfh_signature_t::histogram</a></div><div class="ttdeci">std::array&lt; DataType, HISTOGRAM_SIZE &gt; histogram</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:20</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_aacacd6f9d81cdac45dda679f5b4a41a6"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#aacacd6f9d81cdac45dda679f5b4a41a6">toolbox::pcl::vfh_signature_t::distance_impl</a></div><div class="ttdeci">DataType distance_impl(const vfh_signature_t &amp;other) const</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:22</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1vfh__signature__t_html_abd0ae0edb82f3c7e65bff336be6fc1bc"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1vfh__signature__t.html#abd0ae0edb82f3c7e65bff336be6fc1bc">toolbox::pcl::vfh_signature_t::HISTOGRAM_SIZE</a></div><div class="ttdeci">static constexpr std::size_t HISTOGRAM_SIZE</div><div class="ttdef"><b>Definition</b> vfh_extractor.hpp:19</div></div>
 <div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
 <div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a171efb0a8686791dd6b042babab79ad4"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a171efb0a8686791dd6b042babab79ad4">toolbox::types::point_t::x</a></div><div class="ttdeci">T x</div><div class="ttdoc">X坐标 / X coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:51</div></div>
 <div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_a5697097cf3fe9bed97c2ebc8e9544db6"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#a5697097cf3fe9bed97c2ebc8e9544db6">toolbox::types::point_t::z</a></div><div class="ttdeci">T z</div><div class="ttdoc">Z坐标 / Z coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:53</div></div>
 <div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html_ae84eeb1bacaf6f2aa28321f152f38624"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html#ae84eeb1bacaf6f2aa28321f152f38624">toolbox::types::point_t::y</a></div><div class="ttdeci">T y</div><div class="ttdoc">Y坐标 / Y coordinate.</div><div class="ttdef"><b>Definition</b> point.hpp:52</div></div>
+<div class="ttc" id="avector__metrics_8hpp_html"><div class="ttname"><a href="vector__metrics_8hpp.html">vector_metrics.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

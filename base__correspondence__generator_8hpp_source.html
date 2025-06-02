@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('base__correspondence__generator_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">base_correspondence_generator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="base__correspondence__generator_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;limits&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1pcl.html">   13</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1correspondence__t.html">   22</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a0172651b22f5b8f7833e6aef37501cdd">   24</a></span>  std::size_t <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a0172651b22f5b8f7833e6aef37501cdd">src_idx</a>;  </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb">   25</a></span>  std::size_t <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb">dst_idx</a>;  </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8">   26</a></span>  <span class="keywordtype">float</span> <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8">distance</a>;       </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Derived, <span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature&gt;</div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="};">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">   56</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9fb34972ff25a20956c64cb43d039bad">   59</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud</a> = <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">   60</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> = std::shared_ptr&lt;point_cloud&gt;;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">   61</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> = std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">   62</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> = std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8d4cce1a7b74ec7ebfcc3d47b9b56d19">   64</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8d4cce1a7b74ec7ebfcc3d47b9b56d19">base_correspondence_generator_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#af05f282eb9df628544af2228507f8745">   65</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#af05f282eb9df628544af2228507f8745">~base_correspondence_generator_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// 删除拷贝和移动操作 / Delete copy and move operations</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a83f4354a0d431b8716e7b399cb173391">   68</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a83f4354a0d431b8716e7b399cb173391">base_correspondence_generator_t</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac840c6a669a0ca6241d7f17926622a1f">   69</a></span>  <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac840c6a669a0ca6241d7f17926622a1f">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a1115f6535c4db5936c03edbad507e74e">   70</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a1115f6535c4db5936c03edbad507e74e">base_correspondence_generator_t</a>(<a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#adc46c0247d2288a432ff9629e9e82f24">   71</a></span>  <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#adc46c0247d2288a432ff9629e9e82f24">operator=</a>(<a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">   79</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a>&amp; src_cloud,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                  <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a>&amp; src_descriptors,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                  <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a>&amp; src_keypoint_indices)</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    m_src_cloud = src_cloud;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    m_src_descriptors = src_descriptors;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    m_src_keypoint_indices = src_keypoint_indices;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  }</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00094" data-start="{" data-end="}">
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">   94</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a>&amp; dst_cloud,</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                       <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a>&amp; dst_descriptors,</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                       <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a>&amp; dst_keypoint_indices)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    m_dst_cloud = dst_cloud;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    m_dst_descriptors = dst_descriptors;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    m_dst_keypoint_indices = dst_keypoint_indices;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">  107</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(<span class="keywordtype">float</span> ratio) { m_ratio = ratio; }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad9a32c95736308323710a044dfb3a62b">  113</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad9a32c95736308323710a044dfb3a62b">get_ratio</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_ratio; }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">  119</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(<span class="keywordtype">bool</span> mutual_verification)</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    m_mutual_verification = mutual_verification;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2652db016327428bc94a8a209c7a0eee">  128</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2652db016327428bc94a8a209c7a0eee">get_mutual_verification</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_mutual_verification; }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="foldopen" id="foldopen00134" data-start="{" data-end="}">
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">  134</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">set_distance_threshold</a>(<span class="keywordtype">float</span> distance_threshold)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    m_distance_threshold = distance_threshold;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  }</div>
+</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a122054a0380730c83311b99ced9327ee">  143</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a122054a0380730c83311b99ced9327ee">get_distance_threshold</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_distance_threshold; }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">  149</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a>(std::vector&lt;correspondence_t&gt;&amp; correspondences)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="comment">// 清空输出和统计信息 / Clear output and statistics</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    correspondences.clear();</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    reset_statistics();</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <span class="comment">// 验证输入 / Validate input</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keywordflow">if</span> (!validate_input()) {</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span> </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// 调用派生类的实现 / Call derived class implementation</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;compute_impl(correspondences);</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="foldopen" id="foldopen00168" data-start="{" data-end="}">
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a85f88a246d489ed217610472699c25dc">  168</a></span>  std::string <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a85f88a246d489ed217610472699c25dc">get_statistics</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    std::stringstream ss;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    ss &lt;&lt; <span class="stringliteral">&quot;对应点生成统计 / Correspondence Generation Statistics:\n&quot;</span>;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    ss &lt;&lt; <span class="stringliteral">&quot;  候选对应点总数 / Total candidates: &quot;</span> &lt;&lt; m_total_candidates &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    ss &lt;&lt; <span class="stringliteral">&quot;  通过比率测试 / Passed ratio test: &quot;</span> &lt;&lt; m_ratio_test_passed &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">if</span> (m_mutual_verification) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      ss &lt;&lt; <span class="stringliteral">&quot;  通过双向验证 / Passed mutual verification: &quot;</span> &lt;&lt; m_mutual_test_passed &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    ss &lt;&lt; <span class="stringliteral">&quot;  通过距离阈值 / Passed distance threshold: &quot;</span> &lt;&lt; m_distance_test_passed &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">if</span> (m_src_descriptors) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      <span class="keywordtype">float</span> match_rate = <span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(m_distance_test_passed) / m_src_descriptors-&gt;size();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      ss &lt;&lt; <span class="stringliteral">&quot;  匹配率 / Match rate: &quot;</span> &lt;&lt; (match_rate * 100) &lt;&lt; <span class="stringliteral">&quot;%\n&quot;</span>;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  }</div>
+</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">protected</span>:</div>
+<div class="foldopen" id="foldopen00192" data-start="{" data-end="}">
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a65c90a45f2812bab7cc9aad8df8b2eaf">  192</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a65c90a45f2812bab7cc9aad8df8b2eaf">validate_input</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// 检查源数据 / Check source data</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">if</span> (!m_src_cloud || !m_src_descriptors || !m_src_keypoint_indices) {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;错误：源数据不完整 / Error: Source data incomplete&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="comment">// 检查目标数据 / Check target data</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordflow">if</span> (!m_dst_cloud || !m_dst_descriptors || !m_dst_keypoint_indices) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;错误：目标数据不完整 / Error: Target data incomplete&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">// 检查描述子和关键点数量是否匹配 / Check if descriptors and keypoints match</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">if</span> (m_src_descriptors-&gt;size() != m_src_keypoint_indices-&gt;size()) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;错误：源描述子数量与关键点数量不匹配 / Error: Source descriptor count doesn&#39;t match keypoint count&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">if</span> (m_dst_descriptors-&gt;size() != m_dst_keypoint_indices-&gt;size()) {</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;错误：目标描述子数量与关键点数量不匹配 / Error: Target descriptor count doesn&#39;t match keypoint count&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="comment">// 检查参数有效性 / Check parameter validity</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">if</span> (m_ratio &lt;= 0.0f || m_ratio &gt;= 1.0f) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      std::cerr &lt;&lt; <span class="stringliteral">&quot;警告：比率测试阈值应在(0,1)之间 / Warning: Ratio test threshold should be in (0,1)&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  }</div>
+</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="foldopen" id="foldopen00230" data-start="{" data-end="}">
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a4dedf835f324f2d746aca519dfe7ad3a">  230</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a4dedf835f324f2d746aca519dfe7ad3a">apply_ratio_test</a>(<span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; candidates)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="comment">// Lowe&#39;s ratio test: 检查最佳匹配是否显著优于次佳匹配 / Check if best match is significantly better than second best</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">if</span> (candidates.size() &lt; 2) {</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;  <span class="comment">// 如果只有一个匹配，默认通过 / If only one match, pass by default</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> (candidates[0].distance &lt; m_ratio * candidates[1].distance);</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }</div>
+</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acd9c2ec3eda9d66ac01b8f2acfa0644b">  244</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acd9c2ec3eda9d66ac01b8f2acfa0644b">apply_distance_threshold</a>(std::vector&lt;correspondence_t&gt;&amp; correspondences)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="comment">// 移除距离超过阈值的对应关系 / Remove correspondences exceeding distance threshold</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    correspondences.erase(</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        std::remove_if(correspondences.begin(), correspondences.end(),</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                       [<span class="keyword">this</span>](<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; corr) {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                         return corr.distance &gt; m_distance_threshold;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                       }),</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        correspondences.end());</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  }</div>
+</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#afb11228026f5fd3db172a5a035fc10cf">  260</a></span>  <span class="keywordtype">float</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#afb11228026f5fd3db172a5a035fc10cf">compute_geometric_consistency</a>(<span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; correspondences)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">if</span> (correspondences.size() &lt; 3) {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      <span class="keywordflow">return</span> 0.0f;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    <span class="comment">// 简单的几何一致性检查：比较点对之间的距离比率 / Simple geometric consistency: compare distance ratios between point pairs</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    <span class="keywordtype">float</span> consistency_score = 0.0f;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    std::size_t valid_pairs = 0;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; correspondences.size() - 1; ++i) {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      <span class="keywordflow">for</span> (std::size_t j = i + 1; j &lt; correspondences.size(); ++j) {</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="comment">// 计算源点对之间的距离 / Compute distance between source point pair</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_p1 = m_src_cloud-&gt;points[correspondences[i].src_idx];</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_p2 = m_src_cloud-&gt;points[correspondences[j].src_idx];</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        DataType src_dist = std::sqrt(</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>            (src_p1.x - src_p2.x) * (src_p1.x - src_p2.x) +</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            (src_p1.y - src_p2.y) * (src_p1.y - src_p2.y) +</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            (src_p1.z - src_p2.z) * (src_p1.z - src_p2.z));</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>        <span class="comment">// 计算目标点对之间的距离 / Compute distance between target point pair</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dst_p1 = m_dst_cloud-&gt;points[correspondences[i].dst_idx];</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; dst_p2 = m_dst_cloud-&gt;points[correspondences[j].dst_idx];</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        DataType dst_dist = std::sqrt(</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>            (dst_p1.x - dst_p2.x) * (dst_p1.x - dst_p2.x) +</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            (dst_p1.y - dst_p2.y) * (dst_p1.y - dst_p2.y) +</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            (dst_p1.z - dst_p2.z) * (dst_p1.z - dst_p2.z));</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="comment">// 避免除零 / Avoid division by zero</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">if</span> (src_dist &gt; 0.001 &amp;&amp; dst_dist &gt; 0.001) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>          DataType ratio = src_dist / dst_dist;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>          <span class="comment">// 如果比率接近1，说明几何关系保持良好 / If ratio is close to 1, geometry is well preserved</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>          <span class="keywordflow">if</span> (ratio &gt; 0.8 &amp;&amp; ratio &lt; 1.2) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>            consistency_score += 1.0f;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          }</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>          valid_pairs++;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        }</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>      }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    }</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordflow">return</span> valid_pairs &gt; 0 ? consistency_score / valid_pairs : 0.0f;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  }</div>
+</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="foldopen" id="foldopen00306" data-start="{" data-end="}">
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#aae1a5a751f0fc9ad448df53cfd4aa5a8">  306</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#aae1a5a751f0fc9ad448df53cfd4aa5a8">reset_statistics</a>()</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  {</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    m_total_candidates = 0;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    m_ratio_test_passed = 0;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    m_mutual_test_passed = 0;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    m_distance_test_passed = 0;</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  }</div>
+</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  <span class="comment">// 数据成员 / Data members</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a5e0d8b09bd0ec3dfd9a5f3c336997c77">  315</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a5e0d8b09bd0ec3dfd9a5f3c336997c77">m_src_cloud</a>;</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a845fe0d09cbdb99d74de42de0f6c5bdb">  316</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a845fe0d09cbdb99d74de42de0f6c5bdb">m_dst_cloud</a>;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2877dc1e2a1889034f4a5f221cd0a973">  317</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2877dc1e2a1889034f4a5f221cd0a973">m_src_descriptors</a>;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9148440ab19cb6527400fd1399f4379a">  318</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9148440ab19cb6527400fd1399f4379a">m_dst_descriptors</a>;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad41d6bc06e2a8e1cda6cb797ea07cf20">  319</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad41d6bc06e2a8e1cda6cb797ea07cf20">m_src_keypoint_indices</a>;</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3d01fcb0a5312feff69377288420feee">  320</a></span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3d01fcb0a5312feff69377288420feee">m_dst_keypoint_indices</a>;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a74f0a34e2e6240055657fff0271e07fc">  322</a></span>  <span class="keywordtype">float</span> m_ratio = 0.8F;  </div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acb2d4bbeda6490d6630a516065300e11">  323</a></span>  <span class="keywordtype">float</span> m_distance_threshold = std::numeric_limits&lt;float&gt;::max();  </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad3c71eb8b9d84f032ab08f67b276111d">  324</a></span>  <span class="keywordtype">bool</span> m_mutual_verification = <span class="keyword">true</span>;  </div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="comment">// 统计信息 / Statistics</span></div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8b57c2085b556f9c9fb569c9fcfbdb1a">  327</a></span>  <span class="keyword">mutable</span> std::size_t m_total_candidates = 0;</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3a464b22951c167114760f8bb22d45f8">  328</a></span>  <span class="keyword">mutable</span> std::size_t m_ratio_test_passed = 0;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f5a930c045676ad1413731591cb24f4">  329</a></span>  <span class="keyword">mutable</span> std::size_t m_mutual_test_passed = 0;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a81756d8fa87e734aa9a0e6ba567c123f">  330</a></span>  <span class="keyword">mutable</span> std::size_t m_distance_test_passed = 0;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>};</div>
+</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a></div><div class="ttdoc">对应点生成器的基类（CRTP模式） / Base class for correspondence generators (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:57</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a061000655b8d25aad0201fbcad2a754f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">toolbox::pcl::base_correspondence_generator_t::set_destination</a></div><div class="ttdeci">void set_destination(const point_cloud_ptr &amp;dst_cloud, const signatures_ptr &amp;dst_descriptors, const keypoint_indices_ptr &amp;dst_keypoint_indices)</div><div class="ttdoc">设置目标数据 / Set destination data</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:94</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a1115f6535c4db5936c03edbad507e74e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a1115f6535c4db5936c03edbad507e74e">toolbox::pcl::base_correspondence_generator_t::base_correspondence_generator_t</a></div><div class="ttdeci">base_correspondence_generator_t(base_correspondence_generator_t &amp;&amp;)=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a122054a0380730c83311b99ced9327ee"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a122054a0380730c83311b99ced9327ee">toolbox::pcl::base_correspondence_generator_t::get_distance_threshold</a></div><div class="ttdeci">float get_distance_threshold() const</div><div class="ttdoc">获取距离阈值 / Get distance threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:143</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a18b2702cb04c8035ccb747d1db144b42"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">toolbox::pcl::base_correspondence_generator_t::keypoint_indices_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; keypoint_indices_ptr</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:62</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a2652db016327428bc94a8a209c7a0eee"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2652db016327428bc94a8a209c7a0eee">toolbox::pcl::base_correspondence_generator_t::get_mutual_verification</a></div><div class="ttdeci">bool get_mutual_verification() const</div><div class="ttdoc">获取是否启用双向验证 / Get whether mutual verification is enabled</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:128</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a2877dc1e2a1889034f4a5f221cd0a973"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2877dc1e2a1889034f4a5f221cd0a973">toolbox::pcl::base_correspondence_generator_t::m_src_descriptors</a></div><div class="ttdeci">signatures_ptr m_src_descriptors</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:317</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a2f720990a4e646e99f9832867e8177c3"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">toolbox::pcl::base_correspondence_generator_t::set_ratio</a></div><div class="ttdeci">void set_ratio(float ratio)</div><div class="ttdoc">设置比率测试阈值 / Set ratio test threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:107</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a39bfe5280ce732eeb1df94e67cf8ac29"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">toolbox::pcl::base_correspondence_generator_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;src_cloud, const signatures_ptr &amp;src_descriptors, const keypoint_indices_ptr &amp;src_keypoint_indices)</div><div class="ttdoc">设置源数据 / Set source data</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:79</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a3d01fcb0a5312feff69377288420feee"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3d01fcb0a5312feff69377288420feee">toolbox::pcl::base_correspondence_generator_t::m_dst_keypoint_indices</a></div><div class="ttdeci">keypoint_indices_ptr m_dst_keypoint_indices</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:320</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a4dedf835f324f2d746aca519dfe7ad3a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a4dedf835f324f2d746aca519dfe7ad3a">toolbox::pcl::base_correspondence_generator_t::apply_ratio_test</a></div><div class="ttdeci">bool apply_ratio_test(const std::vector&lt; correspondence_t &gt; &amp;candidates) const</div><div class="ttdoc">应用比率测试 / Apply ratio test</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:230</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a5e0d8b09bd0ec3dfd9a5f3c336997c77"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a5e0d8b09bd0ec3dfd9a5f3c336997c77">toolbox::pcl::base_correspondence_generator_t::m_src_cloud</a></div><div class="ttdeci">point_cloud_ptr m_src_cloud</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:315</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a65c90a45f2812bab7cc9aad8df8b2eaf"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a65c90a45f2812bab7cc9aad8df8b2eaf">toolbox::pcl::base_correspondence_generator_t::validate_input</a></div><div class="ttdeci">bool validate_input() const</div><div class="ttdoc">验证输入数据的有效性 / Validate input data</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:192</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a67895eefc38e550b6c126844cac51a09"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">toolbox::pcl::base_correspondence_generator_t::signatures_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; signatures_ptr</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:61</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a6a0310800a7a68cf6f29132139b179c1"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">toolbox::pcl::base_correspondence_generator_t::set_distance_threshold</a></div><div class="ttdeci">void set_distance_threshold(float distance_threshold)</div><div class="ttdoc">设置距离阈值 / Set distance threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:134</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a83f4354a0d431b8716e7b399cb173391"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a83f4354a0d431b8716e7b399cb173391">toolbox::pcl::base_correspondence_generator_t::base_correspondence_generator_t</a></div><div class="ttdeci">base_correspondence_generator_t(const base_correspondence_generator_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a8416667e292f4435f453be70a40ff21e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">toolbox::pcl::base_correspondence_generator_t::point_cloud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; point_cloud &gt; point_cloud_ptr</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:60</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a845fe0d09cbdb99d74de42de0f6c5bdb"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a845fe0d09cbdb99d74de42de0f6c5bdb">toolbox::pcl::base_correspondence_generator_t::m_dst_cloud</a></div><div class="ttdeci">point_cloud_ptr m_dst_cloud</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:316</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a85f88a246d489ed217610472699c25dc"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a85f88a246d489ed217610472699c25dc">toolbox::pcl::base_correspondence_generator_t::get_statistics</a></div><div class="ttdeci">std::string get_statistics() const</div><div class="ttdoc">获取最后一次计算的统计信息 / Get statistics from last computation</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:168</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a8d4cce1a7b74ec7ebfcc3d47b9b56d19"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8d4cce1a7b74ec7ebfcc3d47b9b56d19">toolbox::pcl::base_correspondence_generator_t::base_correspondence_generator_t</a></div><div class="ttdeci">base_correspondence_generator_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a9148440ab19cb6527400fd1399f4379a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9148440ab19cb6527400fd1399f4379a">toolbox::pcl::base_correspondence_generator_t::m_dst_descriptors</a></div><div class="ttdeci">signatures_ptr m_dst_descriptors</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:318</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_aae1a5a751f0fc9ad448df53cfd4aa5a8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#aae1a5a751f0fc9ad448df53cfd4aa5a8">toolbox::pcl::base_correspondence_generator_t::reset_statistics</a></div><div class="ttdeci">void reset_statistics()</div><div class="ttdoc">重置统计信息 / Reset statistics</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:306</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ab29fea47470b1c915c900e2df9732fa5"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">toolbox::pcl::base_correspondence_generator_t::compute</a></div><div class="ttdeci">void compute(std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系 / Compute correspondences</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:149</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ac078ce2b872b6730acd11b385961d10d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">toolbox::pcl::base_correspondence_generator_t::set_mutual_verification</a></div><div class="ttdeci">void set_mutual_verification(bool mutual_verification)</div><div class="ttdoc">设置是否启用双向验证 / Set whether to enable mutual verification</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:119</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ac840c6a669a0ca6241d7f17926622a1f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac840c6a669a0ca6241d7f17926622a1f">toolbox::pcl::base_correspondence_generator_t::operator=</a></div><div class="ttdeci">base_correspondence_generator_t &amp; operator=(const base_correspondence_generator_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_acd9c2ec3eda9d66ac01b8f2acfa0644b"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acd9c2ec3eda9d66ac01b8f2acfa0644b">toolbox::pcl::base_correspondence_generator_t::apply_distance_threshold</a></div><div class="ttdeci">void apply_distance_threshold(std::vector&lt; correspondence_t &gt; &amp;correspondences) const</div><div class="ttdoc">应用距离阈值过滤 / Apply distance threshold filtering</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:244</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ad41d6bc06e2a8e1cda6cb797ea07cf20"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad41d6bc06e2a8e1cda6cb797ea07cf20">toolbox::pcl::base_correspondence_generator_t::m_src_keypoint_indices</a></div><div class="ttdeci">keypoint_indices_ptr m_src_keypoint_indices</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:319</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_ad9a32c95736308323710a044dfb3a62b"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad9a32c95736308323710a044dfb3a62b">toolbox::pcl::base_correspondence_generator_t::get_ratio</a></div><div class="ttdeci">float get_ratio() const</div><div class="ttdoc">获取比率测试阈值 / Get ratio test threshold</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:113</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_adc46c0247d2288a432ff9629e9e82f24"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#adc46c0247d2288a432ff9629e9e82f24">toolbox::pcl::base_correspondence_generator_t::operator=</a></div><div class="ttdeci">base_correspondence_generator_t &amp; operator=(base_correspondence_generator_t &amp;&amp;)=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_af05f282eb9df628544af2228507f8745"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#af05f282eb9df628544af2228507f8745">toolbox::pcl::base_correspondence_generator_t::~base_correspondence_generator_t</a></div><div class="ttdeci">virtual ~base_correspondence_generator_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_afb11228026f5fd3db172a5a035fc10cf"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#afb11228026f5fd3db172a5a035fc10cf">toolbox::pcl::base_correspondence_generator_t::compute_geometric_consistency</a></div><div class="ttdeci">float compute_geometric_consistency(const std::vector&lt; correspondence_t &gt; &amp;correspondences) const</div><div class="ttdoc">计算几何一致性分数（简单验证） / Compute geometric consistency score (simple verification)</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:260</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt; DataType &gt;</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:14</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></div><div class="ttdoc">对应关系结构体 / Correspondence structure</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:23</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a0172651b22f5b8f7833e6aef37501cdd"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a0172651b22f5b8f7833e6aef37501cdd">toolbox::pcl::correspondence_t::src_idx</a></div><div class="ttdeci">std::size_t src_idx</div><div class="ttdoc">源点索引 / Source point index</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:24</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a7b95ab48890fd10d3a7e2d5baf3ca3a8"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8">toolbox::pcl::correspondence_t::distance</a></div><div class="ttdeci">float distance</div><div class="ttdoc">描述子间的距离 / Distance between descriptors</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:26</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a8c08377d2a25685e34c99b9c662dc8eb"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb">toolbox::pcl::correspondence_t::dst_idx</a></div><div class="ttdeci">std::size_t dst_idx</div><div class="ttdoc">目标点索引 / Destination point index</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_9bd22864257bc944587f30bf5e25cc1c.html">correspondence</a></li><li class="navelem"><a class="el" href="base__correspondence__generator_8hpp.html">base_correspondence_generator.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

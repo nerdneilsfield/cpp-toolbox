@@ -1,31 +1,35 @@
 var hierarchy =
 [
     [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
+    [ "toolbox::pcl::base_correspondence_generator_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", null ],
+    [ "toolbox::pcl::base_correspondence_generator_t< brute_force_correspondence_generator_t< DataType, Signature >, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", [
+      [ "toolbox::pcl::brute_force_correspondence_generator_t< DataType, Signature >", "classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_correspondence_generator_t< knn_correspondence_generator_t< DataType, Signature, KNN >, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", [
+      [ "toolbox::pcl::knn_correspondence_generator_t< DataType, Signature, KNN >", "classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html", null ]
+    ] ],
     [ "toolbox::pcl::base_descriptor_extractor_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", null ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< cvfh_extractor_t< DataType, KNN >, DataType, cvfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< cvfh_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, cvfh_signature_t< DataType > >", null, [
       [ "toolbox::pcl::cvfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1cvfh__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< dsc3d_extractor_t< DataType, KNN >, DataType, dsc3d_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< dsc3d_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, dsc3d_signature_t< DataType > >", null, [
       [ "toolbox::pcl::dsc3d_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html", null ],
       [ "toolbox::pcl::dsc3d_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< fpfh_extractor_t< DataType, KNN >, DataType, fpfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< fpfh_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, fpfh_signature_t< DataType > >", null, [
       [ "toolbox::pcl::fpfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1fpfh__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< pfh_extractor_t< DataType, KNN >, DataType, pfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< pfh_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, pfh_signature_t< DataType > >", null, [
       [ "toolbox::pcl::pfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1pfh__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< rops_extractor_t< DataType, KNN >, DataType, rops_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< rops_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, rops_signature_t< DataType > >", null, [
       [ "toolbox::pcl::rops_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1rops__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< shot_extractor_t< DataType, KNN >, DataType, shot_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< shot_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, shot_signature_t< DataType > >", null, [
       [ "toolbox::pcl::shot_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1shot__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_descriptor_extractor_t< vfh_extractor_t< DataType, KNN >, DataType, vfh_signature_t< DataType > >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", [
+    [ "base_descriptor_extractor_t< vfh_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, vfh_signature_t< DataType > >", null, [
       [ "toolbox::pcl::vfh_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1vfh__extractor__t.html", null ]
-    ] ],
-    [ "base_features_extractor_t", null, [
-      [ "toolbox::pcl::agast_features_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__features__extractor__t.html", null ]
     ] ],
     [ "toolbox::io::base_file_data_t", "classtoolbox_1_1io_1_1base__file__data__t.html", [
       [ "toolbox::types::point_cloud_t< DataType >", "classtoolbox_1_1types_1_1point__cloud__t.html", null ],
@@ -36,59 +40,38 @@ var hierarchy =
       [ "toolbox::io::pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", null ]
     ] ],
     [ "toolbox::pcl::base_keypoint_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", null ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< agast_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< agast_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::agast_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< curvature_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< curvature_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::curvature_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1curvature__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< harris3d_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< harris3d_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::harris3d_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< iss_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< iss_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::iss_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< loam_feature_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< loam_feature_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::loam_feature_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< mls_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< mls_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::mls_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< sift3d_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< sift3d_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::sift3d_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1sift3d__keypoint__extractor__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_keypoint_extractor_t< susan_keypoint_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", [
+    [ "base_keypoint_extractor_t< susan_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::susan_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1susan__keypoint__extractor__t.html", null ]
     ] ],
     [ "toolbox::pcl::base_knn_generic_t< Derived, Element, Metric >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", [
-      [ "toolbox::pcl::base_knn_t< bfknn_parallel_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
-        [ "toolbox::pcl::bfknn_parallel_t< DataType >", "classtoolbox_1_1pcl_1_1bfknn__parallel__t.html", null ]
-      ] ],
-      [ "toolbox::pcl::base_knn_t< bfknn_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
-        [ "toolbox::pcl::bfknn_t< DataType >", "classtoolbox_1_1pcl_1_1bfknn__t.html", null ]
-      ] ],
-      [ "toolbox::pcl::base_knn_t< kdtree_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", [
-        [ "toolbox::pcl::kdtree_t< DataType >", "classtoolbox_1_1pcl_1_1kdtree__t.html", null ]
-      ] ],
-      [ "toolbox::pcl::bfknn_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html", null ],
-      [ "toolbox::pcl::bfknn_parallel_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html", null ],
-      [ "toolbox::pcl::kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1kdtree__generic__t.html", null ],
       [ "toolbox::pcl::bfknn_generic_t< Element, Metric >", "classtoolbox_1_1pcl_1_1bfknn__generic__t.html", null ],
       [ "toolbox::pcl::bfknn_parallel_generic_t< Element, Metric >", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html", null ],
       [ "toolbox::pcl::kdtree_generic_t< Element, Metric >", "classtoolbox_1_1pcl_1_1kdtree__generic__t.html", null ]
     ] ],
     [ "toolbox::pcl::base_knn_generic_t< bfknn_generic_t< Element, toolbox::metrics::L2Metric< typename Element::value_type > >, Element, toolbox::metrics::L2Metric< typename Element::value_type > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< bfknn_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
     [ "toolbox::pcl::base_knn_generic_t< bfknn_parallel_generic_t< Element, toolbox::metrics::L2Metric< typename Element::value_type > >, Element, toolbox::metrics::L2Metric< typename Element::value_type > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< bfknn_parallel_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< bfknn_parallel_t< DataType >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< bfknn_t< DataType >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< Derived, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", [
-      [ "toolbox::pcl::base_knn_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__knn__t.html", null ]
-    ] ],
     [ "toolbox::pcl::base_knn_generic_t< kdtree_generic_t< Element, toolbox::metrics::L2Metric< typename Element::value_type > >, Element, toolbox::metrics::L2Metric< typename Element::value_type > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
-    [ "toolbox::pcl::base_knn_generic_t< kdtree_t< DataType >, point_t< DataType >, toolbox::metrics::L2Metric< DataType > >", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html", null ],
     [ "toolbox::metrics::base_metric_t< Derived, ElementType >", "classtoolbox_1_1metrics_1_1base__metric__t.html", [
       [ "toolbox::metrics::LpMetric< T, P >", "classtoolbox_1_1metrics_1_1_lp_metric.html", null ]
     ] ],
@@ -178,7 +161,7 @@ var hierarchy =
       [ "toolbox::metrics::WeightedMetric< BaseMetric >", "classtoolbox_1_1metrics_1_1_weighted_metric.html", null ]
     ] ],
     [ "toolbox::pcl::base_norm_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html", null ],
-    [ "toolbox::pcl::base_norm_extractor_t< pca_norm_extractor_t< DataType, KNN >, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__norm__extractor__t.html", [
+    [ "base_norm_extractor_t< pca_norm_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::pca_norm_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html", null ]
     ] ],
     [ "toolbox::pcl::base_signature_t< DataType, Derived >", "structtoolbox_1_1pcl_1_1base__signature__t.html", null ],
@@ -244,7 +227,6 @@ var hierarchy =
     [ "toolbox::utils::container_printer_t< std::vector< T > >", "classtoolbox_1_1utils_1_1container__printer__t.html", [
       [ "toolbox::utils::vector_printer_t< T >", "classtoolbox_1_1utils_1_1vector__printer__t.html", null ]
     ] ],
-    [ "toolbox::pcl::correspondence_generator_t< DataType, Signature, KNN >", "classtoolbox_1_1pcl_1_1correspondence__generator__t.html", null ],
     [ "toolbox::pcl::correspondence_t", "structtoolbox_1_1pcl_1_1correspondence__t.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >", "classtoolbox_1_1io_1_1dataloader__t.html", null ],
     [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", null ],

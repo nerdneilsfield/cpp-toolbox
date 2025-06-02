@@ -7,6 +7,7 @@ var classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t =
     [ "element_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#ad024652ca82b8c0cdc10c8464708b7ab", null ],
     [ "metric_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a60d779d5a7d4c0e9f393e3ffd940bf90", null ],
     [ "traits_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a3391c515abfad863eadf710d3bb8486d", null ],
+    [ "value_type", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#acfd05d192d7d66d03d85bc7b0752b850", null ],
     [ "bfknn_parallel_generic_t", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a7b1c431468e3da6620717d4e9a685d65", null ],
     [ "~bfknn_parallel_generic_t", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a644e1738adb6221600649da637e3fd1f", null ],
     [ "bfknn_parallel_generic_t", "classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html#a478ddc8da0b57e3cf5a23aeef64a5d57", null ],

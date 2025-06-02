@@ -223,6 +223,9 @@ $(document).ready(function(){initNavTree('structtoolbox_1_1pcl_1_1base__signatur
 </div><!--header-->
 <div class="contents">
 
+<p>描述子签名的基类 / Base class for descriptor signatures  
+ <a href="structtoolbox_1_1pcl_1_1base__signature__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="base__descriptor__extractor_8hpp_source.html">base_descriptor_extractor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -235,9 +238,34 @@ Public Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1619b200462ce32cf9407588e2aa0aa8" id="r_a1619b200462ce32cf9407588e2aa0aa8"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1pcl_1_1base__signature__t.html#a1619b200462ce32cf9407588e2aa0aa8">distance</a> (const Derived &amp;other) const</td></tr>
+<tr class="memdesc:a1619b200462ce32cf9407588e2aa0aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算与另一个签名的距离 / Calculate distance to another signature  <br /></td></tr>
 <tr class="separator:a1619b200462ce32cf9407588e2aa0aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType, class Derived&gt;<br />
+struct toolbox::pcl::base_signature_t&lt; DataType, Derived &gt;</div><p>描述子签名的基类 / Base class for descriptor signatures </p>
+<p>该类定义了所有描述子签名类型的通用接口，主要提供距离计算功能。 This class defines the common interface for all descriptor signature types, mainly providing distance calculation functionality.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double) </td></tr>
+    <tr><td class="paramname">Derived</td><td>派生的签名类型 / Derived signature type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 自定义描述子签名示例 / Custom descriptor signature example</span></div>
+<div class="line"><span class="keyword">struct </span>my_signature_t : <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1base__signature__t.html">base_signature_t</a>&lt;float, my_signature_t&gt; {</div>
+<div class="line">    std::array&lt;float, 128&gt; histogram;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">float</span> distance_impl(<span class="keyword">const</span> my_signature_t&amp; other)<span class="keyword"> const </span>{</div>
+<div class="line">        <span class="keywordtype">float</span> dist = 0;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; 128; ++i) {</div>
+<div class="line">            dist += std::abs(histogram[i] - other.histogram[i]);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> dist;</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1base__signature__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1base__signature__t.html">toolbox::pcl::base_signature_t</a></div><div class="ttdoc">描述子签名的基类 / Base class for descriptor signatures</div><div class="ttdef"><b>Definition</b> base_descriptor_extractor.hpp:38</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a3a084a8a648f3b359bfd23c74a1055f3" name="a3a084a8a648f3b359bfd23c74a1055f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a084a8a648f3b359bfd23c74a1055f3">&#9670;&#160;</a></span>data_type</h2>
 
@@ -296,6 +324,15 @@ template&lt;typename DataType , class Derived &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>计算与另一个签名的距离 / Calculate distance to another signature </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>另一个签名 / Another signature </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>距离值 / Distance value </dd></dl>
 
 </div>
 </div>

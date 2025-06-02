@@ -223,6 +223,9 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__norm__ext
 </div><!--header-->
 <div class="contents">
 
+<p>法向量提取器的基类（CRTP模式） / Base class for normal extractors (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="base__norm_8hpp_source.html">base_norm.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
@@ -231,6 +234,8 @@ Public Types</h2></td></tr>
 <tr class="separator:aa473e234f15e4b95d43549dab14c1686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c6927619dd581a8f05ea36864056743" id="r_a2c6927619dd581a8f05ea36864056743"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a2c6927619dd581a8f05ea36864056743">knn_type</a> = KNN</td></tr>
 <tr class="separator:a2c6927619dd581a8f05ea36864056743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c7edcf34665ddda79b7a7f3c6c565c5" id="r_a0c7edcf34665ddda79b7a7f3c6c565c5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a0c7edcf34665ddda79b7a7f3c6c565c5">point_type</a> = <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa473e234f15e4b95d43549dab14c1686">data_type</a> &gt;</td></tr>
+<tr class="separator:a0c7edcf34665ddda79b7a7f3c6c565c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b99887d897e7679a3c46a850b7bfc28" id="r_a3b99887d897e7679a3c46a850b7bfc28"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3b99887d897e7679a3c46a850b7bfc28">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa473e234f15e4b95d43549dab14c1686">data_type</a> &gt;</td></tr>
 <tr class="separator:a3b99887d897e7679a3c46a850b7bfc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d3d1f19bda6a64dcef5088d90c6cf75" id="r_a3d3d1f19bda6a64dcef5088d90c6cf75"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3d3d1f19bda6a64dcef5088d90c6cf75">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa473e234f15e4b95d43549dab14c1686">data_type</a> &gt; &gt;</td></tr>
@@ -243,18 +248,25 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a808535b8b7f3153451125f507fb1dae6" id="r_a808535b8b7f3153451125f507fb1dae6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a808535b8b7f3153451125f507fb1dae6">~base_norm_extractor_t</a> ()=default</td></tr>
 <tr class="separator:a808535b8b7f3153451125f507fb1dae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc79d534d6c16d2e42e9c20ed0badcc9" id="r_abc79d534d6c16d2e42e9c20ed0badcc9"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#abc79d534d6c16d2e42e9c20ed0badcc9">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3b99887d897e7679a3c46a850b7bfc28">point_cloud</a> &amp;cloud)</td></tr>
+<tr class="memdesc:abc79d534d6c16d2e42e9c20ed0badcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入点云 / Set input point cloud  <br /></td></tr>
 <tr class="separator:abc79d534d6c16d2e42e9c20ed0badcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab725f4388707ebf95888c4b052439e01" id="r_ab725f4388707ebf95888c4b052439e01"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab725f4388707ebf95888c4b052439e01">set_input</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3d3d1f19bda6a64dcef5088d90c6cf75">point_cloud_ptr</a> &amp;cloud)</td></tr>
+<tr class="memdesc:ab725f4388707ebf95888c4b052439e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置输入点云（智能指针版本） / Set input point cloud (smart pointer version)  <br /></td></tr>
 <tr class="separator:ab725f4388707ebf95888c4b052439e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab60d1897cb2fc2e3a08da0bb0164fd24" id="r_ab60d1897cb2fc2e3a08da0bb0164fd24"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab60d1897cb2fc2e3a08da0bb0164fd24">set_num_neighbors</a> (std::size_t num_neighbors)</td></tr>
+<tr class="memdesc:ab60d1897cb2fc2e3a08da0bb0164fd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置用于法向量估计的近邻数量 / Set number of neighbors for normal estimation  <br /></td></tr>
 <tr class="separator:ab60d1897cb2fc2e3a08da0bb0164fd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c30bf1bf3a5a6eab5e71a47543bb591" id="r_a2c30bf1bf3a5a6eab5e71a47543bb591"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a2c30bf1bf3a5a6eab5e71a47543bb591">get_num_neighbors</a> () const noexcept</td></tr>
+<tr class="memdesc:a2c30bf1bf3a5a6eab5e71a47543bb591"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取当前的近邻数量设置 / Get current number of neighbors setting  <br /></td></tr>
 <tr class="separator:a2c30bf1bf3a5a6eab5e71a47543bb591"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa636630b39389fde6668d36138defa80" id="r_aa636630b39389fde6668d36138defa80"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa636630b39389fde6668d36138defa80">set_knn</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a2c6927619dd581a8f05ea36864056743">knn_type</a> &amp;knn)</td></tr>
+<tr class="memdesc:aa636630b39389fde6668d36138defa80"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置KNN搜索算法 / Set KNN search algorithm  <br /></td></tr>
 <tr class="separator:aa636630b39389fde6668d36138defa80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aada8ea1e4ccf3d1d40884b7cc68e5b58" id="r_aada8ea1e4ccf3d1d40884b7cc68e5b58"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3b99887d897e7679a3c46a850b7bfc28">point_cloud</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aada8ea1e4ccf3d1d40884b7cc68e5b58">extract</a> ()</td></tr>
+<tr class="memdesc:aada8ea1e4ccf3d1d40884b7cc68e5b58"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取法向量 / Extract normals  <br /></td></tr>
 <tr class="separator:aada8ea1e4ccf3d1d40884b7cc68e5b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9fdc59ad629fe2b5abba26f8afeca36" id="r_ad9fdc59ad629fe2b5abba26f8afeca36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ad9fdc59ad629fe2b5abba26f8afeca36">extract</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#a3d3d1f19bda6a64dcef5088d90c6cf75">point_cloud_ptr</a> output)</td></tr>
+<tr class="memdesc:ad9fdc59ad629fe2b5abba26f8afeca36"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取法向量到指定输出 / Extract normals to specified output  <br /></td></tr>
 <tr class="separator:ad9fdc59ad629fe2b5abba26f8afeca36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab37d656f38b35a027f7cc0edc4e06497" id="r_ab37d656f38b35a027f7cc0edc4e06497"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#ab37d656f38b35a027f7cc0edc4e06497">base_norm_extractor_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html">base_norm_extractor_t</a> &amp;)=delete</td></tr>
 <tr class="separator:ab37d656f38b35a027f7cc0edc4e06497"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,7 +277,35 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adc6723be429cc22dc80c12d105bd642d" id="r_adc6723be429cc22dc80c12d105bd642d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html">base_norm_extractor_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#adc6723be429cc22dc80c12d105bd642d">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html">base_norm_extractor_t</a> &amp;&amp;)=delete</td></tr>
 <tr class="separator:adc6723be429cc22dc80c12d105bd642d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived, typename DataType, typename KNN&gt;<br />
+class toolbox::pcl::base_norm_extractor_t&lt; Derived, DataType, KNN &gt;</div><p>法向量提取器的基类（CRTP模式） / Base class for normal extractors (CRTP pattern) </p>
+<p>该类定义了所有法向量提取算法的通用接口，使用CRTP模式实现静态多态。 法向量是点云处理中的重要特征，用于描述局部表面的方向。 This class defines the common interface for all normal extraction algorithms, using CRTP pattern for static polymorphism. Normals are important features in point cloud processing, describing the direction of local surfaces.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生类类型 / Derived class type </td></tr>
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double) </td></tr>
+    <tr><td class="paramname">KNN</td><td>KNN搜索算法类型 / KNN search algorithm type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用示例 / Usage example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">pca_norm_extractor_t&lt;float&gt;</a> norm_extractor;</div>
+<div class="line">point_cloud_t&lt;float&gt; cloud = load_point_cloud(<span class="stringliteral">&quot;data.pcd&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置输入和参数 / Set input and parameters</span></div>
+<div class="line">norm_extractor.set_input(cloud);</div>
+<div class="line">norm_extractor.set_num_neighbors(30);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 提取法向量 / Extract normals</span></div>
+<div class="line">point_cloud_t&lt;float&gt; normals = norm_extractor.extract();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 每个法向量点的xyz分量表示法向量方向 / xyz components of each normal point represent the normal direction</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; normal : normals.points) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;法向量 / Normal: (&quot;</span> &lt;&lt; normal.x &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; normal.y &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; normal.z &lt;&lt; <span class="stringliteral">&quot;)\n&quot;</span>;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1pca__norm__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html">toolbox::pcl::pca_norm_extractor_t</a></div><div class="ttdoc">基于PCA的法向量提取器 / PCA-based normal extractor</div><div class="ttdef"><b>Definition</b> pca_norm.hpp:56</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="aa473e234f15e4b95d43549dab14c1686" name="aa473e234f15e4b95d43549dab14c1686"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa473e234f15e4b95d43549dab14c1686">&#9670;&#160;</a></span>data_type</h2>
 
@@ -324,6 +364,22 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html">toolbox::pcl::base_norm_extractor_t</a>&lt; Derived, DataType, KNN &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa473e234f15e4b95d43549dab14c1686">data_type</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c7edcf34665ddda79b7a7f3c6c565c5" name="a0c7edcf34665ddda79b7a7f3c6c565c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c7edcf34665ddda79b7a7f3c6c565c5">&#9670;&#160;</a></span>point_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html">toolbox::pcl::base_norm_extractor_t</a>&lt; Derived, DataType, KNN &gt;::point_type =  <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__norm__extractor__t.html#aa473e234f15e4b95d43549dab14c1686">data_type</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -467,6 +523,17 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>提取法向量 / Extract normals </p>
+<dl class="section return"><dt>Returns</dt><dd>包含法向量的点云，每个点的xyz表示法向量方向 / Point cloud containing normals, xyz of each point represents normal direction</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 提取并验证法向量 / Extract and verify normals</span></div>
+<div class="line"><span class="keyword">auto</span> normals = norm_extractor.extract();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 检查法向量是否归一化 / Check if normals are normalized</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; n : normals.points) {</div>
+<div class="line">    <span class="keywordtype">float</span> length = std::sqrt(n.x*n.x + n.y*n.y + n.z*n.z);</div>
+<div class="line">    assert(std::abs(length - 1.0f) &lt; 1e-6f);</div>
+<div class="line">}</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ad9fdc59ad629fe2b5abba26f8afeca36" name="ad9fdc59ad629fe2b5abba26f8afeca36"></a>
@@ -495,6 +562,14 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>提取法向量到指定输出 / Extract normals to specified output </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>[out] 输出点云的智能指针 / Smart pointer to output point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2c30bf1bf3a5a6eab5e71a47543bb591" name="a2c30bf1bf3a5a6eab5e71a47543bb591"></a>
@@ -521,6 +596,9 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>获取当前的近邻数量设置 / Get current number of neighbors setting </p>
+<dl class="section return"><dt>Returns</dt><dd>近邻数量 / Number of neighbors </dd></dl>
 
 </div>
 </div>
@@ -606,6 +684,15 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>设置输入点云 / Set input point cloud </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>点云中的点数 / Number of points in the cloud </dd></dl>
+
 </div>
 </div>
 <a id="ab725f4388707ebf95888c4b052439e01" name="ab725f4388707ebf95888c4b052439e01"></a>
@@ -633,6 +720,15 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>设置输入点云（智能指针版本） / Set input point cloud (smart pointer version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云的智能指针 / Smart pointer to input point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>点云中的点数 / Number of points in the cloud </dd></dl>
 
 </div>
 </div>
@@ -662,6 +758,19 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>设置KNN搜索算法 / Set KNN search algorithm </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">knn</td><td>KNN搜索算法对象 / KNN search algorithm object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>设置结果 / Setting result</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用不同的KNN算法 / Using different KNN algorithms</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">kdtree_t&lt;float&gt;</a> kdtree;</div>
+<div class="line">norm_extractor.set_knn(kdtree);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">toolbox::pcl::kdtree_generic_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:14</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ab60d1897cb2fc2e3a08da0bb0164fd24" name="ab60d1897cb2fc2e3a08da0bb0164fd24"></a>
@@ -689,6 +798,16 @@ template&lt;typename Derived , typename DataType , typename KNN &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>设置用于法向量估计的近邻数量 / Set number of neighbors for normal estimation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num_neighbors</td><td>近邻数量 / Number of neighbors </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>实际设置的近邻数量 / Actually set number of neighbors</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>近邻数量影响法向量估计的平滑程度，较大的值产生更平滑的法向量 / The number of neighbors affects the smoothness of normal estimation, larger values produce smoother normals </dd></dl>
 
 </div>
 </div>

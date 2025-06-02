@@ -5,5 +5,7 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="exported_class",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classexported__class.html",tooltip="Reports the name of the library."];
+  Node0 [id="Node000000",label="base_descriptor_extractor\l_t\< dsc3d_extractor_t\<\l DataType, kdtree_generic\l_t\< point_t\< DataType \>, toolbox\l::metrics::L2Metric\< DataType\l \> \> \>, DataType, dsc3d_signature\l_t\< DataType \> \>",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge2_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::dsc3d\l_extractor_t\< DataType,\l KNN \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html",tooltip=" "];
 }

@@ -7,5 +7,5 @@ digraph "toolbox::pcl::sift3d_keypoint_extractor_t&lt; DataType, KNN &gt;"
   rankdir="LR";
   Node1 [id="Node000001",label="toolbox::pcl::sift3d\l_keypoint_extractor_t\l\< DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="SIFT 3D (Scale-Invariant Feature Transform) 关键点提取器 / SIFT 3D (Scale-Invariant Feature Transform) keyp..."];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="toolbox::pcl::base\l_keypoint_extractor\l_t\< sift3d_keypoint_extractor\l_t\< DataType, KNN \>, DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html",tooltip=" "];
+  Node2 [id="Node000002",label="base_keypoint_extractor\l_t\< sift3d_keypoint_extractor\l_t\< DataType, kdtree_generic\l_t\<point_t\<DataType\>, toolbox\l::metrics::L2Metric\<DataType\>\>\l  \>, DataType, kdtree_generic_t\l\<point_t\<DataType\>, toolbox::metrics\l::L2Metric\<DataType\>\>  \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

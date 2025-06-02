@@ -7,5 +7,5 @@ digraph "toolbox::pcl::curvature_keypoint_extractor_t&lt; DataType, KNN &gt;"
   rankdir="LR";
   Node1 [id="Node000001",label="toolbox::pcl::curvature\l_keypoint_extractor_t\l\< DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="基于曲率的关键点提取器 / Curvature-based keypoint extractor"];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="toolbox::pcl::base\l_keypoint_extractor\l_t\< curvature_keypoint\l_extractor_t\< DataType,\l KNN \>, DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html",tooltip=" "];
+  Node2 [id="Node000002",label="base_keypoint_extractor\l_t\< curvature_keypoint\l_extractor_t\< DataType,\l kdtree_generic_t\<point\l_t\<DataType\>, toolbox::metrics\l::L2Metric\<DataType\>\>  \>, DataType,\l kdtree_generic_t\<point_t\<DataType\>\l, toolbox::metrics::L2Metric\<DataType\>\>  \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: 法向量提取 / Normal Extraction</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__norm.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">法向量提取 / Normal Extraction</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gac894ae211338e0c302670fcab7b334ae" id="r_gac894ae211338e0c302670fcab7b334ae"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gac894ae211338e0c302670fcab7b334ae"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__norm.html#gac894ae211338e0c302670fcab7b334ae">toolbox::pcl::create_normal_extractor</a> ()</td></tr>
+<tr class="memdesc:gac894ae211338e0c302670fcab7b334ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">法向量提取算法的选择指南 / Guide for choosing normal extraction algorithms  <br /></td></tr>
+<tr class="separator:gac894ae211338e0c302670fcab7b334ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e2c16e40b513f55467addbb7e396c8a" id="r_ga0e2c16e40b513f55467addbb7e396c8a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga0e2c16e40b513f55467addbb7e396c8a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__norm.html#ga0e2c16e40b513f55467addbb7e396c8a">toolbox::pcl::orient_normals_towards_viewpoint</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;normals, const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;viewpoint, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
+<tr class="memdesc:ga0e2c16e40b513f55467addbb7e396c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">法向量方向一致性处理 / Normal orientation consistency processing  <br /></td></tr>
+<tr class="separator:ga0e2c16e40b513f55467addbb7e396c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50fa284877b29bdff66b2e7c815b8def" id="r_ga50fa284877b29bdff66b2e7c815b8def"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ga50fa284877b29bdff66b2e7c815b8def"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__norm.html#ga50fa284877b29bdff66b2e7c815b8def">toolbox::pcl::validate_normals</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;normals)</td></tr>
+<tr class="memdesc:ga50fa284877b29bdff66b2e7c815b8def"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证法向量的有效性 / Validate normal validity  <br /></td></tr>
+<tr class="separator:ga50fa284877b29bdff66b2e7c815b8def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gac894ae211338e0c302670fcab7b334ae" name="gac894ae211338e0c302670fcab7b334ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac894ae211338e0c302670fcab7b334ae">&#9670;&#160;</a></span>create_normal_extractor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto toolbox::pcl::create_normal_extractor </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>法向量提取算法的选择指南 / Guide for choosing normal extraction algorithms </p>
+<p>当前实现：</p><ul>
+<li><a class="el" href="classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html" title="基于PCA的法向量提取器 / PCA-based normal extractor">pca_norm_extractor_t</a>: 基于PCA的法向量提取，最常用和稳定的方法 / PCA-based normal extraction, the most commonly used and stable method</li>
+</ul>
+<p>参数选择建议 / Parameter selection recommendations:</p><ul>
+<li>近邻数量：通常选择10-50个点，取决于点云密度和噪声水平 / Number of neighbors: typically 10-50 points, depending on point cloud density and noise level</li>
+<li>小的近邻数量：保留更多细节，但对噪声敏感 / Small number of neighbors: preserves more details but sensitive to noise</li>
+<li>大的近邻数量：更加平滑，但可能丢失细节 / Large number of neighbors: smoother but may lose details</li>
+</ul>
+<div class="fragment"><div class="line"><span class="comment">// 根据点云特性选择参数 / Choose parameters based on point cloud characteristics</span></div>
+<div class="line"><span class="keywordtype">size_t</span> num_neighbors;</div>
+<div class="line"><span class="keywordflow">if</span> (has_high_noise) {</div>
+<div class="line">    num_neighbors = 50;  <span class="comment">// 噪声较大时使用更多近邻 / Use more neighbors for high noise</span></div>
+<div class="line">} <span class="keywordflow">else</span> <span class="keywordflow">if</span> (need_fine_details) {</div>
+<div class="line">    num_neighbors = 10;  <span class="comment">// 需要细节时使用较少近邻 / Use fewer neighbors for fine details</span></div>
+<div class="line">} <span class="keywordflow">else</span> {</div>
+<div class="line">    num_neighbors = 30;  <span class="comment">// 一般情况下的默认值 / Default value for general cases</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><p>创建带有默认KNN的法向量提取器 / Create normal extractor with default KNN </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>PCA法向量提取器 / PCA normal extractor</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> norm_extractor = create_normal_extractor&lt;float&gt;();</div>
+<div class="line">norm_extractor-&gt;set_input(cloud);</div>
+<div class="line">norm_extractor-&gt;set_num_neighbors(30);</div>
+<div class="line"><span class="keyword">auto</span> normals = norm_extractor-&gt;extract();</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga0e2c16e40b513f55467addbb7e396c8a" name="ga0e2c16e40b513f55467addbb7e396c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e2c16e40b513f55467addbb7e396c8a">&#9670;&#160;</a></span>orient_normals_towards_viewpoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void toolbox::pcl::orient_normals_towards_viewpoint </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>normals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>viewpoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>法向量方向一致性处理 / Normal orientation consistency processing </p>
+<p>确保所有法向量指向一致的方向（如朝向视点或朝外） Ensures all normals point in a consistent direction (e.g., towards viewpoint or outward)</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">normals</td><td>法向量点云 / Normal point cloud </td></tr>
+    <tr><td class="paramname">viewpoint</td><td>视点位置 / Viewpoint position </td></tr>
+    <tr><td class="paramname">cloud</td><td>原始点云 / Original point cloud</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使法向量朝向视点 / Make normals point towards viewpoint</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1types_1_1point__t.html">point_t&lt;float&gt;</a> viewpoint = {0, 0, 0};  <span class="comment">// 相机位置 / Camera position</span></div>
+<div class="line"><a class="code hl_function" href="group__norm.html#ga0e2c16e40b513f55467addbb7e396c8a">orient_normals_towards_viewpoint</a>(normals, viewpoint, cloud);</div>
+<div class="ttc" id="agroup__norm_html_ga0e2c16e40b513f55467addbb7e396c8a"><div class="ttname"><a href="group__norm.html#ga0e2c16e40b513f55467addbb7e396c8a">toolbox::pcl::orient_normals_towards_viewpoint</a></div><div class="ttdeci">void orient_normals_towards_viewpoint(toolbox::types::point_cloud_t&lt; T &gt; &amp;normals, const point_t&lt; T &gt; &amp;viewpoint, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdoc">法向量方向一致性处理 / Normal orientation consistency processing</div><div class="ttdef"><b>Definition</b> norm.hpp:109</div></div>
+<div class="ttc" id="astructtoolbox_1_1types_1_1point__t_html"><div class="ttname"><a href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a></div><div class="ttdoc">3D点/向量模板类 / A 3D point/vector template class</div><div class="ttdef"><b>Definition</b> point.hpp:48</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga50fa284877b29bdff66b2e7c815b8def" name="ga50fa284877b29bdff66b2e7c815b8def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga50fa284877b29bdff66b2e7c815b8def">&#9670;&#160;</a></span>validate_normals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double toolbox::pcl::validate_normals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>normals</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>验证法向量的有效性 / Validate normal validity </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">normals</td><td>法向量点云 / Normal point cloud </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>有效法向量的比例 / Ratio of valid normals</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> validity_ratio = <a class="code hl_function" href="group__norm.html#ga50fa284877b29bdff66b2e7c815b8def">validate_normals</a>(normals);</div>
+<div class="line"><span class="keywordflow">if</span> (validity_ratio &lt; 0.9) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;警告：只有 / Warning: Only &quot;</span> &lt;&lt; validity_ratio * 100 </div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot;% 的法向量有效 / of normals are valid&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__norm_html_ga50fa284877b29bdff66b2e7c815b8def"><div class="ttname"><a href="group__norm.html#ga50fa284877b29bdff66b2e7c815b8def">toolbox::pcl::validate_normals</a></div><div class="ttdeci">double validate_normals(const toolbox::types::point_cloud_t&lt; T &gt; &amp;normals)</div><div class="ttdoc">验证法向量的有效性 / Validate normal validity</div><div class="ttdef"><b>Definition</b> norm.hpp:149</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

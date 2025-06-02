@@ -16,6 +16,9 @@ var classtoolbox_1_1pcl_1_1base__knn__generic__t =
     [ "radius_neighbors", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#abbd2212c8fd0523221abe9160bbacf76", null ],
     [ "set_input", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afe3eeb3e4b5943c3dc6a37e8b042a48b", null ],
     [ "set_input", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#afb54f4f22166504d463a3467693f130e", null ],
+    [ "set_input", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#ada68d153e808b19c527c187eaceb2edd", null ],
+    [ "set_input", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a2e470f1e5ef3bef5cc55bbfe264ddbf1", null ],
     [ "set_metric", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a977df6a2e9e1eba8d2543e229d43b5c1", null ],
-    [ "set_metric", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a537a922528b5b520b31d035d8c3e345d", null ]
+    [ "set_metric", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a537a922528b5b520b31d035d8c3e345d", null ],
+    [ "set_metric", "classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a84c6157798d838aefb461d86f1b0bf97", null ]
 ];

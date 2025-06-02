@@ -5,7 +5,7 @@ digraph "toolbox::pcl::pca_norm_extractor_t&lt; DataType, KNN &gt;"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node1 [id="Node000001",label="toolbox::pcl::pca_norm\l_extractor_t\< DataType,\l KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::pca_norm\l_extractor_t\< DataType,\l KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="基于PCA的法向量提取器 / PCA-based normal extractor"];
   Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="toolbox::pcl::base\l_norm_extractor_t\< pca\l_norm_extractor_t\< DataType,\l KNN \>, DataType, KNN \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__norm__extractor__t.html",tooltip=" "];
+  Node2 [id="Node000002",label="base_norm_extractor\l_t\< pca_norm_extractor\l_t\< DataType, kdtree_generic\l_t\<point_t\<DataType\>, toolbox\l::metrics::L2Metric\<DataType\>\l\>  \>, DataType, kdtree_generic\l_t\<point_t\<DataType\>, toolbox::\lmetrics::L2Metric\<DataType\>\>  \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",tooltip=" "];
 }

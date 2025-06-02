@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::io::sequential\l_policy_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1io_1_1sequential__policy__t.html",tooltip="顺序采样策略/Sequential sampling policy"];
+  Node0 [id="Node000000",label="toolbox::file::memory\l_mapped_file_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1file_1_1memory__mapped__file__t.html",tooltip="RAII wrapper for memory-mapped files. / 内存映射文件的 RAII 封装。"];
 }

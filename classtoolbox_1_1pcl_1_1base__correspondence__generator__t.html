@@ -1,0 +1,1470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::base_correspondence_generator_t&lt; Derived, DataType, Signature &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::base_correspondence_generator_t&lt; Derived, DataType, Signature &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>对应点生成器的基类（CRTP模式） / Base class for correspondence generators (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base__correspondence__generator_8hpp_source.html">base_correspondence_generator.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a9fb34972ff25a20956c64cb43d039bad" id="r_a9fb34972ff25a20956c64cb43d039bad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9fb34972ff25a20956c64cb43d039bad">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a9fb34972ff25a20956c64cb43d039bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8416667e292f4435f453be70a40ff21e" id="r_a8416667e292f4435f453be70a40ff21e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9fb34972ff25a20956c64cb43d039bad">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a8416667e292f4435f453be70a40ff21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67895eefc38e550b6c126844cac51a09" id="r_a67895eefc38e550b6c126844cac51a09"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> = std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt;</td></tr>
+<tr class="separator:a67895eefc38e550b6c126844cac51a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18b2702cb04c8035ccb747d1db144b42" id="r_a18b2702cb04c8035ccb747d1db144b42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> = std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt;</td></tr>
+<tr class="separator:a18b2702cb04c8035ccb747d1db144b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a8d4cce1a7b74ec7ebfcc3d47b9b56d19" id="r_a8d4cce1a7b74ec7ebfcc3d47b9b56d19"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8d4cce1a7b74ec7ebfcc3d47b9b56d19">base_correspondence_generator_t</a> ()=default</td></tr>
+<tr class="separator:a8d4cce1a7b74ec7ebfcc3d47b9b56d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af05f282eb9df628544af2228507f8745" id="r_af05f282eb9df628544af2228507f8745"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#af05f282eb9df628544af2228507f8745">~base_correspondence_generator_t</a> ()=default</td></tr>
+<tr class="separator:af05f282eb9df628544af2228507f8745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83f4354a0d431b8716e7b399cb173391" id="r_a83f4354a0d431b8716e7b399cb173391"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a83f4354a0d431b8716e7b399cb173391">base_correspondence_generator_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a83f4354a0d431b8716e7b399cb173391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac840c6a669a0ca6241d7f17926622a1f" id="r_ac840c6a669a0ca6241d7f17926622a1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac840c6a669a0ca6241d7f17926622a1f">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;)=delete</td></tr>
+<tr class="separator:ac840c6a669a0ca6241d7f17926622a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1115f6535c4db5936c03edbad507e74e" id="r_a1115f6535c4db5936c03edbad507e74e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a1115f6535c4db5936c03edbad507e74e">base_correspondence_generator_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a1115f6535c4db5936c03edbad507e74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc46c0247d2288a432ff9629e9e82f24" id="r_adc46c0247d2288a432ff9629e9e82f24"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#adc46c0247d2288a432ff9629e9e82f24">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:adc46c0247d2288a432ff9629e9e82f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39bfe5280ce732eeb1df94e67cf8ac29" id="r_a39bfe5280ce732eeb1df94e67cf8ac29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> &amp;src_cloud, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> &amp;src_descriptors, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> &amp;src_keypoint_indices)</td></tr>
+<tr class="memdesc:a39bfe5280ce732eeb1df94e67cf8ac29"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源数据 / Set source data  <br /></td></tr>
+<tr class="separator:a39bfe5280ce732eeb1df94e67cf8ac29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061000655b8d25aad0201fbcad2a754f" id="r_a061000655b8d25aad0201fbcad2a754f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> &amp;dst_cloud, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> &amp;dst_descriptors, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> &amp;dst_keypoint_indices)</td></tr>
+<tr class="memdesc:a061000655b8d25aad0201fbcad2a754f"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标数据 / Set destination data  <br /></td></tr>
+<tr class="separator:a061000655b8d25aad0201fbcad2a754f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f720990a4e646e99f9832867e8177c3" id="r_a2f720990a4e646e99f9832867e8177c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a> (float ratio)</td></tr>
+<tr class="memdesc:a2f720990a4e646e99f9832867e8177c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置比率测试阈值 / Set ratio test threshold  <br /></td></tr>
+<tr class="separator:a2f720990a4e646e99f9832867e8177c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a32c95736308323710a044dfb3a62b" id="r_ad9a32c95736308323710a044dfb3a62b"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad9a32c95736308323710a044dfb3a62b">get_ratio</a> () const</td></tr>
+<tr class="memdesc:ad9a32c95736308323710a044dfb3a62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取比率测试阈值 / Get ratio test threshold  <br /></td></tr>
+<tr class="separator:ad9a32c95736308323710a044dfb3a62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac078ce2b872b6730acd11b385961d10d" id="r_ac078ce2b872b6730acd11b385961d10d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a> (bool mutual_verification)</td></tr>
+<tr class="memdesc:ac078ce2b872b6730acd11b385961d10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启用双向验证 / Set whether to enable mutual verification  <br /></td></tr>
+<tr class="separator:ac078ce2b872b6730acd11b385961d10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2652db016327428bc94a8a209c7a0eee" id="r_a2652db016327428bc94a8a209c7a0eee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2652db016327428bc94a8a209c7a0eee">get_mutual_verification</a> () const</td></tr>
+<tr class="memdesc:a2652db016327428bc94a8a209c7a0eee"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否启用双向验证 / Get whether mutual verification is enabled  <br /></td></tr>
+<tr class="separator:a2652db016327428bc94a8a209c7a0eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a0310800a7a68cf6f29132139b179c1" id="r_a6a0310800a7a68cf6f29132139b179c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a6a0310800a7a68cf6f29132139b179c1">set_distance_threshold</a> (float distance_threshold)</td></tr>
+<tr class="memdesc:a6a0310800a7a68cf6f29132139b179c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置距离阈值 / Set distance threshold  <br /></td></tr>
+<tr class="separator:a6a0310800a7a68cf6f29132139b179c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122054a0380730c83311b99ced9327ee" id="r_a122054a0380730c83311b99ced9327ee"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a122054a0380730c83311b99ced9327ee">get_distance_threshold</a> () const</td></tr>
+<tr class="memdesc:a122054a0380730c83311b99ced9327ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取距离阈值 / Get distance threshold  <br /></td></tr>
+<tr class="separator:a122054a0380730c83311b99ced9327ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29fea47470b1c915c900e2df9732fa5" id="r_ab29fea47470b1c915c900e2df9732fa5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a> (std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences)</td></tr>
+<tr class="memdesc:ab29fea47470b1c915c900e2df9732fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算对应关系 / Compute correspondences  <br /></td></tr>
+<tr class="separator:ab29fea47470b1c915c900e2df9732fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f88a246d489ed217610472699c25dc" id="r_a85f88a246d489ed217610472699c25dc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a85f88a246d489ed217610472699c25dc">get_statistics</a> () const</td></tr>
+<tr class="memdesc:a85f88a246d489ed217610472699c25dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最后一次计算的统计信息 / Get statistics from last computation  <br /></td></tr>
+<tr class="separator:a85f88a246d489ed217610472699c25dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a65c90a45f2812bab7cc9aad8df8b2eaf" id="r_a65c90a45f2812bab7cc9aad8df8b2eaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a65c90a45f2812bab7cc9aad8df8b2eaf">validate_input</a> () const</td></tr>
+<tr class="memdesc:a65c90a45f2812bab7cc9aad8df8b2eaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入数据的有效性 / Validate input data  <br /></td></tr>
+<tr class="separator:a65c90a45f2812bab7cc9aad8df8b2eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dedf835f324f2d746aca519dfe7ad3a" id="r_a4dedf835f324f2d746aca519dfe7ad3a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a4dedf835f324f2d746aca519dfe7ad3a">apply_ratio_test</a> (const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;candidates) const</td></tr>
+<tr class="memdesc:a4dedf835f324f2d746aca519dfe7ad3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">应用比率测试 / Apply ratio test  <br /></td></tr>
+<tr class="separator:a4dedf835f324f2d746aca519dfe7ad3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd9c2ec3eda9d66ac01b8f2acfa0644b" id="r_acd9c2ec3eda9d66ac01b8f2acfa0644b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acd9c2ec3eda9d66ac01b8f2acfa0644b">apply_distance_threshold</a> (std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences) const</td></tr>
+<tr class="memdesc:acd9c2ec3eda9d66ac01b8f2acfa0644b"><td class="mdescLeft">&#160;</td><td class="mdescRight">应用距离阈值过滤 / Apply distance threshold filtering  <br /></td></tr>
+<tr class="separator:acd9c2ec3eda9d66ac01b8f2acfa0644b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb11228026f5fd3db172a5a035fc10cf" id="r_afb11228026f5fd3db172a5a035fc10cf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#afb11228026f5fd3db172a5a035fc10cf">compute_geometric_consistency</a> (const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;correspondences) const</td></tr>
+<tr class="memdesc:afb11228026f5fd3db172a5a035fc10cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算几何一致性分数（简单验证） / Compute geometric consistency score (simple verification)  <br /></td></tr>
+<tr class="separator:afb11228026f5fd3db172a5a035fc10cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae1a5a751f0fc9ad448df53cfd4aa5a8" id="r_aae1a5a751f0fc9ad448df53cfd4aa5a8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#aae1a5a751f0fc9ad448df53cfd4aa5a8">reset_statistics</a> ()</td></tr>
+<tr class="memdesc:aae1a5a751f0fc9ad448df53cfd4aa5a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">重置统计信息 / Reset statistics  <br /></td></tr>
+<tr class="separator:aae1a5a751f0fc9ad448df53cfd4aa5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a5e0d8b09bd0ec3dfd9a5f3c336997c77" id="r_a5e0d8b09bd0ec3dfd9a5f3c336997c77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a5e0d8b09bd0ec3dfd9a5f3c336997c77">m_src_cloud</a></td></tr>
+<tr class="separator:a5e0d8b09bd0ec3dfd9a5f3c336997c77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a845fe0d09cbdb99d74de42de0f6c5bdb" id="r_a845fe0d09cbdb99d74de42de0f6c5bdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a845fe0d09cbdb99d74de42de0f6c5bdb">m_dst_cloud</a></td></tr>
+<tr class="separator:a845fe0d09cbdb99d74de42de0f6c5bdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2877dc1e2a1889034f4a5f221cd0a973" id="r_a2877dc1e2a1889034f4a5f221cd0a973"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2877dc1e2a1889034f4a5f221cd0a973">m_src_descriptors</a></td></tr>
+<tr class="separator:a2877dc1e2a1889034f4a5f221cd0a973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9148440ab19cb6527400fd1399f4379a" id="r_a9148440ab19cb6527400fd1399f4379a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9148440ab19cb6527400fd1399f4379a">m_dst_descriptors</a></td></tr>
+<tr class="separator:a9148440ab19cb6527400fd1399f4379a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad41d6bc06e2a8e1cda6cb797ea07cf20" id="r_ad41d6bc06e2a8e1cda6cb797ea07cf20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad41d6bc06e2a8e1cda6cb797ea07cf20">m_src_keypoint_indices</a></td></tr>
+<tr class="separator:ad41d6bc06e2a8e1cda6cb797ea07cf20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d01fcb0a5312feff69377288420feee" id="r_a3d01fcb0a5312feff69377288420feee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3d01fcb0a5312feff69377288420feee">m_dst_keypoint_indices</a></td></tr>
+<tr class="separator:a3d01fcb0a5312feff69377288420feee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74f0a34e2e6240055657fff0271e07fc" id="r_a74f0a34e2e6240055657fff0271e07fc"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a74f0a34e2e6240055657fff0271e07fc">m_ratio</a> = 0.8F</td></tr>
+<tr class="memdesc:a74f0a34e2e6240055657fff0271e07fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">比率测试阈值 / Ratio test threshold  <br /></td></tr>
+<tr class="separator:a74f0a34e2e6240055657fff0271e07fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb2d4bbeda6490d6630a516065300e11" id="r_acb2d4bbeda6490d6630a516065300e11"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#acb2d4bbeda6490d6630a516065300e11">m_distance_threshold</a> = std::numeric_limits&lt;float&gt;::max()</td></tr>
+<tr class="memdesc:acb2d4bbeda6490d6630a516065300e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">距离阈值 / Distance threshold  <br /></td></tr>
+<tr class="separator:acb2d4bbeda6490d6630a516065300e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c71eb8b9d84f032ab08f67b276111d" id="r_ad3c71eb8b9d84f032ab08f67b276111d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ad3c71eb8b9d84f032ab08f67b276111d">m_mutual_verification</a> = true</td></tr>
+<tr class="memdesc:ad3c71eb8b9d84f032ab08f67b276111d"><td class="mdescLeft">&#160;</td><td class="mdescRight">是否启用双向验证 / Whether to enable mutual verification  <br /></td></tr>
+<tr class="separator:ad3c71eb8b9d84f032ab08f67b276111d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b57c2085b556f9c9fb569c9fcfbdb1a" id="r_a8b57c2085b556f9c9fb569c9fcfbdb1a"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8b57c2085b556f9c9fb569c9fcfbdb1a">m_total_candidates</a> = 0</td></tr>
+<tr class="separator:a8b57c2085b556f9c9fb569c9fcfbdb1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a464b22951c167114760f8bb22d45f8" id="r_a3a464b22951c167114760f8bb22d45f8"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a3a464b22951c167114760f8bb22d45f8">m_ratio_test_passed</a> = 0</td></tr>
+<tr class="separator:a3a464b22951c167114760f8bb22d45f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f5a930c045676ad1413731591cb24f4" id="r_a2f5a930c045676ad1413731591cb24f4"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f5a930c045676ad1413731591cb24f4">m_mutual_test_passed</a> = 0</td></tr>
+<tr class="separator:a2f5a930c045676ad1413731591cb24f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81756d8fa87e734aa9a0e6ba567c123f" id="r_a81756d8fa87e734aa9a0e6ba567c123f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a81756d8fa87e734aa9a0e6ba567c123f">m_distance_test_passed</a> = 0</td></tr>
+<tr class="separator:a81756d8fa87e734aa9a0e6ba567c123f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived, typename DataType, typename Signature&gt;<br />
+class toolbox::pcl::base_correspondence_generator_t&lt; Derived, DataType, Signature &gt;</div><p>对应点生成器的基类（CRTP模式） / Base class for correspondence generators (CRTP pattern) </p>
+<p>该类定义了所有对应点生成算法的通用接口，使用CRTP模式实现静态多态。 This class defines the common interface for all correspondence generation algorithms, using CRTP pattern for static polymorphism.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生类类型 / Derived class type </td></tr>
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double) </td></tr>
+    <tr><td class="paramname">Signature</td><td>描述子签名类型 / Descriptor signature type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 派生类示例 / Derived class example</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature&gt;</div>
+<div class="line"><span class="keyword">class </span>my_correspondence_generator_t </div>
+<div class="line">    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&lt;</div>
+<div class="line">        my_correspondence_generator_t&lt;DataType, Signature&gt;,</div>
+<div class="line">        DataType, Signature&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> compute_impl(std::vector&lt;correspondence_t&gt;&amp; correspondences) {</div>
+<div class="line">        <span class="comment">// 实现具体的对应点生成算法 / Implement specific correspondence generation algorithm</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a></div><div class="ttdoc">对应点生成器的基类（CRTP模式） / Base class for correspondence generators (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:57</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a18b2702cb04c8035ccb747d1db144b42" name="a18b2702cb04c8035ccb747d1db144b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18b2702cb04c8035ccb747d1db144b42">&#9670;&#160;</a></span>keypoint_indices_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::keypoint_indices_ptr =  std::shared_ptr&lt;std::vector&lt;std::size_t&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9fb34972ff25a20956c64cb43d039bad" name="a9fb34972ff25a20956c64cb43d039bad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb34972ff25a20956c64cb43d039bad">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8416667e292f4435f453be70a40ff21e" name="a8416667e292f4435f453be70a40ff21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8416667e292f4435f453be70a40ff21e">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a9fb34972ff25a20956c64cb43d039bad">point_cloud</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67895eefc38e550b6c126844cac51a09" name="a67895eefc38e550b6c126844cac51a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67895eefc38e550b6c126844cac51a09">&#9670;&#160;</a></span>signatures_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::signatures_ptr =  std::shared_ptr&lt;std::vector&lt;Signature&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8d4cce1a7b74ec7ebfcc3d47b9b56d19" name="a8d4cce1a7b74ec7ebfcc3d47b9b56d19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d4cce1a7b74ec7ebfcc3d47b9b56d19">&#9670;&#160;</a></span>base_correspondence_generator_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::base_correspondence_generator_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af05f282eb9df628544af2228507f8745" name="af05f282eb9df628544af2228507f8745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af05f282eb9df628544af2228507f8745">&#9670;&#160;</a></span>~base_correspondence_generator_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83f4354a0d431b8716e7b399cb173391" name="a83f4354a0d431b8716e7b399cb173391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83f4354a0d431b8716e7b399cb173391">&#9670;&#160;</a></span>base_correspondence_generator_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::base_correspondence_generator_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1115f6535c4db5936c03edbad507e74e" name="a1115f6535c4db5936c03edbad507e74e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1115f6535c4db5936c03edbad507e74e">&#9670;&#160;</a></span>base_correspondence_generator_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::base_correspondence_generator_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd9c2ec3eda9d66ac01b8f2acfa0644b" name="acd9c2ec3eda9d66ac01b8f2acfa0644b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd9c2ec3eda9d66ac01b8f2acfa0644b">&#9670;&#160;</a></span>apply_distance_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::apply_distance_threshold </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>应用距离阈值过滤 / Apply distance threshold filtering </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>[in/out] 对应关系 / Correspondences </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4dedf835f324f2d746aca519dfe7ad3a" name="a4dedf835f324f2d746aca519dfe7ad3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dedf835f324f2d746aca519dfe7ad3a">&#9670;&#160;</a></span>apply_ratio_test()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::apply_ratio_test </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>candidates</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>应用比率测试 / Apply ratio test </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">candidates</td><td>候选对应关系 / Candidate correspondences </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否通过测试 / Whether the test is passed </dd></dl>
+
+</div>
+</div>
+<a id="ab29fea47470b1c915c900e2df9732fa5" name="ab29fea47470b1c915c900e2df9732fa5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29fea47470b1c915c900e2df9732fa5">&#9670;&#160;</a></span>compute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::compute </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算对应关系 / Compute correspondences </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>[out] 输出的对应关系 / Output correspondences </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afb11228026f5fd3db172a5a035fc10cf" name="afb11228026f5fd3db172a5a035fc10cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb11228026f5fd3db172a5a035fc10cf">&#9670;&#160;</a></span>compute_geometric_consistency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::compute_geometric_consistency </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算几何一致性分数（简单验证） / Compute geometric consistency score (simple verification) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">correspondences</td><td>对应关系 / Correspondences </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>一致性分数 / Consistency score </dd></dl>
+
+</div>
+</div>
+<a id="a122054a0380730c83311b99ced9327ee" name="a122054a0380730c83311b99ced9327ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122054a0380730c83311b99ced9327ee">&#9670;&#160;</a></span>get_distance_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::get_distance_threshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取距离阈值 / Get distance threshold </p>
+<dl class="section return"><dt>Returns</dt><dd>距离阈值 / Distance threshold </dd></dl>
+
+</div>
+</div>
+<a id="a2652db016327428bc94a8a209c7a0eee" name="a2652db016327428bc94a8a209c7a0eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2652db016327428bc94a8a209c7a0eee">&#9670;&#160;</a></span>get_mutual_verification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::get_mutual_verification </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否启用双向验证 / Get whether mutual verification is enabled </p>
+<dl class="section return"><dt>Returns</dt><dd>是否启用双向验证 / Whether mutual verification is enabled </dd></dl>
+
+</div>
+</div>
+<a id="ad9a32c95736308323710a044dfb3a62b" name="ad9a32c95736308323710a044dfb3a62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a32c95736308323710a044dfb3a62b">&#9670;&#160;</a></span>get_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::get_ratio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取比率测试阈值 / Get ratio test threshold </p>
+<dl class="section return"><dt>Returns</dt><dd>比率阈值 / Ratio threshold </dd></dl>
+
+</div>
+</div>
+<a id="a85f88a246d489ed217610472699c25dc" name="a85f88a246d489ed217610472699c25dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f88a246d489ed217610472699c25dc">&#9670;&#160;</a></span>get_statistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::get_statistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取最后一次计算的统计信息 / Get statistics from last computation </p>
+<dl class="section return"><dt>Returns</dt><dd>统计信息字符串 / Statistics string </dd></dl>
+
+</div>
+</div>
+<a id="adc46c0247d2288a432ff9629e9e82f24" name="adc46c0247d2288a432ff9629e9e82f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc46c0247d2288a432ff9629e9e82f24">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac840c6a669a0ca6241d7f17926622a1f" name="ac840c6a669a0ca6241d7f17926622a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac840c6a669a0ca6241d7f17926622a1f">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae1a5a751f0fc9ad448df53cfd4aa5a8" name="aae1a5a751f0fc9ad448df53cfd4aa5a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1a5a751f0fc9ad448df53cfd4aa5a8">&#9670;&#160;</a></span>reset_statistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::reset_statistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>重置统计信息 / Reset statistics </p>
+
+</div>
+</div>
+<a id="a061000655b8d25aad0201fbcad2a754f" name="a061000655b8d25aad0201fbcad2a754f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061000655b8d25aad0201fbcad2a754f">&#9670;&#160;</a></span>set_destination()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::set_destination </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>dst_keypoint_indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置目标数据 / Set destination data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst_cloud</td><td>目标点云 / Destination point cloud </td></tr>
+    <tr><td class="paramname">dst_descriptors</td><td>目标描述子 / Destination descriptors </td></tr>
+    <tr><td class="paramname">dst_keypoint_indices</td><td>目标关键点索引 / Destination keypoint indices </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6a0310800a7a68cf6f29132139b179c1" name="a6a0310800a7a68cf6f29132139b179c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a0310800a7a68cf6f29132139b179c1">&#9670;&#160;</a></span>set_distance_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::set_distance_threshold </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>distance_threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置距离阈值 / Set distance threshold </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">distance_threshold</td><td>最大允许的描述子距离 / Maximum allowed descriptor distance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac078ce2b872b6730acd11b385961d10d" name="ac078ce2b872b6730acd11b385961d10d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac078ce2b872b6730acd11b385961d10d">&#9670;&#160;</a></span>set_mutual_verification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::set_mutual_verification </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mutual_verification</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否启用双向验证 / Set whether to enable mutual verification </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mutual_verification</td><td>true启用，false禁用 / true to enable, false to disable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2f720990a4e646e99f9832867e8177c3" name="a2f720990a4e646e99f9832867e8177c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f720990a4e646e99f9832867e8177c3">&#9670;&#160;</a></span>set_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::set_ratio </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>ratio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置比率测试阈值 / Set ratio test threshold </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ratio</td><td>比率阈值（通常0.7-0.8） / Ratio threshold (typically 0.7-0.8) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a39bfe5280ce732eeb1df94e67cf8ac29" name="a39bfe5280ce732eeb1df94e67cf8ac29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39bfe5280ce732eeb1df94e67cf8ac29">&#9670;&#160;</a></span>set_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::set_source </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>src_cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>src_descriptors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>src_keypoint_indices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置源数据 / Set source data </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src_cloud</td><td>源点云 / Source point cloud </td></tr>
+    <tr><td class="paramname">src_descriptors</td><td>源描述子 / Source descriptors </td></tr>
+    <tr><td class="paramname">src_keypoint_indices</td><td>源关键点索引 / Source keypoint indices </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a65c90a45f2812bab7cc9aad8df8b2eaf" name="a65c90a45f2812bab7cc9aad8df8b2eaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65c90a45f2812bab7cc9aad8df8b2eaf">&#9670;&#160;</a></span>validate_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::validate_input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>验证输入数据的有效性 / Validate input data </p>
+<dl class="section return"><dt>Returns</dt><dd>true表示有效，false表示无效 / true if valid, false if invalid </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a81756d8fa87e734aa9a0e6ba567c123f" name="a81756d8fa87e734aa9a0e6ba567c123f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81756d8fa87e734aa9a0e6ba567c123f">&#9670;&#160;</a></span>m_distance_test_passed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_distance_test_passed = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb2d4bbeda6490d6630a516065300e11" name="acb2d4bbeda6490d6630a516065300e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb2d4bbeda6490d6630a516065300e11">&#9670;&#160;</a></span>m_distance_threshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_distance_threshold = std::numeric_limits&lt;float&gt;::max()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>距离阈值 / Distance threshold </p>
+
+</div>
+</div>
+<a id="a845fe0d09cbdb99d74de42de0f6c5bdb" name="a845fe0d09cbdb99d74de42de0f6c5bdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845fe0d09cbdb99d74de42de0f6c5bdb">&#9670;&#160;</a></span>m_dst_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_dst_cloud</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9148440ab19cb6527400fd1399f4379a" name="a9148440ab19cb6527400fd1399f4379a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9148440ab19cb6527400fd1399f4379a">&#9670;&#160;</a></span>m_dst_descriptors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_dst_descriptors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d01fcb0a5312feff69377288420feee" name="a3d01fcb0a5312feff69377288420feee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d01fcb0a5312feff69377288420feee">&#9670;&#160;</a></span>m_dst_keypoint_indices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_dst_keypoint_indices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f5a930c045676ad1413731591cb24f4" name="a2f5a930c045676ad1413731591cb24f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f5a930c045676ad1413731591cb24f4">&#9670;&#160;</a></span>m_mutual_test_passed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_mutual_test_passed = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3c71eb8b9d84f032ab08f67b276111d" name="ad3c71eb8b9d84f032ab08f67b276111d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c71eb8b9d84f032ab08f67b276111d">&#9670;&#160;</a></span>m_mutual_verification</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_mutual_verification = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>是否启用双向验证 / Whether to enable mutual verification </p>
+
+</div>
+</div>
+<a id="a74f0a34e2e6240055657fff0271e07fc" name="a74f0a34e2e6240055657fff0271e07fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74f0a34e2e6240055657fff0271e07fc">&#9670;&#160;</a></span>m_ratio</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_ratio = 0.8F</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>比率测试阈值 / Ratio test threshold </p>
+
+</div>
+</div>
+<a id="a3a464b22951c167114760f8bb22d45f8" name="a3a464b22951c167114760f8bb22d45f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a464b22951c167114760f8bb22d45f8">&#9670;&#160;</a></span>m_ratio_test_passed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_ratio_test_passed = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e0d8b09bd0ec3dfd9a5f3c336997c77" name="a5e0d8b09bd0ec3dfd9a5f3c336997c77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e0d8b09bd0ec3dfd9a5f3c336997c77">&#9670;&#160;</a></span>m_src_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a8416667e292f4435f453be70a40ff21e">point_cloud_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_src_cloud</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2877dc1e2a1889034f4a5f221cd0a973" name="a2877dc1e2a1889034f4a5f221cd0a973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2877dc1e2a1889034f4a5f221cd0a973">&#9670;&#160;</a></span>m_src_descriptors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09">signatures_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_src_descriptors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad41d6bc06e2a8e1cda6cb797ea07cf20" name="ad41d6bc06e2a8e1cda6cb797ea07cf20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad41d6bc06e2a8e1cda6cb797ea07cf20">&#9670;&#160;</a></span>m_src_keypoint_indices</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a18b2702cb04c8035ccb747d1db144b42">keypoint_indices_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_src_keypoint_indices</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b57c2085b556f9c9fb569c9fcfbdb1a" name="a8b57c2085b556f9c9fb569c9fcfbdb1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b57c2085b556f9c9fb569c9fcfbdb1a">&#9670;&#160;</a></span>m_total_candidates</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType , typename Signature &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">toolbox::pcl::base_correspondence_generator_t</a>&lt; Derived, DataType, Signature &gt;::m_total_candidates = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/pcl/correspondence/<a class="el" href="base__correspondence__generator_8hpp_source.html">base_correspondence_generator.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html">base_correspondence_generator_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

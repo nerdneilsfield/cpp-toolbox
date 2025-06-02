@@ -238,7 +238,7 @@ Public Attributes</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DataType , typename KNN &gt; </div>
+template&lt;typename DataType , typename KNN  = kdtree_generic_t&lt;point_t&lt;DataType&gt;, toolbox::metrics::L2Metric&lt;DataType&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a774d57facd7e9e3b654bb93667dc8710">point_cloud</a> <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::loam_result::cloud</td>
@@ -254,7 +254,7 @@ template&lt;typename DataType , typename KNN &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename DataType , typename KNN &gt; </div>
+template&lt;typename DataType , typename KNN  = kdtree_generic_t&lt;point_t&lt;DataType&gt;, toolbox::metrics::L2Metric&lt;DataType&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::vector&lt;uint8_t&gt; <a class="el" href="classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html">toolbox::pcl::loam_feature_extractor_t</a>&lt; DataType, KNN &gt;::loam_result::labels</td>

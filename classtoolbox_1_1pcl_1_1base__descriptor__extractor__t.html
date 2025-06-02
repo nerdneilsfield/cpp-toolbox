@@ -222,6 +222,9 @@ $(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__descripto
 </div><!--header-->
 <div class="contents">
 
+<p>描述子提取器的基类（CRTP模式） / Base class for descriptor extractors (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="base__descriptor__extractor_8hpp_source.html">base_descriptor_extractor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -239,13 +242,50 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a520c9387385fff36cfb5a1410391d2a4" id="r_a520c9387385fff36cfb5a1410391d2a4"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#a520c9387385fff36cfb5a1410391d2a4">~base_descriptor_extractor_t</a> ()=default</td></tr>
 <tr class="separator:a520c9387385fff36cfb5a1410391d2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab18819394fa2445328c3bf4bf43e9c5f" id="r_ab18819394fa2445328c3bf4bf43e9c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#ab18819394fa2445328c3bf4bf43e9c5f">enable_parallel</a> (bool enable)</td></tr>
+<tr class="memdesc:ab18819394fa2445328c3bf4bf43e9c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用或禁用并行计算 / Enable or disable parallel computation  <br /></td></tr>
 <tr class="separator:ab18819394fa2445328c3bf4bf43e9c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acedecd140c8c56c5535dc5e9c8a740f1" id="r_acedecd140c8c56c5535dc5e9c8a740f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#acedecd140c8c56c5535dc5e9c8a740f1">compute</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::vector&lt; Signature &gt; &amp;descriptors)</td></tr>
+<tr class="memdesc:acedecd140c8c56c5535dc5e9c8a740f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算指定关键点的描述子 / Compute descriptors at specified keypoints  <br /></td></tr>
 <tr class="separator:acedecd140c8c56c5535dc5e9c8a740f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a44984fce54072e4fecbfa6035cb621c8" id="r_a44984fce54072e4fecbfa6035cb621c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html#a44984fce54072e4fecbfa6035cb621c8">compute</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &amp;cloud, const std::vector&lt; std::size_t &gt; &amp;keypoint_indices, std::unique_ptr&lt; std::vector&lt; Signature &gt; &gt; descriptors)</td></tr>
+<tr class="memdesc:a44984fce54072e4fecbfa6035cb621c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算指定关键点的描述子（智能指针版本） / Compute descriptors at specified keypoints (smart pointer version)  <br /></td></tr>
 <tr class="separator:a44984fce54072e4fecbfa6035cb621c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Derived, typename DataType, typename Signature&gt;<br />
+class toolbox::pcl::base_descriptor_extractor_t&lt; Derived, DataType, Signature &gt;</div><p>描述子提取器的基类（CRTP模式） / Base class for descriptor extractors (CRTP pattern) </p>
+<p>该类定义了所有描述子提取算法的通用接口。描述子是用于描述点云局部特征的向量， 常用于物体识别、配准、分类等任务。 This class defines the common interface for all descriptor extraction algorithms. Descriptors are vectors that describe local features of point clouds, commonly used for object recognition, registration, classification, and other tasks.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生的提取器类型 / Derived extractor type </td></tr>
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double) </td></tr>
+    <tr><td class="paramname">Signature</td><td>描述子签名类型 / Descriptor signature type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用描述子提取器的示例 / Example of using descriptor extractor</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1fpfh__extractor__t.html">fpfh_extractor_t&lt;float&gt;</a> extractor;</div>
+<div class="line">extractor.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1fpfh__extractor__t.html#af9a976e664f4f895da41baddeac94561">set_search_radius</a>(0.05f);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 在关键点处计算描述子 / Compute descriptors at keypoints</span></div>
+<div class="line">std::vector&lt;fpfh_signature_t&lt;float&gt;&gt; descriptors;</div>
+<div class="line">extractor.compute(cloud, keypoint_indices, descriptors);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用描述子进行匹配 / Use descriptors for matching</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; descriptors.size(); ++i) {</div>
+<div class="line">    <span class="keywordtype">float</span> min_dist = std::numeric_limits&lt;float&gt;::max();</div>
+<div class="line">    <span class="keywordtype">size_t</span> best_match = 0;</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; target_descriptors.size(); ++j) {</div>
+<div class="line">        <span class="keywordtype">float</span> dist = descriptors[i].distance(target_descriptors[j]);</div>
+<div class="line">        <span class="keywordflow">if</span> (dist &lt; min_dist) {</div>
+<div class="line">            min_dist = dist;</div>
+<div class="line">            best_match = j;</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1fpfh__extractor__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1fpfh__extractor__t.html">toolbox::pcl::fpfh_extractor_t</a></div><div class="ttdoc">FPFH (Fast Point Feature Histogram) descriptor extractor.</div><div class="ttdef"><b>Definition</b> fpfh_extractor.hpp:89</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1fpfh__extractor__t_html_af9a976e664f4f895da41baddeac94561"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1fpfh__extractor__t.html#af9a976e664f4f895da41baddeac94561">toolbox::pcl::fpfh_extractor_t::set_search_radius</a></div><div class="ttdeci">std::size_t set_search_radius(data_type radius)</div><div class="ttdoc">Set the search radius for neighbor search.</div><div class="ttdef"><b>Definition</b> fpfh_extractor_impl.hpp:38</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7c2ff25cb6076db8499bfc735da8b095" name="a7c2ff25cb6076db8499bfc735da8b095"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c2ff25cb6076db8499bfc735da8b095">&#9670;&#160;</a></span>base_descriptor_extractor_t() <span class="overload">[1/3]</span></h2>
 
@@ -399,6 +439,16 @@ template&lt;class Derived , typename DataType , typename Signature &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>计算指定关键点的描述子（智能指针版本） / Compute descriptors at specified keypoints (smart pointer version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+    <tr><td class="paramname">keypoint_indices</td><td>关键点索引列表 / List of keypoint indices </td></tr>
+    <tr><td class="paramname">descriptors</td><td>[out] 输出描述子向量的智能指针 / Smart pointer to output descriptor vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="acedecd140c8c56c5535dc5e9c8a740f1" name="acedecd140c8c56c5535dc5e9c8a740f1"></a>
@@ -443,6 +493,23 @@ template&lt;class Derived , typename DataType , typename Signature &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>计算指定关键点的描述子 / Compute descriptors at specified keypoints </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+    <tr><td class="paramname">keypoint_indices</td><td>关键点索引列表 / List of keypoint indices </td></tr>
+    <tr><td class="paramname">descriptors</td><td>[out] 输出描述子向量 / Output descriptor vector</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 计算所有关键点的描述子 / Compute descriptors for all keypoints</span></div>
+<div class="line">std::vector&lt;size_t&gt; keypoint_indices = detect_keypoints(cloud);</div>
+<div class="line">std::vector&lt;fpfh_signature_t&lt;float&gt;&gt; descriptors;</div>
+<div class="line">extractor.compute(cloud, keypoint_indices, descriptors);</div>
+<div class="line"> </div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;计算了 / Computed &quot;</span> &lt;&lt; descriptors.size() </div>
+<div class="line">          &lt;&lt; <span class="stringliteral">&quot; 个描述子 / descriptors&quot;</span> &lt;&lt; std::endl;</div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ab18819394fa2445328c3bf4bf43e9c5f" name="ab18819394fa2445328c3bf4bf43e9c5f"></a>
@@ -470,6 +537,14 @@ template&lt;class Derived , typename DataType , typename Signature &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>启用或禁用并行计算 / Enable or disable parallel computation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>true启用并行，false禁用 / true to enable parallel, false to disable </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
