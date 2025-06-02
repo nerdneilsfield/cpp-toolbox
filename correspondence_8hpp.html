@@ -217,6 +217,7 @@ $(document).ready(function(){initNavTree('correspondence_8hpp.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">correspondence.hpp File Reference</div></div>
 </div><!--header-->
@@ -227,7 +228,7 @@ $(document).ready(function(){initNavTree('correspondence_8hpp.html',''); initRes
 <div class="textblock"><code>#include &lt;<a class="el" href="base__correspondence__generator_8hpp_source.html">cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="knn__correspondence__generator_8hpp_source.html">cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="brute__force__correspondence__generator_8hpp_source.html">cpp-toolbox/pcl/correspondence/brute_force_correspondence_generator.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="correspondence__generator_8hpp_source.html">cpp-toolbox/pcl/correspondence/correspondence_generator.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -244,6 +245,11 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacetoolbox_1_1pcl" id="r_namespacetoolbox_1_1pcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a28d4d51a64e29b87c59c10f86615f4bf" id="r_a28d4d51a64e29b87c59c10f86615f4bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="correspondence_8hpp.html#a28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td></tr>
+<tr class="separator:a28d4d51a64e29b87c59c10f86615f4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -291,8 +297,23 @@ Functions</h2></td></tr>
 <div class="line"><span class="comment">// 使用对应关系进行配准 / Use correspondences for registration</span></div>
 <div class="line"><span class="keyword">auto</span> transformation = estimate_transformation(correspondences);</div>
 <div class="ttc" id="acorrespondence_8hpp_html"><div class="ttname"><a href="correspondence_8hpp.html">correspondence.hpp</a></div><div class="ttdoc">对应点生成算法统一导出文件 / Unified export file for correspondence generation algorithms</div></div>
-<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:14</div></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a28d4d51a64e29b87c59c10f86615f4bf" name="a28d4d51a64e29b87c59c10f86615f4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d4d51a64e29b87c59c10f86615f4bf">&#9670;&#160;</a></span>LOG_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

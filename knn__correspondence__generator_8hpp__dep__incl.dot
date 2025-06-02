@@ -8,6 +8,5 @@ digraph "src/include/cpp-toolbox/pcl/correspondence/knn_correspondence_generator
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="src/include/cpp-toolbox\l/pcl/correspondence/correspondence.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$correspondence_8hpp.html",tooltip="对应点生成算法统一导出文件 / Unified export file for correspondence generation algorithms"];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="src/include/cpp-toolbox\l/pcl/correspondence/correspondence\l_generator.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$correspondence__generator_8hpp.html",tooltip="对应点生成器的向后兼容别名 / Backward compatibility aliases for correspondence generators"];
-  Node3 -> Node2 [id="edge3_Node000003_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="src/include/cpp-toolbox\l/pcl/correspondence/correspondence\l_generator.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$correspondence__generator_8hpp.html",tooltip="向后兼容的别名文件 / Backward compatibility alias file"];
 }

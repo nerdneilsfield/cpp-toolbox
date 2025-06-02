@@ -217,19 +217,20 @@ $(document).ready(function(){initNavTree('base__correspondence__generator_8hpp.h
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">base_correspondence_generator.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;sstream&gt;</code><br />
-<code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;algorithm&gt;</code><br />
 <code>#include &lt;limits&gt;</code><br />
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;<a class="el" href="point_8hpp_source.html">cpp-toolbox/types/point.hpp</a>&gt;</code><br />
 <code>#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for base_correspondence_generator.hpp:</div>
 <div class="dyncontent">
@@ -258,7 +259,43 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacetoolbox_1_1pcl" id="r_namespacetoolbox_1_1pcl"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a869e13d38a14388c77018138eb480ad5" id="r_a869e13d38a14388c77018138eb480ad5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__correspondence__generator_8hpp.html#a869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td></tr>
+<tr class="separator:a869e13d38a14388c77018138eb480ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b694972a4957493602ba1e7d3c5925" id="r_ad9b694972a4957493602ba1e7d3c5925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="base__correspondence__generator_8hpp.html#ad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td></tr>
+<tr class="separator:ad9b694972a4957493602ba1e7d3c5925"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a869e13d38a14388c77018138eb480ad5" name="a869e13d38a14388c77018138eb480ad5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a869e13d38a14388c77018138eb480ad5">&#9670;&#160;</a></span>LOG_ERROR_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_ERROR_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9b694972a4957493602ba1e7d3c5925" name="ad9b694972a4957493602ba1e7d3c5925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b694972a4957493602ba1e7d3c5925">&#9670;&#160;</a></span>LOG_WARN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

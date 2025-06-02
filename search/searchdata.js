@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "aeflmps",
   8: "bcdeilmnpqstw",
   9: "op",
-  10: "_crt",
+  10: "_clrt",
   11: "acdegklmn对描日法",
   12: "abcdghilnostuw命"
 };
