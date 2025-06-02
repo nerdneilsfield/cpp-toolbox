@@ -163,6 +163,90 @@ private:
                             const std::vector<spfh_signature_t>& spfh_features,
                             signature_type& fpfh) const;
 
+  // 优化相关数据结构 / Optimization related data structures
+  template<typename T>
+  struct neighbor_info_t
+  {
+    std::vector<std::size_t> indices;      ///< 邻居索引 / Neighbor indices
+    std::vector<T> distances;              ///< 邻居距离 / Neighbor distances
+    bool computed = false;                 ///< 是否已计算 / Whether computed
+    
+    void reserve(std::size_t n) {
+      indices.reserve(n);
+      distances.reserve(n);
+    }
+    
+    void clear() {
+      indices.clear();
+      distances.clear();
+      computed = false;
+    }
+  };
+
+  template<typename T, typename K>
+  class spfh_cache_manager_t
+  {
+  public:
+    using spfh_signature_type = spfh_signature_t;
+    
+    explicit spfh_cache_manager_t(std::size_t cloud_size) 
+      : cloud_size_(cloud_size)
+      , needs_spfh_(cloud_size, false)
+      , point_to_spfh_idx_(cloud_size, -1)
+    {
+      spfh_features_.reserve(cloud_size / 4);
+    }
+    
+    void mark_needed(std::size_t point_idx) {
+      if (point_idx < cloud_size_ && !needs_spfh_[point_idx]) {
+        needs_spfh_[point_idx] = true;
+        point_to_spfh_idx_[point_idx] = static_cast<int>(spfh_features_.size());
+        spfh_features_.emplace_back();
+      }
+    }
+    
+    bool is_needed(std::size_t point_idx) const {
+      return point_idx < cloud_size_ && needs_spfh_[point_idx];
+    }
+    
+    spfh_signature_type& get_spfh(std::size_t point_idx) {
+      int spfh_idx = point_to_spfh_idx_[point_idx];
+      return spfh_features_[spfh_idx];
+    }
+    
+    const spfh_signature_type& get_spfh(std::size_t point_idx) const {
+      int spfh_idx = point_to_spfh_idx_[point_idx];
+      return spfh_features_[spfh_idx];
+    }
+    
+    std::size_t size() const { return spfh_features_.size(); }
+    
+    std::vector<std::size_t> get_needed_points() const {
+      std::vector<std::size_t> needed_points;
+      needed_points.reserve(spfh_features_.size());
+      
+      for (std::size_t i = 0; i < cloud_size_; ++i) {
+        if (needs_spfh_[i]) {
+          needed_points.push_back(i);
+        }
+      }
+      return needed_points;
+    }
+
+  private:
+    std::size_t cloud_size_;
+    std::vector<bool> needs_spfh_;
+    std::vector<int> point_to_spfh_idx_;
+    std::vector<spfh_signature_type> spfh_features_;
+  };
+
+  void compute_fpfh_feature_optimized(const point_cloud& cloud,
+                                    const point_cloud& normals,
+                                    std::size_t index,
+                                    const neighbor_info_t<data_type>& neighbor_info,
+                                    const spfh_cache_manager_t<data_type, knn_type>& spfh_cache,
+                                    signature_type& fpfh) const;
+
   void compute_pair_features(const point_t<data_type>& p1,
                              const point_t<data_type>& n1,
                              const point_t<data_type>& p2,
