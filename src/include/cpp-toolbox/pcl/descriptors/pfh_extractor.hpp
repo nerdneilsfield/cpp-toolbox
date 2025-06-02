@@ -23,8 +23,14 @@ namespace toolbox::pcl
 template<typename DataType>
 struct pfh_signature_t : public base_signature_t<DataType, pfh_signature_t<DataType>>
 {
+  using value_type = DataType;  // 为了兼容KNN接口 / For KNN interface compatibility
   static constexpr std::size_t HISTOGRAM_SIZE = 125;  // 5 � 5 � 5
   std::array<DataType, HISTOGRAM_SIZE> histogram {};
+
+  // 提供data()和size()方法以兼容IMetric接口 / Provide data() and size() for IMetric compatibility
+  const DataType* data() const { return histogram.data(); }
+  DataType* data() { return histogram.data(); }
+  constexpr std::size_t size() const { return HISTOGRAM_SIZE; }
 
   DataType distance_impl(const pfh_signature_t& other) const
   {

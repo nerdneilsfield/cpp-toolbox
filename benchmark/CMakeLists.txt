@@ -10,6 +10,7 @@ list(APPEND BENCHMARK_FILES
     pcl/norm_benc.cpp
     pcl/features_benc.cpp
     pcl/descriptors_benc.cpp
+    pcl/correspondence_benc.cpp
     ${CMAKE_SOURCE_DIR}/test/my_catch2_main.cpp
 )
 
