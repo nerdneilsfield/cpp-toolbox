@@ -40,9 +40,12 @@
 #include <cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp>
 #include <cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp>
 #include <cpp-toolbox/pcl/correspondence/brute_force_correspondence_generator.hpp>
-#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>  // 向后兼容 / Backward compatibility
+#include <cpp-toolbox/logger/thread_logger.hpp>
 #include <memory>
 #include <vector>
+
+// Logger macros
+#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()
 
 namespace toolbox::pcl
 {
@@ -265,19 +268,18 @@ inline void print_correspondences(
     const std::vector<correspondence_t>& correspondences,
     size_t max_display = 10)
 {
-    std::cout << "对应关系数量 / Number of correspondences: " << correspondences.size() << std::endl;
+    LOG_INFO_S << "对应关系数量 / Number of correspondences: " << correspondences.size();
     
     size_t count = std::min(max_display, correspondences.size());
     for (size_t i = 0; i < count; ++i) {
         const auto& corr = correspondences[i];
-        std::cout << "  [" << i << "] " 
-                  << corr.src_idx << " <-> " << corr.dst_idx 
-                  << ", 距离 / distance = " << corr.distance << std::endl;
+        LOG_INFO_S << "  [" << i << "] " << corr.src_idx << " <-> " << corr.dst_idx 
+                   << ", 距离 / distance = " << corr.distance;
     }
     
     if (correspondences.size() > max_display) {
-        std::cout << "  ... 还有 / and " << (correspondences.size() - max_display) 
-                  << " 个对应关系 / more correspondences" << std::endl;
+        LOG_INFO_S << "  ... 还有 / and " << (correspondences.size() - max_display)
+                   << " 个对应关系 / more correspondences";
     }
 }
 

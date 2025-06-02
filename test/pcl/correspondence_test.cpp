@@ -1,5 +1,6 @@
 #include <catch2/catch_all.hpp>
 #include <cpp-toolbox/pcl/correspondence/correspondence.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>  // For backward compatibility
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>  // 只为了 fpfh_signature_t / Only for fpfh_signature_t
 #include <cpp-toolbox/pcl/knn/bfknn.hpp>
 #include <cpp-toolbox/types/point.hpp>

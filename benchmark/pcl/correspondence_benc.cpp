@@ -1,10 +1,32 @@
 #include <catch2/catch_all.hpp>
 #include <cpp-toolbox/pcl/correspondence/correspondence.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence_generator.hpp>  // For backward compatibility
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/bfknn.hpp>
+#include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/types/point.hpp>
 #include <random>
 #include <chrono>
+
+// FPFH度量类 / FPFH metric class
+namespace toolbox::metrics {
+template<typename T>
+struct FPFHMetric
+{
+  using value_type = T;
+  using result_type = T;
+  
+  T operator()(const toolbox::pcl::fpfh_signature_t<T>& a, const toolbox::pcl::fpfh_signature_t<T>& b) const
+  {
+    return a.distance(b);
+  }
+  
+  T distance(const toolbox::pcl::fpfh_signature_t<T>& a, const toolbox::pcl::fpfh_signature_t<T>& b) const
+  {
+    return a.distance(b);
+  }
+};
+} // namespace toolbox::metrics
 
 using namespace toolbox::pcl;
 using namespace toolbox::types;
@@ -46,25 +68,8 @@ create_test_descriptors(size_t num_descriptors, std::mt19937& rng)
   return {descriptors, indices};
 }
 
-// FPFH度量类 / FPFH metric class
-template<typename T>
-struct FPFHMetric
-{
-  using value_type = T;
-  using result_type = T;
-  
-  T operator()(const fpfh_signature_t<T>& a, const fpfh_signature_t<T>& b) const
-  {
-    return a.distance(b);
-  }
-  
-  T distance(const fpfh_signature_t<T>& a, const fpfh_signature_t<T>& b) const
-  {
-    return a.distance(b);
-  }
-};
 
-TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl][correspondence][benchmark]")
+TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl][features][benchmark]")
 {
   using T = float;
   
@@ -95,10 +100,10 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
         {
           using CorrespondenceGen = knn_correspondence_generator_t<T, fpfh_signature_t<T>, 
                                                                   bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                                 FPFHMetric<T>>>;
+                                                                                 toolbox::metrics::FPFHMetric<T>>>;
           CorrespondenceGen corr_gen;
           
-          auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
+          auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, toolbox::metrics::FPFHMetric<T>>>();
           corr_gen.set_knn(knn);
           corr_gen.set_source(src_cloud, src_descriptors, src_indices);
           corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
@@ -173,10 +178,10 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
         {
           using CorrespondenceGen = correspondence_generator_t<T, fpfh_signature_t<T>, 
                                                               bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                             FPFHMetric<T>>>;
+                                                                             toolbox::metrics::FPFHMetric<T>>>;
           CorrespondenceGen corr_gen;
           
-          auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
+          auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, toolbox::metrics::FPFHMetric<T>>>();
           corr_gen.set_knn(knn);
           corr_gen.set_source(src_cloud, src_descriptors, src_indices);
           corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
@@ -196,10 +201,10 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
     {
       using CorrespondenceGen = correspondence_generator_t<T, fpfh_signature_t<T>, 
                                                           bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                         FPFHMetric<T>>>;
+                                                                         toolbox::metrics::FPFHMetric<T>>>;
       CorrespondenceGen corr_gen;
       
-      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
+      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, toolbox::metrics::FPFHMetric<T>>>();
       corr_gen.set_knn(knn);
       corr_gen.set_source(src_cloud, src_descriptors, src_indices);
       corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
@@ -216,10 +221,10 @@ TEST_CASE("对应点生成性能 / Correspondence Generation Performance", "[pcl
     {
       using CorrespondenceGen = correspondence_generator_t<T, fpfh_signature_t<T>, 
                                                           bfknn_generic_t<fpfh_signature_t<T>, 
-                                                                         FPFHMetric<T>>>;
+                                                                         toolbox::metrics::FPFHMetric<T>>>;
       CorrespondenceGen corr_gen;
       
-      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, FPFHMetric<T>>>();
+      auto knn = std::make_shared<bfknn_generic_t<fpfh_signature_t<T>, toolbox::metrics::FPFHMetric<T>>>();
       corr_gen.set_knn(knn);
       corr_gen.set_source(src_cloud, src_descriptors, src_indices);
       corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);

@@ -3,12 +3,16 @@
 #include <memory>
 #include <vector>
 #include <sstream>
-#include <iostream>
 #include <algorithm>
 #include <limits>
 #include <cmath>
 #include <cpp-toolbox/types/point.hpp>
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
+#include <cpp-toolbox/logger/thread_logger.hpp>
+
+// Logger macros
+#define LOG_ERROR_S toolbox::logger::thread_logger_t::instance().error_s()
+#define LOG_WARN_S toolbox::logger::thread_logger_t::instance().warn_s()
 
 namespace toolbox::pcl
 {
@@ -193,30 +197,30 @@ protected:
   {
     // 检查源数据 / Check source data
     if (!m_src_cloud || !m_src_descriptors || !m_src_keypoint_indices) {
-      std::cerr << "错误：源数据不完整 / Error: Source data incomplete" << std::endl;
+      LOG_ERROR_S << "错误：源数据不完整 / Error: Source data incomplete";
       return false;
     }
 
     // 检查目标数据 / Check target data
     if (!m_dst_cloud || !m_dst_descriptors || !m_dst_keypoint_indices) {
-      std::cerr << "错误：目标数据不完整 / Error: Target data incomplete" << std::endl;
+      LOG_ERROR_S << "错误：目标数据不完整 / Error: Target data incomplete";
       return false;
     }
 
     // 检查描述子和关键点数量是否匹配 / Check if descriptors and keypoints match
     if (m_src_descriptors->size() != m_src_keypoint_indices->size()) {
-      std::cerr << "错误：源描述子数量与关键点数量不匹配 / Error: Source descriptor count doesn't match keypoint count" << std::endl;
+      LOG_ERROR_S << "错误：源描述子数量与关键点数量不匹配 / Error: Source descriptor count doesn't match keypoint count";
       return false;
     }
 
     if (m_dst_descriptors->size() != m_dst_keypoint_indices->size()) {
-      std::cerr << "错误：目标描述子数量与关键点数量不匹配 / Error: Target descriptor count doesn't match keypoint count" << std::endl;
+      LOG_ERROR_S << "错误：目标描述子数量与关键点数量不匹配 / Error: Target descriptor count doesn't match keypoint count";
       return false;
     }
 
     // 检查参数有效性 / Check parameter validity
     if (m_ratio <= 0.0f || m_ratio >= 1.0f) {
-      std::cerr << "警告：比率测试阈值应在(0,1)之间 / Warning: Ratio test threshold should be in (0,1)" << std::endl;
+      LOG_WARN_S << "警告：比率测试阈值应在(0,1)之间 / Warning: Ratio test threshold should be in (0,1)";
     }
 
     return true;

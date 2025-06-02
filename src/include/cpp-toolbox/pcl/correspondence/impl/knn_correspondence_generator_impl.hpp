@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <unordered_map>
 
+// Logger macros
+#define LOG_ERROR_S toolbox::logger::thread_logger_t::instance().error_s()
+
 namespace toolbox::pcl
 {
 
@@ -12,7 +15,7 @@ void knn_correspondence_generator_t<DataType, Signature, KNN>::compute_impl(
 {
   // 检查KNN算法 / Check KNN algorithm
   if (!m_knn) {
-    std::cerr << "错误：未设置KNN算法 / Error: KNN algorithm not set" << std::endl;
+    LOG_ERROR_S << "错误：未设置KNN算法 / Error: KNN algorithm not set";
     return;
   }
 
