@@ -8,6 +8,7 @@
 #include <cpp-toolbox/pcl/descriptors/fpfh_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/pfh_extractor.hpp>
 #include <cpp-toolbox/pcl/descriptors/shot_extractor.hpp>
+#include <cpp-toolbox/pcl/descriptors/3dsc_extractor.hpp>
 #include <cpp-toolbox/pcl/knn/bfknn.hpp>
 #include <cpp-toolbox/pcl/knn/kdtree.hpp>
 #include <cpp-toolbox/types/point.hpp>
@@ -67,6 +68,25 @@ struct SHOTMetric
 
   T distance(const toolbox::pcl::shot_signature_t<T>& a,
              const toolbox::pcl::shot_signature_t<T>& b) const
+  {
+    return a.distance(b);
+  }
+};
+
+template<typename T>
+struct DSC3DMetric
+{
+  using value_type = T;
+  using result_type = T;
+
+  T operator()(const toolbox::pcl::dsc3d_signature_t<T>& a,
+               const toolbox::pcl::dsc3d_signature_t<T>& b) const
+  {
+    return a.distance(b);
+  }
+
+  T distance(const toolbox::pcl::dsc3d_signature_t<T>& a,
+             const toolbox::pcl::dsc3d_signature_t<T>& b) const
   {
     return a.distance(b);
   }
@@ -188,6 +208,42 @@ create_test_shot_descriptors(size_t num_descriptors, std::mt19937& rng)
   return {descriptors, indices};
 }
 
+// 创建测试3DSC描述子 / Create test 3DSC descriptors
+template<typename T>
+std::pair<std::shared_ptr<std::vector<dsc3d_signature_t<T>>>,
+          std::shared_ptr<std::vector<std::size_t>>>
+create_test_3dsc_descriptors(size_t num_descriptors, std::mt19937& rng)
+{
+  auto descriptors = std::make_shared<std::vector<dsc3d_signature_t<T>>>();
+  auto indices = std::make_shared<std::vector<std::size_t>>();
+
+  std::uniform_real_distribution<T> dist(0.0, 1.0);
+
+  for (size_t i = 0; i < num_descriptors; ++i) {
+    dsc3d_signature_t<T> desc;
+
+    // 创建随机描述子 / Create random descriptor (1980 dimensions)
+    for (int j = 0; j < 1980; ++j) {
+      desc.histogram[j] = dist(rng);
+    }
+
+    // 归一化 / Normalize
+    T sum = 0;
+    for (int j = 0; j < 1980; ++j) {
+      sum += desc.histogram[j];
+    }
+    if (sum > 0) {
+      for (int j = 0; j < 1980; ++j) {
+        desc.histogram[j] /= sum;
+      }
+    }
+
+    descriptors->push_back(desc);
+    indices->push_back(i * 10);
+  }
+
+  return {descriptors, indices};
+}
 
 TEST_CASE("对应点生成性能比较 / Correspondence Generation Performance Comparison",
           "[pcl][correspondence][benchmark]")
@@ -375,6 +431,57 @@ TEST_CASE("对应点生成性能比较 / Correspondence Generation Performance C
       };
     }
 
+    SECTION("3DSC描述子性能 / 3DSC descriptor performance")
+    {
+      auto src_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+      auto dst_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+      auto src_descriptors = src_data.first;
+      auto src_indices = src_data.second;
+      auto dst_descriptors = dst_data.first;
+      auto dst_indices = dst_data.second;
+
+      BENCHMARK("3DSC - KNN方法 / 3DSC - KNN method")
+      {
+        using CorrespondenceGen = knn_correspondence_generator_t<
+            T,
+            dsc3d_signature_t<T>,
+            bfknn_generic_t<dsc3d_signature_t<T>,
+                            toolbox::metrics::DSC3DMetric<T>>>;
+        CorrespondenceGen corr_gen;
+
+        auto knn = std::make_shared<
+            bfknn_generic_t<dsc3d_signature_t<T>,
+                            toolbox::metrics::DSC3DMetric<T>>>();
+        corr_gen.set_knn(knn);
+        corr_gen.set_source(src_cloud, src_descriptors, src_indices);
+        corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
+        corr_gen.set_ratio(0.8f);
+        corr_gen.set_mutual_verification(true);
+
+        std::vector<correspondence_t> correspondences;
+        corr_gen.compute(correspondences);
+
+        return correspondences.size();
+      };
+
+      BENCHMARK("3DSC - 暴力搜索（并行） / 3DSC - Brute-force (parallel)")
+      {
+        brute_force_correspondence_generator_t<T, dsc3d_signature_t<T>>
+            corr_gen;
+
+        corr_gen.enable_parallel(true);
+        corr_gen.set_source(src_cloud, src_descriptors, src_indices);
+        corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
+        corr_gen.set_ratio(0.8f);
+        corr_gen.set_mutual_verification(true);
+
+        std::vector<correspondence_t> correspondences;
+        corr_gen.compute(correspondences);
+
+        return correspondences.size();
+      };
+    }
+
   }
 
   SECTION("不同描述子数量的性能影响 / Performance impact of different descriptor counts")
@@ -495,6 +602,39 @@ TEST_CASE("对应点生成性能比较 / Correspondence Generation Performance C
         BENCHMARK("SHOT - 暴力搜索（并行） / SHOT - Brute-force (parallel)")
         {
           brute_force_correspondence_generator_t<T, shot_signature_t<T>>
+              corr_gen;
+
+          corr_gen.enable_parallel(true);
+          corr_gen.set_source(src_cloud, src_descriptors, src_indices);
+          corr_gen.set_destination(dst_cloud, dst_descriptors, dst_indices);
+          corr_gen.set_ratio(0.8f);
+          corr_gen.set_mutual_verification(true);
+
+          std::vector<correspondence_t> correspondences;
+          corr_gen.compute(correspondences);
+
+          return correspondences.size();
+        };
+      }
+
+      DYNAMIC_SECTION("3DSC描述子数量 / 3DSC descriptor count: " << num_desc)
+      {
+        std::mt19937 rng(42);
+        auto src_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+        auto dst_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+        auto src_descriptors = src_data.first;
+        auto src_indices = src_data.second;
+        auto dst_descriptors = dst_data.first;
+        auto dst_indices = dst_data.second;
+
+        auto src_cloud = std::make_shared<point_cloud_t<T>>();
+        auto dst_cloud = std::make_shared<point_cloud_t<T>>();
+        src_cloud->points.resize(num_desc * 10);
+        dst_cloud->points.resize(num_desc * 10);
+
+        BENCHMARK("3DSC - 暴力搜索（并行） / 3DSC - Brute-force (parallel)")
+        {
+          brute_force_correspondence_generator_t<T, dsc3d_signature_t<T>>
               corr_gen;
 
           corr_gen.enable_parallel(true);
@@ -672,6 +812,26 @@ TEST_CASE("描述子维度对性能的影响 / Impact of descriptor dimensions o
       BENCHMARK("SHOT (352维) - 暴力搜索 / SHOT (352D) - Brute-force")
       {
         brute_force_correspondence_generator_t<T, shot_signature_t<T>> corr_gen;
+        corr_gen.enable_parallel(true);
+        corr_gen.set_source(src_cloud, src_data.first, src_data.second);
+        corr_gen.set_destination(dst_cloud, dst_data.first, dst_data.second);
+        corr_gen.set_ratio(0.8f);
+        corr_gen.set_mutual_verification(true);
+
+        std::vector<correspondence_t> correspondences;
+        corr_gen.compute(correspondences);
+        return correspondences.size();
+      };
+    }
+
+    // 3DSC (1980维) / 3DSC (1980 dimensions)
+    {
+      auto src_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+      auto dst_data = create_test_3dsc_descriptors<T>(num_desc, rng);
+
+      BENCHMARK("3DSC (1980维) - 暴力搜索 / 3DSC (1980D) - Brute-force")
+      {
+        brute_force_correspondence_generator_t<T, dsc3d_signature_t<T>> corr_gen;
         corr_gen.enable_parallel(true);
         corr_gen.set_source(src_cloud, src_data.first, src_data.second);
         corr_gen.set_destination(dst_cloud, dst_data.first, dst_data.second);

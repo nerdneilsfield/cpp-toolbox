@@ -14,12 +14,53 @@
 namespace toolbox::pcl
 {
 
+/**
+ * @brief 3D形状上下文描述子签名 / 3D Shape Context descriptor signature
+ * 
+ * @tparam DataType 数据类型（float或double） / Data type (float or double)
+ * 
+ * @details 3DSC描述子使用1980维直方图（11径向×12方位×15仰角）来描述局部3D形状
+ * The 3DSC descriptor uses a 1980-bin histogram (11 radial × 12 azimuth × 15 elevation) to describe local 3D shape
+ * 
+ * @code
+ * // 基本使用 / Basic usage
+ * dsc3d_signature_t<float> desc1, desc2;
+ * 
+ * // 计算距离 / Compute distance
+ * float dist = desc1.distance(desc2);
+ * 
+ * // 用于KNN搜索 / For KNN search
+ * std::vector<dsc3d_signature_t<float>> descriptors = {...};
+ * bfknn_generic_t<dsc3d_signature_t<float>, DSC3DMetric<float>> knn;
+ * knn.set_input(descriptors);
+ * @endcode
+ */
 template<typename DataType>
 struct dsc3d_signature_t : public base_signature_t<DataType, dsc3d_signature_t<DataType>>
 {
-  static constexpr std::size_t HISTOGRAM_SIZE = 1980;  // 11 * 12 * 15
-  std::array<DataType, HISTOGRAM_SIZE> histogram {};
+  using value_type = DataType;  ///< 为了兼容KNN接口 / For KNN interface compatibility
+  using data_type = DataType;   ///< 为了兼容描述子匹配接口 / For descriptor matching interface compatibility
+  static constexpr std::size_t HISTOGRAM_SIZE = 1980;  ///< 直方图大小：11 × 12 × 15 / Histogram size: 11 × 12 × 15
+  std::array<DataType, HISTOGRAM_SIZE> histogram {};   ///< 直方图数据 / Histogram data
 
+  /**
+   * @brief 提供data()方法以兼容IMetric接口 / Provide data() method for IMetric interface compatibility
+   * @return 直方图数据指针 / Pointer to histogram data
+   */
+  const DataType* data() const { return histogram.data(); }
+  DataType* data() { return histogram.data(); }
+  
+  /**
+   * @brief 获取直方图大小 / Get histogram size
+   * @return 直方图维度 / Histogram dimensions
+   */
+  constexpr std::size_t size() const { return HISTOGRAM_SIZE; }
+
+  /**
+   * @brief 计算与另一个描述子的欧氏距离 / Compute Euclidean distance to another descriptor
+   * @param other 另一个描述子 / Another descriptor
+   * @return 欧氏距离 / Euclidean distance
+   */
   DataType distance_impl(const dsc3d_signature_t& other) const
   {
     DataType dist = 0;
