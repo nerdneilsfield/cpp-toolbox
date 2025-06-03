@@ -15,4 +15,6 @@ digraph "src/include/cpp-toolbox/pcl/correspondence/base_correspondence_generato
   Node4 -> Node3 [id="edge5_Node000004_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node4 -> Node5 [id="edge6_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node5 [id="Node000005",label="src/include/cpp-toolbox\l/pcl/correspondence/correspondence\l_generator.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$correspondence__generator_8hpp.html",tooltip="向后兼容的别名文件 / Backward compatibility alias file"];
+  Node1 -> Node6 [id="edge7_Node000001_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="src/include/cpp-toolbox\l/pcl/registration/base\l_coarse_registration.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$base__coarse__registration_8hpp.html",tooltip=" "];
 }

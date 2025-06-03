@@ -120,8 +120,8 @@ digraph "src/include/cpp-toolbox/base/detail/task_base.hpp"
   Node64 -> Node44 [id="edge66_Node000064_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node57 -> Node44 [id="edge67_Node000057_Node000044",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node57 -> Node40 [id="edge68_Node000057_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node57 -> Node67 [id="edge69_Node000057_Node000067",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node67 [id="Node000067",label="src/include/cpp-toolbox\l/utils/impl/click_impl.hpp",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$click__impl_8hpp.html",tooltip=" "];
-  Node57 -> Node69 [id="edge70_Node000057_Node000069",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node69 [id="Node000069",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
+  Node57 -> Node68 [id="edge69_Node000057_Node000068",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node68 [id="Node000068",label="src/include/cpp-toolbox\l/utils/impl/click_impl.hpp",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$click__impl_8hpp.html",tooltip=" "];
+  Node57 -> Node70 [id="edge70_Node000057_Node000070",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node70 [id="Node000070",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

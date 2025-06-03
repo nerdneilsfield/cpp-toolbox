@@ -1,0 +1,25 @@
+var classtoolbox_1_1pcl_1_1base__coarse__registration__t =
+[
+    [ "correspondences_ptr", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea", null ],
+    [ "point_cloud", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61", null ],
+    [ "point_cloud_ptr", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4", null ],
+    [ "result_type", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86", null ],
+    [ "base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a169d330c50d4e0a0dd5550499509ce1f", null ],
+    [ "~base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a360fb65f657d788f938921675b84f542", null ],
+    [ "base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a44efa1624ffd632e76daa9fb34359575", null ],
+    [ "base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7e45bb208f9c2f9a5e7b6a7d15e62df9", null ],
+    [ "align", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455", null ],
+    [ "compute_fitness_score", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a30edeefc6aecef78dcdd6bd5ec9354b7", null ],
+    [ "get_algorithm_name", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a83c2c74f650b74ee81fa8428d8342c3f", null ],
+    [ "operator=", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a8662d8850837f64a48a88125fec64dc2", null ],
+    [ "operator=", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a64e3802ec2fc2fd1e242f6f0e0bb5fae", null ],
+    [ "set_convergence_threshold", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#afa44f9dbe0c57abc9f724c89b07efae4", null ],
+    [ "set_correspondences", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c467445d58f5230fe33f5c6fedebc03", null ],
+    [ "set_inlier_threshold", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7fef1d31181a2e6f11d73cc1b8385aee", null ],
+    [ "set_max_iterations", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ac29137c13555fc264af66a13b2ee0ae4", null ],
+    [ "set_min_inliers", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a65bcf09d6eaff540dd0935d5ca71d9d3", null ],
+    [ "set_source", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579", null ],
+    [ "set_target", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb", null ],
+    [ "validate_input", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af2f1b2a49c16d2e253da87ccdcce4239", null ],
+    [ "validate_input_impl", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af1fb8fc4ba9a5b5287d7f230a45b329b", null ]
+];

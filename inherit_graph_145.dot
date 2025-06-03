@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::types::point\l_t\< data_type \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1point__t.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::types::minmax\l_t\< point_t\< T \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html",tooltip="point_t类型的minmax_t偏特化 / Partial specialization of minmax_t for point_t type"];
 }

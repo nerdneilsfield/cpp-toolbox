@@ -101,6 +101,7 @@ var annotated_dup =
       ] ],
       [ "pcl", "namespacetoolbox_1_1pcl.html", [
         [ "agast_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t" ],
+        [ "base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", "classtoolbox_1_1pcl_1_1base__coarse__registration__t" ],
         [ "base_correspondence_generator_t", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t" ],
         [ "base_descriptor_extractor_t", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t" ],
         [ "base_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t" ],
@@ -130,6 +131,7 @@ var annotated_dup =
         [ "pfh_extractor_t", "classtoolbox_1_1pcl_1_1pfh__extractor__t.html", "classtoolbox_1_1pcl_1_1pfh__extractor__t" ],
         [ "pfh_signature_t", "structtoolbox_1_1pcl_1_1pfh__signature__t.html", "structtoolbox_1_1pcl_1_1pfh__signature__t" ],
         [ "random_downsampling_t", "classtoolbox_1_1pcl_1_1random__downsampling__t.html", "classtoolbox_1_1pcl_1_1random__downsampling__t" ],
+        [ "registration_result_t", "structtoolbox_1_1pcl_1_1registration__result__t.html", "structtoolbox_1_1pcl_1_1registration__result__t" ],
         [ "rops_extractor_t", "classtoolbox_1_1pcl_1_1rops__extractor__t.html", "classtoolbox_1_1pcl_1_1rops__extractor__t" ],
         [ "rops_signature_t", "structtoolbox_1_1pcl_1_1rops__signature__t.html", "structtoolbox_1_1pcl_1_1rops__signature__t" ],
         [ "shot_extractor_t", "classtoolbox_1_1pcl_1_1shot__extractor__t.html", "classtoolbox_1_1pcl_1_1shot__extractor__t" ],

@@ -1,0 +1,927 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::base_coarse_registration_t&lt; Derived, DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__coarse__registration__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::base_coarse_registration_t&lt; Derived, DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>粗配准算法的基类（CRTP模式） / Base class for coarse registration algorithms (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base__coarse__registration_8hpp_source.html">base_coarse_registration.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a330ff8bf223407808e7ad96cf2774d61" id="r_a330ff8bf223407808e7ad96cf2774d61"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a330ff8bf223407808e7ad96cf2774d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9662ed603de114529f99cc453a0dc4" id="r_abb9662ed603de114529f99cc453a0dc4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61">point_cloud</a> &gt;</td></tr>
+<tr class="separator:abb9662ed603de114529f99cc453a0dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1237e421a5071b8fd76e9f873e2062ea" id="r_a1237e421a5071b8fd76e9f873e2062ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &gt;</td></tr>
+<tr class="separator:a1237e421a5071b8fd76e9f873e2062ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af460db3c7ab598b24c50cf1b75c91b86" id="r_af460db3c7ab598b24c50cf1b75c91b86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:af460db3c7ab598b24c50cf1b75c91b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a169d330c50d4e0a0dd5550499509ce1f" id="r_a169d330c50d4e0a0dd5550499509ce1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a169d330c50d4e0a0dd5550499509ce1f">base_coarse_registration_t</a> ()=default</td></tr>
+<tr class="separator:a169d330c50d4e0a0dd5550499509ce1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360fb65f657d788f938921675b84f542" id="r_a360fb65f657d788f938921675b84f542"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a360fb65f657d788f938921675b84f542">~base_coarse_registration_t</a> ()=default</td></tr>
+<tr class="separator:a360fb65f657d788f938921675b84f542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44efa1624ffd632e76daa9fb34359575" id="r_a44efa1624ffd632e76daa9fb34359575"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a44efa1624ffd632e76daa9fb34359575">base_coarse_registration_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a44efa1624ffd632e76daa9fb34359575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e3802ec2fc2fd1e242f6f0e0bb5fae" id="r_a64e3802ec2fc2fd1e242f6f0e0bb5fae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a64e3802ec2fc2fd1e242f6f0e0bb5fae">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a64e3802ec2fc2fd1e242f6f0e0bb5fae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e45bb208f9c2f9a5e7b6a7d15e62df9" id="r_a7e45bb208f9c2f9a5e7b6a7d15e62df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7e45bb208f9c2f9a5e7b6a7d15e62df9">base_coarse_registration_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7e45bb208f9c2f9a5e7b6a7d15e62df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8662d8850837f64a48a88125fec64dc2" id="r_a8662d8850837f64a48a88125fec64dc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a8662d8850837f64a48a88125fec64dc2">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a8662d8850837f64a48a88125fec64dc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720a3745774bfa76bf0f0e3db6684579" id="r_a720a3745774bfa76bf0f0e3db6684579"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:a720a3745774bfa76bf0f0e3db6684579"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云 / Set source point cloud  <br /></td></tr>
+<tr class="separator:a720a3745774bfa76bf0f0e3db6684579"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a30f0b2f98b1c9af10ce017a7475eb" id="r_a03a30f0b2f98b1c9af10ce017a7475eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a03a30f0b2f98b1c9af10ce017a7475eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标点云 / Set target point cloud  <br /></td></tr>
+<tr class="separator:a03a30f0b2f98b1c9af10ce017a7475eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c467445d58f5230fe33f5c6fedebc03" id="r_a1c467445d58f5230fe33f5c6fedebc03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c467445d58f5230fe33f5c6fedebc03">set_correspondences</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> &amp;correspondences)</td></tr>
+<tr class="memdesc:a1c467445d58f5230fe33f5c6fedebc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置初始对应关系（可选，主要用于RANSAC类算法） / Set initial correspondences (optional, mainly for RANSAC-like algorithms)  <br /></td></tr>
+<tr class="separator:a1c467445d58f5230fe33f5c6fedebc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29137c13555fc264af66a13b2ee0ae4" id="r_ac29137c13555fc264af66a13b2ee0ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ac29137c13555fc264af66a13b2ee0ae4">set_max_iterations</a> (std::size_t max_iterations)</td></tr>
+<tr class="memdesc:ac29137c13555fc264af66a13b2ee0ae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大迭代次数 / Set maximum iterations  <br /></td></tr>
+<tr class="separator:ac29137c13555fc264af66a13b2ee0ae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fef1d31181a2e6f11d73cc1b8385aee" id="r_a7fef1d31181a2e6f11d73cc1b8385aee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7fef1d31181a2e6f11d73cc1b8385aee">set_inlier_threshold</a> (DataType threshold)</td></tr>
+<tr class="memdesc:a7fef1d31181a2e6f11d73cc1b8385aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置内点距离阈值 / Set inlier distance threshold  <br /></td></tr>
+<tr class="separator:a7fef1d31181a2e6f11d73cc1b8385aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa44f9dbe0c57abc9f724c89b07efae4" id="r_afa44f9dbe0c57abc9f724c89b07efae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#afa44f9dbe0c57abc9f724c89b07efae4">set_convergence_threshold</a> (DataType threshold)</td></tr>
+<tr class="memdesc:afa44f9dbe0c57abc9f724c89b07efae4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置收敛阈值 / Set convergence threshold  <br /></td></tr>
+<tr class="separator:afa44f9dbe0c57abc9f724c89b07efae4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65bcf09d6eaff540dd0935d5ca71d9d3" id="r_a65bcf09d6eaff540dd0935d5ca71d9d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a65bcf09d6eaff540dd0935d5ca71d9d3">set_min_inliers</a> (std::size_t min_inliers)</td></tr>
+<tr class="memdesc:a65bcf09d6eaff540dd0935d5ca71d9d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最小内点数量 / Set minimum number of inliers  <br /></td></tr>
+<tr class="separator:a65bcf09d6eaff540dd0935d5ca71d9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a8160df63bb032ed567132bef36455" id="r_ab6a8160df63bb032ed567132bef36455"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:ab6a8160df63bb032ed567132bef36455"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:ab6a8160df63bb032ed567132bef36455"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c2c74f650b74ee81fa8428d8342c3f" id="r_a83c2c74f650b74ee81fa8428d8342c3f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a83c2c74f650b74ee81fa8428d8342c3f">get_algorithm_name</a> () const</td></tr>
+<tr class="memdesc:a83c2c74f650b74ee81fa8428d8342c3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取算法名称 / Get algorithm name  <br /></td></tr>
+<tr class="separator:a83c2c74f650b74ee81fa8428d8342c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:af2f1b2a49c16d2e253da87ccdcce4239" id="r_af2f1b2a49c16d2e253da87ccdcce4239"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af2f1b2a49c16d2e253da87ccdcce4239">validate_input</a> () const</td></tr>
+<tr class="memdesc:af2f1b2a49c16d2e253da87ccdcce4239"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入数据 / Validate input data  <br /></td></tr>
+<tr class="separator:af2f1b2a49c16d2e253da87ccdcce4239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fb8fc4ba9a5b5287d7f230a45b329b" id="r_af1fb8fc4ba9a5b5287d7f230a45b329b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af1fb8fc4ba9a5b5287d7f230a45b329b">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:af1fb8fc4ba9a5b5287d7f230a45b329b"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外输入验证（可选） / Additional input validation for derived class (optional)  <br /></td></tr>
+<tr class="separator:af1fb8fc4ba9a5b5287d7f230a45b329b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30edeefc6aecef78dcdd6bd5ec9354b7" id="r_a30edeefc6aecef78dcdd6bd5ec9354b7"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a30edeefc6aecef78dcdd6bd5ec9354b7">compute_fitness_score</a> (const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;transformation, const std::vector&lt; std::size_t &gt; &amp;inliers) const</td></tr>
+<tr class="memdesc:a30edeefc6aecef78dcdd6bd5ec9354b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算配准质量评分 / Compute registration fitness score  <br /></td></tr>
+<tr class="separator:a30edeefc6aecef78dcdd6bd5ec9354b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived, typename DataType&gt;<br />
+class toolbox::pcl::base_coarse_registration_t&lt; Derived, DataType &gt;</div><p>粗配准算法的基类（CRTP模式） / Base class for coarse registration algorithms (CRTP pattern) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生类类型 / Derived class type </td></tr>
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1237e421a5071b8fd76e9f873e2062ea" name="a1237e421a5071b8fd76e9f873e2062ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1237e421a5071b8fd76e9f873e2062ea">&#9670;&#160;</a></span>correspondences_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::correspondences_ptr =  std::shared_ptr&lt;std::vector&lt;<a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a330ff8bf223407808e7ad96cf2774d61" name="a330ff8bf223407808e7ad96cf2774d61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330ff8bf223407808e7ad96cf2774d61">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abb9662ed603de114529f99cc453a0dc4" name="abb9662ed603de114529f99cc453a0dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9662ed603de114529f99cc453a0dc4">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61">point_cloud</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af460db3c7ab598b24c50cf1b75c91b86" name="af460db3c7ab598b24c50cf1b75c91b86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af460db3c7ab598b24c50cf1b75c91b86">&#9670;&#160;</a></span>result_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::result_type =  <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a169d330c50d4e0a0dd5550499509ce1f" name="a169d330c50d4e0a0dd5550499509ce1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a169d330c50d4e0a0dd5550499509ce1f">&#9670;&#160;</a></span>base_coarse_registration_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::base_coarse_registration_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a360fb65f657d788f938921675b84f542" name="a360fb65f657d788f938921675b84f542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a360fb65f657d788f938921675b84f542">&#9670;&#160;</a></span>~base_coarse_registration_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44efa1624ffd632e76daa9fb34359575" name="a44efa1624ffd632e76daa9fb34359575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44efa1624ffd632e76daa9fb34359575">&#9670;&#160;</a></span>base_coarse_registration_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::base_coarse_registration_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; Derived, DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e45bb208f9c2f9a5e7b6a7d15e62df9" name="a7e45bb208f9c2f9a5e7b6a7d15e62df9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e45bb208f9c2f9a5e7b6a7d15e62df9">&#9670;&#160;</a></span>base_coarse_registration_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::base_coarse_registration_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; Derived, DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab6a8160df63bb032ed567132bef36455" name="ab6a8160df63bb032ed567132bef36455"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a8160df63bb032ed567132bef36455">&#9670;&#160;</a></span>align()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::align </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行配准 / Perform registration </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>[out] 配准结果 / Registration result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否成功 / Whether successful </dd></dl>
+
+</div>
+</div>
+<a id="a30edeefc6aecef78dcdd6bd5ec9354b7" name="a30edeefc6aecef78dcdd6bd5ec9354b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30edeefc6aecef78dcdd6bd5ec9354b7">&#9670;&#160;</a></span>compute_fitness_score()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::compute_fitness_score </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transformation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>inliers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算配准质量评分 / Compute registration fitness score </p>
+
+</div>
+</div>
+<a id="a83c2c74f650b74ee81fa8428d8342c3f" name="a83c2c74f650b74ee81fa8428d8342c3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c2c74f650b74ee81fa8428d8342c3f">&#9670;&#160;</a></span>get_algorithm_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::get_algorithm_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取算法名称 / Get algorithm name </p>
+
+</div>
+</div>
+<a id="a8662d8850837f64a48a88125fec64dc2" name="a8662d8850837f64a48a88125fec64dc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8662d8850837f64a48a88125fec64dc2">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; Derived, DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a64e3802ec2fc2fd1e242f6f0e0bb5fae" name="a64e3802ec2fc2fd1e242f6f0e0bb5fae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64e3802ec2fc2fd1e242f6f0e0bb5fae">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; Derived, DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afa44f9dbe0c57abc9f724c89b07efae4" name="afa44f9dbe0c57abc9f724c89b07efae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa44f9dbe0c57abc9f724c89b07efae4">&#9670;&#160;</a></span>set_convergence_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_convergence_threshold </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置收敛阈值 / Set convergence threshold </p>
+
+</div>
+</div>
+<a id="a1c467445d58f5230fe33f5c6fedebc03" name="a1c467445d58f5230fe33f5c6fedebc03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c467445d58f5230fe33f5c6fedebc03">&#9670;&#160;</a></span>set_correspondences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_correspondences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置初始对应关系（可选，主要用于RANSAC类算法） / Set initial correspondences (optional, mainly for RANSAC-like algorithms) </p>
+
+</div>
+</div>
+<a id="a7fef1d31181a2e6f11d73cc1b8385aee" name="a7fef1d31181a2e6f11d73cc1b8385aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fef1d31181a2e6f11d73cc1b8385aee">&#9670;&#160;</a></span>set_inlier_threshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_inlier_threshold </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>threshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置内点距离阈值 / Set inlier distance threshold </p>
+
+</div>
+</div>
+<a id="ac29137c13555fc264af66a13b2ee0ae4" name="ac29137c13555fc264af66a13b2ee0ae4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac29137c13555fc264af66a13b2ee0ae4">&#9670;&#160;</a></span>set_max_iterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_max_iterations </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>max_iterations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置最大迭代次数 / Set maximum iterations </p>
+
+</div>
+</div>
+<a id="a65bcf09d6eaff540dd0935d5ca71d9d3" name="a65bcf09d6eaff540dd0935d5ca71d9d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65bcf09d6eaff540dd0935d5ca71d9d3">&#9670;&#160;</a></span>set_min_inliers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_min_inliers </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>min_inliers</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置最小内点数量 / Set minimum number of inliers </p>
+
+</div>
+</div>
+<a id="a720a3745774bfa76bf0f0e3db6684579" name="a720a3745774bfa76bf0f0e3db6684579"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720a3745774bfa76bf0f0e3db6684579">&#9670;&#160;</a></span>set_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_source </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置源点云 / Set source point cloud </p>
+
+</div>
+</div>
+<a id="a03a30f0b2f98b1c9af10ce017a7475eb" name="a03a30f0b2f98b1c9af10ce017a7475eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03a30f0b2f98b1c9af10ce017a7475eb">&#9670;&#160;</a></span>set_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::set_target </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置目标点云 / Set target point cloud </p>
+
+</div>
+</div>
+<a id="af2f1b2a49c16d2e253da87ccdcce4239" name="af2f1b2a49c16d2e253da87ccdcce4239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f1b2a49c16d2e253da87ccdcce4239">&#9670;&#160;</a></span>validate_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::validate_input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>验证输入数据 / Validate input data </p>
+
+</div>
+</div>
+<a id="af1fb8fc4ba9a5b5287d7f230a45b329b" name="af1fb8fc4ba9a5b5287d7f230a45b329b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1fb8fc4ba9a5b5287d7f230a45b329b">&#9670;&#160;</a></span>validate_input_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a>&lt; Derived, DataType &gt;::validate_input_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>派生类的额外输入验证（可选） / Additional input validation for derived class (optional) </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/pcl/registration/<a class="el" href="base__coarse__registration_8hpp_source.html">base_coarse_registration.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

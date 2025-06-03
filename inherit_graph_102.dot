@@ -5,5 +5,11 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::base\l_knn_generic_t\< kdtree\l_generic_t\< Element, toolbox\l::metrics::L2Metric\< typename\l Element::value_type \> \>, Element,\l toolbox::metrics::L2Metric\< typename\l Element::value_type \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__knn__generic__t.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_knn_generic_t\< Derived,\l Element, Metric \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__knn__generic__t.html",tooltip="KNN算法的基类（CRTP模式） / Base class for KNN algorithms (CRTP pattern)"];
+  Node0 -> Node1 [id="edge91_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::bfknn\l_generic_t\< Element,\l Metric \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1bfknn__generic__t.html",tooltip="暴力K近邻搜索算法的通用实现 / Generic brute-force K-nearest neighbors search implementation"];
+  Node0 -> Node2 [id="edge92_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::pcl::bfknn\l_parallel_generic_t\l\< Element, Metric \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1bfknn__parallel__generic__t.html",tooltip=" "];
+  Node0 -> Node3 [id="edge93_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="toolbox::pcl::kdtree\l_generic_t\< Element,\l Metric \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1kdtree__generic__t.html",tooltip=" "];
 }

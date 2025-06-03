@@ -7,7 +7,7 @@ var searchData=
   ['lambdametric_4',['lambdametric',['../classtoolbox_1_1metrics_1_1_lambda_metric.html',1,'toolbox::metrics::LambdaMetric&lt; T, Lambda &gt;'],['../classtoolbox_1_1metrics_1_1_lambda_metric.html#a6ade0ff15cf6597b8f1e05a06969d023',1,'toolbox::metrics::LambdaMetric::LambdaMetric()']]],
   ['left_5fjoint_5',['left_joint',['../structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html#a2b5bc65a050d990eff88185dc51a7b07',1,'toolbox::utils::print_style_t::box_chars_t']]],
   ['left_5fpad_6',['left_pad',['../namespacetoolbox_1_1container_1_1string.html#a048891f47e89fbd9e898ad8fb1f196c7',1,'toolbox::container::string']]],
-  ['level_7',['level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#a8f822fcbcee8aadd60583d97d2aa45b8',1,'toolbox::logger::thread_logger_t::level() -&gt; Level'],['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t::Level']]],
+  ['level_7',['level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t::Level'],['../classtoolbox_1_1logger_1_1thread__logger__t.html#a8f822fcbcee8aadd60583d97d2aa45b8',1,'toolbox::logger::thread_logger_t::level() -&gt; Level']]],
   ['level_5fstr_8',['level_str',['../classtoolbox_1_1logger_1_1thread__logger__t.html#a767cfaa33472f68fd9536dfc210aec6b',1,'toolbox::logger::thread_logger_t']]],
   ['levenshtein_5fdistance_9',['levenshtein_distance',['../namespacetoolbox_1_1container_1_1string.html#adf00945757752e93f4592917811033c5',1,'toolbox::container::string']]],
   ['license_10',['License',['../index.html#autotoc_md15',1,'']]],

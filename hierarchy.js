@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
+    [ "toolbox::pcl::base_coarse_registration_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", null ],
     [ "toolbox::pcl::base_correspondence_generator_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", null ],
     [ "toolbox::pcl::base_correspondence_generator_t< brute_force_correspondence_generator_t< DataType, Signature >, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", [
       [ "toolbox::pcl::brute_force_correspondence_generator_t< DataType, Signature >", "classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html", null ]
@@ -338,6 +339,7 @@ var hierarchy =
     [ "toolbox::base::PoolDeleter< T >", "classtoolbox_1_1base_1_1_pool_deleter.html", null ],
     [ "toolbox::utils::print_style_t", "structtoolbox_1_1utils_1_1print__style__t.html", null ],
     [ "toolbox::utils::random_t", "classtoolbox_1_1utils_1_1random__t.html", null ],
+    [ "toolbox::pcl::registration_result_t< DataType >", "structtoolbox_1_1pcl_1_1registration__result__t.html", null ],
     [ "toolbox::traits::remove_all_qualifiers< T >", "structtoolbox_1_1traits_1_1remove__all__qualifiers.html", null ],
     [ "toolbox::traits::remove_reference< T >", "structtoolbox_1_1traits_1_1remove__reference.html", null ],
     [ "std::runtime_error", null, [

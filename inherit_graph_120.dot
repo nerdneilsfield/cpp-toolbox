@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::voxel\l_grid_downsampling_t\l\< DataType \>::key_hash",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::pcl::mls_keypoint\l_extractor_t\< DataType,\l KNN \>::MLSResult",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html",tooltip=" "];
 }
