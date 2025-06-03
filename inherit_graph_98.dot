@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::base\l_descriptor_extractor\l_t\< Derived, DataType,\l Signature \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html",tooltip="描述子提取器的基类（CRTP模式） / Base class for descriptor extractors (CRTP pattern)"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_correspondence_generator\l_t\< Derived, DataType, Signature \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html",tooltip="对应点生成器的基类（CRTP模式） / Base class for correspondence generators (CRTP pattern)"];
 }

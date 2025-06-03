@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['对应点生成_20correspondence_20generation_0',['对应点生成 / Correspondence Generation',['../group__correspondence.html',1,'']]]
+  ['point_20cloud_20registration_0',['点云配准 / Point Cloud Registration',['../group__registration.html',1,'']]]
 ];

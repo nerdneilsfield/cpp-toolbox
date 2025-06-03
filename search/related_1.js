@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pooldeleter_3c_20t_20_3e_0',['PoolDeleter&lt; T &gt;',['../classtoolbox_1_1base_1_1object__pool__t.html#a6857aaca2124f8646392d423bc1a2f39',1,'toolbox::base::object_pool_t']]]
+  ['four_5fpcs_5fregistration_5ft_3c_20datatype_20_3e_0',['four_pcs_registration_t&lt; DataType &gt;',['../classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a0419cccfd375d4a044cda7728ef8788d',1,'toolbox::pcl::super_four_pcs_registration_t']]]
 ];

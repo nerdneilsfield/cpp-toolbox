@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['data_5fbg_0',['data_bg',['../structtoolbox_1_1utils_1_1print__style__t.html#ae5216dacd0693dd4239aac9fe831f5ce',1,'toolbox::utils::print_style_t']]],
-  ['data_5ffg_1',['data_fg',['../structtoolbox_1_1utils_1_1print__style__t.html#a784225a1ffd497e2b1c31a886674818d',1,'toolbox::utils::print_style_t']]],
-  ['description_2',['description',['../structtoolbox_1_1metrics_1_1_metric_registry_1_1_metric_info.html#aa544cc1148c6d41c002b4a97e72a36bd',1,'toolbox::metrics::MetricRegistry::MetricInfo']]],
-  ['description_5f_3',['description_',['../classtoolbox_1_1utils_1_1parameter__t.html#a82d7153e79b8b3f66c72e7c7713f108d',1,'toolbox::utils::parameter_t']]],
-  ['distance_4',['distance',['../structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8',1,'toolbox::pcl::correspondence_t']]],
-  ['dst_5fidx_5',['dst_idx',['../structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb',1,'toolbox::pcl::correspondence_t']]]
+  ['d_0',['d',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ac2a06327f05f40074e8b275b493e2482',1,'toolbox::pcl::four_pcs_registration_t::base_4pcs_t']]],
+  ['data_5fbg_1',['data_bg',['../structtoolbox_1_1utils_1_1print__style__t.html#ae5216dacd0693dd4239aac9fe831f5ce',1,'toolbox::utils::print_style_t']]],
+  ['data_5ffg_2',['data_fg',['../structtoolbox_1_1utils_1_1print__style__t.html#a784225a1ffd497e2b1c31a886674818d',1,'toolbox::utils::print_style_t']]],
+  ['description_3',['description',['../structtoolbox_1_1metrics_1_1_metric_registry_1_1_metric_info.html#aa544cc1148c6d41c002b4a97e72a36bd',1,'toolbox::metrics::MetricRegistry::MetricInfo']]],
+  ['description_5f_4',['description_',['../classtoolbox_1_1utils_1_1parameter__t.html#a82d7153e79b8b3f66c72e7c7713f108d',1,'toolbox::utils::parameter_t']]],
+  ['distance_5',['distance',['../structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8',1,'toolbox::pcl::correspondence_t::distance'],['../structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1point__pair__t.html#adb6f3fd8e80337a71be89fb58550c2c7',1,'toolbox::pcl::super_four_pcs_registration_t::point_pair_t::distance']]],
+  ['dst_5fidx_6',['dst_idx',['../structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb',1,'toolbox::pcl::correspondence_t']]]
 ];

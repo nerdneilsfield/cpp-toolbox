@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['法向量提取_20normal_20extraction_0',['法向量提取 / Normal Extraction',['../group__norm.html',1,'']]]
+  ['描述子提取_20descriptor_20extraction_0',['描述子提取 / Descriptor Extraction',['../group__descriptors.html',1,'']]]
 ];

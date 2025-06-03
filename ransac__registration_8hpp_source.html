@@ -1,0 +1,369 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/registration/ransac_registration.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ransac__registration_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ransac_registration.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="ransac__registration_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;Eigen/SVD&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="base__coarse__registration_8hpp.html">cpp-toolbox/pcl/registration/base_coarse_registration.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a289d1284ae5099540f5ea3c169c3d7c8">   44</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt;ransac_registration_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>{</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="comment">// Allow base class to access protected members</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt;<a class="code hl_class" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#ae9988a8330045e3580f2dac58e9144e6">   50</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_type</a> = <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t&lt;ransac_registration_t&lt;DataType&gt;</a>, DataType&gt;;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">using </span>typename <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">base_type::point_cloud</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">using </span>typename <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">base_type::point_cloud_ptr</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">using </span>typename <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">base_type::correspondences_ptr</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">using </span>typename <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1registration__result__t.html">base_type::result_type</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a581656d70a0597e8bac9b42b10a895fe">   55</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a581656d70a0597e8bac9b42b10a895fe">transformation_t</a> = Eigen::Matrix&lt;DataType, 4, 4&gt;;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0b73c35ab7c52fd4a4ce40f0f471ebcf">   56</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0b73c35ab7c52fd4a4ce40f0f471ebcf">vector3_t</a> = Eigen::Matrix&lt;DataType, 3, 1&gt;;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a1b382217a80d97bf14dcd85f2c4dce49">   57</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a1b382217a80d97bf14dcd85f2c4dce49">matrix3_t</a> = Eigen::Matrix&lt;DataType, 3, 3&gt;;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a87cc3de45df82631cc3409d288d485a9">   59</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a87cc3de45df82631cc3409d288d485a9">ransac_registration_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#ab15b602b164fdf9a9c2820d573cddf62">   60</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#ab15b602b164fdf9a9c2820d573cddf62">~ransac_registration_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a50e463edcdb1c849789007570d8b5b72">   66</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a50e463edcdb1c849789007570d8b5b72">set_confidence</a>(DataType confidence)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    m_confidence = std::clamp(confidence, <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.0),</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                              <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(1.0));</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  }</div>
+</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a61cc8e7cee59024d362bf95fede74728">   76</a></span>  [[nodiscard]] DataType <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a61cc8e7cee59024d362bf95fede74728">get_confidence</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_confidence; }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a3dbcbd4cd0c3f35297ed20a98d1d08c3">   82</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a3dbcbd4cd0c3f35297ed20a98d1d08c3">set_sample_size</a>(std::size_t size) { m_sample_size = std::max(size, std::size_t(3)); }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a35ca33f6dad58ddcf0b1a20bd7a2bd3f">   88</a></span>  [[nodiscard]] std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a35ca33f6dad58ddcf0b1a20bd7a2bd3f">get_sample_size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sample_size; }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#abb032c558ab185227c60f0cce1a71fe5">   96</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#abb032c558ab185227c60f0cce1a71fe5">set_refine_result</a>(<span class="keywordtype">bool</span> refine) { m_refine_result = refine; }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a78563fe487ad9a6ee1d4fb3e0c40134a">  102</a></span>  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a78563fe487ad9a6ee1d4fb3e0c40134a">get_refine_result</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_refine_result; }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a7c99883f7a1001fd87dfdca5dfb43117">  108</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a7c99883f7a1001fd87dfdca5dfb43117">set_early_stop_ratio</a>(DataType ratio)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    m_early_stop_ratio = std::clamp(ratio, <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.0),</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                    <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(1.0));</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a11d1a2f2edfd936e6480af39821e11c2">  118</a></span>  [[nodiscard]] DataType <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a11d1a2f2edfd936e6480af39821e11c2">get_early_stop_ratio</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_early_stop_ratio; }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="comment">// Methods needed by base class (must be accessible via friend)</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordtype">bool</span> align_impl(result_type&amp; result);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#aeaad92e0d0f73edcde12e7994f32f3b9">  134</a></span>  [[nodiscard]] std::string <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#aeaad92e0d0f73edcde12e7994f32f3b9">get_algorithm_name_impl</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;RANSAC&quot;</span>; }</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  [[nodiscard]] <span class="keywordtype">bool</span> validate_input_impl() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0211b09e11af6094aed86a5b8ab2db1f">  145</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0211b09e11af6094aed86a5b8ab2db1f">set_correspondences_impl</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a>&amp; <span class="comment">/*correspondences*/</span>)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    <span class="comment">// RANSAC需要对应关系，这里可以添加额外的处理</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="comment">// RANSAC requires correspondences, additional processing can be added here</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  [[nodiscard]] std::size_t calculate_iterations(DataType outlier_ratio) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="keywordtype">void</span> sample_correspondences(std::vector&lt;correspondence_t&gt;&amp; sample,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                              std::mt19937&amp; generator) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  [[nodiscard]] transformation_t</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  estimate_rigid_transform_svd(<span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; sample) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  [[nodiscard]] std::size_t count_inliers(<span class="keyword">const</span> transformation_t&amp; transform,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                           std::vector&lt;std::size_t&gt;&amp; inliers) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  [[nodiscard]] transformation_t</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  refine_transformation(<span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; inlier_indices) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  [[nodiscard]] DataType compute_fitness_score(<span class="keyword">const</span> transformation_t&amp; transform,</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                                                <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; inliers) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// RANSAC特定参数 / RANSAC-specific parameters</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  DataType m_confidence = <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.99);  </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  std::size_t m_sample_size = 3;  </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">bool</span> m_refine_result = <span class="keyword">true</span>;  </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  DataType m_early_stop_ratio =</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>      <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.9);  </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>};</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="comment">// 包含实现文件 / Include implementation file</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="preprocessor">#include &lt;<a class="code" href="ransac__registration__impl_8hpp.html">cpp-toolbox/pcl/registration/impl/ransac_registration_impl.hpp</a>&gt;</span></div>
+<div class="ttc" id="abase__coarse__registration_8hpp_html"><div class="ttname"><a href="base__coarse__registration_8hpp.html">base_coarse_registration.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a></div><div class="ttdoc">粗配准算法的基类（CRTP模式） / Base class for coarse registration algorithms (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:31</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a1237e421a5071b8fd76e9f873e2062ea"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">toolbox::pcl::base_coarse_registration_t&lt; ransac_registration_t&lt; DataType &gt;, DataType &gt;::correspondences_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; correspondence_t &gt; &gt; correspondences_ptr</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:35</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_abb9662ed603de114529f99cc453a0dc4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">toolbox::pcl::base_coarse_registration_t&lt; ransac_registration_t&lt; DataType &gt;, DataType &gt;::point_cloud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; point_cloud &gt; point_cloud_ptr</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:34</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">toolbox::pcl::ransac_registration_t</a></div><div class="ttdoc">RANSAC粗配准算法 / RANSAC coarse registration algorithm.</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:46</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a0211b09e11af6094aed86a5b8ab2db1f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0211b09e11af6094aed86a5b8ab2db1f">toolbox::pcl::ransac_registration_t::set_correspondences_impl</a></div><div class="ttdeci">void set_correspondences_impl(const correspondences_ptr &amp;)</div><div class="ttdoc">设置对应关系的钩子函数 / Hook function for setting correspondences</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:145</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a0b73c35ab7c52fd4a4ce40f0f471ebcf"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a0b73c35ab7c52fd4a4ce40f0f471ebcf">toolbox::pcl::ransac_registration_t::vector3_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 1 &gt; vector3_t</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:56</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a11d1a2f2edfd936e6480af39821e11c2"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a11d1a2f2edfd936e6480af39821e11c2">toolbox::pcl::ransac_registration_t::get_early_stop_ratio</a></div><div class="ttdeci">DataType get_early_stop_ratio() const</div><div class="ttdoc">获取早停阈值 / Get early stopping threshold</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:118</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a1b382217a80d97bf14dcd85f2c4dce49"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a1b382217a80d97bf14dcd85f2c4dce49">toolbox::pcl::ransac_registration_t::matrix3_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 3 &gt; matrix3_t</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:57</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a35ca33f6dad58ddcf0b1a20bd7a2bd3f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a35ca33f6dad58ddcf0b1a20bd7a2bd3f">toolbox::pcl::ransac_registration_t::get_sample_size</a></div><div class="ttdeci">std::size_t get_sample_size() const</div><div class="ttdoc">获取样本大小 / Get sample size</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:88</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a3dbcbd4cd0c3f35297ed20a98d1d08c3"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a3dbcbd4cd0c3f35297ed20a98d1d08c3">toolbox::pcl::ransac_registration_t::set_sample_size</a></div><div class="ttdeci">void set_sample_size(std::size_t size)</div><div class="ttdoc">设置最小样本大小 / Set minimum sample size</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:82</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a50e463edcdb1c849789007570d8b5b72"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a50e463edcdb1c849789007570d8b5b72">toolbox::pcl::ransac_registration_t::set_confidence</a></div><div class="ttdeci">void set_confidence(DataType confidence)</div><div class="ttdoc">设置置信度水平 / Set confidence level</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:66</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a581656d70a0597e8bac9b42b10a895fe"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a581656d70a0597e8bac9b42b10a895fe">toolbox::pcl::ransac_registration_t::transformation_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; transformation_t</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:55</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a61cc8e7cee59024d362bf95fede74728"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a61cc8e7cee59024d362bf95fede74728">toolbox::pcl::ransac_registration_t::get_confidence</a></div><div class="ttdeci">DataType get_confidence() const</div><div class="ttdoc">获取置信度水平 / Get confidence level</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:76</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a78563fe487ad9a6ee1d4fb3e0c40134a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a78563fe487ad9a6ee1d4fb3e0c40134a">toolbox::pcl::ransac_registration_t::get_refine_result</a></div><div class="ttdeci">bool get_refine_result() const</div><div class="ttdoc">获取是否精炼结果 / Get whether to refine result</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:102</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a7c99883f7a1001fd87dfdca5dfb43117"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a7c99883f7a1001fd87dfdca5dfb43117">toolbox::pcl::ransac_registration_t::set_early_stop_ratio</a></div><div class="ttdeci">void set_early_stop_ratio(DataType ratio)</div><div class="ttdoc">设置早停阈值（内点比例） / Set early stopping threshold (inlier ratio)</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:108</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_a87cc3de45df82631cc3409d288d485a9"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#a87cc3de45df82631cc3409d288d485a9">toolbox::pcl::ransac_registration_t::ransac_registration_t</a></div><div class="ttdeci">ransac_registration_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_ab15b602b164fdf9a9c2820d573cddf62"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#ab15b602b164fdf9a9c2820d573cddf62">toolbox::pcl::ransac_registration_t::~ransac_registration_t</a></div><div class="ttdeci">~ransac_registration_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_abb032c558ab185227c60f0cce1a71fe5"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#abb032c558ab185227c60f0cce1a71fe5">toolbox::pcl::ransac_registration_t::set_refine_result</a></div><div class="ttdeci">void set_refine_result(bool refine)</div><div class="ttdoc">设置是否使用所有内点精炼结果 / Set whether to refine result using all inliers</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:96</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html_aeaad92e0d0f73edcde12e7994f32f3b9"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html#aeaad92e0d0f73edcde12e7994f32f3b9">toolbox::pcl::ransac_registration_t::get_algorithm_name_impl</a></div><div class="ttdeci">std::string get_algorithm_name_impl() const</div><div class="ttdoc">获取算法名称实现 / Get algorithm name implementation</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:134</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt; DataType &gt;</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+<div class="ttc" id="aransac__registration__impl_8hpp_html"><div class="ttname"><a href="ransac__registration__impl_8hpp.html">ransac_registration_impl.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1registration__result__t.html">toolbox::pcl::registration_result_t</a></div><div class="ttdoc">配准结果结构体 / Registration result structure</div><div class="ttdef"><b>Definition</b> registration_result.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_0bd0c49aa95dc07b46acbdff3f1b0765.html">registration</a></li><li class="navelem"><a class="el" href="ransac__registration_8hpp.html">ransac_registration.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

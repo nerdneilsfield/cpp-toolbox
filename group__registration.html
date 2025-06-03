@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: 点云配准 / Point Cloud Registration</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('group__registration.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">点云配准 / Point Cloud Registration</div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gaa37548abb15d3c3cdebeee9c4081b9aa" id="r_gaa37548abb15d3c3cdebeee9c4081b9aa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gaa37548abb15d3c3cdebeee9c4081b9aa">toolbox::pcl::ransac_registration</a> = <a class="el" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gaa37548abb15d3c3cdebeee9c4081b9aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga252bb1105e12e6932d30936b4600c3a0" id="r_ga252bb1105e12e6932d30936b4600c3a0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga252bb1105e12e6932d30936b4600c3a0">toolbox::pcl::four_pcs_registration</a> = <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:ga252bb1105e12e6932d30936b4600c3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad141e700aaa2a3477e004e64a2ff9b9a" id="r_gad141e700aaa2a3477e004e64a2ff9b9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a">toolbox::pcl::super_four_pcs_registration</a> = <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gad141e700aaa2a3477e004e64a2ff9b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga29364a27d8c1f998d74927a985eec938" id="r_ga29364a27d8c1f998d74927a985eec938"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga29364a27d8c1f998d74927a985eec938">toolbox::pcl::registration_result</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:ga29364a27d8c1f998d74927a985eec938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39e24f29bca71c80dc9578ad9efc1eca" id="r_ga39e24f29bca71c80dc9578ad9efc1eca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga39e24f29bca71c80dc9578ad9efc1eca">toolbox::pcl::ransac_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga39e24f29bca71c80dc9578ad9efc1eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43679336174a6c5d94bb9bf51fd20337" id="r_ga43679336174a6c5d94bb9bf51fd20337"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga43679336174a6c5d94bb9bf51fd20337">toolbox::pcl::four_pcs_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga43679336174a6c5d94bb9bf51fd20337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga27ddfe4db71c1db243e52a49f8f0665f" id="r_ga27ddfe4db71c1db243e52a49f8f0665f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga27ddfe4db71c1db243e52a49f8f0665f">toolbox::pcl::super_four_pcs_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga27ddfe4db71c1db243e52a49f8f0665f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac22d995bfd048fc5e14e2b72a3c4c03a" id="r_gac22d995bfd048fc5e14e2b72a3c4c03a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gac22d995bfd048fc5e14e2b72a3c4c03a">toolbox::pcl::registration_result_d</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:gac22d995bfd048fc5e14e2b72a3c4c03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gaa0bb30d75d6d1715dd2679fe089078be" id="r_gaa0bb30d75d6d1715dd2679fe089078be"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:gaa0bb30d75d6d1715dd2679fe089078be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; DataType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__registration.html#gaa0bb30d75d6d1715dd2679fe089078be">toolbox::pcl::quick_registration</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;source, const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;target, const std::string &amp;algorithm=&quot;super4pcs&quot;, DataType overlap=0.5f)</td></tr>
+<tr class="memdesc:gaa0bb30d75d6d1715dd2679fe089078be"><td class="mdescLeft">&#160;</td><td class="mdescRight">配准算法选择指南 / Registration algorithm selection guide  <br /></td></tr>
+<tr class="separator:gaa0bb30d75d6d1715dd2679fe089078be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ga252bb1105e12e6932d30936b4600c3a0" name="ga252bb1105e12e6932d30936b4600c3a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga252bb1105e12e6932d30936b4600c3a0">&#9670;&#160;</a></span>four_pcs_registration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#ga252bb1105e12e6932d30936b4600c3a0">toolbox::pcl::four_pcs_registration</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt;float&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga43679336174a6c5d94bb9bf51fd20337" name="ga43679336174a6c5d94bb9bf51fd20337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga43679336174a6c5d94bb9bf51fd20337">&#9670;&#160;</a></span>four_pcs_registration_d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#ga43679336174a6c5d94bb9bf51fd20337">toolbox::pcl::four_pcs_registration_d</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gaa37548abb15d3c3cdebeee9c4081b9aa" name="gaa37548abb15d3c3cdebeee9c4081b9aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa37548abb15d3c3cdebeee9c4081b9aa">&#9670;&#160;</a></span>ransac_registration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#gaa37548abb15d3c3cdebeee9c4081b9aa">toolbox::pcl::ransac_registration</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt;float&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga39e24f29bca71c80dc9578ad9efc1eca" name="ga39e24f29bca71c80dc9578ad9efc1eca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39e24f29bca71c80dc9578ad9efc1eca">&#9670;&#160;</a></span>ransac_registration_d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#ga39e24f29bca71c80dc9578ad9efc1eca">toolbox::pcl::ransac_registration_d</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga29364a27d8c1f998d74927a985eec938" name="ga29364a27d8c1f998d74927a985eec938"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29364a27d8c1f998d74927a985eec938">&#9670;&#160;</a></span>registration_result</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#ga29364a27d8c1f998d74927a985eec938">toolbox::pcl::registration_result</a> = typedef <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt;float&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gac22d995bfd048fc5e14e2b72a3c4c03a" name="gac22d995bfd048fc5e14e2b72a3c4c03a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac22d995bfd048fc5e14e2b72a3c4c03a">&#9670;&#160;</a></span>registration_result_d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#gac22d995bfd048fc5e14e2b72a3c4c03a">toolbox::pcl::registration_result_d</a> = typedef <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="gad141e700aaa2a3477e004e64a2ff9b9a" name="gad141e700aaa2a3477e004e64a2ff9b9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad141e700aaa2a3477e004e64a2ff9b9a">&#9670;&#160;</a></span>super_four_pcs_registration</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a">toolbox::pcl::super_four_pcs_registration</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt;float&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ga27ddfe4db71c1db243e52a49f8f0665f" name="ga27ddfe4db71c1db243e52a49f8f0665f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga27ddfe4db71c1db243e52a49f8f0665f">&#9670;&#160;</a></span>super_four_pcs_registration_d</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__registration.html#ga27ddfe4db71c1db243e52a49f8f0665f">toolbox::pcl::super_four_pcs_registration_d</a> = typedef <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt;double&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gaa0bb30d75d6d1715dd2679fe089078be" name="gaa0bb30d75d6d1715dd2679fe089078be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa0bb30d75d6d1715dd2679fe089078be">&#9670;&#160;</a></span>quick_registration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; DataType &gt; toolbox::pcl::quick_registration </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>algorithm</em> = <code>&quot;super4pcs&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>overlap</em> = <code>0.5f</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>配准算法选择指南 / Registration algorithm selection guide </p>
+<p>选择合适的配准算法取决于以下因素： Choosing the right registration algorithm depends on:</p>
+<ol type="1">
+<li><b>是否有对应关系 / Whether correspondences are available</b><ul>
+<li>有对应关系：使用RANSAC / With correspondences: use RANSAC</li>
+<li>无对应关系：使用4PCS或Super4PCS / Without: use 4PCS or Super4PCS</li>
+</ul>
+</li>
+<li><b>点云规模 / Point cloud scale</b><ul>
+<li>小规模（&lt;10K点）：任意算法 / Small (&lt;10K points): any algorithm</li>
+<li>中等规模（10K-100K）：RANSAC或4PCS / Medium (10K-100K): RANSAC or 4PCS</li>
+<li>大规模（&gt;100K）：Super4PCS / Large (&gt;100K): Super4PCS</li>
+</ul>
+</li>
+<li><b>重叠率 / Overlap ratio</b><ul>
+<li>高重叠（&gt;70）：任意算法 / High overlap (&gt;70%): any algorithm</li>
+<li>中等重叠（30-70）：4PCS或Super4PCS / Medium (30-70%): 4PCS or Super4PCS</li>
+<li>低重叠（&lt;30）：Super4PCS / Low overlap (&lt;30%): Super4PCS</li>
+</ul>
+</li>
+<li><b>精度要求 / Accuracy requirements</b><ul>
+<li>高精度：使用小的delta值和更多迭代 / High accuracy: use small delta and more iterations</li>
+<li>快速近似：使用大的delta值和少量迭代 / Fast approximation: use large delta and fewer iterations</li>
+</ul>
+</li>
+<li><b>计算资源 / Computational resources</b><ul>
+<li>有限资源：使用采样和并行计算 / Limited: use sampling and parallel computation</li>
+<li>充足资源：使用完整点云和更多基 / Ample: use full clouds and more bases</li>
+</ul>
+</li>
+</ol>
+<p>快速配准便捷函数 / Quick registration convenience function </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>源点云 / Source cloud </td></tr>
+    <tr><td class="paramname">target</td><td>目标点云 / Target cloud </td></tr>
+    <tr><td class="paramname">algorithm</td><td>算法名称（"ransac", "4pcs", "super4pcs"） / Algorithm name </td></tr>
+    <tr><td class="paramname">overlap</td><td>重叠率估计（仅4PCS类算法） / Overlap estimate (4PCS algorithms only) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>配准结果 / Registration result</dd></dl>
+<div class="fragment"><div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="group__registration.html#gaa0bb30d75d6d1715dd2679fe089078be">quick_registration</a>(source, target, <span class="stringliteral">&quot;super4pcs&quot;</span>, 0.5f);</div>
+<div class="line"><span class="keywordflow">if</span> (result.converged) {</div>
+<div class="line">    <span class="comment">// 使用result.transformation</span></div>
+<div class="line">    <span class="comment">// Use result.transformation</span></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__registration_html_gaa0bb30d75d6d1715dd2679fe089078be"><div class="ttname"><a href="group__registration.html#gaa0bb30d75d6d1715dd2679fe089078be">toolbox::pcl::quick_registration</a></div><div class="ttdeci">registration_result_t&lt; DataType &gt; quick_registration(const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;source, const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;target, const std::string &amp;algorithm=&quot;super4pcs&quot;, DataType overlap=0.5f)</div><div class="ttdoc">配准算法选择指南 / Registration algorithm selection guide</div><div class="ttdef"><b>Definition</b> registration.hpp:131</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

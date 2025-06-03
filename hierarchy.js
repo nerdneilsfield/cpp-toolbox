@@ -1,7 +1,16 @@
 var hierarchy =
 [
     [ "toolbox::utils::plot_t::axis_t", "structtoolbox_1_1utils_1_1plot__t_1_1axis__t.html", null ],
+    [ "toolbox::pcl::four_pcs_registration_t< DataType >::base_4pcs_t", "structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html", null ],
     [ "toolbox::pcl::base_coarse_registration_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", null ],
+    [ "toolbox::pcl::base_coarse_registration_t< four_pcs_registration_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", [
+      [ "toolbox::pcl::four_pcs_registration_t< DataType >", "classtoolbox_1_1pcl_1_1four__pcs__registration__t.html", [
+        [ "toolbox::pcl::super_four_pcs_registration_t< DataType >", "classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html", null ]
+      ] ]
+    ] ],
+    [ "toolbox::pcl::base_coarse_registration_t< ransac_registration_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", [
+      [ "toolbox::pcl::ransac_registration_t< DataType >", "classtoolbox_1_1pcl_1_1ransac__registration__t.html", null ]
+    ] ],
     [ "toolbox::pcl::base_correspondence_generator_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", null ],
     [ "toolbox::pcl::base_correspondence_generator_t< brute_force_correspondence_generator_t< DataType, Signature >, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", [
       [ "toolbox::pcl::brute_force_correspondence_generator_t< DataType, Signature >", "classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html", null ]
@@ -194,6 +203,7 @@ var hierarchy =
       [ "toolbox::types::detail::is_calculable_container< T, std::void_t< decltype(std::begin(std::declval< const T & >())), decltype(std::end(std::declval< const T & >())), typename T::value_type > >", "structtoolbox_1_1types_1_1detail_1_1is__calculable__container_3_01_t_00_01std_1_1void__t_3_01decca586b4229aea21d85ac37405c05d830.html", null ]
     ] ],
     [ "toolbox::utils::print_style_t::box_chars_t", "structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html", null ],
+    [ "toolbox::pcl::four_pcs_registration_t< DataType >::candidate_t", "structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html", null ],
     [ "toolbox::utils::color_handler_t", "classtoolbox_1_1utils_1_1color__handler__t.html", null ],
     [ "toolbox::utils::command_t", "classtoolbox_1_1utils_1_1command__t.html", [
       [ "toolbox::utils::CommandLineApp", "classtoolbox_1_1utils_1_1_command_line_app.html", null ]
@@ -271,6 +281,7 @@ var hierarchy =
     [ "toolbox::traits::function_traits< R(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html", [
       [ "toolbox::traits::function_traits< R(C::*)(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html", null ]
     ] ],
+    [ "toolbox::pcl::super_four_pcs_registration_t< DataType >::grid_cell_t", "structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1grid__cell__t.html", null ],
     [ "toolbox::logger::has_ostream_method< T >", "structtoolbox_1_1logger_1_1has__ostream__method.html", null ],
     [ "toolbox::logger::has_stream_operator< T >", "structtoolbox_1_1logger_1_1has__stream__operator.html", null ],
     [ "toolbox::traits::has_toString< T >", "structtoolbox_1_1traits_1_1has__to_string.html", null ],
@@ -333,6 +344,7 @@ var hierarchy =
       [ "toolbox::utils::option_t< T >", "classtoolbox_1_1utils_1_1option__t.html", null ]
     ] ],
     [ "toolbox::utils::plot_t", "classtoolbox_1_1utils_1_1plot__t.html", null ],
+    [ "toolbox::pcl::super_four_pcs_registration_t< DataType >::point_pair_t", "structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1point__pair__t.html", null ],
     [ "toolbox::types::point_t< T >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::types::point_t< data_type >", "structtoolbox_1_1types_1_1point__t.html", null ],
     [ "toolbox::types::point_t< DataType >", "structtoolbox_1_1types_1_1point__t.html", null ],
@@ -355,6 +367,7 @@ var hierarchy =
     [ "toolbox::utils::simple_timer_interface_t", "classtoolbox_1_1utils_1_1simple__timer__interface__t.html", [
       [ "toolbox::utils::simple_timer_array_t", "classtoolbox_1_1utils_1_1simple__timer__array__t.html", null ]
     ] ],
+    [ "toolbox::pcl::super_four_pcs_registration_t< DataType >::smart_index_t", "classtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1smart__index__t.html", null ],
     [ "toolbox::functional::MemoizedFunction< R(Args...)>::State", "structtoolbox_1_1functional_1_1_memoized_function_3_01_r_07_args_8_8_8_08_4_1_1_state.html", null ],
     [ "toolbox::utils::stop_watch_timer_t", "classtoolbox_1_1utils_1_1stop__watch__timer__t.html", null ],
     [ "toolbox::traits::detail::storage_traits< T >", "structtoolbox_1_1traits_1_1detail_1_1storage__traits.html", null ],

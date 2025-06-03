@@ -1,17 +1,17 @@
 var indexSectionsWithContent =
 {
-  0: "123456789_abcdefghijklmnopqrstuvwxyz~中代函变命备宏对常开总成描日枚模法特示类线许贡",
+  0: "123456789_abcdefghijklmnopqrstuvwxyz~中代函变命备宏对常开总成描日枚模法点特示类线许贡",
   1: "abcdefghijklmnopqrstuvw",
   2: "ct",
   3: "3abcdefhiklmnoprstuv",
-  4: "abcdefghijklmnoprstuvwyz~",
+  4: "abcdefghijklmnopqrstuvwyz~",
   5: "abcdfghiklmnoprstuvwxyz",
   6: "abcdefhiklmoprstuv",
   7: "aeflmps",
   8: "bcdeilmnpqstw",
-  9: "op",
+  9: "bfop",
   10: "_clrt",
-  11: "acdegklmn对描日法",
+  11: "acdegklmnpr对描日法点",
   12: "abcdghilnostuw命"
 };
 

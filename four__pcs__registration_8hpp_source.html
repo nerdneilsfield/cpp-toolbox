@@ -1,0 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/registration/four_pcs_registration.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('four__pcs__registration_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">four_pcs_registration.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="four__pcs__registration_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="kdtree_8hpp.html">cpp-toolbox/pcl/knn/kdtree.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;<a class="code" href="base__coarse__registration_8hpp.html">cpp-toolbox/pcl/registration/base_coarse_registration.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#acc63b27f4b566650496741ac4cdb43fe">   40</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt;four_pcs_registration_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// Allow base class to access protected members</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt;<a class="code hl_class" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a35cadb23f4f249a0436b26672ba95e2b">   46</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_type</a> = <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t&lt;four_pcs_registration_t&lt;DataType&gt;</a>, DataType&gt;;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">using </span>typename <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">base_type::point_cloud</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">using </span>typename <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">base_type::point_cloud_ptr</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">using </span>typename <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1registration__result__t.html">base_type::result_type</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">   50</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> = Eigen::Matrix&lt;DataType, 4, 4&gt;;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">   51</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">vector3_t</a> = Eigen::Matrix&lt;DataType, 3, 1&gt;;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef">   52</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef">matrix3_t</a> = Eigen::Matrix&lt;DataType, 3, 3&gt;;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a352e1d1b5480ed4956c7ec14f03e2b1e">   53</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">kdtree_t</a> = <a class="code hl_class" href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">toolbox::pcl::kdtree_t&lt;DataType&gt;</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">   58</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a02118a13379976b167ef98843c3f573d">   60</a></span>    std::array&lt;std::size_t, 4&gt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a02118a13379976b167ef98843c3f573d">indices</a>;  </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#aa8fc8f0100b590fa821b4b6824db24ff">   61</a></span>    std::array&lt;vector3_t, 4&gt; <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#aa8fc8f0100b590fa821b4b6824db24ff">points</a>;     </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a6eeb33ba35b93ef4bd1c861ef25fe75c">   62</a></span>    DataType <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a6eeb33ba35b93ef4bd1c861ef25fe75c">invariant1</a>;  </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a4219f22b540e599678ee645ec6e8aefd">   63</a></span>    DataType <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a4219f22b540e599678ee645ec6e8aefd">invariant2</a>;  </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ad96d68fd85f754593d5427ad5114231a">   64</a></span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">vector3_t</a> <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ad96d68fd85f754593d5427ad5114231a">normal</a>;     </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ac2a06327f05f40074e8b275b493e2482">   65</a></span>    DataType <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ac2a06327f05f40074e8b275b493e2482">d</a>;           </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  };</div>
+</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html">   71</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html">candidate_t</a></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a6c7e91577b755ff3435e4bddf45207ec">   73</a></span>    <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a6c7e91577b755ff3435e4bddf45207ec">source_base</a>;   </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#afd7baba14506318b6a4e9a02b7f870bc">   74</a></span>    <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#afd7baba14506318b6a4e9a02b7f870bc">target_base</a>;   </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ae5a32138610da5d55d5b9827902c2617">   75</a></span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ae5a32138610da5d55d5b9827902c2617">transform</a>;  </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ad237ae99be4ddc1386da6918960a8081">   76</a></span>    DataType <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ad237ae99be4ddc1386da6918960a8081">lcp_score</a>;        </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed">   77</a></span>    std::size_t <a class="code hl_variable" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed">num_inliers</a>;   </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  };</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#adf8972557472695e439d875e2bd75ca4">   80</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#adf8972557472695e439d875e2bd75ca4">four_pcs_registration_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a6e8fefd8fdb01767c4bd0c50f6ac139e">   81</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a6e8fefd8fdb01767c4bd0c50f6ac139e">~four_pcs_registration_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">   87</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">set_delta</a>(DataType delta) { m_delta = std::abs(delta); }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a61b8afa7c4ffde8502c1aa99ff31bed9">   93</a></span>  [[nodiscard]] DataType <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a61b8afa7c4ffde8502c1aa99ff31bed9">get_delta</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_delta; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">   99</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">set_overlap</a>(DataType overlap)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    m_overlap = std::clamp(overlap, <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.0), <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(1.0));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  }</div>
+</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a82dfd3c5986ceadb22b3d9b416503ab9">  108</a></span>  [[nodiscard]] DataType <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a82dfd3c5986ceadb22b3d9b416503ab9">get_overlap</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_overlap; }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abeb83b045a25daac5d2acbeeecf20282">  114</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abeb83b045a25daac5d2acbeeecf20282">set_sample_size</a>(std::size_t size) { m_sample_size = size; }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a44ad1657e829d86b6c28601106740596">  120</a></span>  [[nodiscard]] std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a44ad1657e829d86b6c28601106740596">get_sample_size</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_sample_size; }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a385f5f4f1c1b33e0005e74e6c9a40313">  126</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a385f5f4f1c1b33e0005e74e6c9a40313">set_use_normals</a>(<span class="keywordtype">bool</span> use_normals) { m_use_normals = use_normals; }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a5edc2a0b46cddc05181442c66da12b8a">  132</a></span>  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a5edc2a0b46cddc05181442c66da12b8a">get_use_normals</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_use_normals; }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a3e586f48ca1b0486c6cdf8ad5256f113">  138</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a3e586f48ca1b0486c6cdf8ad5256f113">set_max_normal_angle</a>(DataType angle) { m_max_normal_angle = std::abs(angle); }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a609eb2894bbf10dff90bc48d999d8e05">  144</a></span>  [[nodiscard]] DataType <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a609eb2894bbf10dff90bc48d999d8e05">get_max_normal_angle</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_max_normal_angle; }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a45cfc4663933839d02380e78789f90ba">  150</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a45cfc4663933839d02380e78789f90ba">set_num_bases</a>(std::size_t num_bases) { m_num_bases = num_bases; }</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a256933ae391884de5f7ad6360b1847d4">  156</a></span>  [[nodiscard]] std::size_t <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a256933ae391884de5f7ad6360b1847d4">get_num_bases</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_num_bases; }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <span class="comment">// Methods needed by base class (must be accessible via friend)</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordtype">bool</span> align_impl(result_type&amp; result);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a7c001cc08ab1e489798f7cd150b5579c">  171</a></span>  [[nodiscard]] std::string <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a7c001cc08ab1e489798f7cd150b5579c">get_algorithm_name_impl</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;4PCS&quot;</span>; }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  [[nodiscard]] <span class="keywordtype">bool</span> validate_input_impl() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordtype">void</span> set_source_impl(<span class="keyword">const</span> point_cloud_ptr&amp; source);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">void</span> set_target_impl(<span class="keyword">const</span> point_cloud_ptr&amp; target);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac119b9e10c9627e52c43f849e4080131">  192</a></span>  [[nodiscard]] <span class="keyword">const</span> std::shared_ptr&lt;kdtree_t&gt;&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac119b9e10c9627e52c43f849e4080131">get_target_kdtree</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_target_kdtree; }</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#afa14c4f942c1b04f77a0e7f796f34844">  193</a></span>  [[nodiscard]] <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#afa14c4f942c1b04f77a0e7f796f34844">get_source_samples</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_source_samples; }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abbd6f98dd4573815a64a14440c7a65d5">  194</a></span>  [[nodiscard]] <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abbd6f98dd4573815a64a14440c7a65d5">get_target_samples</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_target_samples; }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keywordtype">void</span> sample_points(<span class="keyword">const</span> point_cloud_ptr&amp; cloud, std::size_t num_samples,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                     std::vector&lt;std::size_t&gt;&amp; indices);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  [[nodiscard]] <span class="keywordtype">bool</span> are_coplanar(<span class="keyword">const</span> std::array&lt;vector3_t, 4&gt;&amp; points,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                                   DataType tolerance) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="keywordtype">void</span> compute_invariants(base_4pcs_t&amp; base) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  [[nodiscard]] transformation_t estimate_transformation(<span class="keyword">const</span> base_4pcs_t&amp; source_base,</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>                                                         <span class="keyword">const</span> base_4pcs_t&amp; target_base) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  [[nodiscard]] DataType compute_lcp_score(<span class="keyword">const</span> transformation_t&amp; transform,</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                                            std::vector&lt;std::size_t&gt;&amp; inliers) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keywordtype">void</span> refine_candidate(candidate_t&amp; candidate) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  [[nodiscard]] std::vector&lt;base_4pcs_t&gt; extract_coplanar_bases(</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>      <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; indices, <span class="keyword">const</span> point_cloud_ptr&amp; cloud,</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      std::size_t num_bases) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  [[nodiscard]] std::vector&lt;base_4pcs_t&gt; find_congruent_sets(</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="keyword">const</span> base_4pcs_t&amp; source_base, <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; target_indices,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      <span class="keyword">const</span> point_cloud_ptr&amp; target_cloud) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  [[nodiscard]] <span class="keywordtype">bool</span> is_valid_transformation(<span class="keyword">const</span> transformation_t&amp; transform) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="comment">// 4PCS特定参数 / 4PCS-specific parameters</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  DataType m_delta = <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.01);     </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  DataType m_overlap = <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.5);    </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  std::size_t m_sample_size = 200;                    </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordtype">bool</span> m_use_normals = <span class="keyword">false</span>;                         </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  DataType m_max_normal_angle = <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(0.349);  </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  std::size_t m_num_bases = 100;                      </div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="comment">// 内部数据结构 / Internal data structures</span></div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  std::shared_ptr&lt;kdtree_t&gt; m_target_kdtree;          </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  std::vector&lt;std::size_t&gt; m_source_samples;          </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  std::vector&lt;std::size_t&gt; m_target_samples;          </div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>};</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span><span class="comment">// 包含实现文件 / Include implementation file</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#include &lt;<a class="code" href="four__pcs__registration__impl_8hpp.html">cpp-toolbox/pcl/registration/impl/four_pcs_registration_impl.hpp</a>&gt;</span></div>
+<div class="ttc" id="abase__coarse__registration_8hpp_html"><div class="ttname"><a href="base__coarse__registration_8hpp.html">base_coarse_registration.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t</a></div><div class="ttdoc">粗配准算法的基类（CRTP模式） / Base class for coarse registration algorithms (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:31</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_abb9662ed603de114529f99cc453a0dc4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">toolbox::pcl::base_coarse_registration_t&lt; four_pcs_registration_t&lt; DataType &gt;, DataType &gt;::point_cloud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; point_cloud &gt; point_cloud_ptr</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:34</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t</a></div><div class="ttdoc">4PCS（4-Point Congruent Sets）粗配准算法 / 4PCS coarse registration algorithm</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:42</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a01fd13ab78c823f8ae73192c2eb660ad"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">toolbox::pcl::four_pcs_registration_t::vector3_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 1 &gt; vector3_t</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:51</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a256933ae391884de5f7ad6360b1847d4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a256933ae391884de5f7ad6360b1847d4">toolbox::pcl::four_pcs_registration_t::get_num_bases</a></div><div class="ttdeci">std::size_t get_num_bases() const</div><div class="ttdoc">获取基的数量 / Get number of bases</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:156</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a385f5f4f1c1b33e0005e74e6c9a40313"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a385f5f4f1c1b33e0005e74e6c9a40313">toolbox::pcl::four_pcs_registration_t::set_use_normals</a></div><div class="ttdeci">void set_use_normals(bool use_normals)</div><div class="ttdoc">设置是否使用法向量信息 / Set whether to use normal information</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:126</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a3e586f48ca1b0486c6cdf8ad5256f113"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a3e586f48ca1b0486c6cdf8ad5256f113">toolbox::pcl::four_pcs_registration_t::set_max_normal_angle</a></div><div class="ttdeci">void set_max_normal_angle(DataType angle)</div><div class="ttdoc">设置最大法向量偏差角度 / Set maximum normal deviation angle</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:138</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a44ad1657e829d86b6c28601106740596"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a44ad1657e829d86b6c28601106740596">toolbox::pcl::four_pcs_registration_t::get_sample_size</a></div><div class="ttdeci">std::size_t get_sample_size() const</div><div class="ttdoc">获取采样点数 / Get sample size</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:120</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a45cfc4663933839d02380e78789f90ba"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a45cfc4663933839d02380e78789f90ba">toolbox::pcl::four_pcs_registration_t::set_num_bases</a></div><div class="ttdeci">void set_num_bases(std::size_t num_bases)</div><div class="ttdoc">设置基的数量 / Set number of bases to try</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:150</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a5edc2a0b46cddc05181442c66da12b8a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a5edc2a0b46cddc05181442c66da12b8a">toolbox::pcl::four_pcs_registration_t::get_use_normals</a></div><div class="ttdeci">bool get_use_normals() const</div><div class="ttdoc">获取是否使用法向量 / Get whether using normals</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:132</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a609eb2894bbf10dff90bc48d999d8e05"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a609eb2894bbf10dff90bc48d999d8e05">toolbox::pcl::four_pcs_registration_t::get_max_normal_angle</a></div><div class="ttdeci">DataType get_max_normal_angle() const</div><div class="ttdoc">获取最大法向量偏差角度 / Get maximum normal deviation angle</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:144</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a61b8afa7c4ffde8502c1aa99ff31bed9"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a61b8afa7c4ffde8502c1aa99ff31bed9">toolbox::pcl::four_pcs_registration_t::get_delta</a></div><div class="ttdeci">DataType get_delta() const</div><div class="ttdoc">获取配准精度 / Get registration accuracy</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:93</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a6e8fefd8fdb01767c4bd0c50f6ac139e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a6e8fefd8fdb01767c4bd0c50f6ac139e">toolbox::pcl::four_pcs_registration_t::~four_pcs_registration_t</a></div><div class="ttdeci">~four_pcs_registration_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a7c001cc08ab1e489798f7cd150b5579c"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a7c001cc08ab1e489798f7cd150b5579c">toolbox::pcl::four_pcs_registration_t::get_algorithm_name_impl</a></div><div class="ttdeci">std::string get_algorithm_name_impl() const</div><div class="ttdoc">获取算法名称实现 / Get algorithm name implementation</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:171</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a82dfd3c5986ceadb22b3d9b416503ab9"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a82dfd3c5986ceadb22b3d9b416503ab9">toolbox::pcl::four_pcs_registration_t::get_overlap</a></div><div class="ttdeci">DataType get_overlap() const</div><div class="ttdoc">获取重叠率 / Get overlap ratio</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:108</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a8fff43aa607e283b668558427d15dfef"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef">toolbox::pcl::four_pcs_registration_t::matrix3_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 3 &gt; matrix3_t</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_a9bd6d4386a784c740b73193b05bd0126"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">toolbox::pcl::four_pcs_registration_t::transformation_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; transformation_t</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:50</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_aa692a9e6ad553cead19446acb8dd3992"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">toolbox::pcl::four_pcs_registration_t::set_overlap</a></div><div class="ttdeci">void set_overlap(DataType overlap)</div><div class="ttdoc">设置重叠率估计 / Set overlap ratio estimate</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:99</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_ab83a7df681337f6b167418403629d139"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">toolbox::pcl::four_pcs_registration_t::set_delta</a></div><div class="ttdeci">void set_delta(DataType delta)</div><div class="ttdoc">设置配准精度delta / Set registration accuracy delta</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:87</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_abbd6f98dd4573815a64a14440c7a65d5"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abbd6f98dd4573815a64a14440c7a65d5">toolbox::pcl::four_pcs_registration_t::get_target_samples</a></div><div class="ttdeci">const std::vector&lt; std::size_t &gt; &amp; get_target_samples() const</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:194</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_abeb83b045a25daac5d2acbeeecf20282"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abeb83b045a25daac5d2acbeeecf20282">toolbox::pcl::four_pcs_registration_t::set_sample_size</a></div><div class="ttdeci">void set_sample_size(std::size_t size)</div><div class="ttdoc">设置采样点数 / Set number of points to sample</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:114</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_ac119b9e10c9627e52c43f849e4080131"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac119b9e10c9627e52c43f849e4080131">toolbox::pcl::four_pcs_registration_t::get_target_kdtree</a></div><div class="ttdeci">const std::shared_ptr&lt; kdtree_t &gt; &amp; get_target_kdtree() const</div><div class="ttdoc">获取受保护的成员 / Get protected members</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:192</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_adf8972557472695e439d875e2bd75ca4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#adf8972557472695e439d875e2bd75ca4">toolbox::pcl::four_pcs_registration_t::four_pcs_registration_t</a></div><div class="ttdeci">four_pcs_registration_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_afa14c4f942c1b04f77a0e7f796f34844"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#afa14c4f942c1b04f77a0e7f796f34844">toolbox::pcl::four_pcs_registration_t::get_source_samples</a></div><div class="ttdeci">const std::vector&lt; std::size_t &gt; &amp; get_source_samples() const</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:193</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1kdtree__generic__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1kdtree__generic__t.html">toolbox::pcl::kdtree_generic_t</a></div><div class="ttdef"><b>Definition</b> kdtree.hpp:14</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt; DataType &gt;</a></div></div>
+<div class="ttc" id="afour__pcs__registration__impl_8hpp_html"><div class="ttname"><a href="four__pcs__registration__impl_8hpp.html">four_pcs_registration_impl.hpp</a></div></div>
+<div class="ttc" id="akdtree_8hpp_html"><div class="ttname"><a href="kdtree_8hpp.html">kdtree.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">toolbox::pcl::four_pcs_registration_t::base_4pcs_t</a></div><div class="ttdoc">4点基结构 / 4-point base structure</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:59</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_a02118a13379976b167ef98843c3f573d"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a02118a13379976b167ef98843c3f573d">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::indices</a></div><div class="ttdeci">std::array&lt; std::size_t, 4 &gt; indices</div><div class="ttdoc">点索引 / Point indices</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:60</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_a4219f22b540e599678ee645ec6e8aefd"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a4219f22b540e599678ee645ec6e8aefd">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::invariant2</a></div><div class="ttdeci">DataType invariant2</div><div class="ttdoc">第二个仿射不变量 / Second affine invariant</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:63</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_a6eeb33ba35b93ef4bd1c861ef25fe75c"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#a6eeb33ba35b93ef4bd1c861ef25fe75c">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::invariant1</a></div><div class="ttdeci">DataType invariant1</div><div class="ttdoc">第一个仿射不变量 / First affine invariant</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:62</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_aa8fc8f0100b590fa821b4b6824db24ff"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#aa8fc8f0100b590fa821b4b6824db24ff">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::points</a></div><div class="ttdeci">std::array&lt; vector3_t, 4 &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:61</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_ac2a06327f05f40074e8b275b493e2482"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ac2a06327f05f40074e8b275b493e2482">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::d</a></div><div class="ttdeci">DataType d</div><div class="ttdoc">平面方程参数 / Plane equation parameter</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:65</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t_html_ad96d68fd85f754593d5427ad5114231a"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#ad96d68fd85f754593d5427ad5114231a">toolbox::pcl::four_pcs_registration_t::base_4pcs_t::normal</a></div><div class="ttdeci">vector3_t normal</div><div class="ttdoc">平面法向量 / Plane normal</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:64</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html">toolbox::pcl::four_pcs_registration_t::candidate_t</a></div><div class="ttdoc">候选匹配结构 / Candidate match structure</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:72</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html_a169d1dc9665375480d09542fa54725ed"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed">toolbox::pcl::four_pcs_registration_t::candidate_t::num_inliers</a></div><div class="ttdeci">std::size_t num_inliers</div><div class="ttdoc">内点数量 / Number of inliers</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:77</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html_a6c7e91577b755ff3435e4bddf45207ec"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a6c7e91577b755ff3435e4bddf45207ec">toolbox::pcl::four_pcs_registration_t::candidate_t::source_base</a></div><div class="ttdeci">base_4pcs_t source_base</div><div class="ttdoc">源点云基 / Source base</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:73</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html_ad237ae99be4ddc1386da6918960a8081"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ad237ae99be4ddc1386da6918960a8081">toolbox::pcl::four_pcs_registration_t::candidate_t::lcp_score</a></div><div class="ttdeci">DataType lcp_score</div><div class="ttdoc">LCP（最大公共点集）评分 / LCP score.</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:76</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html_ae5a32138610da5d55d5b9827902c2617"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#ae5a32138610da5d55d5b9827902c2617">toolbox::pcl::four_pcs_registration_t::candidate_t::transform</a></div><div class="ttdeci">transformation_t transform</div><div class="ttdoc">估计的变换 / Estimated transformation</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:75</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t_html_afd7baba14506318b6a4e9a02b7f870bc"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#afd7baba14506318b6a4e9a02b7f870bc">toolbox::pcl::four_pcs_registration_t::candidate_t::target_base</a></div><div class="ttdeci">base_4pcs_t target_base</div><div class="ttdoc">目标点云基 / Target base</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:74</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1registration__result__t.html">toolbox::pcl::registration_result_t</a></div><div class="ttdoc">配准结果结构体 / Registration result structure</div><div class="ttdef"><b>Definition</b> registration_result.hpp:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_0bd0c49aa95dc07b46acbdff3f1b0765.html">registration</a></li><li class="navelem"><a class="el" href="four__pcs__registration_8hpp.html">four_pcs_registration.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

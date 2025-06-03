@@ -85,4 +85,17 @@ digraph "src/include/cpp-toolbox/pcl/knn/impl/kdtree_impl.hpp"
   Node26 -> Node24 [id="edge52_Node000026_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node26 -> Node28 [id="edge53_Node000026_Node000028",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node28 [id="Node000028",label="src/include/cpp-toolbox\l/pcl/norm/norm.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$norm_8hpp.html",tooltip="法向量提取算法统一导出文件 / Unified export file for normal extraction algorithms"];
+  Node2 -> Node29 [id="edge54_Node000002_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node29 [id="Node000029",label="src/include/cpp-toolbox\l/pcl/registration/four\l_pcs_registration.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$four__pcs__registration_8hpp.html",tooltip=" "];
+  Node29 -> Node30 [id="edge55_Node000029_Node000030",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node30 [id="Node000030",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/four_pcs_registration\l_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$four__pcs__registration__impl_8hpp.html",tooltip=" "];
+  Node30 -> Node29 [id="edge56_Node000030_Node000029",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node29 -> Node31 [id="edge57_Node000029_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node31 [id="Node000031",label="src/include/cpp-toolbox\l/pcl/registration/registration.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$registration_8hpp.html",tooltip="点云配准算法统一导出文件 / Unified export file for point cloud registration algorithms"];
+  Node29 -> Node32 [id="edge58_Node000029_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node32 [id="Node000032",label="src/include/cpp-toolbox\l/pcl/registration/super\l_four_pcs_registration.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$super__four__pcs__registration_8hpp.html",tooltip=" "];
+  Node32 -> Node33 [id="edge59_Node000032_Node000033",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node33 [id="Node000033",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/super_four_pcs_registration\l_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$super__four__pcs__registration__impl_8hpp.html",tooltip=" "];
+  Node33 -> Node32 [id="edge60_Node000033_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node32 -> Node31 [id="edge61_Node000032_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

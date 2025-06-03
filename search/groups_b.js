@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['日志宏_20logging_20macros_0',['日志宏 / Logging Macros',['../group___logging_macros.html',1,'']]]
+  ['对应点生成_20correspondence_20generation_0',['对应点生成 / Correspondence Generation',['../group__correspondence.html',1,'']]]
 ];

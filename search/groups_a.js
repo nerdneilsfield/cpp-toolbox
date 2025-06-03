@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['描述子提取_20descriptor_20extraction_0',['描述子提取 / Descriptor Extraction',['../group__descriptors.html',1,'']]]
+  ['registration_0',['点云配准 / Point Cloud Registration',['../group__registration.html',1,'']]]
 ];

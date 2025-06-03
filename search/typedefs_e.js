@@ -6,7 +6,9 @@ var searchData=
   ['signature_5ftype_3',['signature_type',['../classtoolbox_1_1pcl_1_1fpfh__extractor__t.html#a69dea191e0f8bce71e8422fd0853f23a',1,'toolbox::pcl::fpfh_extractor_t::signature_type'],['../classtoolbox_1_1pcl_1_1pfh__extractor__t.html#a1a8e4984664a33867a4a27742fc49e92',1,'toolbox::pcl::pfh_extractor_t::signature_type'],['../classtoolbox_1_1pcl_1_1shot__extractor__t.html#a1452ab166d83f1f007c00e34abda37a1',1,'toolbox::pcl::shot_extractor_t::signature_type']]],
   ['signatures_5fptr_4',['signatures_ptr',['../classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a67895eefc38e550b6c126844cac51a09',1,'toolbox::pcl::base_correspondence_generator_t']]],
   ['size_5ft_5',['size_t',['../types_8hpp.html#a801d6a451a01953ef8cbae6feb6a3638',1,'types.hpp']]],
-  ['susan_5fkeypoint_5fextractor_5fbfknn_5fparallel_5ft_6',['susan_keypoint_extractor_bfknn_parallel_t',['../namespacetoolbox_1_1pcl.html#ac27a38de3696e7b165296ceb653b2ad8',1,'toolbox::pcl']]],
-  ['susan_5fkeypoint_5fextractor_5fbfknn_5ft_7',['susan_keypoint_extractor_bfknn_t',['../namespacetoolbox_1_1pcl.html#a275922ab91e8184f7883c70ba864e15d',1,'toolbox::pcl']]],
-  ['susan_5fkeypoint_5fextractor_5fkdtree_5ft_8',['susan_keypoint_extractor_kdtree_t',['../namespacetoolbox_1_1pcl.html#a186ef30b331279bdbbb528aadc356dfe',1,'toolbox::pcl']]]
+  ['super_5ffour_5fpcs_5fregistration_6',['super_four_pcs_registration',['../group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a',1,'toolbox::pcl']]],
+  ['super_5ffour_5fpcs_5fregistration_5fd_7',['super_four_pcs_registration_d',['../group__registration.html#ga27ddfe4db71c1db243e52a49f8f0665f',1,'toolbox::pcl']]],
+  ['susan_5fkeypoint_5fextractor_5fbfknn_5fparallel_5ft_8',['susan_keypoint_extractor_bfknn_parallel_t',['../namespacetoolbox_1_1pcl.html#ac27a38de3696e7b165296ceb653b2ad8',1,'toolbox::pcl']]],
+  ['susan_5fkeypoint_5fextractor_5fbfknn_5ft_9',['susan_keypoint_extractor_bfknn_t',['../namespacetoolbox_1_1pcl.html#a275922ab91e8184f7883c70ba864e15d',1,'toolbox::pcl']]],
+  ['susan_5fkeypoint_5fextractor_5fkdtree_5ft_10',['susan_keypoint_extractor_kdtree_t',['../namespacetoolbox_1_1pcl.html#a186ef30b331279bdbbb528aadc356dfe',1,'toolbox::pcl']]]
 ];

@@ -1,0 +1,1033 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::super_four_pcs_registration_t&lt; DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::super_four_pcs_registration_t&lt; DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Super4PCS 粗配准算法 / Super4PCS coarse registration algorithm.  
+ <a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="super__four__pcs__registration_8hpp_source.html">super_four_pcs_registration.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::super_four_pcs_registration_t&lt; DataType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1grid__cell__t.html">grid_cell_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">3D网格单元 / 3D grid cell  <a href="structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1grid__cell__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1point__pair__t.html">point_pair_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">点对结构 / Point pair structure  <a href="structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1point__pair__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1smart__index__t.html">smart_index_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">智能索引结构 / Smart index structure  <a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1smart__index__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aaf2540675dd2cbe27aeb03ad90cd162f" id="r_aaf2540675dd2cbe27aeb03ad90cd162f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aaf2540675dd2cbe27aeb03ad90cd162f">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:aaf2540675dd2cbe27aeb03ad90cd162f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd6d4386a784c740b73193b05bd0126" id="r_a9bd6d4386a784c740b73193b05bd0126"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:a9bd6d4386a784c740b73193b05bd0126"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fd13ab78c823f8ae73192c2eb660ad" id="r_a01fd13ab78c823f8ae73192c2eb660ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">vector3_t</a> = Eigen::Matrix&lt; DataType, 3, 1 &gt;</td></tr>
+<tr class="separator:a01fd13ab78c823f8ae73192c2eb660ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fff43aa607e283b668558427d15dfef" id="r_a8fff43aa607e283b668558427d15dfef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef">matrix3_t</a> = Eigen::Matrix&lt; DataType, 3, 3 &gt;</td></tr>
+<tr class="separator:a8fff43aa607e283b668558427d15dfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t&lt; DataType &gt;</a></td></tr>
+<tr class="memitem:a35cadb23f4f249a0436b26672ba95e2b inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a35cadb23f4f249a0436b26672ba95e2b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a35cadb23f4f249a0436b26672ba95e2b">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; DataType &gt;, DataType &gt;</td></tr>
+<tr class="separator:a35cadb23f4f249a0436b26672ba95e2b inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd6d4386a784c740b73193b05bd0126 inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a9bd6d4386a784c740b73193b05bd0126"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:a9bd6d4386a784c740b73193b05bd0126 inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fd13ab78c823f8ae73192c2eb660ad inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a01fd13ab78c823f8ae73192c2eb660ad"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">vector3_t</a> = Eigen::Matrix&lt; DataType, 3, 1 &gt;</td></tr>
+<tr class="separator:a01fd13ab78c823f8ae73192c2eb660ad inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fff43aa607e283b668558427d15dfef inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a8fff43aa607e283b668558427d15dfef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef">matrix3_t</a> = Eigen::Matrix&lt; DataType, 3, 3 &gt;</td></tr>
+<tr class="separator:a8fff43aa607e283b668558427d15dfef inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352e1d1b5480ed4956c7ec14f03e2b1e inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a352e1d1b5480ed4956c7ec14f03e2b1e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a352e1d1b5480ed4956c7ec14f03e2b1e">kdtree_t</a> = <a class="el" href="namespacetoolbox_1_1pcl.html#a4f8d9d2abeec3ae6d41c3f82fedaa96d">toolbox::pcl::kdtree_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a352e1d1b5480ed4956c7ec14f03e2b1e inherit pub_types_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t&lt; four_pcs_registration_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a330ff8bf223407808e7ad96cf2774d61 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a330ff8bf223407808e7ad96cf2774d61"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a330ff8bf223407808e7ad96cf2774d61 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9662ed603de114529f99cc453a0dc4 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_abb9662ed603de114529f99cc453a0dc4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a330ff8bf223407808e7ad96cf2774d61">point_cloud</a> &gt;</td></tr>
+<tr class="separator:abb9662ed603de114529f99cc453a0dc4 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1237e421a5071b8fd76e9f873e2062ea inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a1237e421a5071b8fd76e9f873e2062ea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &gt;</td></tr>
+<tr class="separator:a1237e421a5071b8fd76e9f873e2062ea inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af460db3c7ab598b24c50cf1b75c91b86 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_af460db3c7ab598b24c50cf1b75c91b86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:af460db3c7ab598b24c50cf1b75c91b86 inherit pub_types_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:abf11714f683638cd8042b9751b4be032" id="r_abf11714f683638cd8042b9751b4be032"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#abf11714f683638cd8042b9751b4be032">super_four_pcs_registration_t</a> ()=default</td></tr>
+<tr class="separator:abf11714f683638cd8042b9751b4be032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3a00b707366f050f28f0d964b4f8c2" id="r_a3a3a00b707366f050f28f0d964b4f8c2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a3a3a00b707366f050f28f0d964b4f8c2">~super_four_pcs_registration_t</a> ()=default</td></tr>
+<tr class="separator:a3a3a00b707366f050f28f0d964b4f8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d973b1493bd74285b47e90e56b0ec3" id="r_aa9d973b1493bd74285b47e90e56b0ec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aa9d973b1493bd74285b47e90e56b0ec3">set_grid_resolution</a> (DataType resolution)</td></tr>
+<tr class="memdesc:aa9d973b1493bd74285b47e90e56b0ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置网格分辨率 / Set grid resolution  <br /></td></tr>
+<tr class="separator:aa9d973b1493bd74285b47e90e56b0ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8be1078ed0bc90d5477d0e2dbda11f58" id="r_a8be1078ed0bc90d5477d0e2dbda11f58"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a8be1078ed0bc90d5477d0e2dbda11f58">get_grid_resolution</a> () const</td></tr>
+<tr class="memdesc:a8be1078ed0bc90d5477d0e2dbda11f58"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取网格分辨率 / Get grid resolution  <br /></td></tr>
+<tr class="separator:a8be1078ed0bc90d5477d0e2dbda11f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa59c732982b09e8d03f259f92e80c393" id="r_aa59c732982b09e8d03f259f92e80c393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aa59c732982b09e8d03f259f92e80c393">enable_smart_indexing</a> (bool enable)</td></tr>
+<tr class="memdesc:aa59c732982b09e8d03f259f92e80c393"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用/禁用智能索引 / Enable/disable smart indexing  <br /></td></tr>
+<tr class="separator:aa59c732982b09e8d03f259f92e80c393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60cccb1937fee92df74e6d871f79e71d" id="r_a60cccb1937fee92df74e6d871f79e71d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a60cccb1937fee92df74e6d871f79e71d">is_smart_indexing_enabled</a> () const</td></tr>
+<tr class="memdesc:a60cccb1937fee92df74e6d871f79e71d"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否使用智能索引 / Get whether using smart indexing  <br /></td></tr>
+<tr class="separator:a60cccb1937fee92df74e6d871f79e71d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5bcbe24f7ef936ce1f64da166827c8" id="r_a9f5bcbe24f7ef936ce1f64da166827c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a9f5bcbe24f7ef936ce1f64da166827c8">set_pair_distance_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:a9f5bcbe24f7ef936ce1f64da166827c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置点对距离容差 / Set pair distance tolerance  <br /></td></tr>
+<tr class="separator:a9f5bcbe24f7ef936ce1f64da166827c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eacb6c453a70485670cb519c9a7cd24" id="r_a0eacb6c453a70485670cb519c9a7cd24"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a0eacb6c453a70485670cb519c9a7cd24">get_pair_distance_epsilon</a> () const</td></tr>
+<tr class="memdesc:a0eacb6c453a70485670cb519c9a7cd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取点对距离容差 / Get pair distance tolerance  <br /></td></tr>
+<tr class="separator:a0eacb6c453a70485670cb519c9a7cd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t&lt; DataType &gt;</a></td></tr>
+<tr class="memitem:adf8972557472695e439d875e2bd75ca4 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_adf8972557472695e439d875e2bd75ca4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#adf8972557472695e439d875e2bd75ca4">four_pcs_registration_t</a> ()=default</td></tr>
+<tr class="separator:adf8972557472695e439d875e2bd75ca4 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8fefd8fdb01767c4bd0c50f6ac139e inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a6e8fefd8fdb01767c4bd0c50f6ac139e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a6e8fefd8fdb01767c4bd0c50f6ac139e">~four_pcs_registration_t</a> ()=default</td></tr>
+<tr class="separator:a6e8fefd8fdb01767c4bd0c50f6ac139e inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83a7df681337f6b167418403629d139 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_ab83a7df681337f6b167418403629d139"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">set_delta</a> (DataType delta)</td></tr>
+<tr class="memdesc:ab83a7df681337f6b167418403629d139 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置配准精度delta / Set registration accuracy delta  <br /></td></tr>
+<tr class="separator:ab83a7df681337f6b167418403629d139 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b8afa7c4ffde8502c1aa99ff31bed9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a61b8afa7c4ffde8502c1aa99ff31bed9"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a61b8afa7c4ffde8502c1aa99ff31bed9">get_delta</a> () const</td></tr>
+<tr class="memdesc:a61b8afa7c4ffde8502c1aa99ff31bed9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取配准精度 / Get registration accuracy  <br /></td></tr>
+<tr class="separator:a61b8afa7c4ffde8502c1aa99ff31bed9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa692a9e6ad553cead19446acb8dd3992 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_aa692a9e6ad553cead19446acb8dd3992"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">set_overlap</a> (DataType overlap)</td></tr>
+<tr class="memdesc:aa692a9e6ad553cead19446acb8dd3992 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置重叠率估计 / Set overlap ratio estimate  <br /></td></tr>
+<tr class="separator:aa692a9e6ad553cead19446acb8dd3992 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82dfd3c5986ceadb22b3d9b416503ab9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a82dfd3c5986ceadb22b3d9b416503ab9"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a82dfd3c5986ceadb22b3d9b416503ab9">get_overlap</a> () const</td></tr>
+<tr class="memdesc:a82dfd3c5986ceadb22b3d9b416503ab9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取重叠率 / Get overlap ratio  <br /></td></tr>
+<tr class="separator:a82dfd3c5986ceadb22b3d9b416503ab9 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb83b045a25daac5d2acbeeecf20282 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_abeb83b045a25daac5d2acbeeecf20282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abeb83b045a25daac5d2acbeeecf20282">set_sample_size</a> (std::size_t size)</td></tr>
+<tr class="memdesc:abeb83b045a25daac5d2acbeeecf20282 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置采样点数 / Set number of points to sample  <br /></td></tr>
+<tr class="separator:abeb83b045a25daac5d2acbeeecf20282 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44ad1657e829d86b6c28601106740596 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a44ad1657e829d86b6c28601106740596"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a44ad1657e829d86b6c28601106740596">get_sample_size</a> () const</td></tr>
+<tr class="memdesc:a44ad1657e829d86b6c28601106740596 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取采样点数 / Get sample size  <br /></td></tr>
+<tr class="separator:a44ad1657e829d86b6c28601106740596 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385f5f4f1c1b33e0005e74e6c9a40313 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a385f5f4f1c1b33e0005e74e6c9a40313"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a385f5f4f1c1b33e0005e74e6c9a40313">set_use_normals</a> (bool use_normals)</td></tr>
+<tr class="memdesc:a385f5f4f1c1b33e0005e74e6c9a40313 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否使用法向量信息 / Set whether to use normal information  <br /></td></tr>
+<tr class="separator:a385f5f4f1c1b33e0005e74e6c9a40313 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5edc2a0b46cddc05181442c66da12b8a inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a5edc2a0b46cddc05181442c66da12b8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a5edc2a0b46cddc05181442c66da12b8a">get_use_normals</a> () const</td></tr>
+<tr class="memdesc:a5edc2a0b46cddc05181442c66da12b8a inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否使用法向量 / Get whether using normals  <br /></td></tr>
+<tr class="separator:a5edc2a0b46cddc05181442c66da12b8a inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e586f48ca1b0486c6cdf8ad5256f113 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a3e586f48ca1b0486c6cdf8ad5256f113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a3e586f48ca1b0486c6cdf8ad5256f113">set_max_normal_angle</a> (DataType angle)</td></tr>
+<tr class="memdesc:a3e586f48ca1b0486c6cdf8ad5256f113 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大法向量偏差角度 / Set maximum normal deviation angle  <br /></td></tr>
+<tr class="separator:a3e586f48ca1b0486c6cdf8ad5256f113 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a609eb2894bbf10dff90bc48d999d8e05 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a609eb2894bbf10dff90bc48d999d8e05"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a609eb2894bbf10dff90bc48d999d8e05">get_max_normal_angle</a> () const</td></tr>
+<tr class="memdesc:a609eb2894bbf10dff90bc48d999d8e05 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大法向量偏差角度 / Get maximum normal deviation angle  <br /></td></tr>
+<tr class="separator:a609eb2894bbf10dff90bc48d999d8e05 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45cfc4663933839d02380e78789f90ba inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a45cfc4663933839d02380e78789f90ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a45cfc4663933839d02380e78789f90ba">set_num_bases</a> (std::size_t num_bases)</td></tr>
+<tr class="memdesc:a45cfc4663933839d02380e78789f90ba inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置基的数量 / Set number of bases to try  <br /></td></tr>
+<tr class="separator:a45cfc4663933839d02380e78789f90ba inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256933ae391884de5f7ad6360b1847d4 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a256933ae391884de5f7ad6360b1847d4"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a256933ae391884de5f7ad6360b1847d4">get_num_bases</a> () const</td></tr>
+<tr class="memdesc:a256933ae391884de5f7ad6360b1847d4 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取基的数量 / Get number of bases  <br /></td></tr>
+<tr class="separator:a256933ae391884de5f7ad6360b1847d4 inherit pub_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t&lt; four_pcs_registration_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a169d330c50d4e0a0dd5550499509ce1f inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a169d330c50d4e0a0dd5550499509ce1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a169d330c50d4e0a0dd5550499509ce1f">base_coarse_registration_t</a> ()=default</td></tr>
+<tr class="separator:a169d330c50d4e0a0dd5550499509ce1f inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44efa1624ffd632e76daa9fb34359575 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a44efa1624ffd632e76daa9fb34359575"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a44efa1624ffd632e76daa9fb34359575">base_coarse_registration_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a44efa1624ffd632e76daa9fb34359575 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e45bb208f9c2f9a5e7b6a7d15e62df9 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a7e45bb208f9c2f9a5e7b6a7d15e62df9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7e45bb208f9c2f9a5e7b6a7d15e62df9">base_coarse_registration_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7e45bb208f9c2f9a5e7b6a7d15e62df9 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a360fb65f657d788f938921675b84f542 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a360fb65f657d788f938921675b84f542"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a360fb65f657d788f938921675b84f542">~base_coarse_registration_t</a> ()=default</td></tr>
+<tr class="separator:a360fb65f657d788f938921675b84f542 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64e3802ec2fc2fd1e242f6f0e0bb5fae inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a64e3802ec2fc2fd1e242f6f0e0bb5fae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a64e3802ec2fc2fd1e242f6f0e0bb5fae">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a64e3802ec2fc2fd1e242f6f0e0bb5fae inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8662d8850837f64a48a88125fec64dc2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a8662d8850837f64a48a88125fec64dc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a8662d8850837f64a48a88125fec64dc2">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a8662d8850837f64a48a88125fec64dc2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720a3745774bfa76bf0f0e3db6684579 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a720a3745774bfa76bf0f0e3db6684579"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:a720a3745774bfa76bf0f0e3db6684579 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云 / Set source point cloud  <br /></td></tr>
+<tr class="separator:a720a3745774bfa76bf0f0e3db6684579 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03a30f0b2f98b1c9af10ce017a7475eb inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a03a30f0b2f98b1c9af10ce017a7475eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a03a30f0b2f98b1c9af10ce017a7475eb inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标点云 / Set target point cloud  <br /></td></tr>
+<tr class="separator:a03a30f0b2f98b1c9af10ce017a7475eb inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c467445d58f5230fe33f5c6fedebc03 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a1c467445d58f5230fe33f5c6fedebc03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c467445d58f5230fe33f5c6fedebc03">set_correspondences</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> &amp;correspondences)</td></tr>
+<tr class="memdesc:a1c467445d58f5230fe33f5c6fedebc03 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置初始对应关系（可选，主要用于RANSAC类算法） / Set initial correspondences (optional, mainly for RANSAC-like algorithms)  <br /></td></tr>
+<tr class="separator:a1c467445d58f5230fe33f5c6fedebc03 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac29137c13555fc264af66a13b2ee0ae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_ac29137c13555fc264af66a13b2ee0ae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ac29137c13555fc264af66a13b2ee0ae4">set_max_iterations</a> (std::size_t max_iterations)</td></tr>
+<tr class="memdesc:ac29137c13555fc264af66a13b2ee0ae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大迭代次数 / Set maximum iterations  <br /></td></tr>
+<tr class="separator:ac29137c13555fc264af66a13b2ee0ae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fef1d31181a2e6f11d73cc1b8385aee inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a7fef1d31181a2e6f11d73cc1b8385aee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a7fef1d31181a2e6f11d73cc1b8385aee">set_inlier_threshold</a> (DataType threshold)</td></tr>
+<tr class="memdesc:a7fef1d31181a2e6f11d73cc1b8385aee inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置内点距离阈值 / Set inlier distance threshold  <br /></td></tr>
+<tr class="separator:a7fef1d31181a2e6f11d73cc1b8385aee inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa44f9dbe0c57abc9f724c89b07efae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_afa44f9dbe0c57abc9f724c89b07efae4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#afa44f9dbe0c57abc9f724c89b07efae4">set_convergence_threshold</a> (DataType threshold)</td></tr>
+<tr class="memdesc:afa44f9dbe0c57abc9f724c89b07efae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置收敛阈值 / Set convergence threshold  <br /></td></tr>
+<tr class="separator:afa44f9dbe0c57abc9f724c89b07efae4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65bcf09d6eaff540dd0935d5ca71d9d3 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a65bcf09d6eaff540dd0935d5ca71d9d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a65bcf09d6eaff540dd0935d5ca71d9d3">set_min_inliers</a> (std::size_t min_inliers)</td></tr>
+<tr class="memdesc:a65bcf09d6eaff540dd0935d5ca71d9d3 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最小内点数量 / Set minimum number of inliers  <br /></td></tr>
+<tr class="separator:a65bcf09d6eaff540dd0935d5ca71d9d3 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a8160df63bb032ed567132bef36455 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_ab6a8160df63bb032ed567132bef36455"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:ab6a8160df63bb032ed567132bef36455 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:ab6a8160df63bb032ed567132bef36455 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83c2c74f650b74ee81fa8428d8342c3f inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a83c2c74f650b74ee81fa8428d8342c3f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a83c2c74f650b74ee81fa8428d8342c3f">get_algorithm_name</a> () const</td></tr>
+<tr class="memdesc:a83c2c74f650b74ee81fa8428d8342c3f inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取算法名称 / Get algorithm name  <br /></td></tr>
+<tr class="separator:a83c2c74f650b74ee81fa8428d8342c3f inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c280ee04eca6dc084ebc5ac33be9610 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a5c280ee04eca6dc084ebc5ac33be9610"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a5c280ee04eca6dc084ebc5ac33be9610">enable_parallel</a> (bool enable=true)</td></tr>
+<tr class="memdesc:a5c280ee04eca6dc084ebc5ac33be9610 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用/禁用并行计算 / Enable/disable parallel computation  <br /></td></tr>
+<tr class="separator:a5c280ee04eca6dc084ebc5ac33be9610 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08873d0dfad871823a54d1169dc3c896 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a08873d0dfad871823a54d1169dc3c896"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a08873d0dfad871823a54d1169dc3c896">is_parallel_enabled</a> () const</td></tr>
+<tr class="memdesc:a08873d0dfad871823a54d1169dc3c896 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取并行计算状态 / Get parallel computation status  <br /></td></tr>
+<tr class="separator:a08873d0dfad871823a54d1169dc3c896 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf6b0ace938d3f20c994a0122888c367 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_aaf6b0ace938d3f20c994a0122888c367"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#aaf6b0ace938d3f20c994a0122888c367">set_random_seed</a> (unsigned int seed)</td></tr>
+<tr class="memdesc:aaf6b0ace938d3f20c994a0122888c367 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置随机种子 / Set random seed  <br /></td></tr>
+<tr class="separator:aaf6b0ace938d3f20c994a0122888c367 inherit pub_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a20432da5c753e25ddb38979805e3b342" id="r_a20432da5c753e25ddb38979805e3b342"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a20432da5c753e25ddb38979805e3b342">get_algorithm_name_impl</a> () const</td></tr>
+<tr class="memdesc:a20432da5c753e25ddb38979805e3b342"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取算法名称实现 / Get algorithm name implementation  <br /></td></tr>
+<tr class="separator:a20432da5c753e25ddb38979805e3b342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10c0f29c3d4516036c978c9e8635f2e6" id="r_a10c0f29c3d4516036c978c9e8635f2e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a10c0f29c3d4516036c978c9e8635f2e6">align_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:a10c0f29c3d4516036c978c9e8635f2e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类实现的配准算法 / Registration algorithm implementation  <br /></td></tr>
+<tr class="separator:a10c0f29c3d4516036c978c9e8635f2e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6cfb08e0621523aba51904b43bd7982" id="r_aa6cfb08e0621523aba51904b43bd7982"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aa6cfb08e0621523aba51904b43bd7982">find_congruent_sets_optimized</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;source_base) const</td></tr>
+<tr class="memdesc:aa6cfb08e0621523aba51904b43bd7982"><td class="mdescLeft">&#160;</td><td class="mdescRight">寻找匹配的4点集（优化版本） / Find congruent sets (optimized version)  <br /></td></tr>
+<tr class="separator:aa6cfb08e0621523aba51904b43bd7982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t&lt; DataType &gt;</a></td></tr>
+<tr class="memitem:acb4e7a8935a61069ea071d7c960c9153 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_acb4e7a8935a61069ea071d7c960c9153"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#acb4e7a8935a61069ea071d7c960c9153">align_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:acb4e7a8935a61069ea071d7c960c9153 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类实现的配准算法 / Registration algorithm implementation  <br /></td></tr>
+<tr class="separator:acb4e7a8935a61069ea071d7c960c9153 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c001cc08ab1e489798f7cd150b5579c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a7c001cc08ab1e489798f7cd150b5579c"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a7c001cc08ab1e489798f7cd150b5579c">get_algorithm_name_impl</a> () const</td></tr>
+<tr class="memdesc:a7c001cc08ab1e489798f7cd150b5579c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取算法名称实现 / Get algorithm name implementation  <br /></td></tr>
+<tr class="separator:a7c001cc08ab1e489798f7cd150b5579c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8951bca3d4b31b57e72ee8099ab79ffe inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a8951bca3d4b31b57e72ee8099ab79ffe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8951bca3d4b31b57e72ee8099ab79ffe">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a8951bca3d4b31b57e72ee8099ab79ffe inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">额外的输入验证 / Additional input validation  <br /></td></tr>
+<tr class="separator:a8951bca3d4b31b57e72ee8099ab79ffe inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8060e38560364b16ee66a1fa195af00 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_af8060e38560364b16ee66a1fa195af00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#af8060e38560364b16ee66a1fa195af00">set_source_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:af8060e38560364b16ee66a1fa195af00 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">钩子函数：设置源点云时的处理 / Hook: processing when setting source cloud  <br /></td></tr>
+<tr class="separator:af8060e38560364b16ee66a1fa195af00 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e2b92927fe3308f5cd26487ba940af3 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a5e2b92927fe3308f5cd26487ba940af3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a5e2b92927fe3308f5cd26487ba940af3">set_target_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a5e2b92927fe3308f5cd26487ba940af3 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">钩子函数：设置目标点云时的处理 / Hook: processing when setting target cloud  <br /></td></tr>
+<tr class="separator:a5e2b92927fe3308f5cd26487ba940af3 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac119b9e10c9627e52c43f849e4080131 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_ac119b9e10c9627e52c43f849e4080131"><td class="memItemLeft" align="right" valign="top">const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a352e1d1b5480ed4956c7ec14f03e2b1e">kdtree_t</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac119b9e10c9627e52c43f849e4080131">get_target_kdtree</a> () const</td></tr>
+<tr class="memdesc:ac119b9e10c9627e52c43f849e4080131 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取受保护的成员 / Get protected members  <br /></td></tr>
+<tr class="separator:ac119b9e10c9627e52c43f849e4080131 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa14c4f942c1b04f77a0e7f796f34844 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_afa14c4f942c1b04f77a0e7f796f34844"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#afa14c4f942c1b04f77a0e7f796f34844">get_source_samples</a> () const</td></tr>
+<tr class="separator:afa14c4f942c1b04f77a0e7f796f34844 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd6f98dd4573815a64a14440c7a65d5 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_abbd6f98dd4573815a64a14440c7a65d5"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abbd6f98dd4573815a64a14440c7a65d5">get_target_samples</a> () const</td></tr>
+<tr class="separator:abbd6f98dd4573815a64a14440c7a65d5 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8b5d05d4570f63078e56e8c33cd261d inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_ac8b5d05d4570f63078e56e8c33cd261d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac8b5d05d4570f63078e56e8c33cd261d">sample_points</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;cloud, std::size_t num_samples, std::vector&lt; std::size_t &gt; &amp;indices)</td></tr>
+<tr class="memdesc:ac8b5d05d4570f63078e56e8c33cd261d inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">采样点云 / Sample point cloud  <br /></td></tr>
+<tr class="separator:ac8b5d05d4570f63078e56e8c33cd261d inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab4ebf5069a5d82053d6ff23c61d8d19 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_aab4ebf5069a5d82053d6ff23c61d8d19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aab4ebf5069a5d82053d6ff23c61d8d19">are_coplanar</a> (const std::array&lt; <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a01fd13ab78c823f8ae73192c2eb660ad">vector3_t</a>, 4 &gt; &amp;points, DataType tolerance) const</td></tr>
+<tr class="memdesc:aab4ebf5069a5d82053d6ff23c61d8d19 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查4个点是否共面 / Check if 4 points are coplanar  <br /></td></tr>
+<tr class="separator:aab4ebf5069a5d82053d6ff23c61d8d19 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a893d08689207b234ff5e79917097a4 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a4a893d08689207b234ff5e79917097a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a4a893d08689207b234ff5e79917097a4">compute_invariants</a> (<a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;base) const</td></tr>
+<tr class="memdesc:a4a893d08689207b234ff5e79917097a4 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算4点基的仿射不变量 / Compute affine invariants for 4-point base  <br /></td></tr>
+<tr class="separator:a4a893d08689207b234ff5e79917097a4 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac03d639dac8ef00b25a22c6ba3cbee49 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_ac03d639dac8ef00b25a22c6ba3cbee49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ac03d639dac8ef00b25a22c6ba3cbee49">estimate_transformation</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;source_base, const <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;target_base) const</td></tr>
+<tr class="memdesc:ac03d639dac8ef00b25a22c6ba3cbee49 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">估计两个4点基之间的变换 / Estimate transformation between two 4-point bases  <br /></td></tr>
+<tr class="separator:ac03d639dac8ef00b25a22c6ba3cbee49 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe305899e8c7b6478642e5cb2168bf0c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_abe305899e8c7b6478642e5cb2168bf0c"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#abe305899e8c7b6478642e5cb2168bf0c">compute_lcp_score</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> &amp;transform, std::vector&lt; std::size_t &gt; &amp;inliers) const</td></tr>
+<tr class="memdesc:abe305899e8c7b6478642e5cb2168bf0c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算LCP（最大公共点集）评分 / Compute LCP (Largest Common Pointset) score  <br /></td></tr>
+<tr class="separator:abe305899e8c7b6478642e5cb2168bf0c inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb75f5d3f1562d7afb0765dfc68664af inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_aeb75f5d3f1562d7afb0765dfc68664af"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aeb75f5d3f1562d7afb0765dfc68664af">refine_candidate</a> (<a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html">candidate_t</a> &amp;candidate) const</td></tr>
+<tr class="memdesc:aeb75f5d3f1562d7afb0765dfc68664af inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">精炼候选变换 / Refine candidate transformation  <br /></td></tr>
+<tr class="separator:aeb75f5d3f1562d7afb0765dfc68664af inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aa62c4ae4a15cfc2a9f090b795145f6 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a1aa62c4ae4a15cfc2a9f090b795145f6"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a1aa62c4ae4a15cfc2a9f090b795145f6">extract_coplanar_bases</a> (const std::vector&lt; std::size_t &gt; &amp;indices, const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;cloud, std::size_t num_bases) const</td></tr>
+<tr class="memdesc:a1aa62c4ae4a15cfc2a9f090b795145f6 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">提取共面4点基 / Extract coplanar 4-point bases  <br /></td></tr>
+<tr class="separator:a1aa62c4ae4a15cfc2a9f090b795145f6 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a914befe893c2d6fc0fd7c093bcf423ce inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_a914befe893c2d6fc0fd7c093bcf423ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a914befe893c2d6fc0fd7c093bcf423ce">find_congruent_sets</a> (const <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;source_base, const std::vector&lt; std::size_t &gt; &amp;target_indices, const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;target_cloud) const</td></tr>
+<tr class="memdesc:a914befe893c2d6fc0fd7c093bcf423ce inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">寻找匹配的4点集 / Find congruent 4-point sets  <br /></td></tr>
+<tr class="separator:a914befe893c2d6fc0fd7c093bcf423ce inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff703ee187fdf3299893915f7e9bbd88 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t" id="r_aff703ee187fdf3299893915f7e9bbd88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aff703ee187fdf3299893915f7e9bbd88">is_valid_transformation</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a9bd6d4386a784c740b73193b05bd0126">transformation_t</a> &amp;transform) const</td></tr>
+<tr class="memdesc:aff703ee187fdf3299893915f7e9bbd88 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证变换的有效性 / Verify transformation validity  <br /></td></tr>
+<tr class="separator:aff703ee187fdf3299893915f7e9bbd88 inherit pro_methods_classtoolbox_1_1pcl_1_1four__pcs__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">toolbox::pcl::base_coarse_registration_t&lt; four_pcs_registration_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a5f9b5903656fbb7b9821731578c0ca7b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a5f9b5903656fbb7b9821731578c0ca7b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a5f9b5903656fbb7b9821731578c0ca7b">set_source_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;)</td></tr>
+<tr class="memdesc:a5f9b5903656fbb7b9821731578c0ca7b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类可选实现的钩子函数 / Optional hook functions for derived classes  <br /></td></tr>
+<tr class="separator:a5f9b5903656fbb7b9821731578c0ca7b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a549fce7168fddaecc044e9cb470548e7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a549fce7168fddaecc044e9cb470548e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a549fce7168fddaecc044e9cb470548e7">set_target_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;)</td></tr>
+<tr class="separator:a549fce7168fddaecc044e9cb470548e7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9fd2a0cf1931736ecbe2caa8c5b7914 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_ab9fd2a0cf1931736ecbe2caa8c5b7914"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab9fd2a0cf1931736ecbe2caa8c5b7914">set_correspondences_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> &amp;)</td></tr>
+<tr class="separator:ab9fd2a0cf1931736ecbe2caa8c5b7914 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dd5ebd7bd7afc52fee6c11344e1742 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a72dd5ebd7bd7afc52fee6c11344e1742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a72dd5ebd7bd7afc52fee6c11344e1742">set_max_iterations_impl</a> (std::size_t)</td></tr>
+<tr class="separator:a72dd5ebd7bd7afc52fee6c11344e1742 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe47505a34cc8b3d6f053aedeb5c55e inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_adfe47505a34cc8b3d6f053aedeb5c55e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#adfe47505a34cc8b3d6f053aedeb5c55e">set_inlier_threshold_impl</a> (DataType)</td></tr>
+<tr class="separator:adfe47505a34cc8b3d6f053aedeb5c55e inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d42c0d5d7e31bb3b256d65dd9b52cb inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_af3d42c0d5d7e31bb3b256d65dd9b52cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af3d42c0d5d7e31bb3b256d65dd9b52cb">set_convergence_threshold_impl</a> (DataType)</td></tr>
+<tr class="separator:af3d42c0d5d7e31bb3b256d65dd9b52cb inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4df1025af041bfeefec204fdac3742 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_afb4df1025af041bfeefec204fdac3742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#afb4df1025af041bfeefec204fdac3742">set_min_inliers_impl</a> (std::size_t)</td></tr>
+<tr class="separator:afb4df1025af041bfeefec204fdac3742 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f1b2a49c16d2e253da87ccdcce4239 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_af2f1b2a49c16d2e253da87ccdcce4239"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af2f1b2a49c16d2e253da87ccdcce4239">validate_input</a> () const</td></tr>
+<tr class="memdesc:af2f1b2a49c16d2e253da87ccdcce4239 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入数据 / Validate input data  <br /></td></tr>
+<tr class="separator:af2f1b2a49c16d2e253da87ccdcce4239 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fb8fc4ba9a5b5287d7f230a45b329b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_af1fb8fc4ba9a5b5287d7f230a45b329b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af1fb8fc4ba9a5b5287d7f230a45b329b">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:af1fb8fc4ba9a5b5287d7f230a45b329b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外输入验证（可选） / Additional input validation for derived class (optional)  <br /></td></tr>
+<tr class="separator:af1fb8fc4ba9a5b5287d7f230a45b329b inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30edeefc6aecef78dcdd6bd5ec9354b7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a30edeefc6aecef78dcdd6bd5ec9354b7"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a30edeefc6aecef78dcdd6bd5ec9354b7">compute_fitness_score</a> (const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;transformation, const std::vector&lt; std::size_t &gt; &amp;inliers) const</td></tr>
+<tr class="memdesc:a30edeefc6aecef78dcdd6bd5ec9354b7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算配准质量评分 / Compute registration fitness score  <br /></td></tr>
+<tr class="separator:a30edeefc6aecef78dcdd6bd5ec9354b7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37418e6959f396e96aacb546c2f50a2 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_aa37418e6959f396e96aacb546c2f50a2"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#aa37418e6959f396e96aacb546c2f50a2">get_source_cloud</a> () const</td></tr>
+<tr class="memdesc:aa37418e6959f396e96aacb546c2f50a2 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取受保护的成员变量访问 / Get access to protected members  <br /></td></tr>
+<tr class="separator:aa37418e6959f396e96aacb546c2f50a2 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab788b232311ce1768638acea80dec880 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_ab788b232311ce1768638acea80dec880"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#abb9662ed603de114529f99cc453a0dc4">point_cloud_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab788b232311ce1768638acea80dec880">get_target_cloud</a> () const</td></tr>
+<tr class="separator:ab788b232311ce1768638acea80dec880 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c979f7c9d3215b35bde07ce030d753e inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a1c979f7c9d3215b35bde07ce030d753e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1237e421a5071b8fd76e9f873e2062ea">correspondences_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c979f7c9d3215b35bde07ce030d753e">get_correspondences</a> () const</td></tr>
+<tr class="separator:a1c979f7c9d3215b35bde07ce030d753e inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e861b626c16314677fe560d8b8cbc1 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a51e861b626c16314677fe560d8b8cbc1"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a51e861b626c16314677fe560d8b8cbc1">get_max_iterations</a> () const</td></tr>
+<tr class="separator:a51e861b626c16314677fe560d8b8cbc1 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9a06a0b1b1219b9b55c6e9a5b981979 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_ae9a06a0b1b1219b9b55c6e9a5b981979"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ae9a06a0b1b1219b9b55c6e9a5b981979">get_inlier_threshold</a> () const</td></tr>
+<tr class="separator:ae9a06a0b1b1219b9b55c6e9a5b981979 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f8fa126670864e7aaf0f8f05b802a00 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a4f8fa126670864e7aaf0f8f05b802a00"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a4f8fa126670864e7aaf0f8f05b802a00">get_convergence_threshold</a> () const</td></tr>
+<tr class="separator:a4f8fa126670864e7aaf0f8f05b802a00 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d733763bf7e1b36243de4983c190bcd inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a2d733763bf7e1b36243de4983c190bcd"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a2d733763bf7e1b36243de4983c190bcd">get_min_inliers</a> () const</td></tr>
+<tr class="separator:a2d733763bf7e1b36243de4983c190bcd inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f53ebf7ff7b972639a118c0012a84b7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t" id="r_a2f53ebf7ff7b972639a118c0012a84b7"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a2f53ebf7ff7b972639a118c0012a84b7">get_random_seed</a> () const</td></tr>
+<tr class="separator:a2f53ebf7ff7b972639a118c0012a84b7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__coarse__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:afdf3de6af562c4eb4275ed06a888c28b" id="r_afdf3de6af562c4eb4275ed06a888c28b"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#afdf3de6af562c4eb4275ed06a888c28b">base_coarse_registration_t&lt; super_four_pcs_registration_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="separator:afdf3de6af562c4eb4275ed06a888c28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0419cccfd375d4a044cda7728ef8788d" id="r_a0419cccfd375d4a044cda7728ef8788d"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#a0419cccfd375d4a044cda7728ef8788d">four_pcs_registration_t&lt; DataType &gt;</a></td></tr>
+<tr class="separator:a0419cccfd375d4a044cda7728ef8788d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType&gt;<br />
+class toolbox::pcl::super_four_pcs_registration_t&lt; DataType &gt;</div><p>Super4PCS 粗配准算法 / Super4PCS coarse registration algorithm. </p>
+<p>Super4PCS是4PCS的改进版本，通过智能索引技术将时间复杂度从O(n²)降低到O(n)。 主要改进包括：</p><ul>
+<li>基于网格的空间索引，实现快速点对查找</li>
+<li>优化的匹配策略，减少不必要的计算</li>
+<li>更好的可扩展性，能处理百万级点云</li>
+</ul>
+<p>Super4PCS is an improved version of 4PCS that reduces time complexity from O(n²) to O(n) through smart indexing. Key improvements include:</p><ul>
+<li>Grid-based spatial indexing for fast pair extraction</li>
+<li>Optimized matching strategy to reduce unnecessary computations</li>
+<li>Better scalability for million-point clouds</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double)</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用示例 / Usage example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t&lt;float&gt;</a> super4pcs;</div>
+<div class="line">super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a>(source_cloud);</div>
+<div class="line">super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a>(target_cloud);</div>
+<div class="line">super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">set_delta</a>(0.01f);           <span class="comment">// 1cm精度</span></div>
+<div class="line">super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">set_overlap</a>(0.3f);          <span class="comment">// 30%重叠（Super4PCS可处理更低重叠）</span></div>
+<div class="line">super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aa59c732982b09e8d03f259f92e80c393">enable_smart_indexing</a>(<span class="keyword">true</span>); <span class="comment">// 启用智能索引</span></div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t&lt;float&gt;</a> result;</div>
+<div class="line"><span class="keywordflow">if</span> (super4pcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a>(result)) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;Super4PCS registration successful!&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a03a30f0b2f98b1c9af10ce017a7475eb"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">toolbox::pcl::base_coarse_registration_t::set_target</a></div><div class="ttdeci">void set_target(const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置目标点云 / Set target point cloud</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:60</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a720a3745774bfa76bf0f0e3db6684579"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">toolbox::pcl::base_coarse_registration_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;source)</div><div class="ttdoc">设置源点云 / Set source point cloud</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:51</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_ab6a8160df63bb032ed567132bef36455"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">toolbox::pcl::base_coarse_registration_t::align</a></div><div class="ttdeci">bool align(result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:117</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_aa692a9e6ad553cead19446acb8dd3992"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">toolbox::pcl::four_pcs_registration_t::set_overlap</a></div><div class="ttdeci">void set_overlap(DataType overlap)</div><div class="ttdoc">设置重叠率估计 / Set overlap ratio estimate</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:99</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_ab83a7df681337f6b167418403629d139"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">toolbox::pcl::four_pcs_registration_t::set_delta</a></div><div class="ttdeci">void set_delta(DataType delta)</div><div class="ttdoc">设置配准精度delta / Set registration accuracy delta</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:87</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1super__four__pcs__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a></div><div class="ttdoc">Super4PCS 粗配准算法 / Super4PCS coarse registration algorithm.</div><div class="ttdef"><b>Definition</b> super_four_pcs_registration.hpp:44</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1super__four__pcs__registration__t_html_aa59c732982b09e8d03f259f92e80c393"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html#aa59c732982b09e8d03f259f92e80c393">toolbox::pcl::super_four_pcs_registration_t::enable_smart_indexing</a></div><div class="ttdeci">void enable_smart_indexing(bool enable)</div><div class="ttdoc">启用/禁用智能索引 / Enable/disable smart indexing</div><div class="ttdef"><b>Definition</b> super_four_pcs_registration.hpp:151</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1registration__result__t.html">toolbox::pcl::registration_result_t</a></div><div class="ttdoc">配准结果结构体 / Registration result structure</div><div class="ttdef"><b>Definition</b> registration_result.hpp:15</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aaf2540675dd2cbe27aeb03ad90cd162f" name="aaf2540675dd2cbe27aeb03ad90cd162f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf2540675dd2cbe27aeb03ad90cd162f">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8fff43aa607e283b668558427d15dfef" name="a8fff43aa607e283b668558427d15dfef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fff43aa607e283b668558427d15dfef">&#9670;&#160;</a></span>matrix3_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t</a>&lt; DataType &gt;::matrix3_t =  Eigen::Matrix&lt;DataType, 3, 3&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9bd6d4386a784c740b73193b05bd0126" name="a9bd6d4386a784c740b73193b05bd0126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bd6d4386a784c740b73193b05bd0126">&#9670;&#160;</a></span>transformation_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t</a>&lt; DataType &gt;::transformation_t =  Eigen::Matrix&lt;DataType, 4, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a01fd13ab78c823f8ae73192c2eb660ad" name="a01fd13ab78c823f8ae73192c2eb660ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01fd13ab78c823f8ae73192c2eb660ad">&#9670;&#160;</a></span>vector3_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t</a>&lt; DataType &gt;::vector3_t =  Eigen::Matrix&lt;DataType, 3, 1&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="abf11714f683638cd8042b9751b4be032" name="abf11714f683638cd8042b9751b4be032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf11714f683638cd8042b9751b4be032">&#9670;&#160;</a></span>super_four_pcs_registration_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::super_four_pcs_registration_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3a3a00b707366f050f28f0d964b4f8c2" name="a3a3a00b707366f050f28f0d964b4f8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3a00b707366f050f28f0d964b4f8c2">&#9670;&#160;</a></span>~super_four_pcs_registration_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a10c0f29c3d4516036c978c9e8635f2e6" name="a10c0f29c3d4516036c978c9e8635f2e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10c0f29c3d4516036c978c9e8635f2e6">&#9670;&#160;</a></span>align_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::align_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#af460db3c7ab598b24c50cf1b75c91b86">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>派生类实现的配准算法 / Registration algorithm implementation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>[out] 配准结果 / Registration result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否成功 / Whether successful </dd></dl>
+
+</div>
+</div>
+<a id="aa59c732982b09e8d03f259f92e80c393" name="aa59c732982b09e8d03f259f92e80c393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa59c732982b09e8d03f259f92e80c393">&#9670;&#160;</a></span>enable_smart_indexing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::enable_smart_indexing </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>启用/禁用智能索引 / Enable/disable smart indexing </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>true启用，false禁用 / true to enable, false to disable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa6cfb08e0621523aba51904b43bd7982" name="aa6cfb08e0621523aba51904b43bd7982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6cfb08e0621523aba51904b43bd7982">&#9670;&#160;</a></span>find_congruent_sets_optimized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; typename <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; DataType &gt;::base_4pcs_t &gt; <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::find_congruent_sets_optimized </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html">base_4pcs_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>source_base</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>寻找匹配的4点集（优化版本） / Find congruent sets (optimized version) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source_base</td><td>源基 / Source base </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>匹配的基列表 / List of congruent bases </dd></dl>
+
+</div>
+</div>
+<a id="a20432da5c753e25ddb38979805e3b342" name="a20432da5c753e25ddb38979805e3b342"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20432da5c753e25ddb38979805e3b342">&#9670;&#160;</a></span>get_algorithm_name_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::get_algorithm_name_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取算法名称实现 / Get algorithm name implementation </p>
+<dl class="section return"><dt>Returns</dt><dd>算法名称 / Algorithm name </dd></dl>
+
+</div>
+</div>
+<a id="a8be1078ed0bc90d5477d0e2dbda11f58" name="a8be1078ed0bc90d5477d0e2dbda11f58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be1078ed0bc90d5477d0e2dbda11f58">&#9670;&#160;</a></span>get_grid_resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::get_grid_resolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取网格分辨率 / Get grid resolution </p>
+<dl class="section return"><dt>Returns</dt><dd>网格分辨率 / Grid resolution </dd></dl>
+
+</div>
+</div>
+<a id="a0eacb6c453a70485670cb519c9a7cd24" name="a0eacb6c453a70485670cb519c9a7cd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eacb6c453a70485670cb519c9a7cd24">&#9670;&#160;</a></span>get_pair_distance_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::get_pair_distance_epsilon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取点对距离容差 / Get pair distance tolerance </p>
+<dl class="section return"><dt>Returns</dt><dd>距离容差 / Distance tolerance </dd></dl>
+
+</div>
+</div>
+<a id="a60cccb1937fee92df74e6d871f79e71d" name="a60cccb1937fee92df74e6d871f79e71d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60cccb1937fee92df74e6d871f79e71d">&#9670;&#160;</a></span>is_smart_indexing_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::is_smart_indexing_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否使用智能索引 / Get whether using smart indexing </p>
+<dl class="section return"><dt>Returns</dt><dd>是否使用智能索引 / Whether using smart indexing </dd></dl>
+
+</div>
+</div>
+<a id="aa9d973b1493bd74285b47e90e56b0ec3" name="aa9d973b1493bd74285b47e90e56b0ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d973b1493bd74285b47e90e56b0ec3">&#9670;&#160;</a></span>set_grid_resolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::set_grid_resolution </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>resolution</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置网格分辨率 / Set grid resolution </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">resolution</td><td>网格单元大小（0表示自动计算） / Grid cell size (0 for auto) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f5bcbe24f7ef936ce1f64da166827c8" name="a9f5bcbe24f7ef936ce1f64da166827c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f5bcbe24f7ef936ce1f64da166827c8">&#9670;&#160;</a></span>set_pair_distance_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a>&lt; DataType &gt;::set_pair_distance_epsilon </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>epsilon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置点对距离容差 / Set pair distance tolerance </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">epsilon</td><td>距离容差 / Distance tolerance </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="afdf3de6af562c4eb4275ed06a888c28b" name="afdf3de6af562c4eb4275ed06a888c28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf3de6af562c4eb4275ed06a888c28b">&#9670;&#160;</a></span>base_coarse_registration_t&lt; super_four_pcs_registration_t&lt; DataType &gt;, DataType &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html">base_coarse_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; DataType &gt;, DataType &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0419cccfd375d4a044cda7728ef8788d" name="a0419cccfd375d4a044cda7728ef8788d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0419cccfd375d4a044cda7728ef8788d">&#9670;&#160;</a></span>four_pcs_registration_t&lt; DataType &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; DataType &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/pcl/registration/<a class="el" href="super__four__pcs__registration_8hpp_source.html">super_four_pcs_registration.hpp</a></li>
+<li>src/include/cpp-toolbox/pcl/registration/impl/<a class="el" href="super__four__pcs__registration__impl_8hpp_source.html">super_four_pcs_registration_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
