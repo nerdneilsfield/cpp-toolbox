@@ -215,12 +215,18 @@ $(document).ready(function(){initNavTree('formats_8hpp.html',''); initResizable(
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">formats.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="io_2formats_2base_8hpp_source.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="file_8hpp_source.html">cpp-toolbox/file/file.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="io_2formats_2base_8hpp_source.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="kitti_8hpp_source.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="pcd_8hpp_source.html">cpp-toolbox/io/formats/pcd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for formats.hpp:</div>
 <div class="dyncontent">
@@ -228,6 +234,24 @@ Include dependency graph for formats.hpp:</div>
 </div>
 </div>
 <p><a href="formats_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox" id="r_namespacetoolbox"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox.html">toolbox</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacetoolbox_1_1io" id="r_namespacetoolbox_1_1io"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html">toolbox::io</a></td></tr>
+<tr class="memdesc:namespacetoolbox_1_1io"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; 用于列出目录下的文件/For listing files in a directory <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a72122324845ea3b9047179794a455f43" id="r_a72122324845ea3b9047179794a455f43"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a72122324845ea3b9047179794a455f43"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43">toolbox::io::read_point_cloud</a> (const std::string &amp;path)</td></tr>
+<tr class="separator:a72122324845ea3b9047179794a455f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edbfd4250e2426db0ec514db40864f6" id="r_a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">toolbox::io::write_point_cloud</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
+<tr class="separator:a8edbfd4250e2426db0ec514db40864f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

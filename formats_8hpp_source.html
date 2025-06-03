@@ -225,12 +225,69 @@ $(document).ready(function(){initNavTree('formats_8hpp_source.html',''); initRes
 <div class="contents">
 <a href="formats_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="io_2formats_2base_8hpp.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="pcd_8hpp.html">cpp-toolbox/io/formats/pcd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="file_8hpp.html">cpp-toolbox/file/file.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="io_2formats_2base_8hpp.html">cpp-toolbox/io/formats/base.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="pcd_8hpp.html">cpp-toolbox/io/formats/pcd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io.html">toolbox::io</a></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>CPP_TOOLBOX_EXPORT std::unique_ptr&lt;toolbox::types::point_cloud_t&lt;T&gt;&gt;</div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43">   14</a></span><a class="code hl_function" href="namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43">read_point_cloud</a>(<span class="keyword">const</span> std::string&amp; path)</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">auto</span> extension = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a>(path);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;Reading point cloud from &quot;</span> &lt;&lt; path &lt;&lt; <span class="stringliteral">&quot; with extension &quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>             &lt;&lt; extension;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordflow">if</span> (extension == <span class="stringliteral">&quot;.pcd&quot;</span>) {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordflow">return</span> read_pcd&lt;T&gt;(path);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  }</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordflow">if</span> (extension == <span class="stringliteral">&quot;.bin&quot;</span>) {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">return</span> read_kitti_bin&lt;T&gt;(path);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;Unsupported file extension: &quot;</span> &lt;&lt; extension;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">   32</a></span>CPP_TOOLBOX_EXPORT <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">write_point_cloud</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> std::string&amp; path, <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;T&gt;</a>&amp; cloud)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">auto</span> extension = <a class="code hl_function" href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a>(path);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">if</span> (extension == <span class="stringliteral">&quot;pcd&quot;</span>) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">write_pcd</a>(path, cloud);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">if</span> (extension == <span class="stringliteral">&quot;bin&quot;</span>) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">write_kitti_bin</a>(path, cloud);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;Unsupported file extension: &quot;</span> &lt;&lt; extension;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>}</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}  <span class="comment">// namespace toolbox::io</span></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="afile_8hpp_html"><div class="ttname"><a href="file_8hpp.html">file.hpp</a></div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1330</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
 <div class="ttc" id="aio_2formats_2base_8hpp_html"><div class="ttname"><a href="io_2formats_2base_8hpp.html">base.hpp</a></div></div>
 <div class="ttc" id="akitti_8hpp_html"><div class="ttname"><a href="kitti_8hpp.html">kitti.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1file_html_ac2b9f2a5b7df4bfb3e2afc92486f02fc"><div class="ttname"><a href="namespacetoolbox_1_1file.html#ac2b9f2a5b7df4bfb3e2afc92486f02fc">toolbox::file::get_file_extension</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto get_file_extension(const std::filesystem::path &amp;path) -&gt; std::string</div><div class="ttdoc">获取路径的文件扩展名 / Get the file extension of a path</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html"><div class="ttname"><a href="namespacetoolbox_1_1io.html">toolbox::io</a></div><div class="ttdoc">&lt; 用于列出目录下的文件/For listing files in a directory</div><div class="ttdef"><b>Definition</b> dataloader.hpp:15</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a72122324845ea3b9047179794a455f43"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43">toolbox::io::read_point_cloud</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; toolbox::types::point_cloud_t&lt; T &gt; &gt; read_point_cloud(const std::string &amp;path)</div><div class="ttdef"><b>Definition</b> formats.hpp:14</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a8edbfd4250e2426db0ec514db40864f6"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">toolbox::io::write_point_cloud</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_point_cloud(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdef"><b>Definition</b> formats.hpp:32</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_aa6d952493b74495b0b872c5bbcee9332"><div class="ttname"><a href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">toolbox::io::write_kitti_bin</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdoc">将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file.</div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:258</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_ae9a74600f17ca80b238463d267b9fcbb"><div class="ttname"><a href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">toolbox::io::write_pcd</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_pcd(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud, bool binary)</div><div class="ttdoc">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.</div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:833</div></div>
 <div class="ttc" id="apcd_8hpp_html"><div class="ttname"><a href="pcd_8hpp.html">pcd.hpp</a></div></div>
+<div class="ttc" id="athread__logger_8hpp_html"><div class="ttname"><a href="thread__logger_8hpp.html">thread_logger.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

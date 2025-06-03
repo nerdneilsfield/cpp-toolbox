@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f":[14,0,1,3,23],
+"namespacetoolbox_1_1file.html#aa4085a2e77b2b2c55e81b3161960c55d":[14,0,1,3,38],
 "namespacetoolbox_1_1file.html#aa5ae9f96e511dc7feafcb507ad1f6c31":[14,0,1,3,33],
 "namespacetoolbox_1_1file.html#aac210d89b1411dada1371a94f0b64ebd":[14,0,1,3,3],
 "namespacetoolbox_1_1file.html#ab07f7f5501955c1019ba3536ba0973e1":[14,0,1,3,22],
@@ -73,9 +75,11 @@ var NAVTREEINDEX14 =
 "namespacetoolbox_1_1functional_1_1detail.html#adbc9b7975526ed027d36367ed670a3c1":[14,0,1,4,0,8],
 "namespacetoolbox_1_1functional_1_1detail__impl.html":[14,0,1,4,1],
 "namespacetoolbox_1_1io.html":[14,0,1,5],
-"namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332":[14,0,1,5,13],
+"namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43":[14,0,1,5,13],
+"namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6":[14,0,1,5,16],
+"namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332":[14,0,1,5,14],
 "namespacetoolbox_1_1io.html#adb238dd0524221508906155a7528f569":[14,0,1,5,12],
-"namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb":[14,0,1,5,14],
+"namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb":[14,0,1,5,15],
 "namespacetoolbox_1_1io.html#af7ad61330bf7081cc56805e978c99e2d":[14,0,1,5,11],
 "namespacetoolbox_1_1logger.html":[14,0,1,6],
 "namespacetoolbox_1_1logger.html#a69ac1b9f2684929bd3b9f229e15fb322":[14,0,1,6,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX14 =
 "parallel_8hpp.html#ad88cfa90539431b271421f750576bc0f":[16,0,1,0,0,1,1,10],
 "parallel_8hpp.html#adc129cfed7d6ea2f9bd3cffde739ce9d":[16,0,1,0,0,1,1,17],
 "parallel_8hpp.html#ae4723fd2aab9fd17bfd539364bd3d924":[16,0,1,0,0,1,1,0],
-"parallel_8hpp.html#aebf0bab748ed9ab65042ad8700411a9e":[16,0,1,0,0,1,1,19],
-"parallel_8hpp.html#af0f6fb62a817e46d980f97838b8f293d":[16,0,1,0,0,1,1,7],
-"parallel_8hpp_source.html":[16,0,1,0,0,1,1],
-"parallel__raw_8hpp.html":[16,0,1,0,0,1,0,0],
-"parallel__raw_8hpp.html#a3f0da530454b12da9ed3b3f00b8de559":[16,0,1,0,0,1,0,0,3]
+"parallel_8hpp.html#aebf0bab748ed9ab65042ad8700411a9e":[16,0,1,0,0,1,1,19]
 };

@@ -263,6 +263,12 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a72122324845ea3b9047179794a455f43" id="r_a72122324845ea3b9047179794a455f43"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a72122324845ea3b9047179794a455f43"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43">read_point_cloud</a> (const std::string &amp;path)</td></tr>
+<tr class="separator:a72122324845ea3b9047179794a455f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edbfd4250e2426db0ec514db40864f6" id="r_a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">write_point_cloud</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
+<tr class="separator:a8edbfd4250e2426db0ec514db40864f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7ad61330bf7081cc56805e978c99e2d" id="r_af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#af7ad61330bf7081cc56805e978c99e2d">read_kitti_bin</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:af7ad61330bf7081cc56805e978c99e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件中读取 KITTI 点云数据的独立函数。/Standalone function to read KITTI point cloud data from a file.  <br /></td></tr>
@@ -371,6 +377,26 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="comment">// 读取 double 类型的点云/Read a point cloud with double precision</span></div>
 <div class="line"><span class="keyword">auto</span> cloud_double = toolbox::io::read_pcd&lt;double&gt;(<span class="stringliteral">&quot;cloud.pcd&quot;</span>);</div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a72122324845ea3b9047179794a455f43" name="a72122324845ea3b9047179794a455f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72122324845ea3b9047179794a455f43">&#9670;&#160;</a></span>read_point_cloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt; toolbox::io::read_point_cloud </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <a id="aa6d952493b74495b0b872c5bbcee9332" name="aa6d952493b74495b0b872c5bbcee9332"></a>
@@ -492,6 +518,36 @@ template&lt;typename T &gt; </div>
 <div class="line">cloud, <span class="keyword">true</span>);</div>
 <div class="ttc" id="anamespacetoolbox_1_1io_html_ae9a74600f17ca80b238463d267b9fcbb"><div class="ttname"><a href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">toolbox::io::write_pcd</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_pcd(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud, bool binary)</div><div class="ttdoc">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.</div><div class="ttdef"><b>Definition</b> pcd_impl.hpp:833</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a8edbfd4250e2426db0ec514db40864f6" name="a8edbfd4250e2426db0ec514db40864f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edbfd4250e2426db0ec514db40864f6">&#9670;&#160;</a></span>write_point_cloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT bool toolbox::io::write_point_cloud </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 </div><!-- contents -->

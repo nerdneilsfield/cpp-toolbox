@@ -6,5 +6,6 @@ var searchData=
   ['weightedmetric_3',['WeightedMetric',['../classtoolbox_1_1metrics_1_1_weighted_metric.html#affd267314419711ed6fb4f21606ba8a9',1,'toolbox::metrics::WeightedMetric']]],
   ['write_4',['write',['../classtoolbox_1_1io_1_1base__file__format__t.html#a52c2513d9e4cf68bc4f7577b4860fbf6',1,'toolbox::io::base_file_format_t::write()'],['../classtoolbox_1_1io_1_1kitti__format__t.html#ae120c69beb766a4925f6beacb0a46c6c',1,'toolbox::io::kitti_format_t::write()'],['../classtoolbox_1_1io_1_1pcd__format__t.html#a7b0b1b079c728335b2f0cbde391bc9ba',1,'toolbox::io::pcd_format_t::write()']]],
   ['write_5fkitti_5fbin_5',['write_kitti_bin',['../namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332',1,'toolbox::io']]],
-  ['write_5fpcd_6',['write_pcd',['../namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb',1,'toolbox::io']]]
+  ['write_5fpcd_6',['write_pcd',['../namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb',1,'toolbox::io']]],
+  ['write_5fpoint_5fcloud_7',['write_point_cloud',['../namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6',1,'toolbox::io']]]
 ];

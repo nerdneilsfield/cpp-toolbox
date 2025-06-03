@@ -13,6 +13,8 @@ var namespacetoolbox_1_1io =
     [ "shuffle_policy_t", "classtoolbox_1_1io_1_1shuffle__policy__t.html", "classtoolbox_1_1io_1_1shuffle__policy__t" ],
     [ "read_kitti_bin", "namespacetoolbox_1_1io.html#af7ad61330bf7081cc56805e978c99e2d", null ],
     [ "read_pcd", "namespacetoolbox_1_1io.html#adb238dd0524221508906155a7528f569", null ],
+    [ "read_point_cloud", "namespacetoolbox_1_1io.html#a72122324845ea3b9047179794a455f43", null ],
     [ "write_kitti_bin", "namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332", null ],
-    [ "write_pcd", "namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb", null ]
+    [ "write_pcd", "namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb", null ],
+    [ "write_point_cloud", "namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6", null ]
 ];
