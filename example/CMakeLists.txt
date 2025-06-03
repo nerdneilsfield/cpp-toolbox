@@ -21,9 +21,10 @@ foreach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
         target_link_libraries(${FINAL_TARGET_NAME} PRIVATE cpp-toolbox::cpp-toolbox)
     endif()
     target_precompile_headers(${FINAL_TARGET_NAME} PRIVATE ${CPP_TOOLBOX_PCH_FILE})
-    # (Optional) Add example-specific compile definitions or include directories if needed
-    # target_compile_definitions(${FINAL_TARGET_NAME} PRIVATE ...)
-    # target_include_directories(${FINAL_TARGET_NAME} PRIVATE ...)
+    # Add required include directories
+    target_include_directories(${FINAL_TARGET_NAME} PRIVATE 
+        ${CMAKE_SOURCE_DIR}/deps/eigen
+        ${CMAKE_SOURCE_DIR}/deps/nanoflann)
 
     # (Optional) Group all examples into a folder for organization
     # set_target_properties(${FINAL_TARGET_NAME} PROPERTIES FOLDER "Examples")

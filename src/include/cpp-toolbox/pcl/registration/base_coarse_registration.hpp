@@ -2,11 +2,18 @@
 
 #include <memory>
 #include <vector>
+#include <random>
 
 #include <cpp-toolbox/cpp-toolbox_export.hpp>
 #include <cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp>
 #include <cpp-toolbox/pcl/registration/registration_result.hpp>
 #include <cpp-toolbox/types/point.hpp>
+#include <cpp-toolbox/logger/thread_logger.hpp>
+
+// Logger macros
+#define LOG_ERROR_S toolbox::logger::thread_logger_t::instance().error_s()
+#define LOG_WARN_S toolbox::logger::thread_logger_t::instance().warn_s()
+#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()
 
 namespace toolbox::pcl
 {
@@ -63,7 +70,7 @@ public:
   void set_correspondences(const correspondences_ptr& correspondences)
   {
     m_correspondences = correspondences;
-    return static_cast<Derived*>(this)->set_correspondences(correspondences);
+    return static_cast<Derived*>(this)->set_correspondences_impl(correspondences);
   }
 
   /**
@@ -72,7 +79,7 @@ public:
   void set_max_iterations(std::size_t max_iterations)
   {
     m_max_iterations = max_iterations;
-    return static_cast<Derived*>(this)->set_max_iterations(max_iterations);
+    return static_cast<Derived*>(this)->set_max_iterations_impl(max_iterations);
   }
 
   /**
@@ -81,7 +88,7 @@ public:
   void set_inlier_threshold(DataType threshold)
   {
     m_inlier_threshold = threshold;
-    return static_cast<Derived*>(this)->set_inlier_threshold(threshold);
+    return static_cast<Derived*>(this)->set_inlier_threshold_impl(threshold);
   }
 
   /**
@@ -90,7 +97,7 @@ public:
   void set_convergence_threshold(DataType threshold)
   {
     m_convergence_threshold = threshold;
-    return static_cast<Derived*>(this)->set_convergence_threshold(threshold);
+    return static_cast<Derived*>(this)->set_convergence_threshold_impl(threshold);
   }
 
   /**
@@ -99,7 +106,7 @@ public:
   void set_min_inliers(std::size_t min_inliers)
   {
     m_min_inliers = min_inliers;
-    return static_cast<Derived*>(this)->set_min_inliers(min_inliers);
+    return static_cast<Derived*>(this)->set_min_inliers_impl(min_inliers);
   }
 
   /**
@@ -126,7 +133,36 @@ public:
     return static_cast<const Derived*>(this)->get_algorithm_name_impl();
   }
 
+  /**
+   * @brief 启用/禁用并行计算 / Enable/disable parallel computation
+   * @param enable true启用，false禁用（默认启用） / true to enable, false to disable (default enabled)
+   */
+  void enable_parallel(bool enable = true) { m_parallel_enabled = enable; }
+
+  /**
+   * @brief 获取并行计算状态 / Get parallel computation status
+   * @return 是否启用并行 / Whether parallel is enabled
+   */
+  [[nodiscard]] bool is_parallel_enabled() const { return m_parallel_enabled; }
+
+  /**
+   * @brief 设置随机种子 / Set random seed
+   * @param seed 随机种子值 / Random seed value
+   */
+  void set_random_seed(unsigned int seed) { m_random_seed = seed; }
+
 protected:
+  /**
+   * @brief 派生类可选实现的钩子函数 / Optional hook functions for derived classes
+   */
+  void set_source_impl(const point_cloud_ptr& /*source*/) {}
+  void set_target_impl(const point_cloud_ptr& /*target*/) {}
+  void set_correspondences_impl(const correspondences_ptr& /*correspondences*/) {}
+  void set_max_iterations_impl(std::size_t /*max_iterations*/) {}
+  void set_inlier_threshold_impl(DataType /*threshold*/) {}
+  void set_convergence_threshold_impl(DataType /*threshold*/) {}
+  void set_min_inliers_impl(std::size_t /*min_inliers*/) {}
+
   /**
    * @brief 验证输入数据 / Validate input data
    */
@@ -178,6 +214,18 @@ protected:
     return total_distance / inliers.size();
   }
 
+  /**
+   * @brief 获取受保护的成员变量访问 / Get access to protected members
+   */
+  [[nodiscard]] const point_cloud_ptr& get_source_cloud() const { return m_source_cloud; }
+  [[nodiscard]] const point_cloud_ptr& get_target_cloud() const { return m_target_cloud; }
+  [[nodiscard]] const correspondences_ptr& get_correspondences() const { return m_correspondences; }
+  [[nodiscard]] std::size_t get_max_iterations() const { return m_max_iterations; }
+  [[nodiscard]] DataType get_inlier_threshold() const { return m_inlier_threshold; }
+  [[nodiscard]] DataType get_convergence_threshold() const { return m_convergence_threshold; }
+  [[nodiscard]] std::size_t get_min_inliers() const { return m_min_inliers; }
+  [[nodiscard]] unsigned int get_random_seed() const { return m_random_seed; }
+
 private:
   // 数据成员 / Data members
   point_cloud_ptr m_source_cloud;
@@ -190,6 +238,8 @@ private:
   DataType m_inlier_threshold = 0.05;
   DataType m_convergence_threshold = 1e-6;
   std::size_t m_min_inliers = 3;
+  bool m_parallel_enabled = true;  ///< 并行计算开关（默认开启） / Parallel computation switch (default enabled)
+  unsigned int m_random_seed = std::random_device{}();  ///< 随机种子 / Random seed
 };
 
-};  // namespace toolbox::pcl
+}  // namespace toolbox::pcl

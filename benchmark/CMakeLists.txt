@@ -11,6 +11,7 @@ list(APPEND BENCHMARK_FILES
     pcl/features_benc.cpp
     pcl/descriptors_benc.cpp
     pcl/correspondence_benc.cpp
+    pcl/registration_benc.cpp
     ${CMAKE_SOURCE_DIR}/test/my_catch2_main.cpp
 )
 
