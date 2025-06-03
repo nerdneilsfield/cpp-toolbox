@@ -194,16 +194,18 @@ digraph "src/include/cpp-toolbox/pcl/descriptors/impl/fpfh_extractor_impl.hpp"
   Node61 -> Node30 [id="edge141_Node000061_Node000030",color="steelblue1",style="solid",tooltip=" "];
   Node61 -> Node10 [id="edge142_Node000061_Node000010",color="steelblue1",style="solid",tooltip=" "];
   Node47 -> Node62 [id="edge143_Node000047_Node000062",color="steelblue1",style="solid",tooltip=" "];
-  Node62 [id="Node000062",label="cpp-toolbox/pcl/norm\l/impl/pca_norm_impl.hpp",height=0.2,width=0.4,color="red", fillcolor="#FFF0F0", style="filled",URL="$pca__norm__impl_8hpp.html",tooltip=" "];
+  Node62 [id="Node000062",label="cpp-toolbox/pcl/norm\l/impl/pca_norm_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$pca__norm__impl_8hpp.html",tooltip=" "];
   Node62 -> Node63 [id="edge144_Node000062_Node000063",color="steelblue1",style="solid",tooltip=" "];
   Node63 [id="Node000063",label="Eigen/Dense",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node62 -> Node51 [id="edge145_Node000062_Node000051",color="steelblue1",style="solid",tooltip=" "];
-  Node62 -> Node50 [id="edge146_Node000062_Node000050",color="steelblue1",style="solid",tooltip=" "];
-  Node62 -> Node9 [id="edge147_Node000062_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node31 [id="edge148_Node000002_Node000031",color="steelblue1",style="solid",tooltip=" "];
-  Node2 -> Node1 [id="edge149_Node000002_Node000001",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node39 [id="edge150_Node000001_Node000039",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node65 [id="edge151_Node000001_Node000065",color="steelblue1",style="solid",tooltip=" "];
-  Node65 [id="Node000065",label="unordered_set",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node49 [id="edge152_Node000001_Node000049",color="steelblue1",style="solid",tooltip=" "];
+  Node62 -> Node64 [id="edge145_Node000062_Node000064",color="steelblue1",style="solid",tooltip=" "];
+  Node64 [id="Node000064",label="Eigen/Eigenvalues",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node62 -> Node51 [id="edge146_Node000062_Node000051",color="steelblue1",style="solid",tooltip=" "];
+  Node62 -> Node50 [id="edge147_Node000062_Node000050",color="steelblue1",style="solid",tooltip=" "];
+  Node62 -> Node9 [id="edge148_Node000062_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node31 [id="edge149_Node000002_Node000031",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node1 [id="edge150_Node000002_Node000001",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node39 [id="edge151_Node000001_Node000039",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node32 [id="edge152_Node000001_Node000032",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node11 [id="edge153_Node000001_Node000011",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node49 [id="edge154_Node000001_Node000049",color="steelblue1",style="solid",tooltip=" "];
 }
