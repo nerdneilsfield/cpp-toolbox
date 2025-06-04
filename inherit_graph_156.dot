@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::types::point\l_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1point__t.html",tooltip="3D点/向量模板类 / A 3D point/vector template class"];
+  Node0 [id="Node000000",label="toolbox::types::minmax\l_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1types_1_1minmax__t.html",tooltip="存储和计算最小最大值的主模板类 / Primary template class for storing and calculating minimum and maximum values"];
 }

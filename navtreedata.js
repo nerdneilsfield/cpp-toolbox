@@ -112,7 +112,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ],
+        [ "Variables", "functions_vars.html", "functions_vars" ],
         [ "Typedefs", "functions_type.html", "functions_type" ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
@@ -135,24 +135,25 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "3dsc__extractor_8hpp.html",
-"classtoolbox_1_1io_1_1dataloader__t.html#ae5f300e05cb3fd95f279aea42b50fb9e",
-"classtoolbox_1_1metrics_1_1_bounding_box_metric.html#a2572ed2ca4d00aff087dea4bb133332c",
-"classtoolbox_1_1metrics_1_1_metric_registry.html#ac7462ef22f97b4e4bdceaf8ece9ec74a",
-"classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a1115f6535c4db5936c03edbad507e74e",
-"classtoolbox_1_1pcl_1_1bfknn__generic__t.html#aa9d357bc869df00a994e8cc5303b7fe1",
-"classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#a8fff43aa607e283b668558427d15dfef",
-"classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html#a3df36e5a5c2bce22a3741964e1c64163",
-"classtoolbox_1_1pcl_1_1rops__extractor__t.html#a40312a843d179ebeb0a69eafa47c1ed0",
-"classtoolbox_1_1pcl_1_1vfh__extractor__t.html#a55914216ba61bf01dbd659bd94fd42e3",
-"classtoolbox_1_1utils_1_1list__printer__t.html",
-"classtoolbox_1_1utils_1_1table__t.html#ac7d9673ea573435cd6fcc664bd89251e",
-"functional__impl_8hpp.html#a48db12c30c97eddfdbe5bb80179b94f4",
-"md__b_u_i_l_d_i_n_g.html#autotoc_md20",
-"namespacetoolbox_1_1file.html#aa25c437b3e41a9a5ef2860f9b7c2012f",
-"parallel_8hpp.html#af0f6fb62a817e46d980f97838b8f293d",
-"structtoolbox_1_1functional_1_1detail_1_1_memoize_state.html#acd2869e33a4b1e6d052d66c0d8dba349",
-"structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1point__pair__t.html#adb6f3fd8e80337a71be89fb58550c2c7",
-"structtoolbox_1_1types_1_1point__t.html#ae688a2e416a93fb2e9c5bd51b21ec37e"
+"classtoolbox_1_1io_1_1dataloader__t.html#a3c5c6c3757cfe4dcab39a3cdcc532562",
+"classtoolbox_1_1metrics_1_1_bounding_box_metric.html#a0fc05601a010d3794eccf38818424ebc",
+"classtoolbox_1_1metrics_1_1_metric_factory.html#afca2128b0ca1be5906a6f5d3c636b036",
+"classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#afa44f9dbe0c57abc9f724c89b07efae4",
+"classtoolbox_1_1pcl_1_1base__knn__generic__t.html#a495e34779fde5ecfcd8ac24258a72ff6",
+"classtoolbox_1_1pcl_1_1dsc3d__extractor__t.html#a22d3a4096668a7b1660767cf0842e1bb",
+"classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html#a79642317b2e34f4da4432abc413b9c4d",
+"classtoolbox_1_1pcl_1_1pfh__extractor__t.html#a80833b5d21c35a01731240dec26445b4",
+"classtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1smart__index__t.html",
+"classtoolbox_1_1utils_1_1command__t.html#a09f00d37e54875941fdd69922247872a",
+"classtoolbox_1_1utils_1_1simple__timer__array__t.html#a2f62036ebec41a0d6a635ac371495fa9",
+"file_8hpp.html#a131b4596d21d7af9c3a20625c2b84f7b",
+"group__norm.html#ga0e2c16e40b513f55467addbb7e396c8a",
+"namespacemembers_y.html",
+"namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066bab67ebb55eacd32d45851affb711a6d0b",
+"registration_8hpp_source.html",
+"structtoolbox_1_1pcl_1_1dsc3d__signature__t.html#a72d81819e985ff35001c2c3aabc60aaf",
+"structtoolbox_1_1traits_1_1is__less__than__comparable.html",
+"structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

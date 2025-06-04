@@ -63,14 +63,16 @@ digraph "src/include/cpp-toolbox/base/object_pool.hpp"
   Node15 -> Node18 [id="edge35_Node000015_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node12 [id="edge36_Node000003_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node15 [id="edge37_Node000003_Node000015",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 -> Node18 [id="edge38_Node000003_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 -> Node23 [id="edge39_Node000003_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node23 [id="Node000023",label="src/include/cpp-toolbox\l/types/point_utils.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__utils_8hpp.html",tooltip=" "];
+  Node3 -> Node23 [id="edge38_Node000003_Node000023",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node23 [id="Node000023",label="src/include/cpp-toolbox\l/pcl/registration/base\l_fine_registration.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$base__fine__registration_8hpp.html",tooltip=" "];
+  Node3 -> Node18 [id="edge39_Node000003_Node000018",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 -> Node24 [id="edge40_Node000003_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node24 [id="Node000024",label="src/include/cpp-toolbox\l/utils/impl/click_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click__impl_8hpp.html",tooltip=" "];
-  Node24 -> Node25 [id="edge41_Node000024_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node25 [id="Node000025",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
-  Node25 -> Node24 [id="edge42_Node000025_Node000024",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 -> Node26 [id="edge43_Node000003_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node26 [id="Node000026",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
+  Node24 [id="Node000024",label="src/include/cpp-toolbox\l/types/point_utils.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__utils_8hpp.html",tooltip=" "];
+  Node3 -> Node25 [id="edge41_Node000003_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node25 [id="Node000025",label="src/include/cpp-toolbox\l/utils/impl/click_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click__impl_8hpp.html",tooltip=" "];
+  Node25 -> Node26 [id="edge42_Node000025_Node000026",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node26 [id="Node000026",label="src/include/cpp-toolbox\l/utils/click.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$click_8hpp.html",tooltip=" "];
+  Node26 -> Node25 [id="edge43_Node000026_Node000025",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node27 [id="edge44_Node000003_Node000027",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node27 [id="Node000027",label="src/include/cpp-toolbox\l/utils/ini_struct.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ini__struct_8hpp.html",tooltip=" "];
 }

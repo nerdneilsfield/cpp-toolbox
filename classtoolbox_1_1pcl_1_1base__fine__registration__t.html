@@ -1,0 +1,1707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1base__fine__registration__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1base__fine__registration__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>细配准算法的基类（CRTP模式） / Base class for fine registration algorithms (CRTP pattern)  
+ <a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="base__fine__registration_8hpp_source.html">base_fine_registration.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3d302e0ee557581bda614484fb09b1fd" id="r_a3d302e0ee557581bda614484fb09b1fd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a3d302e0ee557581bda614484fb09b1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec0b72a04733425a11c90bfc143d5f8" id="r_a5ec0b72a04733425a11c90bfc143d5f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a5ec0b72a04733425a11c90bfc143d5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f07a1c847fa7565d58f9a0354011f8" id="r_aa4f07a1c847fa7565d58f9a0354011f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:aa4f07a1c847fa7565d58f9a0354011f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e356974e1a7515987e74177a39972da" id="r_a7e356974e1a7515987e74177a39972da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a7e356974e1a7515987e74177a39972da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355ea2074f9c073fc5e616889ba8467e" id="r_a355ea2074f9c073fc5e616889ba8467e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> = std::function&lt; bool(const <a class="el" href="structtoolbox_1_1pcl_1_1iteration__state__t.html">iteration_state_t</a>&lt; DataType &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a355ea2074f9c073fc5e616889ba8467e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a2375bc828f01a3c394c1b6c08dac10a2" id="r_a2375bc828f01a3c394c1b6c08dac10a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2375bc828f01a3c394c1b6c08dac10a2">base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a2375bc828f01a3c394c1b6c08dac10a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794ed97eb44f6b007618890a1aac9f36" id="r_a794ed97eb44f6b007618890a1aac9f36"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a794ed97eb44f6b007618890a1aac9f36">~base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a794ed97eb44f6b007618890a1aac9f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a288212fef6206e2667ef8154dc958" id="r_a48a288212fef6206e2667ef8154dc958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a48a288212fef6206e2667ef8154dc958">base_fine_registration_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a48a288212fef6206e2667ef8154dc958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093d107c7fe0c7b441dedeeafb6e5135" id="r_a093d107c7fe0c7b441dedeeafb6e5135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a093d107c7fe0c7b441dedeeafb6e5135">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a093d107c7fe0c7b441dedeeafb6e5135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe44dff889b8247bec76772284ae2f16" id="r_abe44dff889b8247bec76772284ae2f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#abe44dff889b8247bec76772284ae2f16">base_fine_registration_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:abe44dff889b8247bec76772284ae2f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f18ec943a2f8901ad26fb25c1cd7173" id="r_a7f18ec943a2f8901ad26fb25c1cd7173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7f18ec943a2f8901ad26fb25c1cd7173">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7f18ec943a2f8901ad26fb25c1cd7173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5280677c21801bd398ec9c6c84057ce8" id="r_a5280677c21801bd398ec9c6c84057ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:a5280677c21801bd398ec9c6c84057ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云 / Set source point cloud  <br /></td></tr>
+<tr class="separator:a5280677c21801bd398ec9c6c84057ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adcee04afc40e70acc38fb970c2eb0d" id="r_a3adcee04afc40e70acc38fb970c2eb0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a3adcee04afc40e70acc38fb970c2eb0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标点云 / Set target point cloud  <br /></td></tr>
+<tr class="separator:a3adcee04afc40e70acc38fb970c2eb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93edfd38cdad80e9a01b518692f2c533" id="r_a93edfd38cdad80e9a01b518692f2c533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a93edfd38cdad80e9a01b518692f2c533">set_max_iterations</a> (std::size_t max_iterations)</td></tr>
+<tr class="memdesc:a93edfd38cdad80e9a01b518692f2c533"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大迭代次数 / Set maximum iterations  <br /></td></tr>
+<tr class="separator:a93edfd38cdad80e9a01b518692f2c533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a996d9ca33227b8b1de9b2103e5e91" id="r_a85a996d9ca33227b8b1de9b2103e5e91"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a85a996d9ca33227b8b1de9b2103e5e91">get_max_iterations</a> () const</td></tr>
+<tr class="memdesc:a85a996d9ca33227b8b1de9b2103e5e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大迭代次数 / Get maximum iterations  <br /></td></tr>
+<tr class="separator:a85a996d9ca33227b8b1de9b2103e5e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a4a4c38fc5bb23400fddb5c434ac8d" id="r_af4a4a4c38fc5bb23400fddb5c434ac8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af4a4a4c38fc5bb23400fddb5c434ac8d">set_transformation_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:af4a4a4c38fc5bb23400fddb5c434ac8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置变换epsilon（收敛阈值） / Set transformation epsilon (convergence threshold)  <br /></td></tr>
+<tr class="separator:af4a4a4c38fc5bb23400fddb5c434ac8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b6484c34319b54c07c0fa94fc3db7e" id="r_a00b6484c34319b54c07c0fa94fc3db7e"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a00b6484c34319b54c07c0fa94fc3db7e">get_transformation_epsilon</a> () const</td></tr>
+<tr class="memdesc:a00b6484c34319b54c07c0fa94fc3db7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取变换epsilon / Get transformation epsilon  <br /></td></tr>
+<tr class="separator:a00b6484c34319b54c07c0fa94fc3db7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc174f7e3383ad56499bb8db10fd124" id="r_a7cc174f7e3383ad56499bb8db10fd124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7cc174f7e3383ad56499bb8db10fd124">set_euclidean_fitness_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:a7cc174f7e3383ad56499bb8db10fd124"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置欧氏距离epsilon / Set Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:a7cc174f7e3383ad56499bb8db10fd124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef36ccdd6652a90653310d50ec5e6c89" id="r_aef36ccdd6652a90653310d50ec5e6c89"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aef36ccdd6652a90653310d50ec5e6c89">get_euclidean_fitness_epsilon</a> () const</td></tr>
+<tr class="memdesc:aef36ccdd6652a90653310d50ec5e6c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取欧氏距离epsilon / Get Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:aef36ccdd6652a90653310d50ec5e6c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead9f67137db66daafa040674003c38c" id="r_aead9f67137db66daafa040674003c38c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aead9f67137db66daafa040674003c38c">set_max_correspondence_distance</a> (DataType distance)</td></tr>
+<tr class="memdesc:aead9f67137db66daafa040674003c38c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大对应距离 / Set maximum correspondence distance  <br /></td></tr>
+<tr class="separator:aead9f67137db66daafa040674003c38c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4986acd9663d9337545fc55e844027aa" id="r_a4986acd9663d9337545fc55e844027aa"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a4986acd9663d9337545fc55e844027aa">get_max_correspondence_distance</a> () const</td></tr>
+<tr class="memdesc:a4986acd9663d9337545fc55e844027aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大对应距离 / Get maximum correspondence distance  <br /></td></tr>
+<tr class="separator:a4986acd9663d9337545fc55e844027aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe4eb5214abf6152a2708f0343027aa" id="r_adbe4eb5214abf6152a2708f0343027aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#adbe4eb5214abf6152a2708f0343027aa">set_record_history</a> (bool record)</td></tr>
+<tr class="memdesc:adbe4eb5214abf6152a2708f0343027aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否记录迭代历史 / Set whether to record iteration history  <br /></td></tr>
+<tr class="separator:adbe4eb5214abf6152a2708f0343027aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70256f005a1c7cb3c6ae78b60a8f89b" id="r_ac70256f005a1c7cb3c6ae78b60a8f89b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac70256f005a1c7cb3c6ae78b60a8f89b">get_record_history</a> () const</td></tr>
+<tr class="memdesc:ac70256f005a1c7cb3c6ae78b60a8f89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否记录迭代历史 / Get whether to record iteration history  <br /></td></tr>
+<tr class="separator:ac70256f005a1c7cb3c6ae78b60a8f89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfc3785cc037ac6f514643e6997189a" id="r_a1dfc3785cc037ac6f514643e6997189a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a1dfc3785cc037ac6f514643e6997189a">set_iteration_callback</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> callback)</td></tr>
+<tr class="memdesc:a1dfc3785cc037ac6f514643e6997189a"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置迭代回调函数 / Set iteration callback function  <br /></td></tr>
+<tr class="separator:a1dfc3785cc037ac6f514643e6997189a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3eb6d6bb6e9d7287f445a449e86075" id="r_aaa3eb6d6bb6e9d7287f445a449e86075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aaa3eb6d6bb6e9d7287f445a449e86075">get_correspondence_type</a> () const</td></tr>
+<tr class="memdesc:aaa3eb6d6bb6e9d7287f445a449e86075"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对应关系类型 / Get correspondence type  <br /></td></tr>
+<tr class="separator:aaa3eb6d6bb6e9d7287f445a449e86075"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b676bd718ebf8560f11e98335d4e2f" id="r_a12b676bd718ebf8560f11e98335d4e2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a12b676bd718ebf8560f11e98335d4e2f">has_source_normals</a> () const</td></tr>
+<tr class="memdesc:a12b676bd718ebf8560f11e98335d4e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查源点云是否有法线 / Check if source cloud has normals  <br /></td></tr>
+<tr class="separator:a12b676bd718ebf8560f11e98335d4e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359a31f13961ccccdaafc869f2e860c2" id="r_a359a31f13961ccccdaafc869f2e860c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a359a31f13961ccccdaafc869f2e860c2">has_target_normals</a> () const</td></tr>
+<tr class="memdesc:a359a31f13961ccccdaafc869f2e860c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查目标点云是否有法线 / Check if target cloud has normals  <br /></td></tr>
+<tr class="separator:a359a31f13961ccccdaafc869f2e860c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b471cca882837387c84f4310a3d6ac" id="r_af8b471cca882837387c84f4310a3d6ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;initial_guess, <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:af8b471cca882837387c84f4310a3d6ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:af8b471cca882837387c84f4310a3d6ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab903639746297df5b83428fe33727468" id="r_ab903639746297df5b83428fe33727468"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ab903639746297df5b83428fe33727468">align</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:ab903639746297df5b83428fe33727468"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准（使用单位矩阵作为初始猜测） / Perform registration (using identity as initial guess)  <br /></td></tr>
+<tr class="separator:ab903639746297df5b83428fe33727468"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a8be4e0c5227585e2fc2e31f26c4d8650" id="r_a8be4e0c5227585e2fc2e31f26c4d8650"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a8be4e0c5227585e2fc2e31f26c4d8650">validate_input</a> () const</td></tr>
+<tr class="memdesc:a8be4e0c5227585e2fc2e31f26c4d8650"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入 / Validate input  <br /></td></tr>
+<tr class="separator:a8be4e0c5227585e2fc2e31f26c4d8650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68cd985b447ae36ee790dd933cad43a9" id="r_a68cd985b447ae36ee790dd933cad43a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a68cd985b447ae36ee790dd933cad43a9">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a68cd985b447ae36ee790dd933cad43a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外输入验证 / Additional input validation for derived class  <br /></td></tr>
+<tr class="separator:a68cd985b447ae36ee790dd933cad43a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fb318b774c21455d4773239c9d7dda" id="r_a34fb318b774c21455d4773239c9d7dda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a34fb318b774c21455d4773239c9d7dda">has_converged</a> (std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;current_transform, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;previous_transform, DataType current_error, DataType previous_error, std::string &amp;termination_reason) const</td></tr>
+<tr class="memdesc:a34fb318b774c21455d4773239c9d7dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查收敛条件 / Check convergence criteria  <br /></td></tr>
+<tr class="separator:a34fb318b774c21455d4773239c9d7dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc395000353854fe4717fa91d389ed0" id="r_a0dc395000353854fe4717fa91d389ed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0dc395000353854fe4717fa91d389ed0">has_converged_impl</a> (std::size_t, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, DataType, DataType, std::string &amp;) const</td></tr>
+<tr class="memdesc:a0dc395000353854fe4717fa91d389ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外收敛检查 / Additional convergence check for derived class  <br /></td></tr>
+<tr class="separator:a0dc395000353854fe4717fa91d389ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0f5fdf3296e44131c9c6bd939acfc7" id="r_aea0f5fdf3296e44131c9c6bd939acfc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aea0f5fdf3296e44131c9c6bd939acfc7">preprocess_impl</a> ()</td></tr>
+<tr class="memdesc:aea0f5fdf3296e44131c9c6bd939acfc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理钩子（派生类实现） / Preprocessing hook (derived class implementation)  <br /></td></tr>
+<tr class="separator:aea0f5fdf3296e44131c9c6bd939acfc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3e7798019e57f5ab86021d35395875" id="r_a0b3e7798019e57f5ab86021d35395875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0b3e7798019e57f5ab86021d35395875">record_iteration</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result, std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;transform, DataType error, DataType error_change, std::size_t num_correspondences)</td></tr>
+<tr class="memdesc:a0b3e7798019e57f5ab86021d35395875"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录迭代状态 / Record iteration state  <br /></td></tr>
+<tr class="separator:a0b3e7798019e57f5ab86021d35395875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a2e59d606dde0a446e48f79a107eec177" id="r_a2e59d606dde0a446e48f79a107eec177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e59d606dde0a446e48f79a107eec177">m_source_cloud</a></td></tr>
+<tr class="separator:a2e59d606dde0a446e48f79a107eec177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53e1712f4c6e243c18f209294b7b8ed" id="r_ac53e1712f4c6e243c18f209294b7b8ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac53e1712f4c6e243c18f209294b7b8ed">m_target_cloud</a></td></tr>
+<tr class="separator:ac53e1712f4c6e243c18f209294b7b8ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0462b6de13a5472ab390a56fd2dedc" id="r_a2e0462b6de13a5472ab390a56fd2dedc"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e0462b6de13a5472ab390a56fd2dedc">m_max_iterations</a> = 50</td></tr>
+<tr class="separator:a2e0462b6de13a5472ab390a56fd2dedc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0953ef97908ed3f167a20d62cf4a91d2" id="r_a0953ef97908ed3f167a20d62cf4a91d2"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0953ef97908ed3f167a20d62cf4a91d2">m_transformation_epsilon</a> = static_cast&lt;DataType&gt;(1e-8)</td></tr>
+<tr class="separator:a0953ef97908ed3f167a20d62cf4a91d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac390301b292aa61674c58e65f6e60e1b" id="r_ac390301b292aa61674c58e65f6e60e1b"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac390301b292aa61674c58e65f6e60e1b">m_euclidean_fitness_epsilon</a> = static_cast&lt;DataType&gt;(1e-6)</td></tr>
+<tr class="separator:ac390301b292aa61674c58e65f6e60e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667770c9f6ee70b8eb226a19e9e9f07c" id="r_a667770c9f6ee70b8eb226a19e9e9f07c"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a667770c9f6ee70b8eb226a19e9e9f07c">m_max_correspondence_distance</a> = static_cast&lt;DataType&gt;(0.05)</td></tr>
+<tr class="separator:a667770c9f6ee70b8eb226a19e9e9f07c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936064ace4d3d31d16199ced664a1e0b" id="r_a936064ace4d3d31d16199ced664a1e0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a936064ace4d3d31d16199ced664a1e0b">m_source_updated</a> = false</td></tr>
+<tr class="separator:a936064ace4d3d31d16199ced664a1e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4abbb1025af9fc08aa8086fc8f4b39" id="r_a6a4abbb1025af9fc08aa8086fc8f4b39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a6a4abbb1025af9fc08aa8086fc8f4b39">m_target_updated</a> = false</td></tr>
+<tr class="separator:a6a4abbb1025af9fc08aa8086fc8f4b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb08d74e84aa721b8f83e029802f6816" id="r_afb08d74e84aa721b8f83e029802f6816"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#afb08d74e84aa721b8f83e029802f6816">m_record_history</a> = false</td></tr>
+<tr class="separator:afb08d74e84aa721b8f83e029802f6816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754f9a894b6ee6c8f251cec28b9dc1a4" id="r_a754f9a894b6ee6c8f251cec28b9dc1a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a754f9a894b6ee6c8f251cec28b9dc1a4">m_iteration_callback</a></td></tr>
+<tr class="separator:a754f9a894b6ee6c8f251cec28b9dc1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Derived, typename DataType&gt;<br />
+class toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</div><p>细配准算法的基类（CRTP模式） / Base class for fine registration algorithms (CRTP pattern) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Derived</td><td>派生类类型 / Derived class type </td></tr>
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a355ea2074f9c073fc5e616889ba8467e" name="a355ea2074f9c073fc5e616889ba8467e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a355ea2074f9c073fc5e616889ba8467e">&#9670;&#160;</a></span>iteration_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::iteration_callback_t =  std::function&lt;bool(const <a class="el" href="structtoolbox_1_1pcl_1_1iteration__state__t.html">iteration_state_t</a>&lt;DataType&gt;&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d302e0ee557581bda614484fb09b1fd" name="a3d302e0ee557581bda614484fb09b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d302e0ee557581bda614484fb09b1fd">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ec0b72a04733425a11c90bfc143d5f8" name="a5ec0b72a04733425a11c90bfc143d5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec0b72a04733425a11c90bfc143d5f8">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e356974e1a7515987e74177a39972da" name="a7e356974e1a7515987e74177a39972da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e356974e1a7515987e74177a39972da">&#9670;&#160;</a></span>result_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::result_type =  <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4f07a1c847fa7565d58f9a0354011f8" name="aa4f07a1c847fa7565d58f9a0354011f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f07a1c847fa7565d58f9a0354011f8">&#9670;&#160;</a></span>transformation_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::transformation_t =  Eigen::Matrix&lt;DataType, 4, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a2375bc828f01a3c394c1b6c08dac10a2" name="a2375bc828f01a3c394c1b6c08dac10a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2375bc828f01a3c394c1b6c08dac10a2">&#9670;&#160;</a></span>base_fine_registration_t() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::base_fine_registration_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a794ed97eb44f6b007618890a1aac9f36" name="a794ed97eb44f6b007618890a1aac9f36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794ed97eb44f6b007618890a1aac9f36">&#9670;&#160;</a></span>~base_fine_registration_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a48a288212fef6206e2667ef8154dc958" name="a48a288212fef6206e2667ef8154dc958"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48a288212fef6206e2667ef8154dc958">&#9670;&#160;</a></span>base_fine_registration_t() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::base_fine_registration_t </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; Derived, DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe44dff889b8247bec76772284ae2f16" name="abe44dff889b8247bec76772284ae2f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe44dff889b8247bec76772284ae2f16">&#9670;&#160;</a></span>base_fine_registration_t() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::base_fine_registration_t </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; Derived, DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af8b471cca882837387c84f4310a3d6ac" name="af8b471cca882837387c84f4310a3d6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8b471cca882837387c84f4310a3d6ac">&#9670;&#160;</a></span>align() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::align </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>initial_guess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行配准 / Perform registration </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">initial_guess</td><td>初始变换估计 / Initial transformation guess </td></tr>
+    <tr><td class="paramname">result</td><td>[out] 配准结果 / Registration result </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>是否成功 / Whether successful </dd></dl>
+
+</div>
+</div>
+<a id="ab903639746297df5b83428fe33727468" name="ab903639746297df5b83428fe33727468"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab903639746297df5b83428fe33727468">&#9670;&#160;</a></span>align() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::align </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行配准（使用单位矩阵作为初始猜测） / Perform registration (using identity as initial guess) </p>
+
+</div>
+</div>
+<a id="aaa3eb6d6bb6e9d7287f445a449e86075" name="aaa3eb6d6bb6e9d7287f445a449e86075"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa3eb6d6bb6e9d7287f445a449e86075">&#9670;&#160;</a></span>get_correspondence_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_correspondence_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对应关系类型 / Get correspondence type </p>
+
+</div>
+</div>
+<a id="aef36ccdd6652a90653310d50ec5e6c89" name="aef36ccdd6652a90653310d50ec5e6c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef36ccdd6652a90653310d50ec5e6c89">&#9670;&#160;</a></span>get_euclidean_fitness_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_euclidean_fitness_epsilon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取欧氏距离epsilon / Get Euclidean fitness epsilon </p>
+
+</div>
+</div>
+<a id="a4986acd9663d9337545fc55e844027aa" name="a4986acd9663d9337545fc55e844027aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4986acd9663d9337545fc55e844027aa">&#9670;&#160;</a></span>get_max_correspondence_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_max_correspondence_distance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取最大对应距离 / Get maximum correspondence distance </p>
+
+</div>
+</div>
+<a id="a85a996d9ca33227b8b1de9b2103e5e91" name="a85a996d9ca33227b8b1de9b2103e5e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a996d9ca33227b8b1de9b2103e5e91">&#9670;&#160;</a></span>get_max_iterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_max_iterations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取最大迭代次数 / Get maximum iterations </p>
+
+</div>
+</div>
+<a id="ac70256f005a1c7cb3c6ae78b60a8f89b" name="ac70256f005a1c7cb3c6ae78b60a8f89b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70256f005a1c7cb3c6ae78b60a8f89b">&#9670;&#160;</a></span>get_record_history()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_record_history </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否记录迭代历史 / Get whether to record iteration history </p>
+
+</div>
+</div>
+<a id="a00b6484c34319b54c07c0fa94fc3db7e" name="a00b6484c34319b54c07c0fa94fc3db7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00b6484c34319b54c07c0fa94fc3db7e">&#9670;&#160;</a></span>get_transformation_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::get_transformation_epsilon </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取变换epsilon / Get transformation epsilon </p>
+
+</div>
+</div>
+<a id="a34fb318b774c21455d4773239c9d7dda" name="a34fb318b774c21455d4773239c9d7dda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34fb318b774c21455d4773239c9d7dda">&#9670;&#160;</a></span>has_converged()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::has_converged </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>current_transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>previous_transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>current_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>previous_error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname"><em>termination_reason</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查收敛条件 / Check convergence criteria </p>
+
+</div>
+</div>
+<a id="a0dc395000353854fe4717fa91d389ed0" name="a0dc395000353854fe4717fa91d389ed0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc395000353854fe4717fa91d389ed0">&#9670;&#160;</a></span>has_converged_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::has_converged_impl </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>派生类的额外收敛检查 / Additional convergence check for derived class </p>
+
+</div>
+</div>
+<a id="a12b676bd718ebf8560f11e98335d4e2f" name="a12b676bd718ebf8560f11e98335d4e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12b676bd718ebf8560f11e98335d4e2f">&#9670;&#160;</a></span>has_source_normals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::has_source_normals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查源点云是否有法线 / Check if source cloud has normals </p>
+
+</div>
+</div>
+<a id="a359a31f13961ccccdaafc869f2e860c2" name="a359a31f13961ccccdaafc869f2e860c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359a31f13961ccccdaafc869f2e860c2">&#9670;&#160;</a></span>has_target_normals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::has_target_normals </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查目标点云是否有法线 / Check if target cloud has normals </p>
+
+</div>
+</div>
+<a id="a7f18ec943a2f8901ad26fb25c1cd7173" name="a7f18ec943a2f8901ad26fb25c1cd7173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f18ec943a2f8901ad26fb25c1cd7173">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; Derived, DataType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a093d107c7fe0c7b441dedeeafb6e5135" name="a093d107c7fe0c7b441dedeeafb6e5135"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a093d107c7fe0c7b441dedeeafb6e5135">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; Derived, DataType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea0f5fdf3296e44131c9c6bd939acfc7" name="aea0f5fdf3296e44131c9c6bd939acfc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0f5fdf3296e44131c9c6bd939acfc7">&#9670;&#160;</a></span>preprocess_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::preprocess_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>预处理钩子（派生类实现） / Preprocessing hook (derived class implementation) </p>
+
+</div>
+</div>
+<a id="a0b3e7798019e57f5ab86021d35395875" name="a0b3e7798019e57f5ab86021d35395875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b3e7798019e57f5ab86021d35395875">&#9670;&#160;</a></span>record_iteration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::record_iteration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>error_change</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>num_correspondences</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>记录迭代状态 / Record iteration state </p>
+
+</div>
+</div>
+<a id="a7cc174f7e3383ad56499bb8db10fd124" name="a7cc174f7e3383ad56499bb8db10fd124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cc174f7e3383ad56499bb8db10fd124">&#9670;&#160;</a></span>set_euclidean_fitness_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_euclidean_fitness_epsilon </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>epsilon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置欧氏距离epsilon / Set Euclidean fitness epsilon </p>
+
+</div>
+</div>
+<a id="a1dfc3785cc037ac6f514643e6997189a" name="a1dfc3785cc037ac6f514643e6997189a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dfc3785cc037ac6f514643e6997189a">&#9670;&#160;</a></span>set_iteration_callback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_iteration_callback </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a>&#160;</td>
+          <td class="paramname"><em>callback</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置迭代回调函数 / Set iteration callback function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">callback</td><td>回调函数，返回false可提前终止 / Callback function, return false to terminate early </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aead9f67137db66daafa040674003c38c" name="aead9f67137db66daafa040674003c38c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aead9f67137db66daafa040674003c38c">&#9670;&#160;</a></span>set_max_correspondence_distance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_max_correspondence_distance </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>distance</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置最大对应距离 / Set maximum correspondence distance </p>
+
+</div>
+</div>
+<a id="a93edfd38cdad80e9a01b518692f2c533" name="a93edfd38cdad80e9a01b518692f2c533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93edfd38cdad80e9a01b518692f2c533">&#9670;&#160;</a></span>set_max_iterations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_max_iterations </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>max_iterations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置最大迭代次数 / Set maximum iterations </p>
+
+</div>
+</div>
+<a id="adbe4eb5214abf6152a2708f0343027aa" name="adbe4eb5214abf6152a2708f0343027aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbe4eb5214abf6152a2708f0343027aa">&#9670;&#160;</a></span>set_record_history()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_record_history </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>record</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否记录迭代历史 / Set whether to record iteration history </p>
+
+</div>
+</div>
+<a id="a5280677c21801bd398ec9c6c84057ce8" name="a5280677c21801bd398ec9c6c84057ce8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5280677c21801bd398ec9c6c84057ce8">&#9670;&#160;</a></span>set_source()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_source </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置源点云 / Set source point cloud </p>
+
+</div>
+</div>
+<a id="a3adcee04afc40e70acc38fb970c2eb0d" name="a3adcee04afc40e70acc38fb970c2eb0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3adcee04afc40e70acc38fb970c2eb0d">&#9670;&#160;</a></span>set_target()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_target </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置目标点云 / Set target point cloud </p>
+
+</div>
+</div>
+<a id="af4a4a4c38fc5bb23400fddb5c434ac8d" name="af4a4a4c38fc5bb23400fddb5c434ac8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a4a4c38fc5bb23400fddb5c434ac8d">&#9670;&#160;</a></span>set_transformation_epsilon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::set_transformation_epsilon </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>epsilon</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置变换epsilon（收敛阈值） / Set transformation epsilon (convergence threshold) </p>
+
+</div>
+</div>
+<a id="a8be4e0c5227585e2fc2e31f26c4d8650" name="a8be4e0c5227585e2fc2e31f26c4d8650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8be4e0c5227585e2fc2e31f26c4d8650">&#9670;&#160;</a></span>validate_input()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::validate_input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>验证输入 / Validate input </p>
+
+</div>
+</div>
+<a id="a68cd985b447ae36ee790dd933cad43a9" name="a68cd985b447ae36ee790dd933cad43a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68cd985b447ae36ee790dd933cad43a9">&#9670;&#160;</a></span>validate_input_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::validate_input_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>派生类的额外输入验证 / Additional input validation for derived class </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac390301b292aa61674c58e65f6e60e1b" name="ac390301b292aa61674c58e65f6e60e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac390301b292aa61674c58e65f6e60e1b">&#9670;&#160;</a></span>m_euclidean_fitness_epsilon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_euclidean_fitness_epsilon = static_cast&lt;DataType&gt;(1e-6)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a754f9a894b6ee6c8f251cec28b9dc1a4" name="a754f9a894b6ee6c8f251cec28b9dc1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a754f9a894b6ee6c8f251cec28b9dc1a4">&#9670;&#160;</a></span>m_iteration_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_iteration_callback</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a667770c9f6ee70b8eb226a19e9e9f07c" name="a667770c9f6ee70b8eb226a19e9e9f07c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a667770c9f6ee70b8eb226a19e9e9f07c">&#9670;&#160;</a></span>m_max_correspondence_distance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_max_correspondence_distance = static_cast&lt;DataType&gt;(0.05)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e0462b6de13a5472ab390a56fd2dedc" name="a2e0462b6de13a5472ab390a56fd2dedc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0462b6de13a5472ab390a56fd2dedc">&#9670;&#160;</a></span>m_max_iterations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_max_iterations = 50</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afb08d74e84aa721b8f83e029802f6816" name="afb08d74e84aa721b8f83e029802f6816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb08d74e84aa721b8f83e029802f6816">&#9670;&#160;</a></span>m_record_history</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_record_history = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e59d606dde0a446e48f79a107eec177" name="a2e59d606dde0a446e48f79a107eec177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e59d606dde0a446e48f79a107eec177">&#9670;&#160;</a></span>m_source_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_source_cloud</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a936064ace4d3d31d16199ced664a1e0b" name="a936064ace4d3d31d16199ced664a1e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a936064ace4d3d31d16199ced664a1e0b">&#9670;&#160;</a></span>m_source_updated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_source_updated = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac53e1712f4c6e243c18f209294b7b8ed" name="ac53e1712f4c6e243c18f209294b7b8ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac53e1712f4c6e243c18f209294b7b8ed">&#9670;&#160;</a></span>m_target_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_target_cloud</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6a4abbb1025af9fc08aa8086fc8f4b39" name="a6a4abbb1025af9fc08aa8086fc8f4b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a4abbb1025af9fc08aa8086fc8f4b39">&#9670;&#160;</a></span>m_target_updated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_target_updated = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0953ef97908ed3f167a20d62cf4a91d2" name="a0953ef97908ed3f167a20d62cf4a91d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0953ef97908ed3f167a20d62cf4a91d2">&#9670;&#160;</a></span>m_transformation_epsilon</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Derived , typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::m_transformation_epsilon = static_cast&lt;DataType&gt;(1e-8)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/pcl/registration/<a class="el" href="base__fine__registration_8hpp_source.html">base_fine_registration.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

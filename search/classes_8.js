@@ -36,5 +36,6 @@ var searchData=
   ['is_5fstack_5fallocated_33',['is_stack_allocated',['../structtoolbox_1_1traits_1_1is__stack__allocated.html',1,'toolbox::traits']]],
   ['is_5fvolatile_34',['is_volatile',['../structtoolbox_1_1traits_1_1is__volatile.html',1,'toolbox::traits']]],
   ['iss_5fkeypoint_5fextractor_5ft_35',['iss_keypoint_extractor_t',['../classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html',1,'toolbox::pcl']]],
-  ['iterator_36',['iterator',['../classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html',1,'toolbox::io::dataloader_t']]]
+  ['iteration_5fstate_5ft_36',['iteration_state_t',['../structtoolbox_1_1pcl_1_1iteration__state__t.html',1,'toolbox::pcl']]],
+  ['iterator_37',['iterator',['../classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html',1,'toolbox::io::dataloader_t']]]
 ];

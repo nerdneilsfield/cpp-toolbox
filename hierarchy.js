@@ -49,6 +49,7 @@ var hierarchy =
       [ "toolbox::io::kitti_format_t", "classtoolbox_1_1io_1_1kitti__format__t.html", null ],
       [ "toolbox::io::pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", null ]
     ] ],
+    [ "toolbox::pcl::base_fine_registration_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
     [ "toolbox::pcl::base_keypoint_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", null ],
     [ "base_keypoint_extractor_t< agast_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::agast_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", null ]
@@ -277,6 +278,7 @@ var hierarchy =
     [ "toolbox::pcl::filter_t< voxel_grid_downsampling_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1filter__t.html", [
       [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >", "classtoolbox_1_1pcl_1_1voxel__grid__downsampling__t.html", null ]
     ] ],
+    [ "toolbox::pcl::fine_registration_result_t< DataType >", "structtoolbox_1_1pcl_1_1fine__registration__result__t.html", null ],
     [ "toolbox::traits::function_traits< T >", "structtoolbox_1_1traits_1_1function__traits.html", null ],
     [ "toolbox::traits::function_traits< R(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_args_8_8_8_08_4.html", [
       [ "toolbox::traits::function_traits< R(C::*)(Args...)>", "structtoolbox_1_1traits_1_1function__traits_3_01_r_07_c_1_1_5_08_07_args_8_8_8_08_4.html", null ]
@@ -311,6 +313,7 @@ var hierarchy =
     [ "toolbox::traits::is_reference< T >", "structtoolbox_1_1traits_1_1is__reference.html", null ],
     [ "toolbox::traits::is_stack_allocated< T >", "structtoolbox_1_1traits_1_1is__stack__allocated.html", null ],
     [ "toolbox::traits::is_volatile< T >", "structtoolbox_1_1traits_1_1is__volatile.html", null ],
+    [ "toolbox::pcl::iteration_state_t< DataType >", "structtoolbox_1_1pcl_1_1iteration__state__t.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >::iterator", "classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html", null ],
     [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::key_hash", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html", null ],
     [ "toolbox::pcl::knn_traits< Element, Metric >", "structtoolbox_1_1pcl_1_1knn__traits.html", null ],

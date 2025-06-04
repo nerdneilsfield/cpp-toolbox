@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fields_0',['fields',['../structtoolbox_1_1utils_1_1ini__struct__traits.html#a40c14914ab29f69b0752d596cd602ef4',1,'toolbox::utils::ini_struct_traits']]],
-  ['fitness_5fscore_1',['fitness_score',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a9ae5f36872350f86d6c4c899793ae9c1',1,'toolbox::pcl::registration_result_t']]],
-  ['func_2',['func',['../structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6',1,'toolbox::base::detail::task_derived']]]
+  ['error_0',['error',['../structtoolbox_1_1pcl_1_1iteration__state__t.html#a04b5792cfcbf8e26e8b27e0d7f54496d',1,'toolbox::pcl::iteration_state_t']]],
+  ['error_5fchange_1',['error_change',['../structtoolbox_1_1pcl_1_1iteration__state__t.html#ab83da6240bf8c5e2fb6e04724f0e0a0e',1,'toolbox::pcl::iteration_state_t']]]
 ];

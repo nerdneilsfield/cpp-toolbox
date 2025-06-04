@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['g_5fhp_5flist_0',['g_hp_list',['../namespacetoolbox_1_1container_1_1detail.html#a9de94ce41458a5376a03b31314f658ba',1,'toolbox::container::detail']]],
-  ['g_5fhp_5flist_5fmutex_1',['g_hp_list_mutex',['../namespacetoolbox_1_1container_1_1detail.html#ac81750d8ccc240d65f0fc39996322203',1,'toolbox::container::detail']]],
-  ['green_2',['GREEN',['../namespacetoolbox_1_1utils.html#a1550e6c0fb7b2688cbbbe3cd22a7573c',1,'toolbox::utils']]]
+  ['fields_0',['fields',['../structtoolbox_1_1utils_1_1ini__struct__traits.html#a40c14914ab29f69b0752d596cd602ef4',1,'toolbox::utils::ini_struct_traits']]],
+  ['final_5ferror_1',['final_error',['../structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5c05bf6d042b28c83b52de01dc078158',1,'toolbox::pcl::fine_registration_result_t']]],
+  ['fitness_5fscore_2',['fitness_score',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a9ae5f36872350f86d6c4c899793ae9c1',1,'toolbox::pcl::registration_result_t']]],
+  ['func_3',['func',['../structtoolbox_1_1base_1_1detail_1_1task__derived.html#af82174f39885333022b3723e383bddb6',1,'toolbox::base::detail::task_derived']]]
 ];

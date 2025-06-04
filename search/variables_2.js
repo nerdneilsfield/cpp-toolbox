@@ -9,7 +9,7 @@ var searchData=
   ['color_6',['color',['../structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#ad0c05235e4d685166298ac68bfd5c953',1,'toolbox::utils::plot_t::series_t']]],
   ['color_5ft_7',['color_t',['../namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b',1,'toolbox::utils']]],
   ['colors_8',['colors',['../classtoolbox_1_1types_1_1point__cloud__t.html#a190ddb2bc0ad9a8c96e660e0863fe3b8',1,'toolbox::types::point_cloud_t']]],
-  ['converged_9',['converged',['../structtoolbox_1_1pcl_1_1registration__result__t.html#ae25a5590f0fa5338a783f39d0deb0785',1,'toolbox::pcl::registration_result_t']]],
+  ['converged_9',['converged',['../structtoolbox_1_1pcl_1_1registration__result__t.html#ae25a5590f0fa5338a783f39d0deb0785',1,'toolbox::pcl::registration_result_t::converged'],['../structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5bbf8b9f0b68c79b411bf2b016ce29f3',1,'toolbox::pcl::fine_registration_result_t::converged']]],
   ['count_10',['count',['../structtoolbox_1_1io_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#ab22aa6a041d72302301597bc3e76064b',1,'toolbox::io::pcd_format_t::pcd_header_t::field_info_t']]],
   ['counts_11',['counts',['../structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t.html#ab5d33e0d5bc205d7ea4b14a38cdca98e',1,'toolbox::pcl::voxel_grid_downsampling_t::voxel_data_soa_t']]],
   ['cpp_5ftoolbox_5fnative_5fis_5fbig_12',['CPP_TOOLBOX_NATIVE_IS_BIG',['../endian_8hpp.html#a5436b1a37cf754e5a3070e2e2750c12e',1,'endian.hpp']]],

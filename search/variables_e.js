@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['red_0',['RED',['../namespacetoolbox_1_1utils.html#a4a7fff40c337e38e0891ee1590a8777f',1,'toolbox::utils']]],
-  ['required_5f_1',['required_',['../classtoolbox_1_1utils_1_1parameter__t.html#aedd279b88390ca7fa43ffa307c32914c',1,'toolbox::utils::parameter_t']]],
-  ['requires_5fpositive_5fvalues_2',['requires_positive_values',['../structtoolbox_1_1metrics_1_1_metric_registry_1_1_metric_info.html#ac20d75ec0da3c1c482df71dafc763bd1',1,'toolbox::metrics::MetricRegistry::MetricInfo::requires_positive_values'],['../structtoolbox_1_1metrics_1_1metric__traits.html#a86722e88e0473a3114658ebf235c760c',1,'toolbox::metrics::metric_traits::requires_positive_values'],['../structtoolbox_1_1metrics_1_1metric__traits_3_01_l2_metric_3_01_t_01_4_01_4.html#a02acc75f38a4e9dd3775f06e282ce8c7',1,'toolbox::metrics::metric_traits&lt; L2Metric&lt; T &gt; &gt;::requires_positive_values'],['../structtoolbox_1_1metrics_1_1metric__traits_3_01_l1_metric_3_01_t_01_4_01_4.html#a86f4831ae4c2b7f71eb8e4dc4f481b67',1,'toolbox::metrics::metric_traits&lt; L1Metric&lt; T &gt; &gt;::requires_positive_values']]],
-  ['retire_5fscan_5fthreshold_3',['RETIRE_SCAN_THRESHOLD',['../namespacetoolbox_1_1container_1_1detail.html#a0294c9b505f4827357db54e2fb25a3b1',1,'toolbox::container::detail']]],
-  ['right_4',['RIGHT',['../namespacetoolbox_1_1utils.html#ae3d7bfbf39b4dfff207bebb51c82c805',1,'toolbox::utils']]],
-  ['right_5fjoint_5',['right_joint',['../structtoolbox_1_1utils_1_1print__style__t_1_1box__chars__t.html#a31e26a8d5b6c040f79c7d8fdaad633e8',1,'toolbox::utils::print_style_t::box_chars_t']]]
+  ['p_5fvalue_0',['p_value',['../classtoolbox_1_1metrics_1_1_lp_metric.html#abd2531ddc1af343f0e4c68b6c003b1ee',1,'toolbox::metrics::LpMetric']]],
+  ['padding_1',['padding',['../structtoolbox_1_1utils_1_1print__style__t.html#a7ae1f52c92340065f0aac609f2a04391',1,'toolbox::utils::print_style_t']]],
+  ['parameter_5f_2',['parameter_',['../classtoolbox_1_1metrics_1_1_parameterized_metric.html#a585c30e57f0fe1c1d05314e8d2343831',1,'toolbox::metrics::ParameterizedMetric']]],
+  ['point_5findices_3',['point_indices',['../structtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1grid__cell__t.html#ab8c2fd3198756a537ef3b9622b56c579',1,'toolbox::pcl::super_four_pcs_registration_t::grid_cell_t']]],
+  ['points_4',['points',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html#aa8fc8f0100b590fa821b4b6824db24ff',1,'toolbox::pcl::four_pcs_registration_t::base_4pcs_t::points'],['../classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff',1,'toolbox::types::point_cloud_t::points']]]
 ];

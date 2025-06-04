@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::four\l_pcs_registration_t\l\< DataType \>::candidate_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html",tooltip="候选匹配结构 / Candidate match structure"];
+  Node0 [id="Node000000",label="toolbox::pcl::fine\l_registration_result\l_t\< DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1fine__registration__result__t.html",tooltip="细配准结果 / Fine registration result"];
 }

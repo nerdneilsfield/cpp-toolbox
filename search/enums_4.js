@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mode_0',['Mode',['../classtoolbox_1_1metrics_1_1_bounding_box_metric.html#a0fc05601a010d3794eccf38818424ebc',1,'toolbox::metrics::BoundingBoxMetric']]]
+  ['level_0',['Level',['../classtoolbox_1_1logger_1_1thread__logger__t.html#aac8a891f00498ff98550a300d99f3fa1',1,'toolbox::logger::thread_logger_t']]]
 ];
