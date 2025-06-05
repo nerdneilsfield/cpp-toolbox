@@ -335,19 +335,20 @@ void quick_registration_example(const std::string& source_file,
   }
 
   // 使用快速配准函数 / Use quick registration function
-  auto result =
-      quick_registration(source_cloud, target_cloud, "super4pcs", 0.5f);
+  // TODO: 实现quick_registration函数
+  // auto result =
+  //     quick_registration(source_cloud, target_cloud, "super4pcs", 0.5f);
 
-  if (result.converged) {
-    std::cout << "快速配准成功 / Quick registration successful!\n";
-    std::cout << "  内点数 / Inliers: " << result.inliers.size() << "\n";
-    std::cout << "  适应度评分 / Fitness score: " << result.fitness_score
-              << "\n";
-    std::cout << "  变换矩阵 / Transformation matrix:\n"
-              << result.transformation << "\n";
-  } else {
-    std::cout << "快速配准失败 / Quick registration failed\n";
-  }
+  // if (result.converged) {
+  //   std::cout << "快速配准成功 / Quick registration successful!\n";
+  //   std::cout << "  内点数 / Inliers: " << result.inliers.size() << "\n";
+  //   std::cout << "  适应度评分 / Fitness score: " << result.fitness_score
+  //             << "\n";
+  //   std::cout << "  变换矩阵 / Transformation matrix:\n"
+  //             << result.transformation << "\n";
+  // } else {
+  //   std::cout << "快速配准失败 / Quick registration failed\n";
+  // }
 }
 
 int main(int argc, char** argv)

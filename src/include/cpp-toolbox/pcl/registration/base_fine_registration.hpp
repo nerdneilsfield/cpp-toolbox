@@ -280,19 +280,21 @@ protected:
       return true;
     }
 
-    // 检查变换变化量
-    transformation_t delta_transform =
-        current_transform.inverse() * previous_transform;
-    DataType rotation_change =
-        delta_transform.template block<3, 3>(0, 0).eulerAngles(0, 1, 2).norm();
-    DataType translation_change =
-        delta_transform.template block<3, 1>(0, 3).norm();
+    // 检查变换变化量（跳过第一次迭代）
+    if (iteration > 0) {
+      transformation_t delta_transform =
+          current_transform.inverse() * previous_transform;
+      DataType rotation_change =
+          delta_transform.template block<3, 3>(0, 0).eulerAngles(0, 1, 2).norm();
+      DataType translation_change =
+          delta_transform.template block<3, 1>(0, 3).norm();
 
-    if (rotation_change < m_transformation_epsilon
-        && translation_change < m_transformation_epsilon)
-    {
-      termination_reason = "transformation converged";
-      return true;
+      if (rotation_change < m_transformation_epsilon
+          && translation_change < m_transformation_epsilon)
+      {
+        termination_reason = "transformation converged";
+        return true;
+      }
     }
 
     // 检查误差变化量

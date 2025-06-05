@@ -4,7 +4,7 @@
  * @file registration.hpp
  * @brief 点云配准算法统一导出文件 / Unified export file for point cloud registration algorithms
  * 
- * 该文件提供了点云配准的统一接口，包括粗配准和精配准算法。
+ * 该文件提供了点云配准的统一接口，包括粗配准和细配准算法。
  * This file provides a unified interface for point cloud registration, including both
  * coarse and fine registration algorithms.
  * 
@@ -13,45 +13,58 @@
  * - 4PCS: 4点共面集算法，不需要初始对应关系 / 4-Point Congruent Sets, no initial correspondences needed
  * - Super4PCS: 优化的4PCS，适合大规模点云 / Optimized 4PCS for large-scale point clouds
  * 
+ * 细配准算法 / Fine Registration Algorithms:
+ * - Point-to-Point ICP: 基础ICP算法 / Basic ICP algorithm
+ * - Point-to-Plane ICP: 点到平面ICP，需要法线 / Point-to-plane ICP, requires normals
+ * - Generalized ICP: 平面到平面ICP / Plane-to-plane ICP
+ * - AA-ICP: Anderson加速的ICP / Anderson Accelerated ICP
+ * - NDT: 正态分布变换 / Normal Distributions Transform
+ * 
  * @code
  * #include <cpp-toolbox/pcl/registration/registration.hpp>
  * 
  * using namespace toolbox::pcl;
  * 
- * // RANSAC配准示例 / RANSAC registration example
- * ransac_registration_t<float> ransac;
- * ransac.set_source(source_cloud);
- * ransac.set_target(target_cloud);
- * ransac.set_correspondences(correspondences);
+ * // 粗配准示例 / Coarse registration example
+ * super_four_pcs_registration_t<float> coarse_reg;
+ * coarse_reg.set_source(source_cloud);
+ * coarse_reg.set_target(target_cloud);
+ * coarse_reg.set_delta(0.01f);     // 1cm精度 / 1cm accuracy
+ * coarse_reg.set_overlap(0.5f);    // 50%重叠 / 50% overlap
  * 
- * registration_result_t<float> result;
- * if (ransac.align(result)) {
- *     std::cout << "配准成功，内点数 / Registration successful, inliers: " 
- *               << result.inliers.size() << std::endl;
+ * coarse_registration_result_t<float> coarse_result;
+ * if (coarse_reg.align(coarse_result)) {
+ *     // 使用粗配准结果作为细配准的初始值
+ *     // Use coarse result as initial guess for fine registration
  * }
  * 
- * // 4PCS配准示例（不需要对应关系） / 4PCS registration example (no correspondences needed)
- * four_pcs_registration_t<float> fourpcs;
- * fourpcs.set_source(source_cloud);
- * fourpcs.set_target(target_cloud);
- * fourpcs.set_delta(0.01f);     // 1cm精度 / 1cm accuracy
- * fourpcs.set_overlap(0.5f);    // 50%重叠 / 50% overlap
+ * // 细配准示例 / Fine registration example
+ * point_to_point_icp_t<float> fine_reg;
+ * fine_reg.set_source(source_cloud);
+ * fine_reg.set_target(target_cloud);
+ * fine_reg.set_max_iterations(50);
  * 
- * if (fourpcs.align(result)) {
- *     // 使用result.transformation变换源点云
- *     // Use result.transformation to transform source cloud
- * }
+ * fine_registration_result_t<float> fine_result;
+ * fine_reg.align(coarse_result.transformation, fine_result);
  * @endcode
  */
 
 // 基础类和结果结构 / Base classes and result structures
 #include <cpp-toolbox/pcl/registration/registration_result.hpp>
 #include <cpp-toolbox/pcl/registration/base_coarse_registration.hpp>
+#include <cpp-toolbox/pcl/registration/base_fine_registration.hpp>
 
 // 粗配准算法 / Coarse registration algorithms
 #include <cpp-toolbox/pcl/registration/ransac_registration.hpp>
 #include <cpp-toolbox/pcl/registration/four_pcs_registration.hpp>
 #include <cpp-toolbox/pcl/registration/super_four_pcs_registration.hpp>
+
+// 细配准算法 / Fine registration algorithms
+#include <cpp-toolbox/pcl/registration/point_to_point_icp.hpp>
+#include <cpp-toolbox/pcl/registration/point_to_plane_icp.hpp>
+#include <cpp-toolbox/pcl/registration/generalized_icp.hpp>
+#include <cpp-toolbox/pcl/registration/aa_icp.hpp>
+#include <cpp-toolbox/pcl/registration/ndt.hpp>
 
 // 必要的类型定义 / Required type definitions
 #include <cpp-toolbox/types/point.hpp>
@@ -59,6 +72,8 @@
 // 日志宏 / Logger macros
 #include <cpp-toolbox/logger/thread_logger.hpp>
 #define LOG_ERROR_S toolbox::logger::thread_logger_t::instance().error_s()
+#define LOG_WARN_S toolbox::logger::thread_logger_t::instance().warn_s()
+#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()
 
 // 便捷类型别名 / Convenient type aliases
 namespace toolbox::pcl
@@ -69,23 +84,38 @@ namespace toolbox::pcl
  * @{
  */
 
-// 单精度浮点类型别名 / Single precision float aliases
+// 粗配准单精度类型别名 / Coarse registration single precision aliases
 using ransac_registration = ransac_registration_t<float>;
 using four_pcs_registration = four_pcs_registration_t<float>;
 using super_four_pcs_registration = super_four_pcs_registration_t<float>;
-using registration_result = registration_result_t<float>;
+using coarse_registration_result = registration_result_t<float>;
 
-// 双精度浮点类型别名 / Double precision float aliases
+// 粗配准双精度类型别名 / Coarse registration double precision aliases
 using ransac_registration_d = ransac_registration_t<double>;
 using four_pcs_registration_d = four_pcs_registration_t<double>;
 using super_four_pcs_registration_d = super_four_pcs_registration_t<double>;
-using registration_result_d = registration_result_t<double>;
+using coarse_registration_result_d = registration_result_t<double>;
+
+// 细配准单精度类型别名 / Fine registration single precision aliases
+using point_to_point_icp = point_to_point_icp_t<float>;
+using point_to_plane_icp = point_to_plane_icp_t<float>;
+using generalized_icp = generalized_icp_t<float>;
+using aa_icp = aa_icp_t<float>;
+using ndt = ndt_t<float>;
+using fine_registration_result = fine_registration_result_t<float>;
+
+// 细配准双精度类型别名 / Fine registration double precision aliases
+using point_to_point_icp_d = point_to_point_icp_t<double>;
+using point_to_plane_icp_d = point_to_plane_icp_t<double>;
+using generalized_icp_d = generalized_icp_t<double>;
+using aa_icp_d = aa_icp_t<double>;
+using ndt_d = ndt_t<double>;
+using fine_registration_result_d = fine_registration_result_t<double>;
 
 /**
  * @brief 配准算法选择指南 / Registration algorithm selection guide
  * 
- * 选择合适的配准算法取决于以下因素：
- * Choosing the right registration algorithm depends on:
+ * 粗配准算法选择 / Coarse Registration Selection:
  * 
  * 1. **是否有对应关系 / Whether correspondences are available**
  *    - 有对应关系：使用RANSAC / With correspondences: use RANSAC
@@ -96,68 +126,125 @@ using registration_result_d = registration_result_t<double>;
  *    - 中等规模（10K-100K）：RANSAC或4PCS / Medium (10K-100K): RANSAC or 4PCS
  *    - 大规模（>100K）：Super4PCS / Large (>100K): Super4PCS
  * 
- * 3. **重叠率 / Overlap ratio**
- *    - 高重叠（>70%）：任意算法 / High overlap (>70%): any algorithm
- *    - 中等重叠（30-70%）：4PCS或Super4PCS / Medium (30-70%): 4PCS or Super4PCS
- *    - 低重叠（<30%）：Super4PCS / Low overlap (<30%): Super4PCS
+ * 细配准算法选择 / Fine Registration Selection:
  * 
- * 4. **精度要求 / Accuracy requirements**
- *    - 高精度：使用小的delta值和更多迭代 / High accuracy: use small delta and more iterations
- *    - 快速近似：使用大的delta值和少量迭代 / Fast approximation: use large delta and fewer iterations
+ * 1. **点云特征 / Point cloud features**
+ *    - 无法线：Point-to-Point ICP 或 NDT / No normals: Point-to-Point ICP or NDT
+ *    - 有法线：Point-to-Plane ICP 或 Generalized ICP / With normals: Point-to-Plane ICP or Generalized ICP
  * 
- * 5. **计算资源 / Computational resources**
- *    - 有限资源：使用采样和并行计算 / Limited: use sampling and parallel computation
- *    - 充足资源：使用完整点云和更多基 / Ample: use full clouds and more bases
+ * 2. **收敛速度要求 / Convergence speed requirements**
+ *    - 标准速度：Point-to-Point/Plane ICP / Standard: Point-to-Point/Plane ICP
+ *    - 快速收敛：AA-ICP (Anderson加速) / Fast: AA-ICP (Anderson Accelerated)
+ * 
+ * 3. **鲁棒性需求 / Robustness requirements**
+ *    - 标准：Point-to-Point ICP / Standard: Point-to-Point ICP
+ *    - 高鲁棒性：Generalized ICP 或 NDT / High robustness: Generalized ICP or NDT
+ * 
+ * 4. **大规模点云 / Large-scale clouds**
+ *    - NDT：基于体素的方法，适合大规模点云 / NDT: Voxel-based, suitable for large clouds
  */
 
 /**
- * @brief 快速配准便捷函数 / Quick registration convenience function
+ * @brief 完整配准流程 / Complete registration pipeline
  * @tparam DataType 数据类型 / Data type
  * @param source 源点云 / Source cloud
  * @param target 目标点云 / Target cloud
- * @param algorithm 算法名称（"ransac", "4pcs", "super4pcs"） / Algorithm name
- * @param overlap 重叠率估计（仅4PCS类算法） / Overlap estimate (4PCS algorithms only)
- * @return 配准结果 / Registration result
+ * @param use_coarse 是否使用粗配准 / Whether to use coarse registration
+ * @param fine_algorithm 细配准算法 / Fine registration algorithm
+ * @return 最终变换矩阵 / Final transformation matrix
  * 
  * @code
- * auto result = quick_registration(source, target, "super4pcs", 0.5f);
- * if (result.converged) {
- *     // 使用result.transformation
- *     // Use result.transformation
- * }
+ * // 完整配准流程 / Complete registration pipeline
+ * auto transform = complete_registration(source, target, true, "p2p");
+ * 
+ * // 仅细配准 / Fine registration only
+ * auto transform = complete_registration(source, target, false, "ndt");
  * @endcode
  */
 template<typename DataType>
-registration_result_t<DataType> quick_registration(
+Eigen::Matrix<DataType, 4, 4> complete_registration(
     const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& source,
     const std::shared_ptr<toolbox::types::point_cloud_t<DataType>>& target,
-    const std::string& algorithm = "super4pcs",
-    DataType overlap = 0.5f)
+    bool use_coarse = true,
+    const std::string& fine_algorithm = "p2p")
 {
-  registration_result_t<DataType> result;
-  result.transformation.setIdentity();
-  result.converged = false;
+  Eigen::Matrix<DataType, 4, 4> initial_guess = Eigen::Matrix<DataType, 4, 4>::Identity();
   
-  if (algorithm == "4pcs") {
-    four_pcs_registration_t<DataType> reg;
-    reg.set_source(source);
-    reg.set_target(target);
-    reg.set_overlap(overlap);
-    reg.set_delta(static_cast<DataType>(0.02));  // 2cm默认精度 / 2cm default accuracy
-    reg.align(result);
-  } else if (algorithm == "super4pcs") {
-    super_four_pcs_registration_t<DataType> reg;
-    reg.set_source(source);
-    reg.set_target(target);
-    reg.set_overlap(overlap);
-    reg.set_delta(static_cast<DataType>(0.02));
-    reg.enable_smart_indexing(true);
-    reg.align(result);
-  } else {
-    LOG_ERROR_S << "未知算法 / Unknown algorithm: " << algorithm;
+  // 粗配准 / Coarse registration
+  if (use_coarse) {
+    super_four_pcs_registration_t<DataType> coarse_reg;
+    coarse_reg.set_source(source);
+    coarse_reg.set_target(target);
+    coarse_reg.set_delta(static_cast<DataType>(0.02));  // 2cm精度
+    coarse_reg.set_overlap(static_cast<DataType>(0.5)); // 50%重叠
+    
+    registration_result_t<DataType> coarse_result;
+    if (coarse_reg.align(coarse_result) && coarse_result.fitness_score > 0.3) {
+      initial_guess = coarse_result.transformation;
+      LOG_INFO_S << "粗配准成功，适应度分数 / Coarse registration successful, fitness score: " 
+                 << coarse_result.fitness_score;
+    }
   }
   
-  return result;
+  // 细配准 / Fine registration
+  fine_registration_result_t<DataType> fine_result;
+  
+  if (fine_algorithm == "p2p") {
+    point_to_point_icp_t<DataType> reg;
+    reg.set_source(source);
+    reg.set_target(target);
+    reg.set_max_iterations(50);
+    reg.align(initial_guess, fine_result);
+  } else if (fine_algorithm == "p2l") {
+    if (!target->normals.empty()) {
+      point_to_plane_icp_t<DataType> reg;
+      reg.set_source(source);
+      reg.set_target(target);
+      reg.set_max_iterations(50);
+      reg.align(initial_guess, fine_result);
+    } else {
+      LOG_WARN_S << "目标点云无法线，回退到Point-to-Point ICP / "
+                    "Target cloud has no normals, falling back to Point-to-Point ICP";
+      point_to_point_icp_t<DataType> reg;
+      reg.set_source(source);
+      reg.set_target(target);
+      reg.set_max_iterations(50);
+      reg.align(initial_guess, fine_result);
+    }
+  } else if (fine_algorithm == "gicp") {
+    generalized_icp_t<DataType> reg;
+    reg.set_source(source);
+    reg.set_target(target);
+    reg.set_max_iterations(50);
+    reg.align(initial_guess, fine_result);
+  } else if (fine_algorithm == "aa_icp") {
+    aa_icp_t<DataType> reg;
+    reg.set_source(source);
+    reg.set_target(target);
+    reg.set_max_iterations(50);
+    reg.align(initial_guess, fine_result);
+  } else if (fine_algorithm == "ndt") {
+    ndt_t<DataType> reg;
+    reg.set_source(source);
+    reg.set_target(target);
+    reg.set_resolution(static_cast<DataType>(0.5));  // 0.5m体素
+    reg.set_max_iterations(50);
+    reg.align(initial_guess, fine_result);
+  } else {
+    LOG_ERROR_S << "未知细配准算法 / Unknown fine registration algorithm: " << fine_algorithm;
+    return initial_guess;
+  }
+  
+  if (fine_result.converged) {
+    LOG_INFO_S << "细配准收敛，迭代次数 / Fine registration converged, iterations: " 
+               << fine_result.iterations_performed
+               << "，最终误差 / , final error: " << fine_result.final_error;
+  } else {
+    LOG_WARN_S << "细配准未收敛，终止原因 / Fine registration did not converge, reason: " 
+               << fine_result.termination_reason;
+  }
+  
+  return fine_result.transformation;
 }
 
 /** @} */ // end of registration group
