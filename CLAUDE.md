@@ -11,6 +11,7 @@ cpp-toolbox is a comprehensive C++ library providing reusable components for acc
 ### Primary Development Flow
 
 **Configure with CMake preset:**
+
 ```bash
 # Configure (example for Linux with Clang 21 and TBB)
 cmake -S . -B build/build-linux-clang-21-tbb --preset build-linux-clang-21-tbb
@@ -20,6 +21,7 @@ cmake --build build/build-linux-clang-21-tbb -j $(nproc)
 ```
 
 **Run tests and benchmarks:**
+
 ```bash
 # Run all tests
 build/build-linux-clang-21-tbb/bin/cpp-toolbox_test
@@ -35,6 +37,7 @@ build/build-linux-clang-21-tbb/bin/cpp-toolbox_benchmark "[pcl]" --benchmark-sam
 ```
 
 **Development utilities:**
+
 ```bash
 # Format code before committing
 make format
@@ -49,6 +52,7 @@ make docs
 ### Alternative Build Systems
 
 **xmake:**
+
 ```bash
 xmake
 xmake run cpp-toolbox_test
@@ -96,6 +100,7 @@ The codebase follows a modular architecture with clear separation:
 - Use provided type aliases (e.g., `PointCloud`, `KDTree`)
 
 ### Key Naming Conventions (from CODE_STYLE.md)
+
 - Classes, structs, enums, functions, variables: `lower_case`
 - Protected/private members: `m_` prefix + `lower_case`
 - Template parameters: `CamelCase`
@@ -105,6 +110,7 @@ The codebase follows a modular architecture with clear separation:
 ## Common Development Tasks
 
 ### Adding New PCL Component
+
 1. Create interface in `src/include/cpp-toolbox/pcl/<category>/`
 2. If templated, add implementation in corresponding `impl/` subdirectory
 3. Add to module's main header (e.g., `features.hpp`, `descriptors.hpp`)
@@ -112,6 +118,7 @@ The codebase follows a modular architecture with clear separation:
 5. Add benchmark if performance-critical
 
 ### Running Specific Tests
+
 ```bash
 # Run tests with specific tag
 build/build-linux-clang-21-tbb/bin/cpp-toolbox_test "[knn]"
@@ -124,6 +131,7 @@ build/build-linux-clang-21-tbb/bin/cpp-toolbox_test --list-tests
 ```
 
 ### Debugging Build Issues
+
 - Check `CMakeUserPresets.json` for correct configuration
 - Ensure dependencies are fetched: `cmake --preset=dev`
 - For TBB support: install system TBB or let CMake fetch it
@@ -134,4 +142,5 @@ build/build-linux-clang-21-tbb/bin/cpp-toolbox_test --list-tests
 - Thread pool singleton is available via `ThreadPoolSingleton::instance()`
 - PCL components are designed to work with PCL library types but provide own implementations
 - Memory-mapped file support for efficient large file processing
-- Extensive use of concepts and SFINAE for type safety in C++17/20
+- Extensive use of concepts and SFINAE for type safety in C++17
+- Commit in english and do not use chinse

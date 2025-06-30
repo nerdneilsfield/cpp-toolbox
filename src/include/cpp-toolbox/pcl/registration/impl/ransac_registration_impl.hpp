@@ -5,6 +5,7 @@
 #include <thread>
 
 #include <cpp-toolbox/concurrent/parallel.hpp>
+#include <cpp-toolbox/metrics/point_cloud_metrics.hpp>
 #include <cpp-toolbox/pcl/registration/ransac_registration.hpp>
 #include <cpp-toolbox/utils/timer.hpp>
 
@@ -55,6 +56,11 @@ bool ransac_registration_t<DataType>::align_impl(result_type& result)
   std::vector<std::size_t> best_inliers;
   std::size_t best_inlier_count = 0;
 
+  // 收敛检查变量 / Convergence check variables
+  const std::size_t convergence_window_size = 20;  // 滑动窗口大小 / Sliding window size
+  std::vector<std::size_t> inlier_history;  // 记录每次迭代的最佳内点数 / Record best inlier count for each iteration
+  inlier_history.reserve(convergence_window_size);
+
   // 计时器 / Timer
   toolbox::utils::stop_watch_timer_t timer("RANSAC");
   timer.start();
@@ -97,13 +103,42 @@ bool ransac_registration_t<DataType>::align_impl(result_type& result)
       }
     }
 
-    // 收敛检查 / Convergence check
-    if (iter > 100 && iter % 100 == 0) {
-      DataType improvement_rate = static_cast<DataType>(best_inlier_count)
-          / (iter + 1) / correspondences->size();
-      if (improvement_rate < this->get_convergence_threshold()) {
-        LOG_DEBUG_S << "RANSAC: 收敛，改进率 / Converged, improvement rate: "
-                    << improvement_rate;
+    // 收敛检查 - 每次迭代都检查 / Convergence check - check every iteration
+    // 记录当前最佳内点数 / Record current best inlier count
+    inlier_history.push_back(best_inlier_count);
+    
+    // 如果历史记录已满，使用滑动窗口 / Use sliding window if history is full
+    if (inlier_history.size() > convergence_window_size) {
+      inlier_history.erase(inlier_history.begin());
+    }
+    
+    // 需要足够的历史数据才能判断收敛 / Need enough history to check convergence
+    if (inlier_history.size() >= convergence_window_size) {
+      // 计算窗口内的总改进 / Calculate total improvement in window
+      std::size_t window_improvement = inlier_history.back() - inlier_history.front();
+      
+      // 计算平均每次迭代的改进 / Calculate average improvement per iteration
+      DataType avg_improvement_per_iter = static_cast<DataType>(window_improvement) 
+          / static_cast<DataType>(convergence_window_size - 1);
+      
+      // 计算相对改进率 / Calculate relative improvement rate
+      DataType relative_improvement = 0.0;
+      if (inlier_history.front() > 0) {
+        relative_improvement = static_cast<DataType>(window_improvement) 
+            / static_cast<DataType>(inlier_history.front());
+      }
+      
+      // 收敛条件：绝对改进和相对改进都很小 / Convergence: both absolute and relative improvements are small
+      const DataType min_avg_improvement = 0.5;  // 平均每次迭代至少增加0.5个内点 / At least 0.5 inlier per iteration on average
+      const DataType min_relative_improvement = 0.01;  // 或者1%的相对改进 / Or 1% relative improvement
+      
+      if (avg_improvement_per_iter < min_avg_improvement && 
+          relative_improvement < min_relative_improvement) {
+        LOG_DEBUG_S << "RANSAC: 收敛，最近 " << convergence_window_size 
+                    << " 次迭代内点数增加 / Converged, inlier count improved by " 
+                    << window_improvement << " 个 / in last " << convergence_window_size 
+                    << " iterations (相对改进 / relative improvement: " 
+                    << relative_improvement * 100 << "%)";
         result.converged = true;
         break;
       }
@@ -414,32 +449,26 @@ DataType ransac_registration_t<DataType>::compute_fitness_score(
     return std::numeric_limits<DataType>::max();
   }
 
+  // 使用 LCPMetric 计算适应度分数 / Use LCPMetric to compute fitness score
+  toolbox::metrics::LCPMetric<DataType> lcp_metric(this->get_inlier_threshold());
+  
   auto correspondences = this->get_correspondences();
   auto source_cloud = this->get_source_cloud();
   auto target_cloud = this->get_target_cloud();
-
-  DataType total_distance = 0;
-
+  
+  // 创建内点对应的源点云和目标点云 / Create source and target clouds for inliers
+  toolbox::types::point_cloud_t<DataType> inlier_source, inlier_target;
+  inlier_source.points.reserve(inliers.size());
+  inlier_target.points.reserve(inliers.size());
+  
   for (std::size_t idx : inliers) {
     const auto& corr = (*correspondences)[idx];
-    const auto& src_pt = source_cloud->points[corr.src_idx];
-
-    // 变换源点 / Transform source point
-    vector3_t src_vec(src_pt.x, src_pt.y, src_pt.z);
-    vector3_t transformed = transform.template block<3, 3>(0, 0) * src_vec
-        + transform.template block<3, 1>(0, 3);
-
-    // 计算到目标点的距离 / Compute distance to target point
-    const auto& tgt_pt = target_cloud->points[corr.dst_idx];
-    DataType dx = transformed[0] - tgt_pt.x;
-    DataType dy = transformed[1] - tgt_pt.y;
-    DataType dz = transformed[2] - tgt_pt.z;
-    DataType distance = std::sqrt(dx * dx + dy * dy + dz * dz);
-
-    total_distance += distance;
+    inlier_source.points.push_back(source_cloud->points[corr.src_idx]);
+    inlier_target.points.push_back(target_cloud->points[corr.dst_idx]);
   }
-
-  return total_distance / inliers.size();
+  
+  // 计算LCP分数 / Compute LCP score
+  return lcp_metric.compute_lcp_score(inlier_source, inlier_target, transform);
 }
 
 // 显式实例化 / Explicit instantiation

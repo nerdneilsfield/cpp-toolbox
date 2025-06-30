@@ -651,3 +651,227 @@ TEST_CASE("Point cloud metrics compute correct distances", "[metrics][pointcloud
     REQUIRE(chamfer_dist < 2.5f); // But not more than 2.5
   }
 }
+
+TEST_CASE("LCP metric for point cloud registration", "[metrics][pointcloud][lcp]")
+{
+  using point_t = toolbox::types::point_t<float>;
+  using point_cloud_t = toolbox::types::point_cloud_t<float>;
+  using transformation_t = Eigen::Matrix4f;
+
+  // Helper function to create a simple point cloud
+  auto create_cloud = [](const std::vector<std::array<float, 3>>& points) {
+    point_cloud_t cloud;
+    for (const auto& p : points) {
+      cloud += point_t(p[0], p[1], p[2]);
+    }
+    return cloud;
+  };
+
+  // Helper function to apply transformation to cloud
+  auto transform_cloud = [](const point_cloud_t& cloud, const transformation_t& transform) {
+    point_cloud_t transformed;
+    for (const auto& pt : cloud.points) {
+      Eigen::Vector4f p(pt.x, pt.y, pt.z, 1.0f);
+      Eigen::Vector4f tp = transform * p;
+      transformed += point_t(tp[0], tp[1], tp[2]);
+    }
+    return transformed;
+  };
+
+  SECTION("Basic LCP score computation")
+  {
+    // Create source cloud
+    auto source = create_cloud({{0, 0, 0}, {1, 0, 0}, {0, 1, 0}, {1, 1, 0}});
+    auto target = create_cloud({{0, 0, 0}, {1, 0, 0}, {0, 1, 0}, {1, 1, 0}});
+    
+    // Identity transformation
+    transformation_t identity = transformation_t::Identity();
+    
+    LCPMetric<float> metric(0.1f); // 0.1 threshold
+    auto score = metric.compute_lcp_score(source, target, identity);
+    
+    // Perfect alignment should have score 0
+    REQUIRE_THAT(score, WithinAbs(0.0f, 1e-5f));
+    
+    // Check inliers
+    std::vector<std::size_t> inliers;
+    metric.compute_lcp_score(source, target, identity, &inliers);
+    REQUIRE(inliers.size() == source.size()); // All points are inliers
+  }
+
+  SECTION("LCP score with translation")
+  {
+    auto source = create_cloud({{0, 0, 0}, {1, 0, 0}, {0, 1, 0}});
+    auto target = create_cloud({{1, 0, 0}, {2, 0, 0}, {1, 1, 0}});
+    
+    // Translation by (1, 0, 0)
+    transformation_t transform = transformation_t::Identity();
+    transform(0, 3) = 1.0f;
+    
+    LCPMetric<float> metric(0.1f);
+    auto score = metric.compute_lcp_score(source, target, transform);
+    
+    // Should have perfect alignment after transformation
+    REQUIRE_THAT(score, WithinAbs(0.0f, 1e-5f));
+  }
+
+  SECTION("LCP score with rotation")
+  {
+    auto source = create_cloud({{1, 0, 0}, {0, 1, 0}, {-1, 0, 0}, {0, -1, 0}});
+    
+    // 90-degree rotation around Z axis
+    transformation_t transform = transformation_t::Identity();
+    float angle = M_PI / 2;
+    transform(0, 0) = std::cos(angle);
+    transform(0, 1) = -std::sin(angle);
+    transform(1, 0) = std::sin(angle);
+    transform(1, 1) = std::cos(angle);
+    
+    auto target = transform_cloud(source, transform);
+    
+    LCPMetric<float> metric(0.1f);
+    auto score = metric.compute_lcp_score(source, target, transform);
+    
+    // Should have perfect alignment
+    REQUIRE_THAT(score, WithinAbs(0.0f, 1e-5f));
+  }
+
+  SECTION("LCP score with partial overlap")
+  {
+    auto source = create_cloud({{0, 0, 0}, {1, 0, 0}, {0, 1, 0}, {1, 1, 0}});
+    auto target = create_cloud({{0, 0, 0}, {1, 0, 0}, {2, 0, 0}, {3, 0, 0}});
+    
+    transformation_t identity = transformation_t::Identity();
+    
+    LCPMetric<float> metric(0.5f); // Larger threshold
+    std::vector<std::size_t> inliers;
+    auto score = metric.compute_lcp_score(source, target, identity, &inliers);
+    
+    // Only 2 points should be inliers
+    REQUIRE(inliers.size() == 2);
+    REQUIRE(score == 0.0f); // Perfect match for inliers
+  }
+
+  SECTION("LCP score with noise")
+  {
+    auto source = create_cloud({{0, 0, 0}, {1, 0, 0}, {0, 1, 0}});
+    auto target = create_cloud({{0.05, 0.05, 0}, {1.05, -0.05, 0}, {-0.05, 1.05, 0}});
+    
+    transformation_t identity = transformation_t::Identity();
+    
+    // Small threshold - no inliers
+    LCPMetric<float> metric_small(0.01f);
+    auto score_small = metric_small.compute_lcp_score(source, target, identity);
+    REQUIRE(score_small == std::numeric_limits<float>::max()); // No inliers
+    
+    // Larger threshold - all inliers
+    LCPMetric<float> metric_large(0.2f);
+    std::vector<std::size_t> inliers;
+    auto score_large = metric_large.compute_lcp_score(source, target, identity, &inliers);
+    REQUIRE(inliers.size() == 3);
+    REQUIRE(score_large > 0); // Should have some average distance
+    REQUIRE(score_large < 0.1f); // But still small
+  }
+
+  SECTION("LCP score threshold behavior")
+  {
+    auto source = create_cloud({{0, 0, 0}, {1, 0, 0}});
+    auto target = create_cloud({{0.1, 0, 0}, {1.2, 0, 0}});
+    
+    transformation_t identity = transformation_t::Identity();
+    
+    // Test different thresholds
+    LCPMetric<float> metric1(0.05f);
+    LCPMetric<float> metric2(0.15f);
+    LCPMetric<float> metric3(0.25f);
+    
+    std::vector<std::size_t> inliers1, inliers2, inliers3;
+    metric1.compute_lcp_score(source, target, identity, &inliers1);
+    metric2.compute_lcp_score(source, target, identity, &inliers2);
+    metric3.compute_lcp_score(source, target, identity, &inliers3);
+    
+    // More relaxed threshold should have more inliers
+    REQUIRE(inliers1.size() <= inliers2.size());
+    REQUIRE(inliers2.size() <= inliers3.size());
+  }
+
+  SECTION("LCP metric getter/setter")
+  {
+    LCPMetric<float> metric(1.0f);
+    REQUIRE_THAT(metric.get_inlier_threshold(), WithinRel(1.0f, 1e-5f));
+    
+    metric.set_inlier_threshold(2.5f);
+    REQUIRE_THAT(metric.get_inlier_threshold(), WithinRel(2.5f, 1e-5f));
+  }
+
+  SECTION("Empty cloud handling")
+  {
+    point_cloud_t empty_cloud;
+    auto cloud = create_cloud({{0, 0, 0}, {1, 1, 1}});
+    transformation_t identity = transformation_t::Identity();
+    
+    LCPMetric<float> metric(1.0f);
+    
+    // Empty source
+    auto score1 = metric.compute_lcp_score(empty_cloud, cloud, identity);
+    REQUIRE(score1 == std::numeric_limits<float>::max());
+    
+    // Empty target
+    auto score2 = metric.compute_lcp_score(cloud, empty_cloud, identity);
+    REQUIRE(score2 == std::numeric_limits<float>::max());
+  }
+
+  SECTION("Complex transformation")
+  {
+    // Create a more complex test case
+    auto source = create_cloud({
+      {0, 0, 0}, {1, 0, 0}, {2, 0, 0},
+      {0, 1, 0}, {1, 1, 0}, {2, 1, 0},
+      {0, 2, 0}, {1, 2, 0}, {2, 2, 0}
+    });
+    
+    // Combined rotation and translation
+    transformation_t transform = transformation_t::Identity();
+    float angle = M_PI / 6; // 30 degrees
+    transform(0, 0) = std::cos(angle);
+    transform(0, 1) = -std::sin(angle);
+    transform(1, 0) = std::sin(angle);
+    transform(1, 1) = std::cos(angle);
+    transform(0, 3) = 0.5f;
+    transform(1, 3) = 0.5f;
+    
+    auto target = transform_cloud(source, transform);
+    
+    LCPMetric<float> metric(0.01f);
+    std::vector<std::size_t> inliers;
+    auto score = metric.compute_lcp_score(source, target, transform, &inliers);
+    
+    // Should have perfect alignment
+    REQUIRE_THAT(score, WithinAbs(0.0f, 1e-4f));
+    REQUIRE(inliers.size() == source.size());
+  }
+
+  SECTION("Performance with large clouds")
+  {
+    // Create larger clouds for performance testing
+    point_cloud_t source, target;
+    
+    const int grid_size = 10;
+    for (int i = 0; i < grid_size; ++i) {
+      for (int j = 0; j < grid_size; ++j) {
+        source += point_t(i * 0.1f, j * 0.1f, 0);
+        target += point_t(i * 0.1f + 0.05f, j * 0.1f + 0.05f, 0);
+      }
+    }
+    
+    transformation_t identity = transformation_t::Identity();
+    
+    LCPMetric<float> metric(0.1f);
+    std::vector<std::size_t> inliers;
+    auto score = metric.compute_lcp_score(source, target, identity, &inliers);
+    
+    // All points should be inliers (distance ~0.07)
+    REQUIRE(inliers.size() == source.size());
+    REQUIRE_THAT(score, WithinRel(std::sqrt(0.05f * 0.05f + 0.05f * 0.05f), 0.01f));
+  }
+}

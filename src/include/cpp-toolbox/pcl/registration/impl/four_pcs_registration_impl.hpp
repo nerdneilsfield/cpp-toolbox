@@ -4,6 +4,7 @@
 #include <unordered_set>
 
 #include <cpp-toolbox/concurrent/parallel.hpp>
+#include <cpp-toolbox/metrics/point_cloud_metrics.hpp>
 #include <cpp-toolbox/pcl/registration/four_pcs_registration.hpp>
 #include <cpp-toolbox/utils/random.hpp>
 #include <cpp-toolbox/utils/timer.hpp>
@@ -551,44 +552,38 @@ template<typename DataType>
 DataType four_pcs_registration_t<DataType>::compute_lcp_score(
     const transformation_t& transform, std::vector<std::size_t>& inliers) const
 {
-  inliers.clear();
-
+  // 使用 LCPMetric 计算评分 / Use LCPMetric to compute score
+  toolbox::metrics::LCPMetric<DataType> lcp_metric(m_delta);
+  
   auto source_cloud = this->get_source_cloud();
-  const DataType threshold_squared = m_delta * m_delta;
-
-  // 使用采样点计算LCP / Compute LCP using sampled points
-  DataType total_distance = 0;
-
+  auto target_cloud = this->get_target_cloud();
+  
+  // 创建采样点云用于LCP计算 / Create sampled point cloud for LCP computation
+  toolbox::types::point_cloud_t<DataType> sampled_source, sampled_target;
+  sampled_source.points.reserve(m_source_samples.size());
+  sampled_target.points.reserve(m_target_samples.size());
+  
   for (std::size_t src_idx : m_source_samples) {
-    const auto& src_pt = source_cloud->points[src_idx];
-
-    // 变换源点 / Transform source point
-    vector3_t src_vec(src_pt.x, src_pt.y, src_pt.z);
-    vector3_t transformed = transform.template block<3, 3>(0, 0) * src_vec
-        + transform.template block<3, 1>(0, 3);
-
-    // 在目标点云中查找最近邻 / Find nearest neighbor in target cloud
-    toolbox::types::point_t<DataType> query_pt;
-    query_pt.x = transformed[0];
-    query_pt.y = transformed[1];
-    query_pt.z = transformed[2];
-
-    std::vector<std::size_t> indices;
-    std::vector<DataType> distances;
-    m_target_kdtree->kneighbors(query_pt, 1, indices, distances);
-
-    if (!indices.empty() && distances[0] <= threshold_squared) {
-      inliers.push_back(src_idx);
-      total_distance += std::sqrt(distances[0]);
-    }
+    sampled_source.points.push_back(source_cloud->points[src_idx]);
   }
-
-  // LCP评分：平均内点距离 / LCP score: average inlier distance
-  if (inliers.empty()) {
-    return std::numeric_limits<DataType>::max();
+  
+  for (std::size_t tgt_idx : m_target_samples) {
+    sampled_target.points.push_back(target_cloud->points[tgt_idx]);
   }
-
-  return total_distance / inliers.size();
+  
+  // 使用基本版本的LCP计算 / Use basic version of LCP computation
+  std::vector<std::size_t> sampled_inliers;
+  DataType score = lcp_metric.compute_lcp_score(
+      sampled_source, sampled_target, transform, &sampled_inliers);
+  
+  // 将采样索引映射回原始索引 / Map sampled indices back to original indices
+  inliers.clear();
+  inliers.reserve(sampled_inliers.size());
+  for (std::size_t idx : sampled_inliers) {
+    inliers.push_back(m_source_samples[idx]);
+  }
+  
+  return score;
 }
 
 template<typename DataType>

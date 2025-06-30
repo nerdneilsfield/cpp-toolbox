@@ -7,6 +7,8 @@
 #include <unordered_map>
 #include <vector>
 
+#include <Eigen/Core>
+
 #include <cpp-toolbox/metrics/base_metric.hpp>
 #include <cpp-toolbox/metrics/vector_metrics.hpp>
 #include <cpp-toolbox/types/point.hpp>
@@ -447,6 +449,126 @@ private:
     
     return {min_pt, max_pt};
   }
+};
+
+/**
+ * @brief LCP (Largest Common Pointset) metric for evaluating point cloud registration
+ * 
+ * Computes the average distance between transformed source points and their nearest
+ * neighbors in the target cloud, considering only points within a threshold.
+ * Lower scores indicate better alignment.
+ * 
+ * @tparam T Data type (float or double)
+ */
+template<typename T>
+class LCPMetric : public base_metric_t<LCPMetric<T>, T>
+{
+public:
+  using element_type = T;
+  using point_type = toolbox::types::point_t<T>;
+  using cloud_type = toolbox::types::point_cloud_t<T>;
+  using transformation_type = Eigen::Matrix<T, 4, 4>;
+
+  /**
+   * @brief Constructor
+   * @param inlier_threshold Distance threshold for considering a point as an inlier
+   */
+  explicit LCPMetric(T inlier_threshold = T(1.0)) 
+      : inlier_threshold_(inlier_threshold) {}
+
+  constexpr T distance_impl(const T* cloud_a, const T* cloud_b, std::size_t size) const
+  {
+    throw std::runtime_error("LCPMetric requires point cloud objects and transformation");
+  }
+
+  /**
+   * @brief Compute LCP score between two point clouds
+   * @param source Source point cloud
+   * @param target Target point cloud
+   * @param transform Transformation to apply to source points
+   * @param[out] inliers Optional output vector of inlier indices
+   * @return Average distance of inliers (lower is better)
+   */
+  T compute_lcp_score(const cloud_type& source, 
+                      const cloud_type& target,
+                      const transformation_type& transform,
+                      std::vector<std::size_t>* inliers = nullptr) const
+  {
+    if (source.empty() || target.empty()) {
+      return std::numeric_limits<T>::max();
+    }
+
+    // Clear inliers vector if provided
+    if (inliers) {
+      inliers->clear();
+      inliers->reserve(source.size());
+    }
+
+    T total_distance = 0;
+    std::size_t inlier_count = 0;
+    const T threshold_squared = inlier_threshold_ * inlier_threshold_;
+
+    // Extract rotation and translation from transformation
+    Eigen::Matrix<T, 3, 3> rotation = transform.template block<3, 3>(0, 0);
+    Eigen::Matrix<T, 3, 1> translation = transform.template block<3, 1>(0, 3);
+
+    // For each source point
+    for (std::size_t i = 0; i < source.size(); ++i) {
+      const auto& src_pt = source.points[i];
+      
+      // Apply transformation
+      Eigen::Matrix<T, 3, 1> src_vec(src_pt.x, src_pt.y, src_pt.z);
+      Eigen::Matrix<T, 3, 1> transformed = rotation * src_vec + translation;
+      point_type transformed_pt(transformed[0], transformed[1], transformed[2]);
+
+      // Find nearest neighbor in target cloud
+      T min_dist_squared = std::numeric_limits<T>::max();
+      for (const auto& tgt_pt : target.points) {
+        T dx = transformed_pt.x - tgt_pt.x;
+        T dy = transformed_pt.y - tgt_pt.y;
+        T dz = transformed_pt.z - tgt_pt.z;
+        T dist_squared = dx * dx + dy * dy + dz * dz;
+        min_dist_squared = std::min(min_dist_squared, dist_squared);
+      }
+
+      // Check if within threshold
+      if (min_dist_squared <= threshold_squared) {
+        total_distance += std::sqrt(min_dist_squared);
+        inlier_count++;
+        if (inliers) {
+          inliers->push_back(i);
+        }
+      }
+    }
+
+    // Return average distance of inliers
+    if (inlier_count == 0) {
+      return std::numeric_limits<T>::max();
+    }
+    return total_distance / inlier_count;
+  }
+
+
+  /**
+   * @brief Set inlier threshold
+   * @param threshold New threshold value
+   */
+  void set_inlier_threshold(T threshold) { inlier_threshold_ = threshold; }
+
+  /**
+   * @brief Get inlier threshold
+   * @return Current threshold value
+   */
+  [[nodiscard]] T get_inlier_threshold() const { return inlier_threshold_; }
+
+  constexpr T squared_distance_impl(const T* a, const T* b, std::size_t size) const
+  {
+    T dist = distance_impl(a, b, size);
+    return dist * dist;
+  }
+
+private:
+  T inlier_threshold_;
 };
 
 }  // namespace toolbox::metrics
