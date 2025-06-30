@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::super\l_four_pcs_registration\l_t\< DataType \>::smart\l_index_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1super__four__pcs__registration__t_1_1smart__index__t.html",tooltip="智能索引结构 / Smart index structure"];
+  Node0 [id="Node000000",label="toolbox::pcl::loam\l_feature_extractor_t\l\< DataType, KNN \>::loam\l_result",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html",tooltip=" "];
 }

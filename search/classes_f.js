@@ -14,8 +14,11 @@ var searchData=
   ['point_5ft_11',['point_t',['../structtoolbox_1_1types_1_1point__t.html',1,'toolbox::types']]],
   ['point_5ft_3c_20data_5ftype_20_3e_12',['point_t&lt; data_type &gt;',['../structtoolbox_1_1types_1_1point__t.html',1,'toolbox::types']]],
   ['point_5ft_3c_20datatype_20_3e_13',['point_t&lt; DataType &gt;',['../structtoolbox_1_1types_1_1point__t.html',1,'toolbox::types']]],
-  ['pointcloudemdmetric_14',['PointCloudEMDMetric',['../classtoolbox_1_1metrics_1_1_point_cloud_e_m_d_metric.html',1,'toolbox::metrics']]],
-  ['pointmetricadapter_15',['PointMetricAdapter',['../classtoolbox_1_1metrics_1_1_point_metric_adapter.html',1,'toolbox::metrics']]],
-  ['pooldeleter_16',['PoolDeleter',['../classtoolbox_1_1base_1_1_pool_deleter.html',1,'toolbox::base']]],
-  ['print_5fstyle_5ft_17',['print_style_t',['../structtoolbox_1_1utils_1_1print__style__t.html',1,'toolbox::utils']]]
+  ['point_5fto_5fplane_5ficp_5ft_14',['point_to_plane_icp_t',['../classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html',1,'toolbox::pcl']]],
+  ['point_5fto_5fpoint_5ficp_5ft_15',['point_to_point_icp_t',['../classtoolbox_1_1pcl_1_1point__to__point__icp__t.html',1,'toolbox::pcl']]],
+  ['point_5fto_5fpoint_5ficp_5ft_3c_20datatype_2c_20kdtree_5ft_3c_20datatype_20_3e_20_3e_16',['point_to_point_icp_t&lt; DataType, kdtree_t&lt; DataType &gt; &gt;',['../classtoolbox_1_1pcl_1_1point__to__point__icp__t.html',1,'toolbox::pcl']]],
+  ['pointcloudemdmetric_17',['PointCloudEMDMetric',['../classtoolbox_1_1metrics_1_1_point_cloud_e_m_d_metric.html',1,'toolbox::metrics']]],
+  ['pointmetricadapter_18',['PointMetricAdapter',['../classtoolbox_1_1metrics_1_1_point_metric_adapter.html',1,'toolbox::metrics']]],
+  ['pooldeleter_19',['PoolDeleter',['../classtoolbox_1_1base_1_1_pool_deleter.html',1,'toolbox::base']]],
+  ['print_5fstyle_5ft_20',['print_style_t',['../structtoolbox_1_1utils_1_1print__style__t.html',1,'toolbox::utils']]]
 ];

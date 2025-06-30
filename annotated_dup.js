@@ -100,6 +100,7 @@ var annotated_dup =
         [ "WeightedMetric", "classtoolbox_1_1metrics_1_1_weighted_metric.html", "classtoolbox_1_1metrics_1_1_weighted_metric" ]
       ] ],
       [ "pcl", "namespacetoolbox_1_1pcl.html", [
+        [ "aa_icp_t", "classtoolbox_1_1pcl_1_1aa__icp__t.html", "classtoolbox_1_1pcl_1_1aa__icp__t" ],
         [ "agast_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t" ],
         [ "base_coarse_registration_t", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", "classtoolbox_1_1pcl_1_1base__coarse__registration__t" ],
         [ "base_correspondence_generator_t", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t" ],
@@ -123,6 +124,7 @@ var annotated_dup =
         [ "four_pcs_registration_t", "classtoolbox_1_1pcl_1_1four__pcs__registration__t.html", "classtoolbox_1_1pcl_1_1four__pcs__registration__t" ],
         [ "fpfh_extractor_t", "classtoolbox_1_1pcl_1_1fpfh__extractor__t.html", "classtoolbox_1_1pcl_1_1fpfh__extractor__t" ],
         [ "fpfh_signature_t", "structtoolbox_1_1pcl_1_1fpfh__signature__t.html", "structtoolbox_1_1pcl_1_1fpfh__signature__t" ],
+        [ "generalized_icp_t", "classtoolbox_1_1pcl_1_1generalized__icp__t.html", "classtoolbox_1_1pcl_1_1generalized__icp__t" ],
         [ "harris3d_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1harris3d__keypoint__extractor__t" ],
         [ "iss_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1iss__keypoint__extractor__t" ],
         [ "iteration_state_t", "structtoolbox_1_1pcl_1_1iteration__state__t.html", "structtoolbox_1_1pcl_1_1iteration__state__t" ],
@@ -131,9 +133,12 @@ var annotated_dup =
         [ "knn_traits", "structtoolbox_1_1pcl_1_1knn__traits.html", "structtoolbox_1_1pcl_1_1knn__traits" ],
         [ "loam_feature_extractor_t", "classtoolbox_1_1pcl_1_1loam__feature__extractor__t.html", "classtoolbox_1_1pcl_1_1loam__feature__extractor__t" ],
         [ "mls_keypoint_extractor_t", "classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t.html", "classtoolbox_1_1pcl_1_1mls__keypoint__extractor__t" ],
+        [ "ndt_t", "classtoolbox_1_1pcl_1_1ndt__t.html", "classtoolbox_1_1pcl_1_1ndt__t" ],
         [ "pca_norm_extractor_t", "classtoolbox_1_1pcl_1_1pca__norm__extractor__t.html", "classtoolbox_1_1pcl_1_1pca__norm__extractor__t" ],
         [ "pfh_extractor_t", "classtoolbox_1_1pcl_1_1pfh__extractor__t.html", "classtoolbox_1_1pcl_1_1pfh__extractor__t" ],
         [ "pfh_signature_t", "structtoolbox_1_1pcl_1_1pfh__signature__t.html", "structtoolbox_1_1pcl_1_1pfh__signature__t" ],
+        [ "point_to_plane_icp_t", "classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html", "classtoolbox_1_1pcl_1_1point__to__plane__icp__t" ],
+        [ "point_to_point_icp_t", "classtoolbox_1_1pcl_1_1point__to__point__icp__t.html", "classtoolbox_1_1pcl_1_1point__to__point__icp__t" ],
         [ "random_downsampling_t", "classtoolbox_1_1pcl_1_1random__downsampling__t.html", "classtoolbox_1_1pcl_1_1random__downsampling__t" ],
         [ "ransac_registration_t", "classtoolbox_1_1pcl_1_1ransac__registration__t.html", "classtoolbox_1_1pcl_1_1ransac__registration__t" ],
         [ "registration_result_t", "structtoolbox_1_1pcl_1_1registration__result__t.html", "structtoolbox_1_1pcl_1_1registration__result__t" ],

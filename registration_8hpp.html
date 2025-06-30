@@ -228,9 +228,15 @@ $(document).ready(function(){initNavTree('registration_8hpp.html',''); initResiz
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;<a class="el" href="registration__result_8hpp_source.html">cpp-toolbox/pcl/registration/registration_result.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="base__coarse__registration_8hpp_source.html">cpp-toolbox/pcl/registration/base_coarse_registration.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="base__fine__registration_8hpp_source.html">cpp-toolbox/pcl/registration/base_fine_registration.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="ransac__registration_8hpp_source.html">cpp-toolbox/pcl/registration/ransac_registration.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="four__pcs__registration_8hpp_source.html">cpp-toolbox/pcl/registration/four_pcs_registration.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="super__four__pcs__registration_8hpp_source.html">cpp-toolbox/pcl/registration/super_four_pcs_registration.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="point__to__point__icp_8hpp_source.html">cpp-toolbox/pcl/registration/point_to_point_icp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="point__to__plane__icp_8hpp_source.html">cpp-toolbox/pcl/registration/point_to_plane_icp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="generalized__icp_8hpp_source.html">cpp-toolbox/pcl/registration/generalized_icp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="aa__icp_8hpp_source.html">cpp-toolbox/pcl/registration/aa_icp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ndt_8hpp_source.html">cpp-toolbox/pcl/registration/ndt.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="point_8hpp_source.html">cpp-toolbox/types/point.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -252,6 +258,10 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a869e13d38a14388c77018138eb480ad5" id="r_a869e13d38a14388c77018138eb480ad5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registration_8hpp.html#a869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td></tr>
 <tr class="separator:a869e13d38a14388c77018138eb480ad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b694972a4957493602ba1e7d3c5925" id="r_ad9b694972a4957493602ba1e7d3c5925"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registration_8hpp.html#ad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td></tr>
+<tr class="separator:ad9b694972a4957493602ba1e7d3c5925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d4d51a64e29b87c59c10f86615f4bf" id="r_a28d4d51a64e29b87c59c10f86615f4bf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="registration_8hpp.html#a28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a>&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td></tr>
+<tr class="separator:a28d4d51a64e29b87c59c10f86615f4bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -261,71 +271,102 @@ Typedefs</h2></td></tr>
 <tr class="separator:ga252bb1105e12e6932d30936b4600c3a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad141e700aaa2a3477e004e64a2ff9b9a" id="r_gad141e700aaa2a3477e004e64a2ff9b9a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a">toolbox::pcl::super_four_pcs_registration</a> = <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; float &gt;</td></tr>
 <tr class="separator:gad141e700aaa2a3477e004e64a2ff9b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga29364a27d8c1f998d74927a985eec938" id="r_ga29364a27d8c1f998d74927a985eec938"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga29364a27d8c1f998d74927a985eec938">toolbox::pcl::registration_result</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; float &gt;</td></tr>
-<tr class="separator:ga29364a27d8c1f998d74927a985eec938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56b42f47c992a11ce10535aa74ec1eef" id="r_ga56b42f47c992a11ce10535aa74ec1eef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga56b42f47c992a11ce10535aa74ec1eef">toolbox::pcl::coarse_registration_result</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:ga56b42f47c992a11ce10535aa74ec1eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga39e24f29bca71c80dc9578ad9efc1eca" id="r_ga39e24f29bca71c80dc9578ad9efc1eca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga39e24f29bca71c80dc9578ad9efc1eca">toolbox::pcl::ransac_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t</a>&lt; double &gt;</td></tr>
 <tr class="separator:ga39e24f29bca71c80dc9578ad9efc1eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga43679336174a6c5d94bb9bf51fd20337" id="r_ga43679336174a6c5d94bb9bf51fd20337"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga43679336174a6c5d94bb9bf51fd20337">toolbox::pcl::four_pcs_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t</a>&lt; double &gt;</td></tr>
 <tr class="separator:ga43679336174a6c5d94bb9bf51fd20337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga27ddfe4db71c1db243e52a49f8f0665f" id="r_ga27ddfe4db71c1db243e52a49f8f0665f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga27ddfe4db71c1db243e52a49f8f0665f">toolbox::pcl::super_four_pcs_registration_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t</a>&lt; double &gt;</td></tr>
 <tr class="separator:ga27ddfe4db71c1db243e52a49f8f0665f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac22d995bfd048fc5e14e2b72a3c4c03a" id="r_gac22d995bfd048fc5e14e2b72a3c4c03a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gac22d995bfd048fc5e14e2b72a3c4c03a">toolbox::pcl::registration_result_d</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; double &gt;</td></tr>
-<tr class="separator:gac22d995bfd048fc5e14e2b72a3c4c03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga34fbcd8933d9b8f7186054c26d188d54" id="r_ga34fbcd8933d9b8f7186054c26d188d54"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga34fbcd8933d9b8f7186054c26d188d54">toolbox::pcl::coarse_registration_result_d</a> = <a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga34fbcd8933d9b8f7186054c26d188d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae786d561dd8f303c241093d5966b61d" id="r_gaae786d561dd8f303c241093d5966b61d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gaae786d561dd8f303c241093d5966b61d">toolbox::pcl::point_to_point_icp</a> = <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gaae786d561dd8f303c241093d5966b61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae08456fbd51467bb621e831d4cfbb0ef" id="r_gae08456fbd51467bb621e831d4cfbb0ef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gae08456fbd51467bb621e831d4cfbb0ef">toolbox::pcl::point_to_plane_icp</a> = <a class="el" href="classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html">point_to_plane_icp_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gae08456fbd51467bb621e831d4cfbb0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad9c0c433d7b4b435d854dff5a4df88ef" id="r_gad9c0c433d7b4b435d854dff5a4df88ef"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gad9c0c433d7b4b435d854dff5a4df88ef">toolbox::pcl::generalized_icp</a> = <a class="el" href="classtoolbox_1_1pcl_1_1generalized__icp__t.html">generalized_icp_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gad9c0c433d7b4b435d854dff5a4df88ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0e582b181ef2142f004e1632bc5772a" id="r_gac0e582b181ef2142f004e1632bc5772a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gac0e582b181ef2142f004e1632bc5772a">toolbox::pcl::aa_icp</a> = <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gac0e582b181ef2142f004e1632bc5772a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabcdd8e27b9d805e9382ebaf77836a0c3" id="r_gabcdd8e27b9d805e9382ebaf77836a0c3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gabcdd8e27b9d805e9382ebaf77836a0c3">toolbox::pcl::ndt</a> = <a class="el" href="classtoolbox_1_1pcl_1_1ndt__t.html">ndt_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:gabcdd8e27b9d805e9382ebaf77836a0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2dd8c2ddeff9ebc62f15f9703fb12ef1" id="r_ga2dd8c2ddeff9ebc62f15f9703fb12ef1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga2dd8c2ddeff9ebc62f15f9703fb12ef1">toolbox::pcl::fine_registration_result</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; float &gt;</td></tr>
+<tr class="separator:ga2dd8c2ddeff9ebc62f15f9703fb12ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb1731649ca1a5961522b0e5d836bb76" id="r_gaeb1731649ca1a5961522b0e5d836bb76"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gaeb1731649ca1a5961522b0e5d836bb76">toolbox::pcl::point_to_point_icp_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:gaeb1731649ca1a5961522b0e5d836bb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadbd3531e2d35e5ff4714455edb406790" id="r_gadbd3531e2d35e5ff4714455edb406790"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gadbd3531e2d35e5ff4714455edb406790">toolbox::pcl::point_to_plane_icp_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html">point_to_plane_icp_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:gadbd3531e2d35e5ff4714455edb406790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ef33342a7e80db8b2ccc07dc42ee413" id="r_ga0ef33342a7e80db8b2ccc07dc42ee413"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga0ef33342a7e80db8b2ccc07dc42ee413">toolbox::pcl::generalized_icp_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1generalized__icp__t.html">generalized_icp_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga0ef33342a7e80db8b2ccc07dc42ee413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf8e0c4d1cf8a22e8b8546c16ebdbba71" id="r_gaf8e0c4d1cf8a22e8b8546c16ebdbba71"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gaf8e0c4d1cf8a22e8b8546c16ebdbba71">toolbox::pcl::aa_icp_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:gaf8e0c4d1cf8a22e8b8546c16ebdbba71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f8739b6a5f058218c361aaa7870b6cb" id="r_ga1f8739b6a5f058218c361aaa7870b6cb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#ga1f8739b6a5f058218c361aaa7870b6cb">toolbox::pcl::ndt_d</a> = <a class="el" href="classtoolbox_1_1pcl_1_1ndt__t.html">ndt_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:ga1f8739b6a5f058218c361aaa7870b6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad151fc1245ae7cbaad043a644af4ff54" id="r_gad151fc1245ae7cbaad043a644af4ff54"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__registration.html#gad151fc1245ae7cbaad043a644af4ff54">toolbox::pcl::fine_registration_result_d</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; double &gt;</td></tr>
+<tr class="separator:gad151fc1245ae7cbaad043a644af4ff54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gaa0bb30d75d6d1715dd2679fe089078be" id="r_gaa0bb30d75d6d1715dd2679fe089078be"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
-<tr class="memitem:gaa0bb30d75d6d1715dd2679fe089078be"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t</a>&lt; DataType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__registration.html#gaa0bb30d75d6d1715dd2679fe089078be">toolbox::pcl::quick_registration</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;source, const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;target, const std::string &amp;algorithm=&quot;super4pcs&quot;, DataType overlap=0.5f)</td></tr>
-<tr class="memdesc:gaa0bb30d75d6d1715dd2679fe089078be"><td class="mdescLeft">&#160;</td><td class="mdescRight">配准算法选择指南 / Registration algorithm selection guide  <br /></td></tr>
-<tr class="separator:gaa0bb30d75d6d1715dd2679fe089078be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4fcb006dd556841295fab25bdd557e95" id="r_ga4fcb006dd556841295fab25bdd557e95"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:ga4fcb006dd556841295fab25bdd557e95"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; DataType, 4, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__registration.html#ga4fcb006dd556841295fab25bdd557e95">toolbox::pcl::complete_registration</a> (const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;source, const std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt; &gt; &amp;target, bool use_coarse=true, const std::string &amp;fine_algorithm=&quot;p2p&quot;)</td></tr>
+<tr class="memdesc:ga4fcb006dd556841295fab25bdd557e95"><td class="mdescLeft">&#160;</td><td class="mdescRight">配准算法选择指南 / Registration algorithm selection guide  <br /></td></tr>
+<tr class="separator:ga4fcb006dd556841295fab25bdd557e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>点云配准算法统一导出文件 / Unified export file for point cloud registration algorithms </p>
-<p>该文件提供了点云配准的统一接口，包括粗配准和精配准算法。 This file provides a unified interface for point cloud registration, including both coarse and fine registration algorithms.</p>
+<p>该文件提供了点云配准的统一接口，包括粗配准和细配准算法。 This file provides a unified interface for point cloud registration, including both coarse and fine registration algorithms.</p>
 <p>粗配准算法 / Coarse Registration Algorithms:</p><ul>
 <li>RANSAC: 基于对应关系的随机采样一致性算法 / Correspondence-based random sample consensus</li>
 <li>4PCS: 4点共面集算法，不需要初始对应关系 / 4-Point Congruent Sets, no initial correspondences needed</li>
 <li>Super4PCS: 优化的4PCS，适合大规模点云 / Optimized 4PCS for large-scale point clouds</li>
 </ul>
+<p>细配准算法 / Fine Registration Algorithms:</p><ul>
+<li>Point-to-Point ICP: 基础ICP算法 / Basic ICP algorithm</li>
+<li>Point-to-Plane ICP: 点到平面ICP，需要法线 / Point-to-plane ICP, requires normals</li>
+<li>Generalized ICP: 平面到平面ICP / Plane-to-plane ICP</li>
+<li>AA-ICP: Anderson加速的ICP / Anderson Accelerated ICP</li>
+<li>NDT: 正态分布变换 / Normal Distributions Transform</li>
+</ul>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="registration_8hpp.html">cpp-toolbox/pcl/registration/registration.hpp</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// RANSAC配准示例 / RANSAC registration example</span></div>
-<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">ransac_registration_t&lt;float&gt;</a> ransac;</div>
-<div class="line">ransac.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a>(source_cloud);</div>
-<div class="line">ransac.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a>(target_cloud);</div>
-<div class="line">ransac.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c467445d58f5230fe33f5c6fedebc03">set_correspondences</a>(correspondences);</div>
+<div class="line"><span class="comment">// 粗配准示例 / Coarse registration example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">super_four_pcs_registration_t&lt;float&gt;</a> coarse_reg;</div>
+<div class="line">coarse_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a>(source_cloud);</div>
+<div class="line">coarse_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a>(target_cloud);</div>
+<div class="line">coarse_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">set_delta</a>(0.01f);     <span class="comment">// 1cm精度 / 1cm accuracy</span></div>
+<div class="line">coarse_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">set_overlap</a>(0.5f);    <span class="comment">// 50%重叠 / 50% overlap</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1registration__result__t.html">registration_result_t&lt;float&gt;</a> result;</div>
-<div class="line"><span class="keywordflow">if</span> (ransac.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a>(result)) {</div>
-<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;配准成功，内点数 / Registration successful, inliers: &quot;</span> </div>
-<div class="line">              &lt;&lt; result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1registration__result__t.html#a76cc4248fcb33f887d95fe98049f199d">inliers</a>.size() &lt;&lt; std::endl;</div>
+<div class="line">coarse_registration_result_t&lt;float&gt; coarse_result;</div>
+<div class="line"><span class="keywordflow">if</span> (coarse_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a>(coarse_result)) {</div>
+<div class="line">    <span class="comment">// 使用粗配准结果作为细配准的初始值</span></div>
+<div class="line">    <span class="comment">// Use coarse result as initial guess for fine registration</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// 4PCS配准示例（不需要对应关系） / 4PCS registration example (no correspondences needed)</span></div>
-<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">four_pcs_registration_t&lt;float&gt;</a> fourpcs;</div>
-<div class="line">fourpcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">set_source</a>(source_cloud);</div>
-<div class="line">fourpcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">set_target</a>(target_cloud);</div>
-<div class="line">fourpcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">set_delta</a>(0.01f);     <span class="comment">// 1cm精度 / 1cm accuracy</span></div>
-<div class="line">fourpcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">set_overlap</a>(0.5f);    <span class="comment">// 50%重叠 / 50% overlap</span></div>
+<div class="line"><span class="comment">// 细配准示例 / Fine registration example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t&lt;float&gt;</a> fine_reg;</div>
+<div class="line">fine_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a>(source_cloud);</div>
+<div class="line">fine_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a>(target_cloud);</div>
+<div class="line">fine_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a93edfd38cdad80e9a01b518692f2c533">set_max_iterations</a>(50);</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordflow">if</span> (fourpcs.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">align</a>(result)) {</div>
-<div class="line">    <span class="comment">// 使用result.transformation变换源点云</span></div>
-<div class="line">    <span class="comment">// Use result.transformation to transform source cloud</span></div>
-<div class="line">}</div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t&lt;float&gt;</a> fine_result;</div>
+<div class="line">fine_reg.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a>(coarse_result.transformation, fine_result);</div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a03a30f0b2f98b1c9af10ce017a7475eb"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a03a30f0b2f98b1c9af10ce017a7475eb">toolbox::pcl::base_coarse_registration_t::set_target</a></div><div class="ttdeci">void set_target(const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置目标点云 / Set target point cloud</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:60</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a1c467445d58f5230fe33f5c6fedebc03"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a1c467445d58f5230fe33f5c6fedebc03">toolbox::pcl::base_coarse_registration_t::set_correspondences</a></div><div class="ttdeci">void set_correspondences(const correspondences_ptr &amp;correspondences)</div><div class="ttdoc">设置初始对应关系（可选，主要用于RANSAC类算法） / Set initial correspondences (optional, mainly for RANSAC-like algorithms...</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:70</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_a720a3745774bfa76bf0f0e3db6684579"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#a720a3745774bfa76bf0f0e3db6684579">toolbox::pcl::base_coarse_registration_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;source)</div><div class="ttdoc">设置源点云 / Set source point cloud</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:51</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__coarse__registration__t_html_ab6a8160df63bb032ed567132bef36455"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__coarse__registration__t.html#ab6a8160df63bb032ed567132bef36455">toolbox::pcl::base_coarse_registration_t::align</a></div><div class="ttdeci">bool align(result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> base_coarse_registration.hpp:117</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html">toolbox::pcl::four_pcs_registration_t</a></div><div class="ttdoc">4PCS（4-Point Congruent Sets）粗配准算法 / 4PCS coarse registration algorithm</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:42</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a3adcee04afc40e70acc38fb970c2eb0d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">toolbox::pcl::base_fine_registration_t::set_target</a></div><div class="ttdeci">void set_target(const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置目标点云 / Set target point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:69</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a5280677c21801bd398ec9c6c84057ce8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">toolbox::pcl::base_fine_registration_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;source)</div><div class="ttdoc">设置源点云 / Set source point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:60</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a93edfd38cdad80e9a01b518692f2c533"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a93edfd38cdad80e9a01b518692f2c533">toolbox::pcl::base_fine_registration_t::set_max_iterations</a></div><div class="ttdeci">void set_max_iterations(std::size_t max_iterations)</div><div class="ttdoc">设置最大迭代次数 / Set maximum iterations</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:78</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_af8b471cca882837387c84f4310a3d6ac"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">toolbox::pcl::base_fine_registration_t::align</a></div><div class="ttdeci">bool align(const transformation_t &amp;initial_guess, result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:189</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_aa692a9e6ad553cead19446acb8dd3992"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#aa692a9e6ad553cead19446acb8dd3992">toolbox::pcl::four_pcs_registration_t::set_overlap</a></div><div class="ttdeci">void set_overlap(DataType overlap)</div><div class="ttdoc">设置重叠率估计 / Set overlap ratio estimate</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:99</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1four__pcs__registration__t_html_ab83a7df681337f6b167418403629d139"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1four__pcs__registration__t.html#ab83a7df681337f6b167418403629d139">toolbox::pcl::four_pcs_registration_t::set_delta</a></div><div class="ttdeci">void set_delta(DataType delta)</div><div class="ttdoc">设置配准精度delta / Set registration accuracy delta</div><div class="ttdef"><b>Definition</b> four_pcs_registration.hpp:87</div></div>
-<div class="ttc" id="aclasstoolbox_1_1pcl_1_1ransac__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1ransac__registration__t.html">toolbox::pcl::ransac_registration_t</a></div><div class="ttdoc">RANSAC粗配准算法 / RANSAC coarse registration algorithm.</div><div class="ttdef"><b>Definition</b> ransac_registration.hpp:46</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1point__to__point__icp__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a></div><div class="ttdoc">Point-to-Point ICP 算法实现 / Point-to-Point ICP algorithm implementation.</div><div class="ttdef"><b>Definition</b> point_to_point_icp.hpp:42</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1super__four__pcs__registration__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html">toolbox::pcl::super_four_pcs_registration_t</a></div><div class="ttdoc">Super4PCS 粗配准算法 / Super4PCS coarse registration algorithm.</div><div class="ttdef"><b>Definition</b> super_four_pcs_registration.hpp:44</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
 <div class="ttc" id="aregistration_8hpp_html"><div class="ttname"><a href="registration_8hpp.html">registration.hpp</a></div><div class="ttdoc">点云配准算法统一导出文件 / Unified export file for point cloud registration algorithms</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1registration__result__t.html">toolbox::pcl::registration_result_t</a></div><div class="ttdoc">配准结果结构体 / Registration result structure</div><div class="ttdef"><b>Definition</b> registration_result.hpp:15</div></div>
-<div class="ttc" id="astructtoolbox_1_1pcl_1_1registration__result__t_html_a76cc4248fcb33f887d95fe98049f199d"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1registration__result__t.html#a76cc4248fcb33f887d95fe98049f199d">toolbox::pcl::registration_result_t::inliers</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; inliers</div><div class="ttdoc">内点索引 / Inlier indices</div><div class="ttdef"><b>Definition</b> registration_result.hpp:20</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">toolbox::pcl::fine_registration_result_t</a></div><div class="ttdoc">细配准结果 / Fine registration result</div><div class="ttdef"><b>Definition</b> registration_result.hpp:46</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a869e13d38a14388c77018138eb480ad5" name="a869e13d38a14388c77018138eb480ad5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a869e13d38a14388c77018138eb480ad5">&#9670;&#160;</a></span>LOG_ERROR_S</h2>
@@ -335,6 +376,34 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define LOG_ERROR_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().error_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28d4d51a64e29b87c59c10f86615f4bf" name="a28d4d51a64e29b87c59c10f86615f4bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d4d51a64e29b87c59c10f86615f4bf">&#9670;&#160;</a></span>LOG_INFO_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_INFO_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().info_s()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9b694972a4957493602ba1e7d3c5925" name="ad9b694972a4957493602ba1e7d3c5925"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b694972a4957493602ba1e7d3c5925">&#9670;&#160;</a></span>LOG_WARN_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define LOG_WARN_S&#160;&#160;&#160;<a class="el" href="classtoolbox_1_1logger_1_1thread__logger__t.html#acc6c92f4fe66ee6d17852eb6b6f393bb">toolbox::logger::thread_logger_t::instance</a>().warn_s()</td>
         </tr>
       </table>
 </div><div class="memdoc">

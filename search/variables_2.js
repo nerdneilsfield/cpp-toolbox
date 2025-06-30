@@ -9,11 +9,13 @@ var searchData=
   ['color_6',['color',['../structtoolbox_1_1utils_1_1plot__t_1_1series__t.html#ad0c05235e4d685166298ac68bfd5c953',1,'toolbox::utils::plot_t::series_t']]],
   ['color_5ft_7',['color_t',['../namespacetoolbox_1_1utils.html#a74e6c8de7f36463bd534c6b15cb9b74b',1,'toolbox::utils']]],
   ['colors_8',['colors',['../classtoolbox_1_1types_1_1point__cloud__t.html#a190ddb2bc0ad9a8c96e660e0863fe3b8',1,'toolbox::types::point_cloud_t']]],
-  ['converged_9',['converged',['../structtoolbox_1_1pcl_1_1registration__result__t.html#ae25a5590f0fa5338a783f39d0deb0785',1,'toolbox::pcl::registration_result_t::converged'],['../structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5bbf8b9f0b68c79b411bf2b016ce29f3',1,'toolbox::pcl::fine_registration_result_t::converged']]],
+  ['converged_9',['converged',['../structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5bbf8b9f0b68c79b411bf2b016ce29f3',1,'toolbox::pcl::fine_registration_result_t::converged'],['../structtoolbox_1_1pcl_1_1registration__result__t.html#ae25a5590f0fa5338a783f39d0deb0785',1,'toolbox::pcl::registration_result_t::converged']]],
   ['count_10',['count',['../structtoolbox_1_1io_1_1pcd__format__t_1_1pcd__header__t_1_1field__info__t.html#ab22aa6a041d72302301597bc3e76064b',1,'toolbox::io::pcd_format_t::pcd_header_t::field_info_t']]],
   ['counts_11',['counts',['../structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t.html#ab5d33e0d5bc205d7ea4b14a38cdca98e',1,'toolbox::pcl::voxel_grid_downsampling_t::voxel_data_soa_t']]],
-  ['cpp_5ftoolbox_5fnative_5fis_5fbig_12',['CPP_TOOLBOX_NATIVE_IS_BIG',['../endian_8hpp.html#a5436b1a37cf754e5a3070e2e2750c12e',1,'endian.hpp']]],
-  ['cpp_5ftoolbox_5fnative_5fis_5flittle_13',['CPP_TOOLBOX_NATIVE_IS_LITTLE',['../endian_8hpp.html#a01974835382ea50075b89f071ef58c2e',1,'endian.hpp']]],
-  ['curvature_14',['curvature',['../structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html#a5aa923529c640b4765de5900f132c11e',1,'toolbox::pcl::mls_keypoint_extractor_t::MLSResult']]],
-  ['cyan_15',['CYAN',['../namespacetoolbox_1_1utils.html#a5ed9fa4a2125c9d47f60228846a6bdea',1,'toolbox::utils']]]
+  ['covariance_12',['covariance',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#ab17078f40c580675ea64c5d23820a2a7',1,'toolbox::pcl::ndt_t::voxel_cell_t']]],
+  ['covariance_5finv_13',['covariance_inv',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#a9b180bcc26651417209bc7e7f05d7c36',1,'toolbox::pcl::ndt_t::voxel_cell_t']]],
+  ['cpp_5ftoolbox_5fnative_5fis_5fbig_14',['CPP_TOOLBOX_NATIVE_IS_BIG',['../endian_8hpp.html#a5436b1a37cf754e5a3070e2e2750c12e',1,'endian.hpp']]],
+  ['cpp_5ftoolbox_5fnative_5fis_5flittle_15',['CPP_TOOLBOX_NATIVE_IS_LITTLE',['../endian_8hpp.html#a01974835382ea50075b89f071ef58c2e',1,'endian.hpp']]],
+  ['curvature_16',['curvature',['../structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html#a5aa923529c640b4765de5900f132c11e',1,'toolbox::pcl::mls_keypoint_extractor_t::MLSResult::curvature'],['../structtoolbox_1_1pcl_1_1point__to__plane__icp__t_1_1normal__t.html#ae3242f1d73d6558ac42005f708d08441',1,'toolbox::pcl::point_to_plane_icp_t::normal_t::curvature']]],
+  ['cyan_17',['CYAN',['../namespacetoolbox_1_1utils.html#a5ed9fa4a2125c9d47f60228846a6bdea',1,'toolbox::utils']]]
 ];

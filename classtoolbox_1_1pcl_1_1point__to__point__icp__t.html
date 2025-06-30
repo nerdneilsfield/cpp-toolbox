@@ -1,0 +1,1032 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::point_to_point_icp_t&lt; DataType, KNNSearcher &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1point__to__point__icp__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1point__to__point__icp__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::point_to_point_icp_t&lt; DataType, KNNSearcher &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Point-to-Point ICP 算法实现 / Point-to-Point ICP algorithm implementation.  
+ <a href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="point__to__point__icp_8hpp_source.html">point_to_point_icp.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::point_to_point_icp_t&lt; DataType, KNNSearcher &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a6492161e5dd0dcf53308b17d960beaa8" id="r_a6492161e5dd0dcf53308b17d960beaa8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a6492161e5dd0dcf53308b17d960beaa8">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;, DataType &gt;</td></tr>
+<tr class="separator:a6492161e5dd0dcf53308b17d960beaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f3c3e9dbd0d40506993fc7661aadcc" id="r_a67f3c3e9dbd0d40506993fc7661aadcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a67f3c3e9dbd0d40506993fc7661aadcc">point_type</a> = <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a67f3c3e9dbd0d40506993fc7661aadcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8baf7256160f6bf4d181641cbc968ff1" id="r_a8baf7256160f6bf4d181641cbc968ff1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a8baf7256160f6bf4d181641cbc968ff1">knn_searcher_type</a> = KNNSearcher</td></tr>
+<tr class="separator:a8baf7256160f6bf4d181641cbc968ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d302e0ee557581bda614484fb09b1fd" id="r_a3d302e0ee557581bda614484fb09b1fd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a3d302e0ee557581bda614484fb09b1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec0b72a04733425a11c90bfc143d5f8" id="r_a5ec0b72a04733425a11c90bfc143d5f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a5ec0b72a04733425a11c90bfc143d5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f07a1c847fa7565d58f9a0354011f8" id="r_aa4f07a1c847fa7565d58f9a0354011f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:aa4f07a1c847fa7565d58f9a0354011f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e356974e1a7515987e74177a39972da" id="r_a7e356974e1a7515987e74177a39972da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a7e356974e1a7515987e74177a39972da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a3d302e0ee557581bda614484fb09b1fd inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a3d302e0ee557581bda614484fb09b1fd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a3d302e0ee557581bda614484fb09b1fd inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec0b72a04733425a11c90bfc143d5f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a5ec0b72a04733425a11c90bfc143d5f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a5ec0b72a04733425a11c90bfc143d5f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f07a1c847fa7565d58f9a0354011f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aa4f07a1c847fa7565d58f9a0354011f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:aa4f07a1c847fa7565d58f9a0354011f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e356974e1a7515987e74177a39972da inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7e356974e1a7515987e74177a39972da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a7e356974e1a7515987e74177a39972da inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355ea2074f9c073fc5e616889ba8467e inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a355ea2074f9c073fc5e616889ba8467e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> = std::function&lt; bool(const <a class="el" href="structtoolbox_1_1pcl_1_1iteration__state__t.html">iteration_state_t</a>&lt; DataType &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a355ea2074f9c073fc5e616889ba8467e inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ab380d44afccc7b9c7f0f34780b04656f" id="r_ab380d44afccc7b9c7f0f34780b04656f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#ab380d44afccc7b9c7f0f34780b04656f">point_to_point_icp_t</a> (bool enable_parallel=false)</td></tr>
+<tr class="memdesc:ab380d44afccc7b9c7f0f34780b04656f"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数 / Constructor  <br /></td></tr>
+<tr class="separator:ab380d44afccc7b9c7f0f34780b04656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0fe9ed011616c4d15c0c450d4dc6844" id="r_ac0fe9ed011616c4d15c0c450d4dc6844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#ac0fe9ed011616c4d15c0c450d4dc6844">set_enable_parallel</a> (bool enable)</td></tr>
+<tr class="memdesc:ac0fe9ed011616c4d15c0c450d4dc6844"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启用并行优化 / Set whether to enable parallel optimization  <br /></td></tr>
+<tr class="separator:ac0fe9ed011616c4d15c0c450d4dc6844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc56f3efd85996f256606b9c9cc4e6f" id="r_a6bc56f3efd85996f256606b9c9cc4e6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a6bc56f3efd85996f256606b9c9cc4e6f">get_enable_parallel</a> () const</td></tr>
+<tr class="memdesc:a6bc56f3efd85996f256606b9c9cc4e6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否启用并行优化 / Get whether parallel optimization is enabled  <br /></td></tr>
+<tr class="separator:a6bc56f3efd85996f256606b9c9cc4e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50b291c253d58e9ce879a15bc78cf16" id="r_ad50b291c253d58e9ce879a15bc78cf16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#ad50b291c253d58e9ce879a15bc78cf16">get_correspondence_type_impl</a> () const</td></tr>
+<tr class="memdesc:ad50b291c253d58e9ce879a15bc78cf16"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对应关系类型 / Get correspondence type  <br /></td></tr>
+<tr class="separator:ad50b291c253d58e9ce879a15bc78cf16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afde2b107b20cc4cfee53e9fb54c5f77e" id="r_afde2b107b20cc4cfee53e9fb54c5f77e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#afde2b107b20cc4cfee53e9fb54c5f77e">set_outlier_rejection_ratio</a> (DataType ratio)</td></tr>
+<tr class="memdesc:afde2b107b20cc4cfee53e9fb54c5f77e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置异常值剔除比例 / Set outlier rejection ratio  <br /></td></tr>
+<tr class="separator:afde2b107b20cc4cfee53e9fb54c5f77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97fb5d59a55ad0cc2d71a6c04d37e20e" id="r_a97fb5d59a55ad0cc2d71a6c04d37e20e"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a97fb5d59a55ad0cc2d71a6c04d37e20e">get_outlier_rejection_ratio</a> () const</td></tr>
+<tr class="memdesc:a97fb5d59a55ad0cc2d71a6c04d37e20e"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取异常值剔除比例 / Get outlier rejection ratio  <br /></td></tr>
+<tr class="separator:a97fb5d59a55ad0cc2d71a6c04d37e20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a2375bc828f01a3c394c1b6c08dac10a2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2375bc828f01a3c394c1b6c08dac10a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2375bc828f01a3c394c1b6c08dac10a2">base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a2375bc828f01a3c394c1b6c08dac10a2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794ed97eb44f6b007618890a1aac9f36 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a794ed97eb44f6b007618890a1aac9f36"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a794ed97eb44f6b007618890a1aac9f36">~base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a794ed97eb44f6b007618890a1aac9f36 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a288212fef6206e2667ef8154dc958 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a48a288212fef6206e2667ef8154dc958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a48a288212fef6206e2667ef8154dc958">base_fine_registration_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a48a288212fef6206e2667ef8154dc958 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093d107c7fe0c7b441dedeeafb6e5135 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a093d107c7fe0c7b441dedeeafb6e5135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a093d107c7fe0c7b441dedeeafb6e5135">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a093d107c7fe0c7b441dedeeafb6e5135 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe44dff889b8247bec76772284ae2f16 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_abe44dff889b8247bec76772284ae2f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#abe44dff889b8247bec76772284ae2f16">base_fine_registration_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:abe44dff889b8247bec76772284ae2f16 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f18ec943a2f8901ad26fb25c1cd7173 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7f18ec943a2f8901ad26fb25c1cd7173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7f18ec943a2f8901ad26fb25c1cd7173">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7f18ec943a2f8901ad26fb25c1cd7173 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a5280677c21801bd398ec9c6c84057ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云 / Set source point cloud  <br /></td></tr>
+<tr class="separator:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a3adcee04afc40e70acc38fb970c2eb0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标点云 / Set target point cloud  <br /></td></tr>
+<tr class="separator:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a93edfd38cdad80e9a01b518692f2c533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a93edfd38cdad80e9a01b518692f2c533">set_max_iterations</a> (std::size_t max_iterations)</td></tr>
+<tr class="memdesc:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大迭代次数 / Set maximum iterations  <br /></td></tr>
+<tr class="separator:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a85a996d9ca33227b8b1de9b2103e5e91"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a85a996d9ca33227b8b1de9b2103e5e91">get_max_iterations</a> () const</td></tr>
+<tr class="memdesc:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大迭代次数 / Get maximum iterations  <br /></td></tr>
+<tr class="separator:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_af4a4a4c38fc5bb23400fddb5c434ac8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af4a4a4c38fc5bb23400fddb5c434ac8d">set_transformation_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置变换epsilon（收敛阈值） / Set transformation epsilon (convergence threshold)  <br /></td></tr>
+<tr class="separator:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a00b6484c34319b54c07c0fa94fc3db7e"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a00b6484c34319b54c07c0fa94fc3db7e">get_transformation_epsilon</a> () const</td></tr>
+<tr class="memdesc:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取变换epsilon / Get transformation epsilon  <br /></td></tr>
+<tr class="separator:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7cc174f7e3383ad56499bb8db10fd124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7cc174f7e3383ad56499bb8db10fd124">set_euclidean_fitness_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置欧氏距离epsilon / Set Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aef36ccdd6652a90653310d50ec5e6c89"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aef36ccdd6652a90653310d50ec5e6c89">get_euclidean_fitness_epsilon</a> () const</td></tr>
+<tr class="memdesc:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取欧氏距离epsilon / Get Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aead9f67137db66daafa040674003c38c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aead9f67137db66daafa040674003c38c">set_max_correspondence_distance</a> (DataType distance)</td></tr>
+<tr class="memdesc:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大对应距离 / Set maximum correspondence distance  <br /></td></tr>
+<tr class="separator:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a4986acd9663d9337545fc55e844027aa"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a4986acd9663d9337545fc55e844027aa">get_max_correspondence_distance</a> () const</td></tr>
+<tr class="memdesc:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大对应距离 / Get maximum correspondence distance  <br /></td></tr>
+<tr class="separator:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_adbe4eb5214abf6152a2708f0343027aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#adbe4eb5214abf6152a2708f0343027aa">set_record_history</a> (bool record)</td></tr>
+<tr class="memdesc:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否记录迭代历史 / Set whether to record iteration history  <br /></td></tr>
+<tr class="separator:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac70256f005a1c7cb3c6ae78b60a8f89b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac70256f005a1c7cb3c6ae78b60a8f89b">get_record_history</a> () const</td></tr>
+<tr class="memdesc:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否记录迭代历史 / Get whether to record iteration history  <br /></td></tr>
+<tr class="separator:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a1dfc3785cc037ac6f514643e6997189a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a1dfc3785cc037ac6f514643e6997189a">set_iteration_callback</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> callback)</td></tr>
+<tr class="memdesc:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置迭代回调函数 / Set iteration callback function  <br /></td></tr>
+<tr class="separator:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aaa3eb6d6bb6e9d7287f445a449e86075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aaa3eb6d6bb6e9d7287f445a449e86075">get_correspondence_type</a> () const</td></tr>
+<tr class="memdesc:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对应关系类型 / Get correspondence type  <br /></td></tr>
+<tr class="separator:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a12b676bd718ebf8560f11e98335d4e2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a12b676bd718ebf8560f11e98335d4e2f">has_source_normals</a> () const</td></tr>
+<tr class="memdesc:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查源点云是否有法线 / Check if source cloud has normals  <br /></td></tr>
+<tr class="separator:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a359a31f13961ccccdaafc869f2e860c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a359a31f13961ccccdaafc869f2e860c2">has_target_normals</a> () const</td></tr>
+<tr class="memdesc:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查目标点云是否有法线 / Check if target cloud has normals  <br /></td></tr>
+<tr class="separator:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_af8b471cca882837387c84f4310a3d6ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;initial_guess, <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ab903639746297df5b83428fe33727468"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ab903639746297df5b83428fe33727468">align</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准（使用单位矩阵作为初始猜测） / Perform registration (using identity as initial guess)  <br /></td></tr>
+<tr class="separator:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a4091906cb46f2ea775345870ab2c1499" id="r_a4091906cb46f2ea775345870ab2c1499"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a4091906cb46f2ea775345870ab2c1499">preprocess_impl</a> ()</td></tr>
+<tr class="memdesc:a4091906cb46f2ea775345870ab2c1499"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理（构建KD树） / Preprocessing (build KD-tree)  <br /></td></tr>
+<tr class="separator:a4091906cb46f2ea775345870ab2c1499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49f991edee0bcf05838cd417d5dab878" id="r_a49f991edee0bcf05838cd417d5dab878"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a49f991edee0bcf05838cd417d5dab878">align_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;initial_guess, <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:a49f991edee0bcf05838cd417d5dab878"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:a49f991edee0bcf05838cd417d5dab878"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5856211695e33a2212fa8d987079bdaa" id="r_a5856211695e33a2212fa8d987079bdaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a5856211695e33a2212fa8d987079bdaa">find_correspondences</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;transformed_source, std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;correspondences, std::vector&lt; DataType &gt; &amp;distances)</td></tr>
+<tr class="memdesc:a5856211695e33a2212fa8d987079bdaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">查找对应关系 / Find correspondences  <br /></td></tr>
+<tr class="separator:a5856211695e33a2212fa8d987079bdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b2b14d6911a76a52d6af156f82965b9" id="r_a4b2b14d6911a76a52d6af156f82965b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a4b2b14d6911a76a52d6af156f82965b9">compute_transformation</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;source, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;target, const std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;correspondences, const std::vector&lt; DataType &gt; &amp;distances)</td></tr>
+<tr class="memdesc:a4b2b14d6911a76a52d6af156f82965b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算变换矩阵（使用SVD） / Compute transformation matrix (using SVD)  <br /></td></tr>
+<tr class="separator:a4b2b14d6911a76a52d6af156f82965b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d1011906f567f59cb39e7daf2c9923" id="r_ac7d1011906f567f59cb39e7daf2c9923"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#ac7d1011906f567f59cb39e7daf2c9923">compute_error</a> (const std::vector&lt; DataType &gt; &amp;distances) const</td></tr>
+<tr class="memdesc:ac7d1011906f567f59cb39e7daf2c9923"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算配准误差 / Compute registration error  <br /></td></tr>
+<tr class="separator:ac7d1011906f567f59cb39e7daf2c9923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3e37d4fbc06c87e8641708de99ff106" id="r_ab3e37d4fbc06c87e8641708de99ff106"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#ab3e37d4fbc06c87e8641708de99ff106">reject_outliers</a> (std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;correspondences, std::vector&lt; DataType &gt; &amp;distances)</td></tr>
+<tr class="memdesc:ab3e37d4fbc06c87e8641708de99ff106"><td class="mdescLeft">&#160;</td><td class="mdescRight">剔除异常值 / Reject outliers  <br /></td></tr>
+<tr class="separator:ab3e37d4fbc06c87e8641708de99ff106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a8be4e0c5227585e2fc2e31f26c4d8650"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a8be4e0c5227585e2fc2e31f26c4d8650">validate_input</a> () const</td></tr>
+<tr class="memdesc:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入 / Validate input  <br /></td></tr>
+<tr class="separator:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a68cd985b447ae36ee790dd933cad43a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a68cd985b447ae36ee790dd933cad43a9">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外输入验证 / Additional input validation for derived class  <br /></td></tr>
+<tr class="separator:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a34fb318b774c21455d4773239c9d7dda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a34fb318b774c21455d4773239c9d7dda">has_converged</a> (std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;current_transform, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;previous_transform, DataType current_error, DataType previous_error, std::string &amp;termination_reason) const</td></tr>
+<tr class="memdesc:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查收敛条件 / Check convergence criteria  <br /></td></tr>
+<tr class="separator:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0dc395000353854fe4717fa91d389ed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0dc395000353854fe4717fa91d389ed0">has_converged_impl</a> (std::size_t, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, DataType, DataType, std::string &amp;) const</td></tr>
+<tr class="memdesc:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外收敛检查 / Additional convergence check for derived class  <br /></td></tr>
+<tr class="separator:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aea0f5fdf3296e44131c9c6bd939acfc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aea0f5fdf3296e44131c9c6bd939acfc7">preprocess_impl</a> ()</td></tr>
+<tr class="memdesc:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理钩子（派生类实现） / Preprocessing hook (derived class implementation)  <br /></td></tr>
+<tr class="separator:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0b3e7798019e57f5ab86021d35395875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0b3e7798019e57f5ab86021d35395875">record_iteration</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result, std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;transform, DataType error, DataType error_change, std::size_t num_correspondences)</td></tr>
+<tr class="memdesc:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录迭代状态 / Record iteration state  <br /></td></tr>
+<tr class="separator:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a988208494dc864415d01512f6246d695" id="r_a988208494dc864415d01512f6246d695"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#a988208494dc864415d01512f6246d695">base_fine_registration_t&lt; point_to_point_icp_t&lt; DataType, KNNSearcher &gt;, DataType &gt;</a></td></tr>
+<tr class="separator:a988208494dc864415d01512f6246d695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a2e59d606dde0a446e48f79a107eec177 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2e59d606dde0a446e48f79a107eec177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e59d606dde0a446e48f79a107eec177">m_source_cloud</a></td></tr>
+<tr class="separator:a2e59d606dde0a446e48f79a107eec177 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53e1712f4c6e243c18f209294b7b8ed inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac53e1712f4c6e243c18f209294b7b8ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac53e1712f4c6e243c18f209294b7b8ed">m_target_cloud</a></td></tr>
+<tr class="separator:ac53e1712f4c6e243c18f209294b7b8ed inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0462b6de13a5472ab390a56fd2dedc inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2e0462b6de13a5472ab390a56fd2dedc"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e0462b6de13a5472ab390a56fd2dedc">m_max_iterations</a> = 50</td></tr>
+<tr class="separator:a2e0462b6de13a5472ab390a56fd2dedc inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0953ef97908ed3f167a20d62cf4a91d2 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0953ef97908ed3f167a20d62cf4a91d2"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0953ef97908ed3f167a20d62cf4a91d2">m_transformation_epsilon</a> = static_cast&lt;DataType&gt;(1e-8)</td></tr>
+<tr class="separator:a0953ef97908ed3f167a20d62cf4a91d2 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac390301b292aa61674c58e65f6e60e1b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac390301b292aa61674c58e65f6e60e1b"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac390301b292aa61674c58e65f6e60e1b">m_euclidean_fitness_epsilon</a> = static_cast&lt;DataType&gt;(1e-6)</td></tr>
+<tr class="separator:ac390301b292aa61674c58e65f6e60e1b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667770c9f6ee70b8eb226a19e9e9f07c inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a667770c9f6ee70b8eb226a19e9e9f07c"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a667770c9f6ee70b8eb226a19e9e9f07c">m_max_correspondence_distance</a> = static_cast&lt;DataType&gt;(0.05)</td></tr>
+<tr class="separator:a667770c9f6ee70b8eb226a19e9e9f07c inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936064ace4d3d31d16199ced664a1e0b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a936064ace4d3d31d16199ced664a1e0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a936064ace4d3d31d16199ced664a1e0b">m_source_updated</a> = false</td></tr>
+<tr class="separator:a936064ace4d3d31d16199ced664a1e0b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4abbb1025af9fc08aa8086fc8f4b39 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a6a4abbb1025af9fc08aa8086fc8f4b39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a6a4abbb1025af9fc08aa8086fc8f4b39">m_target_updated</a> = false</td></tr>
+<tr class="separator:a6a4abbb1025af9fc08aa8086fc8f4b39 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb08d74e84aa721b8f83e029802f6816 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_afb08d74e84aa721b8f83e029802f6816"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#afb08d74e84aa721b8f83e029802f6816">m_record_history</a> = false</td></tr>
+<tr class="separator:afb08d74e84aa721b8f83e029802f6816 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754f9a894b6ee6c8f251cec28b9dc1a4 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a754f9a894b6ee6c8f251cec28b9dc1a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a754f9a894b6ee6c8f251cec28b9dc1a4">m_iteration_callback</a></td></tr>
+<tr class="separator:a754f9a894b6ee6c8f251cec28b9dc1a4 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType, typename KNNSearcher = kdtree_t&lt;DataType&gt;&gt;<br />
+class toolbox::pcl::point_to_point_icp_t&lt; DataType, KNNSearcher &gt;</div><p>Point-to-Point ICP 算法实现 / Point-to-Point ICP algorithm implementation. </p>
+<p>该算法最小化点对之间的欧氏距离平方和。 This algorithm minimizes the sum of squared Euclidean distances between point pairs.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+    <tr><td class="paramname">KNNSearcher</td><td>KNN搜索器类型 / KNN searcher type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用默认KD树 / Using default KD-tree</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t&lt;float&gt;</a> icp;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用自定义KNN搜索器 / Using custom KNN searcher</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t&lt;float, bfknn_parallel_t&lt;float&gt;</a>&gt; icp_parallel;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置点云 / Set point clouds</span></div>
+<div class="line">icp.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a>(source_cloud);</div>
+<div class="line">icp.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a>(target_cloud);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 执行配准 / Perform registration</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t&lt;float&gt;</a> result;</div>
+<div class="line">icp.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a>(initial_guess, result);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a3adcee04afc40e70acc38fb970c2eb0d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">toolbox::pcl::base_fine_registration_t::set_target</a></div><div class="ttdeci">void set_target(const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置目标点云 / Set target point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:69</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a5280677c21801bd398ec9c6c84057ce8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">toolbox::pcl::base_fine_registration_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;source)</div><div class="ttdoc">设置源点云 / Set source point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:60</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_af8b471cca882837387c84f4310a3d6ac"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">toolbox::pcl::base_fine_registration_t::align</a></div><div class="ttdeci">bool align(const transformation_t &amp;initial_guess, result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:189</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1point__to__point__icp__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a></div><div class="ttdoc">Point-to-Point ICP 算法实现 / Point-to-Point ICP algorithm implementation.</div><div class="ttdef"><b>Definition</b> point_to_point_icp.hpp:42</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">toolbox::pcl::fine_registration_result_t</a></div><div class="ttdoc">细配准结果 / Fine registration result</div><div class="ttdef"><b>Definition</b> registration_result.hpp:46</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a6492161e5dd0dcf53308b17d960beaa8" name="a6492161e5dd0dcf53308b17d960beaa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6492161e5dd0dcf53308b17d960beaa8">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt;DataType, KNNSearcher&gt;, DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8baf7256160f6bf4d181641cbc968ff1" name="a8baf7256160f6bf4d181641cbc968ff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8baf7256160f6bf4d181641cbc968ff1">&#9670;&#160;</a></span>knn_searcher_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::knn_searcher_type =  KNNSearcher</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d302e0ee557581bda614484fb09b1fd" name="a3d302e0ee557581bda614484fb09b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d302e0ee557581bda614484fb09b1fd">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ec0b72a04733425a11c90bfc143d5f8" name="a5ec0b72a04733425a11c90bfc143d5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec0b72a04733425a11c90bfc143d5f8">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a67f3c3e9dbd0d40506993fc7661aadcc" name="a67f3c3e9dbd0d40506993fc7661aadcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f3c3e9dbd0d40506993fc7661aadcc">&#9670;&#160;</a></span>point_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::point_type =  <a class="el" href="structtoolbox_1_1types_1_1point__t.html">toolbox::types::point_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e356974e1a7515987e74177a39972da" name="a7e356974e1a7515987e74177a39972da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e356974e1a7515987e74177a39972da">&#9670;&#160;</a></span>result_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::result_type =  <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4f07a1c847fa7565d58f9a0354011f8" name="aa4f07a1c847fa7565d58f9a0354011f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f07a1c847fa7565d58f9a0354011f8">&#9670;&#160;</a></span>transformation_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::transformation_t =  Eigen::Matrix&lt;DataType, 4, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ab380d44afccc7b9c7f0f34780b04656f" name="ab380d44afccc7b9c7f0f34780b04656f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab380d44afccc7b9c7f0f34780b04656f">&#9670;&#160;</a></span>point_to_point_icp_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::point_to_point_icp_t </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_parallel</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 / Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable_parallel</td><td>是否启用并行优化（默认开启） / Enable parallel optimization (default enabled) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a49f991edee0bcf05838cd417d5dab878" name="a49f991edee0bcf05838cd417d5dab878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49f991edee0bcf05838cd417d5dab878">&#9670;&#160;</a></span>align_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::align_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>initial_guess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行配准 / Perform registration </p>
+
+</div>
+</div>
+<a id="ac7d1011906f567f59cb39e7daf2c9923" name="ac7d1011906f567f59cb39e7daf2c9923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d1011906f567f59cb39e7daf2c9923">&#9670;&#160;</a></span>compute_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::compute_error </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算配准误差 / Compute registration error </p>
+
+</div>
+</div>
+<a id="a4b2b14d6911a76a52d6af156f82965b9" name="a4b2b14d6911a76a52d6af156f82965b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b2b14d6911a76a52d6af156f82965b9">&#9670;&#160;</a></span>compute_transformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;<a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">::transformation_t</a> <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::compute_transformation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算变换矩阵（使用SVD） / Compute transformation matrix (using SVD) </p>
+
+</div>
+</div>
+<a id="a5856211695e33a2212fa8d987079bdaa" name="a5856211695e33a2212fa8d987079bdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5856211695e33a2212fa8d987079bdaa">&#9670;&#160;</a></span>find_correspondences()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::find_correspondences </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &amp;&#160;</td>
+          <td class="paramname"><em>transformed_source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>查找对应关系 / Find correspondences </p>
+
+</div>
+</div>
+<a id="ad50b291c253d58e9ce879a15bc78cf16" name="ad50b291c253d58e9ce879a15bc78cf16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad50b291c253d58e9ce879a15bc78cf16">&#9670;&#160;</a></span>get_correspondence_type_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a> <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::get_correspondence_type_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对应关系类型 / Get correspondence type </p>
+
+</div>
+</div>
+<a id="a6bc56f3efd85996f256606b9c9cc4e6f" name="a6bc56f3efd85996f256606b9c9cc4e6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc56f3efd85996f256606b9c9cc4e6f">&#9670;&#160;</a></span>get_enable_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::get_enable_parallel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否启用并行优化 / Get whether parallel optimization is enabled </p>
+
+</div>
+</div>
+<a id="a97fb5d59a55ad0cc2d71a6c04d37e20e" name="a97fb5d59a55ad0cc2d71a6c04d37e20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97fb5d59a55ad0cc2d71a6c04d37e20e">&#9670;&#160;</a></span>get_outlier_rejection_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::get_outlier_rejection_ratio </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取异常值剔除比例 / Get outlier rejection ratio </p>
+
+</div>
+</div>
+<a id="a4091906cb46f2ea775345870ab2c1499" name="a4091906cb46f2ea775345870ab2c1499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4091906cb46f2ea775345870ab2c1499">&#9670;&#160;</a></span>preprocess_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::preprocess_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>预处理（构建KD树） / Preprocessing (build KD-tree) </p>
+
+</div>
+</div>
+<a id="ab3e37d4fbc06c87e8641708de99ff106" name="ab3e37d4fbc06c87e8641708de99ff106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3e37d4fbc06c87e8641708de99ff106">&#9670;&#160;</a></span>reject_outliers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::reject_outliers </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::pair&lt; std::size_t, std::size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>correspondences</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>distances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>剔除异常值 / Reject outliers </p>
+
+</div>
+</div>
+<a id="ac0fe9ed011616c4d15c0c450d4dc6844" name="ac0fe9ed011616c4d15c0c450d4dc6844"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0fe9ed011616c4d15c0c450d4dc6844">&#9670;&#160;</a></span>set_enable_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::set_enable_parallel </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否启用并行优化 / Set whether to enable parallel optimization </p>
+
+</div>
+</div>
+<a id="afde2b107b20cc4cfee53e9fb54c5f77e" name="afde2b107b20cc4cfee53e9fb54c5f77e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afde2b107b20cc4cfee53e9fb54c5f77e">&#9670;&#160;</a></span>set_outlier_rejection_ratio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">toolbox::pcl::point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;::set_outlier_rejection_ratio </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>ratio</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置异常值剔除比例 / Set outlier rejection ratio </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ratio</td><td>剔除比例（0-1），0表示不剔除 / Rejection ratio (0-1), 0 means no rejection </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a988208494dc864415d01512f6246d695" name="a988208494dc864415d01512f6246d695"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988208494dc864415d01512f6246d695">&#9670;&#160;</a></span>base_fine_registration_t&lt; point_to_point_icp_t&lt; DataType, KNNSearcher &gt;, DataType &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a>&lt; DataType, KNNSearcher &gt;, DataType &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/pcl/registration/<a class="el" href="point__to__point__icp_8hpp_source.html">point_to_point_icp.hpp</a></li>
+<li>src/include/cpp-toolbox/pcl/registration/impl/<a class="el" href="point__to__point__icp__impl_8hpp_source.html">point_to_point_icp_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1point__to__point__icp__t.html">point_to_point_icp_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['hacking_2emd_0',['HACKING.md',['../_h_a_c_k_i_n_g_8md.html',1,'']]],
-  ['harris3d_5fkeypoints_2ehpp_1',['harris3d_keypoints.hpp',['../harris3d__keypoints_8hpp.html',1,'']]],
-  ['harris3d_5fkeypoints_5fimpl_2ehpp_2',['harris3d_keypoints_impl.hpp',['../harris3d__keypoints__impl_8hpp.html',1,'']]],
-  ['histogram_5fmetrics_2ehpp_3',['histogram_metrics.hpp',['../histogram__metrics_8hpp.html',1,'']]]
+  ['generalized_5ficp_2ehpp_0',['generalized_icp.hpp',['../generalized__icp_8hpp.html',1,'']]],
+  ['generalized_5ficp_5fimpl_2ehpp_1',['generalized_icp_impl.hpp',['../generalized__icp__impl_8hpp.html',1,'']]]
 ];

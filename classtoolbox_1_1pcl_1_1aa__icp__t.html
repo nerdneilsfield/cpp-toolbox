@@ -1,0 +1,1311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1aa__icp__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1aa__icp__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>AA-ICP (Anderson Acceleration ICP) 算法实现 / AA-ICP algorithm implementation.  
+ <a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="aa__icp_8hpp_source.html">aa_icp.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aedc00222043c8c1aa918a267cbb82f20" id="r_aedc00222043c8c1aa918a267cbb82f20"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aedc00222043c8c1aa918a267cbb82f20">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;, DataType &gt;</td></tr>
+<tr class="separator:aedc00222043c8c1aa918a267cbb82f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1631addbb1c7b507a9d819530062c7e3" id="r_a1631addbb1c7b507a9d819530062c7e3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a1631addbb1c7b507a9d819530062c7e3">base_icp_type</a> = BaseICP</td></tr>
+<tr class="separator:a1631addbb1c7b507a9d819530062c7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfa3b910e12b8aa0df9f0ad417fc549" id="r_a9cfa3b910e12b8aa0df9f0ad417fc549"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> = Eigen::Matrix&lt; DataType, Eigen::Dynamic, 1 &gt;</td></tr>
+<tr class="separator:a9cfa3b910e12b8aa0df9f0ad417fc549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a033216ec283605e605121c960a8acfcd" id="r_a033216ec283605e605121c960a8acfcd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a033216ec283605e605121c960a8acfcd">MatrixX</a> = Eigen::Matrix&lt; DataType, Eigen::Dynamic, Eigen::Dynamic &gt;</td></tr>
+<tr class="separator:a033216ec283605e605121c960a8acfcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d302e0ee557581bda614484fb09b1fd" id="r_a3d302e0ee557581bda614484fb09b1fd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a3d302e0ee557581bda614484fb09b1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec0b72a04733425a11c90bfc143d5f8" id="r_a5ec0b72a04733425a11c90bfc143d5f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a5ec0b72a04733425a11c90bfc143d5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f07a1c847fa7565d58f9a0354011f8" id="r_aa4f07a1c847fa7565d58f9a0354011f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:aa4f07a1c847fa7565d58f9a0354011f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e356974e1a7515987e74177a39972da" id="r_a7e356974e1a7515987e74177a39972da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a7e356974e1a7515987e74177a39972da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a3d302e0ee557581bda614484fb09b1fd inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a3d302e0ee557581bda614484fb09b1fd"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a3d302e0ee557581bda614484fb09b1fd inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec0b72a04733425a11c90bfc143d5f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a5ec0b72a04733425a11c90bfc143d5f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a> &gt;</td></tr>
+<tr class="separator:a5ec0b72a04733425a11c90bfc143d5f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f07a1c847fa7565d58f9a0354011f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aa4f07a1c847fa7565d58f9a0354011f8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> = Eigen::Matrix&lt; DataType, 4, 4 &gt;</td></tr>
+<tr class="separator:aa4f07a1c847fa7565d58f9a0354011f8 inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e356974e1a7515987e74177a39972da inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7e356974e1a7515987e74177a39972da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> = <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a7e356974e1a7515987e74177a39972da inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a355ea2074f9c073fc5e616889ba8467e inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a355ea2074f9c073fc5e616889ba8467e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> = std::function&lt; bool(const <a class="el" href="structtoolbox_1_1pcl_1_1iteration__state__t.html">iteration_state_t</a>&lt; DataType &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a355ea2074f9c073fc5e616889ba8467e inherit pub_types_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4bc440746d8a43e10ea4635f618441b6" id="r_a4bc440746d8a43e10ea4635f618441b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a4bc440746d8a43e10ea4635f618441b6">aa_icp_t</a> (bool enable_parallel=false)</td></tr>
+<tr class="memdesc:a4bc440746d8a43e10ea4635f618441b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">构造函数 / Constructor  <br /></td></tr>
+<tr class="separator:a4bc440746d8a43e10ea4635f618441b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae807bbf7a846aa53bc2c28638c58cc0e" id="r_ae807bbf7a846aa53bc2c28638c58cc0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ae807bbf7a846aa53bc2c28638c58cc0e">set_anderson_m</a> (std::size_t m)</td></tr>
+<tr class="memdesc:ae807bbf7a846aa53bc2c28638c58cc0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置Anderson加速的历史窗口大小 / Set Anderson acceleration history window size  <br /></td></tr>
+<tr class="separator:ae807bbf7a846aa53bc2c28638c58cc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a373a29c3d65d978c79480ebe8aaf1e40" id="r_a373a29c3d65d978c79480ebe8aaf1e40"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a373a29c3d65d978c79480ebe8aaf1e40">get_anderson_m</a> () const</td></tr>
+<tr class="memdesc:a373a29c3d65d978c79480ebe8aaf1e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取Anderson加速的历史窗口大小 / Get Anderson acceleration history window size  <br /></td></tr>
+<tr class="separator:a373a29c3d65d978c79480ebe8aaf1e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58727d5da801faeeed45e58a2e319cf4" id="r_a58727d5da801faeeed45e58a2e319cf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a58727d5da801faeeed45e58a2e319cf4">set_beta</a> (DataType beta)</td></tr>
+<tr class="memdesc:a58727d5da801faeeed45e58a2e319cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置阻尼因子 / Set damping factor  <br /></td></tr>
+<tr class="separator:a58727d5da801faeeed45e58a2e319cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae15066b23694171b3c38c0552192465f" id="r_ae15066b23694171b3c38c0552192465f"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ae15066b23694171b3c38c0552192465f">get_beta</a> () const</td></tr>
+<tr class="memdesc:ae15066b23694171b3c38c0552192465f"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取阻尼因子 / Get damping factor  <br /></td></tr>
+<tr class="separator:ae15066b23694171b3c38c0552192465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa938194f2d806834b96d242b20ef5fff" id="r_aa938194f2d806834b96d242b20ef5fff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa938194f2d806834b96d242b20ef5fff">set_regularization</a> (DataType lambda)</td></tr>
+<tr class="memdesc:aa938194f2d806834b96d242b20ef5fff"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置正则化参数 / Set regularization parameter  <br /></td></tr>
+<tr class="separator:aa938194f2d806834b96d242b20ef5fff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a610cf187c3c357ee6091555b5340fd13" id="r_a610cf187c3c357ee6091555b5340fd13"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a610cf187c3c357ee6091555b5340fd13">get_regularization</a> () const</td></tr>
+<tr class="memdesc:a610cf187c3c357ee6091555b5340fd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取正则化参数 / Get regularization parameter  <br /></td></tr>
+<tr class="separator:a610cf187c3c357ee6091555b5340fd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebacea4a42bf68b88ade874753ffda88" id="r_aebacea4a42bf68b88ade874753ffda88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aebacea4a42bf68b88ade874753ffda88">set_enable_safeguarding</a> (bool enable)</td></tr>
+<tr class="memdesc:aebacea4a42bf68b88ade874753ffda88"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启用安全保护 / Set whether to enable safeguarding  <br /></td></tr>
+<tr class="separator:aebacea4a42bf68b88ade874753ffda88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7e20d9b57f16db0efd6f64d53661501" id="r_ab7e20d9b57f16db0efd6f64d53661501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ab7e20d9b57f16db0efd6f64d53661501">get_enable_safeguarding</a> () const</td></tr>
+<tr class="memdesc:ab7e20d9b57f16db0efd6f64d53661501"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否启用安全保护 / Get whether safeguarding is enabled  <br /></td></tr>
+<tr class="separator:ab7e20d9b57f16db0efd6f64d53661501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418b89f708ea9826af2c799cc5e1eba9" id="r_a418b89f708ea9826af2c799cc5e1eba9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a418b89f708ea9826af2c799cc5e1eba9">get_correspondence_type_impl</a> () const</td></tr>
+<tr class="memdesc:a418b89f708ea9826af2c799cc5e1eba9"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对应关系类型（从基础ICP继承） / Get correspondence type (inherited from base ICP)  <br /></td></tr>
+<tr class="separator:a418b89f708ea9826af2c799cc5e1eba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8fe307a38daef1b0138ea89ae68fc8c" id="r_ad8fe307a38daef1b0138ea89ae68fc8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ad8fe307a38daef1b0138ea89ae68fc8c">set_enable_parallel</a> (bool enable)</td></tr>
+<tr class="memdesc:ad8fe307a38daef1b0138ea89ae68fc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否启用并行优化 / Set whether to enable parallel optimization  <br /></td></tr>
+<tr class="separator:ad8fe307a38daef1b0138ea89ae68fc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5a4e24b960a9c3732138f3a11e77e2" id="r_aea5a4e24b960a9c3732138f3a11e77e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aea5a4e24b960a9c3732138f3a11e77e2">get_enable_parallel</a> () const</td></tr>
+<tr class="memdesc:aea5a4e24b960a9c3732138f3a11e77e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否启用并行优化 / Get whether parallel optimization is enabled  <br /></td></tr>
+<tr class="separator:aea5a4e24b960a9c3732138f3a11e77e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a2375bc828f01a3c394c1b6c08dac10a2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2375bc828f01a3c394c1b6c08dac10a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2375bc828f01a3c394c1b6c08dac10a2">base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a2375bc828f01a3c394c1b6c08dac10a2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794ed97eb44f6b007618890a1aac9f36 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a794ed97eb44f6b007618890a1aac9f36"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a794ed97eb44f6b007618890a1aac9f36">~base_fine_registration_t</a> ()=default</td></tr>
+<tr class="separator:a794ed97eb44f6b007618890a1aac9f36 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48a288212fef6206e2667ef8154dc958 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a48a288212fef6206e2667ef8154dc958"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a48a288212fef6206e2667ef8154dc958">base_fine_registration_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a48a288212fef6206e2667ef8154dc958 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a093d107c7fe0c7b441dedeeafb6e5135 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a093d107c7fe0c7b441dedeeafb6e5135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a093d107c7fe0c7b441dedeeafb6e5135">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a093d107c7fe0c7b441dedeeafb6e5135 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe44dff889b8247bec76772284ae2f16 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_abe44dff889b8247bec76772284ae2f16"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#abe44dff889b8247bec76772284ae2f16">base_fine_registration_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:abe44dff889b8247bec76772284ae2f16 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f18ec943a2f8901ad26fb25c1cd7173 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7f18ec943a2f8901ad26fb25c1cd7173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7f18ec943a2f8901ad26fb25c1cd7173">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7f18ec943a2f8901ad26fb25c1cd7173 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a5280677c21801bd398ec9c6c84057ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;source)</td></tr>
+<tr class="memdesc:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云 / Set source point cloud  <br /></td></tr>
+<tr class="separator:a5280677c21801bd398ec9c6c84057ce8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a3adcee04afc40e70acc38fb970c2eb0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置目标点云 / Set target point cloud  <br /></td></tr>
+<tr class="separator:a3adcee04afc40e70acc38fb970c2eb0d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a93edfd38cdad80e9a01b518692f2c533"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a93edfd38cdad80e9a01b518692f2c533">set_max_iterations</a> (std::size_t max_iterations)</td></tr>
+<tr class="memdesc:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大迭代次数 / Set maximum iterations  <br /></td></tr>
+<tr class="separator:a93edfd38cdad80e9a01b518692f2c533 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a85a996d9ca33227b8b1de9b2103e5e91"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a85a996d9ca33227b8b1de9b2103e5e91">get_max_iterations</a> () const</td></tr>
+<tr class="memdesc:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大迭代次数 / Get maximum iterations  <br /></td></tr>
+<tr class="separator:a85a996d9ca33227b8b1de9b2103e5e91 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_af4a4a4c38fc5bb23400fddb5c434ac8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af4a4a4c38fc5bb23400fddb5c434ac8d">set_transformation_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置变换epsilon（收敛阈值） / Set transformation epsilon (convergence threshold)  <br /></td></tr>
+<tr class="separator:af4a4a4c38fc5bb23400fddb5c434ac8d inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a00b6484c34319b54c07c0fa94fc3db7e"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a00b6484c34319b54c07c0fa94fc3db7e">get_transformation_epsilon</a> () const</td></tr>
+<tr class="memdesc:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取变换epsilon / Get transformation epsilon  <br /></td></tr>
+<tr class="separator:a00b6484c34319b54c07c0fa94fc3db7e inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a7cc174f7e3383ad56499bb8db10fd124"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7cc174f7e3383ad56499bb8db10fd124">set_euclidean_fitness_epsilon</a> (DataType epsilon)</td></tr>
+<tr class="memdesc:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置欧氏距离epsilon / Set Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:a7cc174f7e3383ad56499bb8db10fd124 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aef36ccdd6652a90653310d50ec5e6c89"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aef36ccdd6652a90653310d50ec5e6c89">get_euclidean_fitness_epsilon</a> () const</td></tr>
+<tr class="memdesc:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取欧氏距离epsilon / Get Euclidean fitness epsilon  <br /></td></tr>
+<tr class="separator:aef36ccdd6652a90653310d50ec5e6c89 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aead9f67137db66daafa040674003c38c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aead9f67137db66daafa040674003c38c">set_max_correspondence_distance</a> (DataType distance)</td></tr>
+<tr class="memdesc:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置最大对应距离 / Set maximum correspondence distance  <br /></td></tr>
+<tr class="separator:aead9f67137db66daafa040674003c38c inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a4986acd9663d9337545fc55e844027aa"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a4986acd9663d9337545fc55e844027aa">get_max_correspondence_distance</a> () const</td></tr>
+<tr class="memdesc:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取最大对应距离 / Get maximum correspondence distance  <br /></td></tr>
+<tr class="separator:a4986acd9663d9337545fc55e844027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_adbe4eb5214abf6152a2708f0343027aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#adbe4eb5214abf6152a2708f0343027aa">set_record_history</a> (bool record)</td></tr>
+<tr class="memdesc:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置是否记录迭代历史 / Set whether to record iteration history  <br /></td></tr>
+<tr class="separator:adbe4eb5214abf6152a2708f0343027aa inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac70256f005a1c7cb3c6ae78b60a8f89b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac70256f005a1c7cb3c6ae78b60a8f89b">get_record_history</a> () const</td></tr>
+<tr class="memdesc:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取是否记录迭代历史 / Get whether to record iteration history  <br /></td></tr>
+<tr class="separator:ac70256f005a1c7cb3c6ae78b60a8f89b inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a1dfc3785cc037ac6f514643e6997189a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a1dfc3785cc037ac6f514643e6997189a">set_iteration_callback</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a> callback)</td></tr>
+<tr class="memdesc:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置迭代回调函数 / Set iteration callback function  <br /></td></tr>
+<tr class="separator:a1dfc3785cc037ac6f514643e6997189a inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aaa3eb6d6bb6e9d7287f445a449e86075"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aaa3eb6d6bb6e9d7287f445a449e86075">get_correspondence_type</a> () const</td></tr>
+<tr class="memdesc:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取对应关系类型 / Get correspondence type  <br /></td></tr>
+<tr class="separator:aaa3eb6d6bb6e9d7287f445a449e86075 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a12b676bd718ebf8560f11e98335d4e2f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a12b676bd718ebf8560f11e98335d4e2f">has_source_normals</a> () const</td></tr>
+<tr class="memdesc:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查源点云是否有法线 / Check if source cloud has normals  <br /></td></tr>
+<tr class="separator:a12b676bd718ebf8560f11e98335d4e2f inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a359a31f13961ccccdaafc869f2e860c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a359a31f13961ccccdaafc869f2e860c2">has_target_normals</a> () const</td></tr>
+<tr class="memdesc:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查目标点云是否有法线 / Check if target cloud has normals  <br /></td></tr>
+<tr class="separator:a359a31f13961ccccdaafc869f2e860c2 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_af8b471cca882837387c84f4310a3d6ac"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;initial_guess, <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:af8b471cca882837387c84f4310a3d6ac inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ab903639746297df5b83428fe33727468"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ab903639746297df5b83428fe33727468">align</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准（使用单位矩阵作为初始猜测） / Perform registration (using identity as initial guess)  <br /></td></tr>
+<tr class="separator:ab903639746297df5b83428fe33727468 inherit pub_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a665828e6af5fe7b748ab0180ce6d48ca" id="r_a665828e6af5fe7b748ab0180ce6d48ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a665828e6af5fe7b748ab0180ce6d48ca">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a665828e6af5fe7b748ab0180ce6d48ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">额外的输入验证 / Additional input validation  <br /></td></tr>
+<tr class="separator:a665828e6af5fe7b748ab0180ce6d48ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a5f66a447c5fc2d3c94327f757dd5b" id="r_aa4a5f66a447c5fc2d3c94327f757dd5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4a5f66a447c5fc2d3c94327f757dd5b">preprocess_impl</a> ()</td></tr>
+<tr class="memdesc:aa4a5f66a447c5fc2d3c94327f757dd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理 / Preprocessing  <br /></td></tr>
+<tr class="separator:aa4a5f66a447c5fc2d3c94327f757dd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77dd1e2986a6afd369460b09a1c58919" id="r_a77dd1e2986a6afd369460b09a1c58919"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a77dd1e2986a6afd369460b09a1c58919">align_impl</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;initial_guess, <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result)</td></tr>
+<tr class="memdesc:a77dd1e2986a6afd369460b09a1c58919"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行配准 / Perform registration  <br /></td></tr>
+<tr class="separator:a77dd1e2986a6afd369460b09a1c58919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36557befb06493b4880585bf41930b72" id="r_a36557befb06493b4880585bf41930b72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a36557befb06493b4880585bf41930b72">transformation_to_vector</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;transform) const</td></tr>
+<tr class="memdesc:a36557befb06493b4880585bf41930b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">将变换矩阵转换为向量表示 / Convert transformation matrix to vector representation  <br /></td></tr>
+<tr class="separator:a36557befb06493b4880585bf41930b72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316216f47d4c3bdefafe84eda0048afb" id="r_a316216f47d4c3bdefafe84eda0048afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a316216f47d4c3bdefafe84eda0048afb">vector_to_transformation</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &amp;vec) const</td></tr>
+<tr class="memdesc:a316216f47d4c3bdefafe84eda0048afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">将向量表示转换为变换矩阵 / Convert vector representation to transformation matrix  <br /></td></tr>
+<tr class="separator:a316216f47d4c3bdefafe84eda0048afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fab04f1990a87ab686ba23ef6ba41f" id="r_af9fab04f1990a87ab686ba23ef6ba41f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#af9fab04f1990a87ab686ba23ef6ba41f">perform_base_icp_step</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;current_transform, DataType &amp;error, std::size_t &amp;num_correspondences)</td></tr>
+<tr class="memdesc:af9fab04f1990a87ab686ba23ef6ba41f"><td class="mdescLeft">&#160;</td><td class="mdescRight">执行一步基础ICP迭代 / Perform one step of base ICP iteration  <br /></td></tr>
+<tr class="separator:af9fab04f1990a87ab686ba23ef6ba41f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abddd28156d79fdb840804fb493a9bfba" id="r_abddd28156d79fdb840804fb493a9bfba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#abddd28156d79fdb840804fb493a9bfba">anderson_acceleration_update</a> (const std::deque&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &gt; &amp;g_history, const std::deque&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &gt; &amp;x_history)</td></tr>
+<tr class="memdesc:abddd28156d79fdb840804fb493a9bfba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anderson加速更新 / Anderson acceleration update.  <br /></td></tr>
+<tr class="separator:abddd28156d79fdb840804fb493a9bfba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a7a66902a4da9e169dd839978a7c13a" id="r_a9a7a66902a4da9e169dd839978a7c13a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9a7a66902a4da9e169dd839978a7c13a">is_numerically_stable</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &amp;vec) const</td></tr>
+<tr class="memdesc:a9a7a66902a4da9e169dd839978a7c13a"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查数值稳定性 / Check numerical stability  <br /></td></tr>
+<tr class="separator:a9a7a66902a4da9e169dd839978a7c13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a8be4e0c5227585e2fc2e31f26c4d8650"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a8be4e0c5227585e2fc2e31f26c4d8650">validate_input</a> () const</td></tr>
+<tr class="memdesc:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入 / Validate input  <br /></td></tr>
+<tr class="separator:a8be4e0c5227585e2fc2e31f26c4d8650 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a68cd985b447ae36ee790dd933cad43a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a68cd985b447ae36ee790dd933cad43a9">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外输入验证 / Additional input validation for derived class  <br /></td></tr>
+<tr class="separator:a68cd985b447ae36ee790dd933cad43a9 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a34fb318b774c21455d4773239c9d7dda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a34fb318b774c21455d4773239c9d7dda">has_converged</a> (std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;current_transform, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;previous_transform, DataType current_error, DataType previous_error, std::string &amp;termination_reason) const</td></tr>
+<tr class="memdesc:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查收敛条件 / Check convergence criteria  <br /></td></tr>
+<tr class="separator:a34fb318b774c21455d4773239c9d7dda inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0dc395000353854fe4717fa91d389ed0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0dc395000353854fe4717fa91d389ed0">has_converged_impl</a> (std::size_t, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;, DataType, DataType, std::string &amp;) const</td></tr>
+<tr class="memdesc:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类的额外收敛检查 / Additional convergence check for derived class  <br /></td></tr>
+<tr class="separator:a0dc395000353854fe4717fa91d389ed0 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_aea0f5fdf3296e44131c9c6bd939acfc7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aea0f5fdf3296e44131c9c6bd939acfc7">preprocess_impl</a> ()</td></tr>
+<tr class="memdesc:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">预处理钩子（派生类实现） / Preprocessing hook (derived class implementation)  <br /></td></tr>
+<tr class="separator:aea0f5fdf3296e44131c9c6bd939acfc7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0b3e7798019e57f5ab86021d35395875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0b3e7798019e57f5ab86021d35395875">record_iteration</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;result, std::size_t iteration, const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;transform, DataType error, DataType error_change, std::size_t num_correspondences)</td></tr>
+<tr class="memdesc:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">记录迭代状态 / Record iteration state  <br /></td></tr>
+<tr class="separator:a0b3e7798019e57f5ab86021d35395875 inherit pro_methods_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a65a776d6e178bce7c2a57a9aed309b85" id="r_a65a776d6e178bce7c2a57a9aed309b85"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a65a776d6e178bce7c2a57a9aed309b85">base_fine_registration_t&lt; aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt;, DataType &gt;</a></td></tr>
+<tr class="separator:a65a776d6e178bce7c2a57a9aed309b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t&lt; Derived, DataType &gt;</a></td></tr>
+<tr class="memitem:a2e59d606dde0a446e48f79a107eec177 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2e59d606dde0a446e48f79a107eec177"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e59d606dde0a446e48f79a107eec177">m_source_cloud</a></td></tr>
+<tr class="separator:a2e59d606dde0a446e48f79a107eec177 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53e1712f4c6e243c18f209294b7b8ed inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac53e1712f4c6e243c18f209294b7b8ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5ec0b72a04733425a11c90bfc143d5f8">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac53e1712f4c6e243c18f209294b7b8ed">m_target_cloud</a></td></tr>
+<tr class="separator:ac53e1712f4c6e243c18f209294b7b8ed inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e0462b6de13a5472ab390a56fd2dedc inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a2e0462b6de13a5472ab390a56fd2dedc"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a2e0462b6de13a5472ab390a56fd2dedc">m_max_iterations</a> = 50</td></tr>
+<tr class="separator:a2e0462b6de13a5472ab390a56fd2dedc inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0953ef97908ed3f167a20d62cf4a91d2 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a0953ef97908ed3f167a20d62cf4a91d2"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a0953ef97908ed3f167a20d62cf4a91d2">m_transformation_epsilon</a> = static_cast&lt;DataType&gt;(1e-8)</td></tr>
+<tr class="separator:a0953ef97908ed3f167a20d62cf4a91d2 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac390301b292aa61674c58e65f6e60e1b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_ac390301b292aa61674c58e65f6e60e1b"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#ac390301b292aa61674c58e65f6e60e1b">m_euclidean_fitness_epsilon</a> = static_cast&lt;DataType&gt;(1e-6)</td></tr>
+<tr class="separator:ac390301b292aa61674c58e65f6e60e1b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667770c9f6ee70b8eb226a19e9e9f07c inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a667770c9f6ee70b8eb226a19e9e9f07c"><td class="memItemLeft" align="right" valign="top">DataType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a667770c9f6ee70b8eb226a19e9e9f07c">m_max_correspondence_distance</a> = static_cast&lt;DataType&gt;(0.05)</td></tr>
+<tr class="separator:a667770c9f6ee70b8eb226a19e9e9f07c inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936064ace4d3d31d16199ced664a1e0b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a936064ace4d3d31d16199ced664a1e0b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a936064ace4d3d31d16199ced664a1e0b">m_source_updated</a> = false</td></tr>
+<tr class="separator:a936064ace4d3d31d16199ced664a1e0b inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a4abbb1025af9fc08aa8086fc8f4b39 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a6a4abbb1025af9fc08aa8086fc8f4b39"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a6a4abbb1025af9fc08aa8086fc8f4b39">m_target_updated</a> = false</td></tr>
+<tr class="separator:a6a4abbb1025af9fc08aa8086fc8f4b39 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb08d74e84aa721b8f83e029802f6816 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_afb08d74e84aa721b8f83e029802f6816"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#afb08d74e84aa721b8f83e029802f6816">m_record_history</a> = false</td></tr>
+<tr class="separator:afb08d74e84aa721b8f83e029802f6816 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754f9a894b6ee6c8f251cec28b9dc1a4 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t" id="r_a754f9a894b6ee6c8f251cec28b9dc1a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a355ea2074f9c073fc5e616889ba8467e">iteration_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a754f9a894b6ee6c8f251cec28b9dc1a4">m_iteration_callback</a></td></tr>
+<tr class="separator:a754f9a894b6ee6c8f251cec28b9dc1a4 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__fine__registration__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType, typename KNNSearcher = kdtree_t&lt;DataType&gt;, typename BaseICP = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt;<br />
+class toolbox::pcl::aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt;</div><p>AA-ICP (Anderson Acceleration ICP) 算法实现 / AA-ICP algorithm implementation. </p>
+<p>该算法使用Anderson加速技术加速ICP的定点迭代收敛。 This algorithm uses Anderson acceleration to speed up the fixed-point iteration convergence of ICP.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型 / Data type </td></tr>
+    <tr><td class="paramname">KNNSearcher</td><td>KNN搜索器类型 / KNN searcher type </td></tr>
+    <tr><td class="paramname">BaseICP</td><td>基础ICP算法类型（默认为Point-to-Point） / Base ICP algorithm type</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用示例 / Usage example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t&lt;float&gt;</a> <a class="code hl_typedef" href="group__registration.html#gac0e582b181ef2142f004e1632bc5772a">aa_icp</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置Anderson加速参数 / Set Anderson acceleration parameters</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp</a>.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ae807bbf7a846aa53bc2c28638c58cc0e">set_anderson_m</a>(5);  <span class="comment">// 历史窗口大小</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp</a>.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a58727d5da801faeeed45e58a2e319cf4">set_beta</a>(0.5);      <span class="comment">// 阻尼因子</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置点云 / Set point clouds</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp</a>.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">set_source</a>(source_cloud);</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp</a>.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">set_target</a>(target_cloud);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 执行配准 / Perform registration</span></div>
+<div class="line"><a class="code hl_struct" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t&lt;float&gt;</a> result;</div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp</a>.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">align</a>(initial_guess, result);</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a></div><div class="ttdoc">AA-ICP (Anderson Acceleration ICP) 算法实现 / AA-ICP algorithm implementation.</div><div class="ttdef"><b>Definition</b> aa_icp.hpp:43</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a58727d5da801faeeed45e58a2e319cf4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a58727d5da801faeeed45e58a2e319cf4">toolbox::pcl::aa_icp_t::set_beta</a></div><div class="ttdeci">void set_beta(DataType beta)</div><div class="ttdoc">设置阻尼因子 / Set damping factor</div><div class="ttdef"><b>Definition</b> aa_icp.hpp:81</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_ae807bbf7a846aa53bc2c28638c58cc0e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#ae807bbf7a846aa53bc2c28638c58cc0e">toolbox::pcl::aa_icp_t::set_anderson_m</a></div><div class="ttdeci">void set_anderson_m(std::size_t m)</div><div class="ttdoc">设置Anderson加速的历史窗口大小 / Set Anderson acceleration history window size</div><div class="ttdef"><b>Definition</b> aa_icp.hpp:70</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a3adcee04afc40e70acc38fb970c2eb0d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a3adcee04afc40e70acc38fb970c2eb0d">toolbox::pcl::base_fine_registration_t::set_target</a></div><div class="ttdeci">void set_target(const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置目标点云 / Set target point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:69</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_a5280677c21801bd398ec9c6c84057ce8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a5280677c21801bd398ec9c6c84057ce8">toolbox::pcl::base_fine_registration_t::set_source</a></div><div class="ttdeci">void set_source(const point_cloud_ptr &amp;source)</div><div class="ttdoc">设置源点云 / Set source point cloud</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:60</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_af8b471cca882837387c84f4310a3d6ac"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#af8b471cca882837387c84f4310a3d6ac">toolbox::pcl::base_fine_registration_t::align</a></div><div class="ttdeci">bool align(const transformation_t &amp;initial_guess, result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:189</div></div>
+<div class="ttc" id="agroup__registration_html_gac0e582b181ef2142f004e1632bc5772a"><div class="ttname"><a href="group__registration.html#gac0e582b181ef2142f004e1632bc5772a">toolbox::pcl::aa_icp</a></div><div class="ttdeci">aa_icp_t&lt; float &gt; aa_icp</div><div class="ttdef"><b>Definition</b> registration.hpp:103</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">toolbox::pcl::fine_registration_result_t</a></div><div class="ttdoc">细配准结果 / Fine registration result</div><div class="ttdef"><b>Definition</b> registration_result.hpp:46</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a1631addbb1c7b507a9d819530062c7e3" name="a1631addbb1c7b507a9d819530062c7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1631addbb1c7b507a9d819530062c7e3">&#9670;&#160;</a></span>base_icp_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::base_icp_type =  BaseICP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedc00222043c8c1aa918a267cbb82f20" name="aedc00222043c8c1aa918a267cbb82f20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedc00222043c8c1aa918a267cbb82f20">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt;DataType, KNNSearcher, BaseICP&gt;, DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a033216ec283605e605121c960a8acfcd" name="a033216ec283605e605121c960a8acfcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033216ec283605e605121c960a8acfcd">&#9670;&#160;</a></span>MatrixX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::MatrixX =  Eigen::Matrix&lt;DataType, Eigen::Dynamic, Eigen::Dynamic&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3d302e0ee557581bda614484fb09b1fd" name="a3d302e0ee557581bda614484fb09b1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d302e0ee557581bda614484fb09b1fd">&#9670;&#160;</a></span>point_cloud</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud =  <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ec0b72a04733425a11c90bfc143d5f8" name="a5ec0b72a04733425a11c90bfc143d5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec0b72a04733425a11c90bfc143d5f8">&#9670;&#160;</a></span>point_cloud_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::point_cloud_ptr =  std::shared_ptr&lt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a3d302e0ee557581bda614484fb09b1fd">point_cloud</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7e356974e1a7515987e74177a39972da" name="a7e356974e1a7515987e74177a39972da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e356974e1a7515987e74177a39972da">&#9670;&#160;</a></span>result_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::result_type =  <a class="el" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">fine_registration_result_t</a>&lt;DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4f07a1c847fa7565d58f9a0354011f8" name="aa4f07a1c847fa7565d58f9a0354011f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f07a1c847fa7565d58f9a0354011f8">&#9670;&#160;</a></span>transformation_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">toolbox::pcl::base_fine_registration_t</a>&lt; Derived, DataType &gt;::transformation_t =  Eigen::Matrix&lt;DataType, 4, 4&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9cfa3b910e12b8aa0df9f0ad417fc549" name="a9cfa3b910e12b8aa0df9f0ad417fc549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfa3b910e12b8aa0df9f0ad417fc549">&#9670;&#160;</a></span>VectorX</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::VectorX =  Eigen::Matrix&lt;DataType, Eigen::Dynamic, 1&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a4bc440746d8a43e10ea4635f618441b6" name="a4bc440746d8a43e10ea4635f618441b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bc440746d8a43e10ea4635f618441b6">&#9670;&#160;</a></span>aa_icp_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::aa_icp_t </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable_parallel</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>构造函数 / Constructor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable_parallel</td><td>是否启用并行优化（默认开启） / Enable parallel optimization (default enabled) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a77dd1e2986a6afd369460b09a1c58919" name="a77dd1e2986a6afd369460b09a1c58919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77dd1e2986a6afd369460b09a1c58919">&#9670;&#160;</a></span>align_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::align_impl </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>initial_guess</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#a7e356974e1a7515987e74177a39972da">result_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行配准 / Perform registration </p>
+
+</div>
+</div>
+<a id="abddd28156d79fdb840804fb493a9bfba" name="abddd28156d79fdb840804fb493a9bfba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abddd28156d79fdb840804fb493a9bfba">&#9670;&#160;</a></span>anderson_acceleration_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">::VectorX</a> <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::anderson_acceleration_update </td>
+          <td>(</td>
+          <td class="paramtype">const std::deque&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>g_history</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::deque&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x_history</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Anderson加速更新 / Anderson acceleration update. </p>
+
+</div>
+</div>
+<a id="a373a29c3d65d978c79480ebe8aaf1e40" name="a373a29c3d65d978c79480ebe8aaf1e40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a373a29c3d65d978c79480ebe8aaf1e40">&#9670;&#160;</a></span>get_anderson_m()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_anderson_m </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取Anderson加速的历史窗口大小 / Get Anderson acceleration history window size </p>
+
+</div>
+</div>
+<a id="ae15066b23694171b3c38c0552192465f" name="ae15066b23694171b3c38c0552192465f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15066b23694171b3c38c0552192465f">&#9670;&#160;</a></span>get_beta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_beta </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取阻尼因子 / Get damping factor </p>
+
+</div>
+</div>
+<a id="a418b89f708ea9826af2c799cc5e1eba9" name="a418b89f708ea9826af2c799cc5e1eba9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418b89f708ea9826af2c799cc5e1eba9">&#9670;&#160;</a></span>get_correspondence_type_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetoolbox_1_1pcl.html#a810407792cc81f7e2eb7f08eade3066b">correspondence_type_e</a> <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_correspondence_type_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取对应关系类型（从基础ICP继承） / Get correspondence type (inherited from base ICP) </p>
+
+</div>
+</div>
+<a id="aea5a4e24b960a9c3732138f3a11e77e2" name="aea5a4e24b960a9c3732138f3a11e77e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea5a4e24b960a9c3732138f3a11e77e2">&#9670;&#160;</a></span>get_enable_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_enable_parallel </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否启用并行优化 / Get whether parallel optimization is enabled </p>
+
+</div>
+</div>
+<a id="ab7e20d9b57f16db0efd6f64d53661501" name="ab7e20d9b57f16db0efd6f64d53661501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7e20d9b57f16db0efd6f64d53661501">&#9670;&#160;</a></span>get_enable_safeguarding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_enable_safeguarding </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取是否启用安全保护 / Get whether safeguarding is enabled </p>
+
+</div>
+</div>
+<a id="a610cf187c3c357ee6091555b5340fd13" name="a610cf187c3c357ee6091555b5340fd13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a610cf187c3c357ee6091555b5340fd13">&#9670;&#160;</a></span>get_regularization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">DataType <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::get_regularization </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取正则化参数 / Get regularization parameter </p>
+
+</div>
+</div>
+<a id="a9a7a66902a4da9e169dd839978a7c13a" name="a9a7a66902a4da9e169dd839978a7c13a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a7a66902a4da9e169dd839978a7c13a">&#9670;&#160;</a></span>is_numerically_stable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::is_numerically_stable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查数值稳定性 / Check numerical stability </p>
+
+</div>
+</div>
+<a id="af9fab04f1990a87ab686ba23ef6ba41f" name="af9fab04f1990a87ab686ba23ef6ba41f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fab04f1990a87ab686ba23ef6ba41f">&#9670;&#160;</a></span>perform_base_icp_step()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">::transformation_t</a> <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::perform_base_icp_step </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>current_transform</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataType &amp;&#160;</td>
+          <td class="paramname"><em>error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t &amp;&#160;</td>
+          <td class="paramname"><em>num_correspondences</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>执行一步基础ICP迭代 / Perform one step of base ICP iteration </p>
+
+</div>
+</div>
+<a id="aa4a5f66a447c5fc2d3c94327f757dd5b" name="aa4a5f66a447c5fc2d3c94327f757dd5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a5f66a447c5fc2d3c94327f757dd5b">&#9670;&#160;</a></span>preprocess_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::preprocess_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>预处理 / Preprocessing </p>
+
+</div>
+</div>
+<a id="ae807bbf7a846aa53bc2c28638c58cc0e" name="ae807bbf7a846aa53bc2c28638c58cc0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae807bbf7a846aa53bc2c28638c58cc0e">&#9670;&#160;</a></span>set_anderson_m()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::set_anderson_m </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置Anderson加速的历史窗口大小 / Set Anderson acceleration history window size </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">m</td><td>历史窗口大小（默认5） / History window size (default 5) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a58727d5da801faeeed45e58a2e319cf4" name="a58727d5da801faeeed45e58a2e319cf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58727d5da801faeeed45e58a2e319cf4">&#9670;&#160;</a></span>set_beta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::set_beta </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>beta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置阻尼因子 / Set damping factor </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">beta</td><td>阻尼因子（0-1），用于稳定性 / Damping factor (0-1) for stability </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8fe307a38daef1b0138ea89ae68fc8c" name="ad8fe307a38daef1b0138ea89ae68fc8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8fe307a38daef1b0138ea89ae68fc8c">&#9670;&#160;</a></span>set_enable_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::set_enable_parallel </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否启用并行优化 / Set whether to enable parallel optimization </p>
+
+</div>
+</div>
+<a id="aebacea4a42bf68b88ade874753ffda88" name="aebacea4a42bf68b88ade874753ffda88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebacea4a42bf68b88ade874753ffda88">&#9670;&#160;</a></span>set_enable_safeguarding()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::set_enable_safeguarding </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置是否启用安全保护 / Set whether to enable safeguarding </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>是否启用 / Whether to enable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa938194f2d806834b96d242b20ef5fff" name="aa938194f2d806834b96d242b20ef5fff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa938194f2d806834b96d242b20ef5fff">&#9670;&#160;</a></span>set_regularization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::set_regularization </td>
+          <td>(</td>
+          <td class="paramtype">DataType&#160;</td>
+          <td class="paramname"><em>lambda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置正则化参数 / Set regularization parameter </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lambda</td><td>正则化系数 / Regularization coefficient </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36557befb06493b4880585bf41930b72" name="a36557befb06493b4880585bf41930b72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36557befb06493b4880585bf41930b72">&#9670;&#160;</a></span>transformation_to_vector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">::VectorX</a> <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::transformation_to_vector </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>transform</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将变换矩阵转换为向量表示 / Convert transformation matrix to vector representation </p>
+
+</div>
+</div>
+<a id="a665828e6af5fe7b748ab0180ce6d48ca" name="a665828e6af5fe7b748ab0180ce6d48ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a665828e6af5fe7b748ab0180ce6d48ca">&#9670;&#160;</a></span>validate_input_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::validate_input_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>额外的输入验证 / Additional input validation </p>
+
+</div>
+</div>
+<a id="a316216f47d4c3bdefafe84eda0048afb" name="a316216f47d4c3bdefafe84eda0048afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316216f47d4c3bdefafe84eda0048afb">&#9670;&#160;</a></span>vector_to_transformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher , typename BaseICP &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;<a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">::transformation_t</a> <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">toolbox::pcl::aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;::vector_to_transformation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>将向量表示转换为变换矩阵 / Convert vector representation to transformation matrix </p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a65a776d6e178bce7c2a57a9aed309b85" name="a65a776d6e178bce7c2a57a9aed309b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65a776d6e178bce7c2a57a9aed309b85">&#9670;&#160;</a></span>base_fine_registration_t&lt; aa_icp_t&lt; DataType, KNNSearcher, BaseICP &gt;, DataType &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType , typename KNNSearcher  = kdtree_t&lt;DataType&gt;, typename BaseICP  = point_to_point_icp_t&lt;DataType, KNNSearcher&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html">base_fine_registration_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a>&lt; DataType, KNNSearcher, BaseICP &gt;, DataType &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/include/cpp-toolbox/pcl/registration/<a class="el" href="aa__icp_8hpp_source.html">aa_icp.hpp</a></li>
+<li>src/include/cpp-toolbox/pcl/registration/impl/<a class="el" href="aa__icp__impl_8hpp_source.html">aa_icp_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1aa__icp__t.html">aa_icp_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

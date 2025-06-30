@@ -5,7 +5,13 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::utils::simple\l_timer_interface_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1simple__timer__interface__t.html",tooltip="Interface for managing a collection of timers."];
-  Node0 -> Node1 [id="edge123_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 [id="Node000001",label="toolbox::utils::simple\l_timer_array_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1simple__timer__array__t.html",tooltip="Concrete implementation of simple_timer_interface_t using an array of timers."];
+  Node0 [id="Node000000",label="toolbox::utils::parameter_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1parameter__t.html",tooltip=" "];
+  Node0 -> Node1 [id="edge125_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::utils::option\l_t\< bool \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1option__t.html",tooltip=" "];
+  Node1 -> Node2 [id="edge126_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::utils::flag_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1flag__t.html",tooltip=" "];
+  Node0 -> Node3 [id="edge127_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="toolbox::utils::argument\l_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1argument__t.html",tooltip=" "];
+  Node0 -> Node4 [id="edge128_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="toolbox::utils::option\l_t\< T \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1utils_1_1option__t.html",tooltip=" "];
 }

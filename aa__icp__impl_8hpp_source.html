@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/registration/impl/aa_icp_impl.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('aa__icp__impl_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">aa_icp_impl.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="aa__icp__impl_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="aa__icp_8hpp.html">cpp-toolbox/pcl/registration/aa_icp.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>{</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="}">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a77dd1e2986a6afd369460b09a1c58919">    9</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a77dd1e2986a6afd369460b09a1c58919">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::align_impl</a>(</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&amp; initial_guess, <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">result_type</a>&amp; result)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="comment">// 初始化</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> current_transform = initial_guess;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> previous_transform = current_transform;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  DataType previous_error = std::numeric_limits&lt;DataType&gt;::max();</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordtype">bool</span> converged = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="comment">// 清空历史记录</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  m_g_history.clear();</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  m_x_history.clear();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  m_initialized = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="comment">// 传递基类参数到基础ICP，并设置点云</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  m_base_icp.set_source(this-&gt;m_source_cloud);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  m_base_icp.set_target(this-&gt;m_target_cloud);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  m_base_icp.set_max_iterations(10);  <span class="comment">// 设置更多迭代次数</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  m_base_icp.set_max_correspondence_distance(this-&gt;m_max_correspondence_distance);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  m_base_icp.set_transformation_epsilon(this-&gt;m_transformation_epsilon);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  m_base_icp.set_euclidean_fitness_epsilon(this-&gt;m_euclidean_fitness_epsilon);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="comment">// 迭代优化</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordflow">for</span> (std::size_t iter = 0; iter &lt; this-&gt;m_max_iterations; ++iter) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// 执行一步基础ICP</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    DataType current_error;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::size_t num_correspondences;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> icp_transform = perform_base_icp_step(</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        current_transform, current_error, num_correspondences);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordflow">if</span> (num_correspondences == 0) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;未找到有效的对应关系 / No valid correspondences found&quot;</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a27692fcc9a6efdd389adcde561f6c0d6">termination_reason</a> = <span class="stringliteral">&quot;no correspondences&quot;</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// 转换为向量表示</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> x_current = transformation_to_vector(current_transform);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> x_icp = transformation_to_vector(icp_transform);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">// 计算定点迭代的残差 g(x) = f(x) - x</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> g_current = x_icp - x_current;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// 更新历史记录</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    m_x_history.push_back(x_current);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    m_g_history.push_back(g_current);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// 限制历史记录大小</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">if</span> (m_x_history.size() &gt; m_anderson_m + 1) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      m_x_history.pop_front();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      m_g_history.pop_front();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// 计算下一次迭代的变换</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> x_next;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">if</span> (m_x_history.size() &lt;= 1 || iter &lt; 2) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="comment">// 前几次迭代使用标准ICP更新</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      x_next = x_icp;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="comment">// 使用Anderson加速</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      x_next = anderson_acceleration_update(m_g_history, m_x_history);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="comment">// 安全保护：检查Anderson加速的结果</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">if</span> (m_enable_safeguarding) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keywordflow">if</span> (!is_numerically_stable(x_next)) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;Anderson加速结果不稳定，回退到标准ICP / &quot;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                        <span class="stringliteral">&quot;Anderson acceleration unstable, falling back to standard ICP&quot;</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>          x_next = x_icp;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          <span class="comment">// 清空历史，重新开始</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          m_x_history.clear();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>          m_g_history.clear();</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          m_x_history.push_back(x_current);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          m_g_history.push_back(g_current);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>          <span class="comment">// 计算新变换对应的误差</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>          <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> test_transform = vector_to_transformation(x_next);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          DataType test_error;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>          std::size_t test_corr;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>          perform_base_icp_step(test_transform, test_error, test_corr);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>          </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>          <span class="comment">// 如果误差增加太多，使用阻尼</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>          <span class="keywordflow">if</span> (test_error &gt; current_error * (1.0 + 0.1)) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            x_next = m_beta * x_next + (1.0 - m_beta) * x_icp;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>          }</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// 更新变换</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> next_transform = vector_to_transformation(x_next);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// 记录迭代状态</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    DataType error_change = std::abs(current_error - previous_error);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    this-&gt;record_iteration(result, iter, next_transform, current_error, </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>                          error_change, num_correspondences);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="comment">// 检查收敛</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    std::string termination_reason;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">if</span> (this-&gt;has_converged(iter, next_transform, current_transform,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                           current_error, previous_error, termination_reason)) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>      converged = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a27692fcc9a6efdd389adcde561f6c0d6">termination_reason</a> = termination_reason;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="comment">// 更新状态</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    previous_transform = current_transform;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    current_transform = next_transform;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    previous_error = current_error;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="comment">// 设置结果</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5b48cd5cce94db9f6c848cd4c342106f">transformation</a> = current_transform;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5bbf8b9f0b68c79b411bf2b016ce29f3">converged</a> = converged;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a951eb8df89bd67eb912d7a1e7fd2da2a">iterations_performed</a> = result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a198edc28fa5e6e4d5045bb97ea5374c9">history</a>.size();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5c05bf6d042b28c83b52de01dc078158">final_error</a> = previous_error;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">if</span> (!converged &amp;&amp; result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a27692fcc9a6efdd389adcde561f6c0d6">termination_reason</a>.empty()) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a27692fcc9a6efdd389adcde561f6c0d6">termination_reason</a> = <span class="stringliteral">&quot;maximum iterations reached&quot;</span>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  }</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">typename</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::VectorX</a></div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a36557befb06493b4880585bf41930b72">  138</a></span><a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a36557befb06493b4880585bf41930b72">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::transformation_to_vector</a>(</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&amp; transform)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> vec(12);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  <span class="comment">// 将4x4矩阵的前3行展平为向量</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 4; ++j) {</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      vec[i * 4 + j] = transform(i, j);</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordflow">return</span> vec;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">typename</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::transformation_t</a></div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a316216f47d4c3bdefafe84eda0048afb">  155</a></span><a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a316216f47d4c3bdefafe84eda0048afb">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::vector_to_transformation</a>(</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a>&amp; vec)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> transform = transformation_t::Identity();</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  <span class="comment">// 从向量恢复4x4矩阵的前3行</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 3; ++i) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 4; ++j) {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      transform(i, j) = vec[i * 4 + j];</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="comment">// 正交化旋转矩阵部分（使用SVD）</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  Eigen::Matrix&lt;DataType, 3, 3&gt; R = transform.template block&lt;3, 3&gt;(0, 0);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  Eigen::JacobiSVD&lt;Eigen::Matrix&lt;DataType, 3, 3&gt;&gt; svd(R, Eigen::ComputeFullU | Eigen::ComputeFullV);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  R = svd.matrixU() * svd.matrixV().transpose();</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  </div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  <span class="comment">// 处理反射</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordflow">if</span> (R.determinant() &lt; 0) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    Eigen::Matrix&lt;DataType, 3, 3&gt; V = svd.matrixV();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    V.col(2) *= -1;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    R = svd.matrixU() * V.transpose();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  transform.template block&lt;3, 3&gt;(0, 0) = R;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordflow">return</span> transform;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>}</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">typename</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::transformation_t</a></div>
+<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#af9fab04f1990a87ab686ba23ef6ba41f">  186</a></span><a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#af9fab04f1990a87ab686ba23ef6ba41f">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::perform_base_icp_step</a>(</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a>&amp; current_transform,</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    DataType&amp; error,</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    std::size_t&amp; num_correspondences)</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>{</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="comment">// 创建临时结果对象</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">result_type</a> temp_result;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <a class="code hl_define" href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a> &lt;&lt; <span class="stringliteral">&quot;AA-ICP: 执行基础ICP步骤，源点云大小=&quot;</span> &lt;&lt; this-&gt;m_source_cloud-&gt;size() </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>              &lt;&lt; <span class="stringliteral">&quot;，目标点云大小=&quot;</span> &lt;&lt; this-&gt;m_target_cloud-&gt;size()</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>              &lt;&lt; <span class="stringliteral">&quot;，最大对应距离=&quot;</span> &lt;&lt; this-&gt;m_max_correspondence_distance;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="comment">// 执行一步基础ICP</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  m_base_icp.align(current_transform, temp_result);</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="comment">// 提取结果</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  error = temp_result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5c05bf6d042b28c83b52de01dc078158">final_error</a>;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  num_correspondences = temp_result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a198edc28fa5e6e4d5045bb97ea5374c9">history</a>.empty() ? 0 : </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                       temp_result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a198edc28fa5e6e4d5045bb97ea5374c9">history</a>.back().num_correspondences;</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keywordflow">return</span> temp_result.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5b48cd5cce94db9f6c848cd4c342106f">transformation</a>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>}</div>
+</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword">typename</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::VectorX</a></div>
+<div class="foldopen" id="foldopen00211" data-start="{" data-end="}">
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#abddd28156d79fdb840804fb493a9bfba">  211</a></span><a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#abddd28156d79fdb840804fb493a9bfba">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::anderson_acceleration_update</a>(</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keyword">const</span> std::deque&lt;VectorX&gt;&amp; g_history,</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">const</span> std::deque&lt;VectorX&gt;&amp; x_history)</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>{</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keyword">const</span> std::size_t m_k = std::min(m_anderson_m, g_history.size() - 1);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordflow">if</span> (m_k == 0) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="comment">// 标准定点迭代</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordflow">return</span> x_history.back() + g_history.back();</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  }</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="comment">// 构建矩阵 G_k = [g_k - g_{k-1}, ..., g_k - g_{k-m_k}]</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a033216ec283605e605121c960a8acfcd">MatrixX</a> G_k(g_history.back().size(), m_k);</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; m_k; ++i) {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    G_k.col(i) = g_history[g_history.size() - 1] - g_history[g_history.size() - 2 - i];</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  }</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>  </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="comment">// 求解最小二乘问题：min ||G_k * gamma + g_k||^2</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="comment">// 使用QR分解求解</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  Eigen::HouseholderQR&lt;MatrixX&gt; qr(G_k);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> gamma = qr.solve(-g_history.back());</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="comment">// 检查解的数值稳定性</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  DataType gamma_norm = gamma.norm();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keywordflow">if</span> (gamma_norm &gt; 10.0) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">// 如果系数太大，进行截断</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    gamma *= 10.0 / gamma_norm;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="comment">// 计算加权组合</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a> x_next = x_history.back() + g_history.back();</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; m_k; ++i) {</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    std::size_t idx = x_history.size() - 2 - i;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    x_next -= gamma[i] * (x_history[idx + 1] - x_history[idx] + </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                          g_history[idx + 1] - g_history[idx]);</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  }</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordflow">return</span> x_next;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>}</div>
+</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> KNNSearcher, <span class="keyword">typename</span> BaseICP&gt;</div>
+<div class="foldopen" id="foldopen00254" data-start="{" data-end="}">
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9a7a66902a4da9e169dd839978a7c13a">  254</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9a7a66902a4da9e169dd839978a7c13a">aa_icp_t&lt;DataType, KNNSearcher, BaseICP&gt;::is_numerically_stable</a>(</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">VectorX</a>&amp; vec)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="comment">// 检查是否包含NaN或Inf</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordflow">if</span> (!vec.allFinite()) {</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="comment">// 检查向量范数是否合理</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  DataType norm = vec.norm();</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordflow">if</span> (norm &gt; 1e6 || norm &lt; 1e-6) {</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  <span class="comment">// 检查变换矩阵的合理性</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">transformation_t</a> transform = vector_to_transformation(vec);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="comment">// 旋转部分的行列式应该接近1</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  DataType det = transform.template block&lt;3, 3&gt;(0, 0).determinant();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordflow">if</span> (std::abs(det - 1.0) &gt; 0.1) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  }</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  </div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="comment">// 平移部分不应该太大</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  DataType translation_norm = transform.template block&lt;3, 1&gt;(0, 3).norm();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordflow">if</span> (translation_norm &gt; 100.0) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}</div>
+</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="ttc" id="aaa__icp_8hpp_html"><div class="ttname"><a href="aa__icp_8hpp.html">aa_icp.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a033216ec283605e605121c960a8acfcd"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a033216ec283605e605121c960a8acfcd">toolbox::pcl::aa_icp_t::MatrixX</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, Eigen::Dynamic, Eigen::Dynamic &gt; MatrixX</div><div class="ttdef"><b>Definition</b> aa_icp.hpp:53</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a316216f47d4c3bdefafe84eda0048afb"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a316216f47d4c3bdefafe84eda0048afb">toolbox::pcl::aa_icp_t::vector_to_transformation</a></div><div class="ttdeci">transformation_t vector_to_transformation(const VectorX &amp;vec) const</div><div class="ttdoc">将向量表示转换为变换矩阵 / Convert vector representation to transformation matrix</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:155</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a36557befb06493b4880585bf41930b72"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a36557befb06493b4880585bf41930b72">toolbox::pcl::aa_icp_t::transformation_to_vector</a></div><div class="ttdeci">VectorX transformation_to_vector(const transformation_t &amp;transform) const</div><div class="ttdoc">将变换矩阵转换为向量表示 / Convert transformation matrix to vector representation</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:138</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a77dd1e2986a6afd369460b09a1c58919"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a77dd1e2986a6afd369460b09a1c58919">toolbox::pcl::aa_icp_t::align_impl</a></div><div class="ttdeci">bool align_impl(const transformation_t &amp;initial_guess, result_type &amp;result)</div><div class="ttdoc">执行配准 / Perform registration</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:9</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a9a7a66902a4da9e169dd839978a7c13a"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9a7a66902a4da9e169dd839978a7c13a">toolbox::pcl::aa_icp_t::is_numerically_stable</a></div><div class="ttdeci">bool is_numerically_stable(const VectorX &amp;vec) const</div><div class="ttdoc">检查数值稳定性 / Check numerical stability</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:254</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_a9cfa3b910e12b8aa0df9f0ad417fc549"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#a9cfa3b910e12b8aa0df9f0ad417fc549">toolbox::pcl::aa_icp_t::VectorX</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, Eigen::Dynamic, 1 &gt; VectorX</div><div class="ttdef"><b>Definition</b> aa_icp.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_aa4f07a1c847fa7565d58f9a0354011f8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#aa4f07a1c847fa7565d58f9a0354011f8">toolbox::pcl::aa_icp_t::transformation_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; transformation_t</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:43</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_abddd28156d79fdb840804fb493a9bfba"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#abddd28156d79fdb840804fb493a9bfba">toolbox::pcl::aa_icp_t::anderson_acceleration_update</a></div><div class="ttdeci">VectorX anderson_acceleration_update(const std::deque&lt; VectorX &gt; &amp;g_history, const std::deque&lt; VectorX &gt; &amp;x_history)</div><div class="ttdoc">Anderson加速更新 / Anderson acceleration update.</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:211</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1aa__icp__t_html_af9fab04f1990a87ab686ba23ef6ba41f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1aa__icp__t.html#af9fab04f1990a87ab686ba23ef6ba41f">toolbox::pcl::aa_icp_t::perform_base_icp_step</a></div><div class="ttdeci">transformation_t perform_base_icp_step(const transformation_t &amp;current_transform, DataType &amp;error, std::size_t &amp;num_correspondences)</div><div class="ttdoc">执行一步基础ICP迭代 / Perform one step of base ICP iteration</div><div class="ttdef"><b>Definition</b> aa_icp_impl.hpp:186</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__fine__registration__t_html_aa4f07a1c847fa7565d58f9a0354011f8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__fine__registration__t.html#aa4f07a1c847fa7565d58f9a0354011f8">toolbox::pcl::base_fine_registration_t::transformation_t</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; transformation_t</div><div class="ttdef"><b>Definition</b> base_fine_registration.hpp:43</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga1b58a6e7c97c1f4ca2fddf21b5e47251"><div class="ttname"><a href="group___logging_macros.html#ga1b58a6e7c97c1f4ca2fddf21b5e47251">LOG_DEBUG_S</a></div><div class="ttdeci">#define LOG_DEBUG_S</div><div class="ttdoc">DEBUG级别流式日志的宏 / Macro for DEBUG level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1329</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
+<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1331</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html">toolbox::pcl::fine_registration_result_t</a></div><div class="ttdoc">细配准结果 / Fine registration result</div><div class="ttdef"><b>Definition</b> registration_result.hpp:46</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a198edc28fa5e6e4d5045bb97ea5374c9"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a198edc28fa5e6e4d5045bb97ea5374c9">toolbox::pcl::fine_registration_result_t::history</a></div><div class="ttdeci">std::vector&lt; iteration_state_t&lt; DataType &gt; &gt; history</div><div class="ttdoc">迭代历史（可选） / Iteration history (optional)</div><div class="ttdef"><b>Definition</b> registration_result.hpp:61</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a27692fcc9a6efdd389adcde561f6c0d6"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a27692fcc9a6efdd389adcde561f6c0d6">toolbox::pcl::fine_registration_result_t::termination_reason</a></div><div class="ttdeci">std::string termination_reason</div><div class="ttdoc">终止原因 / Termination reason</div><div class="ttdef"><b>Definition</b> registration_result.hpp:58</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a5b48cd5cce94db9f6c848cd4c342106f"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5b48cd5cce94db9f6c848cd4c342106f">toolbox::pcl::fine_registration_result_t::transformation</a></div><div class="ttdeci">transformation_t transformation</div><div class="ttdoc">最终变换 / Final transformation</div><div class="ttdef"><b>Definition</b> registration_result.hpp:49</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a5bbf8b9f0b68c79b411bf2b016ce29f3"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5bbf8b9f0b68c79b411bf2b016ce29f3">toolbox::pcl::fine_registration_result_t::converged</a></div><div class="ttdeci">bool converged</div><div class="ttdoc">是否收敛 / Whether converged</div><div class="ttdef"><b>Definition</b> registration_result.hpp:57</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a5c05bf6d042b28c83b52de01dc078158"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a5c05bf6d042b28c83b52de01dc078158">toolbox::pcl::fine_registration_result_t::final_error</a></div><div class="ttdeci">DataType final_error</div><div class="ttdoc">最终误差 / Final error</div><div class="ttdef"><b>Definition</b> registration_result.hpp:53</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1fine__registration__result__t_html_a951eb8df89bd67eb912d7a1e7fd2da2a"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1fine__registration__result__t.html#a951eb8df89bd67eb912d7a1e7fd2da2a">toolbox::pcl::fine_registration_result_t::iterations_performed</a></div><div class="ttdeci">std::size_t iterations_performed</div><div class="ttdoc">执行的迭代次数 / Iterations performed</div><div class="ttdef"><b>Definition</b> registration_result.hpp:55</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_0bd0c49aa95dc07b46acbdff3f1b0765.html">registration</a></li><li class="navelem"><a class="el" href="dir_3138dcc476fc8c0896ac93ef260b5ae6.html">impl</a></li><li class="navelem"><a class="el" href="aa__icp__impl_8hpp.html">aa_icp_impl.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

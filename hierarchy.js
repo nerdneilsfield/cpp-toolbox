@@ -49,7 +49,20 @@ var hierarchy =
       [ "toolbox::io::kitti_format_t", "classtoolbox_1_1io_1_1kitti__format__t.html", null ],
       [ "toolbox::io::pcd_format_t", "classtoolbox_1_1io_1_1pcd__format__t.html", null ]
     ] ],
-    [ "toolbox::pcl::base_fine_registration_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
+    [ "toolbox::pcl::base_fine_registration_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", [
+      [ "toolbox::pcl::point_to_point_icp_t< DataType, kdtree_t< DataType > >", "classtoolbox_1_1pcl_1_1point__to__point__icp__t.html", null ],
+      [ "toolbox::pcl::aa_icp_t< DataType, KNNSearcher, BaseICP >", "classtoolbox_1_1pcl_1_1aa__icp__t.html", null ],
+      [ "toolbox::pcl::generalized_icp_t< DataType, KNNSearcher >", "classtoolbox_1_1pcl_1_1generalized__icp__t.html", null ],
+      [ "toolbox::pcl::point_to_plane_icp_t< DataType, KNNSearcher >", "classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html", null ],
+      [ "toolbox::pcl::point_to_point_icp_t< DataType, KNNSearcher >", "classtoolbox_1_1pcl_1_1point__to__point__icp__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_fine_registration_t< aa_icp_t< DataType, kdtree_t< DataType >, point_to_point_icp_t< DataType, kdtree_t< DataType > > >, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
+    [ "toolbox::pcl::base_fine_registration_t< generalized_icp_t< DataType, kdtree_t< DataType > >, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
+    [ "toolbox::pcl::base_fine_registration_t< ndt_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", [
+      [ "toolbox::pcl::ndt_t< DataType >", "classtoolbox_1_1pcl_1_1ndt__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_fine_registration_t< point_to_plane_icp_t< DataType, kdtree_t< DataType > >, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
+    [ "toolbox::pcl::base_fine_registration_t< point_to_point_icp_t< DataType, kdtree_t< DataType > >, DataType >", "classtoolbox_1_1pcl_1_1base__fine__registration__t.html", null ],
     [ "toolbox::pcl::base_keypoint_extractor_t< Derived, DataType, KNN >", "classtoolbox_1_1pcl_1_1base__keypoint__extractor__t.html", null ],
     [ "base_keypoint_extractor_t< agast_keypoint_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >", null, [
       [ "toolbox::pcl::agast_keypoint_extractor_t< DataType, KNN >", "classtoolbox_1_1pcl_1_1agast__keypoint__extractor__t.html", null ]
@@ -333,6 +346,7 @@ var hierarchy =
     [ "toolbox::types::minmax_t< T >", "structtoolbox_1_1types_1_1minmax__t.html", null ],
     [ "toolbox::types::minmax_t< point_t< T > >", "structtoolbox_1_1types_1_1minmax__t_3_01point__t_3_01_t_01_4_01_4.html", null ],
     [ "toolbox::pcl::mls_keypoint_extractor_t< DataType, KNN >::MLSResult", "structtoolbox_1_1pcl_1_1mls__keypoint__extractor__t_1_1_m_l_s_result.html", null ],
+    [ "toolbox::pcl::point_to_plane_icp_t< DataType, KNNSearcher >::normal_t", "structtoolbox_1_1pcl_1_1point__to__plane__icp__t_1_1normal__t.html", null ],
     [ "toolbox::base::object_pool_t< T >", "classtoolbox_1_1base_1_1object__pool__t.html", null ],
     [ "toolbox::base::object_pool_t< std::stringstream >", "classtoolbox_1_1base_1_1object__pool__t.html", null ],
     [ "toolbox::utils::detail::optional_value_type< T >", "structtoolbox_1_1utils_1_1detail_1_1optional__value__type.html", null ],
@@ -400,6 +414,7 @@ var hierarchy =
     ] ],
     [ "toolbox::traits::type_identity< T >", "structtoolbox_1_1traits_1_1type__identity.html", null ],
     [ "toolbox::traits::type_list< Ts >", "structtoolbox_1_1traits_1_1type__list.html", null ],
+    [ "toolbox::pcl::ndt_t< DataType >::voxel_cell_t", "structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html", null ],
     [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::voxel_data_soa_t", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1voxel__data__soa__t.html", null ],
     [ "toolbox::functional::detail::Fs", null, [
       [ "toolbox::functional::detail::overloaded< Fs >", "structtoolbox_1_1functional_1_1detail_1_1overloaded.html", null ]

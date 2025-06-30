@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ini_5fconfig_2ehpp_0',['ini_config.hpp',['../ini__config_8hpp.html',1,'']]],
-  ['ini_5fstruct_2ehpp_1',['ini_struct.hpp',['../ini__struct_8hpp.html',1,'']]],
-  ['iss_5fkeypoints_2ehpp_2',['iss_keypoints.hpp',['../iss__keypoints_8hpp.html',1,'']]],
-  ['iss_5fkeypoints_5fimpl_2ehpp_3',['iss_keypoints_impl.hpp',['../iss__keypoints__impl_8hpp.html',1,'']]]
+  ['hacking_2emd_0',['HACKING.md',['../_h_a_c_k_i_n_g_8md.html',1,'']]],
+  ['harris3d_5fkeypoints_2ehpp_1',['harris3d_keypoints.hpp',['../harris3d__keypoints_8hpp.html',1,'']]],
+  ['harris3d_5fkeypoints_5fimpl_2ehpp_2',['harris3d_keypoints_impl.hpp',['../harris3d__keypoints__impl_8hpp.html',1,'']]],
+  ['histogram_5fmetrics_2ehpp_3',['histogram_metrics.hpp',['../histogram__metrics_8hpp.html',1,'']]]
 ];

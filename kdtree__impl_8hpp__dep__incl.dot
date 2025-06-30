@@ -98,4 +98,28 @@ digraph "src/include/cpp-toolbox/pcl/knn/impl/kdtree_impl.hpp"
   Node33 [id="Node000033",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/super_four_pcs_registration\l_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$super__four__pcs__registration__impl_8hpp.html",tooltip=" "];
   Node33 -> Node32 [id="edge60_Node000033_Node000032",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node32 -> Node31 [id="edge61_Node000032_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node34 [id="edge62_Node000002_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 [id="Node000034",label="src/include/cpp-toolbox\l/pcl/registration/generalized\l_icp.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$generalized__icp_8hpp.html",tooltip=" "];
+  Node34 -> Node35 [id="edge63_Node000034_Node000035",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node35 [id="Node000035",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/generalized_icp_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$generalized__icp__impl_8hpp.html",tooltip=" "];
+  Node35 -> Node34 [id="edge64_Node000035_Node000034",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node34 -> Node31 [id="edge65_Node000034_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node36 [id="edge66_Node000002_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node36 [id="Node000036",label="src/include/cpp-toolbox\l/pcl/registration/point\l_to_plane_icp.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__to__plane__icp_8hpp.html",tooltip=" "];
+  Node36 -> Node37 [id="edge67_Node000036_Node000037",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node37 [id="Node000037",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/point_to_plane_icp_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__to__plane__icp__impl_8hpp.html",tooltip=" "];
+  Node37 -> Node36 [id="edge68_Node000037_Node000036",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node36 -> Node31 [id="edge69_Node000036_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node38 [id="edge70_Node000002_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 [id="Node000038",label="src/include/cpp-toolbox\l/pcl/registration/point\l_to_point_icp.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__to__point__icp_8hpp.html",tooltip=" "];
+  Node38 -> Node39 [id="edge71_Node000038_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node39 [id="Node000039",label="src/include/cpp-toolbox\l/pcl/registration/aa_icp.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$aa__icp_8hpp.html",tooltip=" "];
+  Node39 -> Node40 [id="edge72_Node000039_Node000040",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node40 [id="Node000040",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/aa_icp_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$aa__icp__impl_8hpp.html",tooltip=" "];
+  Node40 -> Node39 [id="edge73_Node000040_Node000039",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node39 -> Node31 [id="edge74_Node000039_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node41 [id="edge75_Node000038_Node000041",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node41 [id="Node000041",label="src/include/cpp-toolbox\l/pcl/registration/impl\l/point_to_point_icp_impl.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__to__point__icp__impl_8hpp.html",tooltip=" "];
+  Node41 -> Node38 [id="edge76_Node000041_Node000038",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node31 [id="edge77_Node000038_Node000031",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -1,12 +1,24 @@
 var group__registration =
 [
+    [ "toolbox::pcl::aa_icp", "group__registration.html#gac0e582b181ef2142f004e1632bc5772a", null ],
+    [ "toolbox::pcl::aa_icp_d", "group__registration.html#gaf8e0c4d1cf8a22e8b8546c16ebdbba71", null ],
+    [ "toolbox::pcl::coarse_registration_result", "group__registration.html#ga56b42f47c992a11ce10535aa74ec1eef", null ],
+    [ "toolbox::pcl::coarse_registration_result_d", "group__registration.html#ga34fbcd8933d9b8f7186054c26d188d54", null ],
+    [ "toolbox::pcl::fine_registration_result", "group__registration.html#ga2dd8c2ddeff9ebc62f15f9703fb12ef1", null ],
+    [ "toolbox::pcl::fine_registration_result_d", "group__registration.html#gad151fc1245ae7cbaad043a644af4ff54", null ],
     [ "toolbox::pcl::four_pcs_registration", "group__registration.html#ga252bb1105e12e6932d30936b4600c3a0", null ],
     [ "toolbox::pcl::four_pcs_registration_d", "group__registration.html#ga43679336174a6c5d94bb9bf51fd20337", null ],
+    [ "toolbox::pcl::generalized_icp", "group__registration.html#gad9c0c433d7b4b435d854dff5a4df88ef", null ],
+    [ "toolbox::pcl::generalized_icp_d", "group__registration.html#ga0ef33342a7e80db8b2ccc07dc42ee413", null ],
+    [ "toolbox::pcl::ndt", "group__registration.html#gabcdd8e27b9d805e9382ebaf77836a0c3", null ],
+    [ "toolbox::pcl::ndt_d", "group__registration.html#ga1f8739b6a5f058218c361aaa7870b6cb", null ],
+    [ "toolbox::pcl::point_to_plane_icp", "group__registration.html#gae08456fbd51467bb621e831d4cfbb0ef", null ],
+    [ "toolbox::pcl::point_to_plane_icp_d", "group__registration.html#gadbd3531e2d35e5ff4714455edb406790", null ],
+    [ "toolbox::pcl::point_to_point_icp", "group__registration.html#gaae786d561dd8f303c241093d5966b61d", null ],
+    [ "toolbox::pcl::point_to_point_icp_d", "group__registration.html#gaeb1731649ca1a5961522b0e5d836bb76", null ],
     [ "toolbox::pcl::ransac_registration", "group__registration.html#gaa37548abb15d3c3cdebeee9c4081b9aa", null ],
     [ "toolbox::pcl::ransac_registration_d", "group__registration.html#ga39e24f29bca71c80dc9578ad9efc1eca", null ],
-    [ "toolbox::pcl::registration_result", "group__registration.html#ga29364a27d8c1f998d74927a985eec938", null ],
-    [ "toolbox::pcl::registration_result_d", "group__registration.html#gac22d995bfd048fc5e14e2b72a3c4c03a", null ],
     [ "toolbox::pcl::super_four_pcs_registration", "group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a", null ],
     [ "toolbox::pcl::super_four_pcs_registration_d", "group__registration.html#ga27ddfe4db71c1db243e52a49f8f0665f", null ],
-    [ "toolbox::pcl::quick_registration", "group__registration.html#gaa0bb30d75d6d1715dd2679fe089078be", null ]
+    [ "toolbox::pcl::complete_registration", "group__registration.html#ga4fcb006dd556841295fab25bdd557e95", null ]
 ];
