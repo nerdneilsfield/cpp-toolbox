@@ -10,6 +10,7 @@
  * 
  * 粗配准算法 / Coarse Registration Algorithms:
  * - RANSAC: 基于对应关系的随机采样一致性算法 / Correspondence-based random sample consensus
+ * - PROSAC: 渐进式采样一致性，利用对应关系质量排序 / Progressive sample consensus with quality ordering
  * - 4PCS: 4点共面集算法，不需要初始对应关系 / 4-Point Congruent Sets, no initial correspondences needed
  * - Super4PCS: 优化的4PCS，适合大规模点云 / Optimized 4PCS for large-scale point clouds
  * 
@@ -56,6 +57,7 @@
 
 // 粗配准算法 / Coarse registration algorithms
 #include <cpp-toolbox/pcl/registration/ransac_registration.hpp>
+#include <cpp-toolbox/pcl/registration/prosac_registration.hpp>
 #include <cpp-toolbox/pcl/registration/four_pcs_registration.hpp>
 #include <cpp-toolbox/pcl/registration/super_four_pcs_registration.hpp>
 
@@ -86,12 +88,14 @@ namespace toolbox::pcl
 
 // 粗配准单精度类型别名 / Coarse registration single precision aliases
 using ransac_registration = ransac_registration_t<float>;
+using prosac_registration = prosac_registration_t<float>;
 using four_pcs_registration = four_pcs_registration_t<float>;
 using super_four_pcs_registration = super_four_pcs_registration_t<float>;
 using coarse_registration_result = registration_result_t<float>;
 
 // 粗配准双精度类型别名 / Coarse registration double precision aliases
 using ransac_registration_d = ransac_registration_t<double>;
+using prosac_registration_d = prosac_registration_t<double>;
 using four_pcs_registration_d = four_pcs_registration_t<double>;
 using super_four_pcs_registration_d = super_four_pcs_registration_t<double>;
 using coarse_registration_result_d = registration_result_t<double>;
@@ -118,7 +122,9 @@ using fine_registration_result_d = fine_registration_result_t<double>;
  * 粗配准算法选择 / Coarse Registration Selection:
  * 
  * 1. **是否有对应关系 / Whether correspondences are available**
- *    - 有对应关系：使用RANSAC / With correspondences: use RANSAC
+ *    - 有对应关系：使用RANSAC或PROSAC / With correspondences: use RANSAC or PROSAC
+ *      - 质量排序可用：使用PROSAC（更快） / Quality ordering available: use PROSAC (faster)
+ *      - 无质量信息：使用RANSAC / No quality info: use RANSAC
  *    - 无对应关系：使用4PCS或Super4PCS / Without: use 4PCS or Super4PCS
  * 
  * 2. **点云规模 / Point cloud scale**

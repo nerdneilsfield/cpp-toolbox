@@ -40,6 +40,7 @@
 #include <cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp>
 #include <cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp>
 #include <cpp-toolbox/pcl/correspondence/brute_force_correspondence_generator.hpp>
+#include <cpp-toolbox/pcl/correspondence/correspondence_sorter.hpp>
 #include <cpp-toolbox/logger/thread_logger.hpp>
 #include <memory>
 #include <vector>
