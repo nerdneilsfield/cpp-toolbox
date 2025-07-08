@@ -20,5 +20,6 @@ var searchData=
   ['pointcloudemdmetric_17',['PointCloudEMDMetric',['../classtoolbox_1_1metrics_1_1_point_cloud_e_m_d_metric.html',1,'toolbox::metrics']]],
   ['pointmetricadapter_18',['PointMetricAdapter',['../classtoolbox_1_1metrics_1_1_point_metric_adapter.html',1,'toolbox::metrics']]],
   ['pooldeleter_19',['PoolDeleter',['../classtoolbox_1_1base_1_1_pool_deleter.html',1,'toolbox::base']]],
-  ['print_5fstyle_5ft_20',['print_style_t',['../structtoolbox_1_1utils_1_1print__style__t.html',1,'toolbox::utils']]]
+  ['print_5fstyle_5ft_20',['print_style_t',['../structtoolbox_1_1utils_1_1print__style__t.html',1,'toolbox::utils']]],
+  ['prosac_5fregistration_5ft_21',['prosac_registration_t',['../classtoolbox_1_1pcl_1_1prosac__registration__t.html',1,'toolbox::pcl']]]
 ];

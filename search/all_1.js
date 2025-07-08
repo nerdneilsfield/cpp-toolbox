@@ -1,4 +1,32 @@
 var searchData=
 [
-  ['2_20枚举常量_20enum_20constants_0',['2. 枚举常量 / Enum Constants',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md50',1,'']]]
+  ['2_20内存优化_0',['5.2 内存优化',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md105',1,'']]],
+  ['2_20几何一致性排序器_1',['2. 几何一致性排序器',['../md_docs_2md_2_c_o_r_r_e_s_p_o_n_d_e_n_c_e___s_o_r_t_e_r___d_e_s_i_g_n.html#autotoc_md77',1,'']]],
+  ['2_20单元测试示例_2',['3.2 单元测试示例',['../md_docs_2md_2_k_i_t_t_i___t_e_s_t_i_n_g___s_t_r_a_t_e_g_y.html#autotoc_md172',1,'']]],
+  ['2_20周）_3',['第二阶段：停止准则（第 2 周）',['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md197',1,'']]],
+  ['2_20实时系统集成_4',['5.2 实时系统集成',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md132',1,'']]],
+  ['2_20并行化策略_5',['2. 并行化策略',['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md209',1,'']]],
+  ['2_20性能优化策略_6',['2. 性能优化策略',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md120',1,'']]],
+  ['2_20性能调优指南_7',['6.2 性能调优指南',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md135',1,'']]],
+  ['2_20数学公式_8',['2. 数学公式',['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md187',1,'']]],
+  ['2_20数据集格式_9',['2. 数据集格式',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md89',1,'']]],
+  ['2_20数据验证层_10',['3.2 数据验证层',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md126',1,'']]],
+  ['2_20枚举常量_20enum_20constants_11',['2. 枚举常量 / Enum Constants',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md50',1,'']]],
+  ['2_20流式处理支持_12',['4.2 流式处理支持',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md129',1,'']]],
+  ['2_20测试策略概述_13',['2. 测试策略概述',['../md_docs_2md_2_k_i_t_t_i___t_e_s_t_i_n_g___s_t_r_a_t_e_g_y.html#autotoc_md168',1,'']]],
+  ['2_20组合优于继承_14',['1.2 组合优于继承',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md119',1,'']]],
+  ['2_20辅助组件_15',['3.2 辅助组件',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md95',1,'']]],
+  ['2_20错误处理示例_16',['6.2 错误处理示例',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md109',1,'']]],
+  ['2_20集成测试_17',['7.2 集成测试',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md112',1,'']]],
+  ['2_201_20三层测试架构_18',['2.1 三层测试架构',['../md_docs_2md_2_k_i_t_t_i___t_e_s_t_i_n_g___s_t_r_a_t_e_g_y.html#autotoc_md169',1,'']]],
+  ['2_201_20内存映射文件优化_19',['2.1 内存映射文件优化',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md121',1,'']]],
+  ['2_201_20kitti_20odometry格式_20',['2.1 KITTI Odometry格式',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md90',1,'']]],
+  ['2_202_20智能缓存策略_21',['2.2 智能缓存策略',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md122',1,'']]],
+  ['2_202_20semantic_20kitti格式_22',['2.2 Semantic KITTI格式',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md91',1,'']]],
+  ['2_203_20并行数据加载_23',['2.3 并行数据加载',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md123',1,'']]],
+  ['2_203_20数据格式说明_24',['2.3 数据格式说明',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md92',1,'']]],
+  ['2_20semantic_20kitti使用_25',['4.2 Semantic KITTI使用',['../md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html#autotoc_md100',1,'']]],
+  ['2_3a_20性能优化（第4_206天）_26',['Phase 2: 性能优化（第4-6天）',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md138',1,'']]],
+  ['2_3a_20核心数据集实现（3天）_27',['Phase 2: 核心数据集实现（3天）',['../md_docs_2md_2_k_i_t_t_i___i_m_p_l_e_m_e_n_t_a_t_i_o_n___p_l_a_n.html#autotoc_md148',1,'']]],
+  ['2_3a_20辅助组件实现_28',['Day 2: 辅助组件实现',['../md_docs_2md_2_k_i_t_t_i___i_m_p_l_e_m_e_n_t_a_t_i_o_n___p_l_a_n.html#autotoc_md147',1,'']]]
 ];

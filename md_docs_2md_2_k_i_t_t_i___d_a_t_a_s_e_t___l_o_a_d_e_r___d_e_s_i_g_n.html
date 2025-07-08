@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: KITTI Odometry Dataset Loader 设计文档</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_docs_2md_2_k_i_t_t_i___d_a_t_a_s_e_t___l_o_a_d_e_r___d_e_s_i_g_n.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">KITTI Odometry Dataset Loader 设计文档</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md87"></a> </p>
+<h1><a class="anchor" id="autotoc_md88"></a>
+1. 概述</h1>
+<p>本文档描述了cpp-toolbox中KITTI Odometry数据集加载器的设计方案。该加载器基于现有的dataloader架构，支持：</p>
+<ol type="1">
+<li>**KITTI Odometry数据集**：读取点云和位姿数据</li>
+<li>**点云对数据集**：支持可配置skip的点云对加载，计算相对变换</li>
+<li>**Semantic KITTI数据集**：额外读取每个点的语义标签</li>
+<li>**语义点云对数据集**：结合语义标签的点云对加载</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md89"></a>
+2. 数据集格式</h1>
+<h2><a class="anchor" id="autotoc_md90"></a>
+2.1 KITTI Odometry格式</h2>
+<div class="fragment"><div class="line">sequences/</div>
+<div class="line">├── 00/</div>
+<div class="line">│   ├── velodyne/         # 点云数据</div>
+<div class="line">│   │   ├── 000000.bin</div>
+<div class="line">│   │   ├── 000001.bin</div>
+<div class="line">│   │   └── ...</div>
+<div class="line">│   └── calib.txt         # 标定文件（可选）</div>
+<div class="line">├── 01/</div>
+<div class="line">├── ...</div>
+<div class="line">└── poses/</div>
+<div class="line">    ├── 00.txt            # 序列00的位姿</div>
+<div class="line">    ├── 01.txt</div>
+<div class="line">    └── ...</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md91"></a>
+2.2 Semantic KITTI格式</h2>
+<div class="fragment"><div class="line">sequences/</div>
+<div class="line">├── 00/</div>
+<div class="line">│   ├── velodyne/         # 点云数据</div>
+<div class="line">│   │   └── *.bin</div>
+<div class="line">│   ├── labels/           # 语义标签</div>
+<div class="line">│   │   └── *.label</div>
+<div class="line">│   └── calib.txt</div>
+<div class="line">└── poses/</div>
+<div class="line">    └── *.txt</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md92"></a>
+2.3 数据格式说明</h2>
+<ul>
+<li>**点云文件(.bin)**：每个点4个float值(x, y, z, intensity)</li>
+<li>**标签文件(.label)**：每个点1个uint32值（低16位为标签ID）</li>
+<li>**位姿文件(.txt)**：每行12个值，表示3x4变换矩阵</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md93"></a>
+3. 架构设计</h1>
+<h2><a class="anchor" id="autotoc_md94"></a>
+3.1 核心数据结构</h2>
+<div class="fragment"><div class="line"><span class="comment">// 单帧数据</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">struct </span>kitti_odometry_frame_t {</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; cloud;  <span class="comment">// 点云数据</span></div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; pose;              <span class="comment">// 全局位姿</span></div>
+<div class="line">    std::size_t frame_index;                         <span class="comment">// 帧索引</span></div>
+<div class="line">    std::string timestamp;                           <span class="comment">// 时间戳（可选）</span></div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 帧对数据</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">struct </span>kitti_odometry_frame_pair_t {</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; source_cloud;</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; target_cloud;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; source_pose;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; target_pose;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; relative_transform;  <span class="comment">// T_target_source</span></div>
+<div class="line">    std::size_t source_index;</div>
+<div class="line">    std::size_t target_index;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 语义单帧数据</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">struct </span>semantic_kitti_frame_t {</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; cloud;</div>
+<div class="line">    std::vector&lt;uint32_t&gt; labels;                    <span class="comment">// 每个点的标签</span></div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; pose;</div>
+<div class="line">    std::size_t frame_index;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 获取特定标签的点云</span></div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; get_labeled_cloud(uint32_t label) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="comment">// 获取多个标签的点云</span></div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; get_labeled_cloud(</div>
+<div class="line">        <span class="keyword">const</span> std::vector&lt;uint32_t&gt;&amp; labels) <span class="keyword">const</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 语义帧对数据</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">struct </span>semantic_kitti_frame_pair_t {</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; source_cloud;</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; target_cloud;</div>
+<div class="line">    std::vector&lt;uint32_t&gt; source_labels;</div>
+<div class="line">    std::vector&lt;uint32_t&gt; target_labels;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; source_pose;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; target_pose;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; relative_transform;</div>
+<div class="line">    std::size_t source_index;</div>
+<div class="line">    std::size_t target_index;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md95"></a>
+3.2 辅助组件</h2>
+<div class="fragment"><div class="line"><span class="comment">// 位姿读取器</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>kitti_pose_reader_t {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// 从文件加载位姿</span></div>
+<div class="line">    <span class="keywordtype">bool</span> load(<span class="keyword">const</span> std::string&amp; poses_file);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 获取帧数</span></div>
+<div class="line">    std::size_t size() <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 获取指定帧的全局位姿</span></div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; get_pose(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 计算相对变换</span></div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; get_relative_transform(</div>
+<div class="line">        std::size_t from_index, std::size_t to_index) <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 检查索引是否有效</span></div>
+<div class="line">    <span class="keywordtype">bool</span> is_valid_index(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::vector&lt;Eigen::Matrix&lt;DataType, 4, 4&gt;&gt; poses_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 标签读取器</span></div>
+<div class="line"><span class="keyword">class </span>kitti_label_reader_t {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// 读取标签文件</span></div>
+<div class="line">    <span class="keyword">static</span> std::vector&lt;uint32_t&gt; read_labels(<span class="keyword">const</span> std::string&amp; label_file);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 写入标签文件</span></div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">bool</span> write_labels(<span class="keyword">const</span> std::string&amp; label_file, </div>
+<div class="line">                           <span class="keyword">const</span> std::vector&lt;uint32_t&gt;&amp; labels);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 提取标签ID（忽略实例信息）</span></div>
+<div class="line">    <span class="keyword">static</span> uint16_t get_label_id(uint32_t label);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 获取标签名称映射</span></div>
+<div class="line">    <span class="keyword">static</span> std::map&lt;uint16_t, std::string&gt; get_label_map();</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 标定信息</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">struct </span>kitti_calibration_t {</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; Tr_velo_to_cam;  <span class="comment">// Velodyne到相机</span></div>
+<div class="line">    Eigen::Matrix&lt;DataType, 3, 4&gt; P0, P1, P2, P3;  <span class="comment">// 投影矩阵</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 从文件加载</span></div>
+<div class="line">    <span class="keywordtype">bool</span> load(<span class="keyword">const</span> std::string&amp; calib_file);</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md96"></a>
+3.3 数据集类</h2>
+<div class="fragment"><div class="line"><span class="comment">// 基础KITTI Odometry数据集</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><span class="keyword">class </span>kitti_odometry_dataset_t : </div>
+<div class="line">    <span class="keyword">public</span> dataset_t&lt;kitti_odometry_dataset_t&lt;DataType&gt;, </div>
+<div class="line">                     kitti_odometry_frame_t&lt;DataType&gt;&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// 构造函数</span></div>
+<div class="line">    <span class="keyword">explicit</span> kitti_odometry_dataset_t(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 配置选项</span></div>
+<div class="line">    <span class="keywordtype">void</span> set_cache_size(std::size_t max_cached_frames);</div>
+<div class="line">    <span class="keywordtype">void</span> enable_intensity(<span class="keywordtype">bool</span> enable);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// CRTP接口实现</span></div>
+<div class="line">    std::size_t size_impl() <span class="keyword">const</span>;</div>
+<div class="line">    std::optional&lt;kitti_odometry_frame_t&lt;DataType&gt;&gt; at_impl(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 便利方法</span></div>
+<div class="line">    std::string get_cloud_file(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; get_pose(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">bool</span> has_calibration() <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keyword">const</span> kitti_calibration_t&lt;DataType&gt;&amp; get_calibration() <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::string sequence_path_;</div>
+<div class="line">    std::string velodyne_path_;</div>
+<div class="line">    kitti_pose_reader_t&lt;DataType&gt; pose_reader_;</div>
+<div class="line">    std::optional&lt;kitti_calibration_t&lt;DataType&gt;&gt; calibration_;</div>
+<div class="line">    std::vector&lt;std::string&gt; cloud_files_;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// LRU缓存</span></div>
+<div class="line">    <span class="keyword">mutable</span> std::map&lt;std::size_t, kitti_odometry_frame_t&lt;DataType&gt;&gt; cache_;</div>
+<div class="line">    <span class="keyword">mutable</span> std::list&lt;std::size_t&gt; lru_list_;</div>
+<div class="line">    std::size_t max_cache_size_;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 配置选项</span></div>
+<div class="line">    <span class="keywordtype">bool</span> load_intensity_ = <span class="keyword">true</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 内部方法</span></div>
+<div class="line">    <span class="keywordtype">void</span> scan_cloud_files();</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; load_cloud(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    <span class="keywordtype">void</span> update_cache(std::size_t index, kitti_odometry_frame_t&lt;DataType&gt;&amp;&amp; frame) <span class="keyword">const</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 点云对数据集</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><span class="keyword">class </span>kitti_odometry_pair_dataset_t : </div>
+<div class="line">    <span class="keyword">public</span> dataset_t&lt;kitti_odometry_pair_dataset_t&lt;DataType&gt;, </div>
+<div class="line">                     kitti_odometry_frame_pair_t&lt;DataType&gt;&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// 构造函数</span></div>
+<div class="line">    kitti_odometry_pair_dataset_t(<span class="keyword">const</span> std::string&amp; sequence_path, </div>
+<div class="line">                                  std::size_t skip = 1);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 配置</span></div>
+<div class="line">    <span class="keywordtype">void</span> set_skip(std::size_t skip);</div>
+<div class="line">    std::size_t get_skip() <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// CRTP接口</span></div>
+<div class="line">    std::size_t size_impl() <span class="keyword">const</span>;</div>
+<div class="line">    std::optional&lt;kitti_odometry_frame_pair_t&lt;DataType&gt;&gt; at_impl(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    kitti_odometry_dataset_t&lt;DataType&gt; base_dataset_;</div>
+<div class="line">    std::size_t skip_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Semantic KITTI数据集</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><span class="keyword">class </span>semantic_kitti_dataset_t : </div>
+<div class="line">    <span class="keyword">public</span> dataset_t&lt;semantic_kitti_dataset_t&lt;DataType&gt;, </div>
+<div class="line">                     semantic_kitti_frame_t&lt;DataType&gt;&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">explicit</span> semantic_kitti_dataset_t(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// CRTP接口</span></div>
+<div class="line">    std::size_t size_impl() <span class="keyword">const</span>;</div>
+<div class="line">    std::optional&lt;semantic_kitti_frame_t&lt;DataType&gt;&gt; at_impl(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 语义相关方法</span></div>
+<div class="line">    std::set&lt;uint32_t&gt; get_unique_labels() <span class="keyword">const</span>;</div>
+<div class="line">    std::map&lt;uint16_t, std::string&gt; get_label_names() <span class="keyword">const</span>;</div>
+<div class="line">    std::map&lt;uint16_t, std::size_t&gt; compute_label_statistics() <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    kitti_odometry_dataset_t&lt;DataType&gt; base_dataset_;</div>
+<div class="line">    std::string labels_path_;</div>
+<div class="line">    std::vector&lt;std::string&gt; label_files_;</div>
+<div class="line">    <span class="keywordtype">bool</span> has_labels_;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> scan_label_files();</div>
+<div class="line">    std::vector&lt;uint32_t&gt; load_labels(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 语义点云对数据集</span></div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><span class="keyword">class </span>semantic_kitti_pair_dataset_t : </div>
+<div class="line">    <span class="keyword">public</span> dataset_t&lt;semantic_kitti_pair_dataset_t&lt;DataType&gt;, </div>
+<div class="line">                     semantic_kitti_frame_pair_t&lt;DataType&gt;&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    semantic_kitti_pair_dataset_t(<span class="keyword">const</span> std::string&amp; sequence_path, </div>
+<div class="line">                                  std::size_t skip = 1);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 配置</span></div>
+<div class="line">    <span class="keywordtype">void</span> set_skip(std::size_t skip);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// CRTP接口</span></div>
+<div class="line">    std::size_t size_impl() <span class="keyword">const</span>;</div>
+<div class="line">    std::optional&lt;semantic_kitti_frame_pair_t&lt;DataType&gt;&gt; at_impl(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    semantic_kitti_dataset_t&lt;DataType&gt; base_dataset_;</div>
+<div class="line">    std::size_t skip_;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md97"></a>
+3.4 工具函数</h2>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span>kitti_utils {</div>
+<div class="line">    <span class="comment">// 读取KITTI二进制点云</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line">    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; read_kitti_cloud(</div>
+<div class="line">        <span class="keyword">const</span> std::string&amp; file_path,</div>
+<div class="line">        <span class="keywordtype">bool</span> load_intensity = <span class="keyword">true</span>);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 写入KITTI二进制点云</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line">    <span class="keywordtype">bool</span> write_kitti_cloud(<span class="keyword">const</span> std::string&amp; file_path,</div>
+<div class="line">                          <span class="keyword">const</span> point_cloud_t&lt;DataType&gt;&amp; cloud);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 解析位姿行</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; parse_pose_line(<span class="keyword">const</span> std::string&amp; line);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 格式化位姿为字符串</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line">    std::string format_pose(<span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; pose);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 计算相对变换</span></div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line">    Eigen::Matrix&lt;DataType, 4, 4&gt; compute_relative_transform(</div>
+<div class="line">        <span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; from_pose,</div>
+<div class="line">        <span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; to_pose);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 验证序列目录结构</span></div>
+<div class="line">    <span class="keywordtype">bool</span> validate_sequence_directory(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 获取序列信息</span></div>
+<div class="line">    <span class="keyword">struct </span>sequence_info_t {</div>
+<div class="line">        std::size_t num_frames;</div>
+<div class="line">        <span class="keywordtype">bool</span> has_labels;</div>
+<div class="line">        <span class="keywordtype">bool</span> has_calibration;</div>
+<div class="line">        std::string sequence_name;</div>
+<div class="line">    };</div>
+<div class="line">    </div>
+<div class="line">    sequence_info_t get_sequence_info(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md98"></a>
+4. 使用示例</h1>
+<h2><a class="anchor" id="autotoc_md99"></a>
+4.1 基础使用</h2>
+<div class="fragment"><div class="line"><span class="comment">// 1. KITTI Odometry数据集</span></div>
+<div class="line">kitti_odometry_dataset_t&lt;float&gt; dataset(<span class="stringliteral">&quot;/path/to/kitti/sequences/02&quot;</span>);</div>
+<div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;序列包含 &quot;</span> &lt;&lt; dataset.size() &lt;&lt; <span class="stringliteral">&quot; 帧&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 遍历所有帧</span></div>
+<div class="line"><span class="keywordflow">for</span> (std::size_t i = 0; i &lt; dataset.size(); ++i) {</div>
+<div class="line">    <span class="keyword">auto</span> frame = dataset[i];</div>
+<div class="line">    <span class="keywordflow">if</span> (frame) {</div>
+<div class="line">        std::cout &lt;&lt; <span class="stringliteral">&quot;帧 &quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> </div>
+<div class="line">                  &lt;&lt; frame-&gt;cloud-&gt;size() &lt;&lt; <span class="stringliteral">&quot; 个点&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="comment">// 处理点云和位姿...</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 2. 点云对数据集</span></div>
+<div class="line">kitti_odometry_pair_dataset_t&lt;float&gt; pair_dataset(<span class="stringliteral">&quot;/path/to/kitti/sequences/02&quot;</span>, 5);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : pair_dataset) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;处理帧对: &quot;</span> &lt;&lt; pair.source_index </div>
+<div class="line">              &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span> &lt;&lt; pair.target_index &lt;&lt; std::endl;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 使用相对变换进行配准</span></div>
+<div class="line">    registration_result_t&lt;float&gt; result;</div>
+<div class="line">    icp.set_initial_transform(pair.relative_transform);</div>
+<div class="line">    icp.align(pair.source_cloud, pair.target_cloud, result);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md100"></a>
+4.2 Semantic KITTI使用</h2>
+<div class="fragment"><div class="line"><span class="comment">// 3. Semantic KITTI数据集</span></div>
+<div class="line">semantic_kitti_dataset_t&lt;float&gt; sem_dataset(<span class="stringliteral">&quot;/path/to/semantic_kitti/sequences/02&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取标签统计</span></div>
+<div class="line"><span class="keyword">auto</span> label_stats = sem_dataset.compute_label_statistics();</div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [label, count] : label_stats) {</div>
+<div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;标签 &quot;</span> &lt;&lt; label &lt;&lt; <span class="stringliteral">&quot;: &quot;</span> &lt;&lt; count &lt;&lt; <span class="stringliteral">&quot; 个点&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 处理特定类别</span></div>
+<div class="line"><span class="keyword">auto</span> frame = sem_dataset[0];</div>
+<div class="line"><span class="keywordflow">if</span> (frame) {</div>
+<div class="line">    <span class="comment">// 提取道路点云（标签40）</span></div>
+<div class="line">    <span class="keyword">auto</span> road_cloud = frame-&gt;get_labeled_cloud(40);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 提取多个类别（建筑物、植被）</span></div>
+<div class="line">    <span class="keyword">auto</span> static_cloud = frame-&gt;get_labeled_cloud({50, 70, 71, 72});</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 4. 语义点云对</span></div>
+<div class="line">semantic_kitti_pair_dataset_t&lt;float&gt; sem_pair_dataset(</div>
+<div class="line">    <span class="stringliteral">&quot;/path/to/semantic_kitti/sequences/02&quot;</span>, 10);</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; pair : sem_pair_dataset) {</div>
+<div class="line">    <span class="comment">// 只对静态物体进行配准</span></div>
+<div class="line">    <span class="keyword">auto</span> source_static = extract_static_points(pair.source_cloud, pair.source_labels);</div>
+<div class="line">    <span class="keyword">auto</span> target_static = extract_static_points(pair.target_cloud, pair.target_labels);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 执行配准...</span></div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md101"></a>
+4.3 与DataLoader集成</h2>
+<div class="fragment"><div class="line"><span class="comment">// 创建数据集</span></div>
+<div class="line">semantic_kitti_dataset_t&lt;float&gt; dataset(sequence_path);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 配置采样器（随机打乱）</span></div>
+<div class="line">shuffle_policy_t policy(42);</div>
+<div class="line">sampler_t&lt;shuffle_policy_t&gt; sampler(dataset.size(), policy);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 创建线程池进行预取</span></div>
+<div class="line">thread_pool_t pool(8);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 创建数据加载器</span></div>
+<div class="line">dataloader_t loader(dataset,          <span class="comment">// 数据集</span></div>
+<div class="line">                   sampler,           <span class="comment">// 采样器</span></div>
+<div class="line">                   4,                 <span class="comment">// batch_size</span></div>
+<div class="line">                   2,                 <span class="comment">// prefetch_batches</span></div>
+<div class="line">                   &amp;pool,             <span class="comment">// 线程池</span></div>
+<div class="line">                   <span class="keyword">false</span>);            <span class="comment">// drop_last</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 批量处理</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; batch : loader) {</div>
+<div class="line">    <span class="comment">// batch是vector&lt;semantic_kitti_frame_t&lt;float&gt;&gt;</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; frame : batch) {</div>
+<div class="line">        process_semantic_frame(frame);</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md102"></a>
+4.4 高级功能</h2>
+<div class="fragment"><div class="line"><span class="comment">// 配置缓存大小</span></div>
+<div class="line">dataset.set_cache_size(100);  <span class="comment">// 缓存最多100帧</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 禁用强度信息加载（节省内存）</span></div>
+<div class="line">dataset.enable_intensity(<span class="keyword">false</span>);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 获取标定信息</span></div>
+<div class="line"><span class="keywordflow">if</span> (dataset.has_calibration()) {</div>
+<div class="line">    <span class="keyword">auto</span> calib = dataset.get_calibration();</div>
+<div class="line">    <span class="comment">// 将点云投影到相机坐标系</span></div>
+<div class="line">    <span class="keyword">auto</span> cam_cloud = transform_cloud(*frame-&gt;cloud, calib.Tr_velo_to_cam);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 自定义数据增强</span></div>
+<div class="line"><span class="keyword">class </span>augmented_kitti_dataset_t : <span class="keyword">public</span> kitti_odometry_dataset_t&lt;float&gt; {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    std::optional&lt;kitti_odometry_frame_t&lt;float&gt;&gt; at_impl(std::size_t index)<span class="keyword"> const override </span>{</div>
+<div class="line">        <span class="keyword">auto</span> frame = kitti_odometry_dataset_t&lt;float&gt;::at_impl(index);</div>
+<div class="line">        <span class="keywordflow">if</span> (frame) {</div>
+<div class="line">            <span class="comment">// 应用数据增强</span></div>
+<div class="line">            augment_cloud(*frame-&gt;cloud);</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> frame;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> augment_cloud(point_cloud_t&lt;float&gt;&amp; cloud)<span class="keyword"> const </span>{</div>
+<div class="line">        <span class="comment">// 随机降采样、添加噪声等</span></div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md103"></a>
+5. 性能优化</h1>
+<h2><a class="anchor" id="autotoc_md104"></a>
+5.1 缓存策略</h2>
+<ul>
+<li>**LRU缓存**：避免重复读取相同帧</li>
+<li>**预取机制**：利用dataloader的多线程预取功能</li>
+<li>**延迟加载**：只在需要时读取数据</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md105"></a>
+5.2 内存优化</h2>
+<ul>
+<li>**选择性加载**：可选择是否加载强度信息</li>
+<li>**智能指针**：使用unique_ptr避免内存泄漏</li>
+<li>**移动语义**：减少数据拷贝</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md106"></a>
+5.3 并行处理</h2>
+<div class="fragment"><div class="line"><span class="comment">// 并行处理多个序列</span></div>
+<div class="line">std::vector&lt;std::string&gt; sequences = {<span class="stringliteral">&quot;00&quot;</span>, <span class="stringliteral">&quot;01&quot;</span>, <span class="stringliteral">&quot;02&quot;</span>, <span class="stringliteral">&quot;03&quot;</span>};</div>
+<div class="line">std::vector&lt;std::future&lt;void&gt;&gt; futures;</div>
+<div class="line"> </div>
+<div class="line">thread_pool_t pool(std::thread::hardware_concurrency());</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; seq : sequences) {</div>
+<div class="line">    futures.push_back(pool.submit([seq]() {</div>
+<div class="line">        kitti_odometry_dataset_t&lt;float&gt; dataset(</div>
+<div class="line">            <span class="stringliteral">&quot;/path/to/kitti/sequences/&quot;</span> + seq);</div>
+<div class="line">        process_sequence(dataset);</div>
+<div class="line">    }));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 等待所有任务完成</span></div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; f : futures) {</div>
+<div class="line">    f.get();</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md107"></a>
+6. 错误处理</h1>
+<h2><a class="anchor" id="autotoc_md108"></a>
+6.1 异常类型</h2>
+<div class="fragment"><div class="line"><span class="comment">// KITTI特定异常</span></div>
+<div class="line"><span class="keyword">class </span>kitti_exception : <span class="keyword">public</span> std::runtime_error {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span>std::runtime_error::runtime_error;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>kitti_file_not_found : <span class="keyword">public</span> kitti_exception {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    kitti_file_not_found(<span class="keyword">const</span> std::string&amp; file) </div>
+<div class="line">        : kitti_exception(<span class="stringliteral">&quot;File not found: &quot;</span> + file) {}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>kitti_invalid_format : <span class="keyword">public</span> kitti_exception {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    kitti_invalid_format(<span class="keyword">const</span> std::string&amp; msg) </div>
+<div class="line">        : kitti_exception(<span class="stringliteral">&quot;Invalid format: &quot;</span> + msg) {}</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md109"></a>
+6.2 错误处理示例</h2>
+<div class="fragment"><div class="line"><span class="keywordflow">try</span> {</div>
+<div class="line">    kitti_odometry_dataset_t&lt;float&gt; dataset(sequence_path);</div>
+<div class="line">    <span class="keyword">auto</span> frame = dataset[0];</div>
+<div class="line">    <span class="keywordflow">if</span> (!frame) {</div>
+<div class="line">        std::cerr &lt;&lt; <span class="stringliteral">&quot;无法加载帧&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line">        <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> kitti_file_not_found&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;文件未找到: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> kitti_invalid_format&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;格式错误: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line">} <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
+<div class="line">    std::cerr &lt;&lt; <span class="stringliteral">&quot;未知错误: &quot;</span> &lt;&lt; e.what() &lt;&lt; std::endl;</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md110"></a>
+7. 测试计划</h1>
+<h2><a class="anchor" id="autotoc_md111"></a>
+7.1 单元测试</h2>
+<ul>
+<li>数据结构测试</li>
+<li>文件读取测试</li>
+<li>位姿计算测试</li>
+<li>标签处理测试</li>
+<li>缓存机制测试</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md112"></a>
+7.2 集成测试</h2>
+<ul>
+<li>与dataloader集成测试</li>
+<li>多线程加载测试</li>
+<li>大规模数据测试</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md113"></a>
+7.3 性能测试</h2>
+<ul>
+<li>加载速度基准测试</li>
+<li>内存使用测试</li>
+<li>缓存效率测试</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md114"></a>
+8. 实施计划</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">阶段   </th><th class="markdownTableHeadNone">任务   </th><th class="markdownTableHeadNone">时间    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Phase 1   </td><td class="markdownTableBodyNone">基础设施（数据结构、工具函数）   </td><td class="markdownTableBodyNone">2天    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Phase 2   </td><td class="markdownTableBodyNone">核心数据集实现   </td><td class="markdownTableBodyNone">3天    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Phase 3   </td><td class="markdownTableBodyNone">Semantic KITTI支持   </td><td class="markdownTableBodyNone">2天    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Phase 4   </td><td class="markdownTableBodyNone">测试和优化   </td><td class="markdownTableBodyNone">2天    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Phase 5   </td><td class="markdownTableBodyNone">文档和示例   </td><td class="markdownTableBodyNone">1天   </td></tr>
+</table>
+<p>总计：10个工作日</p>
+<h1><a class="anchor" id="autotoc_md115"></a>
+9. 未来扩展</h1>
+<ol type="1">
+<li><b>支持更多数据集格式</b><ul>
+<li>KITTI Raw</li>
+<li>KITTI 360</li>
+<li>nuScenes格式转换</li>
+</ul>
+</li>
+<li><b>高级功能</b><ul>
+<li>在线数据增强</li>
+<li>自动数据统计</li>
+<li>可视化工具集成</li>
+</ul>
+</li>
+<li><b>性能优化</b><ul>
+<li>GPU加速点云处理</li>
+<li>分布式数据加载</li>
+<li>压缩存储支持 </li>
+</ul>
+</li>
+</ol>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

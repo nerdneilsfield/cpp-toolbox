@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: 对应关系排序器设计文档</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('md_docs_2md_2_c_o_r_r_e_s_p_o_n_d_e_n_c_e___s_o_r_t_e_r___d_e_s_i_g_n.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">对应关系排序器设计文档</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md70"></a> </p>
+<h1><a class="anchor" id="autotoc_md71"></a>
+概述</h1>
+<p>对应关系排序器（Correspondence Sorter）是一个独立的模块，用于根据不同的质量度量对点云对应关系进行排序。这个设计将排序逻辑从 PROSAC 等算法中解耦，使得排序策略可以灵活配置和扩展。</p>
+<h1><a class="anchor" id="autotoc_md72"></a>
+设计理念</h1>
+<ol type="1">
+<li>**单一职责**：排序器只负责对对应关系进行质量评估和排序</li>
+<li>**策略模式**：不同的排序策略实现同一接口</li>
+<li>**可组合性**：多个排序器可以组合使用</li>
+<li>**高效性**：支持延迟计算和缓存</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md73"></a>
+基类设计</h1>
+<h2><a class="anchor" id="autotoc_md74"></a>
+基础接口</h2>
+<div class="fragment"><div class="line"><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a> {</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Derived, <span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>base_correspondence_sorter_t</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a> = <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> = std::shared_ptr&lt;point_cloud&gt;;</div>
+<div class="line">    <span class="keyword">using </span>correspondence_t = <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a>;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a> = std::shared_ptr&lt;std::vector&lt;correspondence_t&gt;&gt;;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> = std::vector&lt;DataType&gt;;</div>
+<div class="line">    <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a> = std::vector&lt;std::size_t&gt;;</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line">    <span class="keyword">virtual</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2fd8867a64f12ceb7d8b424d2e12f416">~base_correspondence_sorter_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 删除拷贝，允许移动</span></div>
+<div class="line">    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>(<span class="keyword">const</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a27c6631499027a7b5a1074b0ef23718d">operator=</a>(<span class="keyword">const</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line">    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>(<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line">    <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp; <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a27c6631499027a7b5a1074b0ef23718d">operator=</a>(<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abac3b9b73b7782ffeb2f681b086e7a00">set_point_clouds</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a>&amp; source,</div>
+<div class="line">                         <span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a>&amp; target)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a4609421ea17bc9e8a8d36d1064c68c8f">m_source_cloud</a> = source;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a9697b878bc5a05ec4bdd2449668c8419">m_target_cloud</a> = target;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a> = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a6afccf147c93451c7009d66336d03a06">set_correspondences</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a>&amp; correspondences)</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a> = correspondences;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a> = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abe4581ad966c86a648be543747dd02a4">compute_sorted_indices</a>(<a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a>&amp; scores)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af1f5c887a214907d1d6d1f70977d0eab">validate_input</a>()) {</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a>{};</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 如果已缓存且输入未改变，直接返回</span></div>
+<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a>) {</div>
+<div class="line">            scores = <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">m_cached_scores</a>;</div>
+<div class="line">            <span class="keywordflow">return</span> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">m_cached_indices</a>;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 调用派生类实现计算质量分数</span></div>
+<div class="line">        scores.resize(<a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a>-&gt;size());</div>
+<div class="line">        <span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;compute_quality_scores_impl(scores);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 创建索引数组并按质量分数排序</span></div>
+<div class="line">        <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a> indices(scores.size());</div>
+<div class="line">        std::iota(indices.begin(), indices.end(), 0);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 降序排序（质量高的在前）</span></div>
+<div class="line">        std::sort(indices.begin(), indices.end(),</div>
+<div class="line">                  [&amp;scores](std::size_t i, std::size_t j) {</div>
+<div class="line">                      return scores[i] &gt; scores[j];</div>
+<div class="line">                  });</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 缓存结果</span></div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">m_cached_scores</a> = scores;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">m_cached_indices</a> = indices;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a> = <span class="keyword">true</span>;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> indices;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a54235beb5df3c22633f27c02679d591d">compute_quality_scores</a>()</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> scores;</div>
+<div class="line">        <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abe4581ad966c86a648be543747dd02a4">compute_sorted_indices</a>(scores);</div>
+<div class="line">        <span class="keywordflow">return</span> scores;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] std::string <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af8e295fb770f69385b51608ddfdcab0f">get_sorter_name</a>()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a7505e2c36d4b9056dafbbe0b2ad314e7">get_sorter_name_impl</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ad2312d13aa39bf09d9f8242fcd6d4a55">clear_cache</a>()</div>
+<div class="line">    {</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a> = <span class="keyword">false</span>;</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">m_cached_scores</a>.clear();</div>
+<div class="line">        <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">m_cached_indices</a>.clear();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af1f5c887a214907d1d6d1f70977d0eab">validate_input</a>()<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a> || <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a>-&gt;empty()) {</div>
+<div class="line">            <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;错误：对应关系为空&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a4609421ea17bc9e8a8d36d1064c68c8f">m_source_cloud</a> || !<a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a9697b878bc5a05ec4bdd2449668c8419">m_target_cloud</a>) {</div>
+<div class="line">            <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;警告：点云未设置，某些排序器可能需要点云数据&quot;</span>;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>)-&gt;<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aaea20ec5954ae0f24823ace6c9511dee">validate_input_impl</a>();</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aaea20ec5954ae0f24823ace6c9511dee">validate_input_impl</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 数据成员</span></div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a4609421ea17bc9e8a8d36d1064c68c8f">m_source_cloud</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a9697b878bc5a05ec4bdd2449668c8419">m_target_cloud</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a>;</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// 缓存</span></div>
+<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a> = <span class="keyword">false</span>;</div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">m_cached_scores</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a> <a class="code hl_variable" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">m_cached_indices</a>;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a1875744d7a96019b0e9d6b9e36d2076e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">toolbox::pcl::base_correspondence_sorter_t::point_cloud</a></div><div class="ttdeci">toolbox::types::point_cloud_t&lt; DataType &gt; point_cloud</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:53</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a27c6631499027a7b5a1074b0ef23718d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a27c6631499027a7b5a1074b0ef23718d">toolbox::pcl::base_correspondence_sorter_t::operator=</a></div><div class="ttdeci">base_correspondence_sorter_t &amp; operator=(const base_correspondence_sorter_t &amp;)=delete</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a2f3a84ca49ea9386c868f16682eae609"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">toolbox::pcl::base_correspondence_sorter_t::sorted_indices_t</a></div><div class="ttdeci">std::vector&lt; std::size_t &gt; sorted_indices_t</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:57</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a2fd8867a64f12ceb7d8b424d2e12f416"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2fd8867a64f12ceb7d8b424d2e12f416">toolbox::pcl::base_correspondence_sorter_t::~base_correspondence_sorter_t</a></div><div class="ttdeci">virtual ~base_correspondence_sorter_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a4609421ea17bc9e8a8d36d1064c68c8f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a4609421ea17bc9e8a8d36d1064c68c8f">toolbox::pcl::base_correspondence_sorter_t::m_source_cloud</a></div><div class="ttdeci">point_cloud_ptr m_source_cloud</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:238</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a54235beb5df3c22633f27c02679d591d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a54235beb5df3c22633f27c02679d591d">toolbox::pcl::base_correspondence_sorter_t::compute_quality_scores</a></div><div class="ttdeci">quality_scores_t compute_quality_scores()</div><div class="ttdoc">仅计算质量分数，不排序 / Compute quality scores only, without sorting</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:144</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a6afccf147c93451c7009d66336d03a06"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a6afccf147c93451c7009d66336d03a06">toolbox::pcl::base_correspondence_sorter_t::set_correspondences</a></div><div class="ttdeci">void set_correspondences(const correspondences_ptr &amp;correspondences)</div><div class="ttdoc">设置对应关系 / Set correspondences</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:87</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a7505e2c36d4b9056dafbbe0b2ad314e7"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a7505e2c36d4b9056dafbbe0b2ad314e7">toolbox::pcl::base_correspondence_sorter_t::get_sorter_name_impl</a></div><div class="ttdeci">std::string get_sorter_name_impl() const</div><div class="ttdoc">派生类必须实现的排序器名称获取方法 / Sorter name getter that derived class must implement</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:216</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a9697b878bc5a05ec4bdd2449668c8419"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a9697b878bc5a05ec4bdd2449668c8419">toolbox::pcl::base_correspondence_sorter_t::m_target_cloud</a></div><div class="ttdeci">point_cloud_ptr m_target_cloud</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:239</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_aa1c9dde5812856b6e250f15822077c4c"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">toolbox::pcl::base_correspondence_sorter_t::point_cloud_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; point_cloud &gt; point_cloud_ptr</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:54</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_aa5b7d6603a5fd69351939c22c4f31d61"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">toolbox::pcl::base_correspondence_sorter_t::quality_scores_t</a></div><div class="ttdeci">std::vector&lt; DataType &gt; quality_scores_t</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:56</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_aaea20ec5954ae0f24823ace6c9511dee"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aaea20ec5954ae0f24823ace6c9511dee">toolbox::pcl::base_correspondence_sorter_t::validate_input_impl</a></div><div class="ttdeci">bool validate_input_impl() const</div><div class="ttdoc">派生类可选的额外验证 / Optional additional validation for derived class</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:209</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_ab282cc85c507e3b99f7dbb14d572bc4e"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">toolbox::pcl::base_correspondence_sorter_t::m_cached_indices</a></div><div class="ttdeci">sorted_indices_t m_cached_indices</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:245</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_ab66662696e88f1ad539d8c089ab8d9aa"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">toolbox::pcl::base_correspondence_sorter_t::m_correspondences</a></div><div class="ttdeci">correspondences_ptr m_correspondences</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:240</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_abac3b9b73b7782ffeb2f681b086e7a00"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abac3b9b73b7782ffeb2f681b086e7a00">toolbox::pcl::base_correspondence_sorter_t::set_point_clouds</a></div><div class="ttdeci">void set_point_clouds(const point_cloud_ptr &amp;source, const point_cloud_ptr &amp;target)</div><div class="ttdoc">设置源点云和目标点云 / Set source and target point clouds</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:75</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_abe4581ad966c86a648be543747dd02a4"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abe4581ad966c86a648be543747dd02a4">toolbox::pcl::base_correspondence_sorter_t::compute_sorted_indices</a></div><div class="ttdeci">sorted_indices_t compute_sorted_indices(quality_scores_t &amp;scores)</div><div class="ttdoc">计算质量分数并返回排序后的索引 / Compute quality scores and return sorted indices</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:101</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_ac2e4e0eca74eda87cbbea08dbc125f05"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">toolbox::pcl::base_correspondence_sorter_t::m_cached</a></div><div class="ttdeci">bool m_cached</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:243</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_ac6e61611d40c6fe3bb1626a10686f375"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">toolbox::pcl::base_correspondence_sorter_t::correspondences_ptr</a></div><div class="ttdeci">std::shared_ptr&lt; std::vector&lt; correspondence_t &gt; &gt; correspondences_ptr</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:55</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_ad2312d13aa39bf09d9f8242fcd6d4a55"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ad2312d13aa39bf09d9f8242fcd6d4a55">toolbox::pcl::base_correspondence_sorter_t::clear_cache</a></div><div class="ttdeci">void clear_cache()</div><div class="ttdoc">清除缓存 / Clear cache</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:163</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_aed4fb4091d30a3275aa90ab54601db69"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">toolbox::pcl::base_correspondence_sorter_t::m_cached_scores</a></div><div class="ttdeci">quality_scores_t m_cached_scores</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:244</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_af1f5c887a214907d1d6d1f70977d0eab"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af1f5c887a214907d1d6d1f70977d0eab">toolbox::pcl::base_correspondence_sorter_t::validate_input</a></div><div class="ttdeci">bool validate_input() const</div><div class="ttdoc">验证输入数据 / Validate input data</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:188</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_af8e295fb770f69385b51608ddfdcab0f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af8e295fb770f69385b51608ddfdcab0f">toolbox::pcl::base_correspondence_sorter_t::get_sorter_name</a></div><div class="ttdeci">std::string get_sorter_name() const</div><div class="ttdoc">获取排序器名称 / Get sorter name</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:155</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_af996edbd7f5bec0339def0a7174520b8"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">toolbox::pcl::base_correspondence_sorter_t::base_correspondence_sorter_t</a></div><div class="ttdeci">base_correspondence_sorter_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
+<div class="ttc" id="agroup___logging_macros_html_gad9b694972a4957493602ba1e7d3c5925"><div class="ttname"><a href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a></div><div class="ttdeci">#define LOG_WARN_S</div><div class="ttdoc">WARN级别流式日志的宏 / Macro for WARN level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1331</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></div><div class="ttdoc">对应关系结构体 / Correspondence structure</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:27</div></div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md75"></a>
+具体排序器实现</h1>
+<h2><a class="anchor" id="autotoc_md76"></a>
+1. 描述子距离排序器</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>descriptor_distance_sorter_t </div>
+<div class="line">    : <span class="keyword">public</span> base_correspondence_sorter_t&lt;descriptor_distance_sorter_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span>base_type = base_correspondence_sorter_t&lt;descriptor_distance_sorter_t&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line">    <span class="keyword">using </span>typename base_type::quality_scores_t;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> set_invert_score(<span class="keywordtype">bool</span> invert) { m_invert = invert; }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> compute_quality_scores_impl(quality_scores_t&amp; scores)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corrs = *this-&gt;m_correspondences;</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 找到最大距离用于归一化</span></div>
+<div class="line">        DataType max_distance = 0;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr : corrs) {</div>
+<div class="line">            max_distance = std::max(max_distance, <span class="keyword">static_cast&lt;</span>DataType<span class="keyword">&gt;</span>(corr.distance));</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 计算质量分数</span></div>
+<div class="line">        <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; corrs.size(); ++i) {</div>
+<div class="line">            <span class="keywordflow">if</span> (m_invert &amp;&amp; max_distance &gt; 0) {</div>
+<div class="line">                <span class="comment">// 距离越小，质量越高</span></div>
+<div class="line">                scores[i] = 1.0 - (corrs[i].distance / max_distance);</div>
+<div class="line">            } <span class="keywordflow">else</span> {</div>
+<div class="line">                <span class="comment">// 直接使用距离作为分数</span></div>
+<div class="line">                scores[i] = corrs[i].distance;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] std::string get_sorter_name_impl()<span class="keyword"> const </span></div>
+<div class="line"><span class="keyword">    </span>{ </div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;DescriptorDistance&quot;</span>; </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> m_invert = <span class="keyword">true</span>;  <span class="comment">// 默认：距离越小质量越高</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
+2. 几何一致性排序器</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>geometric_consistency_sorter_t </div>
+<div class="line">    : <span class="keyword">public</span> base_correspondence_sorter_t&lt;geometric_consistency_sorter_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span>base_type = base_correspondence_sorter_t&lt;geometric_consistency_sorter_t&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line">    <span class="keyword">using </span>typename base_type::quality_scores_t;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> set_neighborhood_size(std::size_t size) { m_neighborhood_size = size; }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> set_distance_ratio_threshold(DataType threshold) </div>
+<div class="line">    { </div>
+<div class="line">        m_distance_ratio_threshold = threshold; </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">    <span class="keywordtype">bool</span> validate_input_impl()<span class="keyword"> const override</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">if</span> (!this-&gt;m_source_cloud || !this-&gt;m_target_cloud) {</div>
+<div class="line">            <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;错误：几何一致性排序器需要点云数据&quot;</span>;</div>
+<div class="line">            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">        }</div>
+<div class="line">        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> compute_quality_scores_impl(quality_scores_t&amp; scores)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corrs = *this-&gt;m_correspondences;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_cloud = *this-&gt;m_source_cloud;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_cloud = *this-&gt;m_target_cloud;</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 对每个对应关系计算几何一致性</span></div>
+<div class="line"><span class="preprocessor">        #pragma omp parallel for if(this-&gt;m_parallel_enabled)</span></div>
+<div class="line">        <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; corrs.size(); ++i) {</div>
+<div class="line">            scores[i] = compute_single_consistency(i, corrs, src_cloud, tgt_cloud);</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] std::string get_sorter_name_impl()<span class="keyword"> const </span></div>
+<div class="line"><span class="keyword">    </span>{ </div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;GeometricConsistency&quot;</span>; </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    DataType compute_single_consistency(</div>
+<div class="line">        std::size_t idx,</div>
+<div class="line">        <span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; corrs,</div>
+<div class="line">        <span class="keyword">const</span> point_cloud&amp; src_cloud,</div>
+<div class="line">        <span class="keyword">const</span> point_cloud&amp; tgt_cloud)<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr = corrs[idx];</div>
+<div class="line">        DataType consistency_score = 0;</div>
+<div class="line">        std::size_t valid_pairs = 0;</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 随机选择一些其他对应关系进行比较</span></div>
+<div class="line">        std::size_t num_samples = std::min(m_neighborhood_size, corrs.size() - 1);</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">for</span> (std::size_t j = 0; j &lt; corrs.size() &amp;&amp; valid_pairs &lt; num_samples; ++j) {</div>
+<div class="line">            <span class="keywordflow">if</span> (j == idx) <span class="keywordflow">continue</span>;</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">// 计算源点对之间的距离</span></div>
+<div class="line">            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_p1 = src_cloud.points[corr.src_idx];</div>
+<div class="line">            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_p2 = src_cloud.points[corrs[j].src_idx];</div>
+<div class="line">            DataType src_dist = compute_distance(src_p1, src_p2);</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">// 计算目标点对之间的距离</span></div>
+<div class="line">            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_p1 = tgt_cloud.points[corr.dst_idx];</div>
+<div class="line">            <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_p2 = tgt_cloud.points[corrs[j].dst_idx];</div>
+<div class="line">            DataType tgt_dist = compute_distance(tgt_p1, tgt_p2);</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">// 检查距离比率</span></div>
+<div class="line">            <span class="keywordflow">if</span> (src_dist &gt; 0.001 &amp;&amp; tgt_dist &gt; 0.001) {</div>
+<div class="line">                DataType ratio = src_dist / tgt_dist;</div>
+<div class="line">                <span class="keywordflow">if</span> (ratio &gt; (1.0 - m_distance_ratio_threshold) &amp;&amp; </div>
+<div class="line">                    ratio &lt; (1.0 + m_distance_ratio_threshold)) {</div>
+<div class="line">                    consistency_score += 1.0;</div>
+<div class="line">                }</div>
+<div class="line">                valid_pairs++;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> valid_pairs &gt; 0 ? consistency_score / valid_pairs : 0;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Po<span class="keywordtype">int</span>T&gt;</div>
+<div class="line">    DataType compute_distance(<span class="keyword">const</span> PointT&amp; p1, <span class="keyword">const</span> PointT&amp; p2)<span class="keyword"> const</span></div>
+<div class="line"><span class="keyword">    </span>{</div>
+<div class="line">        <span class="keywordflow">return</span> std::sqrt((p1.x - p2.x) * (p1.x - p2.x) +</div>
+<div class="line">                        (p1.y - p2.y) * (p1.y - p2.y) +</div>
+<div class="line">                        (p1.z - p2.z) * (p1.z - p2.z));</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    std::size_t m_neighborhood_size = 10;</div>
+<div class="line">    DataType m_distance_ratio_threshold = 0.2;  <span class="comment">// 20% 的距离变化容忍度</span></div>
+<div class="line">    <span class="keywordtype">bool</span> m_parallel_enabled = <span class="keyword">true</span>;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md78"></a>
+3. 组合排序器</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>combined_sorter_t </div>
+<div class="line">    : <span class="keyword">public</span> base_correspondence_sorter_t&lt;combined_sorter_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span>base_type = base_correspondence_sorter_t&lt;combined_sorter_t&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line">    <span class="keyword">using </span>typename base_type::quality_scores_t;</div>
+<div class="line">    <span class="keyword">using </span>sorter_ptr = std::shared_ptr&lt;base_correspondence_sorter_t&lt;void, DataType&gt;&gt;;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> add_sorter(sorter_ptr sorter, DataType weight)</div>
+<div class="line">    {</div>
+<div class="line">        m_sorters.push_back({sorter, weight});</div>
+<div class="line">        this-&gt;m_cached = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> normalize_weights()</div>
+<div class="line">    {</div>
+<div class="line">        DataType <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> = 0;</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [sorter, weight] : m_sorters) {</div>
+<div class="line">            <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a> += weight;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (sum &gt; 0) {</div>
+<div class="line">            <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [sorter, weight] : m_sorters) {</div>
+<div class="line">                weight /= <a class="code hl_function" href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">sum</a>;</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> compute_quality_scores_impl(quality_scores_t&amp; scores)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (m_sorters.empty()) {</div>
+<div class="line">            <a class="code hl_define" href="group___logging_macros.html#gad9b694972a4957493602ba1e7d3c5925">LOG_WARN_S</a> &lt;&lt; <span class="stringliteral">&quot;警告：组合排序器没有子排序器&quot;</span>;</div>
+<div class="line">            std::fill(scores.begin(), scores.end(), 0);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 初始化分数为0</span></div>
+<div class="line">        std::fill(scores.begin(), scores.end(), 0);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 计算加权组合分数</span></div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [sorter, weight] : m_sorters) {</div>
+<div class="line">            <span class="comment">// 设置数据</span></div>
+<div class="line">            sorter-&gt;set_point_clouds(this-&gt;m_source_cloud, this-&gt;m_target_cloud);</div>
+<div class="line">            sorter-&gt;set_correspondences(this-&gt;m_correspondences);</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">// 计算子排序器的分数</span></div>
+<div class="line">            quality_scores_t sub_scores = sorter-&gt;compute_quality_scores();</div>
+<div class="line">            </div>
+<div class="line">            <span class="comment">// 加权累加</span></div>
+<div class="line">            <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; scores.size(); ++i) {</div>
+<div class="line">                scores[i] += weight * sub_scores[i];</div>
+<div class="line">            }</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] std::string get_sorter_name_impl()<span class="keyword"> const </span></div>
+<div class="line"><span class="keyword">    </span>{ </div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Combined&quot;</span>; </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    std::vector&lt;std::pair&lt;sorter_ptr, DataType&gt;&gt; m_sorters;</div>
+<div class="line">};</div>
+<div class="ttc" id="anamespacetoolbox_1_1math_html_a24535793540418131a0fe60ea75b648f"><div class="ttname"><a href="namespacetoolbox_1_1math.html#a24535793540418131a0fe60ea75b648f">toolbox::math::sum</a></div><div class="ttdeci">TContainer::value_type sum(const TContainer &amp;data)</div><div class="ttdoc">计算容器中元素的总和（返回容器元素类型）/Compute the sum of elements in the container (returns container element type)</div><div class="ttdef"><b>Definition</b> statistics.hpp:288</div></div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md79"></a>
+4. 自定义排序器</h2>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>custom_function_sorter_t </div>
+<div class="line">    : <span class="keyword">public</span> base_correspondence_sorter_t&lt;custom_function_sorter_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="keyword">using </span>base_type = base_correspondence_sorter_t&lt;custom_function_sorter_t&lt;DataType&gt;, DataType&gt;;</div>
+<div class="line">    <span class="keyword">using </span>typename base_type::quality_scores_t;</div>
+<div class="line">    <span class="keyword">using </span>quality_function_t = std::function&lt;DataType(</div>
+<div class="line">        <span class="keyword">const</span> correspondence_t&amp;,</div>
+<div class="line">        <span class="keyword">const</span> point_cloud&amp;,</div>
+<div class="line">        <span class="keyword">const</span> point_cloud&amp;)&gt;;</div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> set_quality_function(quality_function_t func)</div>
+<div class="line">    {</div>
+<div class="line">        m_quality_function = func;</div>
+<div class="line">        this-&gt;m_cached = <span class="keyword">false</span>;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">protected</span>:</div>
+<div class="line">    <span class="keywordtype">void</span> compute_quality_scores_impl(quality_scores_t&amp; scores)</div>
+<div class="line">    {</div>
+<div class="line">        <span class="keywordflow">if</span> (!m_quality_function) {</div>
+<div class="line">            <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;错误：未设置质量函数&quot;</span>;</div>
+<div class="line">            std::fill(scores.begin(), scores.end(), 0);</div>
+<div class="line">            <span class="keywordflow">return</span>;</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corrs = *this-&gt;m_correspondences;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; corrs.size(); ++i) {</div>
+<div class="line">            scores[i] = m_quality_function(</div>
+<div class="line">                corrs[i], </div>
+<div class="line">                *this-&gt;m_source_cloud, </div>
+<div class="line">                *this-&gt;m_target_cloud</div>
+<div class="line">            );</div>
+<div class="line">        }</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    [[nodiscard]] std::string get_sorter_name_impl()<span class="keyword"> const </span></div>
+<div class="line"><span class="keyword">    </span>{ </div>
+<div class="line">        <span class="keywordflow">return</span> <span class="stringliteral">&quot;CustomFunction&quot;</span>; </div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    quality_function_t m_quality_function;</div>
+<div class="line">};</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md80"></a>
+更新后的 PROSAC 接口</h1>
+<p>PROSAC 现在接受已排序的对应关系：</p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><span class="keyword">class </span>prosac_registration_t </div>
+<div class="line">    : <span class="keyword">public</span> base_coarse_registration_t&lt;prosac_registration_t&lt;DataType&gt;, DataType&gt;</div>
+<div class="line">{</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    <span class="comment">// ... 其他成员 ...</span></div>
+<div class="line">    </div>
+<div class="line">    <span class="keywordtype">void</span> set_sorted_correspondences(</div>
+<div class="line">        <span class="keyword">const</span> correspondences_ptr&amp; correspondences,</div>
+<div class="line">        <span class="keyword">const</span> std::vector&lt;std::size_t&gt;&amp; sorted_indices = {},</div>
+<div class="line">        <span class="keyword">const</span> std::vector&lt;DataType&gt;&amp; quality_scores = {})</div>
+<div class="line">    {</div>
+<div class="line">        this-&gt;m_correspondences = correspondences;</div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">if</span> (!sorted_indices.empty()) {</div>
+<div class="line">            m_sorted_indices = sorted_indices;</div>
+<div class="line">        } <span class="keywordflow">else</span> {</div>
+<div class="line">            <span class="comment">// 如果未提供排序索引，假设对应关系已按顺序排序</span></div>
+<div class="line">            m_sorted_indices.resize(correspondences-&gt;size());</div>
+<div class="line">            std::iota(m_sorted_indices.begin(), m_sorted_indices.end(), 0);</div>
+<div class="line">        }</div>
+<div class="line">        </div>
+<div class="line">        m_quality_scores = quality_scores;</div>
+<div class="line">    }</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// ... 其他成员 ...</span></div>
+<div class="line">};</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md81"></a>
+使用示例</h1>
+<h2><a class="anchor" id="autotoc_md82"></a>
+基本使用</h2>
+<div class="fragment"><div class="line"><span class="comment">// 创建描述子距离排序器</span></div>
+<div class="line"><span class="keyword">auto</span> distance_sorter = std::make_shared&lt;descriptor_distance_sorter_t&lt;float&gt;&gt;();</div>
+<div class="line">distance_sorter-&gt;set_point_clouds(source_cloud, target_cloud);</div>
+<div class="line">distance_sorter-&gt;set_correspondences(correspondences);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 计算排序后的索引</span></div>
+<div class="line">std::vector&lt;float&gt; quality_scores;</div>
+<div class="line"><span class="keyword">auto</span> sorted_indices = distance_sorter-&gt;compute_sorted_indices(quality_scores);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用排序后的对应关系进行 PROSAC 配准</span></div>
+<div class="line">prosac_registration_t&lt;float&gt; prosac;</div>
+<div class="line">prosac.set_source(source_cloud);</div>
+<div class="line">prosac.set_target(target_cloud);</div>
+<div class="line">prosac.set_sorted_correspondences(correspondences, sorted_indices, quality_scores);</div>
+<div class="line"> </div>
+<div class="line">registration_result_t&lt;float&gt; result;</div>
+<div class="line">prosac.align(result);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md83"></a>
+组合排序器使用</h2>
+<div class="fragment"><div class="line"><span class="comment">// 创建组合排序器</span></div>
+<div class="line"><span class="keyword">auto</span> combined_sorter = std::make_shared&lt;combined_sorter_t&lt;float&gt;&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 添加描述子距离排序器（权重 0.7）</span></div>
+<div class="line"><span class="keyword">auto</span> dist_sorter = std::make_shared&lt;descriptor_distance_sorter_t&lt;float&gt;&gt;();</div>
+<div class="line">combined_sorter-&gt;add_sorter(dist_sorter, 0.7f);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 添加几何一致性排序器（权重 0.3）</span></div>
+<div class="line"><span class="keyword">auto</span> geom_sorter = std::make_shared&lt;geometric_consistency_sorter_t&lt;float&gt;&gt;();</div>
+<div class="line">geom_sorter-&gt;set_neighborhood_size(20);</div>
+<div class="line">combined_sorter-&gt;add_sorter(geom_sorter, 0.3f);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 归一化权重</span></div>
+<div class="line">combined_sorter-&gt;normalize_weights();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 使用组合排序器</span></div>
+<div class="line">combined_sorter-&gt;set_point_clouds(source_cloud, target_cloud);</div>
+<div class="line">combined_sorter-&gt;set_correspondences(correspondences);</div>
+<div class="line"> </div>
+<div class="line">std::vector&lt;float&gt; scores;</div>
+<div class="line"><span class="keyword">auto</span> indices = combined_sorter-&gt;compute_sorted_indices(scores);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md84"></a>
+自定义排序器使用</h2>
+<div class="fragment"><div class="line"><span class="comment">// 创建自定义排序器</span></div>
+<div class="line"><span class="keyword">auto</span> custom_sorter = std::make_shared&lt;custom_function_sorter_t&lt;float&gt;&gt;();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置自定义质量函数</span></div>
+<div class="line">custom_sorter-&gt;set_quality_function(</div>
+<div class="line">    [](<span class="keyword">const</span> correspondence_t&amp; corr,</div>
+<div class="line">       <span class="keyword">const</span> point_cloud&lt;float&gt;&amp; src,</div>
+<div class="line">       <span class="keyword">const</span> point_cloud&lt;float&gt;&amp; tgt) -&gt; <span class="keywordtype">float</span> {</div>
+<div class="line">        <span class="comment">// 自定义质量计算逻辑</span></div>
+<div class="line">        <span class="comment">// 例如：结合描述子距离和法向量夹角</span></div>
+<div class="line">        <span class="keywordtype">float</span> desc_quality = 1.0f - (corr.distance / 100.0f);</div>
+<div class="line">        </div>
+<div class="line">        <span class="comment">// 假设点云有法向量</span></div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_normal = src.points[corr.src_idx].normal;</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_normal = tgt.points[corr.dst_idx].normal;</div>
+<div class="line">        <span class="keywordtype">float</span> normal_dot = src_normal.dot(tgt_normal);</div>
+<div class="line">        <span class="keywordtype">float</span> normal_quality = (normal_dot + 1.0f) / 2.0f;  <span class="comment">// 归一化到 [0,1]</span></div>
+<div class="line">        </div>
+<div class="line">        <span class="keywordflow">return</span> 0.6f * desc_quality + 0.4f * normal_quality;</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line">custom_sorter-&gt;set_point_clouds(source_cloud, target_cloud);</div>
+<div class="line">custom_sorter-&gt;set_correspondences(correspondences);</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> sorted_indices = custom_sorter-&gt;compute_sorted_indices(scores);</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md85"></a>
+优势</h1>
+<ol type="1">
+<li>**解耦性**：排序逻辑与配准算法分离</li>
+<li>**可扩展性**：易于添加新的排序策略</li>
+<li>**可组合性**：不同排序器可以灵活组合</li>
+<li>**复用性**：排序器可用于多种算法（PROSAC、RANSAC 变种等）</li>
+<li>**性能优化**：支持缓存和并行计算</li>
+</ol>
+<h1><a class="anchor" id="autotoc_md86"></a>
+文件组织</h1>
+<div class="fragment"><div class="line">src/include/cpp-toolbox/pcl/correspondence/</div>
+<div class="line">├── base_correspondence_sorter.hpp</div>
+<div class="line">├── descriptor_distance_sorter.hpp</div>
+<div class="line">├── geometric_consistency_sorter.hpp</div>
+<div class="line">├── combined_sorter.hpp</div>
+<div class="line">├── custom_function_sorter.hpp</div>
+<div class="line">└── impl/</div>
+<div class="line">    ├── descriptor_distance_sorter_impl.hpp</div>
+<div class="line">    ├── geometric_consistency_sorter_impl.hpp</div>
+<div class="line">    ├── combined_sorter_impl.hpp</div>
+<div class="line">    └── custom_function_sorter_impl.hpp</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/pcl/correspondence/custom_function_sorter.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('custom__function__sorter_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">custom_function_sorter.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="custom__function__sorter_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cpp-toolbox/cpp-toolbox_export.hpp&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="base__correspondence__sorter_8hpp.html">cpp-toolbox/pcl/correspondence/base_correspondence_sorter.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">   49</a></span><span class="keyword">class </span>CPP_TOOLBOX_EXPORT <a class="code hl_class" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    : <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a>&lt;custom_function_sorter_t&lt;DataType&gt;,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                           DataType&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#aeca64623966490378758cb4a4e84ed1c">   54</a></span>  <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_type</a> =</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t&lt;custom_function_sorter_t&lt;DataType&gt;</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                                   DataType&gt;;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">using </span>typename <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">base_type::point_cloud</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">using </span>typename <a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">base_type::quality_scores_t</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">   70</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">quality_function_t</a> = std::function&lt;DataType(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; correspondence, std::size_t index,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud</a>&amp; source_cloud, <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud</a>&amp; target_cloud)&gt;;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">   78</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">simple_quality_function_t</a> =</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      std::function&lt;DataType(<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; correspondence)&gt;;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#af5c5ac5bffe03a4a817e57bd75fad809">   81</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#af5c5ac5bffe03a4a817e57bd75fad809">custom_function_sorter_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a5e781b8dbf670858819140cb6d3f95">   82</a></span>  <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a5e781b8dbf670858819140cb6d3f95">~custom_function_sorter_t</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">   88</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">set_quality_function</a>(<a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">quality_function_t</a> func)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    m_quality_function = std::move(func);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    m_simple_function = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    this-&gt;m_cached = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  }</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ad6c84a0e68761814fd85eadd659761d0">  100</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ad6c84a0e68761814fd85eadd659761d0">set_simple_quality_function</a>(<a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">simple_quality_function_t</a> func)</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    m_simple_function = std::move(func);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    m_quality_function = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    this-&gt;m_cached = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#acbbae2d14d1ad79f619985c382dc09e1">  111</a></span>  [[nodiscard]] <span class="keywordtype">bool</span> has_quality_function()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> m_quality_function || m_simple_function;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="comment">// Friend declaration to allow base class access</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a>&lt;<a class="code hl_class" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a>&lt;DataType&gt;,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                            DataType&gt;;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a7e54594292292d02592643ed1cc16cf1">  125</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a7e54594292292d02592643ed1cc16cf1">compute_quality_scores_impl</a>(<a class="code hl_typedef" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a>&amp; scores)</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">if</span> (!has_quality_function()) {</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          &lt;&lt; <span class="stringliteral">&quot;错误：未设置质量函数 / Error: Quality function not set&quot;</span>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>      std::fill(scores.begin(), scores.end(), 0);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corrs = *this-&gt;m_correspondences;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (m_simple_function) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="comment">// 使用简化的质量函数 / Use simplified quality function</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; corrs.size(); ++i) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        scores[i] = m_simple_function(corrs[i]);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      <span class="comment">// 使用完整的质量函数 / Use full quality function</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_cloud = *this-&gt;m_source_cloud;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_cloud = *this-&gt;m_target_cloud;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; corrs.size(); ++i) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        scores[i] = m_quality_function(corrs[i], i, src_cloud, tgt_cloud);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  }</div>
+</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a38035a3271079e39d9d6c785174e75">  156</a></span>  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a38035a3271079e39d9d6c785174e75">validate_input_impl</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="comment">// 如果使用完整的质量函数，需要点云数据 / If using full quality function,</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">// need point cloud data</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">if</span> (m_quality_function &amp;&amp; (!this-&gt;m_source_cloud || !this-&gt;m_target_cloud)) {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <a class="code hl_define" href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a> &lt;&lt; <span class="stringliteral">&quot;错误：使用完整质量函数时需要点云数据 / Error: Point &quot;</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>                     <span class="stringliteral">&quot;cloud data required when using full quality function&quot;</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  }</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a69200e2f820912d45e87919403427315">  172</a></span>  [[nodiscard]] std::string <a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a69200e2f820912d45e87919403427315">get_sorter_name_impl</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">return</span> <span class="stringliteral">&quot;CustomFunction&quot;</span>;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }</div>
+</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  quality_function_t m_quality_function;  </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  simple_quality_function_t</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>      m_simple_function;  </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>};</div>
+</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="ttc" id="abase__correspondence__sorter_8hpp_html"><div class="ttname"><a href="base__correspondence__sorter_8hpp.html">base_correspondence_sorter.hpp</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">toolbox::pcl::base_correspondence_sorter_t</a></div><div class="ttdoc">对应关系排序器的基类（CRTP模式） / Base class for correspondence sorters (CRTP pattern)</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:51</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_aa5b7d6603a5fd69351939c22c4f31d61"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">toolbox::pcl::base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;::quality_scores_t</a></div><div class="ttdeci">std::vector&lt; DataType &gt; quality_scores_t</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:56</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a></div><div class="ttdoc">自定义函数的对应关系排序器 / Custom function-based correspondence sorter</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a4092892d32250290232b8f169ca62d83"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">toolbox::pcl::custom_function_sorter_t::set_quality_function</a></div><div class="ttdeci">void set_quality_function(quality_function_t func)</div><div class="ttdoc">设置自定义质量函数 / Set custom quality function</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:88</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a42f35ccf5d4f8d5ce197d52d497c0da7"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">toolbox::pcl::custom_function_sorter_t::quality_function_t</a></div><div class="ttdeci">std::function&lt; DataType(const correspondence_t &amp;correspondence, std::size_t index, const point_cloud &amp;source_cloud, const point_cloud &amp;target_cloud)&gt; quality_function_t</div><div class="ttdoc">质量函数类型定义 / Quality function type definition</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:72</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a5a38035a3271079e39d9d6c785174e75"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a38035a3271079e39d9d6c785174e75">toolbox::pcl::custom_function_sorter_t::validate_input_impl</a></div><div class="ttdeci">bool validate_input_impl() const</div><div class="ttdoc">验证输入数据的实现 / Implementation of input validation</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:156</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a5a5e781b8dbf670858819140cb6d3f95"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a5e781b8dbf670858819140cb6d3f95">toolbox::pcl::custom_function_sorter_t::~custom_function_sorter_t</a></div><div class="ttdeci">~custom_function_sorter_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a69200e2f820912d45e87919403427315"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a69200e2f820912d45e87919403427315">toolbox::pcl::custom_function_sorter_t::get_sorter_name_impl</a></div><div class="ttdeci">std::string get_sorter_name_impl() const</div><div class="ttdoc">获取排序器名称实现 / Get sorter name implementation</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:172</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a7e54594292292d02592643ed1cc16cf1"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a7e54594292292d02592643ed1cc16cf1">toolbox::pcl::custom_function_sorter_t::compute_quality_scores_impl</a></div><div class="ttdeci">void compute_quality_scores_impl(quality_scores_t &amp;scores)</div><div class="ttdoc">计算质量分数的实现 / Implementation of quality score computation</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:125</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_ab36f05766231679a8a65aa2f7c31d707"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">toolbox::pcl::custom_function_sorter_t::simple_quality_function_t</a></div><div class="ttdeci">std::function&lt; DataType(const correspondence_t &amp;correspondence)&gt; simple_quality_function_t</div><div class="ttdoc">简化的质量函数类型（仅基于对应关系） / Simplified quality function type (based on correspondence only)</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:79</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_ad6c84a0e68761814fd85eadd659761d0"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ad6c84a0e68761814fd85eadd659761d0">toolbox::pcl::custom_function_sorter_t::set_simple_quality_function</a></div><div class="ttdeci">void set_simple_quality_function(simple_quality_function_t func)</div><div class="ttdoc">设置简化的质量函数（仅基于对应关系） / Set simplified quality function (based on correspondence only)</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:100</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_af5c5ac5bffe03a4a817e57bd75fad809"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#af5c5ac5bffe03a4a817e57bd75fad809">toolbox::pcl::custom_function_sorter_t::custom_function_sorter_t</a></div><div class="ttdeci">custom_function_sorter_t()=default</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt; DataType &gt;</a></div></div>
+<div class="ttc" id="agroup___logging_macros_html_ga869e13d38a14388c77018138eb480ad5"><div class="ttname"><a href="group___logging_macros.html#ga869e13d38a14388c77018138eb480ad5">LOG_ERROR_S</a></div><div class="ttdeci">#define LOG_ERROR_S</div><div class="ttdoc">ERROR级别流式日志的宏 / Macro for ERROR level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1332</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></div><div class="ttdoc">对应关系结构体 / Correspondence structure</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:27</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_f66d48d75a3d5d9d9a342840712bf869.html">pcl</a></li><li class="navelem"><a class="el" href="dir_9bd22864257bc944587f30bf5e25cc1c.html">correspondence</a></li><li class="navelem"><a class="el" href="custom__function__sorter_8hpp.html">custom_function_sorter.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

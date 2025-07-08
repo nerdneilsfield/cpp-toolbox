@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['类型命名_20type_20naming_0',['1. 类型命名 / Type Naming',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md48',1,'']]]
+  ['多模态数据同步_0',['4.1 多模态数据同步',['../md_docs_2md_2_k_i_t_t_i___d_e_e_p___i_m_p_l_e_m_e_n_t_a_t_i_o_n___i_n_s_i_g_h_t_s.html#autotoc_md128',1,'']]]
 ];

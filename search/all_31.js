@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['描述子提取_20descriptor_20extraction_0',['描述子提取 / Descriptor Extraction',['../group__descriptors.html',1,'']]]
+  ['函数与参数_20functions_20parameters_0',['6. 函数与参数 / Functions &amp; Parameters',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md58',1,'']]]
 ];

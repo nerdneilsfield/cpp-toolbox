@@ -10,7 +10,9 @@ digraph "src/include/cpp-toolbox/pcl/registration/impl"
   dir_3138dcc476fc8c0896ac93ef260b5ae6 [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_3138dcc476fc8c0896ac93ef260b5ae6.html",tooltip=""];
   }
   dir_53097c1fb4416aacf03fa23589a54650 [label="concurrent", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_53097c1fb4416aacf03fa23589a54650.html",tooltip=""];
+  dir_8fad4626683566b36de06301c858df30 [label="metrics", fillcolor="#daedff", color="grey50", style="filled", URL="dir_8fad4626683566b36de06301c858df30.html",tooltip=""];
   dir_f67a023f401e335084376ee616e38b67 [label="utils", fillcolor="#daedff", color="red", style="filled,dashed", URL="dir_f67a023f401e335084376ee616e38b67.html",tooltip=""];
-  dir_3138dcc476fc8c0896ac93ef260b5ae6->dir_53097c1fb4416aacf03fa23589a54650 [headlabel="7", labeldistance=1.5 headhref="dir_000024_000001.html" href="dir_000024_000001.html" color="steelblue1" fontcolor="steelblue1"];
-  dir_3138dcc476fc8c0896ac93ef260b5ae6->dir_f67a023f401e335084376ee616e38b67 [headlabel="4", labeldistance=1.5 headhref="dir_000024_000041.html" href="dir_000024_000041.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3138dcc476fc8c0896ac93ef260b5ae6->dir_53097c1fb4416aacf03fa23589a54650 [headlabel="7", labeldistance=1.5 headhref="dir_000026_000001.html" href="dir_000026_000001.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3138dcc476fc8c0896ac93ef260b5ae6->dir_8fad4626683566b36de06301c858df30 [headlabel="2", labeldistance=1.5 headhref="dir_000026_000036.html" href="dir_000026_000036.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_3138dcc476fc8c0896ac93ef260b5ae6->dir_f67a023f401e335084376ee616e38b67 [headlabel="4", labeldistance=1.5 headhref="dir_000026_000043.html" href="dir_000026_000043.html" color="steelblue1" fontcolor="steelblue1"];
 }

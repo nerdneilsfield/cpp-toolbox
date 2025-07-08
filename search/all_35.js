@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['法向量提取_20normal_20extraction_0',['法向量提取 / Normal Extraction',['../group__norm.html',1,'']]]
+  ['周）_0',['周）',['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md196',1,'第一阶段：核心算法（第 1 周）'],['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md198',1,'第三阶段：质量度量和优化（第 3 周）'],['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md197',1,'第二阶段：停止准则（第 2 周）'],['../md_docs_2md_2_p_r_o_s_a_c___d_e_s_i_g_n.html#autotoc_md199',1,'第四阶段：集成和测试（第 4 周）']]]
 ];

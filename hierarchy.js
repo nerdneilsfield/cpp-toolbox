@@ -8,6 +8,9 @@ var hierarchy =
         [ "toolbox::pcl::super_four_pcs_registration_t< DataType >", "classtoolbox_1_1pcl_1_1super__four__pcs__registration__t.html", null ]
       ] ]
     ] ],
+    [ "toolbox::pcl::base_coarse_registration_t< prosac_registration_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", [
+      [ "toolbox::pcl::prosac_registration_t< DataType >", "classtoolbox_1_1pcl_1_1prosac__registration__t.html", null ]
+    ] ],
     [ "toolbox::pcl::base_coarse_registration_t< ransac_registration_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__coarse__registration__t.html", [
       [ "toolbox::pcl::ransac_registration_t< DataType >", "classtoolbox_1_1pcl_1_1ransac__registration__t.html", null ]
     ] ],
@@ -17,6 +20,19 @@ var hierarchy =
     ] ],
     [ "toolbox::pcl::base_correspondence_generator_t< knn_correspondence_generator_t< DataType, Signature, KNN >, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html", [
       [ "toolbox::pcl::knn_correspondence_generator_t< DataType, Signature, KNN >", "classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_correspondence_sorter_t< Derived, DataType >", "classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html", null ],
+    [ "toolbox::pcl::base_correspondence_sorter_t< combined_sorter_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html", [
+      [ "toolbox::pcl::combined_sorter_t< DataType >", "classtoolbox_1_1pcl_1_1combined__sorter__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_correspondence_sorter_t< custom_function_sorter_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html", [
+      [ "toolbox::pcl::custom_function_sorter_t< DataType >", "classtoolbox_1_1pcl_1_1custom__function__sorter__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_correspondence_sorter_t< descriptor_distance_sorter_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html", [
+      [ "toolbox::pcl::descriptor_distance_sorter_t< DataType >", "classtoolbox_1_1pcl_1_1descriptor__distance__sorter__t.html", null ]
+    ] ],
+    [ "toolbox::pcl::base_correspondence_sorter_t< geometric_consistency_sorter_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html", [
+      [ "toolbox::pcl::geometric_consistency_sorter_t< DataType >", "classtoolbox_1_1pcl_1_1geometric__consistency__sorter__t.html", null ]
     ] ],
     [ "toolbox::pcl::base_descriptor_extractor_t< Derived, DataType, Signature >", "classtoolbox_1_1pcl_1_1base__descriptor__extractor__t.html", null ],
     [ "base_descriptor_extractor_t< cvfh_extractor_t< DataType, kdtree_generic_t< point_t< DataType >, toolbox::metrics::L2Metric< DataType > > >, DataType, cvfh_signature_t< DataType > >", null, [
@@ -162,6 +178,9 @@ var hierarchy =
     [ "toolbox::metrics::base_metric_t< LambdaMetric< T, Lambda >, T >", "classtoolbox_1_1metrics_1_1base__metric__t.html", [
       [ "toolbox::metrics::LambdaMetric< T, Lambda >", "classtoolbox_1_1metrics_1_1_lambda_metric.html", null ]
     ] ],
+    [ "toolbox::metrics::base_metric_t< LCPMetric< T >, T >", "classtoolbox_1_1metrics_1_1base__metric__t.html", [
+      [ "toolbox::metrics::LCPMetric< T >", "classtoolbox_1_1metrics_1_1_l_c_p_metric.html", null ]
+    ] ],
     [ "toolbox::metrics::base_metric_t< LinfMetric< T >, T >", "classtoolbox_1_1metrics_1_1base__metric__t.html", [
       [ "toolbox::metrics::LinfMetric< T >", "classtoolbox_1_1metrics_1_1_linf_metric.html", null ]
     ] ],
@@ -254,13 +273,24 @@ var hierarchy =
     ] ],
     [ "toolbox::pcl::correspondence_t", "structtoolbox_1_1pcl_1_1correspondence__t.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >", "classtoolbox_1_1io_1_1dataloader__t.html", null ],
-    [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
+    [ "toolbox::io::dataset_t< Derived, DataType >", "classtoolbox_1_1io_1_1dataset__t.html", [
+      [ "toolbox::io::kitti_odometry_dataset_t< float >", "classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html", null ],
+      [ "toolbox::io::semantic_kitti_dataset_t< float >", "classtoolbox_1_1io_1_1semantic__kitti__dataset__t.html", null ],
+      [ "toolbox::io::kitti_odometry_dataset_t< DataType >", "classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html", null ],
+      [ "toolbox::io::kitti_odometry_pair_dataset_t< DataType >", "classtoolbox_1_1io_1_1kitti__odometry__pair__dataset__t.html", null ],
+      [ "toolbox::io::semantic_kitti_dataset_t< DataType >", "classtoolbox_1_1io_1_1semantic__kitti__dataset__t.html", null ],
+      [ "toolbox::io::semantic_kitti_pair_dataset_t< DataType >", "classtoolbox_1_1io_1_1semantic__kitti__pair__dataset__t.html", null ]
+    ] ],
+    [ "toolbox::io::dataset_t< kitti_odometry_dataset_t< float >, kitti_odometry_frame_t< float > >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
+    [ "toolbox::io::dataset_t< kitti_odometry_pair_dataset_t< float >, kitti_odometry_frame_pair_t< float > >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
     [ "toolbox::io::dataset_t< kitti_pcd_dataset_t, std::unique_ptr< toolbox::types::point_cloud_t< float > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
       [ "toolbox::io::kitti_pcd_dataset_t", "classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html", null ]
     ] ],
     [ "toolbox::io::dataset_t< kitti_pcd_pair_t, std::pair< std::unique_ptr< toolbox::types::point_cloud_t< float > >, std::unique_ptr< toolbox::types::point_cloud_t< float > > > >", "classtoolbox_1_1io_1_1dataset__t.html", [
       [ "toolbox::io::kitti_pcd_pair_t", "classtoolbox_1_1io_1_1kitti__pcd__pair__t.html", null ]
     ] ],
+    [ "toolbox::io::dataset_t< semantic_kitti_dataset_t< float >, semantic_kitti_frame_t< float > >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
+    [ "toolbox::io::dataset_t< semantic_kitti_pair_dataset_t< float >, semantic_kitti_frame_pair_t< float > >", "classtoolbox_1_1io_1_1dataset__t.html", null ],
     [ "toolbox::traits::enum_wrapper< EnumType >", "classtoolbox_1_1traits_1_1enum__wrapper.html", null ],
     [ "exported_class", "classexported__class.html", null ],
     [ "std::false_type", null, [
@@ -329,6 +359,12 @@ var hierarchy =
     [ "toolbox::pcl::iteration_state_t< DataType >", "structtoolbox_1_1pcl_1_1iteration__state__t.html", null ],
     [ "toolbox::io::dataloader_t< DatasetT, SamplerT >::iterator", "classtoolbox_1_1io_1_1dataloader__t_1_1iterator.html", null ],
     [ "toolbox::pcl::voxel_grid_downsampling_t< DataType >::key_hash", "structtoolbox_1_1pcl_1_1voxel__grid__downsampling__t_1_1key__hash.html", null ],
+    [ "toolbox::io::kitti_calibration_t< DataType >", "structtoolbox_1_1io_1_1kitti__calibration__t.html", null ],
+    [ "toolbox::io::kitti_odometry_frame_pair_t< DataType >", "structtoolbox_1_1io_1_1kitti__odometry__frame__pair__t.html", null ],
+    [ "toolbox::io::kitti_odometry_frame_t< DataType >", "structtoolbox_1_1io_1_1kitti__odometry__frame__t.html", null ],
+    [ "toolbox::io::kitti_pose_reader_t< DataType >", "classtoolbox_1_1io_1_1kitti__pose__reader__t.html", null ],
+    [ "toolbox::io::kitti_pose_reader_t< float >", "classtoolbox_1_1io_1_1kitti__pose__reader__t.html", null ],
+    [ "toolbox::io::kitti_sequence_info_t", "structtoolbox_1_1io_1_1kitti__sequence__info__t.html", null ],
     [ "toolbox::pcl::knn_traits< Element, Metric >", "structtoolbox_1_1pcl_1_1knn__traits.html", null ],
     [ "toolbox::pcl::loam_feature_extractor_t< DataType, KNN >::loam_result", "structtoolbox_1_1pcl_1_1loam__feature__extractor__t_1_1loam__result.html", null ],
     [ "toolbox::container::lock_free_queue_t< T >", "classtoolbox_1_1container_1_1lock__free__queue__t.html", null ],
@@ -372,12 +408,21 @@ var hierarchy =
     [ "toolbox::traits::remove_all_qualifiers< T >", "structtoolbox_1_1traits_1_1remove__all__qualifiers.html", null ],
     [ "toolbox::traits::remove_reference< T >", "structtoolbox_1_1traits_1_1remove__reference.html", null ],
     [ "std::runtime_error", null, [
+      [ "toolbox::io::kitti_exception", "classtoolbox_1_1io_1_1kitti__exception.html", [
+        [ "toolbox::io::kitti_corrupted_data", "classtoolbox_1_1io_1_1kitti__corrupted__data.html", null ],
+        [ "toolbox::io::kitti_file_not_found", "classtoolbox_1_1io_1_1kitti__file__not__found.html", null ],
+        [ "toolbox::io::kitti_index_out_of_range", "classtoolbox_1_1io_1_1kitti__index__out__of__range.html", null ],
+        [ "toolbox::io::kitti_invalid_format", "classtoolbox_1_1io_1_1kitti__invalid__format.html", null ],
+        [ "toolbox::io::kitti_invalid_sequence", "classtoolbox_1_1io_1_1kitti__invalid__sequence.html", null ]
+      ] ],
       [ "toolbox::utils::ClickException", "classtoolbox_1_1utils_1_1_click_exception.html", [
         [ "toolbox::utils::ParameterError", "classtoolbox_1_1utils_1_1_parameter_error.html", null ],
         [ "toolbox::utils::UsageError", "classtoolbox_1_1utils_1_1_usage_error.html", null ]
       ] ]
     ] ],
     [ "toolbox::io::sampler_t< PolicyT >", "classtoolbox_1_1io_1_1sampler__t.html", null ],
+    [ "toolbox::io::semantic_kitti_frame_pair_t< DataType >", "structtoolbox_1_1io_1_1semantic__kitti__frame__pair__t.html", null ],
+    [ "toolbox::io::semantic_kitti_frame_t< DataType >", "structtoolbox_1_1io_1_1semantic__kitti__frame__t.html", null ],
     [ "toolbox::io::sequential_policy_t", "structtoolbox_1_1io_1_1sequential__policy__t.html", null ],
     [ "toolbox::utils::plot_t::series_t", "structtoolbox_1_1utils_1_1plot__t_1_1series__t.html", null ],
     [ "toolbox::io::shuffle_policy_t", "classtoolbox_1_1io_1_1shuffle__policy__t.html", null ],

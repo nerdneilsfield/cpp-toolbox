@@ -1,0 +1,28 @@
+var classtoolbox_1_1pcl_1_1prosac__registration__t =
+[
+    [ "base_type", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#af7c4b498bfc12e3473f4fe3500a943d9", null ],
+    [ "matrix3_t", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a189207b5b4703c78f0dc75cb74b14675", null ],
+    [ "transformation_t", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#aaf367fab69e4127ea007c611591de625", null ],
+    [ "vector3_t", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a9f8a05062e894f5710d035cab66c7459", null ],
+    [ "prosac_registration_t", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#aea5ad526c20e9e9b37404043b5b975cc", null ],
+    [ "~prosac_registration_t", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#aa9b86a10b20330fc91ef6e01c0ced6ef", null ],
+    [ "align_impl", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a7dceb5fb2f4346abfb71ba3320464042", null ],
+    [ "get_algorithm_name_impl", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a2ba5d255186916727bc8acf01d2a8cd3", null ],
+    [ "get_confidence", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a19c7c83272423f239589e05787cbde1f", null ],
+    [ "get_early_stop_ratio", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#acb5fb9a05ab6966c1bca67de3c1b18af", null ],
+    [ "get_initial_inlier_ratio", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a0fd02b1239ba906fd94c96b38cccd2b6", null ],
+    [ "get_non_randomness_threshold", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a13ef95d0e3c584b00fbca75f4c6d27bc", null ],
+    [ "get_refine_result", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a24b812d250995f6da23c1a5538d7c505", null ],
+    [ "get_sample_size", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a511166dfe8670b3bfa6dce5af4747781", null ],
+    [ "get_sorted_indices", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#ac73318f989f340d98dc722a59da6aae0", null ],
+    [ "set_confidence", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a3278d85a41485349e442ec45956d90eb", null ],
+    [ "set_correspondences_impl", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a7ed9ac84d63601cb62ac9bd4b1477b45", null ],
+    [ "set_early_stop_ratio", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#aca23de95b33ff869345a69a6707547cb", null ],
+    [ "set_initial_inlier_ratio", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#ae90fa1185dc629acfc52d6d51bfba88f", null ],
+    [ "set_non_randomness_threshold", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a846d7573d75988d5002b8f3618e194b4", null ],
+    [ "set_refine_result", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a88d0a4d545516d167abc4daf54cfc917", null ],
+    [ "set_sample_size", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a47e16c8b5f32c03f9e33ecf78823eb4e", null ],
+    [ "set_sorted_correspondences", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a16809ee8d59933fb9553fd63f32b9e9f", null ],
+    [ "validate_input_impl", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a089df25bbeab2c5b871e89e1e72728b6", null ],
+    [ "base_coarse_registration_t< prosac_registration_t< DataType >, DataType >", "classtoolbox_1_1pcl_1_1prosac__registration__t.html#a5dc958f56083a4f7e2967a2cd8f65578", null ]
+];

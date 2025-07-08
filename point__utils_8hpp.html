@@ -233,6 +233,8 @@ $(document).ready(function(){initNavTree('point__utils_8hpp.html',''); initResiz
 <code>#include &lt;<a class="el" href="thread__logger_8hpp_source.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="minmax_8hpp_source.html">cpp-toolbox/types/minmax.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="point_8hpp_source.html">cpp-toolbox/types/point.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="parallel_8hpp_source.html">cpp-toolbox/concurrent/parallel.hpp</a>&gt;</code><br />
+<code>#include &lt;Eigen/Core&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for point_utils.hpp:</div>
 <div class="dyncontent">
@@ -258,6 +260,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a46d86a5af2e32860f9157f19dc24c226"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#a46d86a5af2e32860f9157f19dc24c226">toolbox::types::generate_random_points_parallel</a> (const std::size_t &amp;num_points, const <a class="el" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt; &amp;minmax) -&gt; std::vector&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt;</td></tr>
 <tr class="memdesc:a46d86a5af2e32860f9157f19dc24c226"><td class="mdescLeft">&#160;</td><td class="mdescRight">在给定边界内并行生成随机点 / Generates random points within given bounds in parallel  <br /></td></tr>
 <tr class="separator:a46d86a5af2e32860f9157f19dc24c226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf9fb9b3668230767d084a9e31b9cf9" id="r_aabf9fb9b3668230767d084a9e31b9cf9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aabf9fb9b3668230767d084a9e31b9cf9"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#aabf9fb9b3668230767d084a9e31b9cf9">toolbox::types::transform_point_cloud</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:aabf9fb9b3668230767d084a9e31b9cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">对点云应用变换矩阵（顺序版本）/ Apply transformation matrix to point cloud (sequential version)  <br /></td></tr>
+<tr class="separator:aabf9fb9b3668230767d084a9e31b9cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5d0d23eda54d6b4650f572cf74a6ab" id="r_a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#a7b5d0d23eda54d6b4650f572cf74a6ab">toolbox::types::transform_point_cloud_parallel</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">对点云应用变换矩阵（并行版本）/ Apply transformation matrix to point cloud (parallel version)  <br /></td></tr>
+<tr class="separator:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad136a7f078c7cce5542d2ffa14d42363" id="r_ad136a7f078c7cce5542d2ffa14d42363"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad136a7f078c7cce5542d2ffa14d42363"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#ad136a7f078c7cce5542d2ffa14d42363">toolbox::types::transform_point_cloud_inplace</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</td></tr>
+<tr class="memdesc:ad136a7f078c7cce5542d2ffa14d42363"><td class="mdescLeft">&#160;</td><td class="mdescRight">原地变换点云（顺序版本）/ Transform point cloud in-place (sequential version)  <br /></td></tr>
+<tr class="separator:ad136a7f078c7cce5542d2ffa14d42363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fa9a60b6186baf0147d8a978c87ddb" id="r_af4fa9a60b6186baf0147d8a978c87ddb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af4fa9a60b6186baf0147d8a978c87ddb"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#af4fa9a60b6186baf0147d8a978c87ddb">toolbox::types::transform_point_cloud_inplace_parallel</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</td></tr>
+<tr class="memdesc:af4fa9a60b6186baf0147d8a978c87ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">原地变换点云（并行版本）/ Transform point cloud in-place (parallel version)  <br /></td></tr>
+<tr class="separator:af4fa9a60b6186baf0147d8a978c87ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

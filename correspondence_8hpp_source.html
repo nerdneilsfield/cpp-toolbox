@@ -228,145 +228,146 @@ $(document).ready(function(){initNavTree('correspondence_8hpp_source.html',''); 
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;<a class="code" href="base__correspondence__generator_8hpp.html">cpp-toolbox/pcl/correspondence/base_correspondence_generator.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;<a class="code" href="knn__correspondence__generator_8hpp.html">cpp-toolbox/pcl/correspondence/knn_correspondence_generator.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;<a class="code" href="brute__force__correspondence__generator_8hpp.html">cpp-toolbox/pcl/correspondence/brute_force_correspondence_generator.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// Logger macros</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="correspondence_8hpp.html#a28d4d51a64e29b87c59c10f86615f4bf">   48</a></span><span class="preprocessor">#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature, <span class="keyword">typename</span> KNN&gt;</div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">  112</a></span>std::vector&lt;correspondence_t&gt; <a class="code hl_function" href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">generate_correspondences_knn</a>(</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; src_cloud,</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; src_descriptors,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; src_keypoints,</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; dst_cloud,</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; dst_descriptors,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; dst_keypoints,</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">float</span> ratio = 0.8f,</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">bool</span> mutual = <span class="keyword">true</span>)</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>{</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">knn_correspondence_generator_t&lt;DataType, Signature, KNN&gt;</a> gen;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keyword">auto</span> knn = std::make_shared&lt;KNN&gt;();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html#a45ccd5d7569160284143b1bbfa7f5b97">set_knn</a>(knn);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a>(src_cloud, src_descriptors, src_keypoints);</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a>(dst_cloud, dst_descriptors, dst_keypoints);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(ratio);</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(mutual);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    </div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    std::vector&lt;correspondence_t&gt; correspondences;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a>(correspondences);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">return</span> correspondences;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;<a class="code" href="correspondence__sorter_8hpp.html">cpp-toolbox/pcl/correspondence/correspondence_sorter.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;<a class="code" href="thread__logger_8hpp.html">cpp-toolbox/logger/thread_logger.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">// Logger macros</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="correspondence_8hpp.html#a28d4d51a64e29b87c59c10f86615f4bf">   49</a></span><span class="preprocessor">#define LOG_INFO_S toolbox::logger::thread_logger_t::instance().info_s()</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature, <span class="keyword">typename</span> KNN&gt;</div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">  113</a></span>std::vector&lt;correspondence_t&gt; <a class="code hl_function" href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">generate_correspondences_knn</a>(</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; src_cloud,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; src_descriptors,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; src_keypoints,</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; dst_cloud,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; dst_descriptors,</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; dst_keypoints,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keywordtype">float</span> ratio = 0.8f,</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">bool</span> mutual = <span class="keyword">true</span>)</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>{</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">knn_correspondence_generator_t&lt;DataType, Signature, KNN&gt;</a> gen;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">auto</span> knn = std::make_shared&lt;KNN&gt;();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html#a45ccd5d7569160284143b1bbfa7f5b97">set_knn</a>(knn);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a>(src_cloud, src_descriptors, src_keypoints);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a>(dst_cloud, dst_descriptors, dst_keypoints);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(ratio);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(mutual);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    std::vector&lt;correspondence_t&gt; correspondences;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a>(correspondences);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">return</span> correspondences;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
 </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature&gt;</div>
-<div class="foldopen" id="foldopen00161" data-start="{" data-end="}">
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">  161</a></span>std::vector&lt;correspondence_t&gt; <a class="code hl_function" href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">generate_correspondences_brute_force</a>(</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; src_cloud,</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; src_descriptors,</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; src_keypoints,</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; dst_cloud,</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; dst_descriptors,</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; dst_keypoints,</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">float</span> ratio = 0.8f,</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">bool</span> mutual = <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">bool</span> parallel = <span class="keyword">false</span>)</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>{</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html">brute_force_correspondence_generator_t&lt;DataType, Signature&gt;</a> gen;</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html#a2324e2d3f180c9d596d3314e9c2d2745">enable_parallel</a>(parallel);</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a>(src_cloud, src_descriptors, src_keypoints);</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a>(dst_cloud, dst_descriptors, dst_keypoints);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(ratio);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(mutual);</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    </div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    std::vector&lt;correspondence_t&gt; correspondences;</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a>(correspondences);</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    <span class="keywordflow">return</span> correspondences;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType, <span class="keyword">typename</span> Signature&gt;</div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">  162</a></span>std::vector&lt;correspondence_t&gt; <a class="code hl_function" href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">generate_correspondences_brute_force</a>(</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; src_cloud,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; src_descriptors,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; src_keypoints,</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keyword">const</span> std::shared_ptr&lt;<a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt;DataType&gt;</a>&gt;&amp; dst_cloud,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;Signature&gt;&gt;&amp; dst_descriptors,</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">const</span> std::shared_ptr&lt;std::vector&lt;std::size_t&gt;&gt;&amp; dst_keypoints,</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">float</span> ratio = 0.8f,</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordtype">bool</span> mutual = <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keywordtype">bool</span> parallel = <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <a class="code hl_class" href="classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html">brute_force_correspondence_generator_t&lt;DataType, Signature&gt;</a> gen;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1brute__force__correspondence__generator__t.html#a2324e2d3f180c9d596d3314e9c2d2745">enable_parallel</a>(parallel);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a39bfe5280ce732eeb1df94e67cf8ac29">set_source</a>(src_cloud, src_descriptors, src_keypoints);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">set_destination</a>(dst_cloud, dst_descriptors, dst_keypoints);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a2f720990a4e646e99f9832867e8177c3">set_ratio</a>(ratio);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ac078ce2b872b6730acd11b385961d10d">set_mutual_verification</a>(mutual);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    std::vector&lt;correspondence_t&gt; correspondences;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    gen.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#ab29fea47470b1c915c900e2df9732fa5">compute</a>(correspondences);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordflow">return</span> correspondences;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
 </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
-<div class="foldopen" id="foldopen00198" data-start="{" data-end="}">
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">  198</a></span><span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">filter_correspondences_by_distance</a>(</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    std::vector&lt;correspondence_t&gt;&amp; correspondences,</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    <span class="keywordtype">float</span> max_distance)</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>{</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">size_t</span> original_size = correspondences.size();</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    </div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    correspondences.erase(</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        std::remove_if(correspondences.begin(), correspondences.end(),</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                      [max_distance](<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; corr) {</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                          return corr.distance &gt; max_distance;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                      }),</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        correspondences.end());</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">return</span> original_size - correspondences.size();</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>}</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="foldopen" id="foldopen00199" data-start="{" data-end="}">
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">  199</a></span><span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">filter_correspondences_by_distance</a>(</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    std::vector&lt;correspondence_t&gt;&amp; correspondences,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="keywordtype">float</span> max_distance)</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>{</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordtype">size_t</span> original_size = correspondences.size();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    correspondences.erase(</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        std::remove_if(correspondences.begin(), correspondences.end(),</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                      [max_distance](<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; corr) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                          return corr.distance &gt; max_distance;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                      }),</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>        correspondences.end());</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">return</span> original_size - correspondences.size();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>}</div>
 </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="foldopen" id="foldopen00227" data-start="{" data-end="}">
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno"><a class="line" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">  227</a></span><span class="keyword">inline</span> std::tuple&lt;float, float, float, float&gt; <a class="code hl_function" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">compute_correspondence_statistics</a>(</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; correspondences)</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>{</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">if</span> (correspondences.empty()) {</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        <span class="keywordflow">return</span> {0.0f, 0.0f, 0.0f, 0.0f};</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <span class="keywordtype">float</span> sum = 0.0f;</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">float</span> min_dist = std::numeric_limits&lt;float&gt;::max();</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">float</span> max_dist = std::numeric_limits&lt;float&gt;::lowest();</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr : correspondences) {</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>        sum += corr.distance;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        min_dist = std::min(min_dist, corr.distance);</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        max_dist = std::max(max_dist, corr.distance);</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    </div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keywordtype">float</span> mean = sum / correspondences.size();</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordtype">float</span> variance = 0.0f;</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr : correspondences) {</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>        <span class="keywordtype">float</span> diff = corr.distance - mean;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        variance += diff * diff;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    }</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    variance /= correspondences.size();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keywordtype">float</span> std_dev = std::sqrt(variance);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">return</span> {mean, std_dev, min_dist, max_dist};</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="foldopen" id="foldopen00228" data-start="{" data-end="}">
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">  228</a></span><span class="keyword">inline</span> std::tuple&lt;float, float, float, float&gt; <a class="code hl_function" href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">compute_correspondence_statistics</a>(</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; correspondences)</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>{</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordflow">if</span> (correspondences.empty()) {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> {0.0f, 0.0f, 0.0f, 0.0f};</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <span class="keywordtype">float</span> sum = 0.0f;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <span class="keywordtype">float</span> min_dist = std::numeric_limits&lt;float&gt;::max();</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordtype">float</span> max_dist = std::numeric_limits&lt;float&gt;::lowest();</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr : correspondences) {</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>        sum += corr.distance;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        min_dist = std::min(min_dist, corr.distance);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>        max_dist = std::max(max_dist, corr.distance);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordtype">float</span> mean = sum / correspondences.size();</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordtype">float</span> variance = 0.0f;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr : correspondences) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordtype">float</span> diff = corr.distance - mean;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        variance += diff * diff;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    variance /= correspondences.size();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordtype">float</span> std_dev = std::sqrt(variance);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="keywordflow">return</span> {mean, std_dev, min_dist, max_dist};</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}</div>
 </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="foldopen" id="foldopen00267" data-start="{" data-end="}">
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">  267</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">print_correspondences</a>(</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>    <span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; correspondences,</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keywordtype">size_t</span> max_display = 10)</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>{</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;对应关系数量 / Number of correspondences: &quot;</span> &lt;&lt; correspondences.size();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    </div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">size_t</span> count = std::min(max_display, correspondences.size());</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; count; ++i) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr = correspondences[i];</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;  [&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; corr.src_idx &lt;&lt; <span class="stringliteral">&quot; &lt;-&gt; &quot;</span> &lt;&lt; corr.dst_idx </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>                   &lt;&lt; <span class="stringliteral">&quot;, 距离 / distance = &quot;</span> &lt;&lt; corr.distance;</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    }</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">if</span> (correspondences.size() &gt; max_display) {</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;  ... 还有 / and &quot;</span> &lt;&lt; (correspondences.size() - max_display)</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                   &lt;&lt; <span class="stringliteral">&quot; 个对应关系 / more correspondences&quot;</span>;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    }</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>}</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">  268</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">print_correspondences</a>(</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>    <span class="keyword">const</span> std::vector&lt;correspondence_t&gt;&amp; correspondences,</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    <span class="keywordtype">size_t</span> max_display = 10)</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>{</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;对应关系数量 / Number of correspondences: &quot;</span> &lt;&lt; correspondences.size();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordtype">size_t</span> count = std::min(max_display, correspondences.size());</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; count; ++i) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; corr = correspondences[i];</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;  [&quot;</span> &lt;&lt; i &lt;&lt; <span class="stringliteral">&quot;] &quot;</span> &lt;&lt; corr.src_idx &lt;&lt; <span class="stringliteral">&quot; &lt;-&gt; &quot;</span> &lt;&lt; corr.dst_idx </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                   &lt;&lt; <span class="stringliteral">&quot;, 距离 / distance = &quot;</span> &lt;&lt; corr.distance;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">if</span> (correspondences.size() &gt; max_display) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        <a class="code hl_define" href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a> &lt;&lt; <span class="stringliteral">&quot;  ... 还有 / and &quot;</span> &lt;&lt; (correspondences.size() - max_display)</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                   &lt;&lt; <span class="stringliteral">&quot; 个对应关系 / more correspondences&quot;</span>;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>}</div>
 </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
- <span class="comment">// end of correspondence group</span><div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+ <span class="comment">// end of correspondence group</span><div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>}  <span class="comment">// namespace toolbox::pcl</span></div>
 <div class="ttc" id="abase__correspondence__generator_8hpp_html"><div class="ttname"><a href="base__correspondence__generator_8hpp.html">base_correspondence_generator.hpp</a></div></div>
 <div class="ttc" id="abrute__force__correspondence__generator_8hpp_html"><div class="ttname"><a href="brute__force__correspondence__generator_8hpp.html">brute_force_correspondence_generator.hpp</a></div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__generator__t_html_a061000655b8d25aad0201fbcad2a754f"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__generator__t.html#a061000655b8d25aad0201fbcad2a754f">toolbox::pcl::base_correspondence_generator_t::set_destination</a></div><div class="ttdeci">void set_destination(const point_cloud_ptr &amp;dst_cloud, const signatures_ptr &amp;dst_descriptors, const keypoint_indices_ptr &amp;dst_keypoint_indices)</div><div class="ttdoc">设置目标数据 / Set destination data</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:98</div></div>
@@ -379,12 +380,13 @@ $(document).ready(function(){initNavTree('correspondence_8hpp_source.html',''); 
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1knn__correspondence__generator__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html">toolbox::pcl::knn_correspondence_generator_t</a></div><div class="ttdoc">基于KNN的对应点生成器 / KNN-based correspondence generator</div><div class="ttdef"><b>Definition</b> knn_correspondence_generator.hpp:50</div></div>
 <div class="ttc" id="aclasstoolbox_1_1pcl_1_1knn__correspondence__generator__t_html_a45ccd5d7569160284143b1bbfa7f5b97"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1knn__correspondence__generator__t.html#a45ccd5d7569160284143b1bbfa7f5b97">toolbox::pcl::knn_correspondence_generator_t::set_knn</a></div><div class="ttdeci">void set_knn(std::shared_ptr&lt; KNN &gt; knn)</div><div class="ttdoc">设置KNN搜索算法 / Set KNN search algorithm</div><div class="ttdef"><b>Definition</b> knn_correspondence_generator.hpp:64</div></div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="acorrespondence__sorter_8hpp_html"><div class="ttname"><a href="correspondence__sorter_8hpp.html">correspondence_sorter.hpp</a></div><div class="ttdoc">对应关系排序器模块的汇总头文件 / Aggregate header for correspondence sorter module</div></div>
 <div class="ttc" id="agroup___logging_macros_html_ga28d4d51a64e29b87c59c10f86615f4bf"><div class="ttname"><a href="group___logging_macros.html#ga28d4d51a64e29b87c59c10f86615f4bf">LOG_INFO_S</a></div><div class="ttdeci">#define LOG_INFO_S</div><div class="ttdoc">INFO级别流式日志的宏 / Macro for INFO level stream logging.</div><div class="ttdef"><b>Definition</b> thread_logger.hpp:1330</div></div>
-<div class="ttc" id="agroup__correspondence_html_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><div class="ttname"><a href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a></div><div class="ttdeci">size_t filter_correspondences_by_distance(std::vector&lt; correspondence_t &gt; &amp;correspondences, float max_distance)</div><div class="ttdoc">过滤对应关系的辅助函数 / Helper function to filter correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:198</div></div>
-<div class="ttc" id="agroup__correspondence_html_ga7cb3cde3a1e77db3bb333afe0e85aee7"><div class="ttname"><a href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a></div><div class="ttdeci">void print_correspondences(const std::vector&lt; correspondence_t &gt; &amp;correspondences, size_t max_display=10)</div><div class="ttdoc">可视化对应关系的辅助信息 / Helper to visualize correspondence information</div><div class="ttdef"><b>Definition</b> correspondence.hpp:267</div></div>
-<div class="ttc" id="agroup__correspondence_html_gaa516fb42a0c44e128df79cc240c17162"><div class="ttname"><a href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">toolbox::pcl::generate_correspondences_brute_force</a></div><div class="ttdeci">std::vector&lt; correspondence_t &gt; generate_correspondences_brute_force(const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true, bool parallel=false)</div><div class="ttdoc">快速生成对应关系的便捷函数（使用暴力搜索） / Convenience function for quick correspondence generation (using brute force)</div><div class="ttdef"><b>Definition</b> correspondence.hpp:161</div></div>
-<div class="ttc" id="agroup__correspondence_html_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><div class="ttname"><a href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; compute_correspondence_statistics(const std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系的统计信息 / Compute statistics of correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:227</div></div>
-<div class="ttc" id="agroup__correspondence_html_gad953c6719d42c6d8f50bed9a4998d77b"><div class="ttname"><a href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">toolbox::pcl::generate_correspondences_knn</a></div><div class="ttdeci">std::vector&lt; correspondence_t &gt; generate_correspondences_knn(const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true)</div><div class="ttdoc">对应关系生成策略 / Correspondence generation strategies</div><div class="ttdef"><b>Definition</b> correspondence.hpp:112</div></div>
+<div class="ttc" id="agroup__correspondence_html_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><div class="ttname"><a href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a></div><div class="ttdeci">size_t filter_correspondences_by_distance(std::vector&lt; correspondence_t &gt; &amp;correspondences, float max_distance)</div><div class="ttdoc">过滤对应关系的辅助函数 / Helper function to filter correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:199</div></div>
+<div class="ttc" id="agroup__correspondence_html_ga7cb3cde3a1e77db3bb333afe0e85aee7"><div class="ttname"><a href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a></div><div class="ttdeci">void print_correspondences(const std::vector&lt; correspondence_t &gt; &amp;correspondences, size_t max_display=10)</div><div class="ttdoc">可视化对应关系的辅助信息 / Helper to visualize correspondence information</div><div class="ttdef"><b>Definition</b> correspondence.hpp:268</div></div>
+<div class="ttc" id="agroup__correspondence_html_gaa516fb42a0c44e128df79cc240c17162"><div class="ttname"><a href="group__correspondence.html#gaa516fb42a0c44e128df79cc240c17162">toolbox::pcl::generate_correspondences_brute_force</a></div><div class="ttdeci">std::vector&lt; correspondence_t &gt; generate_correspondences_brute_force(const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true, bool parallel=false)</div><div class="ttdoc">快速生成对应关系的便捷函数（使用暴力搜索） / Convenience function for quick correspondence generation (using brute force)</div><div class="ttdef"><b>Definition</b> correspondence.hpp:162</div></div>
+<div class="ttc" id="agroup__correspondence_html_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><div class="ttname"><a href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; compute_correspondence_statistics(const std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系的统计信息 / Compute statistics of correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:228</div></div>
+<div class="ttc" id="agroup__correspondence_html_gad953c6719d42c6d8f50bed9a4998d77b"><div class="ttname"><a href="group__correspondence.html#gad953c6719d42c6d8f50bed9a4998d77b">toolbox::pcl::generate_correspondences_knn</a></div><div class="ttdeci">std::vector&lt; correspondence_t &gt; generate_correspondences_knn(const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;src_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;src_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;src_keypoints, const std::shared_ptr&lt; toolbox::types::point_cloud_t&lt; DataType &gt; &gt; &amp;dst_cloud, const std::shared_ptr&lt; std::vector&lt; Signature &gt; &gt; &amp;dst_descriptors, const std::shared_ptr&lt; std::vector&lt; std::size_t &gt; &gt; &amp;dst_keypoints, float ratio=0.8f, bool mutual=true)</div><div class="ttdoc">对应关系生成策略 / Correspondence generation strategies</div><div class="ttdef"><b>Definition</b> correspondence.hpp:113</div></div>
 <div class="ttc" id="aknn__correspondence__generator_8hpp_html"><div class="ttname"><a href="knn__correspondence__generator_8hpp.html">knn_correspondence_generator.hpp</a></div></div>
 <div class="ttc" id="anamespacetoolbox_1_1pcl_html"><div class="ttname"><a href="namespacetoolbox_1_1pcl.html">toolbox::pcl</a></div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:18</div></div>
 <div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></div><div class="ttdoc">对应关系结构体 / Correspondence structure</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:27</div></div>

@@ -216,7 +216,9 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1io.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">toolbox::io Namespace Reference</div></div>
 </div><!--header-->
@@ -225,6 +227,11 @@ $(document).ready(function(){initNavTree('namespacetoolbox_1_1io.html',''); init
 <p>&lt; 用于列出目录下的文件/For listing files in a directory  
 <a href="namespacetoolbox_1_1io.html#details">More...</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacetoolbox_1_1io_1_1kitti__semantic__labels" id="r_namespacetoolbox_1_1io_1_1kitti__semantic__labels"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html">kitti_semantic_labels</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1base__file__data__t.html">base_file_data_t</a></td></tr>
@@ -239,8 +246,41 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1dataset__t.html">dataset_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">数据集基类/Abstract base class for datasets  <a href="classtoolbox_1_1io_1_1dataset__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI calibration data structure.  <a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__corrupted__data.html">kitti_corrupted_data</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when data is corrupted.  <a href="classtoolbox_1_1io_1_1kitti__corrupted__data.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__exception.html">kitti_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base exception for KITTI dataset operations.  <a href="classtoolbox_1_1io_1_1kitti__exception.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__file__not__found.html">kitti_file_not_found</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a file is not found.  <a href="classtoolbox_1_1io_1_1kitti__file__not__found.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__format__t.html">kitti_format_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI 点云数据（.bin）文件格式处理器。/File format handler for KITTI Point Cloud Data (.bin) files.  <a href="classtoolbox_1_1io_1_1kitti__format__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__index__out__of__range.html">kitti_index_out_of_range</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when accessing out of bounds frame.  <a href="classtoolbox_1_1io_1_1kitti__index__out__of__range.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__invalid__format.html">kitti_invalid_format</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when file format is invalid.  <a href="classtoolbox_1_1io_1_1kitti__invalid__format.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__invalid__sequence.html">kitti_invalid_sequence</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when sequence directory structure is invalid.  <a href="classtoolbox_1_1io_1_1kitti__invalid__sequence.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html">kitti_odometry_dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI Odometry dataset loader.  <a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1kitti__odometry__frame__pair__t.html">kitti_odometry_frame_pair_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame pair data for registration tasks.  <a href="structtoolbox_1_1io_1_1kitti__odometry__frame__pair__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html">kitti_odometry_frame_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single frame data from KITTI odometry dataset.  <a href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__odometry__pair__dataset__t.html">kitti_odometry_pair_dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI Odometry frame pair dataset loader.  <a href="classtoolbox_1_1io_1_1kitti__odometry__pair__dataset__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html">kitti_pcd_dataset_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI点云数据集类/KITTI point cloud dataset class.  <a href="classtoolbox_1_1io_1_1kitti__pcd__dataset__t.html#details">More...</a><br /></td></tr>
@@ -248,11 +288,29 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__pcd__pair__t.html">kitti_pcd_pair_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">KITTI点云对数据集类/KITTI point cloud pair dataset class.  <a href="classtoolbox_1_1io_1_1kitti__pcd__pair__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1kitti__pose__reader__t.html">kitti_pose_reader_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reader for KITTI pose files.  <a href="classtoolbox_1_1io_1_1kitti__pose__reader__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">kitti_sequence_info_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about a KITTI sequence.  <a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1pcd__format__t.html">pcd_format_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">点云数据（.pcd）文件格式处理器。/File format handler for Point Cloud Data (.pcd) files.  <a href="classtoolbox_1_1io_1_1pcd__format__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1sampler__t.html">sampler_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">通用采样器/Generic sampler  <a href="classtoolbox_1_1io_1_1sampler__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1semantic__kitti__dataset__t.html">semantic_kitti_dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semantic KITTI dataset loader.  <a href="classtoolbox_1_1io_1_1semantic__kitti__dataset__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1semantic__kitti__frame__pair__t.html">semantic_kitti_frame_pair_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frame pair data from Semantic KITTI dataset.  <a href="structtoolbox_1_1io_1_1semantic__kitti__frame__pair__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1semantic__kitti__frame__t.html">semantic_kitti_frame_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single frame data from Semantic KITTI dataset.  <a href="structtoolbox_1_1io_1_1semantic__kitti__frame__t.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1semantic__kitti__pair__dataset__t.html">semantic_kitti_pair_dataset_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Semantic KITTI frame pair dataset loader.  <a href="classtoolbox_1_1io_1_1semantic__kitti__pair__dataset__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtoolbox_1_1io_1_1sequential__policy__t.html">sequential_policy_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">顺序采样策略/Sequential sampling policy  <a href="structtoolbox_1_1io_1_1sequential__policy__t.html#details">More...</a><br /></td></tr>
@@ -260,6 +318,15 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1io_1_1shuffle__policy__t.html">shuffle_policy_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">随机打乱采样策略/Shuffle sampling policy  <a href="classtoolbox_1_1io_1_1shuffle__policy__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a13510f96050c707bbe911ea439a8fca8" id="r_a13510f96050c707bbe911ea439a8fca8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">error_recovery_policy_t</a> : uint8_t { <a class="el" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8a2133fd717402a7966ee88d06f9e0b792">strict</a>
+, <a class="el" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920">lenient</a>
+, <a class="el" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8a3dee47055a8ae1742bdd650ddb7437f0">best_effort</a>
+ }</td></tr>
+<tr class="memdesc:a13510f96050c707bbe911ea439a8fca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Error recovery policy for dataset loading.  <a href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">More...</a><br /></td></tr>
+<tr class="separator:a13510f96050c707bbe911ea439a8fca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -269,6 +336,66 @@ Functions</h2></td></tr>
 <tr class="memitem:a8edbfd4250e2426db0ec514db40864f6" id="r_a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a8edbfd4250e2426db0ec514db40864f6"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6">write_point_cloud</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud)</td></tr>
 <tr class="separator:a8edbfd4250e2426db0ec514db40864f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47a8d994edc1ecbd5b6744fd90b6e9a1" id="r_a47a8d994edc1ecbd5b6744fd90b6e9a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; uint32_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a47a8d994edc1ecbd5b6744fd90b6e9a1">read_kitti_labels</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a47a8d994edc1ecbd5b6744fd90b6e9a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read Semantic KITTI label file.  <br /></td></tr>
+<tr class="separator:a47a8d994edc1ecbd5b6744fd90b6e9a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe080b3db699dd873bcf96d8cb16639" id="r_a1fe080b3db699dd873bcf96d8cb16639"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a1fe080b3db699dd873bcf96d8cb16639">write_kitti_labels</a> (const std::string &amp;file_path, const std::vector&lt; uint32_t &gt; &amp;labels)</td></tr>
+<tr class="memdesc:a1fe080b3db699dd873bcf96d8cb16639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write labels to Semantic KITTI format.  <br /></td></tr>
+<tr class="separator:a1fe080b3db699dd873bcf96d8cb16639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5babee5c29926e81388235e636bf921a" id="r_a5babee5c29926e81388235e636bf921a"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a5babee5c29926e81388235e636bf921a"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; DataType, 4, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a5babee5c29926e81388235e636bf921a">parse_kitti_pose_line</a> (const std::string &amp;line)</td></tr>
+<tr class="memdesc:a5babee5c29926e81388235e636bf921a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse a single line from KITTI poses file.  <br /></td></tr>
+<tr class="separator:a5babee5c29926e81388235e636bf921a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add66680e1275badb8c472e9b0717cf92" id="r_add66680e1275badb8c472e9b0717cf92"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:add66680e1275badb8c472e9b0717cf92"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#add66680e1275badb8c472e9b0717cf92">read_kitti_poses</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:add66680e1275badb8c472e9b0717cf92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read all poses from KITTI poses file.  <br /></td></tr>
+<tr class="separator:add66680e1275badb8c472e9b0717cf92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a758a1d4c9255ea14afaf0aac43fe0e90" id="r_a758a1d4c9255ea14afaf0aac43fe0e90"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a758a1d4c9255ea14afaf0aac43fe0e90"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a758a1d4c9255ea14afaf0aac43fe0e90">format_kitti_pose</a> (const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;pose)</td></tr>
+<tr class="memdesc:a758a1d4c9255ea14afaf0aac43fe0e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format pose matrix as KITTI string.  <br /></td></tr>
+<tr class="separator:a758a1d4c9255ea14afaf0aac43fe0e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6432c34212d85fa24218981aac66a338" id="r_a6432c34212d85fa24218981aac66a338"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a6432c34212d85fa24218981aac66a338"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a6432c34212d85fa24218981aac66a338">write_kitti_poses</a> (const std::string &amp;file_path, const std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; &amp;poses)</td></tr>
+<tr class="memdesc:a6432c34212d85fa24218981aac66a338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write poses to KITTI format file.  <br /></td></tr>
+<tr class="separator:a6432c34212d85fa24218981aac66a338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2504b9aa19ac4fe90a821de71cfae90e" id="r_a2504b9aa19ac4fe90a821de71cfae90e"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a2504b9aa19ac4fe90a821de71cfae90e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a>&lt; DataType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a2504b9aa19ac4fe90a821de71cfae90e">read_kitti_calibration</a> (const std::string &amp;file_path)</td></tr>
+<tr class="memdesc:a2504b9aa19ac4fe90a821de71cfae90e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read KITTI calibration file.  <br /></td></tr>
+<tr class="separator:a2504b9aa19ac4fe90a821de71cfae90e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319e56fceed5301cd3d2e935fd3ac849" id="r_a319e56fceed5301cd3d2e935fd3ac849"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a319e56fceed5301cd3d2e935fd3ac849"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a319e56fceed5301cd3d2e935fd3ac849">write_kitti_calibration</a> (const std::string &amp;file_path, const <a class="el" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a>&lt; DataType &gt; &amp;calib)</td></tr>
+<tr class="memdesc:a319e56fceed5301cd3d2e935fd3ac849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write KITTI calibration file.  <br /></td></tr>
+<tr class="separator:a319e56fceed5301cd3d2e935fd3ac849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7a45c553a80825fcf161db23c62df2" id="r_adc7a45c553a80825fcf161db23c62df2"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:adc7a45c553a80825fcf161db23c62df2"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; DataType, 4, 4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#adc7a45c553a80825fcf161db23c62df2">compute_relative_transform</a> (const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;from_pose, const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;to_pose)</td></tr>
+<tr class="memdesc:adc7a45c553a80825fcf161db23c62df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute relative transformation between two poses.  <br /></td></tr>
+<tr class="separator:adc7a45c553a80825fcf161db23c62df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fa2777103cfecb05dc10b247dbe3a03" id="r_a9fa2777103cfecb05dc10b247dbe3a03"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a9fa2777103cfecb05dc10b247dbe3a03"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a9fa2777103cfecb05dc10b247dbe3a03">transform_point_cloud</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &amp;cloud, const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;transform)</td></tr>
+<tr class="memdesc:a9fa2777103cfecb05dc10b247dbe3a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transform point cloud using transformation matrix.  <br /></td></tr>
+<tr class="separator:a9fa2777103cfecb05dc10b247dbe3a03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a479364026f76b7d4476ea81e0317a7b6" id="r_a479364026f76b7d4476ea81e0317a7b6"><td class="memTemplParams" colspan="2">template&lt;typename DataType &gt; </td></tr>
+<tr class="memitem:a479364026f76b7d4476ea81e0317a7b6"><td class="memTemplItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a479364026f76b7d4476ea81e0317a7b6">read_kitti_with_labels</a> (const std::string &amp;bin_path, const std::string &amp;label_path, std::vector&lt; uint32_t &gt; &amp;labels)</td></tr>
+<tr class="memdesc:a479364026f76b7d4476ea81e0317a7b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read KITTI point cloud with semantic labels.  <br /></td></tr>
+<tr class="separator:a479364026f76b7d4476ea81e0317a7b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add4b31e36aa383e1ca90103ea4181bed" id="r_add4b31e36aa383e1ca90103ea4181bed"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#add4b31e36aa383e1ca90103ea4181bed">list_kitti_cloud_files</a> (const std::string &amp;velodyne_path)</td></tr>
+<tr class="memdesc:add4b31e36aa383e1ca90103ea4181bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">List all KITTI point cloud files in a directory.  <br /></td></tr>
+<tr class="separator:add4b31e36aa383e1ca90103ea4181bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81883bf140e513f9029ef83ce0d4e664" id="r_a81883bf140e513f9029ef83ce0d4e664"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a81883bf140e513f9029ef83ce0d4e664">list_kitti_label_files</a> (const std::string &amp;labels_path)</td></tr>
+<tr class="memdesc:a81883bf140e513f9029ef83ce0d4e664"><td class="mdescLeft">&#160;</td><td class="mdescRight">List all KITTI label files in a directory.  <br /></td></tr>
+<tr class="separator:a81883bf140e513f9029ef83ce0d4e664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd63adf710c465f8f85552a6274ded91" id="r_afd63adf710c465f8f85552a6274ded91"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#afd63adf710c465f8f85552a6274ded91">parse_kitti_frame_index</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:afd63adf710c465f8f85552a6274ded91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get frame index from KITTI filename (e.g., "000123.bin" -&gt; 123)  <br /></td></tr>
+<tr class="separator:afd63adf710c465f8f85552a6274ded91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8d899e65c1b8fa6196904cebe9313a" id="r_a0d8d899e65c1b8fa6196904cebe9313a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a0d8d899e65c1b8fa6196904cebe9313a">format_kitti_frame_index</a> (std::size_t index, int digits=6)</td></tr>
+<tr class="memdesc:a0d8d899e65c1b8fa6196904cebe9313a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Format frame index as KITTI filename (e.g., 123 -&gt; "000123")  <br /></td></tr>
+<tr class="separator:a0d8d899e65c1b8fa6196904cebe9313a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9f6b32285a4c30f55cfbe1922df706d" id="r_ad9f6b32285a4c30f55cfbe1922df706d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">kitti_sequence_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#ad9f6b32285a4c30f55cfbe1922df706d">get_kitti_sequence_info</a> (const std::string &amp;sequence_path)</td></tr>
+<tr class="memdesc:ad9f6b32285a4c30f55cfbe1922df706d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about a KITTI sequence directory.  <br /></td></tr>
+<tr class="separator:ad9f6b32285a4c30f55cfbe1922df706d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe728504ea5c5f05019d1bf358f6da6" id="r_a8fe728504ea5c5f05019d1bf358f6da6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a8fe728504ea5c5f05019d1bf358f6da6">validate_kitti_sequence_directory</a> (const std::string &amp;sequence_path)</td></tr>
+<tr class="memdesc:a8fe728504ea5c5f05019d1bf358f6da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate KITTI sequence directory structure.  <br /></td></tr>
+<tr class="separator:a8fe728504ea5c5f05019d1bf358f6da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7ad61330bf7081cc56805e978c99e2d" id="r_af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:af7ad61330bf7081cc56805e978c99e2d"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#af7ad61330bf7081cc56805e978c99e2d">read_kitti_bin</a> (const std::string &amp;path)</td></tr>
 <tr class="memdesc:af7ad61330bf7081cc56805e978c99e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">从文件中读取 KITTI 点云数据的独立函数。/Standalone function to read KITTI point cloud data from a file.  <br /></td></tr>
@@ -285,11 +412,455 @@ Functions</h2></td></tr>
 <tr class="memitem:ae9a74600f17ca80b238463d267b9fcbb"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb">write_pcd</a> (const std::string &amp;path, const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; T &gt; &amp;cloud, bool binary)</td></tr>
 <tr class="memdesc:ae9a74600f17ca80b238463d267b9fcbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">将点云数据写入 PCD 文件的独立函数。/Standalone function to write point cloud data to a PCD file.  <br /></td></tr>
 <tr class="separator:ae9a74600f17ca80b238463d267b9fcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf41a6c054482e0cea8702a8872171c8" id="r_aaf41a6c054482e0cea8702a8872171c8"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">get_kitti_label_id</a> (uint32_t full_label)</td></tr>
+<tr class="memdesc:aaf41a6c054482e0cea8702a8872171c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract label ID from full label (ignoring instance ID)  <br /></td></tr>
+<tr class="separator:aaf41a6c054482e0cea8702a8872171c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e1ee6c414a0233504f8ee9cf5057b12" id="r_a0e1ee6c414a0233504f8ee9cf5057b12"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">get_kitti_instance_id</a> (uint32_t full_label)</td></tr>
+<tr class="memdesc:a0e1ee6c414a0233504f8ee9cf5057b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract instance ID from full label.  <br /></td></tr>
+<tr class="separator:a0e1ee6c414a0233504f8ee9cf5057b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a2b8720d907e451ff9b9b1e645dacde" id="r_a1a2b8720d907e451ff9b9b1e645dacde"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1io.html#a1a2b8720d907e451ff9b9b1e645dacde">make_kitti_full_label</a> (uint16_t label_id, uint16_t instance_id)</td></tr>
+<tr class="memdesc:a1a2b8720d907e451ff9b9b1e645dacde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine label and instance IDs.  <br /></td></tr>
+<tr class="separator:a1a2b8720d907e451ff9b9b1e645dacde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>&lt; 用于列出目录下的文件/For listing files in a directory </p>
 <p>&lt; 用于读取KITTI点云/For reading KITTI </p>
-</div><h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a13510f96050c707bbe911ea439a8fca8" name="a13510f96050c707bbe911ea439a8fca8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13510f96050c707bbe911ea439a8fca8">&#9670;&#160;</a></span>error_recovery_policy_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">toolbox::io::error_recovery_policy_t</a> : uint8_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Error recovery policy for dataset loading. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a13510f96050c707bbe911ea439a8fca8a2133fd717402a7966ee88d06f9e0b792" name="a13510f96050c707bbe911ea439a8fca8a2133fd717402a7966ee88d06f9e0b792"></a>strict&#160;</td><td class="fielddoc"><p>Throw exception on any error. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920" name="a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920"></a>lenient&#160;</td><td class="fielddoc"><p>Skip problematic frames and continue. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a13510f96050c707bbe911ea439a8fca8a3dee47055a8ae1742bdd650ddb7437f0" name="a13510f96050c707bbe911ea439a8fca8a3dee47055a8ae1742bdd650ddb7437f0"></a>best_effort&#160;</td><td class="fielddoc"><p>Try to recover partial data. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="adc7a45c553a80825fcf161db23c62df2" name="adc7a45c553a80825fcf161db23c62df2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7a45c553a80825fcf161db23c62df2">&#9670;&#160;</a></span>compute_relative_transform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt; DataType, 4, 4 &gt; toolbox::io::compute_relative_transform </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>from_pose</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>to_pose</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute relative transformation between two poses. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">from_pose</td><td>Source pose </td></tr>
+    <tr><td class="paramname">to_pose</td><td>Target pose </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Relative transformation T_to_from such that to_pose = T_to_from * from_pose </dd></dl>
+
+</div>
+</div>
+<a id="a0d8d899e65c1b8fa6196904cebe9313a" name="a0d8d899e65c1b8fa6196904cebe9313a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d8d899e65c1b8fa6196904cebe9313a">&#9670;&#160;</a></span>format_kitti_frame_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string toolbox::io::format_kitti_frame_index </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>digits</em> = <code>6</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Format frame index as KITTI filename (e.g., 123 -&gt; "000123") </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Frame index </td></tr>
+    <tr><td class="paramname">digits</td><td>Number of digits (default 6 for KITTI) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Formatted string </dd></dl>
+
+</div>
+</div>
+<a id="a758a1d4c9255ea14afaf0aac43fe0e90" name="a758a1d4c9255ea14afaf0aac43fe0e90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a758a1d4c9255ea14afaf0aac43fe0e90">&#9670;&#160;</a></span>format_kitti_pose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string toolbox::io::format_kitti_pose </td>
+          <td>(</td>
+          <td class="paramtype">const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pose</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Format pose matrix as KITTI string. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pose</td><td>4x4 transformation matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String with 12 values (first 3 rows) </dd></dl>
+
+</div>
+</div>
+<a id="a0e1ee6c414a0233504f8ee9cf5057b12" name="a0e1ee6c414a0233504f8ee9cf5057b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e1ee6c414a0233504f8ee9cf5057b12">&#9670;&#160;</a></span>get_kitti_instance_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t toolbox::io::get_kitti_instance_id </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>full_label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extract instance ID from full label. </p>
+
+</div>
+</div>
+<a id="aaf41a6c054482e0cea8702a8872171c8" name="aaf41a6c054482e0cea8702a8872171c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf41a6c054482e0cea8702a8872171c8">&#9670;&#160;</a></span>get_kitti_label_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t toolbox::io::get_kitti_label_id </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>full_label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Extract label ID from full label (ignoring instance ID) </p>
+
+</div>
+</div>
+<a id="ad9f6b32285a4c30f55cfbe1922df706d" name="ad9f6b32285a4c30f55cfbe1922df706d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9f6b32285a4c30f55cfbe1922df706d">&#9670;&#160;</a></span>get_kitti_sequence_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">kitti_sequence_info_t</a> toolbox::io::get_kitti_sequence_info </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sequence_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get information about a KITTI sequence directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sequence_path</td><td>Path to sequence directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sequence information </dd></dl>
+
+</div>
+</div>
+<a id="add4b31e36aa383e1ca90103ea4181bed" name="add4b31e36aa383e1ca90103ea4181bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add4b31e36aa383e1ca90103ea4181bed">&#9670;&#160;</a></span>list_kitti_cloud_files()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; toolbox::io::list_kitti_cloud_files </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>velodyne_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List all KITTI point cloud files in a directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">velodyne_path</td><td>Path to velodyne directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sorted list of .bin files with full paths </dd></dl>
+
+</div>
+</div>
+<a id="a81883bf140e513f9029ef83ce0d4e664" name="a81883bf140e513f9029ef83ce0d4e664"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81883bf140e513f9029ef83ce0d4e664">&#9670;&#160;</a></span>list_kitti_label_files()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::string &gt; toolbox::io::list_kitti_label_files </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>labels_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>List all KITTI label files in a directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">labels_path</td><td>Path to labels directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Sorted list of .label files with full paths </dd></dl>
+
+</div>
+</div>
+<a id="a1a2b8720d907e451ff9b9b1e645dacde" name="a1a2b8720d907e451ff9b9b1e645dacde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a2b8720d907e451ff9b9b1e645dacde">&#9670;&#160;</a></span>make_kitti_full_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t toolbox::io::make_kitti_full_label </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>label_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>instance_id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Combine label and instance IDs. </p>
+
+</div>
+</div>
+<a id="afd63adf710c465f8f85552a6274ded91" name="afd63adf710c465f8f85552a6274ded91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd63adf710c465f8f85552a6274ded91">&#9670;&#160;</a></span>parse_kitti_frame_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int toolbox::io::parse_kitti_frame_index </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get frame index from KITTI filename (e.g., "000123.bin" -&gt; 123) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Filename to parse </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Frame index or -1 if invalid </dd></dl>
+
+</div>
+</div>
+<a id="a5babee5c29926e81388235e636bf921a" name="a5babee5c29926e81388235e636bf921a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5babee5c29926e81388235e636bf921a">&#9670;&#160;</a></span>parse_kitti_pose_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Eigen::Matrix&lt; DataType, 4, 4 &gt; toolbox::io::parse_kitti_pose_line </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parse a single line from KITTI poses file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>Line containing 12 values (3x4 transformation matrix) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>4x4 transformation matrix (with [0,0,0,1] as last row) </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::invalid_argument</td><td>if line format is invalid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af7ad61330bf7081cc56805e978c99e2d" name="af7ad61330bf7081cc56805e978c99e2d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af7ad61330bf7081cc56805e978c99e2d">&#9670;&#160;</a></span>read_kitti_bin()</h2>
 
@@ -332,6 +903,196 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="comment">// 读取 double 类型的点云/Read a point cloud with double precision</span></div>
 <div class="line"><span class="keyword">auto</span> cloud_double =</div>
 <div class="line">toolbox::io::read_kitti_bin&lt;double&gt;(<span class="stringliteral">&quot;cloud.bin&quot;</span>);</div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a2504b9aa19ac4fe90a821de71cfae90e" name="a2504b9aa19ac4fe90a821de71cfae90e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2504b9aa19ac4fe90a821de71cfae90e">&#9670;&#160;</a></span>read_kitti_calibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a>&lt; DataType &gt; toolbox::io::read_kitti_calibration </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read KITTI calibration file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Path to calib.txt file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Calibration data </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if file cannot be parsed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47a8d994edc1ecbd5b6744fd90b6e9a1" name="a47a8d994edc1ecbd5b6744fd90b6e9a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47a8d994edc1ecbd5b6744fd90b6e9a1">&#9670;&#160;</a></span>read_kitti_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; uint32_t &gt; toolbox::io::read_kitti_labels </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read Semantic KITTI label file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Path to the .label file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of labels (one per point), empty on failure </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if file cannot be read </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add66680e1275badb8c472e9b0717cf92" name="add66680e1275badb8c472e9b0717cf92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add66680e1275badb8c472e9b0717cf92">&#9670;&#160;</a></span>read_kitti_poses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; toolbox::io::read_kitti_poses </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read all poses from KITTI poses file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Path to poses file (e.g., "00.txt") </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of 4x4 transformation matrices </dd></dl>
+
+</div>
+</div>
+<a id="a479364026f76b7d4476ea81e0317a7b6" name="a479364026f76b7d4476ea81e0317a7b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a479364026f76b7d4476ea81e0317a7b6">&#9670;&#160;</a></span>read_kitti_with_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &gt; toolbox::io::read_kitti_with_labels </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>bin_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read KITTI point cloud with semantic labels. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir"></td><td class="paramname">bin_path</td><td>Path to the .bin point cloud file </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">label_path</td><td>Path to the .label file </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">labels</td><td>Vector to store the semantic labels (one per point) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Point cloud, nullptr on error </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if files cannot be read or have mismatched sizes</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>The labels are returned in a separate vector parallel to the point cloud. Use <a class="el" href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8" title="Extract label ID from full label (ignoring instance ID)">get_kitti_label_id()</a> and <a class="el" href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12" title="Extract instance ID from full label.">get_kitti_instance_id()</a> to extract semantic class and instance.</dd></dl>
+<div class="fragment"><div class="line">std::vector&lt;uint32_t&gt; labels;</div>
+<div class="line"><span class="keyword">auto</span> cloud = read_kitti_with_labels&lt;float&gt;(<span class="stringliteral">&quot;/path/to/000000.bin&quot;</span>, </div>
+<div class="line">                                          <span class="stringliteral">&quot;/path/to/000000.label&quot;</span>, </div>
+<div class="line">                                          labels);</div>
+<div class="line"><span class="keywordflow">if</span> (cloud) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; cloud-&gt;size(); ++i) {</div>
+<div class="line">        uint16_t label_id = <a class="code hl_function" href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">get_kitti_label_id</a>(labels[i]);</div>
+<div class="line">        uint16_t instance_id = <a class="code hl_function" href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">get_kitti_instance_id</a>(labels[i]);</div>
+<div class="line">        <span class="comment">// Use label_id and instance_id with cloud-&gt;points[i]...</span></div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a0e1ee6c414a0233504f8ee9cf5057b12"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">toolbox::io::get_kitti_instance_id</a></div><div class="ttdeci">uint16_t get_kitti_instance_id(uint32_t full_label)</div><div class="ttdoc">Extract instance ID from full label.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:296</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_aaf41a6c054482e0cea8702a8872171c8"><div class="ttname"><a href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">toolbox::io::get_kitti_label_id</a></div><div class="ttdeci">uint16_t get_kitti_label_id(uint32_t full_label)</div><div class="ttdoc">Extract label ID from full label (ignoring instance ID)</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:289</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -399,6 +1160,87 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a9fa2777103cfecb05dc10b247dbe3a03" name="a9fa2777103cfecb05dc10b247dbe3a03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa2777103cfecb05dc10b247dbe3a03">&#9670;&#160;</a></span>transform_point_cloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &gt; toolbox::io::transform_point_cloud </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Transform point cloud using transformation matrix. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>Input point cloud </td></tr>
+    <tr><td class="paramname">transform</td><td>Transformation matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Transformed point cloud </dd></dl>
+
+</div>
+</div>
+<a id="a8fe728504ea5c5f05019d1bf358f6da6" name="a8fe728504ea5c5f05019d1bf358f6da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fe728504ea5c5f05019d1bf358f6da6">&#9670;&#160;</a></span>validate_kitti_sequence_directory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::io::validate_kitti_sequence_directory </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sequence_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate KITTI sequence directory structure. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sequence_path</td><td>Path to sequence directory </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if valid KITTI structure </dd></dl>
+
+</div>
+</div>
 <a id="aa6d952493b74495b0b872c5bbcee9332" name="aa6d952493b74495b0b872c5bbcee9332"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6d952493b74495b0b872c5bbcee9332">&#9670;&#160;</a></span>write_kitti_bin()</h2>
 
@@ -453,6 +1295,144 @@ template&lt;typename T &gt; </div>
 <div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:270</div></div>
 <div class="ttc" id="anamespacetoolbox_1_1io_html_aa6d952493b74495b0b872c5bbcee9332"><div class="ttname"><a href="namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332">toolbox::io::write_kitti_bin</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT bool write_kitti_bin(const std::string &amp;path, const toolbox::types::point_cloud_t&lt; T &gt; &amp;cloud)</div><div class="ttdoc">将点云数据写入 KITTI 点云文件的独立函数。/Standalone function to write point cloud data to a KITTI point cloud file.</div><div class="ttdef"><b>Definition</b> kitti_impl.hpp:258</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="a319e56fceed5301cd3d2e935fd3ac849" name="a319e56fceed5301cd3d2e935fd3ac849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a319e56fceed5301cd3d2e935fd3ac849">&#9670;&#160;</a></span>write_kitti_calibration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::io::write_kitti_calibration </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a>&lt; DataType &gt; &amp;&#160;</td>
+          <td class="paramname"><em>calib</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write KITTI calibration file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Output file path </td></tr>
+    <tr><td class="paramname">calib</td><td>Calibration data to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful </dd></dl>
+
+</div>
+</div>
+<a id="a1fe080b3db699dd873bcf96d8cb16639" name="a1fe080b3db699dd873bcf96d8cb16639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fe080b3db699dd873bcf96d8cb16639">&#9670;&#160;</a></span>write_kitti_labels()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::io::write_kitti_labels </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint32_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>labels</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write labels to Semantic KITTI format. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Output file path </td></tr>
+    <tr><td class="paramname">labels</td><td>Vector of labels to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful </dd></dl>
+
+</div>
+</div>
+<a id="a6432c34212d85fa24218981aac66a338" name="a6432c34212d85fa24218981aac66a338"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6432c34212d85fa24218981aac66a338">&#9670;&#160;</a></span>write_kitti_poses()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool toolbox::io::write_kitti_poses </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>poses</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write poses to KITTI format file. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>The floating point type (float or double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td>Output file path </td></tr>
+    <tr><td class="paramname">poses</td><td>Vector of 4x4 transformation matrices </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if successful </dd></dl>
+
 </div>
 </div>
 <a id="ae9a74600f17ca80b238463d267b9fcbb" name="ae9a74600f17ca80b238463d267b9fcbb"></a>

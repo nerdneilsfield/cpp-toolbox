@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::ndt_t\l\< DataType \>::voxel\l_cell_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html",tooltip="体素单元结构 / Voxel cell structure"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_signature_t\< DataType,\l Derived \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1base__signature__t.html",tooltip="描述子签名的基类 / Base class for descriptor signatures"];
 }

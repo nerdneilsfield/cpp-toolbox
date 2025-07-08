@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::four\l_pcs_registration_t\l\< DataType \>::base_4pcs_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1base__4pcs__t.html",tooltip="4点基结构 / 4-point base structure"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_knn_generic_t\< bfknn\l_generic_t\< Element, toolbox\l::metrics::L2Metric\< typename\l Element::value_type \> \>, Element,\l toolbox::metrics::L2Metric\< typename\l Element::value_type \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__knn__generic__t.html",tooltip=" "];
 }

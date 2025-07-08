@@ -1,0 +1,12 @@
+digraph "src/include/cpp-toolbox/io/dataset/impl"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  compound=true
+  subgraph clusterdir_00f545bfa34b52c2adad340e3d24edc6 {
+    graph [ bgcolor="#daedff", pencolor="grey50", label="dataset", fontname=Helvetica,fontsize=10 style="filled,dashed", URL="dir_00f545bfa34b52c2adad340e3d24edc6.html",tooltip=""]
+  dir_a65004031446147ccd57723756a8be4a [label="impl", fillcolor="#daedff", color="grey25", style="filled,bold", URL="dir_a65004031446147ccd57723756a8be4a.html",tooltip=""];
+  }
+}

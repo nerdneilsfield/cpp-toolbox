@@ -9,7 +9,8 @@ var searchData=
   ['normal_5fz_6',['normal_z',['../structtoolbox_1_1pcl_1_1point__to__plane__icp__t_1_1normal__t.html#a803fd0473800be70073fda9576c8f245',1,'toolbox::pcl::point_to_plane_icp_t::normal_t']]],
   ['normals_7',['normals',['../classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a',1,'toolbox::types::point_cloud_t']]],
   ['num_5fcorrespondences_8',['num_correspondences',['../structtoolbox_1_1pcl_1_1iteration__state__t.html#aef6427af8e55b4a390082c848e1cf894',1,'toolbox::pcl::iteration_state_t']]],
-  ['num_5finliers_9',['num_inliers',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed',1,'toolbox::pcl::four_pcs_registration_t::candidate_t']]],
-  ['num_5fiterations_10',['num_iterations',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a0e449981f286e074150bc3e575a271dc',1,'toolbox::pcl::registration_result_t']]],
-  ['num_5fpoints_11',['num_points',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#a3633b571070bbc0f7fab2cbdcf888a46',1,'toolbox::pcl::ndt_t::voxel_cell_t']]]
+  ['num_5fframes_9',['num_frames',['../structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a924a68efb5d0f48f2b3ed1cdf578ea50',1,'toolbox::io::kitti_sequence_info_t']]],
+  ['num_5finliers_10',['num_inliers',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed',1,'toolbox::pcl::four_pcs_registration_t::candidate_t']]],
+  ['num_5fiterations_11',['num_iterations',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a0e449981f286e074150bc3e575a271dc',1,'toolbox::pcl::registration_result_t']]],
+  ['num_5fpoints_12',['num_points',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#a3633b571070bbc0f7fab2cbdcf888a46',1,'toolbox::pcl::ndt_t::voxel_cell_t']]]
 ];

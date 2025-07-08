@@ -1,0 +1,758 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: toolbox::pcl::custom_function_sorter_t&lt; DataType &gt; Class Template Reference</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classtoolbox_1_1pcl_1_1custom__function__sorter__t.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">toolbox::pcl::custom_function_sorter_t&lt; DataType &gt; Class Template Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>自定义函数的对应关系排序器 / Custom function-based correspondence sorter  
+ <a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="custom__function__sorter_8hpp_source.html">custom_function_sorter.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for toolbox::pcl::custom_function_sorter_t&lt; DataType &gt;:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:aeca64623966490378758cb4a4e84ed1c" id="r_aeca64623966490378758cb4a4e84ed1c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#aeca64623966490378758cb4a4e84ed1c">base_type</a> = <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a>&lt; DataType &gt;, DataType &gt;</td></tr>
+<tr class="separator:aeca64623966490378758cb4a4e84ed1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f35ccf5d4f8d5ce197d52d497c0da7" id="r_a42f35ccf5d4f8d5ce197d52d497c0da7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">quality_function_t</a> = std::function&lt; DataType(const <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &amp;correspondence, std::size_t index, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a> &amp;source_cloud, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a> &amp;target_cloud)&gt;</td></tr>
+<tr class="memdesc:a42f35ccf5d4f8d5ce197d52d497c0da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">质量函数类型定义 / Quality function type definition  <br /></td></tr>
+<tr class="separator:a42f35ccf5d4f8d5ce197d52d497c0da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab36f05766231679a8a65aa2f7c31d707" id="r_ab36f05766231679a8a65aa2f7c31d707"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">simple_quality_function_t</a> = std::function&lt; DataType(const <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &amp;correspondence)&gt;</td></tr>
+<tr class="memdesc:ab36f05766231679a8a65aa2f7c31d707"><td class="mdescLeft">&#160;</td><td class="mdescRight">简化的质量函数类型（仅基于对应关系） / Simplified quality function type (based on correspondence only)  <br /></td></tr>
+<tr class="separator:ab36f05766231679a8a65aa2f7c31d707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">toolbox::pcl::base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a1875744d7a96019b0e9d6b9e36d2076e inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a1875744d7a96019b0e9d6b9e36d2076e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a> = <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a>&lt; DataType &gt;</td></tr>
+<tr class="separator:a1875744d7a96019b0e9d6b9e36d2076e inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c9dde5812856b6e250f15822077c4c inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_aa1c9dde5812856b6e250f15822077c4c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> = std::shared_ptr&lt; <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a> &gt;</td></tr>
+<tr class="separator:aa1c9dde5812856b6e250f15822077c4c inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6e61611d40c6fe3bb1626a10686f375 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ac6e61611d40c6fe3bb1626a10686f375"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a> = std::shared_ptr&lt; std::vector&lt; <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a> &gt; &gt;</td></tr>
+<tr class="separator:ac6e61611d40c6fe3bb1626a10686f375 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5b7d6603a5fd69351939c22c4f31d61 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_aa5b7d6603a5fd69351939c22c4f31d61"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> = std::vector&lt; DataType &gt;</td></tr>
+<tr class="separator:aa5b7d6603a5fd69351939c22c4f31d61 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f3a84ca49ea9386c868f16682eae609 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a2f3a84ca49ea9386c868f16682eae609"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a> = std::vector&lt; std::size_t &gt;</td></tr>
+<tr class="separator:a2f3a84ca49ea9386c868f16682eae609 inherit pub_types_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:af5c5ac5bffe03a4a817e57bd75fad809" id="r_af5c5ac5bffe03a4a817e57bd75fad809"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#af5c5ac5bffe03a4a817e57bd75fad809">custom_function_sorter_t</a> ()=default</td></tr>
+<tr class="separator:af5c5ac5bffe03a4a817e57bd75fad809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5e781b8dbf670858819140cb6d3f95" id="r_a5a5e781b8dbf670858819140cb6d3f95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a5e781b8dbf670858819140cb6d3f95">~custom_function_sorter_t</a> ()=default</td></tr>
+<tr class="separator:a5a5e781b8dbf670858819140cb6d3f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4092892d32250290232b8f169ca62d83" id="r_a4092892d32250290232b8f169ca62d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">set_quality_function</a> (<a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">quality_function_t</a> func)</td></tr>
+<tr class="memdesc:a4092892d32250290232b8f169ca62d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置自定义质量函数 / Set custom quality function  <br /></td></tr>
+<tr class="separator:a4092892d32250290232b8f169ca62d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c84a0e68761814fd85eadd659761d0" id="r_ad6c84a0e68761814fd85eadd659761d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ad6c84a0e68761814fd85eadd659761d0">set_simple_quality_function</a> (<a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">simple_quality_function_t</a> func)</td></tr>
+<tr class="memdesc:ad6c84a0e68761814fd85eadd659761d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置简化的质量函数（仅基于对应关系） / Set simplified quality function (based on correspondence only)  <br /></td></tr>
+<tr class="separator:ad6c84a0e68761814fd85eadd659761d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c08e8804257c1b214a46b518b17b35b" id="r_a9c08e8804257c1b214a46b518b17b35b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a9c08e8804257c1b214a46b518b17b35b">has_quality_function</a> () const</td></tr>
+<tr class="memdesc:a9c08e8804257c1b214a46b518b17b35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">检查是否设置了质量函数 / Check if quality function is set  <br /></td></tr>
+<tr class="separator:a9c08e8804257c1b214a46b518b17b35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">toolbox::pcl::base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:af996edbd7f5bec0339def0a7174520b8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_af996edbd7f5bec0339def0a7174520b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af996edbd7f5bec0339def0a7174520b8">base_correspondence_sorter_t</a> ()=default</td></tr>
+<tr class="separator:af996edbd7f5bec0339def0a7174520b8 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e95b446d0aa55491b0ec423de62afe3 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a3e95b446d0aa55491b0ec423de62afe3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a3e95b446d0aa55491b0ec423de62afe3">base_correspondence_sorter_t</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a3e95b446d0aa55491b0ec423de62afe3 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c25c2426c2212faac87c233dca12ddc inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a2c25c2426c2212faac87c233dca12ddc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2c25c2426c2212faac87c233dca12ddc">base_correspondence_sorter_t</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a2c25c2426c2212faac87c233dca12ddc inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd8867a64f12ceb7d8b424d2e12f416 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a2fd8867a64f12ceb7d8b424d2e12f416"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2fd8867a64f12ceb7d8b424d2e12f416">~base_correspondence_sorter_t</a> ()=default</td></tr>
+<tr class="separator:a2fd8867a64f12ceb7d8b424d2e12f416 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27c6631499027a7b5a1074b0ef23718d inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a27c6631499027a7b5a1074b0ef23718d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a27c6631499027a7b5a1074b0ef23718d">operator=</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;)=delete</td></tr>
+<tr class="separator:a27c6631499027a7b5a1074b0ef23718d inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e23a98012cc4a405a880196bb557a83 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a7e23a98012cc4a405a880196bb557a83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a7e23a98012cc4a405a880196bb557a83">operator=</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a7e23a98012cc4a405a880196bb557a83 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac3b9b73b7782ffeb2f681b086e7a00 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_abac3b9b73b7782ffeb2f681b086e7a00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abac3b9b73b7782ffeb2f681b086e7a00">set_point_clouds</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> &amp;source, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> &amp;target)</td></tr>
+<tr class="memdesc:abac3b9b73b7782ffeb2f681b086e7a00 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置源点云和目标点云 / Set source and target point clouds  <br /></td></tr>
+<tr class="separator:abac3b9b73b7782ffeb2f681b086e7a00 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6afccf147c93451c7009d66336d03a06 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a6afccf147c93451c7009d66336d03a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a6afccf147c93451c7009d66336d03a06">set_correspondences</a> (const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a> &amp;correspondences)</td></tr>
+<tr class="memdesc:a6afccf147c93451c7009d66336d03a06 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">设置对应关系 / Set correspondences  <br /></td></tr>
+<tr class="separator:a6afccf147c93451c7009d66336d03a06 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4581ad966c86a648be543747dd02a4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_abe4581ad966c86a648be543747dd02a4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#abe4581ad966c86a648be543747dd02a4">compute_sorted_indices</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> &amp;scores)</td></tr>
+<tr class="memdesc:abe4581ad966c86a648be543747dd02a4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算质量分数并返回排序后的索引 / Compute quality scores and return sorted indices  <br /></td></tr>
+<tr class="separator:abe4581ad966c86a648be543747dd02a4 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54235beb5df3c22633f27c02679d591d inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a54235beb5df3c22633f27c02679d591d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a54235beb5df3c22633f27c02679d591d">compute_quality_scores</a> ()</td></tr>
+<tr class="memdesc:a54235beb5df3c22633f27c02679d591d inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">仅计算质量分数，不排序 / Compute quality scores only, without sorting  <br /></td></tr>
+<tr class="separator:a54235beb5df3c22633f27c02679d591d inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8e295fb770f69385b51608ddfdcab0f inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_af8e295fb770f69385b51608ddfdcab0f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af8e295fb770f69385b51608ddfdcab0f">get_sorter_name</a> () const</td></tr>
+<tr class="memdesc:af8e295fb770f69385b51608ddfdcab0f inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取排序器名称 / Get sorter name  <br /></td></tr>
+<tr class="separator:af8e295fb770f69385b51608ddfdcab0f inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2312d13aa39bf09d9f8242fcd6d4a55 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ad2312d13aa39bf09d9f8242fcd6d4a55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ad2312d13aa39bf09d9f8242fcd6d4a55">clear_cache</a> ()</td></tr>
+<tr class="memdesc:ad2312d13aa39bf09d9f8242fcd6d4a55 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">清除缓存 / Clear cache  <br /></td></tr>
+<tr class="separator:ad2312d13aa39bf09d9f8242fcd6d4a55 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1bca1fcc3e81b648549ea8d366e8283 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ab1bca1fcc3e81b648549ea8d366e8283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab1bca1fcc3e81b648549ea8d366e8283">enable_parallel</a> (bool enable=true)</td></tr>
+<tr class="memdesc:ab1bca1fcc3e81b648549ea8d366e8283 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">启用/禁用并行计算 / Enable/disable parallel computation  <br /></td></tr>
+<tr class="separator:ab1bca1fcc3e81b648549ea8d366e8283 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae43bd240b09f20390d8a95a9c8cf7988 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ae43bd240b09f20390d8a95a9c8cf7988"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ae43bd240b09f20390d8a95a9c8cf7988">is_parallel_enabled</a> () const</td></tr>
+<tr class="memdesc:ae43bd240b09f20390d8a95a9c8cf7988 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取并行计算状态 / Get parallel computation status  <br /></td></tr>
+<tr class="separator:ae43bd240b09f20390d8a95a9c8cf7988 inherit pub_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7e54594292292d02592643ed1cc16cf1" id="r_a7e54594292292d02592643ed1cc16cf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a7e54594292292d02592643ed1cc16cf1">compute_quality_scores_impl</a> (<a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> &amp;scores)</td></tr>
+<tr class="memdesc:a7e54594292292d02592643ed1cc16cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">计算质量分数的实现 / Implementation of quality score computation  <br /></td></tr>
+<tr class="separator:a7e54594292292d02592643ed1cc16cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a38035a3271079e39d9d6c785174e75" id="r_a5a38035a3271079e39d9d6c785174e75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a5a38035a3271079e39d9d6c785174e75">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:a5a38035a3271079e39d9d6c785174e75"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入数据的实现 / Implementation of input validation  <br /></td></tr>
+<tr class="separator:a5a38035a3271079e39d9d6c785174e75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69200e2f820912d45e87919403427315" id="r_a69200e2f820912d45e87919403427315"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a69200e2f820912d45e87919403427315">get_sorter_name_impl</a> () const</td></tr>
+<tr class="memdesc:a69200e2f820912d45e87919403427315"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取排序器名称实现 / Get sorter name implementation  <br /></td></tr>
+<tr class="separator:a69200e2f820912d45e87919403427315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">toolbox::pcl::base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:af1f5c887a214907d1d6d1f70977d0eab inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_af1f5c887a214907d1d6d1f70977d0eab"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#af1f5c887a214907d1d6d1f70977d0eab">validate_input</a> () const</td></tr>
+<tr class="memdesc:af1f5c887a214907d1d6d1f70977d0eab inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">验证输入数据 / Validate input data  <br /></td></tr>
+<tr class="separator:af1f5c887a214907d1d6d1f70977d0eab inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaea20ec5954ae0f24823ace6c9511dee inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_aaea20ec5954ae0f24823ace6c9511dee"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aaea20ec5954ae0f24823ace6c9511dee">validate_input_impl</a> () const</td></tr>
+<tr class="memdesc:aaea20ec5954ae0f24823ace6c9511dee inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类可选的额外验证 / Optional additional validation for derived class  <br /></td></tr>
+<tr class="separator:aaea20ec5954ae0f24823ace6c9511dee inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7505e2c36d4b9056dafbbe0b2ad314e7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a7505e2c36d4b9056dafbbe0b2ad314e7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a7505e2c36d4b9056dafbbe0b2ad314e7">get_sorter_name_impl</a> () const</td></tr>
+<tr class="memdesc:a7505e2c36d4b9056dafbbe0b2ad314e7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">派生类必须实现的排序器名称获取方法 / Sorter name getter that derived class must implement  <br /></td></tr>
+<tr class="separator:a7505e2c36d4b9056dafbbe0b2ad314e7 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78783335dc55a6ec95fb7cb8e8ea0734 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a78783335dc55a6ec95fb7cb8e8ea0734"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a78783335dc55a6ec95fb7cb8e8ea0734">get_source_cloud</a> () const</td></tr>
+<tr class="memdesc:a78783335dc55a6ec95fb7cb8e8ea0734 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">获取受保护的成员变量访问 / Get access to protected members  <br /></td></tr>
+<tr class="separator:a78783335dc55a6ec95fb7cb8e8ea0734 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60002ce9fa83db70ed2725018e85148f inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a60002ce9fa83db70ed2725018e85148f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a60002ce9fa83db70ed2725018e85148f">get_target_cloud</a> () const</td></tr>
+<tr class="separator:a60002ce9fa83db70ed2725018e85148f inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6df3a5f7c41bc4eeeb51fc601efa06 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a2e6df3a5f7c41bc4eeeb51fc601efa06"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2e6df3a5f7c41bc4eeeb51fc601efa06">get_correspondences</a> () const</td></tr>
+<tr class="separator:a2e6df3a5f7c41bc4eeeb51fc601efa06 inherit pro_methods_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:acbbae2d14d1ad79f619985c382dc09e1" id="r_acbbae2d14d1ad79f619985c382dc09e1"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#acbbae2d14d1ad79f619985c382dc09e1">base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="separator:acbbae2d14d1ad79f619985c382dc09e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">toolbox::pcl::base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</a></td></tr>
+<tr class="memitem:a4609421ea17bc9e8a8d36d1064c68c8f inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a4609421ea17bc9e8a8d36d1064c68c8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a4609421ea17bc9e8a8d36d1064c68c8f">m_source_cloud</a></td></tr>
+<tr class="separator:a4609421ea17bc9e8a8d36d1064c68c8f inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9697b878bc5a05ec4bdd2449668c8419 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a9697b878bc5a05ec4bdd2449668c8419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa1c9dde5812856b6e250f15822077c4c">point_cloud_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a9697b878bc5a05ec4bdd2449668c8419">m_target_cloud</a></td></tr>
+<tr class="separator:a9697b878bc5a05ec4bdd2449668c8419 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab66662696e88f1ad539d8c089ab8d9aa inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ab66662696e88f1ad539d8c089ab8d9aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac6e61611d40c6fe3bb1626a10686f375">correspondences_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab66662696e88f1ad539d8c089ab8d9aa">m_correspondences</a></td></tr>
+<tr class="separator:ab66662696e88f1ad539d8c089ab8d9aa inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e4e0eca74eda87cbbea08dbc125f05 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ac2e4e0eca74eda87cbbea08dbc125f05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ac2e4e0eca74eda87cbbea08dbc125f05">m_cached</a></td></tr>
+<tr class="separator:ac2e4e0eca74eda87cbbea08dbc125f05 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4fb4091d30a3275aa90ab54601db69 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_aed4fb4091d30a3275aa90ab54601db69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aed4fb4091d30a3275aa90ab54601db69">m_cached_scores</a></td></tr>
+<tr class="separator:aed4fb4091d30a3275aa90ab54601db69 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab282cc85c507e3b99f7dbb14d572bc4e inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_ab282cc85c507e3b99f7dbb14d572bc4e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a2f3a84ca49ea9386c868f16682eae609">sorted_indices_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#ab282cc85c507e3b99f7dbb14d572bc4e">m_cached_indices</a></td></tr>
+<tr class="separator:ab282cc85c507e3b99f7dbb14d572bc4e inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80524414602c144043c6cefa8cbd3c87 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t" id="r_a80524414602c144043c6cefa8cbd3c87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a80524414602c144043c6cefa8cbd3c87">m_parallel_enabled</a></td></tr>
+<tr class="separator:a80524414602c144043c6cefa8cbd3c87 inherit pro_attribs_classtoolbox_1_1pcl_1_1base__correspondence__sorter__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename DataType&gt;<br />
+class toolbox::pcl::custom_function_sorter_t&lt; DataType &gt;</div><p>自定义函数的对应关系排序器 / Custom function-based correspondence sorter </p>
+<p>该排序器允许用户提供自定义的质量评估函数。 This sorter allows users to provide custom quality evaluation functions.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">DataType</td><td>数据类型（如float或double） / Data type (e.g., float or double)</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><span class="comment">// 使用示例 / Usage example</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t&lt;float&gt;</a> sorter;</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 设置自定义质量函数 / Set custom quality function</span></div>
+<div class="line">sorter.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">set_quality_function</a>(</div>
+<div class="line">    [](<span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; corr,</div>
+<div class="line">       std::size_t corr_idx,</div>
+<div class="line">       <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud&lt;float&gt;</a>&amp; src,</div>
+<div class="line">       <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud&lt;float&gt;</a>&amp; tgt) -&gt; <span class="keywordtype">float</span> {</div>
+<div class="line">        <span class="comment">// 自定义质量计算 / Custom quality computation</span></div>
+<div class="line">        <span class="keywordtype">float</span> desc_quality = 1.0f - (corr.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8">distance</a> / 100.0f);</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// 可以访问点云数据进行更复杂的计算 / Can access point cloud data for</span></div>
+<div class="line">more complex computation <span class="keyword">const</span> <span class="keyword">auto</span>&amp; src_point = src.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[corr.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a0172651b22f5b8f7833e6aef37501cdd">src_idx</a>];</div>
+<div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span>&amp; tgt_point = tgt.<a class="code hl_variable" href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">points</a>[corr.<a class="code hl_variable" href="structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb">dst_idx</a>];</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">// 例如：考虑法向量一致性 / Example: consider normal consistency</span></div>
+<div class="line">        <span class="comment">// float normal_dot = src_point.normal.dot(tgt_point.normal);</span></div>
+<div class="line"> </div>
+<div class="line">        <span class="keywordflow">return</span> desc_quality;</div>
+<div class="line">    });</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> scores = sorter.<a class="code hl_function" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a54235beb5df3c22633f27c02679d591d">compute_quality_scores</a>();</div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1base__correspondence__sorter__t_html_a54235beb5df3c22633f27c02679d591d"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a54235beb5df3c22633f27c02679d591d">toolbox::pcl::base_correspondence_sorter_t::compute_quality_scores</a></div><div class="ttdeci">quality_scores_t compute_quality_scores()</div><div class="ttdoc">仅计算质量分数，不排序 / Compute quality scores only, without sorting</div><div class="ttdef"><b>Definition</b> base_correspondence_sorter.hpp:144</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a></div><div class="ttdoc">自定义函数的对应关系排序器 / Custom function-based correspondence sorter</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:52</div></div>
+<div class="ttc" id="aclasstoolbox_1_1pcl_1_1custom__function__sorter__t_html_a4092892d32250290232b8f169ca62d83"><div class="ttname"><a href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a4092892d32250290232b8f169ca62d83">toolbox::pcl::custom_function_sorter_t::set_quality_function</a></div><div class="ttdeci">void set_quality_function(quality_function_t func)</div><div class="ttdoc">设置自定义质量函数 / Set custom quality function</div><div class="ttdef"><b>Definition</b> custom_function_sorter.hpp:88</div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t&lt; DataType &gt;</a></div></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html_a4b4825f28913d3404e4bbe52164671ff"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html#a4b4825f28913d3404e4bbe52164671ff">toolbox::types::point_cloud_t::points</a></div><div class="ttdeci">std::vector&lt; point_t&lt; T &gt; &gt; points</div><div class="ttdoc">点坐标 / Point coordinates</div><div class="ttdef"><b>Definition</b> point.hpp:270</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html">toolbox::pcl::correspondence_t</a></div><div class="ttdoc">对应关系结构体 / Correspondence structure</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:27</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a0172651b22f5b8f7833e6aef37501cdd"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a0172651b22f5b8f7833e6aef37501cdd">toolbox::pcl::correspondence_t::src_idx</a></div><div class="ttdeci">std::size_t src_idx</div><div class="ttdoc">源点索引 / Source point index</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:28</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a7b95ab48890fd10d3a7e2d5baf3ca3a8"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a7b95ab48890fd10d3a7e2d5baf3ca3a8">toolbox::pcl::correspondence_t::distance</a></div><div class="ttdeci">float distance</div><div class="ttdoc">描述子间的距离 / Distance between descriptors</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:30</div></div>
+<div class="ttc" id="astructtoolbox_1_1pcl_1_1correspondence__t_html_a8c08377d2a25685e34c99b9c662dc8eb"><div class="ttname"><a href="structtoolbox_1_1pcl_1_1correspondence__t.html#a8c08377d2a25685e34c99b9c662dc8eb">toolbox::pcl::correspondence_t::dst_idx</a></div><div class="ttdeci">std::size_t dst_idx</div><div class="ttdoc">目标点索引 / Destination point index</div><div class="ttdef"><b>Definition</b> base_correspondence_generator.hpp:29</div></div>
+</div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="aeca64623966490378758cb4a4e84ed1c" name="aeca64623966490378758cb4a4e84ed1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca64623966490378758cb4a4e84ed1c">&#9670;&#160;</a></span>base_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::base_type =  <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a>&lt;<a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a>&lt;DataType&gt;, DataType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42f35ccf5d4f8d5ce197d52d497c0da7" name="a42f35ccf5d4f8d5ce197d52d497c0da7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f35ccf5d4f8d5ce197d52d497c0da7">&#9670;&#160;</a></span>quality_function_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::quality_function_t =  std::function&lt;DataType( const <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; correspondence, std::size_t index, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a>&amp; source_cloud, const <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#a1875744d7a96019b0e9d6b9e36d2076e">point_cloud</a>&amp; target_cloud)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>质量函数类型定义 / Quality function type definition </p>
+<p>参数 / Parameters:</p><ul>
+<li>correspondence: 对应关系 / Correspondence</li>
+<li>index: 对应关系在数组中的索引 / Index of correspondence in array</li>
+<li>source_cloud: 源点云 / Source point cloud</li>
+<li>target_cloud: 目标点云 / Target point cloud 返回值 / Return: 质量分数 / Quality score </li>
+</ul>
+
+</div>
+</div>
+<a id="ab36f05766231679a8a65aa2f7c31d707" name="ab36f05766231679a8a65aa2f7c31d707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab36f05766231679a8a65aa2f7c31d707">&#9670;&#160;</a></span>simple_quality_function_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::simple_quality_function_t =  std::function&lt;DataType(const <a class="el" href="structtoolbox_1_1pcl_1_1correspondence__t.html">correspondence_t</a>&amp; correspondence)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>简化的质量函数类型（仅基于对应关系） / Simplified quality function type (based on correspondence only) </p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="af5c5ac5bffe03a4a817e57bd75fad809" name="af5c5ac5bffe03a4a817e57bd75fad809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c5ac5bffe03a4a817e57bd75fad809">&#9670;&#160;</a></span>custom_function_sorter_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::custom_function_sorter_t </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5a5e781b8dbf670858819140cb6d3f95" name="a5a5e781b8dbf670858819140cb6d3f95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5e781b8dbf670858819140cb6d3f95">&#9670;&#160;</a></span>~custom_function_sorter_t()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::~<a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7e54594292292d02592643ed1cc16cf1" name="a7e54594292292d02592643ed1cc16cf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e54594292292d02592643ed1cc16cf1">&#9670;&#160;</a></span>compute_quality_scores_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::compute_quality_scores_impl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html#aa5b7d6603a5fd69351939c22c4f31d61">quality_scores_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>scores</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>计算质量分数的实现 / Implementation of quality score computation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scores</td><td>[out] 质量分数 / Quality scores </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69200e2f820912d45e87919403427315" name="a69200e2f820912d45e87919403427315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69200e2f820912d45e87919403427315">&#9670;&#160;</a></span>get_sorter_name_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::get_sorter_name_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>获取排序器名称实现 / Get sorter name implementation </p>
+<dl class="section return"><dt>Returns</dt><dd>排序器名称 / Sorter name </dd></dl>
+
+</div>
+</div>
+<a id="a9c08e8804257c1b214a46b518b17b35b" name="a9c08e8804257c1b214a46b518b17b35b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c08e8804257c1b214a46b518b17b35b">&#9670;&#160;</a></span>has_quality_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::has_quality_function </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>检查是否设置了质量函数 / Check if quality function is set </p>
+<dl class="section return"><dt>Returns</dt><dd>是否已设置 / Whether set </dd></dl>
+
+</div>
+</div>
+<a id="a4092892d32250290232b8f169ca62d83" name="a4092892d32250290232b8f169ca62d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4092892d32250290232b8f169ca62d83">&#9670;&#160;</a></span>set_quality_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::set_quality_function </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#a42f35ccf5d4f8d5ce197d52d497c0da7">quality_function_t</a>&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置自定义质量函数 / Set custom quality function </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>质量函数 / Quality function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad6c84a0e68761814fd85eadd659761d0" name="ad6c84a0e68761814fd85eadd659761d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c84a0e68761814fd85eadd659761d0">&#9670;&#160;</a></span>set_simple_quality_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::set_simple_quality_function </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html#ab36f05766231679a8a65aa2f7c31d707">simple_quality_function_t</a>&#160;</td>
+          <td class="paramname"><em>func</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>设置简化的质量函数（仅基于对应关系） / Set simplified quality function (based on correspondence only) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>简化的质量函数 / Simplified quality function </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5a38035a3271079e39d9d6c785174e75" name="a5a38035a3271079e39d9d6c785174e75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a38035a3271079e39d9d6c785174e75">&#9670;&#160;</a></span>validate_input_impl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">toolbox::pcl::custom_function_sorter_t</a>&lt; DataType &gt;::validate_input_impl </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>验证输入数据的实现 / Implementation of input validation </p>
+<dl class="section return"><dt>Returns</dt><dd>是否有效 / Whether valid </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="acbbae2d14d1ad79f619985c382dc09e1" name="acbbae2d14d1ad79f619985c382dc09e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbae2d14d1ad79f619985c382dc09e1">&#9670;&#160;</a></span>base_correspondence_sorter_t&lt; custom_function_sorter_t&lt; DataType &gt;, DataType &gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename DataType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classtoolbox_1_1pcl_1_1base__correspondence__sorter__t.html">base_correspondence_sorter_t</a>&lt; <a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a>&lt; DataType &gt;, DataType &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/include/cpp-toolbox/pcl/correspondence/<a class="el" href="custom__function__sorter_8hpp_source.html">custom_function_sorter.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacetoolbox.html">toolbox</a></li><li class="navelem"><a class="el" href="namespacetoolbox_1_1pcl.html">pcl</a></li><li class="navelem"><a class="el" href="classtoolbox_1_1pcl_1_1custom__function__sorter__t.html">custom_function_sorter_t</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

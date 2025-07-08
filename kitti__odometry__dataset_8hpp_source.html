@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/io/dataloader/kitti_odometry_dataset.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('kitti__odometry__dataset_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">kitti_odometry_dataset.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="kitti__odometry__dataset_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="dataset_8hpp.html">cpp-toolbox/io/dataset/dataset.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__types_8hpp.html">cpp-toolbox/io/dataset/kitti_types.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__pose__reader_8hpp.html">cpp-toolbox/io/dataset/kitti_pose_reader.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__exceptions_8hpp.html">cpp-toolbox/io/dataset/kitti_exceptions.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__extended_8hpp.html">cpp-toolbox/io/formats/kitti_extended.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io.html">toolbox::io</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html">   43</a></span><span class="keyword">class </span><a class="code hl_class" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html">kitti_odometry_dataset_t</a> : </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">public</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1dataset__t.html">dataset_t</a>&lt;kitti_odometry_dataset_t&lt;DataType&gt;, </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                     kitti_odometry_frame_t&lt;DataType&gt;&gt; {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#ad800d5361db91e6db82bfcd9f1149275">   47</a></span>    <span class="keyword">using </span><a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html">frame_type</a> = <a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html">kitti_odometry_frame_t&lt;DataType&gt;</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a9023f56ce8d1ab53dae904ea9751f85b">   48</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classtoolbox_1_1io_1_1dataset__t.html">base_type</a> = <a class="code hl_class" href="classtoolbox_1_1io_1_1dataset__t.html">dataset_t&lt;kitti_odometry_dataset_t&lt;DataType&gt;</a>, <a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html">frame_type</a>&gt;;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">explicit</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html">kitti_odometry_dataset_t</a>(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    </div>
+<div class="foldopen" id="foldopen00061" data-start="{" data-end="}">
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1f57680bd7ececaf04b60cceec885243">   61</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1f57680bd7ececaf04b60cceec885243">set_cache_size</a>(std::size_t max_cached_frames) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        max_cache_size_ = max_cached_frames;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="comment">// If cache is larger than new size, evict oldest entries</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordflow">while</span> (cache_.size() &gt; max_cache_size_) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keyword">auto</span> oldest = lru_list_.back();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>            cache_.erase(oldest);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>            lru_list_.pop_back();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
+</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a2c5e306d674e4d7258e1bd3c1c735c99">   75</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a2c5e306d674e4d7258e1bd3c1c735c99">enable_intensity</a>(<span class="keywordtype">bool</span> enable) { load_intensity_ = enable; }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a9c5efda76d8bba4ce98374e368bf33ce">   81</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a9c5efda76d8bba4ce98374e368bf33ce">set_error_policy</a>(<a class="code hl_enumeration" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">error_recovery_policy_t</a> policy) { </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        error_policy_ = policy; </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// ==================== Dataset Interface ====================</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a85a5868b395d54d23a9d2a9619c80086">   91</a></span>    [[nodiscard]] std::size_t <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a85a5868b395d54d23a9d2a9619c80086">size_impl</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cloud_files_.size(); }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    [[nodiscard]] std::optional&lt;frame_type&gt; <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a54e15d0afa78f51c337955b8cf9521b0">at_impl</a>(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="comment">// ==================== Additional Functionality ====================</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="}">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a3973fe3d4b07140e60f138dcd1dbc7f8">  107</a></span>    [[nodiscard]] std::string <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a3973fe3d4b07140e60f138dcd1dbc7f8">get_cloud_file</a>(std::size_t index)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span> (index &gt;= cloud_files_.size()) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>            <span class="keywordflow">throw</span> <a class="code hl_class" href="classtoolbox_1_1io_1_1kitti__index__out__of__range.html">kitti_index_out_of_range</a>(index, cloud_files_.size());</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        <span class="keywordflow">return</span> cloud_files_[index];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    </div>
+<div class="foldopen" id="foldopen00119" data-start="{" data-end="}">
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#af26c09079454d1070e03a74161676f9b">  119</a></span>    [[nodiscard]] Eigen::Matrix&lt;DataType, 4, 4&gt; <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#af26c09079454d1070e03a74161676f9b">get_pose</a>(std::size_t index)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span> pose_reader_.get_pose(index);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
+<div class="foldopen" id="foldopen00127" data-start="{" data-end="}">
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#abc149191179bd8e2fefa408c031f471d">  127</a></span>    [[nodiscard]] <span class="keywordtype">bool</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#abc149191179bd8e2fefa408c031f471d">has_calibration</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> calibration_.has_value(); </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    </div>
+<div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1bcbfa99d1f1e9a7e8874673b28607a2">  136</a></span>    [[nodiscard]] <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t&lt;DataType&gt;</a>&amp; <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1bcbfa99d1f1e9a7e8874673b28607a2">get_calibration</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">if</span> (!calibration_) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;No calibration data available&quot;</span>);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        }</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        <span class="keywordflow">return</span> *calibration_;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    }</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    </div>
+<div class="foldopen" id="foldopen00147" data-start="{" data-end="}">
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aafda6058586c4489652c0173a6357c76">  147</a></span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aafda6058586c4489652c0173a6357c76">get_sequence_name</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        <span class="keywordflow">return</span> sequence_name_; </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    }</div>
+</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    </div>
+<div class="foldopen" id="foldopen00155" data-start="{" data-end="}">
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a0d6e4573283cbfa916d5e1ebeab9661f">  155</a></span>    [[nodiscard]] <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a0d6e4573283cbfa916d5e1ebeab9661f">get_sequence_path</a>()<span class="keyword"> const </span>{ </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> sequence_path_; </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    </div>
+<div class="foldopen" id="foldopen00162" data-start="{" data-end="}">
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aa58253ec2a7a2a8b7ada0184d22a92a3">  162</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aa58253ec2a7a2a8b7ada0184d22a92a3">clear_cache</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        cache_.clear();</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        lru_list_.clear();</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// ==================== Private Methods ====================</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordtype">void</span> scan_cloud_files();</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordtype">void</span> load_poses(<span class="keyword">const</span> std::string&amp; poses_path);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    <span class="keywordtype">void</span> load_calibration();</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; load_cloud(</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keyword">const</span> std::string&amp; file_path) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keywordtype">void</span> update_cache(std::size_t index, <a class="code hl_typedef" href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#ad800d5361db91e6db82bfcd9f1149275">frame_type</a>&amp;&amp; frame) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>    </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    std::optional&lt;frame_type&gt; get_from_cache(std::size_t index) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="comment">// ==================== Member Variables ====================</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    std::string sequence_path_;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    std::string velodyne_path_;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    std::string sequence_name_;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_class" href="classtoolbox_1_1io_1_1kitti__pose__reader__t.html">kitti_pose_reader_t&lt;DataType&gt;</a> pose_reader_;</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    std::optional&lt;kitti_calibration_t&lt;DataType&gt;&gt; calibration_;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    std::vector&lt;std::string&gt; cloud_files_;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">mutable</span> std::map&lt;std::size_t, frame_type&gt; cache_;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keyword">mutable</span> std::list&lt;std::size_t&gt; lru_list_;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    std::size_t max_cache_size_ = 100;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keywordtype">bool</span> load_intensity_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_enumeration" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">error_recovery_policy_t</a> error_policy_ = <a class="code hl_enumvalue" href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920">error_recovery_policy_t::lenient</a>;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>};</div>
+</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>} <span class="comment">// namespace toolbox::io</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="comment">// Include implementation</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__odometry__dataset__impl_8hpp.html">cpp-toolbox/io/dataloader/impl/kitti_odometry_dataset_impl.hpp</a>&gt;</span></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1dataset__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1dataset__t.html">toolbox::io::dataset_t</a></div><div class="ttdoc">数据集基类/Abstract base class for datasets</div><div class="ttdef"><b>Definition</b> dataset.hpp:33</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__index__out__of__range_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__index__out__of__range.html">toolbox::io::kitti_index_out_of_range</a></div><div class="ttdoc">Exception thrown when accessing out of bounds frame.</div><div class="ttdef"><b>Definition</b> kitti_exceptions.hpp:66</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html">toolbox::io::kitti_odometry_dataset_t</a></div><div class="ttdoc">KITTI Odometry dataset loader.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:45</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a0d6e4573283cbfa916d5e1ebeab9661f"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a0d6e4573283cbfa916d5e1ebeab9661f">toolbox::io::kitti_odometry_dataset_t::get_sequence_path</a></div><div class="ttdeci">const std::string &amp; get_sequence_path() const</div><div class="ttdoc">Get sequence path.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:155</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a1bcbfa99d1f1e9a7e8874673b28607a2"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1bcbfa99d1f1e9a7e8874673b28607a2">toolbox::io::kitti_odometry_dataset_t::get_calibration</a></div><div class="ttdeci">const kitti_calibration_t&lt; DataType &gt; &amp; get_calibration() const</div><div class="ttdoc">Get calibration data.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:136</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a1f57680bd7ececaf04b60cceec885243"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a1f57680bd7ececaf04b60cceec885243">toolbox::io::kitti_odometry_dataset_t::set_cache_size</a></div><div class="ttdeci">void set_cache_size(std::size_t max_cached_frames)</div><div class="ttdoc">Set cache size for loaded frames.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:61</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a2c5e306d674e4d7258e1bd3c1c735c99"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a2c5e306d674e4d7258e1bd3c1c735c99">toolbox::io::kitti_odometry_dataset_t::enable_intensity</a></div><div class="ttdeci">void enable_intensity(bool enable)</div><div class="ttdoc">Enable/disable intensity loading.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:75</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a3973fe3d4b07140e60f138dcd1dbc7f8"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a3973fe3d4b07140e60f138dcd1dbc7f8">toolbox::io::kitti_odometry_dataset_t::get_cloud_file</a></div><div class="ttdeci">std::string get_cloud_file(std::size_t index) const</div><div class="ttdoc">Get cloud file path for specific frame.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:107</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a54e15d0afa78f51c337955b8cf9521b0"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a54e15d0afa78f51c337955b8cf9521b0">toolbox::io::kitti_odometry_dataset_t::at_impl</a></div><div class="ttdeci">std::optional&lt; frame_type &gt; at_impl(std::size_t index) const</div><div class="ttdoc">Load frame at specific index.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset_impl.hpp:102</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a85a5868b395d54d23a9d2a9619c80086"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a85a5868b395d54d23a9d2a9619c80086">toolbox::io::kitti_odometry_dataset_t::size_impl</a></div><div class="ttdeci">std::size_t size_impl() const</div><div class="ttdoc">Get number of frames in the sequence.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:91</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_a9c5efda76d8bba4ce98374e368bf33ce"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#a9c5efda76d8bba4ce98374e368bf33ce">toolbox::io::kitti_odometry_dataset_t::set_error_policy</a></div><div class="ttdeci">void set_error_policy(error_recovery_policy_t policy)</div><div class="ttdoc">Set error recovery policy.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:81</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_aa58253ec2a7a2a8b7ada0184d22a92a3"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aa58253ec2a7a2a8b7ada0184d22a92a3">toolbox::io::kitti_odometry_dataset_t::clear_cache</a></div><div class="ttdeci">void clear_cache() const</div><div class="ttdoc">Clear frame cache.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:162</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_aafda6058586c4489652c0173a6357c76"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#aafda6058586c4489652c0173a6357c76">toolbox::io::kitti_odometry_dataset_t::get_sequence_name</a></div><div class="ttdeci">const std::string &amp; get_sequence_name() const</div><div class="ttdoc">Get sequence name.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:147</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_abc149191179bd8e2fefa408c031f471d"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#abc149191179bd8e2fefa408c031f471d">toolbox::io::kitti_odometry_dataset_t::has_calibration</a></div><div class="ttdeci">bool has_calibration() const</div><div class="ttdoc">Check if calibration data is available.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:127</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_ad800d5361db91e6db82bfcd9f1149275"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#ad800d5361db91e6db82bfcd9f1149275">toolbox::io::kitti_odometry_dataset_t::frame_type</a></div><div class="ttdeci">kitti_odometry_frame_t&lt; DataType &gt; frame_type</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:47</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__odometry__dataset__t_html_af26c09079454d1070e03a74161676f9b"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__odometry__dataset__t.html#af26c09079454d1070e03a74161676f9b">toolbox::io::kitti_odometry_dataset_t::get_pose</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; get_pose(std::size_t index) const</div><div class="ttdoc">Get pose for specific frame.</div><div class="ttdef"><b>Definition</b> kitti_odometry_dataset.hpp:119</div></div>
+<div class="ttc" id="aclasstoolbox_1_1io_1_1kitti__pose__reader__t_html"><div class="ttname"><a href="classtoolbox_1_1io_1_1kitti__pose__reader__t.html">toolbox::io::kitti_pose_reader_t</a></div><div class="ttdoc">Reader for KITTI pose files.</div><div class="ttdef"><b>Definition</b> kitti_pose_reader.hpp:19</div></div>
+<div class="ttc" id="adataset_8hpp_html"><div class="ttname"><a href="dataset_8hpp.html">dataset.hpp</a></div></div>
+<div class="ttc" id="akitti_8hpp_html"><div class="ttname"><a href="kitti_8hpp.html">kitti.hpp</a></div></div>
+<div class="ttc" id="akitti__exceptions_8hpp_html"><div class="ttname"><a href="kitti__exceptions_8hpp.html">kitti_exceptions.hpp</a></div></div>
+<div class="ttc" id="akitti__extended_8hpp_html"><div class="ttname"><a href="kitti__extended_8hpp.html">kitti_extended.hpp</a></div></div>
+<div class="ttc" id="akitti__odometry__dataset__impl_8hpp_html"><div class="ttname"><a href="kitti__odometry__dataset__impl_8hpp.html">kitti_odometry_dataset_impl.hpp</a></div></div>
+<div class="ttc" id="akitti__pose__reader_8hpp_html"><div class="ttname"><a href="kitti__pose__reader_8hpp.html">kitti_pose_reader.hpp</a></div></div>
+<div class="ttc" id="akitti__types_8hpp_html"><div class="ttname"><a href="kitti__types_8hpp.html">kitti_types.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html"><div class="ttname"><a href="namespacetoolbox_1_1io.html">toolbox::io</a></div><div class="ttdoc">&lt; 用于列出目录下的文件/For listing files in a directory</div><div class="ttdef"><b>Definition</b> dataloader.hpp:15</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a13510f96050c707bbe911ea439a8fca8"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8">toolbox::io::error_recovery_policy_t</a></div><div class="ttdeci">error_recovery_policy_t</div><div class="ttdoc">Error recovery policy for dataset loading.</div><div class="ttdef"><b>Definition</b> kitti_types.hpp:223</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a13510f96050c707bbe911ea439a8fca8a526e2996690a16ff145147abb1927920">toolbox::io::error_recovery_policy_t::lenient</a></div><div class="ttdeci">@ lenient</div><div class="ttdoc">Skip problematic frames and continue.</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html">toolbox::io::kitti_calibration_t</a></div><div class="ttdoc">KITTI calibration data structure.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:81</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__odometry__frame__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__odometry__frame__t.html">toolbox::io::kitti_odometry_frame_t</a></div><div class="ttdoc">Single frame data from KITTI odometry dataset.</div><div class="ttdef"><b>Definition</b> kitti_types.hpp:25</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_0525589dda1abc1cfa65fd0da343267e.html">io</a></li><li class="navelem"><a class="el" href="dir_98ff5159ab1abbc525b6e49eb1889c44.html">dataloader</a></li><li class="navelem"><a class="el" href="kitti__odometry__dataset_8hpp.html">kitti_odometry_dataset.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

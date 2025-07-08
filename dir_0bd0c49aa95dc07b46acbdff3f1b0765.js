@@ -9,6 +9,7 @@ var dir_0bd0c49aa95dc07b46acbdff3f1b0765 =
     [ "ndt.hpp", "ndt_8hpp.html", "ndt_8hpp" ],
     [ "point_to_plane_icp.hpp", "point__to__plane__icp_8hpp.html", "point__to__plane__icp_8hpp" ],
     [ "point_to_point_icp.hpp", "point__to__point__icp_8hpp.html", "point__to__point__icp_8hpp" ],
+    [ "prosac_registration.hpp", "prosac__registration_8hpp.html", "prosac__registration_8hpp" ],
     [ "ransac_registration.hpp", "ransac__registration_8hpp.html", "ransac__registration_8hpp" ],
     [ "registration.hpp", "registration_8hpp.html", "registration_8hpp" ],
     [ "registration_result.hpp", "registration__result_8hpp.html", "registration__result_8hpp" ],

@@ -128,7 +128,9 @@ digraph "src/include/cpp-toolbox/metrics.hpp"
   Node38 -> Node33 [id="edge84_Node000038_Node000033",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node37 [id="edge85_Node000038_Node000037",color="steelblue1",style="solid",tooltip=" "];
   Node38 -> Node4 [id="edge86_Node000038_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node38 -> Node2 [id="edge87_Node000038_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node38 -> Node9 [id="edge88_Node000038_Node000009",color="steelblue1",style="solid",tooltip=" "];
-  Node38 -> Node14 [id="edge89_Node000038_Node000014",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node39 [id="edge87_Node000038_Node000039",color="steelblue1",style="solid",tooltip=" "];
+  Node39 [id="Node000039",label="Eigen/Core",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node38 -> Node2 [id="edge88_Node000038_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node9 [id="edge89_Node000038_Node000009",color="steelblue1",style="solid",tooltip=" "];
+  Node38 -> Node14 [id="edge90_Node000038_Node000014",color="steelblue1",style="solid",tooltip=" "];
 }

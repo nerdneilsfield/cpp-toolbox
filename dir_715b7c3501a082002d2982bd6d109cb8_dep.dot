@@ -11,6 +11,6 @@ digraph "src/include/cpp-toolbox/io/formats/detail"
   }
   dir_40d9b6a4c321e73b85093107dc465522 [label="logger", fillcolor="#daedff", color="grey50", style="filled", URL="dir_40d9b6a4c321e73b85093107dc465522.html",tooltip=""];
   dir_b5aa90370c16f0962bf4137c01c04103 [label="file", fillcolor="#daedff", color="grey50", style="filled", URL="dir_b5aa90370c16f0962bf4137c01c04103.html",tooltip=""];
-  dir_715b7c3501a082002d2982bd6d109cb8->dir_40d9b6a4c321e73b85093107dc465522 [headlabel="2", labeldistance=1.5 headhref="dir_000009_000030.html" href="dir_000009_000030.html" color="steelblue1" fontcolor="steelblue1"];
+  dir_715b7c3501a082002d2982bd6d109cb8->dir_40d9b6a4c321e73b85093107dc465522 [headlabel="3", labeldistance=1.5 headhref="dir_000009_000032.html" href="dir_000009_000032.html" color="steelblue1" fontcolor="steelblue1"];
   dir_715b7c3501a082002d2982bd6d109cb8->dir_b5aa90370c16f0962bf4137c01c04103 [headlabel="2", labeldistance=1.5 headhref="dir_000009_000012.html" href="dir_000009_000012.html" color="steelblue1" fontcolor="steelblue1"];
 }

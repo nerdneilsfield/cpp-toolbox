@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::filter\l_t\< Derived, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1filter__t.html",tooltip=" "];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_fine_registration_t\l\< generalized_icp_t\<\l DataType, kdtree_t\< DataType\l \> \>, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__fine__registration__t.html",tooltip=" "];
 }

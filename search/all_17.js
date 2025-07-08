@@ -23,12 +23,14 @@ var searchData=
   ['normal_5fy_20',['normal_y',['../structtoolbox_1_1pcl_1_1point__to__plane__icp__t_1_1normal__t.html#a028ea5682a62069cd41a9821110fab1a',1,'toolbox::pcl::point_to_plane_icp_t::normal_t']]],
   ['normal_5fz_21',['normal_z',['../structtoolbox_1_1pcl_1_1point__to__plane__icp__t_1_1normal__t.html#a803fd0473800be70073fda9576c8f245',1,'toolbox::pcl::point_to_plane_icp_t::normal_t']]],
   ['normalize_22',['normalize',['../structtoolbox_1_1types_1_1point__t.html#a4fd70b4134e57d8361cc2633f3aeeb71',1,'toolbox::types::point_t']]],
-  ['normalizedangularmetric_23',['NormalizedAngularMetric',['../classtoolbox_1_1metrics_1_1_normalized_angular_metric.html',1,'toolbox::metrics']]],
-  ['normals_24',['normals',['../classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a',1,'toolbox::types::point_cloud_t']]],
-  ['note_20to_20packagers_25',['Note to packagers',['../md__b_u_i_l_d_i_n_g.html#autotoc_md23',1,'']]],
-  ['notes_26',['11. 备注 / Notes',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md68',1,'']]],
-  ['num_5fcorrespondences_27',['num_correspondences',['../structtoolbox_1_1pcl_1_1iteration__state__t.html#aef6427af8e55b4a390082c848e1cf894',1,'toolbox::pcl::iteration_state_t']]],
-  ['num_5finliers_28',['num_inliers',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed',1,'toolbox::pcl::four_pcs_registration_t::candidate_t']]],
-  ['num_5fiterations_29',['num_iterations',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a0e449981f286e074150bc3e575a271dc',1,'toolbox::pcl::registration_result_t']]],
-  ['num_5fpoints_30',['num_points',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#a3633b571070bbc0f7fab2cbdcf888a46',1,'toolbox::pcl::ndt_t::voxel_cell_t']]]
+  ['normalize_5fweights_23',['normalize_weights',['../classtoolbox_1_1pcl_1_1combined__sorter__t.html#a07c3e6ac0b5dc1092292f4109024b9ec',1,'toolbox::pcl::combined_sorter_t']]],
+  ['normalizedangularmetric_24',['NormalizedAngularMetric',['../classtoolbox_1_1metrics_1_1_normalized_angular_metric.html',1,'toolbox::metrics']]],
+  ['normals_25',['normals',['../classtoolbox_1_1types_1_1point__cloud__t.html#a51a93c21f4e4ac87d6356e687047326a',1,'toolbox::types::point_cloud_t']]],
+  ['note_20to_20packagers_26',['Note to packagers',['../md__b_u_i_l_d_i_n_g.html#autotoc_md23',1,'']]],
+  ['notes_27',['11. 备注 / Notes',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html#autotoc_md68',1,'']]],
+  ['num_5fcorrespondences_28',['num_correspondences',['../structtoolbox_1_1pcl_1_1iteration__state__t.html#aef6427af8e55b4a390082c848e1cf894',1,'toolbox::pcl::iteration_state_t']]],
+  ['num_5fframes_29',['num_frames',['../structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a924a68efb5d0f48f2b3ed1cdf578ea50',1,'toolbox::io::kitti_sequence_info_t']]],
+  ['num_5finliers_30',['num_inliers',['../structtoolbox_1_1pcl_1_1four__pcs__registration__t_1_1candidate__t.html#a169d1dc9665375480d09542fa54725ed',1,'toolbox::pcl::four_pcs_registration_t::candidate_t']]],
+  ['num_5fiterations_31',['num_iterations',['../structtoolbox_1_1pcl_1_1registration__result__t.html#a0e449981f286e074150bc3e575a271dc',1,'toolbox::pcl::registration_result_t']]],
+  ['num_5fpoints_32',['num_points',['../structtoolbox_1_1pcl_1_1ndt__t_1_1voxel__cell__t.html#a3633b571070bbc0f7fab2cbdcf888a46',1,'toolbox::pcl::ndt_t::voxel_cell_t']]]
 ];

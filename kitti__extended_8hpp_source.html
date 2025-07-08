@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="generator" content="Doxygen 1.9.8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- BEGIN opengraph metadata -->
+    <meta property="og:title" content="C++ Toolbox" />
+    <meta
+      property="og:image"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta
+      property="og:description"
+      content="A collection of tools for C++ development."
+    />
+    <meta
+      property="og:url"
+      content="https://github.com/nerdneilsfield/cpp-toolbox"
+    />
+    <!-- END opengraph metadata -->
+    <!-- BEGIN twitter metadata -->
+    <meta
+      name="twitter:image:src"
+      content="https://repository-images.githubusercontent.com/348492097/4f16df80-88fb-11eb-9d31-4015ff22c452"
+    />
+    <meta name="twitter:title" content="Doxygen Awesome" />
+    <meta
+      name="twitter:description"
+      content="Custom CSS theme for doxygen html-documentation with lots of customization parameters."
+    />
+    <!-- END twitter metadata -->
+    <title>cpp-toolbox: src/include/cpp-toolbox/io/formats/kitti_extended.hpp Source File</title>
+    <link href="tabs.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="logo.drawio.svg" />
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="dynsections.js"></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-darkmode-toggle.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-fragment-copy-button.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-paragraph-link.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-interactive-toc.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="doxygen-awesome-tabs.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="toggle-alternative-theme.js"
+    ></script>
+    <script type="text/javascript">
+      DoxygenAwesomeFragmentCopyButton.init();
+      DoxygenAwesomeDarkModeToggle.init();
+      DoxygenAwesomeParagraphLink.init();
+      DoxygenAwesomeInteractiveToc.init();
+      DoxygenAwesomeTabs.init();
+    </script>
+    <link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+ <link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+    <link href="doxygen.css" rel="stylesheet" type="text/css" />
+    <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="custom-alternative.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <!-- https://tholman.com/github-corners/ -->
+    <a
+      href="https://github.com/nerdneilsfield/cpp-toolbox"
+      class="github-corner"
+      title="View source on GitHub"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg
+        viewBox="0 0 250 250"
+        width="40"
+        height="40"
+        style="position: absolute; top: 0; border: 0; right: 0; z-index: 99"
+        aria-hidden="true"
+      >
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path
+          d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+          fill="currentColor"
+          style="transform-origin: 130px 106px"
+          class="octo-arm"
+        ></path>
+        <path
+          d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+          fill="currentColor"
+          class="octo-body"
+        ></path></svg></a
+    ><style>
+      .github-corner:hover .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+      }
+      @keyframes octocat-wave {
+        0%,
+        100% {
+          transform: rotate(0);
+        }
+        20%,
+        60% {
+          transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+          transform: rotate(10deg);
+        }
+      }
+      @media (max-width: 500px) {
+        .github-corner:hover .octo-arm {
+          animation: none;
+        }
+        .github-corner .octo-arm {
+          animation: octocat-wave 560ms ease-in-out;
+        }
+      }
+    </style>
+    <div id="top">
+      <!-- do not remove this div, it is closed by doxygen! -->
+      <div id="titlearea">
+        <table cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr style="height: 56px">
+              <td id="projectalign" style="padding-left: 0.5em">
+                <div id="projectname">
+                  cpp-toolbox
+                  &#160;<span id="projectnumber"
+                    >0.0.1</span
+                  >
+                </div>
+                <div id="projectbrief">A toolbox library for C++</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- end header part -->
+    </div>
+  </body>
+</html>
+<!-- Generated by Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function() { init_codefold(0); });
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('kitti__extended_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">kitti_extended.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="kitti__extended_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="kitti_8hpp.html">cpp-toolbox/io/formats/kitti.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="point_8hpp.html">cpp-toolbox/types/point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;Eigen/Dense&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;optional&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetoolbox_1_1io.html">toolbox::io</a> {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// ==================== Label I/O ====================</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>std::vector&lt;uint32_t&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#a47a8d994edc1ecbd5b6744fd90b6e9a1">read_kitti_labels</a>(<span class="keyword">const</span> std::string&amp; file_path);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a1fe080b3db699dd873bcf96d8cb16639">write_kitti_labels</a>(<span class="keyword">const</span> std::string&amp; file_path,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                       <span class="keyword">const</span> std::vector&lt;uint32_t&gt;&amp; labels);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// ==================== Pose I/O ====================</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>Eigen::Matrix&lt;DataType, 4, 4&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#a5babee5c29926e81388235e636bf921a">parse_kitti_pose_line</a>(<span class="keyword">const</span> std::string&amp; line);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>std::vector&lt;Eigen::Matrix&lt;DataType, 4, 4&gt;&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#add66680e1275badb8c472e9b0717cf92">read_kitti_poses</a>(<span class="keyword">const</span> std::string&amp; file_path);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>std::string <a class="code hl_function" href="namespacetoolbox_1_1io.html#a758a1d4c9255ea14afaf0aac43fe0e90">format_kitti_pose</a>(<span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; pose);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a6432c34212d85fa24218981aac66a338">write_kitti_poses</a>(<span class="keyword">const</span> std::string&amp; file_path,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                      <span class="keyword">const</span> std::vector&lt;Eigen::Matrix&lt;DataType, 4, 4&gt;&gt;&amp; poses);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="comment">// ==================== Calibration I/O ====================</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">   81</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t</a> {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a92ab1df986d6e4de606c6fa6f8fe659b">   83</a></span>    Eigen::Matrix&lt;DataType, 4, 4&gt; <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a92ab1df986d6e4de606c6fa6f8fe659b">Tr_velo_to_cam</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a62644630a80dbf545f2aa0f5fa86947e">   86</a></span>    Eigen::Matrix&lt;DataType, 3, 4&gt; <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a62644630a80dbf545f2aa0f5fa86947e">P0</a>, <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a498a19a163a4f62fb7d9fe21af77e803">P1</a>, <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#aa30b67c6325f21f02d00bc0ae4e02fcd">P2</a>, <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a2beacc4e27aeab63ae75306d21371ae7">P3</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a791fbe3f816efd9d9f2ad7296a51e6b6">   89</a></span>    Eigen::Matrix&lt;DataType, 3, 3&gt; <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a791fbe3f816efd9d9f2ad7296a51e6b6">R0_rect</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a168b7ca53e52f32f284badd07f721029">   92</a></span>    std::optional&lt;Eigen::Matrix&lt;DataType, 4, 4&gt;&gt; <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a168b7ca53e52f32f284badd07f721029">Tr_imu_to_velo</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>};</div>
+</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t&lt;DataType&gt;</a> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a2504b9aa19ac4fe90a821de71cfae90e">read_kitti_calibration</a>(<span class="keyword">const</span> std::string&amp; file_path);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a319e56fceed5301cd3d2e935fd3ac849">write_kitti_calibration</a>(<span class="keyword">const</span> std::string&amp; file_path,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                            <span class="keyword">const</span> <a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__calibration__t.html">kitti_calibration_t&lt;DataType&gt;</a>&amp; calib);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="comment">// ==================== Utility Functions ====================</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>Eigen::Matrix&lt;DataType, 4, 4&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#adc7a45c553a80825fcf161db23c62df2">compute_relative_transform</a>(</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; from_pose,</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; to_pose);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType&gt;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#a9fa2777103cfecb05dc10b247dbe3a03">transform_point_cloud</a>(</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keyword">const</span> <a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;DataType&gt;</a>&amp; cloud,</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">const</span> Eigen::Matrix&lt;DataType, 4, 4&gt;&amp; transform);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DataType = <span class="keywordtype">float</span>&gt;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>std::unique_ptr&lt;point_cloud_t&lt;DataType&gt;&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#a479364026f76b7d4476ea81e0317a7b6">read_kitti_with_labels</a>(</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keyword">const</span> std::string&amp; bin_path,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="keyword">const</span> std::string&amp; label_path,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    std::vector&lt;uint32_t&gt;&amp; labels);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>std::vector&lt;std::string&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#add4b31e36aa383e1ca90103ea4181bed">list_kitti_cloud_files</a>(<span class="keyword">const</span> std::string&amp; velodyne_path);</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>std::vector&lt;std::string&gt; <a class="code hl_function" href="namespacetoolbox_1_1io.html#a81883bf140e513f9029ef83ce0d4e664">list_kitti_label_files</a>(<span class="keyword">const</span> std::string&amp; labels_path);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="keywordtype">int</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#afd63adf710c465f8f85552a6274ded91">parse_kitti_frame_index</a>(<span class="keyword">const</span> std::string&amp; filename);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>std::string <a class="code hl_function" href="namespacetoolbox_1_1io.html#a0d8d899e65c1b8fa6196904cebe9313a">format_kitti_frame_index</a>(std::size_t index, <span class="keywordtype">int</span> digits = 6);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="foldopen" id="foldopen00206" data-start="{" data-end="};">
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">  206</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">kitti_sequence_info_t</a> {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a924a68efb5d0f48f2b3ed1cdf578ea50">  207</a></span>    std::size_t <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a924a68efb5d0f48f2b3ed1cdf578ea50">num_frames</a> = 0;      </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#aec59e1e1d2358f2e3fda577e2eaf9acc">  208</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#aec59e1e1d2358f2e3fda577e2eaf9acc">has_labels</a> = <span class="keyword">false</span>;         </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a011165d0ec3ed1731b3d2dfe13d5fed7">  209</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a011165d0ec3ed1731b3d2dfe13d5fed7">has_calibration</a> = <span class="keyword">false</span>;    </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#af833ab956b9ef9ec2dbe3690d79fd0a0">  210</a></span>    std::string <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#af833ab956b9ef9ec2dbe3690d79fd0a0">sequence_name</a>;       </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno"><a class="line" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a02c105c895a940eedebbb79d14f134a2">  211</a></span>    std::filesystem::path <a class="code hl_variable" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a02c105c895a940eedebbb79d14f134a2">path</a>;      </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>};</div>
+</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><a class="code hl_struct" href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">kitti_sequence_info_t</a> <a class="code hl_function" href="namespacetoolbox_1_1io.html#ad9f6b32285a4c30f55cfbe1922df706d">get_kitti_sequence_info</a>(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io.html#a8fe728504ea5c5f05019d1bf358f6da6">validate_kitti_sequence_directory</a>(<span class="keyword">const</span> std::string&amp; sequence_path);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">// ==================== Label Definitions ====================</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">namespace </span>kitti_semantic_labels {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="comment">// Static classes</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad5daaf5fac53fede07d5cfe9caeb77be">  232</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad5daaf5fac53fede07d5cfe9caeb77be">UNLABELED</a> = 0;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a98f2ae618583f5680109aca2442b66a7">  233</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a98f2ae618583f5680109aca2442b66a7">OUTLIER</a> = 1;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a11504dfe2b42d5c12fb618d6c8e23f88">  234</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a11504dfe2b42d5c12fb618d6c8e23f88">CAR</a> = 10;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaebf80e0af0a02b3a8ae1f20e097dc2d">  235</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaebf80e0af0a02b3a8ae1f20e097dc2d">BICYCLE</a> = 11;</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4c1f20a3520285d9001c5ef64db53100">  236</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4c1f20a3520285d9001c5ef64db53100">BUS</a> = 13;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aca16a4aa801cc71636df3a1c22fbee60">  237</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aca16a4aa801cc71636df3a1c22fbee60">MOTORCYCLE</a> = 15;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a390e795084ef1b15a6e2630546819cb1">  238</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a390e795084ef1b15a6e2630546819cb1">TRUCK</a> = 18;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a2f2e17fff77245027ee7cd56a449c3ad">  239</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a2f2e17fff77245027ee7cd56a449c3ad">OTHER_VEHICLE</a> = 20;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8cb58eb164c759d5ee5d38ad63c1e2bd">  240</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8cb58eb164c759d5ee5d38ad63c1e2bd">PERSON</a> = 30;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a125d33c920b2c18ecc9927d9534f6b76">  241</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a125d33c920b2c18ecc9927d9534f6b76">BICYCLIST</a> = 31;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4bcd2ca411cdc965fd7fdbaa7e1f15a4">  242</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4bcd2ca411cdc965fd7fdbaa7e1f15a4">MOTORCYCLIST</a> = 32;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8c7b572c32a76207f18b3a915cd99157">  243</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8c7b572c32a76207f18b3a915cd99157">ROAD</a> = 40;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a817171bdf29c18e49ab032b8f5025769">  244</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a817171bdf29c18e49ab032b8f5025769">PARKING</a> = 44;</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad3b3b7720257a4b19a3539fc21b3595e">  245</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad3b3b7720257a4b19a3539fc21b3595e">SIDEWALK</a> = 48;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0c962d705af58f91a0c30f0595b987b4">  246</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0c962d705af58f91a0c30f0595b987b4">OTHER_GROUND</a> = 49;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5bfe47d981a899e40e6f4623f7af39ea">  247</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5bfe47d981a899e40e6f4623f7af39ea">BUILDING</a> = 50;</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a50a0771ff1a6ba8632719204a469afcd">  248</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a50a0771ff1a6ba8632719204a469afcd">FENCE</a> = 51;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6d8498457a4cebb499d0870c9fa719e4">  249</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6d8498457a4cebb499d0870c9fa719e4">OTHER_STRUCTURE</a> = 52;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0ab73565567f088602712d787f78a052">  250</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0ab73565567f088602712d787f78a052">VEGETATION</a> = 70;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a86b6353ad87be9006b6513a85167e6b7">  251</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a86b6353ad87be9006b6513a85167e6b7">TRUNK</a> = 71;</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a1e4e306e7e23100a3d2900e68114fd6f">  252</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a1e4e306e7e23100a3d2900e68114fd6f">TERRAIN</a> = 72;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4ac60a31e56e47b67303754b81602e67">  253</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4ac60a31e56e47b67303754b81602e67">POLE</a> = 80;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6369081ae1d837069baf07e4d35b2be1">  254</a></span>    <span class="keyword">constexpr</span> uint16_t <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6369081ae1d837069baf07e4d35b2be1">TRAFFIC_SIGN</a> = 81;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    </div>
+<div class="foldopen" id="foldopen00259" data-start="{" data-end="}">
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaca1caa618a8a8cd89c3dea5a1e82237">  259</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaca1caa618a8a8cd89c3dea5a1e82237">is_static</a>(uint16_t label) {</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        <span class="keywordflow">return</span> label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8c7b572c32a76207f18b3a915cd99157">ROAD</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a817171bdf29c18e49ab032b8f5025769">PARKING</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad3b3b7720257a4b19a3539fc21b3595e">SIDEWALK</a> ||</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>               label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0c962d705af58f91a0c30f0595b987b4">OTHER_GROUND</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5bfe47d981a899e40e6f4623f7af39ea">BUILDING</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a50a0771ff1a6ba8632719204a469afcd">FENCE</a> ||</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>               label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6d8498457a4cebb499d0870c9fa719e4">OTHER_STRUCTURE</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0ab73565567f088602712d787f78a052">VEGETATION</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a86b6353ad87be9006b6513a85167e6b7">TRUNK</a> ||</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>               label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a1e4e306e7e23100a3d2900e68114fd6f">TERRAIN</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4ac60a31e56e47b67303754b81602e67">POLE</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6369081ae1d837069baf07e4d35b2be1">TRAFFIC_SIGN</a>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    }</div>
+</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    </div>
+<div class="foldopen" id="foldopen00269" data-start="{" data-end="}">
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5b6ce9d62d91dc094ba82f925b923b0c">  269</a></span>    <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5b6ce9d62d91dc094ba82f925b923b0c">is_dynamic</a>(uint16_t label) {</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        <span class="keywordflow">return</span> label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a11504dfe2b42d5c12fb618d6c8e23f88">CAR</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaebf80e0af0a02b3a8ae1f20e097dc2d">BICYCLE</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4c1f20a3520285d9001c5ef64db53100">BUS</a> ||</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>               label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aca16a4aa801cc71636df3a1c22fbee60">MOTORCYCLE</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a390e795084ef1b15a6e2630546819cb1">TRUCK</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a2f2e17fff77245027ee7cd56a449c3ad">OTHER_VEHICLE</a> ||</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>               label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8cb58eb164c759d5ee5d38ad63c1e2bd">PERSON</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a125d33c920b2c18ecc9927d9534f6b76">BICYCLIST</a> || label == <a class="code hl_variable" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4bcd2ca411cdc965fd7fdbaa7e1f15a4">MOTORCYCLIST</a>;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    }</div>
+</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    std::string <a class="code hl_function" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a143f41046b7eec1400118e73a7eb0c05">get_label_name</a>(uint16_t label);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    std::map&lt;uint16_t, std::string&gt; <a class="code hl_function" href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a9f0a050754b7b4408ec94e57ef4bdfba">get_label_map</a>();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>} <span class="comment">// namespace kitti_semantic_labels</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
+<div class="foldopen" id="foldopen00289" data-start="{" data-end="}">
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">  289</a></span><span class="keyword">inline</span> uint16_t <a class="code hl_function" href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">get_kitti_label_id</a>(uint32_t full_label) {</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(full_label &amp; 0xFFFF);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>}</div>
+</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">  296</a></span><span class="keyword">inline</span> uint16_t <a class="code hl_function" href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">get_kitti_instance_id</a>(uint32_t full_label) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(full_label &gt;&gt; 16);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
+</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="foldopen" id="foldopen00303" data-start="{" data-end="}">
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno"><a class="line" href="namespacetoolbox_1_1io.html#a1a2b8720d907e451ff9b9b1e645dacde">  303</a></span><span class="keyword">inline</span> uint32_t <a class="code hl_function" href="namespacetoolbox_1_1io.html#a1a2b8720d907e451ff9b9b1e645dacde">make_kitti_full_label</a>(uint16_t label_id, uint16_t instance_id) {</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">return</span> (<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(instance_id) &lt;&lt; 16) | label_id;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>}</div>
+</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>} <span class="comment">// namespace toolbox::io</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span><span class="comment">// Include implementation</span></div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#include &lt;<a class="code" href="kitti__extended__impl_8hpp.html">cpp-toolbox/io/formats/detail/kitti_extended_impl.hpp</a>&gt;</span></div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="akitti_8hpp_html"><div class="ttname"><a href="kitti_8hpp.html">kitti.hpp</a></div></div>
+<div class="ttc" id="akitti__extended__impl_8hpp_html"><div class="ttname"><a href="kitti__extended__impl_8hpp.html">kitti_extended_impl.hpp</a></div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a0ab73565567f088602712d787f78a052"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0ab73565567f088602712d787f78a052">toolbox::io::kitti_semantic_labels::VEGETATION</a></div><div class="ttdeci">constexpr uint16_t VEGETATION</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:250</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a0c962d705af58f91a0c30f0595b987b4"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a0c962d705af58f91a0c30f0595b987b4">toolbox::io::kitti_semantic_labels::OTHER_GROUND</a></div><div class="ttdeci">constexpr uint16_t OTHER_GROUND</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:246</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a11504dfe2b42d5c12fb618d6c8e23f88"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a11504dfe2b42d5c12fb618d6c8e23f88">toolbox::io::kitti_semantic_labels::CAR</a></div><div class="ttdeci">constexpr uint16_t CAR</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:234</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a125d33c920b2c18ecc9927d9534f6b76"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a125d33c920b2c18ecc9927d9534f6b76">toolbox::io::kitti_semantic_labels::BICYCLIST</a></div><div class="ttdeci">constexpr uint16_t BICYCLIST</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:241</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a143f41046b7eec1400118e73a7eb0c05"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a143f41046b7eec1400118e73a7eb0c05">toolbox::io::kitti_semantic_labels::get_label_name</a></div><div class="ttdeci">std::string get_label_name(uint16_t label)</div><div class="ttdoc">Get human-readable label name.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:458</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a1e4e306e7e23100a3d2900e68114fd6f"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a1e4e306e7e23100a3d2900e68114fd6f">toolbox::io::kitti_semantic_labels::TERRAIN</a></div><div class="ttdeci">constexpr uint16_t TERRAIN</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:252</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a2f2e17fff77245027ee7cd56a449c3ad"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a2f2e17fff77245027ee7cd56a449c3ad">toolbox::io::kitti_semantic_labels::OTHER_VEHICLE</a></div><div class="ttdeci">constexpr uint16_t OTHER_VEHICLE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:239</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a390e795084ef1b15a6e2630546819cb1"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a390e795084ef1b15a6e2630546819cb1">toolbox::io::kitti_semantic_labels::TRUCK</a></div><div class="ttdeci">constexpr uint16_t TRUCK</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:238</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a4ac60a31e56e47b67303754b81602e67"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4ac60a31e56e47b67303754b81602e67">toolbox::io::kitti_semantic_labels::POLE</a></div><div class="ttdeci">constexpr uint16_t POLE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:253</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a4bcd2ca411cdc965fd7fdbaa7e1f15a4"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4bcd2ca411cdc965fd7fdbaa7e1f15a4">toolbox::io::kitti_semantic_labels::MOTORCYCLIST</a></div><div class="ttdeci">constexpr uint16_t MOTORCYCLIST</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:242</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a4c1f20a3520285d9001c5ef64db53100"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a4c1f20a3520285d9001c5ef64db53100">toolbox::io::kitti_semantic_labels::BUS</a></div><div class="ttdeci">constexpr uint16_t BUS</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:236</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a50a0771ff1a6ba8632719204a469afcd"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a50a0771ff1a6ba8632719204a469afcd">toolbox::io::kitti_semantic_labels::FENCE</a></div><div class="ttdeci">constexpr uint16_t FENCE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:248</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a5b6ce9d62d91dc094ba82f925b923b0c"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5b6ce9d62d91dc094ba82f925b923b0c">toolbox::io::kitti_semantic_labels::is_dynamic</a></div><div class="ttdeci">bool is_dynamic(uint16_t label)</div><div class="ttdoc">Check if a label is dynamic (moving)</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:269</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a5bfe47d981a899e40e6f4623f7af39ea"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a5bfe47d981a899e40e6f4623f7af39ea">toolbox::io::kitti_semantic_labels::BUILDING</a></div><div class="ttdeci">constexpr uint16_t BUILDING</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:247</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a6369081ae1d837069baf07e4d35b2be1"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6369081ae1d837069baf07e4d35b2be1">toolbox::io::kitti_semantic_labels::TRAFFIC_SIGN</a></div><div class="ttdeci">constexpr uint16_t TRAFFIC_SIGN</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:254</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a6d8498457a4cebb499d0870c9fa719e4"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a6d8498457a4cebb499d0870c9fa719e4">toolbox::io::kitti_semantic_labels::OTHER_STRUCTURE</a></div><div class="ttdeci">constexpr uint16_t OTHER_STRUCTURE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:249</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a817171bdf29c18e49ab032b8f5025769"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a817171bdf29c18e49ab032b8f5025769">toolbox::io::kitti_semantic_labels::PARKING</a></div><div class="ttdeci">constexpr uint16_t PARKING</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:244</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a86b6353ad87be9006b6513a85167e6b7"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a86b6353ad87be9006b6513a85167e6b7">toolbox::io::kitti_semantic_labels::TRUNK</a></div><div class="ttdeci">constexpr uint16_t TRUNK</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:251</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a8c7b572c32a76207f18b3a915cd99157"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8c7b572c32a76207f18b3a915cd99157">toolbox::io::kitti_semantic_labels::ROAD</a></div><div class="ttdeci">constexpr uint16_t ROAD</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:243</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a8cb58eb164c759d5ee5d38ad63c1e2bd"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a8cb58eb164c759d5ee5d38ad63c1e2bd">toolbox::io::kitti_semantic_labels::PERSON</a></div><div class="ttdeci">constexpr uint16_t PERSON</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:240</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a98f2ae618583f5680109aca2442b66a7"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a98f2ae618583f5680109aca2442b66a7">toolbox::io::kitti_semantic_labels::OUTLIER</a></div><div class="ttdeci">constexpr uint16_t OUTLIER</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:233</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_a9f0a050754b7b4408ec94e57ef4bdfba"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#a9f0a050754b7b4408ec94e57ef4bdfba">toolbox::io::kitti_semantic_labels::get_label_map</a></div><div class="ttdeci">std::map&lt; uint16_t, std::string &gt; get_label_map()</div><div class="ttdoc">Get all label names mapping.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:492</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_aaca1caa618a8a8cd89c3dea5a1e82237"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaca1caa618a8a8cd89c3dea5a1e82237">toolbox::io::kitti_semantic_labels::is_static</a></div><div class="ttdeci">bool is_static(uint16_t label)</div><div class="ttdoc">Check if a label is static (non-moving)</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:259</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_aaebf80e0af0a02b3a8ae1f20e097dc2d"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aaebf80e0af0a02b3a8ae1f20e097dc2d">toolbox::io::kitti_semantic_labels::BICYCLE</a></div><div class="ttdeci">constexpr uint16_t BICYCLE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:235</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_aca16a4aa801cc71636df3a1c22fbee60"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#aca16a4aa801cc71636df3a1c22fbee60">toolbox::io::kitti_semantic_labels::MOTORCYCLE</a></div><div class="ttdeci">constexpr uint16_t MOTORCYCLE</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:237</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_ad3b3b7720257a4b19a3539fc21b3595e"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad3b3b7720257a4b19a3539fc21b3595e">toolbox::io::kitti_semantic_labels::SIDEWALK</a></div><div class="ttdeci">constexpr uint16_t SIDEWALK</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:245</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_1_1kitti__semantic__labels_html_ad5daaf5fac53fede07d5cfe9caeb77be"><div class="ttname"><a href="namespacetoolbox_1_1io_1_1kitti__semantic__labels.html#ad5daaf5fac53fede07d5cfe9caeb77be">toolbox::io::kitti_semantic_labels::UNLABELED</a></div><div class="ttdeci">constexpr uint16_t UNLABELED</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:232</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html"><div class="ttname"><a href="namespacetoolbox_1_1io.html">toolbox::io</a></div><div class="ttdoc">&lt; 用于列出目录下的文件/For listing files in a directory</div><div class="ttdef"><b>Definition</b> dataloader.hpp:15</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a0d8d899e65c1b8fa6196904cebe9313a"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a0d8d899e65c1b8fa6196904cebe9313a">toolbox::io::format_kitti_frame_index</a></div><div class="ttdeci">std::string format_kitti_frame_index(std::size_t index, int digits)</div><div class="ttdoc">Format frame index as KITTI filename (e.g., 123 -&gt; &quot;000123&quot;)</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:405</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a0e1ee6c414a0233504f8ee9cf5057b12"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a0e1ee6c414a0233504f8ee9cf5057b12">toolbox::io::get_kitti_instance_id</a></div><div class="ttdeci">uint16_t get_kitti_instance_id(uint32_t full_label)</div><div class="ttdoc">Extract instance ID from full label.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:296</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a1a2b8720d907e451ff9b9b1e645dacde"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a1a2b8720d907e451ff9b9b1e645dacde">toolbox::io::make_kitti_full_label</a></div><div class="ttdeci">uint32_t make_kitti_full_label(uint16_t label_id, uint16_t instance_id)</div><div class="ttdoc">Combine label and instance IDs.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:303</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a1fe080b3db699dd873bcf96d8cb16639"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a1fe080b3db699dd873bcf96d8cb16639">toolbox::io::write_kitti_labels</a></div><div class="ttdeci">bool write_kitti_labels(const std::string &amp;file_path, const std::vector&lt; uint32_t &gt; &amp;labels)</div><div class="ttdoc">Write labels to Semantic KITTI format.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:46</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a2504b9aa19ac4fe90a821de71cfae90e"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a2504b9aa19ac4fe90a821de71cfae90e">toolbox::io::read_kitti_calibration</a></div><div class="ttdeci">kitti_calibration_t&lt; DataType &gt; read_kitti_calibration(const std::string &amp;file_path)</div><div class="ttdoc">Read KITTI calibration file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:141</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a319e56fceed5301cd3d2e935fd3ac849"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a319e56fceed5301cd3d2e935fd3ac849">toolbox::io::write_kitti_calibration</a></div><div class="ttdeci">bool write_kitti_calibration(const std::string &amp;file_path, const kitti_calibration_t&lt; DataType &gt; &amp;calib)</div><div class="ttdoc">Write KITTI calibration file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:207</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a479364026f76b7d4476ea81e0317a7b6"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a479364026f76b7d4476ea81e0317a7b6">toolbox::io::read_kitti_with_labels</a></div><div class="ttdeci">std::unique_ptr&lt; point_cloud_t&lt; DataType &gt; &gt; read_kitti_with_labels(const std::string &amp;bin_path, const std::string &amp;label_path, std::vector&lt; uint32_t &gt; &amp;labels)</div><div class="ttdoc">Read KITTI point cloud with semantic labels.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:323</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a47a8d994edc1ecbd5b6744fd90b6e9a1"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a47a8d994edc1ecbd5b6744fd90b6e9a1">toolbox::io::read_kitti_labels</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; read_kitti_labels(const std::string &amp;file_path)</div><div class="ttdoc">Read Semantic KITTI label file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:19</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a5babee5c29926e81388235e636bf921a"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a5babee5c29926e81388235e636bf921a">toolbox::io::parse_kitti_pose_line</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; parse_kitti_pose_line(const std::string &amp;line)</div><div class="ttdoc">Parse a single line from KITTI poses file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:62</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a6432c34212d85fa24218981aac66a338"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a6432c34212d85fa24218981aac66a338">toolbox::io::write_kitti_poses</a></div><div class="ttdeci">bool write_kitti_poses(const std::string &amp;file_path, const std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; &amp;poses)</div><div class="ttdoc">Write poses to KITTI format file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:124</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a758a1d4c9255ea14afaf0aac43fe0e90"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a758a1d4c9255ea14afaf0aac43fe0e90">toolbox::io::format_kitti_pose</a></div><div class="ttdeci">std::string format_kitti_pose(const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;pose)</div><div class="ttdoc">Format pose matrix as KITTI string.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:108</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a81883bf140e513f9029ef83ce0d4e664"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a81883bf140e513f9029ef83ce0d4e664">toolbox::io::list_kitti_label_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; list_kitti_label_files(const std::string &amp;labels_path)</div><div class="ttdoc">List all KITTI label files in a directory.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:371</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a8fe728504ea5c5f05019d1bf358f6da6"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a8fe728504ea5c5f05019d1bf358f6da6">toolbox::io::validate_kitti_sequence_directory</a></div><div class="ttdeci">bool validate_kitti_sequence_directory(const std::string &amp;sequence_path)</div><div class="ttdoc">Validate KITTI sequence directory structure.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:438</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_a9fa2777103cfecb05dc10b247dbe3a03"><div class="ttname"><a href="namespacetoolbox_1_1io.html#a9fa2777103cfecb05dc10b247dbe3a03">toolbox::io::transform_point_cloud</a></div><div class="ttdeci">std::unique_ptr&lt; point_cloud_t&lt; DataType &gt; &gt; transform_point_cloud(const point_cloud_t&lt; DataType &gt; &amp;cloud, const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;transform)</div><div class="ttdoc">Transform point cloud using transformation matrix.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:299</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_aaf41a6c054482e0cea8702a8872171c8"><div class="ttname"><a href="namespacetoolbox_1_1io.html#aaf41a6c054482e0cea8702a8872171c8">toolbox::io::get_kitti_label_id</a></div><div class="ttdeci">uint16_t get_kitti_label_id(uint32_t full_label)</div><div class="ttdoc">Extract label ID from full label (ignoring instance ID)</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:289</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_ad9f6b32285a4c30f55cfbe1922df706d"><div class="ttname"><a href="namespacetoolbox_1_1io.html#ad9f6b32285a4c30f55cfbe1922df706d">toolbox::io::get_kitti_sequence_info</a></div><div class="ttdeci">kitti_sequence_info_t get_kitti_sequence_info(const std::string &amp;sequence_path)</div><div class="ttdoc">Get information about a KITTI sequence directory.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:411</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_adc7a45c553a80825fcf161db23c62df2"><div class="ttname"><a href="namespacetoolbox_1_1io.html#adc7a45c553a80825fcf161db23c62df2">toolbox::io::compute_relative_transform</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; compute_relative_transform(const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;from_pose, const Eigen::Matrix&lt; DataType, 4, 4 &gt; &amp;to_pose)</div><div class="ttdoc">Compute relative transformation between two poses.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:291</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_add4b31e36aa383e1ca90103ea4181bed"><div class="ttname"><a href="namespacetoolbox_1_1io.html#add4b31e36aa383e1ca90103ea4181bed">toolbox::io::list_kitti_cloud_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; list_kitti_cloud_files(const std::string &amp;velodyne_path)</div><div class="ttdoc">List all KITTI point cloud files in a directory.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:350</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_add66680e1275badb8c472e9b0717cf92"><div class="ttname"><a href="namespacetoolbox_1_1io.html#add66680e1275badb8c472e9b0717cf92">toolbox::io::read_kitti_poses</a></div><div class="ttdeci">std::vector&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; read_kitti_poses(const std::string &amp;file_path)</div><div class="ttdoc">Read all poses from KITTI poses file.</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:87</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1io_html_afd63adf710c465f8f85552a6274ded91"><div class="ttname"><a href="namespacetoolbox_1_1io.html#afd63adf710c465f8f85552a6274ded91">toolbox::io::parse_kitti_frame_index</a></div><div class="ttdeci">int parse_kitti_frame_index(const std::string &amp;filename)</div><div class="ttdoc">Get frame index from KITTI filename (e.g., &quot;000123.bin&quot; -&gt; 123)</div><div class="ttdef"><b>Definition</b> kitti_extended_impl.hpp:392</div></div>
+<div class="ttc" id="apoint_8hpp_html"><div class="ttname"><a href="point_8hpp.html">point.hpp</a></div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html">toolbox::io::kitti_calibration_t</a></div><div class="ttdoc">KITTI calibration data structure.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:81</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a168b7ca53e52f32f284badd07f721029"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a168b7ca53e52f32f284badd07f721029">toolbox::io::kitti_calibration_t::Tr_imu_to_velo</a></div><div class="ttdeci">std::optional&lt; Eigen::Matrix&lt; DataType, 4, 4 &gt; &gt; Tr_imu_to_velo</div><div class="ttdoc">Transformation from IMU to Velodyne.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:92</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a2beacc4e27aeab63ae75306d21371ae7"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a2beacc4e27aeab63ae75306d21371ae7">toolbox::io::kitti_calibration_t::P3</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 4 &gt; P3</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:86</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a498a19a163a4f62fb7d9fe21af77e803"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a498a19a163a4f62fb7d9fe21af77e803">toolbox::io::kitti_calibration_t::P1</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 4 &gt; P1</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:86</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a62644630a80dbf545f2aa0f5fa86947e"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a62644630a80dbf545f2aa0f5fa86947e">toolbox::io::kitti_calibration_t::P0</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 4 &gt; P0</div><div class="ttdoc">Projection matrices for cameras 0-3 after rectification.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:86</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a791fbe3f816efd9d9f2ad7296a51e6b6"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a791fbe3f816efd9d9f2ad7296a51e6b6">toolbox::io::kitti_calibration_t::R0_rect</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 3 &gt; R0_rect</div><div class="ttdoc">Rectification rotation matrix for camera 0.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:89</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_a92ab1df986d6e4de606c6fa6f8fe659b"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#a92ab1df986d6e4de606c6fa6f8fe659b">toolbox::io::kitti_calibration_t::Tr_velo_to_cam</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 4, 4 &gt; Tr_velo_to_cam</div><div class="ttdoc">Transformation from Velodyne to camera 0 rectified coordinates.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:83</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__calibration__t_html_aa30b67c6325f21f02d00bc0ae4e02fcd"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__calibration__t.html#aa30b67c6325f21f02d00bc0ae4e02fcd">toolbox::io::kitti_calibration_t::P2</a></div><div class="ttdeci">Eigen::Matrix&lt; DataType, 3, 4 &gt; P2</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:86</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html">toolbox::io::kitti_sequence_info_t</a></div><div class="ttdoc">Information about a KITTI sequence.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:206</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html_a011165d0ec3ed1731b3d2dfe13d5fed7"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a011165d0ec3ed1731b3d2dfe13d5fed7">toolbox::io::kitti_sequence_info_t::has_calibration</a></div><div class="ttdeci">bool has_calibration</div><div class="ttdoc">Whether calibration file exists.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:209</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html_a02c105c895a940eedebbb79d14f134a2"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a02c105c895a940eedebbb79d14f134a2">toolbox::io::kitti_sequence_info_t::path</a></div><div class="ttdeci">std::filesystem::path path</div><div class="ttdoc">Full path to sequence directory.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:211</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html_a924a68efb5d0f48f2b3ed1cdf578ea50"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#a924a68efb5d0f48f2b3ed1cdf578ea50">toolbox::io::kitti_sequence_info_t::num_frames</a></div><div class="ttdeci">std::size_t num_frames</div><div class="ttdoc">Number of frames in the sequence.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:207</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html_aec59e1e1d2358f2e3fda577e2eaf9acc"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#aec59e1e1d2358f2e3fda577e2eaf9acc">toolbox::io::kitti_sequence_info_t::has_labels</a></div><div class="ttdeci">bool has_labels</div><div class="ttdoc">Whether labels directory exists.</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:208</div></div>
+<div class="ttc" id="astructtoolbox_1_1io_1_1kitti__sequence__info__t_html_af833ab956b9ef9ec2dbe3690d79fd0a0"><div class="ttname"><a href="structtoolbox_1_1io_1_1kitti__sequence__info__t.html#af833ab956b9ef9ec2dbe3690d79fd0a0">toolbox::io::kitti_sequence_info_t::sequence_name</a></div><div class="ttdeci">std::string sequence_name</div><div class="ttdoc">Sequence name (e.g., &quot;00&quot;, &quot;01&quot;)</div><div class="ttdef"><b>Definition</b> kitti_extended.hpp:210</div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b0856f6b0d80ccb263b2f415c91f9e17.html">include</a></li><li class="navelem"><a class="el" href="dir_09c6140c2956544491238e129f11fd9f.html">cpp-toolbox</a></li><li class="navelem"><a class="el" href="dir_0525589dda1abc1cfa65fd0da343267e.html">io</a></li><li class="navelem"><a class="el" href="dir_1d45bcc800627d18cbc66f5a2df2fc7a.html">formats</a></li><li class="navelem"><a class="el" href="kitti__extended_8hpp.html">kitti_extended.hpp</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>

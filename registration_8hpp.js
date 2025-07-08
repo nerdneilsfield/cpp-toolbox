@@ -19,6 +19,8 @@ var registration_8hpp =
     [ "point_to_plane_icp_d", "registration_8hpp.html#gadbd3531e2d35e5ff4714455edb406790", null ],
     [ "point_to_point_icp", "registration_8hpp.html#gaae786d561dd8f303c241093d5966b61d", null ],
     [ "point_to_point_icp_d", "registration_8hpp.html#gaeb1731649ca1a5961522b0e5d836bb76", null ],
+    [ "prosac_registration", "registration_8hpp.html#gafabb8f8c5dec4771929adb7187a8db86", null ],
+    [ "prosac_registration_d", "registration_8hpp.html#ga25e16cf1dcb6ef15c5825d8ed4830141", null ],
     [ "ransac_registration", "registration_8hpp.html#gaa37548abb15d3c3cdebeee9c4081b9aa", null ],
     [ "ransac_registration_d", "registration_8hpp.html#ga39e24f29bca71c80dc9578ad9efc1eca", null ],
     [ "super_four_pcs_registration", "registration_8hpp.html#gad141e700aaa2a3477e004e64a2ff9b9a", null ],

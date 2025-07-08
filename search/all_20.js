@@ -12,6 +12,9 @@ var searchData=
   ['with_20tt_20build_5fshared_5flibs_20on_20tt_9',['Running tests on Windows with &lt;tt&gt;BUILD_SHARED_LIBS=ON&lt;/tt&gt;',['../md__h_a_c_k_i_n_g.html#autotoc_md37',1,'']]],
   ['write_10',['write',['../classtoolbox_1_1io_1_1pcd__format__t.html#a7b0b1b079c728335b2f0cbde391bc9ba',1,'toolbox::io::pcd_format_t::write()'],['../classtoolbox_1_1io_1_1kitti__format__t.html#ae120c69beb766a4925f6beacb0a46c6c',1,'toolbox::io::kitti_format_t::write()'],['../classtoolbox_1_1io_1_1base__file__format__t.html#a52c2513d9e4cf68bc4f7577b4860fbf6',1,'toolbox::io::base_file_format_t::write()']]],
   ['write_5fkitti_5fbin_11',['write_kitti_bin',['../namespacetoolbox_1_1io.html#aa6d952493b74495b0b872c5bbcee9332',1,'toolbox::io']]],
-  ['write_5fpcd_12',['write_pcd',['../namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb',1,'toolbox::io']]],
-  ['write_5fpoint_5fcloud_13',['write_point_cloud',['../namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6',1,'toolbox::io']]]
+  ['write_5fkitti_5fcalibration_12',['write_kitti_calibration',['../namespacetoolbox_1_1io.html#a319e56fceed5301cd3d2e935fd3ac849',1,'toolbox::io']]],
+  ['write_5fkitti_5flabels_13',['write_kitti_labels',['../namespacetoolbox_1_1io.html#a1fe080b3db699dd873bcf96d8cb16639',1,'toolbox::io']]],
+  ['write_5fkitti_5fposes_14',['write_kitti_poses',['../namespacetoolbox_1_1io.html#a6432c34212d85fa24218981aac66a338',1,'toolbox::io']]],
+  ['write_5fpcd_15',['write_pcd',['../namespacetoolbox_1_1io.html#ae9a74600f17ca80b238463d267b9fcbb',1,'toolbox::io']]],
+  ['write_5fpoint_5fcloud_16',['write_point_cloud',['../namespacetoolbox_1_1io.html#a8edbfd4250e2426db0ec514db40864f6',1,'toolbox::io']]]
 ];

@@ -280,7 +280,7 @@ Functions</h2></td></tr>
 <div class="line">          &lt;&lt; <span class="stringliteral">&quot;均值 / mean=&quot;</span> &lt;&lt; mean </div>
 <div class="line">          &lt;&lt; <span class="stringliteral">&quot;, 标准差 / std=&quot;</span> &lt;&lt; std </div>
 <div class="line">          &lt;&lt; <span class="stringliteral">&quot;, 范围 / range=[&quot;</span> &lt;&lt; min &lt;&lt; <span class="stringliteral">&quot;, &quot;</span> &lt;&lt; max &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::endl;</div>
-<div class="ttc" id="agroup__correspondence_html_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><div class="ttname"><a href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; compute_correspondence_statistics(const std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系的统计信息 / Compute statistics of correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:227</div></div>
+<div class="ttc" id="agroup__correspondence_html_gad1f795bd916a4c4e5b0ca3b7a7ff345a"><div class="ttname"><a href="group__correspondence.html#gad1f795bd916a4c4e5b0ca3b7a7ff345a">toolbox::pcl::compute_correspondence_statistics</a></div><div class="ttdeci">std::tuple&lt; float, float, float, float &gt; compute_correspondence_statistics(const std::vector&lt; correspondence_t &gt; &amp;correspondences)</div><div class="ttdoc">计算对应关系的统计信息 / Compute statistics of correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:228</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -330,7 +330,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line"><span class="comment">// 过滤掉距离过大的对应关系 / Filter out correspondences with large distances</span></div>
 <div class="line"><span class="keywordtype">size_t</span> filtered = <a class="code hl_function" href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">filter_correspondences_by_distance</a>(correspondences, 0.5f);</div>
 <div class="line">std::cout &lt;&lt; <span class="stringliteral">&quot;过滤掉 / Filtered out &quot;</span> &lt;&lt; filtered &lt;&lt; <span class="stringliteral">&quot; 个对应关系 / correspondences&quot;</span> &lt;&lt; std::endl;</div>
-<div class="ttc" id="agroup__correspondence_html_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><div class="ttname"><a href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a></div><div class="ttdeci">size_t filter_correspondences_by_distance(std::vector&lt; correspondence_t &gt; &amp;correspondences, float max_distance)</div><div class="ttdoc">过滤对应关系的辅助函数 / Helper function to filter correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:198</div></div>
+<div class="ttc" id="agroup__correspondence_html_ga6bb0403c43b2529ca6e2bcc7ccacb2ee"><div class="ttname"><a href="group__correspondence.html#ga6bb0403c43b2529ca6e2bcc7ccacb2ee">toolbox::pcl::filter_correspondences_by_distance</a></div><div class="ttdeci">size_t filter_correspondences_by_distance(std::vector&lt; correspondence_t &gt; &amp;correspondences, float max_distance)</div><div class="ttdoc">过滤对应关系的辅助函数 / Helper function to filter correspondences</div><div class="ttdef"><b>Definition</b> correspondence.hpp:199</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -597,7 +597,7 @@ template&lt;typename DataType , typename Signature , typename KNN &gt; </div>
 </dl>
 <div class="fragment"><div class="line"><span class="comment">// 打印前10个对应关系 / Print first 10 correspondences</span></div>
 <div class="line"><a class="code hl_function" href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">print_correspondences</a>(correspondences, 10);</div>
-<div class="ttc" id="agroup__correspondence_html_ga7cb3cde3a1e77db3bb333afe0e85aee7"><div class="ttname"><a href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a></div><div class="ttdeci">void print_correspondences(const std::vector&lt; correspondence_t &gt; &amp;correspondences, size_t max_display=10)</div><div class="ttdoc">可视化对应关系的辅助信息 / Helper to visualize correspondence information</div><div class="ttdef"><b>Definition</b> correspondence.hpp:267</div></div>
+<div class="ttc" id="agroup__correspondence_html_ga7cb3cde3a1e77db3bb333afe0e85aee7"><div class="ttname"><a href="group__correspondence.html#ga7cb3cde3a1e77db3bb333afe0e85aee7">toolbox::pcl::print_correspondences</a></div><div class="ttdeci">void print_correspondences(const std::vector&lt; correspondence_t &gt; &amp;correspondences, size_t max_display=10)</div><div class="ttdoc">可视化对应关系的辅助信息 / Helper to visualize correspondence information</div><div class="ttdef"><b>Definition</b> correspondence.hpp:268</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

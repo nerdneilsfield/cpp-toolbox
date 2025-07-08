@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['of_20conduct_0',['Code of Conduct',['../md__c_o_d_e___o_f___c_o_n_d_u_c_t.html',1,'']]]
+  ['naming_20style_20guide_0',['C++ 命名风格规范 / C++ Identifier Naming Style Guide',['../md_docs_2md_2_c_o_d_e___s_t_y_l_e.html',1,'']]]
 ];

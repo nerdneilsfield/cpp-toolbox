@@ -16,6 +16,8 @@ var group__registration =
     [ "toolbox::pcl::point_to_plane_icp_d", "group__registration.html#gadbd3531e2d35e5ff4714455edb406790", null ],
     [ "toolbox::pcl::point_to_point_icp", "group__registration.html#gaae786d561dd8f303c241093d5966b61d", null ],
     [ "toolbox::pcl::point_to_point_icp_d", "group__registration.html#gaeb1731649ca1a5961522b0e5d836bb76", null ],
+    [ "toolbox::pcl::prosac_registration", "group__registration.html#gafabb8f8c5dec4771929adb7187a8db86", null ],
+    [ "toolbox::pcl::prosac_registration_d", "group__registration.html#ga25e16cf1dcb6ef15c5825d8ed4830141", null ],
     [ "toolbox::pcl::ransac_registration", "group__registration.html#gaa37548abb15d3c3cdebeee9c4081b9aa", null ],
     [ "toolbox::pcl::ransac_registration_d", "group__registration.html#ga39e24f29bca71c80dc9578ad9efc1eca", null ],
     [ "toolbox::pcl::super_four_pcs_registration", "group__registration.html#gad141e700aaa2a3477e004e64a2ff9b9a", null ],

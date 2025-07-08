@@ -5,5 +5,15 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="toolbox::pcl::correspondence_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$structtoolbox_1_1pcl_1_1correspondence__t.html",tooltip="对应关系结构体 / Correspondence structure"];
+  Node0 [id="Node000000",label="toolbox::pcl::base\l_fine_registration_t\l\< Derived, DataType \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1base__fine__registration__t.html",tooltip="细配准算法的基类（CRTP模式） / Base class for fine registration algorithms (CRTP pattern)"];
+  Node0 -> Node1 [id="edge112_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="toolbox::pcl::point\l_to_point_icp_t\< DataType,\l kdtree_t\< DataType \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1point__to__point__icp__t.html",tooltip=" "];
+  Node0 -> Node2 [id="edge113_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="toolbox::pcl::aa_icp\l_t\< DataType, KNNSearcher,\l BaseICP \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1aa__icp__t.html",tooltip="AA-ICP (Anderson Acceleration ICP) 算法实现 / AA-ICP algorithm implementation."];
+  Node0 -> Node3 [id="edge114_Node000000_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="toolbox::pcl::generalized\l_icp_t\< DataType, KNNSearcher \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1generalized__icp__t.html",tooltip="Generalized ICP (Plane-to-Plane) 算法实现 / Generalized ICP algorithm implementation."];
+  Node0 -> Node4 [id="edge115_Node000000_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="toolbox::pcl::point\l_to_plane_icp_t\< DataType,\l KNNSearcher \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1point__to__plane__icp__t.html",tooltip="Point-to-Plane ICP 算法实现 / Point-to-Plane ICP algorithm implementation."];
+  Node0 -> Node5 [id="edge116_Node000000_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="toolbox::pcl::point\l_to_point_icp_t\< DataType,\l KNNSearcher \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classtoolbox_1_1pcl_1_1point__to__point__icp__t.html",tooltip="Point-to-Point ICP 算法实现 / Point-to-Point ICP algorithm implementation."];
 }

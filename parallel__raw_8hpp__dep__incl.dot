@@ -143,4 +143,5 @@ digraph "src/include/cpp-toolbox/concurrent/impl/parallel_raw.hpp"
   Node52 -> Node53 [id="edge88_Node000052_Node000053",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node53 [id="Node000053",label="src/include/cpp-toolbox\l/types/point_utils.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$point__utils_8hpp.html",tooltip=" "];
   Node2 -> Node52 [id="edge89_Node000002_Node000052",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 -> Node53 [id="edge90_Node000002_Node000053",dir="back",color="steelblue1",style="solid",tooltip=" "];
 }

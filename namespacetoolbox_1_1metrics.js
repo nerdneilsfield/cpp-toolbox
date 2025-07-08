@@ -25,6 +25,7 @@ var namespacetoolbox_1_1metrics =
     [ "L1Metric", "classtoolbox_1_1metrics_1_1_l1_metric.html", "classtoolbox_1_1metrics_1_1_l1_metric" ],
     [ "L2Metric", "classtoolbox_1_1metrics_1_1_l2_metric.html", "classtoolbox_1_1metrics_1_1_l2_metric" ],
     [ "LambdaMetric", "classtoolbox_1_1metrics_1_1_lambda_metric.html", "classtoolbox_1_1metrics_1_1_lambda_metric" ],
+    [ "LCPMetric", "classtoolbox_1_1metrics_1_1_l_c_p_metric.html", "classtoolbox_1_1metrics_1_1_l_c_p_metric" ],
     [ "LinfMetric", "classtoolbox_1_1metrics_1_1_linf_metric.html", "classtoolbox_1_1metrics_1_1_linf_metric" ],
     [ "LpMetric", "classtoolbox_1_1metrics_1_1_lp_metric.html", "classtoolbox_1_1metrics_1_1_lp_metric" ],
     [ "metric_traits", "structtoolbox_1_1metrics_1_1metric__traits.html", "structtoolbox_1_1metrics_1_1metric__traits" ],

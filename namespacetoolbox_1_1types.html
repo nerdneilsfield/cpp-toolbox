@@ -281,6 +281,22 @@ Functions</h2></td></tr>
 <tr class="memitem:a46d86a5af2e32860f9157f19dc24c226"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#a46d86a5af2e32860f9157f19dc24c226">generate_random_points_parallel</a> (const std::size_t &amp;num_points, const <a class="el" href="structtoolbox_1_1types_1_1minmax__t.html">minmax_t</a>&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt; &amp;minmax) -&gt; std::vector&lt; <a class="el" href="structtoolbox_1_1types_1_1point__t.html">point_t</a>&lt; T &gt; &gt;</td></tr>
 <tr class="memdesc:a46d86a5af2e32860f9157f19dc24c226"><td class="mdescLeft">&#160;</td><td class="mdescRight">在给定边界内并行生成随机点 / Generates random points within given bounds in parallel  <br /></td></tr>
 <tr class="separator:a46d86a5af2e32860f9157f19dc24c226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabf9fb9b3668230767d084a9e31b9cf9" id="r_aabf9fb9b3668230767d084a9e31b9cf9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aabf9fb9b3668230767d084a9e31b9cf9"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#aabf9fb9b3668230767d084a9e31b9cf9">transform_point_cloud</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:aabf9fb9b3668230767d084a9e31b9cf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">对点云应用变换矩阵（顺序版本）/ Apply transformation matrix to point cloud (sequential version)  <br /></td></tr>
+<tr class="separator:aabf9fb9b3668230767d084a9e31b9cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b5d0d23eda54d6b4650f572cf74a6ab" id="r_a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#a7b5d0d23eda54d6b4650f572cf74a6ab">transform_point_cloud_parallel</a> (const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">对点云应用变换矩阵（并行版本）/ Apply transformation matrix to point cloud (parallel version)  <br /></td></tr>
+<tr class="separator:a7b5d0d23eda54d6b4650f572cf74a6ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad136a7f078c7cce5542d2ffa14d42363" id="r_ad136a7f078c7cce5542d2ffa14d42363"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad136a7f078c7cce5542d2ffa14d42363"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#ad136a7f078c7cce5542d2ffa14d42363">transform_point_cloud_inplace</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</td></tr>
+<tr class="memdesc:ad136a7f078c7cce5542d2ffa14d42363"><td class="mdescLeft">&#160;</td><td class="mdescRight">原地变换点云（顺序版本）/ Transform point cloud in-place (sequential version)  <br /></td></tr>
+<tr class="separator:ad136a7f078c7cce5542d2ffa14d42363"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fa9a60b6186baf0147d8a978c87ddb" id="r_af4fa9a60b6186baf0147d8a978c87ddb"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:af4fa9a60b6186baf0147d8a978c87ddb"><td class="memTemplItemLeft" align="right" valign="top">CPP_TOOLBOX_EXPORT void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacetoolbox_1_1types.html#af4fa9a60b6186baf0147d8a978c87ddb">transform_point_cloud_inplace_parallel</a> (<a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</td></tr>
+<tr class="memdesc:af4fa9a60b6186baf0147d8a978c87ddb"><td class="mdescLeft">&#160;</td><td class="mdescRight">原地变换点云（并行版本）/ Transform point cloud in-place (parallel version)  <br /></td></tr>
+<tr class="separator:af4fa9a60b6186baf0147d8a978c87ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a0b4639d45a66f1a844a629bf98d5ed88" name="a0b4639d45a66f1a844a629bf98d5ed88"></a>
@@ -703,6 +719,219 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>对输出流的引用 / Reference to output stream </dd></dl>
 
+</div>
+</div>
+<a id="aabf9fb9b3668230767d084a9e31b9cf9" name="aabf9fb9b3668230767d084a9e31b9cf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf9fb9b3668230767d084a9e31b9cf9">&#9670;&#160;</a></span>transform_point_cloud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::types::transform_point_cloud </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;
+</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>对点云应用变换矩阵（顺序版本）/ Apply transformation matrix to point cloud (sequential version) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>坐标类型(如float、double) / The coordinate type (e.g., float, double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+    <tr><td class="paramname">transform</td><td>4x4变换矩阵 / 4x4 transformation matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>point_cloud_t&lt;T&gt; 变换后的点云 / Transformed point cloud</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 创建旋转矩阵 / Create rotation matrix</span></div>
+<div class="line">Eigen::Matrix4f transform = Eigen::Matrix4f::Identity();</div>
+<div class="line"><span class="keywordtype">float</span> angle = M_PI / 4; <span class="comment">// 45度 / 45 degrees</span></div>
+<div class="line">transform(0,0) = std::cos(angle); transform(0,1) = -std::sin(angle);</div>
+<div class="line">transform(1,0) = std::sin(angle); transform(1,1) = std::cos(angle);</div>
+<div class="line">transform(0,3) = 10.0f; <span class="comment">// X方向平移 / Translation in X</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> transformed = <a class="code hl_function" href="namespacetoolbox_1_1types.html#aabf9fb9b3668230767d084a9e31b9cf9">transform_point_cloud</a>(cloud, transform);</div>
+<div class="ttc" id="anamespacetoolbox_1_1types_html_aabf9fb9b3668230767d084a9e31b9cf9"><div class="ttname"><a href="namespacetoolbox_1_1types.html#aabf9fb9b3668230767d084a9e31b9cf9">toolbox::types::transform_point_cloud</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto transform_point_cloud(const point_cloud_t&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; point_cloud_t&lt; T &gt;</div><div class="ttdoc">对点云应用变换矩阵（顺序版本）/ Apply transformation matrix to point cloud (sequential version)</div><div class="ttdef"><b>Definition</b> point_utils.hpp:229</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ad136a7f078c7cce5542d2ffa14d42363" name="ad136a7f078c7cce5542d2ffa14d42363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad136a7f078c7cce5542d2ffa14d42363">&#9670;&#160;</a></span>transform_point_cloud_inplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT void toolbox::types::transform_point_cloud_inplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>原地变换点云（顺序版本）/ Transform point cloud in-place (sequential version) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>坐标类型(如float、double) / The coordinate type (e.g., float, double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>要变换的点云（将被修改）/ Point cloud to transform (will be modified) </td></tr>
+    <tr><td class="paramname">transform</td><td>4x4变换矩阵 / 4x4 transformation matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;float&gt;</a> cloud = load_point_cloud();</div>
+<div class="line">Eigen::Matrix4f transform = calculate_transformation();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 原地变换，不创建新点云 / Transform in-place without creating new cloud</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1types.html#ad136a7f078c7cce5542d2ffa14d42363">transform_point_cloud_inplace</a>(cloud, transform);</div>
+<div class="ttc" id="aclasstoolbox_1_1types_1_1point__cloud__t_html"><div class="ttname"><a href="classtoolbox_1_1types_1_1point__cloud__t.html">toolbox::types::point_cloud_t</a></div><div class="ttdoc">包含点和相关数据的点云类 / A point cloud class containing points and associated data</div><div class="ttdef"><b>Definition</b> point.hpp:268</div></div>
+<div class="ttc" id="anamespacetoolbox_1_1types_html_ad136a7f078c7cce5542d2ffa14d42363"><div class="ttname"><a href="namespacetoolbox_1_1types.html#ad136a7f078c7cce5542d2ffa14d42363">toolbox::types::transform_point_cloud_inplace</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT void transform_point_cloud_inplace(point_cloud_t&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</div><div class="ttdoc">原地变换点云（顺序版本）/ Transform point cloud in-place (sequential version)</div><div class="ttdef"><b>Definition</b> point_utils.hpp:367</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="af4fa9a60b6186baf0147d8a978c87ddb" name="af4fa9a60b6186baf0147d8a978c87ddb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4fa9a60b6186baf0147d8a978c87ddb">&#9670;&#160;</a></span>transform_point_cloud_inplace_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT void toolbox::types::transform_point_cloud_inplace_parallel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>原地变换点云（并行版本）/ Transform point cloud in-place (parallel version) </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>坐标类型(如float、double) / The coordinate type (e.g., float, double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>要变换的点云（将被修改）/ Point cloud to transform (will be modified) </td></tr>
+    <tr><td class="paramname">transform</td><td>4x4变换矩阵 / 4x4 transformation matrix</td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="fragment"><div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;float&gt;</a> large_cloud = load_large_point_cloud();</div>
+<div class="line">Eigen::Matrix4f transform = calculate_transformation();</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// 原地并行变换 / Transform in-place in parallel</span></div>
+<div class="line"><a class="code hl_function" href="namespacetoolbox_1_1types.html#af4fa9a60b6186baf0147d8a978c87ddb">transform_point_cloud_inplace_parallel</a>(large_cloud, transform);</div>
+<div class="ttc" id="anamespacetoolbox_1_1types_html_af4fa9a60b6186baf0147d8a978c87ddb"><div class="ttname"><a href="namespacetoolbox_1_1types.html#af4fa9a60b6186baf0147d8a978c87ddb">toolbox::types::transform_point_cloud_inplace_parallel</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT void transform_point_cloud_inplace_parallel(point_cloud_t&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform)</div><div class="ttdoc">原地变换点云（并行版本）/ Transform point cloud in-place (parallel version)</div><div class="ttdef"><b>Definition</b> point_utils.hpp:400</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="a7b5d0d23eda54d6b4650f572cf74a6ab" name="a7b5d0d23eda54d6b4650f572cf74a6ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b5d0d23eda54d6b4650f572cf74a6ab">&#9670;&#160;</a></span>transform_point_cloud_parallel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">CPP_TOOLBOX_EXPORT auto toolbox::types::transform_point_cloud_parallel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cloud</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>transform</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; <a class="el" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t</a>&lt;T&gt;
+</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>对点云应用变换矩阵（并行版本）/ Apply transformation matrix to point cloud (parallel version) </p>
+<p>使用线程池并行处理大型点云，提高性能 / Uses thread pool to process large point clouds in parallel for better performance</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>坐标类型(如float、double) / The coordinate type (e.g., float, double) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cloud</td><td>输入点云 / Input point cloud </td></tr>
+    <tr><td class="paramname">transform</td><td>4x4变换矩阵 / 4x4 transformation matrix </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>point_cloud_t&lt;T&gt; 变换后的点云 / Transformed point cloud</dd></dl>
+<div class="fragment"><div class="line"><span class="comment">// 对大型点云进行并行变换 / Transform large point cloud in parallel</span></div>
+<div class="line"><a class="code hl_class" href="classtoolbox_1_1types_1_1point__cloud__t.html">point_cloud_t&lt;float&gt;</a> large_cloud = load_large_point_cloud();</div>
+<div class="line">Eigen::Matrix4f transform = calculate_transformation();</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> transformed = <a class="code hl_function" href="namespacetoolbox_1_1types.html#a7b5d0d23eda54d6b4650f572cf74a6ab">transform_point_cloud_parallel</a>(large_cloud, transform);</div>
+<div class="ttc" id="anamespacetoolbox_1_1types_html_a7b5d0d23eda54d6b4650f572cf74a6ab"><div class="ttname"><a href="namespacetoolbox_1_1types.html#a7b5d0d23eda54d6b4650f572cf74a6ab">toolbox::types::transform_point_cloud_parallel</a></div><div class="ttdeci">CPP_TOOLBOX_EXPORT auto transform_point_cloud_parallel(const point_cloud_t&lt; T &gt; &amp;cloud, const Eigen::Matrix&lt; T, 4, 4 &gt; &amp;transform) -&gt; point_cloud_t&lt; T &gt;</div><div class="ttdoc">对点云应用变换矩阵（并行版本）/ Apply transformation matrix to point cloud (parallel version)</div><div class="ttdef"><b>Definition</b> point_utils.hpp:269</div></div>
+</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->
