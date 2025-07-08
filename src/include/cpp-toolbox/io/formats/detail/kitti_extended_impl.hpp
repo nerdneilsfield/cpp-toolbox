@@ -319,6 +319,34 @@ std::unique_ptr<point_cloud_t<DataType>> transform_point_cloud(
     return transformed;
 }
 
+template<typename DataType>
+std::unique_ptr<point_cloud_t<DataType>> read_kitti_with_labels(
+    const std::string& bin_path,
+    const std::string& label_path,
+    std::vector<uint32_t>& labels) {
+    
+    // Read point cloud
+    auto cloud = read_kitti_bin<DataType>(bin_path);
+    if (!cloud) {
+        throw std::runtime_error("Failed to read point cloud from: " + bin_path);
+    }
+    
+    // Read labels
+    try {
+        labels = read_kitti_labels(label_path);
+    } catch (const std::exception& e) {
+        throw std::runtime_error("Failed to read labels from: " + label_path + ". Error: " + e.what());
+    }
+    
+    // Check size consistency
+    if (cloud->size() != labels.size()) {
+        throw std::runtime_error("Point cloud size (" + std::to_string(cloud->size()) + 
+                               ") does not match label count (" + std::to_string(labels.size()) + ")");
+    }
+    
+    return cloud;
+}
+
 inline std::vector<std::string> list_kitti_cloud_files(const std::string& velodyne_path) {
     namespace fs = std::filesystem;
     

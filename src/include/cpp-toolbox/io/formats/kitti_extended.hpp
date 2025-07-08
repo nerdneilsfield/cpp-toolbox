@@ -140,6 +140,38 @@ std::unique_ptr<point_cloud_t<DataType>> transform_point_cloud(
     const Eigen::Matrix<DataType, 4, 4>& transform);
 
 /**
+ * @brief Read KITTI point cloud with semantic labels
+ * @tparam DataType The floating point type (float or double)
+ * @param bin_path Path to the .bin point cloud file
+ * @param label_path Path to the .label file
+ * @param[out] labels Vector to store the semantic labels (one per point)
+ * @return Point cloud, nullptr on error
+ * @throws std::runtime_error if files cannot be read or have mismatched sizes
+ * 
+ * @note The labels are returned in a separate vector parallel to the point cloud.
+ * Use get_kitti_label_id() and get_kitti_instance_id() to extract semantic class and instance.
+ * 
+ * @code
+ * std::vector<uint32_t> labels;
+ * auto cloud = read_kitti_with_labels<float>("/path/to/000000.bin", 
+ *                                           "/path/to/000000.label", 
+ *                                           labels);
+ * if (cloud) {
+ *     for (size_t i = 0; i < cloud->size(); ++i) {
+ *         uint16_t label_id = get_kitti_label_id(labels[i]);
+ *         uint16_t instance_id = get_kitti_instance_id(labels[i]);
+ *         // Use label_id and instance_id with cloud->points[i]...
+ *     }
+ * }
+ * @endcode
+ */
+template<typename DataType = float>
+std::unique_ptr<point_cloud_t<DataType>> read_kitti_with_labels(
+    const std::string& bin_path,
+    const std::string& label_path,
+    std::vector<uint32_t>& labels);
+
+/**
  * @brief List all KITTI point cloud files in a directory
  * @param velodyne_path Path to velodyne directory
  * @return Sorted list of .bin files with full paths

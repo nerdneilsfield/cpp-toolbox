@@ -214,8 +214,13 @@ kitti_odometry_dataset_t<DataType>::get_from_cache(std::size_t index) const {
         }
         lru_list_.push_front(index);
         
-        // Return copy to maintain cache
-        return it->second;
+        // Return a copy since frame contains unique_ptr
+        frame_type copy;
+        copy.cloud = std::make_unique<point_cloud_t<DataType>>(*it->second.cloud);
+        copy.pose = it->second.pose;
+        copy.frame_index = it->second.frame_index;
+        copy.timestamp = it->second.timestamp;
+        return copy;
     }
     
     return std::nullopt;
